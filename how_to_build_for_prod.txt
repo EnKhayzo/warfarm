@@ -1,0 +1,9 @@
+npm run build
+
+fix errors
+
+THEN
+    __serve.bat
+
+OR
+    npx serve out
