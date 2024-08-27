@@ -26,6 +26,9 @@ import TrackItemButton from '@/components/TrackItemButton.js';
 
 import * as com from "@/app/common.js"
 import TabComponent from '@/components/TabComponent';
+import ObtainedItemCheck from '@/components/ObtainedItemCheck';
+
+import useObtainedComponents from '@/hooks/useObtainedComponents.js';
 
 
 const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) => {
@@ -72,6 +75,8 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
       }, {})
       : {});
 
+  const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
+
   return (
     <div className='sized-remaining v-flex flex-center' style={{ gap: '5px' }}>
       <div 
@@ -102,18 +107,21 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
               <div 
                 className='sized-remaining h-flex flex-center'
                 style={{
-                  flexWrap: 'wrap'
+                  flexWrap: 'wrap',
+                  gap: '5px'
                 }}
               >
                 { 
                   group.map((object, index) => (
                     <div 
                       key={`${index}-${object.name}`} 
-                      className='sized-content main-view-item-single-container tracker-item-parent v-flex flex-center'
+                      className={`sized-content main-view-item-single-container tracker-item-parent${com.objectIsFarmed(object, obtainedComponents) ? ` object-farmed` : ``} v-flex flex-center`}
                       style={{ 
+                        width: '140px',
                         opacity: object.vaulted ? '50%' : '100%', 
                         position: 'relative',
-                        cursor: 'pointer' 
+                        cursor: 'pointer',
+                        alignSelf: 'stretch' 
                       }}
                       onClick={() => router.push(
                         category.localeCompare("Items") == 0 ? `/prime/items/${object.name.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
@@ -125,6 +133,7 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
                       <img src={`/warfarm/images/${imageFunc(object)}.png`} className='sized-remaining main-view-item-image'/>
                       <div className='sized-content main-view-item-label h-flex flex-center' style={{ textAlign: 'center' }}>{ labelFunc(object) }</div>
                       <TrackItemButton itemId={com.getObjectId(object, category)}/>
+                      <ObtainedItemCheck itemId={com.getObjectId(object, category)} positionAbsolute={true}/>
                     </div>
                   )) 
                 }
@@ -228,7 +237,7 @@ export default function ExplorerPage() {
   return (
     <div className='sized-remaining v-flex flex-center' style={{ gap: '20px' }}>
       <TabComponent
-        style={{ width: '75vw' }}
+        style={{ width: '95vw' }}
         defaultTab={"Items"}
         tabs={{
           "Items": <ObjectSectionBuilder category={"Items"} />,

@@ -31,6 +31,7 @@ import useMissionPriorities from '@/hooks/useMissionPriorities.js';
 import TabComponent from '@/components/TabComponent.js';
 import useObtainedComponents from '@/hooks/useObtainedComponents.js';
 import ComponentAddButton from './[category]/[name]/subcomponents/ComponentAddButton.js';
+import ObtainedItemCheck from '@/components/ObtainedItemCheck.js';
 
 const ComponentTab = ({trackedItems}) => {
   const router = useRouter();
@@ -478,6 +479,8 @@ export function TrackedItemsComponent(){
 
   const noTrackedItems = Object.entries(trackedItems ?? {}).filter(([ itemId, trackedItem ]) => trackedItem.tracked ?? false).length <= 0;
 
+  const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
+
   return (
       <div className='sized-content tracked-items v-flex flex-center' style={{ gap: '50px' }}>
         {
@@ -503,7 +506,7 @@ export function TrackedItemsComponent(){
                         onClick={() => { 
                           router.push(com.getObjectPathNameFromIdObj(com.getObjectFromId(itemId))); 
                         }}
-                        className='sized-content tracked-items-button v-flex flex-center'
+                        className={`sized-content tracked-items-button v-flex flex-center${com.objectIsFarmed(com.getObjectFromId(itemId), obtainedComponents) ? ` object-farmed-main-page` : ``}`}
                         style={{ 
                           position: 'relative', 
                           cursor: 'pointer',
@@ -522,6 +525,7 @@ export function TrackedItemsComponent(){
                           return null; 
                         })() }
                         <TrackItemButton itemId={itemId} positionAbsolute={true}/>
+                        <ObtainedItemCheck itemId={itemId} positionAbsolute={true}/>
                       </div>
                     ))
               }  
