@@ -1,1 +1,1 @@
-start http://localhost:3000 && npm run dev
+start http://localhost:3000/warfarm && npm run dev

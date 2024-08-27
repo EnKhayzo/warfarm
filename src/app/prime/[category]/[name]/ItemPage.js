@@ -76,7 +76,14 @@ const ComponentTab = ({item, components}) => {
                                 </div>
                             </button>
                         </div>
-                        <div className='sized-content h-flex flex-center' style={{ gap: '10px', justifyContent: 'flex-start', alignItems: "flex-start" }}>
+                        <div 
+                            className='sized-content h-flex flex-center' 
+                            style={{ 
+                                gap: '10px', 
+                                justifyContent: 'flex-start', 
+                                alignItems: "flex-start"  
+                            }}
+                        >
                             {
                                 [  
                                     [ 
@@ -96,7 +103,10 @@ const ComponentTab = ({item, components}) => {
                                         style={{ 
                                             display: relicSection.length <= 0 ? 'none' : '',
                                             maxWidth: '75vw', 
-                                            gap: '20px' 
+                                            gap: '20px',
+                                            backgroundColor: 'var(--color-quaternary)',
+                                            borderRadius: '10px',
+                                            padding: '10px' 
                                         }}
                                     >
                                         <div style={{ fontStyle: 'italic', minWidth: 'max-content' }}>{sectionName}</div>
@@ -130,7 +140,7 @@ const ComponentTab = ({item, components}) => {
                                                         >
                                                             <div className='sized-content h-flex flex-center' style={{ width: '50px', height: '50px' }}><img src={relic.icon}/></div>
                                                             <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
-                                                                <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{relic.label}</div>
+                                                                <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', textWrap: 'nowrap' }}>{relic.label}</div>
                                                             </div>
                                                         </button>
                                                     ))
@@ -346,7 +356,7 @@ const MissionTab = ({item, components, rarityPriorities}) => {
                                                                                 className={`sized-content h-flex flex-center object-page-mission-relic${` ${relic.rarity}` ?? ''}`} 
                                                                                 style={{ gap: '5px', minWidth: '200px' }}
                                                                             >
-                                                                                <div className='sized-content h-flex flex-center' ><img style={{ height: '30px' }} src={`/images/${relic.relic.tier}.png`}/></div>
+                                                                                <div className='sized-content h-flex flex-center' ><img style={{ height: '30px' }} src={`/warfarm/images/${relic.relic.tier}.png`}/></div>
                                                                                 <div className='sized-content h-flex flex-center' style={{ fontSize: 'small' }}>{relic.relic.name}</div>
                                                                                 <div className='sized-content v-flex flex-center' style={{ alignItems: 'flex-start', marginLeft: '5px' }}>
                                                                                     {
@@ -391,7 +401,7 @@ export default function ItemPage({ name, pathObj }) {
                 <div className='sized-remaining v-flex flex-center' style={{ gap: '50px' }}>
                     <div className='sized-content h-flex' style={{ marginTop: '20px' }}></div>
                     { item.vaulted ? (<div className='sized-content h-flex flex-center'>{`${item.name} is`}<span style={{ fontWeight: 'bold', whiteSpace: 'pre' }}> vaulted</span>.</div>) : null}
-                    <MainItemTitleComponent itemId={item.id} iconUrl={`/images/${pathObj.id}.png`} label={pathObj.id}/>
+                    <MainItemTitleComponent itemId={item.id} iconUrl={`/warfarm/images/${pathObj.id}.png`} label={pathObj.id}/>
                     <div className='sized-content item-page-item-components-container h-flex flex-center'>
                         { 
                             components.map((component, index) => (

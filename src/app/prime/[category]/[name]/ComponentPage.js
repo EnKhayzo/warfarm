@@ -36,7 +36,9 @@ const RelicTab = ({component, rarityPriorities}) => {
   return (
     <div 
       className='sized-content component-page-relative-info-container v-flex flex-center'
-      style={{ maxWidth: '75vw' }}
+      style={{ 
+        maxWidth: '75vw'
+      }}
     >
       {
         [  
@@ -162,7 +164,7 @@ const MissionTab = ({component, rarityPriorities}) => {
                               className={`sized-content h-flex flex-center object-page-mission-relic${` ${relic.rarity}` ?? ''}`} 
                               style={{ gap: '5px' }}
                             >
-                              <div className='sized-content h-flex flex-center' ><img style={{ height: '30px' }} src={`/images/${relic.relic.tier}.png`}/></div>
+                              <div className='sized-content h-flex flex-center' ><img style={{ height: '30px' }} src={`/warfarm/images/${relic.relic.tier}.png`}/></div>
                               <div className='sized-content h-flex flex-center' style={{ fontSize: 'small' }}>{relic.relic.name}</div>
                               <div className='sized-content v-flex flex-center' style={{ alignItems: 'flex-start', marginLeft: '5px' }}>
                                 {
@@ -215,11 +217,11 @@ export default function ComponentPage({ name, pathObj }) {
                         style={{ marginBottom: '20px', gap: '10px' }}
                         onClick={() => router.push(`/prime/items/${component.parentItem.replaceAll(" ", "").replaceAll("&", "")}`)}
                       >
-                        <img style={{ height: '30px' }} src={`/images/${component.parentItem}.png`}/>
+                        <img style={{ height: '30px' }} src={`/warfarm/images/${component.parentItem}.png`}/>
                         <div>{component.parentItem}</div>
                       </button>
                   }
-                  <MainItemTitleComponent itemId={component.id} iconUrl={`/images/${component.componentFullName}.png`} label={pathObj.id} />
+                  <MainItemTitleComponent itemId={component.id} iconUrl={`/warfarm/images/${component.componentFullName}.png`} label={pathObj.id} />
                   <div style={{ marginTop: '5px' }}><ComponentAddButtons component={component}/></div>
                 </div>
                 <TabComponent

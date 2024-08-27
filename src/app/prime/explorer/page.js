@@ -122,7 +122,7 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
                         category.localeCompare("Missions") == 0 ? `/prime/missions/${`${object.name}${object.planet}`}` : ''
                       )}
                     >
-                      <img src={`/images/${imageFunc(object)}.png`} className='sized-remaining main-view-item-image'/>
+                      <img src={`/warfarm/images/${imageFunc(object)}.png`} className='sized-remaining main-view-item-image'/>
                       <div className='sized-content main-view-item-label h-flex flex-center' style={{ textAlign: 'center' }}>{ labelFunc(object) }</div>
                       <TrackItemButton itemId={com.getObjectId(object, category)}/>
                     </div>

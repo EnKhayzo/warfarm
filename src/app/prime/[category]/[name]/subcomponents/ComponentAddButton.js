@@ -28,7 +28,7 @@ export default function ComponentAddButton({ component, fullName=false, iconHeig
                     alignSelf: 'stretch'
                 }}
             >
-                <div className='sized-content h-flex flex-center'><img style={{ height: iconHeight }} src={`/images/${component.rawObj.componentFullName}.png`}/></div>
+                <div className='sized-content h-flex flex-center'><img style={{ height: iconHeight }} src={`/warfarm/images/${component.rawObj.componentFullName}.png`}/></div>
                 <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
                     <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{fullName ? component.rawObj.componentFullName : component.rawObj.component}</div>
                     {/* <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', fontStyle: 'italic', minWidth: 'fit-content' }}>{`${com.getUserDataComponentSetting(component.rawObj.componentFullName, "obtained") ?? '0'}/${component.rawObj.required}`}</div> */}

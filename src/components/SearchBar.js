@@ -39,7 +39,7 @@ const SearchBar = () => {
                         ...item,
                         id: item.name,
                         category: "Items",
-                        imageUrl: `/images/${item.name}.png`,
+                        imageUrl: `/warfarm/images/${item.name}.png`,
                     }))
                 ];
             }
@@ -53,7 +53,7 @@ const SearchBar = () => {
                         ...component,
                         id: component.componentFullName,
                         category: "Components",
-                        imageUrl: `/images/${component.componentFullName}.png`,
+                        imageUrl: `/warfarm/images/${component.componentFullName}.png`,
                     }))
                 ];
             }
@@ -67,7 +67,7 @@ const SearchBar = () => {
                         ...relic,
                         id: relicName,
                         category: "Relics",
-                        imageUrl: `/images/${relicName.split(" ")[0].trim()}.png`,
+                        imageUrl: `/warfarm/images/${relicName.split(" ")[0].trim()}.png`,
                     }))
                 ];
             }
@@ -82,7 +82,7 @@ const SearchBar = () => {
                         id: `${mission.name}, ${mission.planet}`,
                         missionName: mission.name,
                         category: "Missions",
-                        imageUrl: `/images/${mission.planet}.png`,
+                        imageUrl: `/warfarm/images/${mission.planet}.png`,
                     }))
                 ];
             }
@@ -172,7 +172,7 @@ const SearchBar = () => {
             <ContextMenuButton 
                 top='40px'
                 className="sized-content global-search-bar-filter-button v-flex"
-                headerContent={<img className="sized-content global-search-bar-filter-icon" src="/icons/filter.svg" />}
+                headerContent={<img className="sized-content global-search-bar-filter-icon" src="/warfarm/icons/filter.svg" />}
             >
                 {
                     (props) => (

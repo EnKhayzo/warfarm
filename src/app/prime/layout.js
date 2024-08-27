@@ -119,22 +119,22 @@ export function MainLayoutComponent({children}){
         <div className="sized-content search-bar-global-container h-flex">
           <div className="sized-content h-flex flex-center" style={{ gap: '20px', justifyContent: 'flex-start' }}>
             <div className='sized-content h-flex' style={{ justifyContent: 'center', alignItems: 'center' }}>
-              <button onClick={() => router.push("/prime")} className='sized-content logo-button h-flex flex-center'><img style={{ minWidth: '70px' }} className='sized-content logo h-flex flex-center' src={`/icons/logo_prime.svg`}/></button>
+              <button onClick={() => router.push("/prime")} className='sized-content logo-button h-flex flex-center'><img style={{ minWidth: '70px' }} className='sized-content logo h-flex flex-center' src={`/warfarm/icons/logo_prime.svg`}/></button>
             </div>
             <div className='sized-content h-flex' style={{ gap: '10px'}}>
-                <IconButton label={'Home'}      iconUrl={`/icons/home.svg`}     onClick={() => router.push('/prime')} className={'layout-header-button'} iconClassName={'layout-header-icon'} />
-                <IconButton label={'Explorer'}  iconUrl={`/icons/explorer.svg`} onClick={() => router.push('/prime/explorer')} className={'layout-header-button'} iconClassName={'layout-header-icon'} />
-                <IconButton label={'About'}     iconUrl={`/icons/question.svg`} onClick={() => router.push('/prime/about')} className={'layout-header-button'} iconClassName={'layout-header-icon'} />
+                <IconButton label={'Home'}      iconUrl={`/warfarm/icons/home.svg`}     onClick={() => router.push('/prime')} className={'layout-header-button'} iconClassName={'layout-header-icon'} />
+                <IconButton label={'Explorer'}  iconUrl={`/warfarm/icons/explorer.svg`} onClick={() => router.push('/prime/explorer')} className={'layout-header-button'} iconClassName={'layout-header-icon'} />
+                <IconButton label={'About'}     iconUrl={`/warfarm/icons/question.svg`} onClick={() => router.push('/prime/about')} className={'layout-header-button'} iconClassName={'layout-header-icon'} />
               </div>
           </div>
           <SearchBar />
           <div className="sized-remaining h-flex flex-center" style={{ gap:'20px', justifyContent: 'flex-end' }}>
-            <IconButton label={'Support Me'} iconUrl={`/icons/heart.svg`} onClick={() => router.push("/prime/supportme")} className={'layout-header-button support-me-button'} iconClassName={'support-me-icon'} iconHeight='20px' />
+            <IconButton label={'Support Me'} iconUrl={`/warfarm/icons/heart.svg`} onClick={() => router.push("/prime/supportme")} className={'layout-header-button support-me-button'} iconClassName={'support-me-icon'} iconHeight='20px' />
             <div className='sized-content v-flex' style={{ justifyContent: 'center', alignItems: 'center' }}>
               <ContextMenuButton
                 top='50px' 
                 className='global-settings-button'
-                headerContent={<img src="/icons/settings.svg" style={{ filter: 'invert()', height: '20px', opacity: '70%' }}/>}
+                headerContent={<img src="/warfarm/icons/settings.svg" style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
               >
                 {
                   (props) => (
@@ -156,7 +156,7 @@ export function MainLayoutComponent({children}){
                                   }}
                                   elems={Object.keys(com.getDefaultMissionTypePriorities()).map(priority => (
                                       <div key={`${priority}`} className='sized-content h-flex flex-center' style={{ gap: '5px', cursor: 'pointer' }}>
-                                          <div className='sized-content h-flex flex-center'><img style={{ filter: 'invert()', width: '5px', height: '5px' }} src='/icons/move.svg'/></div>
+                                          <div className='sized-content h-flex flex-center'><img style={{ filter: 'invert()', width: '5px', height: '5px' }} src='/warfarm/icons/move.svg'/></div>
                                           <div className='sized-content h-flex flex-center'>{priority}</div>
                                       </div>
                                   ))}
@@ -205,7 +205,7 @@ export function MainLayoutComponent({children}){
           <div className='sized-content v-flex flex-center' style={{ marginTop: '50px', fontSize: 'small' }}>
             <div>This site is not endorsed by or affiliated with Digital Extremes Ltd.</div>
             <div>All images come from Warframe or from websites created and owned by Digital Extremes, who hold the copyright of Warframe.</div>
-            <div>All trademarks and registered trademarks present in images are proprietary to Digital Extremes Ltd..</div>
+            <div>All trademarks and registered trademarks present in images are proprietary to Digital Extremes Ltd.</div>
           </div>
         </div>
       </div>

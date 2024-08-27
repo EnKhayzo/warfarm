@@ -423,7 +423,7 @@ const MissionTab = ({trackedItems, rarityPriorities}) => {
                                                               className={`sized-content h-flex flex-center object-page-mission-relic${` ${relic.rarity}` ?? ''}`} 
                                                               style={{ gap: '5px', minWidth: '200px' }}
                                                           >
-                                                              <div className='sized-content h-flex flex-center' ><img style={{ height: '30px' }} src={`/images/${relic.relic.tier}.png`}/></div>
+                                                              <div className='sized-content h-flex flex-center' ><img style={{ height: '30px' }} src={`/warfarm/images/${relic.relic.tier}.png`}/></div>
                                                               <div className='sized-content h-flex flex-center' style={{ fontSize: 'small' }}>{relic.relic.name}</div>
                                                               <div className='sized-content v-flex flex-center' style={{ alignItems: 'flex-start', marginLeft: '5px' }}>
                                                                   {
@@ -542,7 +542,7 @@ export function TrackedItemsComponent(){
                 </div>
               <div className='sized-content v-flex'>
                 <div>You&apos;re not tracking any items. Add some by using the Search Bar or from the <a style={{ cursor: 'pointer' }} onClick={() => router.push('/prime/explorer')}>Explorer</a> page.</div>
-                <div className='sized-content h-flex flex-center'>Track items using the star<img className='sized-content star-button-icon h-flex flex-center' style={{ height: '12px',  }} src="/icons/star_hollow.svg"/>button.</div>
+                <div className='sized-content h-flex flex-center'>Track items using the star<img className='sized-content star-button-icon h-flex flex-center' style={{ height: '12px',  }} src="/warfarm/icons/star_hollow.svg"/>button.</div>
               </div>
             </div> 
           : 
@@ -574,7 +574,7 @@ export default function Home() {
       {
         !noTrackedItems ? null :
         <div className='sized-content h-flex flex-center' style={{ padding: '10px' }}>
-          <img className='sized-content h-flex flex-center' style={{ width: '400px' }} src={`/icons/logo_prime.svg`}/>
+          <img className='sized-content h-flex flex-center' style={{ width: '400px' }} src={`/warfarm/icons/logo_prime.svg`}/>
         </div>
       }
       <div className='sized-remaining v-flex flex-center' style={{ gap: '20px' }}>

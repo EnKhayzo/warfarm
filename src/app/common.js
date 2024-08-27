@@ -114,17 +114,17 @@ export function setUserDataComponentSetting(componentFullName, name, value){
 }
 
 export function incrementUserDataComponentObtained(componentFullName){
-  let oldObtained = getUserDataComponentSetting(componentFullName, "obtained");
+  let oldObtained = Number(getUserDataComponentSetting(componentFullName, "obtained"));
   oldObtained++;
-  if(oldObtained > getObjectFromId(componentFullName).required) oldObtained = 0;
+  if(oldObtained > Number(getObjectFromId(componentFullName).required)) oldObtained = 0;
 
   setUserDataComponentSetting(componentFullName, "obtained", oldObtained);
 }
 
 export function decrementUserDataComponentObtained(componentFullName){
-  let oldObtained = getUserDataComponentSetting(componentFullName, "obtained");
+  let oldObtained = Number(getUserDataComponentSetting(componentFullName, "obtained"));
   oldObtained--;
-  if(oldObtained < 0) oldObtained = getObjectFromId(componentFullName).required;
+  if(oldObtained < 0) oldObtained = Number(getObjectFromId(componentFullName).required);
 
   setUserDataComponentSetting(componentFullName, "obtained", oldObtained);
 }
@@ -574,7 +574,7 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
         "components": () => {
           const component = objects.component;
           res = {
-            icon: `/images/${component.componentFullName}.png`, 
+            icon: `/warfarm/images/${component.componentFullName}.png`, 
             vaulted: item ? item.vaulted : false, 
             rarity: (() => { 
                 // take the rarity with the highest chance
@@ -602,7 +602,7 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
           const component = objects.component;
           const [ relicName, relicInfo ] = objects.relicEntry;
           res = ({
-            icon: `/images/${relicName.split(" ")[0].trim()}.png`,
+            icon: `/warfarm/images/${relicName.split(" ")[0].trim()}.png`,
             vaulted: relicInfo.vaulted, 
             rarity: relicInfo.rarity, 
             componentName: component.component,
@@ -623,7 +623,7 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
           const component = objects.component;
           const [ missionName, mission ] = objects.missionEntry;
           res = ({
-            icon: `/images/${missionName.split(",")[1].trim()}.png`,
+            icon: `/warfarm/images/${missionName.split(",")[1].trim()}.png`,
             vaulted: mission.vaulted, 
             rarity: mission.rarity, 
             labelHeading: `${component.component}`, 
@@ -650,7 +650,7 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
         "relics": () => {
           const [ relicName, relic ] = objects.relicEntry;
           res = ({
-            icon: `/images/${relicName.split(" ")[0].trim()}.png`,
+            icon: `/warfarm/images/${relicName.split(" ")[0].trim()}.png`,
             vaulted: relic.vaulted, 
             rarity: relic.rarity, 
             componentName: component.componenName, 
@@ -670,7 +670,7 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
         "missions": () => {
           const [ missionName, mission ] = objects.missionEntry;
           res = ({
-            icon: `/images/${missionName.split(",")[1].trim()}.png`,
+            icon: `/warfarm/images/${missionName.split(",")[1].trim()}.png`,
             vaulted: mission.vaulted, 
             rarity: mission.rarity, 
             labelHeading: `${mission.mission.detailName}`, 
@@ -697,7 +697,7 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
         "components": () => {
           const { tier, component } = objects.rewardEntry;
           res = ({
-            icon: `/images/${component.componentFullName}.png`, 
+            icon: `/warfarm/images/${component.componentFullName}.png`, 
             vaulted: relic.vaulted, 
             rarity: tier,
             labelHeading: `${component.componentFullName}`, 
@@ -716,7 +716,7 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
         "missions": () => {
           const mission = objects.mission;
           res = ({
-            icon: `/images/${mission.planet}.png`,
+            icon: `/warfarm/images/${mission.planet}.png`,
             labelHeading: `${mission.detailName}`, 
             labelFooter: `(${
                 Object.values(mission.relicRewards[relic.name])
@@ -742,7 +742,7 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
         "relics": () => {
           const [ relicName, relic ] = objects.relicEntry;
           res = ({
-            icon: `/images/${relicName.split(" ")[0].trim()}.png`,
+            icon: `/warfarm/images/${relicName.split(" ")[0].trim()}.png`,
             vaulted: relics[relicName].vaulted, 
             rarity: null, 
             labelHeading: `${relicName}`, 
@@ -1078,10 +1078,10 @@ export function getObjectIcon(rawObj, category=null){
 
   category = capitalizeFirstLetter(category);
 
-  return category.localeCompare("Items") == 0 ? `/images/${rawObj.name}.png` :
-      category.localeCompare("Components") == 0 ? `/images/${rawObj.componentFullName}.png` :
-      category.localeCompare("Relics") == 0 ? `/images/${rawObj.tier}.png` :
-      category.localeCompare("Missions") == 0 ? `/images/${rawObj.planet}.png` : null
+  return category.localeCompare("Items") == 0 ? `/warfarm/images/${rawObj.name}.png` :
+      category.localeCompare("Components") == 0 ? `/warfarm/images/${rawObj.componentFullName}.png` :
+      category.localeCompare("Relics") == 0 ? `/warfarm/images/${rawObj.tier}.png` :
+      category.localeCompare("Missions") == 0 ? `/warfarm/images/${rawObj.planet}.png` : null
 }
 
 export function getObjectPath(name){
