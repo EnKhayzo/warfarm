@@ -221,6 +221,14 @@ a {
   background-color: var(--color-component-rare);
 }
 
+.control-button.vaulted {
+  opacity: 50%;
+}
+
+.control-button:active {
+  opacity: 30%;
+}
+
 .settings-button {
   background-color: rgb(0, 66, 121);
   padding: 5px;
@@ -542,6 +550,14 @@ a {
   cursor: pointer;
 }
 
+.icon-button:active {
+  opacity: 40%;
+}
+
+.icon-button.highlight {
+  background-color: color-mix(in srgb,var(--color-component-rare),#000 30%);;
+}
+
 
 .dialog-footer-button{
   background-color: var(--color-quaternary);
@@ -555,4 +571,17 @@ a {
 
 .object-farmed {
   background-color: #153e2959;
+}
+
+
+@keyframes blinkingFrames {
+  0% {opacity: 0.30;}
+  1% {opacity: 0.30;}
+  100% {opacity: 1.00;}
+}
+
+.blinking {
+  animation-name: blinkingFrames;
+  animation-duration: .25s;
+  animation-iteration-count: infinite;
 }

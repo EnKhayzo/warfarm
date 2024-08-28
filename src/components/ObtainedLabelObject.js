@@ -13,16 +13,18 @@ export default function ObtainedLabelObject({ object, className, style, collapse
 
     const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
 
+    // console.log(`obtained label object`, object);
+
     let obtained = null;
     if(object.category === "items"){
-        const components = object.requiredComponents;
+        const components = object.components;
         if(components == null) obtained = `Farmed`;
         else{
             // check if all components of this item are obtained
             if(obtainedComponents && 
-                components.every(component => 
-                    obtainedComponents[component.componentFullName] && 
-                    obtainedComponents[component.componentFullName].obtained >= component.required
+                Object.keys(components).map(id => com.getObjectFromId(id)).every(component => 
+                    obtainedComponents[component.id] && 
+                    obtainedComponents[component.id].obtained >= component.required
                 )
             ){
                 obtained = `Farmed`;

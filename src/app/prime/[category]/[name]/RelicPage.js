@@ -81,7 +81,7 @@ const MissionTab = ({relic, missions, rarityPriorities}) => {
                         <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', textAlign: 'center' }}>{mission.label}</div>
                         <div className='sized-content v-flex' style={{ gap: '5px', marginTop: '5px' }}>
                           {
-                            mission.rotations[relic.name].map((rotation, index) => (
+                            mission.rotations[`${relic.name} Relic`].map((rotation, index) => (
                                 <div 
                                     key={`${rotation.rotation}-${index}`} 
                                     className='sized-content' 
@@ -111,6 +111,8 @@ export default function RelicPage({ name, pathObj }) {
 
   const components = com.getSearchResultRelatedObjects(null, "Relics", null, "components", relic, { router: router });
   const missions = com.getSearchResultRelatedObjects(null, "Relics", null, "missions", relic, { missionPriorities: missionPriorities, router: router });
+
+  console.log(`componentrs missions`, components, missions);
 
   return (
       <div className='sized-content v-flex'>

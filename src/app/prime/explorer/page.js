@@ -29,6 +29,7 @@ import TabComponent from '@/components/TabComponent';
 import ObtainedItemCheck from '@/components/ObtainedItemCheck';
 
 import useObtainedComponents from '@/hooks/useObtainedComponents.js';
+import ObtainedLabelObject from '@/components/ObtainedLabelObject';
 
 
 const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) => {
@@ -67,9 +68,9 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
       :
     category === "Missions" ?
       objects.reduce((acc, mission) => {
-        if(!acc[mission.detailName]) acc[mission.detailName] = { title: mission.detailName, objects: [] };
+        if(!acc[mission.type]) acc[mission.type] = { title: mission.type, objects: [] };
 
-        acc[mission.detailName].objects.push(mission);
+        acc[mission.type].objects.push(mission);
 
         return acc;
       }, {})
@@ -125,13 +126,14 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
                       }}
                       onClick={() => router.push(
                         category.localeCompare("Items") == 0 ? `/prime/items/${object.name.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
-                        category.localeCompare("Components") == 0 ? `/prime/components/${object.componentFullName.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
+                        category.localeCompare("Components") == 0 ? `/prime/components/${object.fullName.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
                         category.localeCompare("Relics") == 0 ? `/prime/relics/${object.name.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
                         category.localeCompare("Missions") == 0 ? `/prime/missions/${`${object.name}${object.planet}`}` : ''
                       )}
                     >
                       <img src={`/warfarm/images/${imageFunc(object)}.png`} className='sized-remaining main-view-item-image'/>
                       <div className='sized-content main-view-item-label h-flex flex-center' style={{ textAlign: 'center' }}>{ labelFunc(object) }</div>
+                      {/* <ObtainedLabelObject object={object}/> */}
                       <TrackItemButton itemId={com.getObjectId(object, category)}/>
                       <ObtainedItemCheck itemId={com.getObjectId(object, category)} positionAbsolute={true}/>
                     </div>
@@ -161,7 +163,7 @@ const ObjectSectionBuilder = ({ category }) => {
           category="Items"
           titleLabel="Items" 
           objects={
-            allItems.toSorted((a, b) => 
+            Object.values(allItems).toSorted((a, b) => 
               (a.vaulted-b.vaulted) 
               ||
               (itemTypePriorities[a.type]-itemTypePriorities[b.type])
@@ -175,15 +177,23 @@ const ObjectSectionBuilder = ({ category }) => {
       )
     },
     "Components": () => {
-      const allComponents = com.getAllComponents(); 
+      const allComponents = Object.values(com.getAllComponents()); 
 
       res = (
         <ObjectSection 
           category="Components"
           titleLabel="Components" 
-          objects={allComponents.toSorted((a, b) => a.vaulted-b.vaulted)} 
-          imageFunc={ (object) => `${object.componentFullName}` } 
-          labelFunc={ (object) => `${object.componentFullName}` } 
+          objects={
+            allComponents.toSorted((a, b) => 
+              (a.vaulted-b.vaulted)
+              ||
+              (itemTypePriorities[a.type]-itemTypePriorities[b.type])
+              ||
+              (a.fullName.localeCompare(b.fullName))
+            )
+          } 
+          imageFunc={ (object) => `${object.fullName}` } 
+          labelFunc={ (object) => `${object.fullName}` } 
         />
       )
     },
@@ -220,7 +230,7 @@ const ObjectSectionBuilder = ({ category }) => {
         <ObjectSection 
           category="Missions"
           titleLabel="Missions" 
-          objects={allMissions.toSorted((a, b) => `${a.name}, ${a.planet}`.localeCompare(`${b.name}, ${b.planet}`))} 
+          objects={Object.values(allMissions).toSorted((a, b) => `${a.name}, ${a.planet}`.localeCompare(`${b.name}, ${b.planet}`))} 
           imageFunc={ (object) => `${object.planet}` } 
           labelFunc={ (object) => `${object.name}, ${object.planet}` } 
         />

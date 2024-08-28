@@ -39,6 +39,8 @@ const ComponentTab = ({item, components}) => {
 
     const relics = com.getSearchResultRelatedObjects(null, "Items", null, "relics", item, { router: router });
 
+    console.warn(`got relics result`, relics);
+
     return (
         <div
             className='sized-content component-page-relative-info-container h-flex flex-center'
@@ -89,12 +91,12 @@ const ComponentTab = ({item, components}) => {
                                     [ 
                                         "Unvaulted Relics", 
                                         relics
-                                            .filter(relic => !relic.vaulted && relic.componentName.localeCompare(component.rawObj.component) == 0)
+                                            .filter(relic => !relic.vaulted && relic.componentName.localeCompare(component.rawObj.name) == 0)
                                     ],
                                     [ 
                                         "Vaulted Relics", 
                                         relics
-                                            .filter(relic => relic.vaulted && relic.componentName.localeCompare(component.rawObj.component) == 0)
+                                            .filter(relic => relic.vaulted && relic.componentName.localeCompare(component.rawObj.name) == 0)
                                     ]
                                 ].map(([ sectionName, relicSection ], index) => (
                                     <div
@@ -163,7 +165,7 @@ function RelicTab({_components}){
     const rarityPriorities = com.getRarityPriorities();
     const relicTypePriorities = com.getRelicTypePriorities();
 
-    const componentsRelicsMerged = com.getComponentsRelicsMerged(_components.map(component => component.rawObj.componentFullName), router);
+    const componentsRelicsMerged = com.getComponentsRelicsMerged(_components.map(component => component.rawObj.id), router);
 
     const components = componentsRelicsMerged.components;
 
@@ -228,7 +230,7 @@ function RelicTab({_components}){
                         )
                         .map(component => { return (
                         <button 
-                            key={`${index}-${component.rawObj.componentFullName}`} 
+                            key={`${index}-${component.rawObj.id}`} 
                             onClick={() => router.push(component.route)}
                             className={`sized-content item-page-component-container tracker-item-parent h-flex flex-center${` ${com.getComponentRarityInRelationToRelic(component.rawObj, relic.rawObj.relic)}` ?? ''}`}
                             style={{
@@ -239,7 +241,7 @@ function RelicTab({_components}){
                         >
                             <div className='sized-content h-flex flex-center'><img style={{ height: '25px' }} src={component.icon}/></div>
                             <div className='sized-content h-flex flex-center' style={{ gap: '1px' }}>
-                                <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', paddingRight: '5px' }}>{component.rawObj.componentFullName}</div>
+                                <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', paddingRight: '5px' }}>{component.rawObj.fullName}</div>
                             </div>
                         </button>
                         )})
@@ -254,7 +256,7 @@ function RelicTab({_components}){
 
 function getMissionGroups(missions, rarityPriorities, missionTypesPriorities){
     return missions
-        .toSorted((a, b) => com.sortMissionFunc(a.rawObj.relic, b.rawObj.relic, a.rawObj.mission, b.rawObj.mission, missionTypesPriorities))
+        .toSorted((a, b) => com.sortMissionFunc(a.rawObj.mission, b.rawObj.mission, a.rawObj.relic, b.rawObj.relic, missionTypesPriorities))
         .reduce((acc, mission) => {
         if(!acc[mission.id]) 
             acc[mission.id] = {
@@ -312,19 +314,19 @@ const MissionTab = ({item, components, rarityPriorities}) => {
                             <div className='sized-remaining v-flex flex-center' style={{ justifyContent: 'flex-start' }}>
                                 <div className='sized-content h-flex flex-center'><img style={{ height: '75px' }} src={missionGroup.infoObj.icon}/></div>
                                     <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
-                                        <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', fontWeight: 'bold' }}>{missionGroup.infoObj.rawObj.mission.detailName}</div>
+                                        <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', fontWeight: 'bold' }}>{missionGroup.infoObj.rawObj.mission.type}</div>
                                         <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{missionGroup.infoObj.id}</div>
                                         <div className='sized-content v-flex' style={{ gap: '5px', marginTop: '5px' }}>
                                             {
                                                 components
                                                     .filter(component => Object.entries(missionGroup.relics)
                                                         .find(([ relicName, relic ]) => com.getRelicRewards(relic.relic)
-                                                            .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.componentFullName) == 0) > -1
+                                                            .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.id) == 0) > -1
                                                         )
                                                     )
                                                     .map((component,index) => (
                                                         <div
-                                                            key={`${component.componentFullName}-${index}`}
+                                                            key={`${component.id}-${index}`}
                                                             className='sized-content h-flex flex-center'
                                                             onClick={ev => { ev.stopPropagation(); router.push(component.route); }}
                                                             style={{
@@ -336,7 +338,7 @@ const MissionTab = ({item, components, rarityPriorities}) => {
                                                         >
                                                             <div className={`sized-content v-flex flex-center`} style={{ minWidth: '70px' }}>
                                                                 <img className='sized-content h-flex flex-center' style={{ height: '15px' }} src={component.icon}/>
-                                                                <span className='sized-content h-flex flex-center' style={{ fontSize: 'small' }}>{component.rawObj.component}</span>
+                                                                <span className='sized-content h-flex flex-center' style={{ fontSize: 'small' }}>{component.rawObj.name}</span>
                                                             </div>
                                                             <div 
                                                                 className='sized-content v-flex flex-center'
@@ -347,7 +349,7 @@ const MissionTab = ({item, components, rarityPriorities}) => {
                                                                 {
                                                                     Object.entries(missionGroup.relics)
                                                                         .filter(([ relicName, relic ]) => com.getRelicRewards(relic.relic)
-                                                                            .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.componentFullName) == 0) > -1
+                                                                            .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.fullName) == 0) > -1
                                                                         )
                                                                         .map(([ relicName, relic ], index) => (
                                                                             <button 
@@ -405,7 +407,7 @@ export default function ItemPage({ name, pathObj }) {
                     <div className='sized-content item-page-item-components-container h-flex flex-center'>
                         { 
                             components.map((component, index) => (
-                                <ComponentAddButton key={`${index}-${component.componentFullName}`} component={component}/>
+                                <ComponentAddButton key={`${index}-${component.id}`} component={component}/>
                             )) 
                         }
                     </div>

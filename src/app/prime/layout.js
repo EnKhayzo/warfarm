@@ -22,7 +22,7 @@ import "./globals.css";
 
 import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams, usePathname, useRouter } from 'next/navigation';
 
 import SearchBar from '../../components/SearchBar.js';
 import ContextMenuButton from '../../components/ContextMenuButton.js';
@@ -42,11 +42,13 @@ async function initialize(){
 
 export function MainLayoutComponent({children}){
   const router = useRouter();
+  const pathName = usePathname();  
+  console.log(`pathname`, pathName);
   const [ dialogUis, setDialogUis ] = useDialogUis();
   
 
   const exportUserData = () => {
-    com.downloadJSON({ userData: com.loadSetting("userData"), epoch: Date.now(), version: "1.0.0" }, "userData.json");
+    com.downloadJSON({ userData: com.loadSetting("userData"), epoch: Date.now(), version: "1.0.0" }, "warfarm_userData.json");
   }
 
   const importUserData = async () => {
@@ -112,6 +114,7 @@ export function MainLayoutComponent({children}){
   }
 
   const areThereDialogUis = dialogUis != null && dialogUis.length > 0;
+  const [ forceHomeBlink, setForceHomeBlink ] = useState(false);
 
   return (
     <div className='sized-remaining v-flex'>
@@ -119,18 +122,45 @@ export function MainLayoutComponent({children}){
         <div className="sized-content search-bar-global-container h-flex">
           <div className="sized-content h-flex flex-center" style={{ gap: '20px', justifyContent: 'flex-start' }}>
             <div className='sized-content h-flex' style={{ justifyContent: 'center', alignItems: 'center' }}>
-              <button onClick={() => router.push("/prime")} className='sized-content logo-button h-flex flex-center'><img style={{ minWidth: '70px' }} className='sized-content logo h-flex flex-center' src={`/warfarm/icons/logo_prime.svg`}/></button>
+              <button 
+                onClick={() => {
+                  if(pathName !== "/prime"){
+                    router.push("/prime");  
+                  }
+                  else{
+                    setForceHomeBlink(true);
+                    setTimeout(() => {
+                      setForceHomeBlink(false);
+                    }, 250);
+                  }
+                }} 
+                className='sized-content logo-button h-flex flex-center'
+              >
+                  <img style={{ minWidth: '70px' }} className='sized-content logo h-flex flex-center' src={`/warfarm/icons/logo_prime.svg`}/>
+              </button>
             </div>
             <div className='sized-content h-flex' style={{ gap: '10px'}}>
-                <IconButton label={'Home'}      iconUrl={`/warfarm/icons/home.svg`}     onClick={() => router.push('/prime')} className={'layout-header-button'} iconClassName={'layout-header-icon'} />
-                <IconButton label={'Explorer'}  iconUrl={`/warfarm/icons/explorer.svg`} onClick={() => router.push('/prime/explorer')} className={'layout-header-button'} iconClassName={'layout-header-icon'} />
-                <IconButton label={'About'}     iconUrl={`/warfarm/icons/question.svg`} onClick={() => router.push('/prime/about')} className={'layout-header-button'} iconClassName={'layout-header-icon'} />
+                <IconButton label={'Home'}      iconUrl={`/warfarm/icons/home.svg`}     highlight={pathName === "/prime"}          forceBlinking={forceHomeBlink}  onClick={() => router.push('/prime')} className={'layout-header-button'} iconClassName={'layout-header-icon'} />
+                <IconButton label={'Explorer'}  iconUrl={`/warfarm/icons/explorer.svg`} highlight={pathName === "/prime/explorer"} forceBlinking={null}  onClick={() => router.push('/prime/explorer')} className={'layout-header-button'} iconClassName={'layout-header-icon'} />
+                <IconButton label={'About'}     iconUrl={`/warfarm/icons/question.svg`} highlight={pathName === "/prime/about"}    forceBlinking={null}  onClick={() => router.push('/prime/about')} className={'layout-header-button'} iconClassName={'layout-header-icon'} />
               </div>
           </div>
           <SearchBar />
           <div className="sized-remaining h-flex flex-center" style={{ gap:'20px', justifyContent: 'flex-end' }}>
             <IconButton label={'Support Me'} iconUrl={`/warfarm/icons/heart.svg`} onClick={() => router.push("/prime/supportme")} className={'layout-header-button support-me-button'} iconClassName={'support-me-icon'} iconHeight='20px' />
-            <div className='sized-content v-flex' style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <div className='sized-content h-flex' style={{ justifyContent: 'center', alignItems: 'center' }}>
+              <ContextMenuButton 
+                iconUrl={`/warfarm/icons/info.svg`}
+                headerContent={<img src="/warfarm/icons/info.svg" style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
+              >
+                {
+                  (props) => (
+                    <>
+                      
+                    </>
+                  )
+                }
+              </ContextMenuButton>
               <ContextMenuButton
                 top='50px' 
                 className='global-settings-button'
@@ -162,14 +192,19 @@ export function MainLayoutComponent({children}){
                                   ))}
                                   onOrderConfirm={
                                     (_elemsIdxs) => { 
-                                      const missionPriorities = com.missionPrioritiesObservable.get(); 
+                                      const missionPriorities = com.missionPrioritiesObservable.get();
+
+                                      const newMissionPriorities = Object.fromEntries(_elemsIdxs
+                                        .map((elemIdx, index) => { 
+                                          const actualElem = Object.keys(missionPriorities)[elemIdx];
+                                          return [ actualElem, index ]; 
+                                        })
+                                      ); 
+
+                                      console.log(`order confirm`, _elemsIdxs, missionPriorities, newMissionPriorities);
+
                                       setMissionPriorities(
-                                        Object.fromEntries(_elemsIdxs
-                                          .map(elemIdx => { 
-                                            const actualElem = Object.keys(missionPriorities)[elemIdx];
-                                            return [ actualElem, elemIdx ]; 
-                                          })
-                                        )
+                                        newMissionPriorities
                                       ) 
                                   }}
                               />
@@ -202,7 +237,7 @@ export function MainLayoutComponent({children}){
         </div>
         <div className='sized-remaining main-content v-flex' style={{ marginBottom: '10px' }}>
           <div className="sized-remaining v-flex">{children}</div>
-          <div className='sized-content v-flex flex-center' style={{ marginTop: '50px', fontSize: 'small' }}>
+          <div className='sized-content v-flex flex-center' style={{ textAlign: 'center', marginTop: '50px', fontSize: 'small' }}>
             <div>This site is not endorsed by or affiliated with Digital Extremes Ltd.</div>
             <div>All images come from Warframe or from websites created and owned by Digital Extremes, who hold the copyright of Warframe.</div>
             <div>All trademarks and registered trademarks present in images are proprietary to Digital Extremes Ltd.</div>
@@ -257,8 +292,13 @@ export default function RootLayout({ children }) {
   return (
     <LazyLoaded
       fallback={
-        <div className="sized-remaining v-flex flex-center">
-          <FallbackObject/>
+        <div className="sized-remaining v-flex flex-center" style={{ gap: '10vh' }}>
+          {/* <FallbackObject/> */}
+          <img style={{ height: '30vh' }} src='/warfarm/icons/logo_prime.svg'/>
+          <div className='sized-content v-flex flex-center' style={{ padding: '20px' }}>
+            <div className='sized-content spinner-loader h-flex medium'></div>
+            <div className='sized-content h-flex'>Fetching object data...</div>
+          </div>
         </div>
       }
       loadFunc={async () => {

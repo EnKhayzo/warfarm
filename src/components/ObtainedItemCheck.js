@@ -12,7 +12,7 @@ export default function ObtainedItemCheck({ positionAbsolute=true, itemId, obtai
     
     const isObtained = com.objectIsFarmed(com.getObjectFromId(itemId), _obtainedComponents);
 
-    console.log(`is obtained?`, itemId, isObtained);
+    // console.log(`is obtained?`, itemId, isObtained);
 
     return (
             !isObtained ? null:

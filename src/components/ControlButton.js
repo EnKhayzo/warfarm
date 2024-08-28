@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import * as com from "../app/common.js"
@@ -9,7 +9,10 @@ const ControlButton = ({ rawObj, icon, vaulted, rarity, _labelHeading, _label, _
   const router = useRouter();
   const [labelHeading, setLabelHeading] = useState(_labelHeading); // Create a state variable
   const [label, setLabel] = useState(_label); // Create a state variable
-  const [labelFooter, setObtainedFooter] = useState(_labelFooter); // Create a state variable
+  const [labelFooter, setObtainedFooter] = useState(_labelFooter); // Create a state 
+  
+  const [ blinking, setBlinking ] = useState(false); // Create a state variable
+  const blinkingTimeout = useRef(null);
 
   // A function to handle the click and update the state
   const handleClick = (ev) => {
@@ -18,8 +21,20 @@ const ControlButton = ({ rawObj, icon, vaulted, rarity, _labelHeading, _label, _
       onClick(rawObj); // Call the passed onClick function
 
       if("required" in rawObj){ // TODO better way to discern a component from the other types?
-        setLabel(`${com.getUserDataComponentSetting(rawObj.componentFullName, "obtained")}/${rawObj.required}`);
+        setLabel(`${com.getUserDataComponentSetting(rawObj.id, "obtained")}/${rawObj.required}`);
       }
+      
+      // if(blinkingTimeout.current) { 
+      //   clearTimeout(blinkingTimeout.current); 
+      //   setBlinking(false);
+      //   blinkingTimeout.current = null;
+      // }
+      // else{
+      //   setBlinking(true);
+      //   blinkingTimeout.current = setTimeout(() => {
+      //     setBlinking(false);
+      //   }, 250);
+      // }
     }
   };
 
@@ -42,16 +57,16 @@ const ControlButton = ({ rawObj, icon, vaulted, rarity, _labelHeading, _label, _
     <div
       onClick={handleClick}
       onContextMenu={onContextMenu}
-      className={`control-button${rarity ? ` ${rarity}` : ``}`}
+      className={`control-button${rarity ? ` ${rarity}` : ``}${vaulted ? ` vaulted` : ``}${blinking ? ` blinking` : ``}`}
       style={{
-        opacity: vaulted ? '50%' : '100%'
+
       }}
     >
-      <img className='sized-content' src={icon} alt={label} style={{ height: '20px', marginBottom: '5px' }} />
-      { labelHeading ? <small className='sized-content' style={{ fontWeight: 'bold', fontSize: '10px', color: '#b2aca2' }}>{labelHeading}</small> : null }
-      { rawObj.category !== "components" && label ? <small className='sized-content' style={{ fontSize: '10px', color: '#b2aca2' }}>{label}</small> : null }
-      { rawObj.category === "components" ? <small className='sized-content' style={{ fontSize: '10px', color: '#b2aca2' }}>{`${obtained && obtained[rawObj.componentFullName] ? obtained[rawObj.componentFullName].obtained : '0'}/${rawObj.required}`}</small> : null }
-      { labelFooter ? <small className='sized-content' style={{ fontSize: 'xx-small', fontStyle: 'italic', color: '#b2aca2' }}>{labelFooter}</small> : null }
+      <img className='sized-content' src={icon} alt={label} style={{ height: '30px', marginBottom: '5px' }} />
+      { labelHeading ?                              <div className='sized-content' style={{ fontSize: 'small', fontWeight: 'bold', color: '#b2aca2' }}>{labelHeading}</div> : null }
+      { rawObj.category !== "components" && label ? <div className='sized-content' style={{ fontSize: 'small', color: '#b2aca2' }}>{label}</div> : null }
+      { rawObj.category === "components" ?          <div className='sized-content' style={{ fontSize: 'small', color: '#b2aca2' }}>{`${obtained && obtained[rawObj.id] ? obtained[rawObj.id].obtained : '0'}/${rawObj.required}`}</div> : null }
+      { labelFooter ?                               <div className='sized-content' style={{ fontSize: 'x-small', fontStyle: 'italic', color: '#b2aca2' }}>{labelFooter}</div> : null }
     </div>
   );
 

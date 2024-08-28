@@ -42,7 +42,10 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
 
   // Control buttons based on the active tab
   const getControlButtons = () => {
-    return com.getSearchResultRelatedObjects(id, category, type, activeTab, rawObj, { missionPriorities: missionPriorities, router: router });
+
+    const controlButtons = com.getSearchResultRelatedObjects(id, category, type, activeTab, rawObj, { missionPriorities: missionPriorities, router: router });
+    console.log(`contro lbuttons!`, id, controlButtons);
+    return controlButtons
   };
 
   return (
@@ -68,11 +71,11 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
       <div className='sized-content v-flex' style={{ gap: '0px' }}>
         <h2 
           className='sized-content h-flex flex-center' 
-          style={{ gap: '10px', margin: '0px', fontSize: '18px', position: 'relative' }}
+          style={{ gap: '10px', margin: '0px', fontSize: 'large', position: 'relative' }}
         >
-          {id}{vaulted ? <small style={{ marginLeft: '5px', fontSize: 'xx-small' }}>vaulted</small> : null }<TrackItemButton positionAbsolute={false} itemId={id}/>
+          {com.getObjectDisplayName(rawObj)}{vaulted ? <div style={{ marginLeft: '5px', fontSize: 'x-small' }}>vaulted</div> : null }<TrackItemButton positionAbsolute={false} itemId={id}/>
         </h2>
-        <small style={{ color: '#9d9488' }}>{category}{type ? ` - ${type}` : ``}</small>
+        <div style={{ color: '#9d9488' }}>{category}{type ? ` - ${type}` : ``}</div>
       </div>
 
       { 
@@ -96,7 +99,7 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
                 border: '0px',
                 padding: '5px 5px',
                 cursor: 'pointer',
-                fontSize: 'x-small',
+                fontSize: 'small',
                 borderRadius: '5px',
                 backgroundColor: activeTab.localeCompare(tab.toLowerCase()) == 0 ? '#2a2d2f' : '#202325', // 'rgb(49, 47, 54)' : 'rgb(49, 47, 54)', //'#2a2d2f' : '#202325',
                 opacity: activeTab.localeCompare(tab.toLowerCase()) == 0 ? '100%' : '50%'

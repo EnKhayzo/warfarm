@@ -32,7 +32,7 @@ const SearchBar = () => {
 
             if(!("Items" in filters) || filters.Items == true){
                 // Items
-                allResults = [ ...allResults, ...items
+                allResults = [ ...allResults, ...Object.values(items)
                     .filter(item => item.name.toLowerCase().includes(value.toLowerCase()))
                     .slice(0, Math.max(0, maxResults-allResults.length))
                     .map(item => ({
@@ -46,14 +46,14 @@ const SearchBar = () => {
 
             if(!("Components" in filters) || filters.Components == true){
                 // Components
-                allResults = [ ...allResults, ...components
-                    .filter(component => component.componentFullName.toLowerCase().includes(value.toLowerCase()))
+                allResults = [ ...allResults, ...Object.values(components)
+                    .filter(component => component.fullName.toLowerCase().includes(value.toLowerCase()))
                     .slice(0, Math.max(0, maxResults-allResults.length))
                     .map(component => ({
                         ...component,
-                        id: component.componentFullName,
+                        id: component.id,
                         category: "Components",
-                        imageUrl: `/warfarm/images/${component.componentFullName}.png`,
+                        imageUrl: `/warfarm/images/${component.fullName}.png`,
                     }))
                 ];
             }
@@ -74,7 +74,7 @@ const SearchBar = () => {
 
             if(!("Missions" in filters) || filters.Missions == true){
                 // Missions
-                allResults = [ ...allResults, ...missions
+                allResults = [ ...allResults, ...Object.values(missions)
                     .filter(mission => `${mission.name}, ${mission.planet}`.toLowerCase().includes(value.toLowerCase()))
                     .slice(0, Math.max(0, maxResults-allResults.length))
                     .map(mission => ({
@@ -86,6 +86,8 @@ const SearchBar = () => {
                     }))
                 ];
             }
+
+            console.log(`all results!`, allResults);
 
             setResults(allResults);
         } 

@@ -136,7 +136,8 @@ const MissionTab = ({component, rarityPriorities}) => {
           }}
         >
           { 
-            Object.entries(missionGroups).map(([missionId, missionGroup], index) => (
+            Object.entries(missionGroups)
+              .map(([missionId, missionGroup], index) => (
                 <div 
                     key={`${index}-${missionGroup.infoObj.name}`} 
                     onClick={() => router.push(missionGroup.infoObj.route)}
@@ -208,7 +209,7 @@ export default function ComponentPage({ name, pathObj }) {
         <div className='sized-remaining h-flex'>
             <div className='sized-remaining v-flex flex-center' style={{ gap: '60px' }}>
                 <div className='sized-content h-flex' style={{ marginTop: '20px' }}></div>
-                { component.vaulted ? (<div className='sized-content h-flex flex-center'>{`${component.componentFullName} is`}<span style={{ fontWeight: 'bold', whiteSpace: 'pre' }}> vaulted</span>.</div>) : null}
+                { component.vaulted ? (<div className='sized-content h-flex flex-center'>{`${component.fullName} is`}<span style={{ fontWeight: 'bold', whiteSpace: 'pre' }}> vaulted</span>.</div>) : null}
                 <div className='sized-content v-flex flex-center'>
                   {
                     component.parentItem == null ? null:
@@ -221,7 +222,7 @@ export default function ComponentPage({ name, pathObj }) {
                         <div>{component.parentItem}</div>
                       </button>
                   }
-                  <MainItemTitleComponent itemId={component.id} iconUrl={`/warfarm/images/${component.componentFullName}.png`} label={pathObj.id} />
+                  <MainItemTitleComponent itemId={component.id} iconUrl={`/warfarm/images/${component.fullName}.png`} label={pathObj.id} />
                   <div style={{ marginTop: '5px' }}><ComponentAddButtons component={component}/></div>
                 </div>
                 <TabComponent

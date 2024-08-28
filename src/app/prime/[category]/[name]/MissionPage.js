@@ -208,7 +208,7 @@ export default function RelicPage({ name, pathObj }) {
             <div className='sized-remaining h-flex flex-center'>
                 <div className='sized-remaining v-flex flex-center' style={{ gap: '50px' }}>
                     <div className='sized-content h-flex' style={{ marginTop: '20px' }}></div>
-                    <MainItemTitleComponent itemId={mission.id} iconUrl={`/warfarm/images/${mission.planet}.png`} label={pathObj.id} labelFooter={mission.detailName} />
+                    <MainItemTitleComponent itemId={mission.id} iconUrl={`/warfarm/images/${mission.planet}.png`} label={pathObj.id} labelFooter={mission.type} />
                     <TabComponent
                         defaultTab={"Rotations"}
                         tabs={{

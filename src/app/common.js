@@ -98,46 +98,46 @@ export function clearUserDataObtainedItems(){
   saveSetting("userData", userData);
 }
 
-export function setUserDataComponentSetting(componentFullName, name, value){
+export function setUserDataComponentSetting(componentId, name, value){
     let userData = loadSetting("userData");
 
     if(userData == null) userData = {};
 
     if(!("componentsObtained" in userData)) userData.componentsObtained = {};
-    if(!(componentFullName in userData.componentsObtained)) userData.componentsObtained[componentFullName] = {};
+    if(!(componentId in userData.componentsObtained)) userData.componentsObtained[componentId] = {};
 
 
-    userData.componentsObtained[componentFullName][name] = value;
+    userData.componentsObtained[componentId][name] = value;
     obtainedObservable.set(userData.componentsObtained);
 
     saveSetting("userData", userData);
 }
 
-export function incrementUserDataComponentObtained(componentFullName){
-  let oldObtained = Number(getUserDataComponentSetting(componentFullName, "obtained"));
+export function incrementUserDataComponentObtained(componentId){
+  let oldObtained = Number(getUserDataComponentSetting(componentId, "obtained"));
   oldObtained++;
-  if(oldObtained > Number(getObjectFromId(componentFullName).required)) oldObtained = 0;
+  if(oldObtained > Number(getObjectFromId(componentId).required)) oldObtained = 0;
 
-  setUserDataComponentSetting(componentFullName, "obtained", oldObtained);
+  setUserDataComponentSetting(componentId, "obtained", oldObtained);
 }
 
-export function decrementUserDataComponentObtained(componentFullName){
-  let oldObtained = Number(getUserDataComponentSetting(componentFullName, "obtained"));
+export function decrementUserDataComponentObtained(componentId){
+  let oldObtained = Number(getUserDataComponentSetting(componentId, "obtained"));
   oldObtained--;
-  if(oldObtained < 0) oldObtained = Number(getObjectFromId(componentFullName).required);
+  if(oldObtained < 0) oldObtained = Number(getObjectFromId(componentId).required);
 
-  setUserDataComponentSetting(componentFullName, "obtained", oldObtained);
+  setUserDataComponentSetting(componentId, "obtained", oldObtained);
 }
 
 /** setting name refers to the setting inside the component, can be 'obtained' or others */
-export function getUserDataComponentSetting(componentFullName, settingName){
+export function getUserDataComponentSetting(componentId, settingName){
     const userData = loadSetting("userData");
 
     if(userData == null) return null;
     if(!("componentsObtained" in userData)) return null;
-    if(!(componentFullName in userData.componentsObtained)) return null;
+    if(!(componentId in userData.componentsObtained)) return null;
 
-    return userData.componentsObtained[componentFullName][settingName];
+    return userData.componentsObtained[componentId][settingName];
 }
 
 export function getObtainedComponents(){
@@ -338,28 +338,29 @@ export function getRelicType(relicName){
 
 export function getRelicRewards(relic){
     if(relic.rewards == null) return [];
-    return [ ...Object.entries(relic.rewards).map(([ tier, rewards ]) => rewards.map(reward => ({ rewardFullName: reward, rarity: tier }))).flat(1) ]
+    return [ ...Object.entries(relic.rewards).map(([ rewardFullName, rarity ]) => ({ rewardFullName: rewardFullName, rarity: rarity.rarity })).flat(1) ]
 }
 
-export function getRelicsThatDropComponent(componentFullName){
-    return componentFullName in relicRewardComponentMap.map ?
-        relicRewardComponentMap.map[componentFullName]
-        .map(relicId => relicRewardComponentMap.relics[relicId])
-        .map(relicName => [ relicName, relics[relicName] ])
-        .map(([ relicName, relic ]) => ({
-            vaulted: relic.vaulted,
-            rarity: getRelicRewards(relic).find(reward => reward.rewardFullName.localeCompare(componentFullName) == 0).rarity,
-            relic: relic
-        }))
+export function getRelicsThatDropComponent(componentId){
+  // console.log(`getRelicsThatDropComponent`, componentId);
+    return componentId in relicRewardComponentMap.map ?
+        relicRewardComponentMap.map[componentId]
+          .map(relicId => relicRewardComponentMap.relics[relicId])
+          .map(relicName => [ relicName, relics[relicName] ])
+          .map(([ relicName, relic ]) => { return ({
+              vaulted: relic.vaulted,
+              rarity: getRelicRewards(relic).find(reward => reward.rewardFullName.localeCompare(componentId) == 0).rarity,
+              relic: relic
+          })})
       : [];
 }
 
 export function getMissionRelicRewards(mission){
-    if(!mission.relicRewards) { console.warn(`mission has no relicRewards!`, mission); return; }
+    if(!mission.rewards) { console.warn(`mission has no relicRewards!`, mission); return; }
 
-    const missionRelicRewards = Object.keys(mission.relicRewards);
+    const missionRelicRewards = Object.keys(mission.rewards).filter(reward => reward.includes("Relic"));
 
-    return Object.entries(relics.default)
+    return Object.entries(relics)
         .filter(([ relicName, relic ]) => missionRelicRewards.findIndex(relicName => relicName.localeCompare(relic.name) == 0) != -1)
         .map(([ relicName, relic ]) => getRelicRewards(relic).map(reward => { reward.relicName = relic.name; return reward; }))
         .flat(1);
@@ -369,15 +370,18 @@ export function getMissionRelicRewards(mission){
  * each result contains the mission and relic that drop said component, plus some QoL fields that would be 
  * obtainable from those two 
 */
-export function getMissionsThatDropComponent(componentFullName){
-    return  componentFullName in missionRewardComponentMap.map ? 
-              Object.entries(missionRewardComponentMap.map[componentFullName])
+export function getMissionsThatDropComponent(componentId){
+    return  componentId in missionRewardComponentMap.map ? 
+              Object.entries(missionRewardComponentMap.map[componentId])
+                .map(([ missionIdx, relicIdList ]) => [ missionRewardComponentMap.missions[Number(missionIdx)], relicIdList ])
+                // this (filter) is only necessary if you filter the source missions array, make sure it's the same exact condition
+                .filter(([ missionId, relicIdList ]) => !missionId.includes("Event") && !missionId.includes(":"))
                 .map(([ missionId, relicIdList ]) => relicIdList.map(relicId => ({
                   vaulted: relics[missionRewardComponentMap.relics[relicId]].vaulted, 
-                  rarity: getRelicRewards(relics[missionRewardComponentMap.relics[relicId]]).find(reward => reward.rewardFullName.localeCompare(componentFullName) == 0).rarity, 
+                  rarity: getRelicRewards(relics[missionRewardComponentMap.relics[relicId]]).find(reward => reward.rewardFullName.localeCompare(componentId) == 0).rarity, 
                   mission: missions[missionId], 
                   relic: relics[missionRewardComponentMap.relics[relicId]],
-                  rotations: missions[missionId].relicRewards[missionRewardComponentMap.relics[relicId]]
+                  rotations: missions[missionId].rewards[`${missionRewardComponentMap.relics[relicId]} Relic`]
                 })))
               .flat(1)
       : []
@@ -398,7 +402,6 @@ let items = null;
 let relics = null;
 let missions = null;
 
-let componentMap = null;
 let relicRewardComponentMap = null;
 let missionRewardComponentMap = null;
 let idMap = null;
@@ -413,26 +416,27 @@ export function getInitialized() { return initialized; }
 export async function initialize(local=false) {
     if(initialized) return;
  
-    items = await import(`../../public/data/items.json`);
-    relics = await import(`../../public/data/relics.json`);
-    missions = await import(`../../public/data/missions.json`);
+    items = (await import(`../../public/data/items.json`)).default;
+    relics = (await import(`../../public/data/relics.json`)).default;
+    missions = filterDict(
+      (await import(`../../public/data/missions.json`)).default, 
+      ([ id, mission ]) => !id.includes("Event") && !id.includes(":")
+    );
 
-    components = Object.values((await import(`../../public/data/components.json`)).default);
+    components = (await import(`../../public/data/components.json`)).default;
 
-    componentMap = await import(`../../public/data/indices/component_map.json`);
     relicRewardComponentMap = await import(`../../public/data/indices/relic_reward_component_map.json`);
     missionRewardComponentMap = await import(`../../public/data/indices/mission_reward_component_map.json`);
     idMap = await import(`../../public/data/indices/id_map.json`);
 
-    componentMap = Object.fromEntries(components.map((component, index) => [ component.componentFullName, index ]));
     
   
     objectPaths = []
 
-    objectPaths = [ ...objectPaths, ...await getAllItems().map(item =>                                  ({ category: "items", name: item.name.replaceAll(" ", "").replaceAll("&", ""), id: item.name})).flat(1) ];
-    objectPaths = [ ...objectPaths, ...await getAllComponents().map(component =>                        ({ category: "components", name: component.componentFullName.replaceAll(" ", "").replaceAll("&", ""), id: component.componentFullName})).flat(1) ];
-    objectPaths = [ ...objectPaths, ...Object.entries(await getAllRelics()).map(([relicName, relic]) => ({ category: "relics", name: relicName.replaceAll(" ", "").replaceAll("&", ""), id: relicName })).flat(1) ];
-    objectPaths = [ ...objectPaths, ...await getAllMissions().map(mission =>                            ({ category: "missions", name: `${mission.name}${mission.planet}`, id: `${mission.name}, ${mission.planet}`})).flat(1) ];
+    objectPaths = [ ...objectPaths, ...Object.entries(await getAllItems()).map(([ id, item ]) =>                                  ({ category: "items",       name: item.name.replaceAll(" ", "").replaceAll("&", ""), id: id })).flat(1) ];
+    objectPaths = [ ...objectPaths, ...Object.entries(await getAllComponents()).map(([ id, component ]) =>                        ({ category: "components",  name: id.replaceAll(" ", "").replaceAll("&", ""), id: id })).flat(1) ];
+    objectPaths = [ ...objectPaths, ...Object.entries(await getAllRelics()).map(([ id, relic ]) =>                                ({ category: "relics",      name: id.replaceAll(" ", "").replaceAll("&", ""), id: id })).flat(1) ];
+    objectPaths = [ ...objectPaths, ...Object.entries(await getAllMissions()).map(([ id, mission ]) =>                            ({ category: "missions",    name: `${mission.name}${mission.planet}`, id: id })).flat(1) ];
   
     objectPaths = Object.fromEntries(objectPaths.map(path => [ path.name, path ]));
 
@@ -450,10 +454,10 @@ export function getIdMap() { return idMap; }
 
 export function sleep(ms) { return new Promise(r => setTimeout(r, ms)) }
 
-export function getAllItems(){ return items ? items.default : null; }
-export function getAllComponents(){ return components ? components : null; }
-export function getAllRelics(){ return relics ? relics.default : null; }
-export function getAllMissions(){ return missions ? missions.default.filter(mission => !mission.planet.includes("Mission Types")) : null; }
+export function getAllItems(){ return items; }
+export function getAllComponents(){ return components; }
+export function getAllRelics(){ return relics; }
+export function getAllMissions(){ return missions; }
 
 export async function getAllObjects(category) {
   let result = null;
@@ -536,12 +540,12 @@ export function getRelicTypePriorities(){
 
 export function getItemTypePriorities(){
   return {
-    "warframes": 1,
-    "primary weapons": 2,
-    "secondary weapons": 3,
-    "melee weapons": 4,
-    "arch weapons": 5,
-    "companions": 6
+    "Warframe": 1,
+    "Primary Weapon": 2,
+    "Secondary Weapon": 3,
+    "Melee Weapon": 4,
+    "Arch Gun": 5,
+    "Companion": 6
   }
 }
 
@@ -567,6 +571,8 @@ export function getItemTypePriorities(){
 export function getSearchResultRelatedObjectsSingle(category, activeTab, objects, router=null){
   let res = null;
 
+  // console.log(`getSearchResultRelatedObjectsSingle called`, category, activeTab, objects);
+
   _match(category, {
     "Items": () => {
       const item = objects.item;
@@ -574,24 +580,24 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
         "components": () => {
           const component = objects.component;
           res = {
-            icon: `/warfarm/images/${component.componentFullName}.png`, 
+            icon: `/warfarm/images/${component.fullName}.png`, 
             vaulted: item ? item.vaulted : false, 
             rarity: (() => { 
                 // take the rarity with the highest chance
                 const rarities = { "common": 0, "uncommon": 1, "rare": 2 };
-                      return getRelicsThatDropComponent(component.componentFullName).map(relic => [ relic.relic.name, relic ])
-                        .filter(([ relicName, relic ]) => (item ? item.vaulted:false) || !relic.vaulted)  
-                        .map(([ relicName, relic ]) => relic.rarity)
-                        .toSorted((rarityA, rarityB) => rarities[rarityA] - rarities[rarityB])
-                        [0]
+                return getRelicsThatDropComponent(component.id).map(relic => [ relic.relic.name, relic ])
+                  .filter(([ relicName, relic ]) => (item ? item.vaulted:false) || !relic.vaulted)  
+                  .map(([ relicName, relic ]) => relic.rarity)
+                  .toSorted((rarityA, rarityB) => rarities[rarityA] - rarities[rarityB])
+                  [0]
             })(),
-            labelHeading: `${component.component}`, 
+            labelHeading: `${component.name}`, 
             labelFooter: null,
-            label: `${component.obtained ?? getUserDataComponentSetting(component.componentFullName, "obtained") ?? '0'}/${component.required}`, 
-            onClick: () => incrementUserDataComponentObtained(component.componentFullName), 
+            label: `${component.obtained ?? getUserDataComponentSetting(component.id, "obtained") ?? '0'}/${component.required}`, 
+            onClick: () => incrementUserDataComponentObtained(component.id), 
             type: item ? item.type:"",
             rawObj: component,
-            id: `${component.componentFullName}`,
+            id: `${component.id}`,
             route: getObjectPathNameFromIdObj(component, "Components"),
             category: category,
             tab: activeTab,
@@ -605,9 +611,9 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
             icon: `/warfarm/images/${relicName.split(" ")[0].trim()}.png`,
             vaulted: relicInfo.vaulted, 
             rarity: relicInfo.rarity, 
-            componentName: component.component,
-            componentFullName: component.componentFullName,
-            labelHeading: `${component.component}`, 
+            componentName: component.name,
+            componentFullName: component.fullName,
+            labelHeading: `${component.name}`, 
             labelFooter: null,
             label: `${relicName}`, 
             onClick: () => router.push(getObjectPathNameFromIdObj(relicInfo.relic)),
@@ -618,6 +624,7 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
             tab: activeTab,
             searchObjId: `${category}-${activeTab}-(${item?item.id:""}-${component.id}-${relicName})`
           });
+          // console.log(`res`, res);
         },
         "missions": () => {
           const component = objects.component;
@@ -626,13 +633,13 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
             icon: `/warfarm/images/${missionName.split(",")[1].trim()}.png`,
             vaulted: mission.vaulted, 
             rarity: mission.rarity, 
-            labelHeading: `${component.component}`, 
+            labelHeading: `${component.name}`, 
             labelFooter: `${mission.relic.name ?? '?'} (${
                 mission.rotations
                     .toSorted((a,b) => Number(a.perc.replace("%", "")) - Number(b.perc.replace("%", "")))
                     .map(rotation => `${rotation.rotation ?? '?'} - ${rotation.perc ?? '?'}`).join(", ")
             })`,
-            label: `${missionName} (${mission.mission.detailName})`, 
+            label: `${missionName} (${mission.mission.type})`, 
             onClick: () => router.push(getObjectPathNameFromIdObj(mission.mission)),
             rawObj: mission,
             id: `${mission.mission.name}, ${mission.mission.planet}`,
@@ -654,7 +661,7 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
             vaulted: relic.vaulted, 
             rarity: relic.rarity, 
             componentName: component.componenName, 
-            componentFullName: component.componentFullName, 
+            componentFullName: component.fullName, 
             labelHeading: `${relicName}`, 
             labelFooter: null,
             label: null, 
@@ -673,7 +680,7 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
             icon: `/warfarm/images/${missionName.split(",")[1].trim()}.png`,
             vaulted: mission.vaulted, 
             rarity: mission.rarity, 
-            labelHeading: `${mission.mission.detailName}`, 
+            labelHeading: `${mission.mission.type}`, 
             labelFooter: `${mission.relic.name ?? '?'} (${
                 mission.rotations
                     .toSorted((a,b) => Number(a.perc.replace("%", "")) - Number(b.perc.replace("%", "")))
@@ -697,16 +704,16 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
         "components": () => {
           const { tier, component } = objects.rewardEntry;
           res = ({
-            icon: `/warfarm/images/${component.componentFullName}.png`, 
+            icon: `/warfarm/images/${component.fullName}.png`, 
             vaulted: relic.vaulted, 
             rarity: tier,
-            labelHeading: `${component.componentFullName}`, 
+            labelHeading: `${component.fullName}`, 
             labelFooter: null,
-            label: `${component.obtained ?? getUserDataComponentSetting(component.componentFullName, "obtained") ?? '0'}/${component.required}`, 
-            onClick: (rawObj) => incrementUserDataComponentObtained(component.componentFullName), 
+            label: `${component.obtained ?? getUserDataComponentSetting(component.id, "obtained") ?? '0'}/${component.required}`, 
+            onClick: () => incrementUserDataComponentObtained(component.id), 
             type: relic.type,
             rawObj: component,
-            id: `${component.componentFullName}`,
+            id: `${component.id}`,
             route: getObjectPathNameFromIdObj(component, "Components"),
             category: category,
             tab: activeTab,
@@ -717,15 +724,15 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
           const mission = objects.mission;
           res = ({
             icon: `/warfarm/images/${mission.planet}.png`,
-            labelHeading: `${mission.detailName}`, 
+            labelHeading: `${mission.type}`, 
             labelFooter: `(${
-                Object.values(mission.relicRewards[relic.name])
+                Object.values(mission.rewards[`${relic.name} Relic`])
                     .toSorted((a,b) => Number(a.perc.replace("%", "")) - Number(b.perc.replace("%", "")))
                     .map(rotation => `${rotation.rotation ?? '?'} - ${rotation.perc ?? '?'}`).join(", ")
             })`,
             label: `${mission.planet}, ${mission.name}`, 
             onClick: () => router.push(getObjectPathNameFromIdObj(mission)),
-            rotations: mission.relicRewards,
+            rotations: mission.rewards,
             rawObj: mission,
             id: `${mission.name}, ${mission.planet}`,
             route: getObjectPathNameFromIdObj(mission, "Missions"),
@@ -740,12 +747,12 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
       const mission = objects.mission;
       _match(activeTab, {
         "relics": () => {
-          const [ relicName, relic ] = objects.relicEntry;
+          const [ relicMissionName, relic ] = objects.relicEntry;
           res = ({
-            icon: `/warfarm/images/${relicName.split(" ")[0].trim()}.png`,
-            vaulted: relics[relicName].vaulted, 
+            icon: `/warfarm/images/${relicMissionName.split(" ")[0].trim()}.png`,
+            vaulted: relics[relicMissionName.replace("Relic", "").trim()].vaulted, 
             rarity: null, 
-            labelHeading: `${relicName}`, 
+            labelHeading: `${relicMissionName.replace("Relic", "").trim()}`, 
             label: null,
             labelFooter: `(${
                 Object.values(relic)
@@ -754,11 +761,11 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
             })`, 
             onClick: () => router.push(getObjectPathNameFromIdObj(relic)),
             rawObj: relic,
-            id: `${relicName}`,
-            route: getObjectPathNameFromIdObj(relics[relicName], "Relics"),
+            id: `${relicMissionName.replace("Relic").trim()}`,
+            route: getObjectPathNameFromIdObj(relics[relicMissionName.replace("Relic", "").trim()], "Relics"),
             category: category,
             tab: activeTab,
-            searchObjId: `${category}-${activeTab}-(${mission.id}-${relicName})`
+            searchObjId: `${category}-${activeTab}-(${mission.id}-${relicMissionName.replace("Relic", "").trim()})`
           });
         }
       })
@@ -780,23 +787,23 @@ export function sortRelicFunc(a, b, relicTypePriorities, rarityPriorities){
   );
 }
 
-export function sortMissionFunc(relicA, relicB, a, b, missionTypesPriorities) {
+export function sortMissionFunc(missionA, missionB, relicA, relicB, missionTypesPriorities) {
     return  ( 
                 Math.max(
-                    ...b.relicRewards[relicB.name]
+                    ...missionB.rewards[`${relicB.id} Relic`]
                         .map(rotation => Number(rotation.perc.replace("%", "")))
                 )
                 -
                 Math.max(
-                    ...a.relicRewards[relicA.name]
+                    ...missionA.rewards[`${relicA.id} Relic`]
                         .map(rotation => Number(rotation.perc.replace("%", "")))
                 )
             )
             ||
             (
-              (missionTypesPriorities[a.detailName] || Infinity) 
+              (missionTypesPriorities[missionA.type] || -Infinity) 
               - 
-              (missionTypesPriorities[b.detailName] || Infinity) 
+              (missionTypesPriorities[missionB.type] || -Infinity) 
           )
 }
 
@@ -822,21 +829,23 @@ export function getSearchResultRelatedObjects(name, category, type, activeTab, r
       _match(activeTab, {
         "components": () => {
           result = [
-              ...(item.requiredComponents ? 
-                      item.requiredComponents.map(component => ( 
-                        getSearchResultRelatedObjectsSingle(category, activeTab, { item, component }, router) 
-                      ))
-                      .toSorted((a, b) => rarityPriorities[a.rarity]-rarityPriorities[b.rarity])
+              ...(item.components ? 
+                      Object.keys(item.components)
+                        .map(componentId => components[componentId])
+                        .map(component => ( 
+                          getSearchResultRelatedObjectsSingle(category, activeTab, { item, component }, router) 
+                        ))
+                        .toSorted((a, b) => rarityPriorities[a.rarity]-rarityPriorities[b.rarity])
                   : []
               )
           ];
         },
         "relics": () => {
           result = [
-              ...(item.requiredComponents ?
-                      item.requiredComponents
+              ...(item.components ?
+                        Object.keys(item.components).map(componentId => components[componentId])
                           .map(component => {
-                                return getRelicsThatDropComponent(component.componentFullName).map(relic => [ relic.relic.name, relic ])
+                                return getRelicsThatDropComponent(component.id).map(relic => [ relic.relic.name, relic ])
                                   .toSorted(([ relicNameA, relicA ], [ relicNameB, relicB ]) => (relicB.vaulted ? -1 : 1) - (relicA.vaulted ? -1 : 1))
                                   .map((relicEntry) => (
                                     getSearchResultRelatedObjectsSingle(category, activeTab, { item, component, relicEntry }, router) 
@@ -850,12 +859,12 @@ export function getSearchResultRelatedObjects(name, category, type, activeTab, r
         },
         "missions": () => {
           result = [
-              ...(item.requiredComponents ?
-                      item.requiredComponents
+              ...(item.components ?
+                        Object.keys(item.components).map(componentId => components[componentId])
                           .map(component => {
-                                return getMissionsThatDropComponent(component.componentFullName).map(mission => [ `${mission.mission.name}, ${mission.mission.planet}`, mission ])
-                                  .filter(([ missionName, mission ]) => !missionName.includes("Mission Types"))
-                                  .toSorted(([ ka, a ], [ kb, b ]) => sortMissionFunc(a.relic, b.relic, a.mission, b.mission, missionTypesPriorities))
+                                return getMissionsThatDropComponent(component.id).map(mission => [ `${mission.mission.name}, ${mission.mission.planet}`, mission ])
+                                  // .filter(([ missionName, mission ]) => !missionName.includes("Mission Types"))
+                                  .toSorted(([ ka, a ], [ kb, b ]) => sortMissionFunc(a.mission, b.mission, a.relic, b.relic, missionTypesPriorities))
                                   .map((missionEntry) => (
                                     getSearchResultRelatedObjectsSingle(category, activeTab, { item, component, missionEntry }, router) 
                                   ))
@@ -873,11 +882,11 @@ export function getSearchResultRelatedObjects(name, category, type, activeTab, r
         "relics": () => {
           result = [
               ...(
-                  getRelicsThatDropComponent(component.componentFullName).map(relic => [ relic.relic.name, relic ])
+                  getRelicsThatDropComponent(component.id).map(relic => [ relic.relic.name, relic ])
                     // .toSorted((a, b) => (b.vaulted - a.vaulted) || (rarityPriorities[b.rarity] - rarityPriorities[a.rarity]))    
-                    .map((relicEntry) => (
+                    .map((relicEntry) => { console.log(`got relic entry final`, relicEntry); return (
                       getSearchResultRelatedObjectsSingle(category, activeTab, { component, relicEntry }, router) 
-                    ))
+                    )})
                 //   : []
               )
               .flat(1)
@@ -887,9 +896,9 @@ export function getSearchResultRelatedObjects(name, category, type, activeTab, r
         "missions": () => {
           result = [
               ...(
-                        getMissionsThatDropComponent(component.componentFullName).map(mission => [ `${mission.mission.name}, ${mission.mission.planet}`, mission ])
+                        getMissionsThatDropComponent(component.id).map(mission => [ `${mission.mission.name}, ${mission.mission.planet}`, mission ])
                           .filter(([ missionName, mission ]) => !missionName.includes("Mission Types"))
-                          .toSorted(([ ka, a ], [ kb, b ]) => sortMissionFunc(a.relic, b.relic, a.mission, b.mission, missionTypesPriorities))
+                          .toSorted(([ ka, a ], [ kb, b ]) => sortMissionFunc(a.mission, b.mission, a.relic, b.relic, missionTypesPriorities))
                           .map((missionEntry) => (
                             getSearchResultRelatedObjectsSingle(category, activeTab, { component, missionEntry }, router) 
                           ))
@@ -907,31 +916,31 @@ export function getSearchResultRelatedObjects(name, category, type, activeTab, r
           result = [
               ...(relic.rewards ? 
                       Object.entries(relic.rewards)
-                          .toSorted(([ tierA, rewardsA ], [ tierB, rewardsB ]) => rarityPriorities[tierA]-rarityPriorities[tierB])
-                          .map(([ tier, rewards ]) => rewards.map(reward => ({ tier, reward })))
-                          .flat(1)
-                          .map(({ tier, reward  }) => ({ tier, component: components[componentMap[reward]] }))
-                          .filter(el => el && el.component)
-                          .map((rewardEntry) => (
+                          .toSorted((rewardA, rewardB) => rarityPriorities[rewardA[1].rarity]-rarityPriorities[rewardB[1].rarity])
+                          .map(([ rewardFullName, reward ]) => { console.log(`got`, rewardFullName, reward); return ({ tier: reward.rarity, reward: rewardFullName })})
+                          .map(({ tier, reward  }) => { console.log(`got2`, tier, reward); return ({ tier, component: components[reward] })})
+                          // .filter(component => component!=null && component.name!=null)
+                          .map((rewardEntry) => { console.log(`reward entry`, rewardEntry); return (
                             getSearchResultRelatedObjectsSingle(category, activeTab, { relic, rewardEntry }, router) 
-                          ))
+                          )})
                   : []
               )
               .flat(1)
           ]
+          console.log(`result`, result);
         },
         "missions": () => {
           result = [
               ...(
-                  missions.default
-                      .filter(mission => !mission.planet.includes("Mission Types") && "relicRewards" in mission)
-                      .filter(mission => Object.keys(mission.relicRewards)
-                          .some(relicName => relicName.localeCompare(relic.name) == 0)
+                  Object.values(missions)
+                      .filter(mission => !mission.planet.includes("Mission Types") && "rewards" in mission)
+                      .filter(mission => Object.keys(mission.rewards).filter(reward => reward.includes("Relic"))
+                          .some(relicName => relicName.localeCompare(`${relic.name} Relic`) == 0)
                       )
-                      .toSorted((a, b) => sortMissionFunc(relic, relic, a, b, missionTypesPriorities))
-                      .map(mission => (
+                      .toSorted((a, b) => sortMissionFunc(a, b, relic, relic, missionTypesPriorities))
+                      .map(mission => {  console.log(`got mission`, mission); return (
                         getSearchResultRelatedObjectsSingle(category, activeTab, { relic, mission }, router) 
-                      ))
+                      )})
               )
               .flat(1)
           ]
@@ -944,7 +953,7 @@ export function getSearchResultRelatedObjects(name, category, type, activeTab, r
         "relics": () => {
           result = [
               ...(
-                  Object.entries(mission.relicRewards)
+                  Object.entries(mission.rewards).filter(([ reward, rotations ]) => reward.includes("Relic"))
                       .map((relicEntry) => (
                         getSearchResultRelatedObjectsSingle(category, activeTab, { mission, relicEntry }, router) 
                       ))
@@ -1045,7 +1054,7 @@ export function getObjectFromId(itemId){
 
   if(!idMap[itemId]) { console.warn(`item not found in idMap!`, itemId); return null; }
 
-  let [ itemIdx, category ] = idMap[itemId];
+  let category = idMap[itemId];
 
 
   if(!category) console.warn(`category is undefined! you're about to get an error`);
@@ -1053,11 +1062,11 @@ export function getObjectFromId(itemId){
   category = capitalizeFirstLetter(category);
 
   _match(category, {
-    "Items":      () => { res = items[itemIdx]; },
-    "Components": () => { res = components.find(component => component.componentFullName.localeCompare(itemId) == 0) },
-    "Relics":     () => { res = relics[itemId] },
-    "Missions":   () => { res = missions[itemIdx] } //missions.find(mission => `${mission.name}, ${mission.planet}`.localeCompare(itemId) == 0) },
-  })
+    "Items":      () => { res = items[itemId]; },
+    "Components": () => { res = components[itemId]; },
+    "Relics":     () => { res = relics[itemId]; },
+    "Missions":   () => { res = missions[itemId]; }
+  });
 
   return res;
 }
@@ -1067,10 +1076,12 @@ export function getObjectId(rawObj, category=null){
 
   category = capitalizeFirstLetter(category);
 
-  return category.localeCompare("Items") == 0 ? rawObj.name :
-      category.localeCompare("Components") == 0 ? rawObj.componentFullName :
-      category.localeCompare("Relics") == 0 ? rawObj.name :
-      category.localeCompare("Missions") == 0 ? `${rawObj.name}, ${rawObj.planet}` : null
+  return rawObj.id;
+
+  // return category.localeCompare("Items") == 0 ? rawObj.id :
+  //     category.localeCompare("Components") == 0 ? rawObj.id :
+  //     category.localeCompare("Relics") == 0 ? rawObj.id :
+  //     category.localeCompare("Missions") == 0 ? rawObj.id : null
 }
 
 export function getObjectIcon(rawObj, category=null){
@@ -1079,7 +1090,7 @@ export function getObjectIcon(rawObj, category=null){
   category = capitalizeFirstLetter(category);
 
   return category.localeCompare("Items") == 0 ? `/warfarm/images/${rawObj.name}.png` :
-      category.localeCompare("Components") == 0 ? `/warfarm/images/${rawObj.componentFullName}.png` :
+      category.localeCompare("Components") == 0 ? `/warfarm/images/${rawObj.fullName}.png` :
       category.localeCompare("Relics") == 0 ? `/warfarm/images/${rawObj.tier}.png` :
       category.localeCompare("Missions") == 0 ? `/warfarm/images/${rawObj.planet}.png` : null
 }
@@ -1092,10 +1103,12 @@ export function getObjectPath(name){
 export function getObjectPathNameFromIdObj(rawObj, category=null){
   if(!category) category = rawObj.category;
 
+  // console.log(`rawObj`, rawObj);
+
   category = capitalizeFirstLetter(category);
 
   return category.localeCompare("Items") == 0 ? `/prime/items/${rawObj.name.replaceAll(" ", "").replaceAll("&", "")}` :
-    category.localeCompare("Components") == 0 ? `/prime/components/${rawObj.componentFullName.replaceAll(" ", "").replaceAll("&", "")}` :
+    category.localeCompare("Components") == 0 ? `/prime/components/${rawObj.id.replaceAll(" ", "").replaceAll("&", "")}` :
     category.localeCompare("Relics") == 0 ? `/prime/relics/${rawObj.name.replaceAll(" ", "").replaceAll("&", "")}` :
     category.localeCompare("Missions") == 0 ? `/prime/missions/${rawObj.name}${rawObj.planet}` : null
 }
@@ -1157,12 +1170,14 @@ export function componentIsFarmed(rawObj, obtainedComponents=null){
 
   if(!obtainedComponents) obtainedComponents = getObtainedComponents();
 
+  // console.log(`component is famred?`, rawObj, obtainedComponents);
+
   return obtainedComponents[rawObj.id] != null && obtainedComponents[rawObj.id].obtained >= rawObj.required;
 }
 
 export function itemIsFarmed(rawObj, obtainedComponents=null){
-  if(rawObj.requiredComponents == null) return true;
-  return rawObj.requiredComponents.every(component => componentIsFarmed(component, obtainedComponents));
+  if(rawObj.components == null) return true;
+  return Object.keys(rawObj.components).map(id => components[id]).every(component => componentIsFarmed(component, obtainedComponents));
 }
 
 export function objectIsFarmed(rawObj, obtainedComponents=null){
@@ -1176,7 +1191,7 @@ export function objectIsFarmed(rawObj, obtainedComponents=null){
 }
 
 export function relicDropsComponent(rawRelic, rawComponent){
-  return getRelicRewards(rawRelic).findIndex(reward => reward.rewardFullName.localeCompare(rawComponent.componentFullName) == 0) > -1;
+  return getRelicRewards(rawRelic).findIndex(reward => reward.rewardFullName.localeCompare(rawComponent.id) == 0) > -1;
 }
 
 export function getComponentsRelicsMerged(trackedItems, router){
@@ -1185,6 +1200,8 @@ export function getComponentsRelicsMerged(trackedItems, router){
     if(!acc.relics) acc.relics = [];
 
     const trackedItem = getObjectFromId(trackedItemId);
+
+    // console.log(`tracked iertm`, trackedItemId, trackedItem, trackedItems);
 
     if(trackedItem.category === "items"){
       const components = getSearchResultRelatedObjects(null, "Items", null, "components", trackedItem, { router: router });
@@ -1240,14 +1257,34 @@ export function getDialogUis(){
 
 let componentRelicRarityRelationCache = {};
 export function getComponentRarityInRelationToRelic(rawComponent, rawRelic){
-  const cacheId = `${rawRelic.name}-${rawComponent.componentFullName}`;
+  const cacheId = `${rawRelic.name}-${rawComponent.id}`;
   if(componentRelicRarityRelationCache[cacheId] != null) return componentRelicRarityRelationCache[cacheId];
 
   const relicRewards = getRelicRewards(rawRelic);
-  const componentRelicRecord = relicRewards.find(reward => reward.rewardFullName.localeCompare(rawComponent.componentFullName) == 0);
+  const componentRelicRecord = relicRewards.find(reward => reward.rewardFullName.localeCompare(rawComponent.id) == 0);
   if(componentRelicRecord == null) { console.warn(`no relation found between relic and component!`, rawComponent, rawRelic); return null; }
 
   componentRelicRarityRelationCache[cacheId] = componentRelicRecord.rarity;
 
   return componentRelicRecord.rarity;
+}
+
+export function getObjectDisplayName(rawObj, category=null){
+  if(!category) category = rawObj.category;
+
+  category = capitalizeFirstLetter(category);
+
+  return  category.localeCompare("Items") == 0 ? `${rawObj.name}` :
+          category.localeCompare("Components") == 0 ? `${rawObj.fullName}` :
+          category.localeCompare("Relics") == 0 ? `${rawObj.name}` :
+          category.localeCompare("Missions") == 0 ? `${rawObj.name}, ${rawObj.planet}` : null
+}
+
+/** 
+ * wrapper around Object.fromEntries(Object.entries(dict).filter(filterFunc)) \
+ * takes a dict as input, converts it into a list and filters it; then reassembles it into 
+ * a dict to then return.
+ */
+export function filterDict(dict, filterFunc) {
+  return Object.fromEntries(Object.entries(dict).filter(filterFunc));
 }

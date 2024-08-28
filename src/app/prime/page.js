@@ -18,7 +18,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, Suspense, lazy } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image'
 
 import * as com from "../common.js"
@@ -35,6 +35,7 @@ import ObtainedItemCheck from '@/components/ObtainedItemCheck.js';
 
 const ComponentTab = ({trackedItems}) => {
   const router = useRouter();
+
   const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
 
   const componentsRelicsMerged = com.getComponentsRelicsMerged(trackedItems, router);
@@ -58,8 +59,8 @@ const ComponentTab = ({trackedItems}) => {
         Object.entries(components
           .reduce((acc, component) => {
             if(component.rawObj.parentItem == null) { 
-              acc[component.rawObj.componentFullName] = { 
-                item: { category: "Components", componentFullName: component.rawObj.componentFullName, name: component.rawObj.componentFullName }, 
+              acc[component.rawObj.id] = { 
+                item: { category: "Components", componentFullName: component.rawObj.fullName, name: component.rawObj.fullName }, 
                 components: [ component ]
               }; 
               return acc;
@@ -128,7 +129,7 @@ const ComponentTab = ({trackedItems}) => {
                         >
                             {
                               relics
-                                  .filter(relic => relic.componentFullName.localeCompare(component.rawObj.componentFullName) == 0)
+                                  .filter(relic => relic.componentFullName.localeCompare(component.rawObj.fullName) == 0)
                                   .toSorted((a, b) => 
                                       (a.vaulted-b.vaulted)
                                       ||
@@ -184,7 +185,7 @@ function RelicTab({trackedItems}){
     componentsRelicsMerged.relics
       .filter(relic => !com.getRelicRewards(relic.rawObj.relic)
         .filter(reward => components
-            .map(component => component.rawObj.componentFullName)
+            .map(component => component.rawObj.id)
             .includes(reward.rewardFullName)
         )
         .every(reward => { 
@@ -204,6 +205,19 @@ function RelicTab({trackedItems}){
       (relicA.rawObj.relic.name.localeCompare(relicB.rawObj.relic.name))
     );
 
+  const relicComponentScore = (relic) => {
+    return components
+      .filter(component => com.relicDropsComponent(relic.rawObj.relic, component.rawObj)).length
+  };
+
+  const relicComponentRarityScore = (relic) => {
+    return Math.max(
+      ...components
+        .filter(component => com.relicDropsComponent(relic.rawObj.relic, component.rawObj))
+        .map(component => rarityPriorities[component.rarity])
+    )
+  };
+
   return (
     <div
       className='sized-content component-page-relative-info-container h-flex flex-center'
@@ -213,7 +227,19 @@ function RelicTab({trackedItems}){
       }}
     >
       {
-        relics.map((relic,index) => (
+        relics
+          .toSorted((a, b) => 
+            (a.vaulted-b.vaulted)
+            ||
+            (relicComponentScore(b)-relicComponentScore(a))
+            ||
+            (relicComponentRarityScore(a)-relicComponentRarityScore(b))
+            ||
+            (relicTypePriorities[a.rawObj.relic.tier]-relicTypePriorities[b.rawObj.relic.tier])
+            ||
+            (a.rawObj.relic.name.localeCompare(b.rawObj.relic.name))
+          )
+          .map((relic,index) => (
           <div 
             key={`${index}-${relic.name}`} 
             className='sized-content h-flex flex-center'
@@ -254,7 +280,7 @@ function RelicTab({trackedItems}){
                   )
                   .map(component => (
                     <button 
-                        key={`${index}-${component.rawObj.componentFullName}`} 
+                        key={`${index}-${component.rawObj.id}`} 
                         onClick={() => router.push(component.route)}
                         className={`sized-content item-page-component-container tracker-item-parent h-flex flex-center${` ${com.getComponentRarityInRelationToRelic(component.rawObj, relic.rawObj.relic)}` ?? ''}`}
                         style={{
@@ -265,7 +291,7 @@ function RelicTab({trackedItems}){
                     >
                         <div className='sized-content h-flex flex-center'><img style={{ height: '25px' }} src={component.icon}/></div>
                         <div className='sized-content h-flex flex-center' style={{ gap: '1px' }}>
-                            <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', paddingRight: '5px' }}>{component.rawObj.componentFullName}</div>
+                            <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', paddingRight: '5px' }}>{component.rawObj.fullName}</div>
                         </div>
                     </button>
                   ))
@@ -279,8 +305,10 @@ function RelicTab({trackedItems}){
 }
 
 function getMissionGroups(missions, rarityPriorities, missionTypesPriorities){
+
   return missions
-    .toSorted((a, b) => com.sortMissionFunc(a.rawObj.relic, b.rawObj.relic, a.rawObj.mission, b.rawObj.mission, missionTypesPriorities))
+    // .toSorted((a, b) => com.sortMissionFunc(a.rawObj.mission, b.rawObj.mission, a.rawObj.relic, b.rawObj.relic, missionTypesPriorities))
+    // .toSorted((a, b) => customMissionSort(a.rawObj.mission, b.rawObj.mission, a.rawObj.relic, b.rawObj.relic, ))
     .reduce((acc, mission) => {
       if(!acc[mission.id]) 
         acc[mission.id] = {
@@ -300,8 +328,10 @@ function getMissionGroups(missions, rarityPriorities, missionTypesPriorities){
     }, {});
 }
 
-const MissionTab = ({trackedItems, rarityPriorities}) => {
+const MissionTab = ({trackedItems, rarityPriorities=null}) => {
   const router = useRouter();
+
+  if(!rarityPriorities) rarityPriorities = com.getRarityPriorities();
 
   const [ missionPriorities, setMissionPriorities ] = useMissionPriorities();
   const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
@@ -350,6 +380,54 @@ const MissionTab = ({trackedItems, rarityPriorities}) => {
 
   const missionGroups = getMissionGroups(missionsComponents.missions, rarityPriorities, missionPriorities);
 
+  
+  const relicNumberScore = (missionId) => 
+    missionsComponents.missions.filter(mission => mission.id === missionId).length;
+    // missionsComponents.missions
+    //   .filter(mission => mission.id === missionId)
+    //   .reduce((acc, mission) => {
+    //     acc += (mission.rawObj.rotations || []).length;
+    //     return acc;
+    //   }, 0);
+
+  const relicAvgProbabilityScore = (missionId) => 
+    missionsComponents.missions
+      .filter(mission => mission.id === missionId)
+      .reduce((acc, mission) => {
+        mission.rawObj.rotations.forEach(rotation => 
+          acc.push(Number(rotation.perc.replaceAll("%", "").trim()))
+        );
+        
+        return acc;
+      }, [])
+      .reduce((acc, composite, index, array) => {
+        acc += Number(composite)
+        if(index == array.length-1) acc /= array.length;
+      }, 0);
+
+  const relicMaxProbabilityScore = (missionId) => 
+    Math.max(
+      ...missionsComponents.missions
+        .filter(mission => mission.id === missionId)
+        .map(mission => mission.rawObj.rotations.map(rotation => Number(rotation.perc.replace("%", "").trim())))
+        .flat(1)
+    )
+
+  const customMissionSort = (idA, idB, missionGroupInfoA, missionGroupInfoB) => (
+      (relicMaxProbabilityScore(idB)-relicMaxProbabilityScore(idA))
+      ||
+      (relicNumberScore(idB)-relicNumberScore(idA))
+      ||
+      (
+        (missionPriorities[missionGroupInfoA.mission.type]+1 || Infinity) 
+        -
+        (missionPriorities[missionGroupInfoB.mission.type]+1 || Infinity) 
+      )
+      
+  );
+
+  const relicTypePriorities = com.getRelicTypePriorities();
+
   return (
     <div 
       className='sized-content component-page-relative-info-container v-flex flex-center'
@@ -364,7 +442,9 @@ const MissionTab = ({trackedItems, rarityPriorities}) => {
           }}
         >
           { 
-            Object.entries(missionGroups).map(([missionId, missionGroup], index) => (
+            Object.entries(missionGroups)
+              .toSorted(([ idA, missionA ], [ idB, missionB ]) => customMissionSort(idA, idB, missionA, missionB))
+              .map(([missionId, missionGroup], index) => (
                 <div 
                     key={`${index}-${missionGroup.infoObj.name}`} 
                     onClick={() => router.push(missionGroup.infoObj.route)}
@@ -380,19 +460,20 @@ const MissionTab = ({trackedItems, rarityPriorities}) => {
                 >
                     <div className='sized-content h-flex flex-center' ><img style={{ height: '75px' }} src={missionGroup.infoObj.icon}/></div>
                     <div className='sized-content mission-relic-component v-flex flex-center' style={{ gap: '1px' }}>
-                      <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', fontWeight: 'bold' }}>{missionGroup.infoObj.rawObj.mission.detailName}</div>
+                      <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', fontWeight: 'bold' }}>{missionGroup.infoObj.rawObj.mission.type}</div>
                       <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{missionGroup.infoObj.id}</div>
                       <div className='sized-content v-flex' style={{ gap: '5px', marginTop: '5px' }}>
                           {
                               components
                                   .filter(component => Object.entries(missionGroup.relics)
                                       .find(([ relicName, relic ]) => com.getRelicRewards(relic.relic)
-                                          .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.componentFullName) == 0) > -1
+                                          .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.id) == 0) > -1
                                       )
                                   )
+                                  .toSorted((a, b) => rarityPriorities[a.rarity]-rarityPriorities[b.rarity])
                                   .map((component,index) => (
                                       <div
-                                          key={`${component.componentFullName}-${index}`}
+                                          key={`${component.id}-${index}`}
                                           className='sized-content h-flex flex-center'
                                           onClick={ev => { ev.stopPropagation(); router.push(component.route); }}
                                           style={{
@@ -404,7 +485,7 @@ const MissionTab = ({trackedItems, rarityPriorities}) => {
                                       >
                                           <div className={`sized-content v-flex flex-center`} style={{ minWidth: '70px' }}>
                                               <img className='sized-content h-flex flex-center' style={{ height: '15px' }} src={component.icon}/>
-                                              <span className='sized-content h-flex flex-center' style={{ textAlign: 'center', fontSize: 'small' }}>{component.rawObj.componentFullName}</span>
+                                              <span className='sized-content h-flex flex-center' style={{ textAlign: 'center', fontSize: 'small' }}>{component.rawObj.fullName}</span>
                                           </div>
                                           <div 
                                               className='sized-content v-flex flex-center'
@@ -415,8 +496,14 @@ const MissionTab = ({trackedItems, rarityPriorities}) => {
                                               {
                                                   Object.entries(missionGroup.relics)
                                                       .filter(([ relicName, relic ]) => com.getRelicRewards(relic.relic)
-                                                          .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.componentFullName) == 0) > -1
+                                                          .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.id) == 0) > -1
                                                       )
+                                                      // .filter(relicEntry => { console.log(`entry!`, relicEntry[1].rarity, relicEntry); return true})
+                                                      // .toSorted((relicEntryA, relicEntryB) =>{ console.warn(`entries SORT!`, relicEntryA, relicEntryB); return ( 
+                                                      //   rarityPriorities[relicEntryB[1].rarity]
+                                                      //   -
+                                                      //   rarityPriorities[relicEntryA[1].rarity]
+                                                      // )})
                                                       .map(([ relicName, relic ], index) => (
                                                           <button 
                                                               key={`${relic.name}-${index}`} 
@@ -574,7 +661,7 @@ export default function Home() {
   const noTrackedItems = Object.entries(trackedItems ?? {}).filter(([ itemId, trackedItem ]) => trackedItem.tracked ?? false).length <= 0;
 
   return (
-    <div className='sized-remaining v-flex' style={{ justifyContent: noTrackedItems ? 'flex-start' : 'center', gap: '0px' }}>
+    <div className='sized-remaining v-flex' style={{ justifyContent: 'center', gap: '0px' }}>
       {
         !noTrackedItems ? null :
         <div className='sized-content h-flex flex-center' style={{ padding: '10px' }}>
