@@ -19,6 +19,8 @@
 
 import React, { useState, useEffect, useRef, Suspense, lazy } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import Head from 'next/head';
 
 import LazyLoaded from '@/components/LazyLoaded.js';
 import FillSpinner from '@/components/FillSpinner.js';
@@ -114,7 +116,7 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
               >
                 { 
                   group.map((object, index) => (
-                    <div 
+                    <Link href={com.getObjectRouteFromId(object.id)}
                       key={`${index}-${object.name}`} 
                       className={`sized-content main-view-item-single-container tracker-item-parent${com.objectIsFarmed(object, obtainedComponents) ? ` object-farmed` : ``} v-flex flex-center`}
                       style={{ 
@@ -124,20 +126,20 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
                         cursor: 'pointer',
                         alignSelf: 'stretch' 
                       }}
-                      onClick={() => router.push(
-                        com.getObjectRouteFromId(object.id)
-                        // category.localeCompare("Items") == 0 ? `/prime/items/${object.name.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
-                        // category.localeCompare("Components") == 0 ? `/prime/components/${object.fullName.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
-                        // category.localeCompare("Relics") == 0 ? `/prime/relics/${object.name.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
-                        // category.localeCompare("Missions") == 0 ? `/prime/missions/${`${object.name}${object.planet}`}` : ''
-                      )}
+                      // onClick={() => router.push(
+                      //   com.getObjectRouteFromId(object.id)
+                      //   // category.localeCompare("Items") == 0 ? `/prime/items/${object.name.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
+                      //   // category.localeCompare("Components") == 0 ? `/prime/components/${object.fullName.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
+                      //   // category.localeCompare("Relics") == 0 ? `/prime/relics/${object.name.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
+                      //   // category.localeCompare("Missions") == 0 ? `/prime/missions/${`${object.name}${object.planet}`}` : ''
+                      // )}
                     >
-                      <img src={com.getObjectIcon(object)} className='sized-remaining main-view-item-image'/>
+                      <div className='sized-content h-flex flex-center' style={{ objectFit: 'contain', height: '90px' }}><img  className='sized-content h-flex main-view-item-image flex-center' style={{ height: '100px', width: '100px', objectFit: 'contain' }} src={com.getObjectIcon(object)}/></div>
                       <div className='sized-content main-view-item-label h-flex flex-center' style={{ textAlign: 'center' }}>{ labelFunc(object) }</div>
                       {/* <ObtainedLabelObject object={object}/> */}
                       <TrackItemButton itemId={com.getObjectId(object, category)}/>
                       <ObtainedItemCheck itemId={com.getObjectId(object, category)} positionAbsolute={true}/>
-                    </div>
+                    </Link>
                   )) 
                 }
               </div>
@@ -245,8 +247,15 @@ const ObjectSectionBuilder = ({ category }) => {
 export default function ExplorerPage() {
   const router = useRouter();
 
+  useEffect(() => {
+    document.title = com.generatePageTitle("Explorer");
+  }, []);
+
   return (
     <div className='sized-remaining v-flex flex-center' style={{ gap: '20px' }}>
+      <Head>
+          <title>{com.generatePageTitle("Explorer")}</title>
+      </Head>
       <TabComponent
         style={{ width: '95vw' }}
         defaultTab={"Items"}

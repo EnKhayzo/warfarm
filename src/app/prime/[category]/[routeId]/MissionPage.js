@@ -17,8 +17,10 @@
 
 'use client';
 
-import { React, useState, useRef } from 'react';
+import { React, useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import Head from 'next/head';
 
 import * as com from "../../../common.js";
 import LazyLoaded from '@/components/LazyLoaded.js';
@@ -71,6 +73,9 @@ const RotationTab = ({mission, rarityPriorities}) => {
                                     key={`${index}-${rotationName}`} 
                                     className='sized-content v-flex flex-center' 
                                     style={{ 
+                                        backgroundColor: 'var(--color-tertiary)',
+                                        borderRadius: '10px',
+                                        padding: '10px',
                                         gap: '10px',
                                         alignSelf: 'stretch',
                                         justifyContent: 'flex-start'
@@ -87,13 +92,15 @@ const RotationTab = ({mission, rarityPriorities}) => {
                                         {
                                             relicList
                                                 .map(({ rotation, relic }) => (
-                                                    <button 
+                                                    <Link href={relic.route}
                                                         key={`${index}-${relic.id}`} 
-                                                        onClick={() => router.push(relic.route)}
+                                                        // onClick={() => router.push(relic.route)}
                                                         className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center${` ${relic.rarity}` ?? ''}`}
                                                         style={{
                                                             gap: '5px',
-                                                            opacity: relic.vaulted ? '50%' : '100%'
+                                                            opacity: relic.vaulted ? '50%' : '100%',
+                                                            alignSelf: 'stretch',
+                                                            justifyContent: 'flex-start'
                                                         }}
                                                     >
                                                         <div className='sized-content h-flex flex-center' style={{ width: '75px', height: '75px' }}><img src={relic.icon}/></div>
@@ -115,7 +122,7 @@ const RotationTab = ({mission, rarityPriorities}) => {
                                                             }
                                                             </div>
                                                         </div>
-                                                    </button>
+                                                    </Link>
                                                 ))
                                         }
                                     </div>
@@ -158,9 +165,9 @@ const RotationTab = ({mission, rarityPriorities}) => {
                     //     (a.rawObj.relic.name.localeCompare(b.rawObj.relic.name))
                     // )
                     .map((relic, index) => (
-                        <button 
+                        <Link href={relic.route}
                             key={`${index}-${relic.name}`} 
-                            onClick={() => router.push(relic.route)}
+                            // onClick={() => router.push(relic.route)}
                             className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center${` ${relic.rarity}` ?? ''}`}
                             style={{
                                 gap: '5px',
@@ -186,7 +193,7 @@ const RotationTab = ({mission, rarityPriorities}) => {
                                 }
                                 </div>
                             </div>
-                        </button>
+                        </Link>
                     )) 
                 }
             </div>
@@ -206,8 +213,16 @@ export default function RelicPage({ routeId, pathObj }) {
 
   const mission = com.getObjectFromId(pathObj.id);
 
+
+  useEffect(() => {
+    document.title = com.generatePageTitle(pathObj.id);
+  }, []);
+
     return (
         <div className='sized-content v-flex'>
+            <Head>
+                <title>{com.generatePageTitle(pathObj.id)}</title>
+            </Head>
             <div className='sized-remaining h-flex flex-center'>
                 <div className='sized-remaining v-flex flex-center' style={{ gap: '50px' }}>
                     <div className='sized-content h-flex' style={{ marginTop: '20px' }}></div>

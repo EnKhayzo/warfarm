@@ -17,8 +17,10 @@
 
 'use client';
 
-import { React, useState, useRef } from 'react';
+import { React, useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import Head from 'next/head';
 
 import * as com from "../../../common.js";
 import MainItemTitleComponent from './subcomponents/MainItemTitleComponent.js';
@@ -38,7 +40,7 @@ const ComponentTab = ({components}) => {
     >
           { 
             components.map((component, index) => (
-              <ComponentAddButton key={`${index}-${component.name}`} component={component} fullName={true} />
+              <Link href={com.getObjectRouteFromId(component.id)}><ComponentAddButton key={`${index}-${component.name}`} component={component} fullName={true} /></Link>
             )) 
           }
         </div>
@@ -63,9 +65,9 @@ const MissionTab = ({relic, missions, rarityPriorities}) => {
           >
             { 
               missions.map((mission, index) => (
-                    <div 
+                    <Link href={mission.route}
                       key={`${index}-${mission.id}`} 
-                      onClick={() => router.push(mission.route)}
+                      // onClick={() => router.push(mission.route)}
                       className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center`}
                       style={{
                         cursor: 'pointer',
@@ -93,7 +95,7 @@ const MissionTab = ({relic, missions, rarityPriorities}) => {
                           }
                         </div>
                       </div>
-                  </div>
+                  </Link>
               )) 
             }
           </div>
@@ -104,8 +106,11 @@ const MissionTab = ({relic, missions, rarityPriorities}) => {
 
 export default function RelicPage({ routeId, pathObj }) {
   const router = useRouter();
-
   const [ missionPriorities, setMissionPriorities ] = useMissionPriorities();
+
+  useEffect(() => {
+    document.title = com.generatePageTitle(pathObj.id);
+  }, []);
 
   const relic = com.getObjectFromId(pathObj.id); // (await com.waitFor(async () => await com.getAllRelics(), null))[pathObj.id]
 
@@ -116,6 +121,9 @@ export default function RelicPage({ routeId, pathObj }) {
 
   return (
       <div className='sized-content v-flex'>
+          <Head>
+              <title>{com.generatePageTitle(pathObj.id)}</title>
+          </Head>
           <div className='sized-remaining h-flex flex-center'>
               <div className='sized-remaining v-flex flex-center' style={{ gap: '50px' }}>
                   <div className='sized-content h-flex' style={{ marginTop: '20px' }}></div>

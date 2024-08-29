@@ -8,7 +8,7 @@ import * as com from "@/app/common.js"
 import TabHeaderButtonsComponent from './TabHeaderButtonsComponent';
 
 /** changeTab: callback function to change the current tab */
-export default function TabComponent({ tabs, defaultTab, onTabChange, className, style }){
+export default function TabComponent({ tabs, defaultTab, onTabChange, className, style, headerControls=null }){
     const router = useRouter();
     const searchParams = useSearchParams();
     const tabContentRef = useRef(null); // Ref to the tab content container
@@ -52,6 +52,7 @@ export default function TabComponent({ tabs, defaultTab, onTabChange, className,
                 tabs={Object.keys(tabs).map(tab => ({ title: tab, id: tab, label: tab }))}
                 changeTab={changeTab}
                 activeTab={activeTab}
+                headerControls={headerControls}
             />
             <div 
                 className='sized-content tab-component-body-container v-flex flex-center'

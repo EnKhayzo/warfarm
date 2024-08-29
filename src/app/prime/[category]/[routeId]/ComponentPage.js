@@ -17,8 +17,10 @@
 
 'use client';
 
-import { React, useState, useRef } from 'react';
+import { React, useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import Head from 'next/head';
 
 import * as com from "../../../common.js";
 import LazyLoaded from '@/components/LazyLoaded.js';
@@ -73,9 +75,9 @@ const RelicTab = ({component, rarityPriorities}) => {
                     (a.rawObj.relic.name.localeCompare(b.rawObj.relic.name))
                   )
                   .map((relic, index) => (
-                    <button 
+                    <Link href={relic.route}
                         key={`${index}-${relic.name}`} 
-                        onClick={() => router.push(relic.route)}
+                        // onClick={() => router.push(relic.route)}
                         className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center${` ${relic.rarity}` ?? ''}`}
                         style={{
                             gap: '5px',
@@ -86,7 +88,7 @@ const RelicTab = ({component, rarityPriorities}) => {
                         <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
                             <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{relic.labelHeading}</div>
                         </div>
-                    </button>
+                    </Link>
                 )) 
               }
             </div>
@@ -145,9 +147,9 @@ const MissionTab = ({component, rarityPriorities}) => {
             Object.entries(missionGroups)
               .filter(([missionId, missionGroup]) => { console.log(`missionId`, missionId, missionGroup); return true; })
               .map(([missionId, missionGroup], index) => (
-                <div 
+                <Link href={missionGroup.infoObj.route}
                     key={`${index}-${missionGroup.infoObj.name}`} 
-                    onClick={() => router.push(missionGroup.infoObj.route)}
+                    // onClick={() => router.push(missionGroup.infoObj.route)}
                     className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center`}
                     style={{
                       cursor: 'pointer',
@@ -168,9 +170,9 @@ const MissionTab = ({component, rarityPriorities}) => {
                           Object.entries(missionGroup.relics)
                             // .filter(([ relicName, relic ]) => { console.log(`relicNAme`, relicName, relic); return true; })
                             .map(([ relicName, relic ], index) => (
-                            <button 
+                            <Link href={com.getObjectRouteFromId(relic.relic.id)}
                               key={`${relic.name}-${index}`} 
-                              onClick={(ev) => { ev.stopPropagation(); router.push(com.getObjectPathNameFromIdObj(relic.relic, "Relics"))}}
+                              // onClick={(ev) => { ev.stopPropagation(); router.push(com.getObjectPathNameFromIdObj(relic.relic, "Relics"))}}
                               className={`sized-content h-flex flex-center object-page-mission-relic${` ${relic.rarity}` ?? ''}`} 
                               style={{ gap: '5px' }}
                             >
@@ -189,12 +191,12 @@ const MissionTab = ({component, rarityPriorities}) => {
                                   ))
                                 }
                               </div>
-                            </button>
+                            </Link>
                           ))
                         }
                       </div>
                     </div>
-                </div>
+                </Link>
             )) 
           }
         </div>
@@ -205,8 +207,11 @@ const MissionTab = ({component, rarityPriorities}) => {
 
 export default function ComponentPage({ routeId, pathObj }) {
   const router = useRouter();
-
   const [ activeTab, setActiveTab ] = useState("Relics");
+
+  useEffect(() => {
+    document.title = com.generatePageTitle(pathObj.id);
+  }, []);
 
   const component =  com.getObjectFromId(pathObj.id);
 
@@ -215,6 +220,9 @@ export default function ComponentPage({ routeId, pathObj }) {
   const rarityPriorities = com.getRarityPriorities();
   return (
     <div className='sized-content v-flex'>
+        <Head>
+            <title>{com.generatePageTitle(pathObj.id)}</title>
+        </Head>
         <div className='sized-remaining h-flex'>
             <div className='sized-remaining v-flex flex-center' style={{ gap: '60px' }}>
                 <div className='sized-content h-flex' style={{ marginTop: '20px' }}></div>
@@ -222,14 +230,14 @@ export default function ComponentPage({ routeId, pathObj }) {
                 <div className='sized-content v-flex flex-center'>
                   {
                     component.parentItem == null ? null:
-                      <button 
+                      <Link href={com.getObjectRouteFromId(component.parentItem)}
                         className='sized-content component-page-parent-item-button h-flex flex-center' 
                         style={{ marginBottom: '20px', gap: '10px' }}
-                        onClick={() => router.push(`/prime/items/${component.parentItem.replaceAll(" ", "").replaceAll("&", "")}`)}
+                        // onClick={() => router.push(`/prime/items/${component.parentItem.replaceAll(" ", "").replaceAll("&", "")}`)}
                       >
                         <img style={{ height: '30px' }} src={com.getObjectIcon(component)}/>
                         <div>{component.parentItem}</div>
-                      </button>
+                      </Link>
                   }
                   <MainItemTitleComponent itemId={component.id} iconUrl={`/warfarm/images/${component.fullName}.png`} label={pathObj.id} />
                   <div style={{ marginTop: '5px' }}><ComponentAddButtons component={component}/></div>

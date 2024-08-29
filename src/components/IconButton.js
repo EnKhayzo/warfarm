@@ -68,7 +68,7 @@ export default function IconButton({ label, iconUrl, onClick, className, style, 
               onClick={(ev) => {
                 blinkingSystem();
                 
-                onClick(ev);
+                if(onClick) onClick(ev);
               }}
             >
               <img className={`sized-content v-flex flex-center${iconClassName ? ` ${iconClassName}` : ``}`} style={{ height: iconHeight }} src={iconUrl}/>

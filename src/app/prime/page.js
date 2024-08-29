@@ -19,6 +19,8 @@
 
 import React, { useState, useEffect, useRef, Suspense, lazy } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import Link from 'next/link';
+import Head from 'next/head';
 import Image from 'next/image'
 
 import * as com from "../common.js"
@@ -32,6 +34,7 @@ import TabComponent from '@/components/TabComponent.js';
 import useObtainedComponents from '@/hooks/useObtainedComponents.js';
 import ComponentAddButton from './[category]/[routeId]/subcomponents/ComponentAddButton.js';
 import ObtainedItemCheck from '@/components/ObtainedItemCheck.js';
+import SelectorComponent from '@/components/SelectorComponent.js';
 
 const ComponentTab = ({trackedItems}) => {
   const router = useRouter();
@@ -83,17 +86,17 @@ const ComponentTab = ({trackedItems}) => {
                 justifyContent: 'flex-start'
               }}
             >
-              <div 
+              <Link href={com.getObjectRouteFromId(itemGroup.item.id)} 
                 className='sized-content v-flex flex-center'
                 style={{
                   cursor: 'pointer'
                 }}
-                onClick={() => router.push(com.getObjectPathNameFromIdObj(itemGroup.item))}
+                // onClick={() => router.push(com.getObjectPathNameFromIdObj(itemGroup.item))}
               >
                 {/* <Image width={0} height={0} sizes="100vw" style={{ height: '50px' }} src={com.getObjectIcon(itemGroup.item)}/> */}
                 <img style={{ height: '50px' }} src={com.getObjectIcon(itemGroup.item)}/>
                 <div>{itemGroup.item.name}</div>
-              </div>
+              </Link>
               <div 
                 className='sized-content v-flex flex-center'
                 style={{
@@ -115,7 +118,7 @@ const ComponentTab = ({trackedItems}) => {
                         }}
                     >   
                         <div className='sized-content v-flex flex-center'>
-                            <ComponentAddButton width={'70px'} iconHeight={'45px'} component={component}/>
+                            <Link href={com.getObjectRouteFromId(component.id)}><ComponentAddButton width={'70px'} iconHeight={'45px'} component={component}/></Link>
                         </div>
                         <div 
                           className='sized-content h-flex flex-center' 
@@ -140,9 +143,9 @@ const ComponentTab = ({trackedItems}) => {
                                       (a.rawObj.relic.name.localeCompare(b.rawObj.relic.name))
                                   )
                                   .map(relic => (
-                                      <button 
+                                      <Link  href={relic.route}
                                           key={`${index}-${relic.rawObj.relic.name}`} 
-                                          onClick={() => router.push(relic.route)}
+                                          // onClick={() => router.push(relic.route)}
                                           className={`sized-content item-page-component-container tracker-item-parent h-flex flex-center${` ${relic.rarity}` ?? ''}`}
                                           style={{
                                             width: '110px',
@@ -154,7 +157,7 @@ const ComponentTab = ({trackedItems}) => {
                                           <div className='sized-content h-flex flex-center' style={{ gap: '1px' }}>
                                               <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', paddingRight: '5px' }}>{relic.label}</div>
                                           </div>
-                                      </button>
+                                      </Link>
                                   ))
                             }
                         </div>
@@ -214,7 +217,7 @@ function RelicTab({trackedItems}){
     return Math.max(
       ...components
         .filter(component => com.relicDropsComponent(relic.rawObj.relic, component.rawObj))
-        .map(component => rarityPriorities[component.rarity])
+        .map(component => rarityPriorities[com.getComponentRarityInRelationToRelic(component.rawObj, relic.rawObj.relic)])
     )
   };
 
@@ -251,8 +254,8 @@ function RelicTab({trackedItems}){
               alignSelf: 'stretch'
             }}
           >
-            <button 
-                onClick={() => router.push(relic.route)}
+            <Link href={relic.route}
+                // onClick={() => router.push(relic.route)}
                 className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center`}
                 style={{
                     gap: '5px',
@@ -263,7 +266,7 @@ function RelicTab({trackedItems}){
                 <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
                     <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{relic.rawObj.relic.name}</div>
                 </div>
-            </button>
+            </Link>
             <div 
               className='sized-content v-flex flex-center'
               style={{
@@ -279,9 +282,9 @@ function RelicTab({trackedItems}){
                     rarityPriorities[com.getComponentRarityInRelationToRelic(b.rawObj, relic.rawObj.relic)]
                   )
                   .map(component => (
-                    <button 
+                    <Link href={component.route}
                         key={`${index}-${component.rawObj.id}`} 
-                        onClick={() => router.push(component.route)}
+                        // onClick={() => router.push(component.route)}
                         className={`sized-content item-page-component-container tracker-item-parent h-flex flex-center${` ${com.getComponentRarityInRelationToRelic(component.rawObj, relic.rawObj.relic)}` ?? ''}`}
                         style={{
                           width: '210px',
@@ -293,7 +296,7 @@ function RelicTab({trackedItems}){
                         <div className='sized-content h-flex flex-center' style={{ gap: '1px' }}>
                             <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', paddingRight: '5px' }}>{component.rawObj.fullName}</div>
                         </div>
-                    </button>
+                    </Link>
                   ))
               }
             </div>
@@ -328,7 +331,7 @@ function getMissionGroups(missions, rarityPriorities, missionTypesPriorities){
     }, {});
 }
 
-const MissionTab = ({trackedItems, rarityPriorities=null}) => {
+const MissionTab = ({ groupBy, trackedItems, rarityPriorities=null }) => {
   const router = useRouter();
 
   if(!rarityPriorities) rarityPriorities = com.getRarityPriorities();
@@ -379,7 +382,6 @@ const MissionTab = ({trackedItems, rarityPriorities=null}) => {
   const components = missionsComponents.components;
 
   const missionGroups = getMissionGroups(missionsComponents.missions, rarityPriorities, missionPriorities);
-
   
   const relicNumberScore = (missionId) => 
     missionsComponents.missions.filter(mission => mission.id === missionId).length;
@@ -444,18 +446,18 @@ const MissionTab = ({trackedItems, rarityPriorities=null}) => {
           { 
             Object.entries(missionGroups)
               .toSorted(([ idA, missionA ], [ idB, missionB ]) => customMissionSort(idA, idB, missionA, missionB))
-              .map(([missionId, missionGroup], index) => (
-                <div 
+              .map(([ missionId, missionGroup ], index) => (
+                <Link href={missionGroup.infoObj.route}
                     key={`${index}-${missionGroup.infoObj.name}`} 
-                    onClick={() => router.push(missionGroup.infoObj.route)}
+                    // onClick={() => router.push(missionGroup.infoObj.route)}
                     className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center`}
                     style={{
-                      cursor: 'pointer',
+                      // cursor: 'pointer',
                       gap: '5px',
                       opacity: missionGroup.infoObj.vaulted ? '50%' : '100%',
                       alignSelf: 'stretch',
                       justifyContent: 'flex-start',
-                      width: '350px'
+                      width: groupBy === "component" ? '350px' : '410px'
                     }}
                 >
                     <div className='sized-content h-flex flex-center' ><img style={{ height: '75px' }} src={missionGroup.infoObj.icon}/></div>
@@ -464,78 +466,171 @@ const MissionTab = ({trackedItems, rarityPriorities=null}) => {
                       <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{missionGroup.infoObj.id}</div>
                       <div className='sized-content v-flex' style={{ gap: '5px', marginTop: '5px' }}>
                           {
-                              components
-                                  .filter(component => Object.entries(missionGroup.relics)
-                                      .find(([ relicName, relic ]) => com.getRelicRewards(relic.relic)
-                                          .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.id) == 0) > -1
-                                      )
+                              groupBy === "component" ?
+                                components
+                                    .filter(component => Object.entries(missionGroup.relics)
+                                        .find(([ relicName, relic ]) => com.getRelicRewards(relic.relic)
+                                            .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.id) == 0) > -1
+                                        )
+                                    )
+                                    .toSorted((a, b) => rarityPriorities[a.rarity]-rarityPriorities[b.rarity])
+                                    .map((component,index) => (
+                                        <Link href={component.route}
+                                            key={`${component.id}-${index}`}
+                                            className='sized-content h-flex flex-center'
+                                            // onClick={ev => { ev.stopPropagation(); router.push(component.route); }}
+                                            style={{
+                                                borderRadius: '10px',
+                                                backgroundColor: 'var(--color-sextenary)',
+                                                gap: '10px',
+                                                padding: '5px'
+                                            }}
+                                        >
+                                            <div className={`sized-content v-flex flex-center`} style={{ minWidth: '70px' }}>
+                                                <img className='sized-content h-flex flex-center' style={{ height: '15px' }} src={component.icon}/>
+                                                <span className='sized-content h-flex flex-center' style={{ textAlign: 'center', fontSize: 'small' }}>{component.rawObj.fullName}</span>
+                                            </div>
+                                            <div 
+                                                className='sized-content v-flex flex-center'
+                                                style={{
+                                                    gap: '5px'
+                                                }}
+                                            >
+                                                {
+                                                    Object.entries(missionGroup.relics)
+                                                        .filter(([ relicName, relic ]) => com.getRelicRewards(relic.relic)
+                                                            .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.id) == 0) > -1
+                                                        )
+                                                        // .filter(relicEntry => { console.log(`entry!`, relicEntry[1].rarity, relicEntry); return true})
+                                                        // .toSorted((relicEntryA, relicEntryB) =>{ console.warn(`entries SORT!`, relicEntryA, relicEntryB); return ( 
+                                                        //   rarityPriorities[relicEntryB[1].rarity]
+                                                        //   -
+                                                        //   rarityPriorities[relicEntryA[1].rarity]
+                                                        // )})
+                                                        .map(([ relicName, relic ], index) => (
+                                                            <Link href={com.getObjectRouteFromId(relic.relic.id)} 
+                                                                key={`${relic.name}-${index}`} 
+                                                                // onClick={(ev) => { ev.stopPropagation(); router.push(com.getObjectPathNameFromIdObj(relic.relic, "Relics"))}}
+                                                                className={`sized-content h-flex flex-center object-page-mission-relic${` ${com.getComponentRarityInRelationToRelic(component.rawObj, relic.relic)}` ?? ''}`} 
+                                                                style={{ gap: '5px', minWidth: '200px' }}
+                                                            >
+                                                                <div className='sized-content h-flex flex-center' ><img style={{ height: '30px' }} src={`/warfarm/images/${relic.relic.tier}.png`}/></div>
+                                                                <div className='sized-content h-flex flex-center' style={{ fontSize: 'small' }}>{relic.relic.name}</div>
+                                                                <div className='sized-content v-flex flex-center' style={{ alignItems: 'flex-start', marginLeft: '5px' }}>
+                                                                    {
+                                                                        relic.rotations.map((rotation, index) => (
+                                                                            <div 
+                                                                                key={`${rotation.rotation}-${index}`} 
+                                                                                className='sized-content h-flex flex-center' 
+                                                                                style={{fontSize: 'small', whiteSpace: 'pre' }}
+                                                                            >
+                                                                                <span style={{ fontWeight: 'bold' }}>{rotation.rotation}</span> - <span style={{ fontStyle: 'italic' }}>{rotation.perc}</span>
+                                                                            </div>
+                                                                        ))
+                                                                    }
+                                                                </div>
+                                                            </Link>
+                                                    ))
+                                                }
+                                            </div>
+                                        </Link>
+                                ))
+                              : 
+                              groupBy === "relic" ?
+                                Object.entries(missionGroup.relics)
+                                  .filter(([ relicId, relic ]) => 
+                                    !components
+                                      .filter(component => com.relicDropsComponent(relic.relic, component.rawObj))
+                                      .every(component => com.objectIsFarmed(component))
                                   )
-                                  .toSorted((a, b) => rarityPriorities[a.rarity]-rarityPriorities[b.rarity])
-                                  .map((component,index) => (
-                                      <div
-                                          key={`${component.id}-${index}`}
-                                          className='sized-content h-flex flex-center'
-                                          onClick={ev => { ev.stopPropagation(); router.push(component.route); }}
-                                          style={{
-                                              borderRadius: '10px',
-                                              backgroundColor: 'var(--color-sextenary)',
-                                              gap: '10px',
-                                              padding: '5px'
-                                          }}
+                                  .map(([ relicId, relic ], index) => (
+                                    <div
+                                      key={`${index}-${relicId}`}
+                                      className='sized-content h-flex flex-center'
+                                      style={{
+                                        justifyContent: 'flex-start',
+                                        alignSelf: 'stretch'
+                                      }}
+                                    >
+                                      <div 
+                                        className='sized-content h-flex flex-center'
+                                        style={{
+                                          backgroundColor: 'var(--color-quaternary)',
+                                          borderRadius: '10px',
+                                          padding: '10px',
+                                          gap: '10px',
+                                          alignSelf: 'stretch'
+                                        }}
                                       >
-                                          <div className={`sized-content v-flex flex-center`} style={{ minWidth: '70px' }}>
-                                              <img className='sized-content h-flex flex-center' style={{ height: '15px' }} src={component.icon}/>
-                                              <span className='sized-content h-flex flex-center' style={{ textAlign: 'center', fontSize: 'small' }}>{component.rawObj.fullName}</span>
-                                          </div>
-                                          <div 
-                                              className='sized-content v-flex flex-center'
-                                              style={{
-                                                  gap: '5px'
-                                              }}
-                                          >
-                                              {
-                                                  Object.entries(missionGroup.relics)
-                                                      .filter(([ relicName, relic ]) => com.getRelicRewards(relic.relic)
-                                                          .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.id) == 0) > -1
-                                                      )
-                                                      // .filter(relicEntry => { console.log(`entry!`, relicEntry[1].rarity, relicEntry); return true})
-                                                      // .toSorted((relicEntryA, relicEntryB) =>{ console.warn(`entries SORT!`, relicEntryA, relicEntryB); return ( 
-                                                      //   rarityPriorities[relicEntryB[1].rarity]
-                                                      //   -
-                                                      //   rarityPriorities[relicEntryA[1].rarity]
-                                                      // )})
-                                                      .map(([ relicName, relic ], index) => (
-                                                          <button 
-                                                              key={`${relic.name}-${index}`} 
-                                                              onClick={(ev) => { ev.stopPropagation(); router.push(com.getObjectPathNameFromIdObj(relic.relic, "Relics"))}}
-                                                              className={`sized-content h-flex flex-center object-page-mission-relic${` ${relic.rarity}` ?? ''}`} 
-                                                              style={{ gap: '5px', minWidth: '200px' }}
-                                                          >
-                                                              <div className='sized-content h-flex flex-center' ><img style={{ height: '30px' }} src={`/warfarm/images/${relic.relic.tier}.png`}/></div>
-                                                              <div className='sized-content h-flex flex-center' style={{ fontSize: 'small' }}>{relic.relic.name}</div>
-                                                              <div className='sized-content v-flex flex-center' style={{ alignItems: 'flex-start', marginLeft: '5px' }}>
-                                                                  {
-                                                                      relic.rotations.map((rotation, index) => (
-                                                                          <div 
-                                                                              key={`${rotation.rotation}-${index}`} 
-                                                                              className='sized-content h-flex flex-center' 
-                                                                              style={{fontSize: 'small', whiteSpace: 'pre' }}
-                                                                          >
-                                                                              <span style={{ fontWeight: 'bold' }}>{rotation.rotation}</span> - <span style={{ fontStyle: 'italic' }}>{rotation.perc}</span>
-                                                                          </div>
-                                                                      ))
-                                                                  }
-                                                              </div>
-                                                          </button>
-                                                  ))
-                                              }
-                                          </div>
+                                        <Link href={com.getObjectRouteFromId(relic.relic.id)} 
+                                            // onClick={(ev) => { ev.stopPropagation(); router.push(com.getObjectRouteFromId(relic.relic.id)); }}
+                                            className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center`}
+                                            style={{
+                                                gap: '5px',
+                                                opacity: relic.relic.vaulted ? '50%' : '100%',
+                                                width: '75px',
+                                                height: '75px'
+                                            }}
+                                        >
+                                            <div className='sized-content h-flex flex-center' style={{ width: '35px', height: '35px' }}><img src={com.getObjectIcon(relic.relic)}/></div>
+                                            <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
+                                                <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{relic.relic.name}</div>
+                                            </div>
+                                        </Link>
+                                        <div className='sized-content v-flex flex-center' style={{ alignItems: 'flex-start', marginLeft: '5px' }}>
+                                            {
+                                                relic.rotations.map((rotation, index) => (
+                                                    <div 
+                                                        key={`${rotation.rotation}-${index}`} 
+                                                        className='sized-content h-flex flex-center' 
+                                                        style={{fontSize: 'small', whiteSpace: 'pre' }}
+                                                    >
+                                                        <span style={{ fontWeight: 'bold' }}>{rotation.rotation}</span> - <span style={{ fontStyle: 'italic' }}>{rotation.perc}</span>
+                                                    </div>
+                                                ))
+                                            }
+                                        </div>
+                                        <div 
+                                          className='sized-content v-flex flex-center'
+                                          style={{
+                                            gap: '5px'
+                                          }}
+                                        >
+                                          {
+                                            components
+                                              .filter(component => com.relicDropsComponent(relic.relic, component.rawObj))
+                                              .toSorted((a, b) => 
+                                                rarityPriorities[com.getComponentRarityInRelationToRelic(a.rawObj, relic.relic)]
+                                                -
+                                                rarityPriorities[com.getComponentRarityInRelationToRelic(b.rawObj, relic.relic)]
+                                              )
+                                              .map(component => (
+                                                <Link href={component.route}
+                                                    key={`${index}-${component.rawObj.id}`} 
+                                                    // onClick={() => router.push(component.route)}
+                                                    className={`sized-content item-page-component-container tracker-item-parent h-flex flex-center${` ${com.getComponentRarityInRelationToRelic(component.rawObj, relic.relic)}` ?? ''}`}
+                                                    style={{
+                                                      width: '210px',
+                                                      gap: '5px',
+                                                      opacity: component.vaulted ? '50%' : '100%'
+                                                    }}
+                                                >
+                                                    <div className='sized-content h-flex flex-center'><img style={{ height: '25px' }} src={component.icon}/></div>
+                                                    <div className='sized-content h-flex flex-center' style={{ gap: '1px' }}>
+                                                        <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', paddingRight: '5px' }}>{component.rawObj.fullName}</div>
+                                                    </div>
+                                                </Link>
+                                              ))
+                                          }
+                                        </div>
                                       </div>
-                              ))
+                                    </div>
+                                  ))
+                              :null
                           }
                       </div>
                     </div>
-                </div>
+                </Link>
             )) 
           }
         </div>
@@ -545,6 +640,8 @@ const MissionTab = ({trackedItems, rarityPriorities=null}) => {
 }
 
 function FarmingSheet({ trackedItems }){
+  const [ groupBy, setGroupBy ] = useState("relic");
+
   return (
     <div className='sized-component v-flex flex-center' style={{ gap: '10px' }}>
       <div className='sized-content h-flex' style={{ fontSize: 'large', fontWeight: 'bold' }}>Farming Sheet</div>
@@ -553,7 +650,18 @@ function FarmingSheet({ trackedItems }){
         tabs={{
           "Components": <ComponentTab trackedItems={trackedItems}/>,
           "Relics": <RelicTab trackedItems={trackedItems}/>,
-          "Missions": <MissionTab trackedItems={trackedItems}/>
+          "Missions": <MissionTab groupBy={groupBy} trackedItems={trackedItems}/>
+        }}
+        headerControls={{
+          "Missions": (
+            <SelectorComponent
+              options={{
+                "Group By Relic":     { value: "relic", defaultOption: true },
+                "Group By Component": { value: "component" }
+              }}
+              onConfirm={([ text, entry ]) => { console.log(`set group by!`, entry.value); setGroupBy(entry.value) }}
+            />
+          )
         }}
       />
     </div>
@@ -588,11 +696,19 @@ export function TrackedItemsComponent(){
                       com.objectIsFarmed(com.getObjectFromId(a)) - com.objectIsFarmed(com.getObjectFromId(b))
                     )
                     .map(([ itemId, trackedItem ], index) => (
-                      <div 
+                      <Link href={com.getObjectRouteFromId(itemId)} 
                         key={`${itemId}-${index}`} 
-                        onClick={() => { 
-                          router.push(com.getObjectPathNameFromIdObj(com.getObjectFromId(itemId))); 
-                        }}
+                        // onClick={() => { 
+                        //   router.push(com.getObjectRouteFromId(itemId)); 
+                        // }}
+                        // onAuxClick={ev => { 
+                        //   console.log(`aux click!`);
+                        //   if(ev.button === 1) {
+                        //     console.log(`middle click!`);
+                        //      ev.preventDefault(); 
+                        //      window.open(com.getObjectRouteFromId(itemId), "_blank") 
+                        //   } 
+                        // }}
                         className={`sized-content tracked-items-button v-flex flex-center${com.objectIsFarmed(com.getObjectFromId(itemId), obtainedComponents) ? ` object-farmed-main-page` : ``}`}
                         style={{ 
                           position: 'relative', 
@@ -613,7 +729,7 @@ export function TrackedItemsComponent(){
                         })() }
                         <TrackItemButton itemId={itemId} positionAbsolute={true}/>
                         <ObtainedItemCheck itemId={itemId} positionAbsolute={true}/>
-                      </div>
+                      </Link>
                     ))
               }  
             </div>
@@ -659,9 +775,16 @@ export default function Home() {
   const router = useRouter();
   const [ trackedItems, setTrackedItems ] = useTrackedItems();
   const noTrackedItems = Object.entries(trackedItems ?? {}).filter(([ itemId, trackedItem ]) => trackedItem.tracked ?? false).length <= 0;
+  
+  useEffect(() => {
+    document.title = com.generatePageTitle("Home");
+  }, []);
 
   return (
     <div className='sized-remaining v-flex' style={{ justifyContent: 'center', gap: '0px' }}>
+      <Head>
+        <title>{com.generatePageTitle("Home")}</title>
+      </Head>
       {
         !noTrackedItems ? null :
         <div className='sized-content h-flex flex-center' style={{ padding: '10px' }}>

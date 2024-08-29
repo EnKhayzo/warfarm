@@ -41,13 +41,13 @@ export default function ComponentAddButton({ component, fullName=false, iconHeig
                 <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
                     <button 
                         className='sized-content h-flex object-page-component-owned-button flex-center'
-                        onClick={() => com.incrementUserDataComponentObtained(component.rawObj.id)}
+                        onClick={(ev) => { ev.preventDefault(); ev.stopPropagation(); ev.preventDefault(); com.incrementUserDataComponentObtained(component.rawObj.id) }}
                     >
                         +
                     </button>
                     <button 
                         className='sized-content h-flex object-page-component-owned-button flex-center'
-                        onClick={() => com.decrementUserDataComponentObtained(component.rawObj.id)}
+                        onClick={(ev) => { ev.preventDefault(); ev.stopPropagation(); ev.preventDefault();  com.decrementUserDataComponentObtained(component.rawObj.id) }}
                     >
                         -
                     </button>

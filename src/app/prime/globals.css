@@ -159,7 +159,7 @@ html * {
 
 /* -------------------------- BEGIN ---------------------------  */
 
-a {
+.link-text {
   color: rgb(61, 112, 207);
 }
 
@@ -292,7 +292,7 @@ a {
 }
 
 .main-view-item-image {
-  max-height: 90px;
+  /* max-height: 90px; */
 }
 
 .base-sortable-list {
@@ -368,14 +368,16 @@ a {
 }
 
 
-.tab-header-tab-button-container {
-  gap: 0px;
-  font-size: large;
-  align-self: stretch;
+.tab-header {
   background-color: var(--color-quaternary);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding: 10px;
+}
+
+.tab-header-tab-button-container {
+  gap: 0px;
+  font-size: large;
 }
 
 .tab-header-tab-button {
@@ -584,4 +586,34 @@ a {
   animation-name: blinkingFrames;
   animation-duration: .25s;
   animation-iteration-count: infinite;
+}
+
+
+.selector-component {
+  background-color: var(--color-tertiary);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.selector-option-container {
+  background-color: var(--color-tertiary);
+  border-radius: 10px;
+  padding: 10px;
+  min-width: fit-content;
+}
+
+.selector-option {
+  border-radius: 10px;
+  padding: 10px;
+  align-self: stretch;
+  text-align: center;
+}
+
+.selector-option:hover {
+  background-color: var(--color-quaternary);
+}
+
+
+.icon-default-filter {
+  filter: invert(79%) sepia(14%) saturate(184%) hue-rotate(359deg) brightness(87%) contrast(86%);
 }

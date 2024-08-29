@@ -21,6 +21,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import Head from 'next/head';
 import { useParams, usePathname, useRouter } from 'next/navigation';
 
@@ -136,18 +137,18 @@ export function MainLayoutComponent({children}){
                 }} 
                 className='sized-content logo-button h-flex flex-center'
               >
-                  <img style={{ minWidth: '70px' }} className='sized-content logo h-flex flex-center' src={`/warfarm/icons/logo_prime.svg`}/>
+                  <Link href="/prime"><img style={{ minWidth: '70px' }} className='sized-content logo h-flex flex-center' src={`/warfarm/icons/logo_prime.svg`}/></Link>
               </button>
             </div>
             <div className='sized-content h-flex' style={{ gap: '10px'}}>
-                <IconButton label={'Home'}      iconUrl={`/warfarm/icons/home.svg`}     highlight={pathName === "/prime"}          forceBlinking={forceHomeBlink}  onClick={() => router.push('/prime')} className={'layout-header-button'} iconClassName={'layout-header-icon'} />
-                <IconButton label={'Explorer'}  iconUrl={`/warfarm/icons/explorer.svg`} highlight={pathName === "/prime/explorer"} forceBlinking={null}  onClick={() => router.push('/prime/explorer')} className={'layout-header-button'} iconClassName={'layout-header-icon'} />
-                <IconButton label={'About'}     iconUrl={`/warfarm/icons/question.svg`} highlight={pathName === "/prime/about"}    forceBlinking={null}  onClick={() => router.push('/prime/about')} className={'layout-header-button'} iconClassName={'layout-header-icon'} />
+                <Link href="/prime"><IconButton label={'Home'}      iconUrl={`/warfarm/icons/home.svg`}     highlight={pathName === "/prime"}          forceBlinking={forceHomeBlink}  className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
+                <Link href="/prime/explorer"><IconButton label={'Explorer'}  iconUrl={`/warfarm/icons/explorer.svg`} highlight={pathName === "/prime/explorer"} forceBlinking={null}         className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
+                <Link href="/prime/about"><IconButton label={'About'}     iconUrl={`/warfarm/icons/question.svg`} highlight={pathName === "/prime/about"}    forceBlinking={null}            className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
               </div>
           </div>
           <SearchBar />
           <div className="sized-remaining h-flex flex-center" style={{ gap:'20px', justifyContent: 'flex-end' }}>
-            <IconButton label={'Support Me'} iconUrl={`/warfarm/icons/heart.svg`} onClick={() => router.push("/prime/supportme")} className={'layout-header-button support-me-button'} iconClassName={'support-me-icon'} iconHeight='20px' />
+            <Link href="/prime/supportme"><IconButton label={'Support Me'} iconUrl={`/warfarm/icons/heart.svg`} className={'layout-header-button support-me-button'} iconClassName={'support-me-icon'} iconHeight='20px' /></Link>
             <div className='sized-content h-flex' style={{ justifyContent: 'center', alignItems: 'center' }}>
               <ContextMenuButton 
                 iconUrl={`/warfarm/icons/info.svg`}
@@ -236,7 +237,9 @@ export function MainLayoutComponent({children}){
           </div>
         </div>
         <div className='sized-remaining main-content v-flex' style={{ marginBottom: '10px' }}>
-          <div className="sized-remaining v-flex">{children}</div>
+          <div className="sized-remaining v-flex">
+            {children}
+          </div>
           <div className='sized-content v-flex flex-center' style={{ textAlign: 'center', marginTop: '50px', fontSize: 'small' }}>
             <div>This site is not endorsed by or affiliated with Digital Extremes Ltd.</div>
             <div>All images come from Warframe or from websites created and owned by Digital Extremes, who hold the copyright of Warframe.</div>
@@ -289,19 +292,51 @@ export function MainLayoutComponent({children}){
 }
 
 export default function RootLayout({ children }) {
+
+  useEffect(() => {
+    // const handleFocus = () => {
+    //   const updatedData = localStorage.getItem('userData');
+    //   console.log('LocalStorage updated data:', updatedData);
+    // };
+
+    const handleStorageChange = (event) => {
+      if (event.key === 'userData') {
+        // console.log('LocalStorage data changed in another tab:', event.newValue);
+        com.refreshUserData(JSON.parse(event.newValue));
+      }
+    };
+
+    // window.addEventListener('focus', handleFocus);
+    window.addEventListener('storage', handleStorageChange);
+
+    return () => {
+      // window.removeEventListener('focus', handleFocus);
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, []);
+
   return (
     <LazyLoaded
       fallback={
         <div className="sized-remaining v-flex flex-center" style={{ gap: '10vh' }}>
           {/* <FallbackObject/> */}
           <img style={{ height: '30vh' }} src='/warfarm/icons/logo_prime.svg'/>
-          <div className='sized-content v-flex flex-center' style={{ padding: '20px' }}>
-            <div className='sized-content spinner-loader h-flex medium'></div>
-            <div className='sized-content h-flex'>Fetching object data...</div>
+          <div 
+            className='sized-content v-flex flex-center' 
+            style={{ 
+              fontWeight: 'bold', 
+              fontSize: 'large', 
+              gap: '5px', 
+              padding: '20px' 
+            }}
+          >
+            <div className='sized-content spinner-loader h-flex large'></div>
+            <div className='sized-content h-flex'>Fetching Datasets...</div>
           </div>
         </div>
       }
       loadFunc={async () => {
+        // await com.waitFor(() => false, false);
         await com.initialize(true);
 
         return (

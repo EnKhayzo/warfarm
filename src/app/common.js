@@ -467,6 +467,14 @@ export async function initialize(local=false) {
     initialized = true;
   };
 
+export function refreshUserData(newUserData) {
+  // console.log(`new user data!`, newUserData);
+  trackedItemsOvervable.set(newUserData.trackedItems ?? {});
+  obtainedObservable.set(newUserData.componentsObtained ?? {});
+  missionPrioritiesObservable.set(newUserData.missionPriorityPreferences ?? getDefaultMissionTypePriorities());
+  // dialogsUiObservable.set([]);
+}
+
 export function getIdMap() { return idMap; }
 
 export function sleep(ms) { return new Promise(r => setTimeout(r, ms)) }
@@ -1035,7 +1043,7 @@ export async function waitUntil(predicate, pollInterval=250){
 
 /** busy waits until the getValueFunc returns a value that is different from initialState, pollInterval is in ms */
 export async function waitFor(getValueFunc, initialState, pollInterval=250){
-  let lastValueFunc = getValueFunc();
+  let lastValueFunc = await getValueFunc();
   await waitUntil(async () => { lastValueFunc = await getValueFunc(); return lastValueFunc != initialState }, pollInterval);
   return lastValueFunc;
 }
@@ -1321,4 +1329,8 @@ export function getObjectDisplayName(rawObj, category=null){
  */
 export function filterDict(dict, filterFunc) {
   return Object.fromEntries(Object.entries(dict).filter(filterFunc));
+}
+
+export function generatePageTitle(pageTitle) {
+  return `${pageTitle} | Warfarm`;
 }

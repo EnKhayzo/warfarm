@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, Suspense, lazy } from 'react';
 import { useRouter } from 'next/navigation';
+import Head from 'next/head';
 
 import * as com from "@/app/common.js"
 import TabComponent from '@/components/TabComponent';
@@ -59,6 +60,10 @@ function PatreonComponent(){
 export default function SupportMePage() {
   const router = useRouter();
 
+  useEffect(() => {
+    document.title = com.generatePageTitle("Support Me");
+  }, []);
+
   return (
     <div 
       className='sized-remaining v-flex flex-center' 
@@ -66,6 +71,9 @@ export default function SupportMePage() {
         padding: '10px'
       }}
     >
+      <Head>
+        <title>{com.generatePageTitle("Support Me")}</title>
+      </Head>
       <div 
         className='sized-remaining v-flex flex-center'
         style={{ 

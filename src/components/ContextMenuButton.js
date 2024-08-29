@@ -26,7 +26,7 @@ const ContextMenuButton = ({ top, children, buttons, headerContent, className })
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [showContextMenu]);
+  }, [ showContextMenu ]);
 
     return (
       <div style={{ padding: '0px', margin: '0px' }}>
