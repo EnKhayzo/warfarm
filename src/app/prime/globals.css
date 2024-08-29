@@ -617,3 +617,52 @@ html * {
 .icon-default-filter {
   filter: invert(79%) sepia(14%) saturate(184%) hue-rotate(359deg) brightness(87%) contrast(86%);
 }
+
+.search-button{
+  display: none;
+}
+
+.nav-header-buttons-small-mediaquery-container {
+  display: none;
+}
+
+/* Hide the search bar and show the search button on small screens */
+@media (max-width: 750px) {
+  .nav-header-buttons-small-mediaquery-container {
+    display: flex;
+  }
+
+  .header-main-buttons-container {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .global-search-bar-area {
+    display: none;
+  }
+
+  .search-button {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .search-expanded {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+/* When the search is expanded, hide the rest of the navbar */
+.search-expanded {
+  display: flex;
+  flex: 1;
+}

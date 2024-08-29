@@ -774,7 +774,7 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
         "relics": () => {
           const [ relicMissionName, relic ] = objects.relicEntry;
           const relicName = relicMissionName.replace("Relic", "").replace("(Radiant)", "").trim();
-          console.log(`relic name`, relicMissionName, relicName, relic);
+          // console.log(`relic name`, relicMissionName, relicName, relic);
           res = ({
             icon: getObjectIcon(relics[relicName]),
             vaulted: relics[relicName].vaulted, 
@@ -1139,6 +1139,8 @@ export function getObjectPathObjFromId(id){
 }
 
 export function getObjectRouteFromId(id){
+  // console.log(`trying od`,id);
+  // return (getObjectPathObjFromId(id) ?? {route:'/prime'}).route;
   return getObjectPathObjFromId(id).route;
 }
 
@@ -1333,4 +1335,9 @@ export function filterDict(dict, filterFunc) {
 
 export function generatePageTitle(pageTitle) {
   return `${pageTitle} | Warfarm`;
+}
+
+export function shallowMerge(a, b){
+  if(b == null) return a;
+  return { ...a, ...b };
 }

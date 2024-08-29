@@ -40,7 +40,7 @@ const ComponentTab = ({components}) => {
     >
           { 
             components.map((component, index) => (
-              <Link href={com.getObjectRouteFromId(component.id)}><ComponentAddButton key={`${index}-${component.name}`} component={component} fullName={true} /></Link>
+              <Link key={`${index}-${component.name}`} href={com.getObjectRouteFromId(component.id)}><ComponentAddButton component={component} fullName={true} /></Link>
             )) 
           }
         </div>

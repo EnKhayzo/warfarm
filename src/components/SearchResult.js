@@ -60,7 +60,8 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
         borderRadius: '5px',
         boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
         width: '50vw',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        width: 'calc(100% - 40px)'
       }}
       onClick={(ev) => { closeSearchBarCallback(ev); router.push(com.getObjectRouteFromId(rawObj.id)); }}
     >

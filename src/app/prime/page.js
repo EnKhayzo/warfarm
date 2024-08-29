@@ -659,7 +659,7 @@ function FarmingSheet({ trackedItems }){
                 "Group By Relic":     { value: "relic", defaultOption: true },
                 "Group By Component": { value: "component" }
               }}
-              onConfirm={([ text, entry ]) => { console.log(`set group by!`, entry.value); setGroupBy(entry.value) }}
+              onConfirm={([ text, entry ]) => setGroupBy(entry.value)}
             />
           )
         }}

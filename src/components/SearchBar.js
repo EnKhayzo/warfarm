@@ -10,7 +10,7 @@ import LabelCheckbox from './LabelCheckbox';
 import * as com from "../app/common.js"
 import useMissionPriorities from '@/hooks/useMissionPriorities';
 
-const SearchBar = () => {
+const SearchBar = ({ isExpanded=false }) => {
     const [ query, setQuery ] = useState('');
     const [ results, setResults ] = useState([]);
     const [ filters, setFilters ] = useState({});
@@ -147,9 +147,9 @@ const SearchBar = () => {
 
     return (
         <div 
-            className='sized-content global-search-bar-container h-flex'
+            className='sized-remaining h-flex global-search-bar-container '
             style={{ 
-                display: 'flex', 
+                maxWidth: isExpanded ? 'auto' : '50vw',
                 gap: '5px',
                 alignItems: 'center',
                 position: 'relative',
@@ -164,7 +164,6 @@ const SearchBar = () => {
                 onClick={() => { if(!showResultArea) setShowResultArea(true); }}
                 onChange={onInputChange}
                 style={{
-                    width: '50vw',
                     padding: '10px',
                     fontSize: '16px',
                     borderRadius: '5px',

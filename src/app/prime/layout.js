@@ -41,6 +41,18 @@ async function initialize(){
   await com.initialize(true);
 }
 
+function NavBarMainButtons({ forceHomeBlink }){
+  const pathName = usePathname(); 
+
+  return (
+    <>
+      <Link href="/prime"><IconButton label={'Home'}      iconUrl={`/warfarm/icons/home.svg`}     highlight={pathName === "/prime"}          forceBlinking={forceHomeBlink}  className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
+      <Link href="/prime/explorer"><IconButton label={'Explorer'}  iconUrl={`/warfarm/icons/explorer.svg`} highlight={pathName === "/prime/explorer"} forceBlinking={null}         className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
+      <Link href="/prime/about"><IconButton label={'About'}     iconUrl={`/warfarm/icons/question.svg`} highlight={pathName === "/prime/about"}    forceBlinking={null}            className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
+    </>
+  );
+}
+
 export function MainLayoutComponent({children}){
   const router = useRouter();
   const pathName = usePathname();  
@@ -116,125 +128,174 @@ export function MainLayoutComponent({children}){
 
   const areThereDialogUis = dialogUis != null && dialogUis.length > 0;
   const [ forceHomeBlink, setForceHomeBlink ] = useState(false);
+  const [ searchExpanded, setSearchExpanded ] = useState(false);
+
+  const handleSearchExpand = () => {
+    setSearchExpanded(true);
+  };
+
+  const handleSearchCollapse = () => {
+    setSearchExpanded(false);
+  };
 
   return (
     <div className='sized-remaining v-flex'>
       <div className='sized-remaining main-body v-flex'>
         <div className="sized-content search-bar-global-container h-flex">
-          <div className="sized-content h-flex flex-center" style={{ gap: '20px', justifyContent: 'flex-start' }}>
-            <div className='sized-content h-flex' style={{ justifyContent: 'center', alignItems: 'center' }}>
-              <button 
-                onClick={() => {
-                  if(pathName !== "/prime"){
-                    router.push("/prime");  
-                  }
-                  else{
-                    setForceHomeBlink(true);
-                    setTimeout(() => {
-                      setForceHomeBlink(false);
-                    }, 250);
-                  }
-                }} 
-                className='sized-content logo-button h-flex flex-center'
-              >
-                  <Link href="/prime"><img style={{ minWidth: '70px' }} className='sized-content logo h-flex flex-center' src={`/warfarm/icons/logo_prime.svg`}/></Link>
-              </button>
-            </div>
-            <div className='sized-content h-flex' style={{ gap: '10px'}}>
-                <Link href="/prime"><IconButton label={'Home'}      iconUrl={`/warfarm/icons/home.svg`}     highlight={pathName === "/prime"}          forceBlinking={forceHomeBlink}  className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
-                <Link href="/prime/explorer"><IconButton label={'Explorer'}  iconUrl={`/warfarm/icons/explorer.svg`} highlight={pathName === "/prime/explorer"} forceBlinking={null}         className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
-                <Link href="/prime/about"><IconButton label={'About'}     iconUrl={`/warfarm/icons/question.svg`} highlight={pathName === "/prime/about"}    forceBlinking={null}            className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
+          {
+            searchExpanded ?
+              <div className="sized-content h-flex flex-center search-expanded">
+                <button onClick={handleSearchCollapse} className="sized-content h-flex back-button">
+                  <img className="sized-content icon-default-filter h-flex" src={`/warfarm/icons/arrow.svg`} style={{ marginLeft: '20px', height: '20px', transform: 'rotate(180deg)' }} alt="Back" />
+                </button>
+                <SearchBar isExpanded={true} />
               </div>
-          </div>
-          <SearchBar />
-          <div className="sized-remaining h-flex flex-center" style={{ gap:'20px', justifyContent: 'flex-end' }}>
-            <Link href="/prime/supportme"><IconButton label={'Support Me'} iconUrl={`/warfarm/icons/heart.svg`} className={'layout-header-button support-me-button'} iconClassName={'support-me-icon'} iconHeight='20px' /></Link>
-            <div className='sized-content h-flex' style={{ justifyContent: 'center', alignItems: 'center' }}>
-              <ContextMenuButton 
-                iconUrl={`/warfarm/icons/info.svg`}
-                headerContent={<img src="/warfarm/icons/info.svg" style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
-              >
-                {
-                  (props) => (
-                    <>
-                      
-                    </>
-                  )
-                }
-              </ContextMenuButton>
-              <ContextMenuButton
-                top='50px' 
-                className='global-settings-button'
-                headerContent={<img src="/warfarm/icons/settings.svg" style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
-              >
-                {
-                  (props) => (
-                    <>
-                      <li className='sized-content v-flex'>
-                      <div className='sized-content v-flex'>
-                          <div style={{ fontSize: 'x-small', fontStyle: 'italic' }}>Missions</div>
+            :
+            <>
+              <div className="sized-content h-flex flex-center" style={{ gap: '20px', justifyContent: 'flex-start' }}>
+                <div className='sized-content h-flex' style={{ justifyContent: 'center', alignItems: 'center' }}>
+                  <button 
+                    onClick={() => {
+                      if(pathName !== "/prime"){
+                        router.push("/prime");  
+                      }
+                      else{
+                        setForceHomeBlink(true);
+                        setTimeout(() => {
+                          setForceHomeBlink(false);
+                        }, 250);
+                      }
+                    }} 
+                    className='sized-content logo-button h-flex flex-center'
+                  >
+                      <Link href="/prime"><img style={{ minWidth: '70px' }} className='sized-content logo h-flex flex-center' src={`/warfarm/icons/logo_prime.svg`}/></Link>
+                  </button>
+                </div>
+                <ContextMenuButton
+                  className='nav-header-buttons-small-mediaquery-container'
+                  style={{
+                  }}
+                  iconUrl={`/warfarm/icons/info.svg`}
+                  headerContent={<img src="/warfarm/icons/more.svg" style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
+                >
+                  {
+                    (props) => (
+                      <div>
+                        <NavBarMainButtons forceHomeBlink={forceHomeBlink}/>
+                      </div>
+                    )
+                  }
+                </ContextMenuButton>
+                <div className='sized-content h-flex header-main-buttons-container' style={{ gap: '10px'}}>
+                    <NavBarMainButtons forceHomeBlink={forceHomeBlink}/>
+                </div>
+              </div>
+              <button className="sized-content h-flex search-button" onClick={handleSearchExpand}>
+                <img style={{ height: '30px' }} className="sized-content h-flex icon-default-filter" src={`/warfarm/icons/search.svg`} alt="Search" />
+              </button>
+              <div className="sized-remaining h-flex flex-center">
+                <div 
+                  className="sized-remaining h-flex flex-center global-search-bar-area"
+                  style={{
+                    justifyContent: 'flex-start'
+                  }}
+                
+                >
+                  <SearchBar />
+                </div>
+              </div>
+              <div className="sized-content h-flex flex-center" style={{ gap:'20px', justifyContent: 'flex-end' }}>
+                <Link href="/prime/supportme"><IconButton label={'Support Me'} iconUrl={`/warfarm/icons/heart.svg`} className={'layout-header-button support-me-button'} iconClassName={'support-me-icon'} iconHeight='20px' /></Link>
+                <div className='sized-content h-flex' style={{ justifyContent: 'center', alignItems: 'center' }}>
+                  <ContextMenuButton 
+                    iconUrl={`/warfarm/icons/info.svg`}
+                    headerContent={<img src="/warfarm/icons/info.svg" style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
+                  >
+                    {
+                      (props) => (
+                        <>
+                          
+                        </>
+                      )
+                    }
+                  </ContextMenuButton>
+                  <ContextMenuButton
+                    top='50px' 
+                    style={{ right: '0px' }}
+                    className='global-settings-button'
+                    headerContent={<img src="/warfarm/icons/settings.svg" style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
+                  >
+                    {
+                      (props) => (
+                        <>
+                          <li className='sized-content v-flex'>
                           <div className='sized-content v-flex'>
-                              <div>Mission Priority Preference</div>
-                              <div style={{ fontSize: 'x-small', fontStyle: 'italic', fontWeight: 'bold' }}>higher in list is prioritized over lower</div>
-                              <SortableList
-                                  style={{
-                                    marginTop: '5px',
-                                    padding: '10px', 
-                                    backgroundColor: 'var(--color-secondary)',
-                                    borderRadius: '10px', 
-                                    padding: '10px', 
-                                    fontSize: 'small' 
-                                  }}
-                                  elems={Object.keys(com.getDefaultMissionTypePriorities()).map(priority => (
-                                      <div key={`${priority}`} className='sized-content h-flex flex-center' style={{ gap: '5px', cursor: 'pointer' }}>
-                                          <div className='sized-content h-flex flex-center'><img style={{ filter: 'invert()', width: '5px', height: '5px' }} src='/warfarm/icons/move.svg'/></div>
-                                          <div className='sized-content h-flex flex-center'>{priority}</div>
-                                      </div>
-                                  ))}
-                                  onOrderConfirm={
-                                    (_elemsIdxs) => { 
-                                      const missionPriorities = com.missionPrioritiesObservable.get();
+                              <div style={{ fontSize: 'x-small', fontStyle: 'italic' }}>Missions</div>
+                              <div className='sized-content v-flex'>
+                                  <div>Mission Priority Preference</div>
+                                  <div style={{ fontSize: 'x-small', fontStyle: 'italic', fontWeight: 'bold' }}>higher in list is prioritized over lower</div>
+                                  <SortableList
+                                      style={{
+                                        marginTop: '5px',
+                                        padding: '10px', 
+                                        backgroundColor: 'var(--color-secondary)',
+                                        borderRadius: '10px', 
+                                        padding: '10px', 
+                                        fontSize: 'small' 
+                                      }}
+                                      elems={Object.keys(com.getDefaultMissionTypePriorities()).map(priority => (
+                                          <div key={`${priority}`} className='sized-content h-flex flex-center' style={{ gap: '5px', cursor: 'pointer' }}>
+                                              <div className='sized-content h-flex flex-center'><img style={{ filter: 'invert()', width: '5px', height: '5px' }} src='/warfarm/icons/move.svg'/></div>
+                                              <div className='sized-content h-flex flex-center'>{priority}</div>
+                                          </div>
+                                      ))}
+                                      onOrderConfirm={
+                                        (_elemsIdxs) => { 
+                                          const missionPriorities = com.missionPrioritiesObservable.get();
 
-                                      const newMissionPriorities = Object.fromEntries(_elemsIdxs
-                                        .map((elemIdx, index) => { 
-                                          const actualElem = Object.keys(missionPriorities)[elemIdx];
-                                          return [ actualElem, index ]; 
-                                        })
-                                      ); 
+                                          const newMissionPriorities = Object.fromEntries(_elemsIdxs
+                                            .map((elemIdx, index) => { 
+                                              const actualElem = Object.keys(missionPriorities)[elemIdx];
+                                              return [ actualElem, index ]; 
+                                            })
+                                          ); 
 
-                                      // console.log(`order confirm`, _elemsIdxs, missionPriorities, newMissionPriorities);
+                                          // console.log(`order confirm`, _elemsIdxs, missionPriorities, newMissionPriorities);
 
-                                      setMissionPriorities(
-                                        newMissionPriorities
-                                      ) 
-                                  }}
-                              />
+                                          setMissionPriorities(
+                                            newMissionPriorities
+                                          ) 
+                                      }}
+                                  />
+                              </div>
                           </div>
-                      </div>
-                    </li>
-                    <li className='sized-content v-flex'>
-                      <div className='sized-content v-flex' style={{ padding: '5px 0', gap: '5px' }}>
-                        <div style={{ fontSize: 'x-small', fontStyle: 'italic' }}>User Data</div>
-                        <div className='sized-content v-flex' style={{ gap: '5px' }}>
-                          <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
-                            <button onClick={exportUserData} className='sized-content settings-button'>Export User Data</button>
-                            <button onClick={importUserData} className='sized-content settings-button'>Import User Data</button>
+                        </li>
+                        <li className='sized-content v-flex'>
+                          <div className='sized-content v-flex' style={{ padding: '5px 0', gap: '5px' }}>
+                            <div style={{ fontSize: 'x-small', fontStyle: 'italic' }}>User Data</div>
+                            <div className='sized-content v-flex' style={{ gap: '5px' }}>
+                              <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
+                                <button onClick={exportUserData} className='sized-content settings-button'>Export User Data</button>
+                                <button onClick={importUserData} className='sized-content settings-button'>Import User Data</button>
+                              </div>
+                              <div className='sized-content v-flex' style={{ gap: '5px' }}>
+                                <button onClick={ev => { clearObtainedItemsData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear Obtained Items data</button>
+                                <button onClick={ev => { clearTrackedItemsData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear Tracked Items data</button>
+                                <button onClick={ev => { clearMissionPrioritiesData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear Mission Priority data</button>
+                                <button onClick={ev => { clearAllUserData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear All User Data</button>
+                              </div>
+                            </div>
                           </div>
-                          <div className='sized-content v-flex' style={{ gap: '5px' }}>
-                            <button onClick={ev => { clearObtainedItemsData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear Obtained Items data</button>
-                            <button onClick={ev => { clearTrackedItemsData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear Tracked Items data</button>
-                            <button onClick={ev => { clearMissionPrioritiesData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear Mission Priority data</button>
-                            <button onClick={ev => { clearAllUserData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear All User Data</button>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </>
-                )
-              }
-              </ContextMenuButton>
-            </div>
-          </div>
+                        </li>
+                      </>
+                    )
+                  }
+                  </ContextMenuButton>
+                </div>
+              </div>
+            </>
+          }
+          
         </div>
         <div className='sized-remaining main-content v-flex' style={{ marginBottom: '10px' }}>
           <div className="sized-remaining v-flex">

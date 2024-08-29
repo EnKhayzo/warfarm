@@ -3,7 +3,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import * as com from "../app/common.js"
 
-const ContextMenuButton = ({ top, children, buttons, headerContent, className }) => {
+/** 
+ * keep in mind: this automatically sets the body of the context menu style to 'top: 50px' 
+ * consider overriding it via the style to better set the position of the body  
+ */
+const ContextMenuButton = ({ top, children, buttons, headerContent, className, style }) => {
   const [showContextMenu, setShowContextMenu] = useState(false);
   const contextMenuRef = useRef(null);
 
@@ -43,11 +47,11 @@ const ContextMenuButton = ({ top, children, buttons, headerContent, className })
         <div 
           ref={contextMenuRef} 
           className={className} 
-          style={{
+          style={com.shallowMerge({
             display: showContextMenu ? '' : 'none',
             top: top,
             position: 'absolute',
-            right: '0',
+            top: '50px',
             listStyleType: 'none',
             padding: '10px',
             margin: 0,
@@ -55,7 +59,7 @@ const ContextMenuButton = ({ top, children, buttons, headerContent, className })
             borderRadius: '5px',
             zIndex: 1000,
             margin: '5px'
-          }}
+          }, style)}
         >
           {
             children ? 

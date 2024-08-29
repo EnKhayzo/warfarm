@@ -103,7 +103,7 @@ function getMissionGroups(missions, rarityPriorities, missionTypesPriorities){
   return missions
     .toSorted((a, b) => com.sortMissionFunc(a.rawObj.mission, b.rawObj.mission, a.rawObj.relic, b.rawObj.relic, missionTypesPriorities))
     .reduce((acc, mission) => {
-      console.log(`mission!`, mission);
+      // console.log(`mission!`, mission);
       if(!acc[mission.id]) 
         acc[mission.id] = {
           infoObj: mission,
@@ -145,7 +145,7 @@ const MissionTab = ({component, rarityPriorities}) => {
         >
           { 
             Object.entries(missionGroups)
-              .filter(([missionId, missionGroup]) => { console.log(`missionId`, missionId, missionGroup); return true; })
+              // .filter(([missionId, missionGroup]) => { console.log(`missionId`, missionId, missionGroup); return true; })
               .map(([missionId, missionGroup], index) => (
                 <Link href={missionGroup.infoObj.route}
                     key={`${index}-${missionGroup.infoObj.name}`} 

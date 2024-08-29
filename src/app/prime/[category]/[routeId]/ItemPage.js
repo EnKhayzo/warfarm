@@ -195,7 +195,7 @@ function RelicTab({_components}){
             .filter(component => com.relicDropsComponent(relic.rawObj.relic, component.rawObj))
             .map(component => rarityPriorities[com.getComponentRarityInRelationToRelic(component.rawObj, relic.rawObj.relic)])
         )
-        console.log(`score `, score, relic);
+        // console.log(`score `, score, relic);
         return score;
     };
 
@@ -590,7 +590,7 @@ export default function ItemPage({ routeId, pathObj }) {
                     <div className='sized-content item-page-item-components-container h-flex flex-center'>
                         { 
                             components.map((component, index) => (
-                                <Link href={com.getObjectRouteFromId(component.id)}><ComponentAddButton key={`${index}-${component.id}`} component={component}/></Link>
+                                <Link key={`${index}-${component.id}`}  href={com.getObjectRouteFromId(component.id)}><ComponentAddButton component={component}/></Link>
                             )) 
                         }
                     </div>
