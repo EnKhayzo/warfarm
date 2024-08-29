@@ -26,11 +26,11 @@ import LazyLoaded from '@/components/LazyLoaded.js';
 import TrackItemButton from '@/components/TrackItemButton.js';
 import useTrackedItems from '@/hooks/useTrackedItems.js'
 import ObtainedLabelObject from '@/components/ObtainedLabelObject.js';
-import FallbackObject from './[category]/[name]/FallbackObject.js';
+import FallbackObject from './[category]/[routeId]/FallbackObject.js';
 import useMissionPriorities from '@/hooks/useMissionPriorities.js';
 import TabComponent from '@/components/TabComponent.js';
 import useObtainedComponents from '@/hooks/useObtainedComponents.js';
-import ComponentAddButton from './[category]/[name]/subcomponents/ComponentAddButton.js';
+import ComponentAddButton from './[category]/[routeId]/subcomponents/ComponentAddButton.js';
 import ObtainedItemCheck from '@/components/ObtainedItemCheck.js';
 
 const ComponentTab = ({trackedItems}) => {

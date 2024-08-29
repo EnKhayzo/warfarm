@@ -39,7 +39,7 @@ const ComponentTab = ({item, components}) => {
 
     const relics = com.getSearchResultRelatedObjects(null, "Items", null, "relics", item, { router: router });
 
-    console.warn(`got relics result`, relics);
+    // console.warn(`got relics result`, relics);
 
     return (
         <div
@@ -224,9 +224,9 @@ function RelicTab({_components}){
                     components
                         .filter(component => com.relicDropsComponent(relic.rawObj.relic, component.rawObj))
                         .toSorted((a, b) => 
-                        rarityPriorities[com.getComponentRarityInRelationToRelic(a.rawObj, relic.rawObj.relic)]
-                        -
-                        rarityPriorities[com.getComponentRarityInRelationToRelic(b.rawObj, relic.rawObj.relic)]
+                            rarityPriorities[com.getComponentRarityInRelationToRelic(a.rawObj, relic.rawObj.relic)]
+                            -
+                            rarityPriorities[com.getComponentRarityInRelationToRelic(b.rawObj, relic.rawObj.relic)]
                         )
                         .map(component => { return (
                         <button 
@@ -260,16 +260,16 @@ function getMissionGroups(missions, rarityPriorities, missionTypesPriorities){
         .reduce((acc, mission) => {
         if(!acc[mission.id]) 
             acc[mission.id] = {
-            infoObj: mission,
-            mission: mission.rawObj.mission,
-            relics: {}
+                infoObj: mission,
+                mission: mission.rawObj.mission,
+                relics: {}
             };
     
         if(!acc[mission.id].relics[mission.rawObj.relic.name])
             acc[mission.id].relics[mission.rawObj.relic.name] = { 
-            rarity: mission.rarity,
-            rotations: mission.rawObj.rotations, 
-            relic: mission.rawObj.relic 
+                rarity: mission.rarity,
+                rotations: mission.rawObj.rotations, 
+                relic: mission.rawObj.relic 
             };
     
         return acc;
@@ -349,8 +349,9 @@ const MissionTab = ({item, components, rarityPriorities}) => {
                                                                 {
                                                                     Object.entries(missionGroup.relics)
                                                                         .filter(([ relicName, relic ]) => com.getRelicRewards(relic.relic)
-                                                                            .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.fullName) == 0) > -1
+                                                                            .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.id) == 0) > -1
                                                                         )
+                                                                        // .filter(el => { if() console.log(`el`, el); return true; })
                                                                         .map(([ relicName, relic ], index) => (
                                                                             <button 
                                                                                 key={`${relic.name}-${index}`} 
@@ -392,7 +393,7 @@ const MissionTab = ({item, components, rarityPriorities}) => {
     );
   }
 
-export default function ItemPage({ name, pathObj }) {
+export default function ItemPage({ routeId, pathObj }) {
     const router = useRouter();
     const item =  com.getObjectFromId(pathObj.id); // await com.getAllItems().find(item => item.name.localeCompare(pathObj.id) == 0);
     const components = com.getSearchResultRelatedObjects(null, "Items", null, "components", item, { router: router });
@@ -403,7 +404,7 @@ export default function ItemPage({ name, pathObj }) {
                 <div className='sized-remaining v-flex flex-center' style={{ gap: '50px' }}>
                     <div className='sized-content h-flex' style={{ marginTop: '20px' }}></div>
                     { item.vaulted ? (<div className='sized-content h-flex flex-center'>{`${item.name} is`}<span style={{ fontWeight: 'bold', whiteSpace: 'pre' }}> vaulted</span>.</div>) : null}
-                    <MainItemTitleComponent itemId={item.id} iconUrl={`/warfarm/images/${pathObj.id}.png`} label={pathObj.id}/>
+                    <MainItemTitleComponent itemId={item.id} iconUrl={com.getObjectIcon(com.getObjectFromId(pathObj.id))} label={pathObj.id}/>
                     <div className='sized-content item-page-item-components-container h-flex flex-center'>
                         { 
                             components.map((component, index) => (

@@ -9,9 +9,9 @@ export async function generateStaticParams() {
 }
 
 export default function ObjectDetailPage({ params }) {
-  const { category, name } = params;
+  const { category, routeId } = params;
 
   return (
-    <ObjectPage category={category} name={name} />
+    <ObjectPage category={category} routeId={routeId} />
   );
 }

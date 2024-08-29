@@ -102,7 +102,7 @@ const MissionTab = ({relic, missions, rarityPriorities}) => {
     );
   }
 
-export default function RelicPage({ name, pathObj }) {
+export default function RelicPage({ routeId, pathObj }) {
   const router = useRouter();
 
   const [ missionPriorities, setMissionPriorities ] = useMissionPriorities();
@@ -112,7 +112,7 @@ export default function RelicPage({ name, pathObj }) {
   const components = com.getSearchResultRelatedObjects(null, "Relics", null, "components", relic, { router: router });
   const missions = com.getSearchResultRelatedObjects(null, "Relics", null, "missions", relic, { missionPriorities: missionPriorities, router: router });
 
-  console.log(`componentrs missions`, components, missions);
+  // console.log(`componentrs missions`, components, missions);
 
   return (
       <div className='sized-content v-flex'>

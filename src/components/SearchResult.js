@@ -44,7 +44,7 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
   const getControlButtons = () => {
 
     const controlButtons = com.getSearchResultRelatedObjects(id, category, type, activeTab, rawObj, { missionPriorities: missionPriorities, router: router });
-    console.log(`contro lbuttons!`, id, controlButtons);
+    // console.log(`contro lbuttons!`, id, controlButtons);
     return controlButtons
   };
 
@@ -62,7 +62,7 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
         width: '50vw',
         cursor: 'pointer'
       }}
-      onClick={(ev) => { closeSearchBarCallback(ev); router.push(com.getObjectPathNameFromIdObj(rawObj)); }}
+      onClick={(ev) => { closeSearchBarCallback(ev); router.push(com.getObjectRouteFromId(rawObj.id)); }}
     >
       {/* Image */}
       <img src={imageUrl} alt={id} style={{ width: '80px' }} />
@@ -71,7 +71,7 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
       <div className='sized-content v-flex' style={{ gap: '0px' }}>
         <h2 
           className='sized-content h-flex flex-center' 
-          style={{ gap: '10px', margin: '0px', fontSize: 'large', position: 'relative' }}
+          style={{ justifyContent: 'flex-start', gap: '10px', margin: '0px', fontSize: 'large', position: 'relative' }}
         >
           {com.getObjectDisplayName(rawObj)}{vaulted ? <div style={{ marginLeft: '5px', fontSize: 'x-small' }}>vaulted</div> : null }<TrackItemButton positionAbsolute={false} itemId={id}/>
         </h2>

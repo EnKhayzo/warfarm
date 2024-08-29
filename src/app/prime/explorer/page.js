@@ -125,13 +125,14 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
                         alignSelf: 'stretch' 
                       }}
                       onClick={() => router.push(
-                        category.localeCompare("Items") == 0 ? `/prime/items/${object.name.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
-                        category.localeCompare("Components") == 0 ? `/prime/components/${object.fullName.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
-                        category.localeCompare("Relics") == 0 ? `/prime/relics/${object.name.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
-                        category.localeCompare("Missions") == 0 ? `/prime/missions/${`${object.name}${object.planet}`}` : ''
+                        com.getObjectRouteFromId(object.id)
+                        // category.localeCompare("Items") == 0 ? `/prime/items/${object.name.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
+                        // category.localeCompare("Components") == 0 ? `/prime/components/${object.fullName.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
+                        // category.localeCompare("Relics") == 0 ? `/prime/relics/${object.name.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
+                        // category.localeCompare("Missions") == 0 ? `/prime/missions/${`${object.name}${object.planet}`}` : ''
                       )}
                     >
-                      <img src={`/warfarm/images/${imageFunc(object)}.png`} className='sized-remaining main-view-item-image'/>
+                      <img src={com.getObjectIcon(object)} className='sized-remaining main-view-item-image'/>
                       <div className='sized-content main-view-item-label h-flex flex-center' style={{ textAlign: 'center' }}>{ labelFunc(object) }</div>
                       {/* <ObtainedLabelObject object={object}/> */}
                       <TrackItemButton itemId={com.getObjectId(object, category)}/>

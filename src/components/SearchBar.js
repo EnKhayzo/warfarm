@@ -87,7 +87,7 @@ const SearchBar = () => {
                 ];
             }
 
-            console.log(`all results!`, allResults);
+            // console.log(`all results!`, allResults);
 
             setResults(allResults);
         } 

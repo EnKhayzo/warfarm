@@ -31,7 +31,7 @@ import SortableList from '@/components/SortableList';
 import * as com from "../common.js"
 import IconButton from "@/components/IconButton";
 import useDialogUis from "@/hooks/useDialogUis";
-import FallbackObject from "./[category]/[name]/FallbackObject";
+import FallbackObject from "./[category]/[routeId]/FallbackObject";
 import LazyLoaded from "@/components/LazyLoaded";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -43,7 +43,7 @@ async function initialize(){
 export function MainLayoutComponent({children}){
   const router = useRouter();
   const pathName = usePathname();  
-  console.log(`pathname`, pathName);
+  // console.log(`pathname`, pathName);
   const [ dialogUis, setDialogUis ] = useDialogUis();
   
 
@@ -201,7 +201,7 @@ export function MainLayoutComponent({children}){
                                         })
                                       ); 
 
-                                      console.log(`order confirm`, _elemsIdxs, missionPriorities, newMissionPriorities);
+                                      // console.log(`order confirm`, _elemsIdxs, missionPriorities, newMissionPriorities);
 
                                       setMissionPriorities(
                                         newMissionPriorities

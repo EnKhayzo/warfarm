@@ -26,6 +26,7 @@ import MainItemTitleComponent from './subcomponents/MainItemTitleComponent.js';
 import TabComponent from '@/components/TabComponent.js';
 import FallbackObject from './FallbackObject.js';
 import ComponentAddButtons from '@/components/ComponentAddButtons.js';
+import useMissionPriorities from '@/hooks/useMissionPriorities.js';
 
 const RelicTab = ({component, rarityPriorities}) => {
   const router = useRouter();
@@ -96,31 +97,36 @@ const RelicTab = ({component, rarityPriorities}) => {
   );
 }
 
-function getMissionGroups(missions, rarityPriorities){
-  return missions.reduce((acc, mission) => {
-    if(!acc[mission.id]) 
-      acc[mission.id] = {
-        infoObj: mission,
-        mission: mission.rawObj.mission,
-        relics: {}
-      };
+function getMissionGroups(missions, rarityPriorities, missionTypesPriorities){
+  return missions
+    .toSorted((a, b) => com.sortMissionFunc(a.rawObj.mission, b.rawObj.mission, a.rawObj.relic, b.rawObj.relic, missionTypesPriorities))
+    .reduce((acc, mission) => {
+      console.log(`mission!`, mission);
+      if(!acc[mission.id]) 
+        acc[mission.id] = {
+          infoObj: mission,
+          mission: mission.rawObj.mission,
+          relics: {}
+        };
 
-    if(!acc[mission.id].relics[mission.rawObj.relic.name])
-      acc[mission.id].relics[mission.rawObj.relic.name] = { 
-        rarity: mission.rarity,
-        rotations: mission.rawObj.rotations, 
-        relic: mission.rawObj.relic 
-      };
+      if(!acc[mission.id].relics[mission.rawObj.relic.id])
+        acc[mission.id].relics[mission.rawObj.relic.id] = { 
+          rarity: mission.rarity,
+          rotations: mission.rawObj.rotations, 
+          relic: mission.rawObj.relic 
+        };
 
-    return acc;
-  }, {});
+      return acc;
+    }, {});
 }
 
 const MissionTab = ({component, rarityPriorities}) => {
   const router = useRouter();
 
+  const [ missionPriorities, setMissionPriorities ] = useMissionPriorities();
+
   const missions = com.getSearchResultRelatedObjects(null, "Components", null, "missions", component, { router: router });
-  const missionGroups = getMissionGroups(missions, rarityPriorities);
+  const missionGroups = getMissionGroups(missions, rarityPriorities, missionPriorities);
   
   return (
     <div 
@@ -137,6 +143,7 @@ const MissionTab = ({component, rarityPriorities}) => {
         >
           { 
             Object.entries(missionGroups)
+              .filter(([missionId, missionGroup]) => { console.log(`missionId`, missionId, missionGroup); return true; })
               .map(([missionId, missionGroup], index) => (
                 <div 
                     key={`${index}-${missionGroup.infoObj.name}`} 
@@ -158,7 +165,9 @@ const MissionTab = ({component, rarityPriorities}) => {
                       {/* <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', fontStyle: 'italic' }}>{missionGroup.infoObj.labelFooter}</div> */}
                       <div className='sized-content v-flex' style={{ gap: '5px', marginTop: '5px' }}>
                         {
-                          Object.entries(missionGroup.relics).map(([ relicName, relic ], index) => (
+                          Object.entries(missionGroup.relics)
+                            // .filter(([ relicName, relic ]) => { console.log(`relicNAme`, relicName, relic); return true; })
+                            .map(([ relicName, relic ], index) => (
                             <button 
                               key={`${relic.name}-${index}`} 
                               onClick={(ev) => { ev.stopPropagation(); router.push(com.getObjectPathNameFromIdObj(relic.relic, "Relics"))}}
@@ -194,7 +203,7 @@ const MissionTab = ({component, rarityPriorities}) => {
   );
 }
 
-export default function ComponentPage({ name, pathObj }) {
+export default function ComponentPage({ routeId, pathObj }) {
   const router = useRouter();
 
   const [ activeTab, setActiveTab ] = useState("Relics");
@@ -218,7 +227,7 @@ export default function ComponentPage({ name, pathObj }) {
                         style={{ marginBottom: '20px', gap: '10px' }}
                         onClick={() => router.push(`/prime/items/${component.parentItem.replaceAll(" ", "").replaceAll("&", "")}`)}
                       >
-                        <img style={{ height: '30px' }} src={`/warfarm/images/${component.parentItem}.png`}/>
+                        <img style={{ height: '30px' }} src={com.getObjectIcon(component)}/>
                         <div>{component.parentItem}</div>
                       </button>
                   }

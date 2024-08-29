@@ -21,10 +21,10 @@ const pageMap = {
   "missions": MissionPage
 }
 
-export default function ObjectPage({ category, name }) {
+export default function ObjectPage({ category, routeId }) {
   const router = useParams();
 
   const SpecificPage = pageMap[category];
-  const pathObj = com.getObjectPath(name);
-  return (<SpecificPage name={name} pathObj={pathObj}/>);
+  const pathObj = com.getObjectPathObjFromRouteId(routeId);
+  return (<SpecificPage routeId={routeId} pathObj={pathObj}/>);
 }
