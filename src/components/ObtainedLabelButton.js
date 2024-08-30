@@ -23,14 +23,14 @@ export default function ObtainedLabelButton({ component, isRawObj=false }){
                 <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
                     <button 
                         className='sized-content h-flex object-page-component-owned-button flex-center'
-                        onClick={(ev) => { ev.stopPropagation(); return com.incrementUserDataComponentObtained(_component.id); }}
+                        onClick={(ev) => { ev.preventDefault(); ev.stopPropagation(); return com.incrementUserDataComponentObtained(_component.id); }}
                     >
                         +
                     </button>
                     <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', fontStyle: 'italic', minWidth: 'fit-content' }}>{`${obtainedComponents && obtainedComponents[_component.id] ? obtainedComponents[_component.id].obtained : '0'}/${_component.required}`}</div>
                     <button 
                         className='sized-content h-flex object-page-component-owned-button flex-center'
-                        onClick={(ev) => { ev.stopPropagation(); return com.decrementUserDataComponentObtained(_component.id); }}
+                        onClick={(ev) => { ev.preventDefault(); ev.stopPropagation(); return com.decrementUserDataComponentObtained(_component.id); }}
                     >
                         -
                     </button>

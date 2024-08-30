@@ -53,6 +53,36 @@ function NavBarMainButtons({ forceHomeBlink }){
   );
 }
 
+function NavBarSideButtons({}){
+  const pathName = usePathname(); 
+
+  return (
+    <>
+      <Link href="/prime/upcoming"><IconButton label={'Upcoming'} iconUrl={`/warfarm/icons/news.svg`} highlight={pathName === "/prime/upcoming"} className={'layout-header-button'} iconClassName={'layout-header-icon'}/></Link>
+    </>
+  );
+}
+
+function MediaQueryCollapseContextMenuButton({children}){
+  return (
+    <ContextMenuButton
+      className='nav-header-buttons-small-mediaquery-container'
+      style={{
+      }}
+      iconUrl={`/warfarm/icons/info.svg`}
+      headerContent={<img src="/warfarm/icons/more.svg" style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
+    >
+      {
+        (props) => (
+          <div className="sized-content v-flex flex-center" style={{ gap: '5px' }}>
+            {children}
+          </div>
+        )
+      }
+    </ContextMenuButton>
+  )
+}
+
 export function MainLayoutComponent({children}){
   const router = useRouter();
   const pathName = usePathname();  
@@ -171,41 +201,36 @@ export function MainLayoutComponent({children}){
                       <Link href="/prime"><img style={{ minWidth: '70px' }} className='sized-content logo h-flex flex-center' src={`/warfarm/icons/logo_prime.svg`}/></Link>
                   </button>
                 </div>
-                <ContextMenuButton
-                  className='nav-header-buttons-small-mediaquery-container'
-                  style={{
-                  }}
-                  iconUrl={`/warfarm/icons/info.svg`}
-                  headerContent={<img src="/warfarm/icons/more.svg" style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
-                >
-                  {
-                    (props) => (
-                      <div>
-                        <NavBarMainButtons forceHomeBlink={forceHomeBlink}/>
-                      </div>
-                    )
-                  }
-                </ContextMenuButton>
+                <MediaQueryCollapseContextMenuButton>
+                  <NavBarMainButtons forceHomeBlink={forceHomeBlink}/>
+                </MediaQueryCollapseContextMenuButton>
                 <div className='sized-content h-flex header-main-buttons-container' style={{ gap: '10px'}}>
                     <NavBarMainButtons forceHomeBlink={forceHomeBlink}/>
                 </div>
               </div>
-              <button className="sized-content h-flex search-button" onClick={handleSearchExpand}>
-                <img style={{ height: '30px' }} className="sized-content h-flex icon-default-filter" src={`/warfarm/icons/search.svg`} alt="Search" />
-              </button>
               <div className="sized-remaining h-flex flex-center">
+                <button className="sized-content h-flex search-button" onClick={handleSearchExpand}>
+                  <img style={{ height: '30px' }} className="sized-content h-flex icon-default-filter" src={`/warfarm/icons/search.svg`} alt="Search" />
+                </button>
                 <div 
                   className="sized-remaining h-flex flex-center global-search-bar-area"
                   style={{
                     justifyContent: 'flex-start'
                   }}
-                
                 >
                   <SearchBar />
                 </div>
               </div>
               <div className="sized-content h-flex flex-center" style={{ gap:'20px', justifyContent: 'flex-end' }}>
                 <Link href="/prime/supportme"><IconButton label={'Support Me'} iconUrl={`/warfarm/icons/heart.svg`} className={'layout-header-button support-me-button'} iconClassName={'support-me-icon'} iconHeight='20px' /></Link>
+                <div className="sized-content h-flex flex-center">
+                  <MediaQueryCollapseContextMenuButton>
+                    <NavBarSideButtons/>
+                  </MediaQueryCollapseContextMenuButton>
+                  <div className='sized-content h-flex header-main-buttons-container' style={{ gap: '10px'}}>
+                    <NavBarSideButtons/>
+                  </div>
+                </div>
                 <div className='sized-content h-flex' style={{ justifyContent: 'center', alignItems: 'center' }}>
                   <ContextMenuButton 
                     iconUrl={`/warfarm/icons/info.svg`}

@@ -97,9 +97,14 @@ a[href^="ftp://"] {
   --color-text-section: #7f949c;
   --color-hint: #aaaaaa;
 
+  --color-text-farmed: #49aa5e;
+  --color-secondary-farmed: #1c3020;
+  --color-quaternary-farmed: #17251d;
+
   --color-component-common: rgb(84, 53, 22);
   --color-component-uncommon: rgb(49, 53, 54);
   --color-component-rare: rgb(65, 55, 0);
+  --color-resurgence: #116b8f;
 }
 
 body {
@@ -413,7 +418,7 @@ html * {
 
 
 .object-page-mission-relic {
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 5px;
 }
 .object-page-mission-relic.common { background-color: var(--color-component-common); }
@@ -519,6 +524,29 @@ html * {
 
 .obtained-label-component.hidden {
   opacity: 0%;
+}
+
+.item-check-parent {
+  position: relative;
+}
+
+.resurgence-check {
+  
+}
+
+.resurgence-check.absolute {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+
+.resurgence-check-icon {
+  /* #116b8f */
+  /* filter: invert(17%) sepia(100%) saturate(2453%) hue-rotate(180deg) brightness(101%) contrast(87%); */
+  filter: invert(35%) sepia(20%) saturate(4292%) hue-rotate(21deg) brightness(94%) contrast(77%);
+  width: 20px;
+  height: 20px;
+  opacity: 100%
 }
 
 .layout-header-button {

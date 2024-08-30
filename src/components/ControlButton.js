@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 
 import * as com from "../app/common.js"
 
-const ControlButton = ({ rawObj, icon, vaulted, rarity, _labelHeading, _label, _labelFooter, onClick, onContextMenu, type }) => {  
+const ControlButton = ({ rawObj, infoObj=null, icon, vaulted, rarity, _labelHeading, _label, _labelFooter, onClick, onContextMenu, type }) => {  
   const router = useRouter();
   const [labelHeading, setLabelHeading] = useState(_labelHeading); // Create a state variable
   const [label, setLabel] = useState(_label); // Create a state variable
@@ -18,9 +18,11 @@ const ControlButton = ({ rawObj, icon, vaulted, rarity, _labelHeading, _label, _
   const handleClick = (ev) => {
     if (onClick) {
       ev.stopPropagation();
-      onClick(rawObj); // Call the passed onClick function
+      ev.preventDefault();
 
-      if("required" in rawObj){ // TODO better way to discern a component from the other types?
+      onClick(ev); // Call the passed onClick function
+
+      if(rawObj.category === "components"){
         setLabel(`${com.getUserDataComponentSetting(rawObj.id, "obtained")}/${rawObj.required}`);
       }
       

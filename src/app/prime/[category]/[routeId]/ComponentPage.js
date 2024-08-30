@@ -29,6 +29,7 @@ import TabComponent from '@/components/TabComponent.js';
 import FallbackObject from './FallbackObject.js';
 import ComponentAddButtons from '@/components/ComponentAddButtons.js';
 import useMissionPriorities from '@/hooks/useMissionPriorities.js';
+import ResurgenceItemIcon from '@/components/ResurgenceItemIcon.js';
 
 const RelicTab = ({component, rarityPriorities}) => {
   const router = useRouter();
@@ -78,7 +79,7 @@ const RelicTab = ({component, rarityPriorities}) => {
                     <Link href={relic.route}
                         key={`${index}-${relic.name}`} 
                         // onClick={() => router.push(relic.route)}
-                        className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center${` ${relic.rarity}` ?? ''}`}
+                        className={`sized-content item-page-component-container item-check-parent tracker-item-parent v-flex flex-center${` ${relic.rarity}` ?? ''}`}
                         style={{
                             gap: '5px',
                             opacity: relic.vaulted ? '50%' : '100%'
@@ -88,6 +89,7 @@ const RelicTab = ({component, rarityPriorities}) => {
                         <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
                             <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{relic.labelHeading}</div>
                         </div>
+                        <ResurgenceItemIcon itemId={relic.id}/>
                     </Link>
                 )) 
               }

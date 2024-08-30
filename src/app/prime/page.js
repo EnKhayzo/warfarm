@@ -35,8 +35,10 @@ import useObtainedComponents from '@/hooks/useObtainedComponents.js';
 import ComponentAddButton from './[category]/[routeId]/subcomponents/ComponentAddButton.js';
 import ObtainedItemCheck from '@/components/ObtainedItemCheck.js';
 import SelectorComponent from '@/components/SelectorComponent.js';
+import ObtainedResurgenceGroup from '@/components/ObtainedResurgenceGroup.js';
+import LabelCheckbox from '@/components/LabelCheckbox.js';
 
-const ComponentTab = ({trackedItems}) => {
+const ComponentTab = ({ hideFarmed, trackedItems}) => {
   const router = useRouter();
 
   const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
@@ -44,7 +46,7 @@ const ComponentTab = ({trackedItems}) => {
   const componentsRelicsMerged = com.getComponentsRelicsMerged(trackedItems, router);
 
   const components = componentsRelicsMerged.components
-    .filter(component => !com.componentIsFarmed(component.rawObj, obtainedComponents));
+    .filter(component => !hideFarmed || !com.componentIsFarmed(component.rawObj, obtainedComponents));
   const relics = componentsRelicsMerged.relics;
 
   const rarityPriorities = com.getRarityPriorities();
@@ -60,6 +62,7 @@ const ComponentTab = ({trackedItems}) => {
     >
       { 
         Object.entries(components
+          // i group components by item
           .reduce((acc, component) => {
             if(component.rawObj.parentItem == null) { 
               acc[component.rawObj.id] = { 
@@ -76,10 +79,10 @@ const ComponentTab = ({trackedItems}) => {
           .map(([itemName, itemGroup], index) => (
             <div 
               key={`${index}-${itemName}`}
-              className='sized-content v-flex flex-center'
+              className='sized-content v-flex flex-center item-check-parent'
               style={{
                 borderRadius: '10px',
-                backgroundColor: 'var(--color-secondary)',
+                backgroundColor: com.objectIsFarmed(com.getObjectFromId(itemName)) ? 'var(--color-secondary-farmed)' : 'var(--color-secondary)',
                 padding: '10px',
                 gap: '5px',
                 alignSelf: 'stretch',
@@ -112,7 +115,7 @@ const ComponentTab = ({trackedItems}) => {
                             padding: '10px',
                             borderRadius: '10px',
                             gap: '10px',
-                            backgroundColor: 'var(--color-quaternary)',
+                            backgroundColor: com.objectIsFarmed(com.getObjectFromId(component.id)) ? 'var(--color-quaternary-farmed)' : 'var(--color-quaternary)',
                             alignSelf: 'stretch',
                             justifyContent: 'flex-start'
                         }}
@@ -165,6 +168,7 @@ const ComponentTab = ({trackedItems}) => {
                   )) 
                 }
               </div>
+              <ObtainedResurgenceGroup itemId={itemName}/>
             </div>
           ))
       }
@@ -172,7 +176,7 @@ const ComponentTab = ({trackedItems}) => {
   );
 }
 
-function RelicTab({trackedItems}){
+function RelicTab({ hideFarmed, trackedItems}){
   const router = useRouter();
   const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
 
@@ -182,7 +186,7 @@ function RelicTab({trackedItems}){
   const componentsRelicsMerged = com.getComponentsRelicsMerged(trackedItems, router);
 
   const components = componentsRelicsMerged.components
-    .filter(component => !com.componentIsFarmed(component.rawObj, obtainedComponents));
+    .filter(component => !hideFarmed || !com.componentIsFarmed(component.rawObj, obtainedComponents));
 
   const relics = com.duplicatesRemoved(
     componentsRelicsMerged.relics
@@ -195,7 +199,7 @@ function RelicTab({trackedItems}){
           const obj = com.getObjectFromId(reward.rewardFullName); 
           if(obj == null) return true;
 
-          return com.componentIsFarmed(obj);
+          return hideFarmed && com.componentIsFarmed(obj);
         })
       ),
       relic => relic.rawObj.relic.name
@@ -247,7 +251,11 @@ function RelicTab({trackedItems}){
             key={`${index}-${relic.name}`} 
             className='sized-content h-flex flex-center'
             style={{
-              backgroundColor: 'var(--color-secondary)',
+              backgroundColor: !hideFarmed && components
+                                .filter(component => 
+                                  com.relicDropsComponent(relic.rawObj.relic, component.rawObj)
+                                ).every(component => com.objectIsFarmed(component.rawObj))
+                                ? 'var(--color-secondary-farmed)' : 'var(--color-secondary)',
               borderRadius: '10px',
               padding: '10px',
               gap: '10px',
@@ -289,7 +297,8 @@ function RelicTab({trackedItems}){
                         style={{
                           width: '210px',
                           gap: '5px',
-                          opacity: component.vaulted ? '50%' : '100%'
+                          opacity: component.vaulted ? '50%' : '100%',
+                          color: !hideFarmed && com.objectIsFarmed(component.rawObj) ? 'var(--color-text-farmed)' : 'inherit'
                         }}
                     >
                         <div className='sized-content h-flex flex-center'><img style={{ height: '25px' }} src={component.icon}/></div>
@@ -331,7 +340,7 @@ function getMissionGroups(missions, rarityPriorities, missionTypesPriorities){
     }, {});
 }
 
-const MissionTab = ({ groupBy, trackedItems, rarityPriorities=null }) => {
+const MissionTab = ({ groupBy, hideFarmed, trackedItems, rarityPriorities=null }) => {
   const router = useRouter();
 
   if(!rarityPriorities) rarityPriorities = com.getRarityPriorities();
@@ -346,7 +355,7 @@ const MissionTab = ({ groupBy, trackedItems, rarityPriorities=null }) => {
 
     if(trackedItem.category === "items"){
       const components = com.getSearchResultRelatedObjects(null, "Items", null, "components", trackedItem, { router: router })
-                          .filter(componentInfo => !com.componentIsFarmed(componentInfo.rawObj, obtainedComponents));
+                          .filter(componentInfo => !hideFarmed || !com.componentIsFarmed(componentInfo.rawObj, obtainedComponents));
       acc.components = com.duplicatesRemoved(
         acc.components.concat(components), 
         component => component.searchObjId
@@ -361,7 +370,7 @@ const MissionTab = ({ groupBy, trackedItems, rarityPriorities=null }) => {
     else if(trackedItem.category === "components"){
       const parentItem = com.getObjectFromId(trackedItem.parentItem);
       const components = [ com.getSearchResultRelatedObjectsSingle("Items", "components", { item: parentItem, component: trackedItem }, router) ]
-                          .filter(componentInfo => !com.componentIsFarmed(componentInfo.rawObj, obtainedComponents));
+                          .filter(componentInfo => !hideFarmed || !com.componentIsFarmed(componentInfo.rawObj, obtainedComponents));
       acc.components = com.duplicatesRemoved(
         acc.components.concat(components), 
         component => component.searchObjId
@@ -425,8 +434,14 @@ const MissionTab = ({ groupBy, trackedItems, rarityPriorities=null }) => {
         -
         (missionPriorities[missionGroupInfoB.mission.type]+1 || Infinity) 
       )
-      
   );
+
+  const rotationPriorities = com.getRotationPriorities();
+  const relicMinRotation = (relic) => {
+    return Math.min(...
+      relic.rotations.map(rotation => rotationPriorities[rotation.rotation])
+    );
+  };
 
   const relicTypePriorities = com.getRelicTypePriorities();
 
@@ -481,9 +496,9 @@ const MissionTab = ({ groupBy, trackedItems, rarityPriorities=null }) => {
                                             // onClick={ev => { ev.stopPropagation(); router.push(component.route); }}
                                             style={{
                                                 borderRadius: '10px',
-                                                backgroundColor: 'var(--color-sextenary)',
+                                                backgroundColor: 'var(--color-quaternary)',
                                                 gap: '10px',
-                                                padding: '5px'
+                                                padding: '10px'
                                             }}
                                         >
                                             <div className={`sized-content v-flex flex-center`} style={{ minWidth: '70px' }}>
@@ -541,8 +556,9 @@ const MissionTab = ({ groupBy, trackedItems, rarityPriorities=null }) => {
                                   .filter(([ relicId, relic ]) => 
                                     !components
                                       .filter(component => com.relicDropsComponent(relic.relic, component.rawObj))
-                                      .every(component => com.objectIsFarmed(component))
+                                      .every(component => hideFarmed && com.objectIsFarmed(component))
                                   )
+                                  .toSorted(([ _, a ], [ __, b ]) => relicMinRotation(a) - relicMinRotation(b))
                                   .map(([ relicId, relic ], index) => (
                                     <div
                                       key={`${index}-${relicId}`}
@@ -555,7 +571,11 @@ const MissionTab = ({ groupBy, trackedItems, rarityPriorities=null }) => {
                                       <div 
                                         className='sized-content h-flex flex-center'
                                         style={{
-                                          backgroundColor: 'var(--color-quaternary)',
+                                          backgroundColor: !hideFarmed && components
+                                                            .filter(component => 
+                                                              com.relicDropsComponent(relic.relic, component.rawObj)
+                                                            ).every(component => com.objectIsFarmed(component.rawObj))
+                                                            ? 'var(--color-quaternary-farmed)' : 'var(--color-quaternary)',
                                           borderRadius: '10px',
                                           padding: '10px',
                                           gap: '10px',
@@ -612,7 +632,8 @@ const MissionTab = ({ groupBy, trackedItems, rarityPriorities=null }) => {
                                                     style={{
                                                       width: '210px',
                                                       gap: '5px',
-                                                      opacity: component.vaulted ? '50%' : '100%'
+                                                      opacity: component.vaulted ? '50%' : '100%',
+                                                      color: !hideFarmed && com.objectIsFarmed(component.rawObj) ? 'var(--color-text-farmed)' : 'inherit'
                                                     }}
                                                 >
                                                     <div className='sized-content h-flex flex-center'><img style={{ height: '25px' }} src={component.icon}/></div>
@@ -639,8 +660,25 @@ const MissionTab = ({ groupBy, trackedItems, rarityPriorities=null }) => {
   );
 }
 
+function HideFarmedItemsCheckbox({ setHideFarmed }){
+  return (
+    <LabelCheckbox
+      type="checkbox" 
+      value="farmed" 
+      textLabel="Hide Farmed Items"
+      onChange={(ev) => { setHideFarmed(ev.target.checked) }}
+      checked={true}
+    />
+  )
+}
+
 function FarmingSheet({ trackedItems }){
   const [ groupBy, setGroupBy ] = useState("relic");
+  const [ hideFarmed, setHideFarmed ] = useState(true);
+
+  const onChangeHideFarmedItems = (hide) => {
+    setHideFarmed(hide);
+  };
 
   return (
     <div className='sized-component v-flex flex-center' style={{ gap: '10px' }}>
@@ -648,19 +686,32 @@ function FarmingSheet({ trackedItems }){
       <TabComponent
         defaultTab={"Components"}
         tabs={{
-          "Components": <ComponentTab trackedItems={trackedItems}/>,
-          "Relics": <RelicTab trackedItems={trackedItems}/>,
-          "Missions": <MissionTab groupBy={groupBy} trackedItems={trackedItems}/>
+          "Components": <ComponentTab hideFarmed={hideFarmed} trackedItems={trackedItems}/>,
+          "Relics": <RelicTab hideFarmed={hideFarmed} trackedItems={trackedItems}/>,
+          "Missions": <MissionTab groupBy={groupBy} hideFarmed={hideFarmed} trackedItems={trackedItems}/>
         }}
         headerControls={{
           "Missions": (
-            <SelectorComponent
-              options={{
-                "Group By Relic":     { value: "relic", defaultOption: true },
-                "Group By Component": { value: "component" }
-              }}
-              onConfirm={([ text, entry ]) => setGroupBy(entry.value)}
-            />
+            <div className='sized-content h-flex flex-center' style={{ gap: '10px' }}>
+              <HideFarmedItemsCheckbox setHideFarmed={setHideFarmed}/>
+              <SelectorComponent
+                options={{
+                  "Group By Relic":     { value: "relic", defaultOption: true },
+                  "Group By Component": { value: "component" }
+                }}
+                onConfirm={([ text, entry ]) => setGroupBy(entry.value)}
+              />
+            </div>
+          ),
+          "Components": (
+            <div className='sized-content h-flex flex-center' style={{ gap: '10px' }}>
+              <HideFarmedItemsCheckbox setHideFarmed={setHideFarmed}/>
+            </div>
+          ),
+          "Relics": (
+            <div className='sized-content h-flex flex-center' style={{ gap: '10px' }}>
+              <HideFarmedItemsCheckbox setHideFarmed={setHideFarmed}/>
+            </div>
           )
         }}
       />
@@ -728,7 +779,7 @@ export function TrackedItemsComponent(){
                           return null; 
                         })() }
                         <TrackItemButton itemId={itemId} positionAbsolute={true}/>
-                        <ObtainedItemCheck itemId={itemId} positionAbsolute={true}/>
+                        <ObtainedResurgenceGroup itemId={itemId} positionAbsolute={true}/>
                       </Link>
                     ))
               }  

@@ -51,6 +51,11 @@ export async function _matchAsync(value, cases){
   }
 }
 
+export function shallowMerge(a, b){
+  if(b == null) return a;
+  return { ...a, ...b };
+}
+
 export function loadSetting(name){
     const value = JSON.parse(localStorage.getItem(name));
     if(name === "userData" && value == null) { console.warn(`userData was null on disk! returning {}`, name, value); return {} };
@@ -413,6 +418,8 @@ let items = null;
 let relics = null;
 let missions = null;
 
+let relicsResurgence = null;
+
 let relicRewardComponentMap = null;
 let missionRewardComponentMap = null;
 let idMap = null;
@@ -429,13 +436,14 @@ export async function initialize(local=false) {
     if(initialized) return;
  
     items = (await import(`../../public/data/items.json`)).default;
+    components = (await import(`../../public/data/components.json`)).default;
     relics = (await import(`../../public/data/relics.json`)).default;
     missions = filterDict(
       (await import(`../../public/data/missions.json`)).default, 
       ([ id, mission ]) => defaultMissionInitializeFilter(id)
     );
 
-    components = (await import(`../../public/data/components.json`)).default;
+    relicsResurgence = (await import(`../../public/data/relics_resurgence.json`)).default;
 
     relicRewardComponentMap = await import(`../../public/data/indices/relic_reward_component_map.json`);
     missionRewardComponentMap = await import(`../../public/data/indices/mission_reward_component_map.json`);
@@ -543,6 +551,14 @@ export function getDefaultMissionTypePriorities(){
       "Spy": 6,
       "Interception": 7
     };
+}
+
+export function getRotationPriorities(){
+  return {
+    "A": 1,
+    "B": 2,
+    "C": 3
+  }
 }
 
 export function getRarityPriorities(){
@@ -1337,7 +1353,44 @@ export function generatePageTitle(pageTitle) {
   return `${pageTitle} | Warfarm`;
 }
 
-export function shallowMerge(a, b){
-  if(b == null) return a;
-  return { ...a, ...b };
+export function getItemComponents(itemId){
+  const obj = getObjectFromId(itemId);
+  if(!obj) { console.warn(`obj is null!`, itemId); return; }
+
+  return Object.keys(obj.components).map(componentId => getObjectFromId(componentId));
+}
+
+export function isRelicResurgence(id){
+  return id in relicsResurgence;
+}
+
+export function isComponentResurgence(id){
+  return getRelicsThatDropComponent(id).some(relicInfo => relicInfo.relic.id in relicsResurgence);
+}
+
+export function isItemResurgcence(id){
+  const obj = getObjectFromId(id);
+  if(!obj) { console.warn(`obj is null!`, itemId); return; }
+  
+  return getItemComponents(id).some(component => isComponentResurgence(component.id));
+}
+
+export function isObjectResurgence(itemId){
+  const obj = getObjectFromId(itemId);
+  if(!obj) { console.warn(`obj is null!`, itemId); return; }
+  if(obj.category==="missions") return false;
+
+  let res = false;
+  _match(obj.category, {
+    "items": () => {
+      res = isItemResurgcence(itemId);
+    },
+    "components": () => {
+      res = isComponentResurgence(itemId);
+    },
+    "relics": () => {
+      res = isRelicResurgence(itemId);
+    }
+  })
+  return res;
 }

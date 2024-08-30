@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 import ControlButton from './ControlButton';
 import * as com from "../app/common.js"
@@ -9,6 +10,7 @@ import * as com from "../app/common.js"
 import { SearchBarContext } from './SearchBarContext';
 import TrackItemButton from './TrackItemButton';
 import ObtainedLabelButton from './ObtainedLabelButton';
+import ObtainedItemCheck from './ObtainedItemCheck';
 
 const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCallback, rawObj }) => {
   const router = useRouter();
@@ -49,7 +51,8 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
   };
 
   return (
-    <div 
+    <Link
+      href={com.getObjectRouteFromId(rawObj.id)} 
       className="sized-remaining global-search-result tracker-item-parent h-flex" 
       style={{
         display: 'flex',
@@ -74,7 +77,9 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
           className='sized-content h-flex flex-center' 
           style={{ justifyContent: 'flex-start', gap: '10px', margin: '0px', fontSize: 'large', position: 'relative' }}
         >
-          {com.getObjectDisplayName(rawObj)}{vaulted ? <div style={{ marginLeft: '5px', fontSize: 'x-small' }}>vaulted</div> : null }<TrackItemButton positionAbsolute={false} itemId={id}/>
+          {com.getObjectDisplayName(rawObj)}{vaulted ? <div style={{ marginLeft: '5px', fontSize: 'x-small' }}>vaulted</div> : null }
+          <ObtainedItemCheck positionAbsolute={false} itemId={id}/>
+          <TrackItemButton positionAbsolute={false} itemId={id}/>
         </h2>
         <div style={{ color: '#9d9488' }}>{category}{type ? ` - ${type}` : ``}</div>
       </div>
@@ -95,7 +100,7 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
           {com.getTabsForSearchResult(rawObj).length > 0 ? com.getTabsForSearchResult(rawObj).map(tab => (
             <button
               key={`${id}-${com.capitalizeFirstLetter(tab)}`}
-              onClick={(ev) => { ev.stopPropagation(); setActiveTab(tab.toLowerCase()); }}
+              onClick={(ev) => { ev.preventDefault(); ev.stopPropagation(); setActiveTab(tab.toLowerCase()); }}
               style={{
                 border: '0px',
                 padding: '5px 5px',
@@ -117,25 +122,27 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
             <div className="sized-remaining h-flex" style={{ gap: '5px', width: '1px' }}>
                 <div className="sized-remaining">{/** spacer */}</div>
                 {getControlButtons().length > 0 ? getControlButtons().map((infoObj, index) => (
-                    <ControlButton 
-                      key={(() => { const key = `${infoObj.id}-${activeTab}-${index}`; return key})()} 
-                      icon={infoObj.icon} 
-                      rawObj={infoObj.rawObj} 
-                      vaulted={infoObj.vaulted} 
-                      rarity={infoObj.rarity} 
-                      _label={infoObj.label} 
-                      _labelHeading={infoObj.labelHeading} 
-                      _labelFooter={infoObj.labelFooter} 
-                      onClick={(ev) => { if(infoObj.tab !== "components") closeSearchBarCallback(ev); infoObj.onClick(); }} 
-                      onContextMenu={(ev) => { ev.preventDefault(); closeSearchBarCallback(ev); router.push(infoObj.route); }} 
-                      type={infoObj.type} 
-                    />
+                    <Link className='control-button' style={{ padding: '0px' }} href={infoObj.route} key={(() => { const key = `${infoObj.id}-${activeTab}-${index}`; return key})()}>
+                      <ControlButton 
+                        icon={infoObj.icon} 
+                        rawObj={infoObj.rawObj}
+                        infoObj={infoObj} 
+                        vaulted={infoObj.vaulted} 
+                        rarity={infoObj.rarity} 
+                        _label={infoObj.label} 
+                        _labelHeading={infoObj.labelHeading} 
+                        _labelFooter={infoObj.labelFooter} 
+                        onClick={(ev) => { if(infoObj.tab !== "components") { ev.preventDefault(); ev.stopPropagation(); closeSearchBarCallback(ev); infoObj.onClick(); } else infoObj.onClick(); }} 
+                        // onContextMenu={(ev) => { ev.preventDefault(); closeSearchBarCallback(ev); router.push(infoObj.route); }} 
+                        type={infoObj.type} 
+                      />
+                    </Link>
                 )) : 
                 <div className="sized-remaining v-box" style={{ height: '100%' }}><div className="sized-remaining"></div></div>}
             </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

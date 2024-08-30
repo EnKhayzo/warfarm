@@ -7,6 +7,8 @@ import TrackItemButton from '@/components/TrackItemButton.js';
 
 import * as com from "@/app/common.js"
 import useObtainedComponents from '@/hooks/useObtainedComponents';
+import ResurgenceItemIcon from '@/components/ResurgenceItemIcon';
+import ObtainedResurgenceGroup from '@/components/ObtainedResurgenceGroup';
 
 export default function ComponentAddButton({ component, fullName=false, iconHeight='75px', width=null }){
     const router = useRouter();
@@ -35,6 +37,7 @@ export default function ComponentAddButton({ component, fullName=false, iconHeig
                     { componentIsAnomalous ? null : <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', fontStyle: 'italic', minWidth: 'fit-content' }}>{`${obtainedComponents && obtainedComponents[component.rawObj.id] ? obtainedComponents[component.rawObj.id].obtained : '0'}/${component.rawObj.required}`}</div>}
                 </div>
                 <TrackItemButton itemId={component.rawObj.id}/>
+                <ObtainedResurgenceGroup itemId={component.rawObj.id}/>
             </div>
             {
                 componentIsAnomalous ? null:

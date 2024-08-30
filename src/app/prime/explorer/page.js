@@ -32,6 +32,7 @@ import ObtainedItemCheck from '@/components/ObtainedItemCheck';
 
 import useObtainedComponents from '@/hooks/useObtainedComponents.js';
 import ObtainedLabelObject from '@/components/ObtainedLabelObject';
+import ObtainedResurgenceGroup from '@/components/ObtainedResurgenceGroup';
 
 
 const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) => {
@@ -118,7 +119,7 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
                   group.map((object, index) => (
                     <Link href={com.getObjectRouteFromId(object.id)}
                       key={`${index}-${object.name}`} 
-                      className={`sized-content main-view-item-single-container tracker-item-parent${com.objectIsFarmed(object, obtainedComponents) ? ` object-farmed` : ``} v-flex flex-center`}
+                      className={`sized-content main-view-item-single-container item-check-parent tracker-item-parent${com.objectIsFarmed(object, obtainedComponents) ? ` object-farmed` : ``} v-flex flex-center`}
                       style={{ 
                         width: '140px',
                         opacity: object.vaulted ? '50%' : '100%', 
@@ -138,7 +139,7 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
                       <div className='sized-content main-view-item-label h-flex flex-center' style={{ textAlign: 'center' }}>{ labelFunc(object) }</div>
                       {/* <ObtainedLabelObject object={object}/> */}
                       <TrackItemButton itemId={com.getObjectId(object, category)}/>
-                      <ObtainedItemCheck itemId={com.getObjectId(object, category)} positionAbsolute={true}/>
+                      <ObtainedResurgenceGroup itemId={com.getObjectId(object, category)} positionAbsolute={true}/>
                     </Link>
                   )) 
                 }

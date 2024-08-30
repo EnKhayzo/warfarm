@@ -33,6 +33,7 @@ import TabHeaderButtonsComponent from '@/components/TabHeaderButtonsComponent.js
 import TabComponent from '@/components/TabComponent.js';
 import FallbackObject from './FallbackObject.js';
 import SelectorComponent from '@/components/SelectorComponent.js';
+import ResurgenceItemIcon from '@/components/ResurgenceItemIcon.js';
 
 const ComponentTab = ({item, components}) => {
     const router = useRouter();
@@ -137,7 +138,7 @@ const ComponentTab = ({item, components}) => {
                                                         <Link href={relic.route}
                                                             key={`${index}-${relic.rawObj.relic.name}`} 
                                                             // onClick={() => router.push(relic.route)}
-                                                            className={`sized-content item-page-component-container relic-button-container tracker-item-parent v-flex flex-center${` ${relic.rarity}` ?? ''}`}
+                                                            className={`sized-content item-page-component-container relic-button-container item-check-parent tracker-item-parent v-flex flex-center${` ${relic.rarity}` ?? ''}`}
                                                             style={{
                                                                 gap: '5px',
                                                                 opacity: relic.vaulted ? '50%' : '100%'
@@ -147,6 +148,7 @@ const ComponentTab = ({item, components}) => {
                                                             <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
                                                                 <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', textWrap: 'nowrap' }}>{relic.label}</div>
                                                             </div>
+                                                            <ResurgenceItemIcon itemId={relic.rawObj.relic.id}/>
                                                         </Link>
                                                     ))
                                             }
@@ -234,7 +236,7 @@ function RelicTab({_components}){
                 >
                 <Link href={relic.route}
                     // onClick={() => router.push(relic.route)}
-                    className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center`}
+                    className={`sized-content item-page-component-container item-check-parent tracker-item-parent v-flex flex-center`}
                     style={{
                         gap: '5px',
                         opacity: relic.vaulted ? '50%' : '100%'
@@ -244,6 +246,7 @@ function RelicTab({_components}){
                     <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
                         <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{relic.rawObj.relic.name}</div>
                     </div>
+                    <ResurgenceItemIcon itemId={relic.id}/>
                 </Link>
                 <div 
                     className='sized-content v-flex flex-center'
@@ -362,6 +365,13 @@ const MissionTab = ({ groupBy, item, components, rarityPriorities}) => {
           
       );
 
+      const rotationPriorities = com.getRotationPriorities();
+      const relicMinRotation = (relic) => {
+        return Math.min(...
+          relic.rotations.map(rotation => rotationPriorities[rotation.rotation])
+        );
+      };
+
     return (
             <div 
                 className='sized-content component-page-relative-info-container v-flex flex-center'
@@ -411,9 +421,9 @@ const MissionTab = ({ groupBy, item, components, rarityPriorities}) => {
                                                                 // onClick={ev => { ev.stopPropagation(); router.push(component.route); }}
                                                                 style={{
                                                                     borderRadius: '10px',
-                                                                    backgroundColor: 'var(--color-sextenary)',
+                                                                    backgroundColor: 'var(--color-quaternary)',
                                                                     gap: '10px',
-                                                                    padding: '5px'
+                                                                    padding: '10px'
                                                                 }}
                                                             >
                                                                 <div className={`sized-content v-flex flex-center`} style={{ minWidth: '70px' }}>
@@ -468,6 +478,7 @@ const MissionTab = ({ groupBy, item, components, rarityPriorities}) => {
                                                             .filter(component => com.relicDropsComponent(relic.relic, component.rawObj))
                                                             .every(component => com.objectIsFarmed(component))
                                                         )
+                                                        .toSorted(([ _, a ], [ __, b ]) => relicMinRotation(a) - relicMinRotation(b))
                                                         .map(([ relicId, relic ], index) => (
                                                             <div
                                                                 key={`${index}-${relicId}`}
@@ -587,7 +598,12 @@ export default function ItemPage({ routeId, pathObj }) {
                     <div className='sized-content h-flex' style={{ marginTop: '20px' }}></div>
                     { item.vaulted ? (<div className='sized-content h-flex flex-center'>{`${item.name} is`}<span style={{ fontWeight: 'bold', whiteSpace: 'pre' }}> vaulted</span>.</div>) : null}
                     <MainItemTitleComponent itemId={item.id} iconUrl={com.getObjectIcon(com.getObjectFromId(pathObj.id))} label={pathObj.id}/>
-                    <div className='sized-content item-page-item-components-container h-flex flex-center'>
+                    <div 
+                        className='sized-content item-page-item-components-container h-flex flex-center'
+                        style={{
+                            flexWrap: 'wrap'
+                        }}
+                    >
                         { 
                             components.map((component, index) => (
                                 <Link key={`${index}-${component.id}`}  href={com.getObjectRouteFromId(component.id)}><ComponentAddButton component={component}/></Link>
