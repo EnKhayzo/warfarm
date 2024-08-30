@@ -59,22 +59,23 @@ export default function LegendComponent({ closeMenu }){
       className="sized-remaining v-flex flex-center"
       style={{
         maxHeight: '75vh',
-        width: '60vw',
+        width: '70vw',
         overflow: 'auto',
         justifyContent: 'flex-start'
       }}
     >
       <div className="sized-content v-flex flex-center" style={{ gap: '50px' }}>
         <div className="sized-content v-flex flex-center">
-          <span>When i refer to an 'object', i mean either an item, a component, a relic or a mission.</span>
-          <span>By 'item' i mean anything that needs components to be crafted (Warframes, Weapons, Companions, etc).</span>
+          <span>When i refer to an &apos;object&apos;, i mean either an item, a component, a relic or a mission.</span>
+          <span>By &apos;item&apos; i mean anything that needs components to be crafted (Warframes, Weapons, Companions, etc).</span>
         </div>
         <div className="sized-content v-flex flex-center">
           <div className="sized-content h-flex" style={{ fontSize: 'x-large', fontWeight: 'bold' }}>Icons</div>
           <div className="sized-content v-flex">
             <span className="sized-content h-flex" style={{ whiteSpace: 'pre' }}><img className="icon-gold-filter" style={{ width: '20px', height: '20px' }} src="/warfarm/icons/star_hollow_filled.svg"/> = Object that has been tracked, you can click on it to untrack/track.</span>
+            <span className="sized-content h-flex" style={{ whiteSpace: 'pre' }}><img className="icon-default-filter" style={{ width: '20px', height: '20px' }} src="/warfarm/icons/success_hollow.svg"/> = You can click this icon to toggle the item as farmed automatically, it will set all related components to their respective required count.</span>
             <span className="sized-content h-flex" style={{ whiteSpace: 'pre' }}><img className="icon-partial-filter" style={{ width: '20px', height: '20px' }} src="/warfarm/icons/square.svg"/> = The object has been partially farmed, some parts/components are still missing. The blue fill square indicates how much of the object you have.</span>
-            <span className="sized-content h-flex" style={{ whiteSpace: 'pre' }}><img className="icon-success-filter" style={{ width: '20px', height: '20px' }} src="/warfarm/icons/success.svg"/> = The object has been farmed: in the case of an item it means every component has been obtained.</span>
+            <span className="sized-content h-flex" style={{ whiteSpace: 'pre' }}><img className="icon-success-filter" style={{ width: '20px', height: '20px' }} src="/warfarm/icons/success.svg"/> = The object has been farmed: in the case of an item it means every component has been obtained. You can click this to toggle remove the farmed status of the object.</span>
             <span className="sized-content h-flex" style={{ whiteSpace: 'pre' }}><img className="icon-gold-filter" style={{ width: '20px', height: '20px' }} src="/warfarm/icons/resurgence.svg"/> = Prime Resurgence Object, can be an item, a component or a relic.</span>
           </div>
         </div>

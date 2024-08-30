@@ -41,7 +41,7 @@ const RotationTab = ({mission, rarityPriorities}) => {
     return (
         <>
             { 
-                relics.length <= 0 ? <div>This mission doesn't drop any relic.</div>:
+                relics.length <= 0 ? <div>This mission doesn&apos;t drop any relic.</div>:
                     <div 
                         className='sized-content component-page-relative-info-container v-flex flex-center'
                         style={{ maxWidth: '75vw' }}
@@ -150,7 +150,7 @@ const RotationTab = ({mission, rarityPriorities}) => {
     return (
         <>
             { 
-                relics.length <= 0 ? <div>This mission doesn't drop any relic.</div>:
+                relics.length <= 0 ? <div>This mission doesn&apos;t drop any relic.</div>:
                     <div 
                         className='sized-content component-page-relative-info-container v-flex flex-center'
                         style={{ 
