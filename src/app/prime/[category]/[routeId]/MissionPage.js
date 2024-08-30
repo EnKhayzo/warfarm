@@ -36,102 +36,108 @@ const RotationTab = ({mission, rarityPriorities}) => {
     const relicTypePriorities = com.getRelicTypePriorities();
     const relics = com.getSearchResultRelatedObjects(null, "Missions", null, "relics", mission, { router: router });
 
+    console.log(`relics!`, relics);
   
     return (
-        <div 
-            className='sized-content component-page-relative-info-container v-flex flex-center'
-            style={{ maxWidth: '75vw' }}
-        >
-            <div
-                className='sized-remaining component-page-relative-info-container h-flex'
-                style={{
-                    alignItems: 'flex-start'
-                }}
-            >
-                {   
-                    relics ?
-                        Object.entries(relics
-                        // .toSorted((a, b) => 
-                        //     (rarityPriorities[a.rarity]-rarityPriorities[b.rarity])
-                        //     ||
-                        //     (relicTypePriorities[a.rawObj.relic.tier]-relicTypePriorities[b.rawObj.relic.tier])
-                        //     ||
-                        //     (a.rawObj.relic.name.localeCompare(b.rawObj.relic.name))
-                        // )
-                            .reduce((acc, relic) => {
-                                relic.rawObj.forEach(rotation => { 
-                                    if(!acc[rotation.rotation]) acc[rotation.rotation] = [] 
+        <>
+            { 
+                relics.length <= 0 ? <div>This mission doesn't drop any relic.</div>:
+                    <div 
+                        className='sized-content component-page-relative-info-container v-flex flex-center'
+                        style={{ maxWidth: '75vw' }}
+                    >
+                        <div
+                            className='sized-remaining component-page-relative-info-container h-flex'
+                            style={{
+                                alignItems: 'flex-start'
+                            }}
+                        >
+                            {   
+                                relics ?
+                                    Object.entries(relics
+                                    // .toSorted((a, b) => 
+                                    //     (rarityPriorities[a.rarity]-rarityPriorities[b.rarity])
+                                    //     ||
+                                    //     (relicTypePriorities[a.rawObj.relic.tier]-relicTypePriorities[b.rawObj.relic.tier])
+                                    //     ||
+                                    //     (a.rawObj.relic.name.localeCompare(b.rawObj.relic.name))
+                                    // )
+                                        .reduce((acc, relic) => {
+                                            relic.rawObj.forEach(rotation => { 
+                                                if(!acc[rotation.rotation]) acc[rotation.rotation] = [] 
 
-                                    acc[rotation.rotation].push({ rotation, relic });
-                                });
-                                
-                                return acc;
-                            }, {}))
-                            .toSorted((a, b) => a[0].localeCompare(b[0]))
-                            .map(([ rotationName, relicList ], index) => (
-                                <div 
-                                    key={`${index}-${rotationName}`} 
-                                    className='sized-content v-flex flex-center' 
-                                    style={{ 
-                                        backgroundColor: 'var(--color-tertiary)',
-                                        borderRadius: '10px',
-                                        padding: '10px',
-                                        gap: '10px',
-                                        alignSelf: 'stretch',
-                                        justifyContent: 'flex-start'
-                                    }}
-                                >
-                                    <div className='sized-content h-flex flex-center' style={{ fontSize: 'large', fontWeight: 'bold' }}>{(rotationName !== "null" ? rotationName : '(no rotation)')}</div>
-                                    <div 
-                                        className='sized-content h-flex flex-center' 
-                                        style={{ 
-                                            gap: '20px', 
-                                            flexWrap: 'wrap'
-                                        }}
-                                    >
-                                        {
-                                            relicList
-                                                .map(({ rotation, relic }) => (
-                                                    <Link href={relic.route}
-                                                        key={`${index}-${relic.id}`} 
-                                                        // onClick={() => router.push(relic.route)}
-                                                        className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center${` ${relic.rarity}` ?? ''}`}
-                                                        style={{
-                                                            gap: '5px',
-                                                            opacity: relic.vaulted ? '50%' : '100%',
-                                                            alignSelf: 'stretch',
-                                                            justifyContent: 'flex-start'
-                                                        }}
-                                                    >
-                                                        <div className='sized-content h-flex flex-center' style={{ width: '75px', height: '75px' }}><img src={relic.icon}/></div>
-                                                        <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
-                                                            <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{relic.labelHeading}</div>
-                                                            <div className='sized-content v-flex' style={{ gap: '5px', marginTop: '5px' }}>
-                                                            {
-                                                                relic.rawObj
-                                                                    .filter(rotation => (rotation.rotation ?? '').localeCompare(rotationName) == 0)
-                                                                    .map((rotation, index) => (
-                                                                        <div 
-                                                                            key={`${rotation.rotation}-${index}`} 
-                                                                            className='sized-content' 
-                                                                            style={{ fontSize: 'small', whiteSpace: 'pre', borderRadius: '10px', padding: '10px', backgroundColor: 'var(--color-sextenary)' }}
-                                                                        >
-                                                                            <span style={{ fontWeight: 'bold', fontStyle: 'italic' }}>{rotation.perc}</span>
+                                                acc[rotation.rotation].push({ rotation, relic });
+                                            });
+                                            
+                                            return acc;
+                                        }, {}))
+                                        .toSorted((a, b) => a[0].localeCompare(b[0]))
+                                        .map(([ rotationName, relicList ], index) => (
+                                            <div 
+                                                key={`${index}-${rotationName}`} 
+                                                className='sized-content v-flex flex-center' 
+                                                style={{ 
+                                                    backgroundColor: 'var(--color-tertiary)',
+                                                    borderRadius: '10px',
+                                                    padding: '10px',
+                                                    gap: '10px',
+                                                    alignSelf: 'stretch',
+                                                    justifyContent: 'flex-start'
+                                                }}
+                                            >
+                                                <div className='sized-content h-flex flex-center' style={{ fontSize: 'large', fontWeight: 'bold' }}>{(rotationName !== "null" ? rotationName : '(no rotation)')}</div>
+                                                <div 
+                                                    className='sized-content h-flex flex-center' 
+                                                    style={{ 
+                                                        gap: '20px', 
+                                                        flexWrap: 'wrap'
+                                                    }}
+                                                >
+                                                    {
+                                                        relicList
+                                                            .map(({ rotation, relic }) => (
+                                                                <Link href={relic.route}
+                                                                    key={`${index}-${relic.id}`} 
+                                                                    // onClick={() => router.push(relic.route)}
+                                                                    className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center${` ${relic.rarity}` ?? ''}`}
+                                                                    style={{
+                                                                        gap: '5px',
+                                                                        opacity: relic.vaulted ? '50%' : '100%',
+                                                                        alignSelf: 'stretch',
+                                                                        justifyContent: 'flex-start'
+                                                                    }}
+                                                                >
+                                                                    <div className='sized-content h-flex flex-center' style={{ width: '75px', height: '75px' }}><img src={relic.icon}/></div>
+                                                                    <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
+                                                                        <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{relic.labelHeading}</div>
+                                                                        <div className='sized-content v-flex' style={{ gap: '5px', marginTop: '5px' }}>
+                                                                        {
+                                                                            relic.rawObj
+                                                                                .filter(rotation => (rotation.rotation ?? '').localeCompare(rotationName) == 0)
+                                                                                .map((rotation, index) => (
+                                                                                    <div 
+                                                                                        key={`${rotation.rotation}-${index}`} 
+                                                                                        className='sized-content' 
+                                                                                        style={{ fontSize: 'small', whiteSpace: 'pre', borderRadius: '10px', padding: '10px', backgroundColor: 'var(--color-sextenary)' }}
+                                                                                    >
+                                                                                        <span style={{ fontWeight: 'bold', fontStyle: 'italic' }}>{rotation.perc}</span>
+                                                                                    </div>
+                                                                                ))
+                                                                        }
                                                                         </div>
-                                                                    ))
-                                                            }
-                                                            </div>
-                                                        </div>
-                                                    </Link>
-                                                ))
-                                        }
-                                    </div>
-                                </div>
-                            )) 
-                        : null
-                    }
-                </div>
-            </div>
+                                                                    </div>
+                                                                </Link>
+                                                            ))
+                                                    }
+                                                </div>
+                                            </div>
+                                        )) 
+                                    : null
+                                }
+                            </div>
+                        </div> 
+                }
+        </>
     );
   }
 
@@ -142,62 +148,67 @@ const RotationTab = ({mission, rarityPriorities}) => {
     const relics = com.getSearchResultRelatedObjects(null, "Missions", null, "relics", mission, { router: router });
 
     return (
-        <div 
-            className='sized-content component-page-relative-info-container v-flex flex-center'
-            style={{ 
-                maxWidth: '75vw'
-            }}
-        >
-            <div
-                className='sized-content component-page-relative-info-container h-flex flex-center'
-                style={{ 
-                    maxWidth: '75vw', 
-                    flexWrap: 'wrap' 
-                }}
-            >
-                { 
-                    relics
-                    // .toSorted((a, b) => 
-                    //     (rarityPriorities[a.rarity]-rarityPriorities[b.rarity])
-                    //     ||
-                    //     (relicTypePriorities[a.rawObj.relic.tier]-relicTypePriorities[b.rawObj.relic.tier])
-                    //     ||
-                    //     (a.rawObj.relic.name.localeCompare(b.rawObj.relic.name))
-                    // )
-                    .map((relic, index) => (
-                        <Link href={relic.route}
-                            key={`${index}-${relic.name}`} 
-                            // onClick={() => router.push(relic.route)}
-                            className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center${` ${relic.rarity}` ?? ''}`}
-                            style={{
-                                gap: '5px',
-                                opacity: relic.vaulted ? '50%' : '100%',
-                                alignSelf: 'stretch',
-                                justifyContent: 'flex-start'
+        <>
+            { 
+                relics.length <= 0 ? <div>This mission doesn't drop any relic.</div>:
+                    <div 
+                        className='sized-content component-page-relative-info-container v-flex flex-center'
+                        style={{ 
+                            maxWidth: '75vw'
+                        }}
+                    >
+                        <div
+                            className='sized-content component-page-relative-info-container h-flex flex-center'
+                            style={{ 
+                                maxWidth: '75vw', 
+                                flexWrap: 'wrap' 
                             }}
                         >
-                            <div className='sized-content h-flex flex-center' style={{ width: '75px', height: '75px' }}><img src={relic.icon}/></div>
-                            <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
-                                <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{relic.labelHeading}</div>
-                                <div className='sized-content v-flex' style={{ gap: '5px', marginTop: '5px' }}>
-                                {
-                                    relic.rawObj.map((rotation, index) => (
-                                        <div 
-                                            key={`${rotation.rotation}-${index}`} 
-                                            className='sized-content' 
-                                            style={{ fontSize: 'small', whiteSpace: 'pre', borderRadius: '10px', padding: '10px', backgroundColor: 'var(--color-sextenary)' }}
-                                        >
-                                            <span style={{ fontWeight: 'bold' }}>{rotation.rotation}</span>{ rotation.rotation ? ' - ' :null }<span style={{ fontStyle: 'italic' }}>{rotation.perc}</span>
+                            { 
+                                relics
+                                // .toSorted((a, b) => 
+                                //     (rarityPriorities[a.rarity]-rarityPriorities[b.rarity])
+                                //     ||
+                                //     (relicTypePriorities[a.rawObj.relic.tier]-relicTypePriorities[b.rawObj.relic.tier])
+                                //     ||
+                                //     (a.rawObj.relic.name.localeCompare(b.rawObj.relic.name))
+                                // )
+                                .map((relic, index) => (
+                                    <Link href={relic.route}
+                                        key={`${index}-${relic.name}`} 
+                                        // onClick={() => router.push(relic.route)}
+                                        className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center${` ${relic.rarity}` ?? ''}`}
+                                        style={{
+                                            gap: '5px',
+                                            opacity: relic.vaulted ? '50%' : '100%',
+                                            alignSelf: 'stretch',
+                                            justifyContent: 'flex-start'
+                                        }}
+                                    >
+                                        <div className='sized-content h-flex flex-center' style={{ width: '75px', height: '75px' }}><img src={relic.icon}/></div>
+                                        <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
+                                            <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{relic.labelHeading}</div>
+                                            <div className='sized-content v-flex' style={{ gap: '5px', marginTop: '5px' }}>
+                                            {
+                                                relic.rawObj.map((rotation, index) => (
+                                                    <div 
+                                                        key={`${rotation.rotation}-${index}`} 
+                                                        className='sized-content' 
+                                                        style={{ fontSize: 'small', whiteSpace: 'pre', borderRadius: '10px', padding: '10px', backgroundColor: 'var(--color-sextenary)' }}
+                                                    >
+                                                        <span style={{ fontWeight: 'bold' }}>{rotation.rotation}</span>{ rotation.rotation ? ' - ' :null }<span style={{ fontStyle: 'italic' }}>{rotation.perc}</span>
+                                                    </div>
+                                                ))
+                                            }
+                                            </div>
                                         </div>
-                                    ))
-                                }
-                                </div>
-                            </div>
-                        </Link>
-                    )) 
+                                    </Link>
+                                )) 
+                            }
+                        </div>
+                    </div>
                 }
-            </div>
-        </div>
+        </>
     );
   }
 

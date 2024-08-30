@@ -34,6 +34,8 @@ import IconButton from "@/components/IconButton";
 import useDialogUis from "@/hooks/useDialogUis";
 import FallbackObject from "./[category]/[routeId]/FallbackObject";
 import LazyLoaded from "@/components/LazyLoaded";
+import HoverElement from "@/components/HoverElement";
+import LegendComponent from "./LegendComponent";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -58,7 +60,15 @@ function NavBarSideButtons({}){
 
   return (
     <>
-      <Link href="/prime/upcoming"><IconButton label={'Upcoming'} iconUrl={`/warfarm/icons/news.svg`} highlight={pathName === "/prime/upcoming"} className={'layout-header-button'} iconClassName={'layout-header-icon'}/></Link>
+      <Link href="/prime/upcoming">
+        <IconButton 
+          label={'Upcoming'} 
+          iconUrl={`/warfarm/icons/news.svg`} 
+          highlight={pathName === "/prime/upcoming"} 
+          className={'layout-header-button'} 
+          iconClassName={'layout-header-icon'}
+        />
+      </Link>
     </>
   );
 }
@@ -89,6 +99,19 @@ export function MainLayoutComponent({children}){
   // console.log(`pathname`, pathName);
   const [ dialogUis, setDialogUis ] = useDialogUis();
   
+  const [ hasFirstAccessed, setHasFirstAccessed ] = useState(false);
+  
+  useEffect(() => {
+    const _hasFirstAccessed = com.getUserDataHasFirstAccessed();
+    if(_hasFirstAccessed){
+      console.log(`first access detected!`, _hasFirstAccessed);
+      setHasFirstAccessed(_hasFirstAccessed);
+    }
+
+    return () => {
+
+    };
+  }, [])
 
   const exportUserData = () => {
     com.downloadJSON({ userData: com.loadSetting("userData"), epoch: Date.now(), version: "1.0.0" }, "warfarm_userData.json");
@@ -231,8 +254,8 @@ export function MainLayoutComponent({children}){
                     <NavBarSideButtons/>
                   </div>
                 </div>
-                <div className='sized-content h-flex' style={{ justifyContent: 'center', alignItems: 'center' }}>
-                  <ContextMenuButton 
+                <div className='sized-content h-flex' style={{ gap: '20px', justifyContent: 'center', alignItems: 'center' }}>
+                  {/* <ContextMenuButton 
                     iconUrl={`/warfarm/icons/info.svg`}
                     headerContent={<img src="/warfarm/icons/info.svg" style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
                   >
@@ -243,7 +266,32 @@ export function MainLayoutComponent({children}){
                         </>
                       )
                     }
-                  </ContextMenuButton>
+                  </ContextMenuButton> */}
+                  <button 
+                    className='sized-content h-flex'
+                    style={{ position: 'relative' }}
+                    onClick={(ev) => {
+                      com.setUserDataHasFirstAccessed(false); setHasFirstAccessed(false);
+                      com.showDialogUi({
+                        title: 'Warfarm - Legend',
+                        type: 'custom',
+                        uiFunc: (props) => (
+                          <LegendComponent props={props}/>
+                        )
+                      });
+                    }}
+                  >
+                    <div className='sized-content h-flex'><img className='sized-content h-flex icon-default-filter nav-bar-standard-icon' src='/warfarm/icons/info.svg'/></div>
+                    {
+                      !hasFirstAccessed ? null:
+                      <div 
+                        style={{ position: 'absolute', top: '43px', left: '-40px', pointerEvents: 'none', cursor: 'default' }}
+                        onClick={ev => { ev.stopPropagation(); ev.preventDefault(); }}
+                      >
+                        <div className="speech-bubble blinking-slow">See Here</div>
+                      </div>
+                    }
+                  </button>
                   <ContextMenuButton
                     top='50px' 
                     style={{ right: '0px' }}
@@ -352,22 +400,43 @@ export function MainLayoutComponent({children}){
                 key={`${index}-${dialogUi.title}`}
                 className='sized-content v-flex flex-center' 
                 style={{ 
-                  width: '25vw',
+                  position: 'relative',
+                  minWidth: '25vw',
                   backgroundColor: 'var(--color-secondary)',
                   borderRadius: '10px',
                   padding: '10px',
                   gap: '10px' 
                 }}
               >
-                <div className='sized-content v-flex flex-center' style={{ textAlign: 'center' }}>{dialogUi.title}</div>
+                <div className='sized-content v-flex flex-center' style={{ textAlign: 'center', fontWeight: 'bold' }}>{dialogUi.title}</div>
                 {
                   dialogUi.type === "okcancel" ? 
                     <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
                       <button onClick={ev => { dialogUi.ok(ev); com.removeDialogUi(dialogUi); }} className="sized-content dialog-footer-button h-flex flex-center">Ok</button>
                       <button onClick={(ev) => com.removeDialogUi(dialogUi)} className="sized-content dialog-footer-button h-flex flex-center">Cancel</button>
                     </div>
+                  :
+                  dialogUi.type === "custom" ?
+                    dialogUi.uiFunc({ closeMenu: () => com.removeDialogUi(dialogUi) })
                   :null
                 }
+                <button
+                  className="sized-content h-flex flex-center"
+                  style={{
+                    position: 'absolute',
+                    top: '0px',
+                    right: '0px',
+                    margin: '10px',
+                    padding: '5px',
+                    width: '30px',
+                    height: '30px',
+                    backgroundColor: 'var(--color-tertiary)',
+                    borderRadius: '10px'
+                  }}
+                  onClick={() => com.removeDialogUi(dialogUi)}
+                >
+                  X 
+                </button>
               </div>
             ))
           }

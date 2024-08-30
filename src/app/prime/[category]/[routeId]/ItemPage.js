@@ -389,185 +389,186 @@ const MissionTab = ({ groupBy, item, components, rarityPriorities}) => {
                     Object.entries(missionGroups)
                         .toSorted(([ idA, missionA ], [ idB, missionB ]) => customMissionSort(idA, idB, missionA, missionB))
                         .map(([missionId, missionGroup], index) => (
-                        <Link href={missionGroup.infoObj.route}
+                        <div
                             key={`${index}-${missionGroup.infoObj.name}`} 
                             // onClick={() => router.push(missionGroup.infoObj.route)}
                             className={`sized-content item-page-component-container mission-relic-component tracker-item-parent v-flex flex-center`}
                             style={{
-                                cursor: 'pointer',
                                 gap: '5px',
                                 opacity: missionGroup.infoObj.vaulted ? '50%' : '100%',
                                 alignSelf: 'stretch'
                             }}
                         >
+                            <Link  href={missionGroup.infoObj.route} className='sized-content mission-relic-component v-flex flex-center'>
+                                <div className='sized-content h-flex flex-center' ><img style={{ height: '75px' }} src={missionGroup.infoObj.icon}/></div>
+                                <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', fontWeight: 'bold' }}>{missionGroup.infoObj.rawObj.mission.type}</div>
+                                <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{missionGroup.infoObj.id}</div>
+                            </Link>
                             <div className='sized-remaining v-flex flex-center' style={{ justifyContent: 'flex-start' }}>
-                                <div className='sized-content h-flex flex-center'><img style={{ height: '75px' }} src={missionGroup.infoObj.icon}/></div>
-                                    <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
-                                        <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', fontWeight: 'bold' }}>{missionGroup.infoObj.rawObj.mission.type}</div>
-                                        <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{missionGroup.infoObj.id}</div>
-                                        <div className='sized-content v-flex' style={{ gap: '5px', marginTop: '5px' }}>
-                                            {
-                                                groupBy === "component" ?
-                                                    components
-                                                        .filter(component => Object.entries(missionGroup.relics)
-                                                            .find(([ relicName, relic ]) => com.getRelicRewards(relic.relic)
-                                                                .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.id) == 0) > -1
-                                                            )
+                                <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
+                                    <div className='sized-content v-flex' style={{ gap: '5px', marginTop: '5px' }}>
+                                        {
+                                            groupBy === "component" ?
+                                                components
+                                                    .filter(component => Object.entries(missionGroup.relics)
+                                                        .find(([ relicName, relic ]) => com.getRelicRewards(relic.relic)
+                                                            .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.id) == 0) > -1
                                                         )
-                                                        .map((component,index) => (
-                                                            <Link href={component.route}
-                                                                key={`${component.id}-${index}`}
-                                                                className='sized-content h-flex flex-center'
-                                                                // onClick={ev => { ev.stopPropagation(); router.push(component.route); }}
+                                                    )
+                                                    .map((component,index) => (
+                                                        <Link href={component.route}
+                                                            key={`${component.id}-${index}`}
+                                                            className='sized-content h-flex flex-center'
+                                                            // onClick={ev => { ev.stopPropagation(); router.push(component.route); }}
+                                                            style={{
+                                                                borderRadius: '10px',
+                                                                backgroundColor: 'var(--color-quaternary)',
+                                                                gap: '10px',
+                                                                padding: '10px'
+                                                            }}
+                                                        >
+                                                            <div className={`sized-content v-flex flex-center`} style={{ minWidth: '70px' }}>
+                                                                <img className='sized-content h-flex flex-center' style={{ height: '15px' }} src={component.icon}/>
+                                                                <span className='sized-content h-flex flex-center' style={{ fontSize: 'small' }}>{component.rawObj.name}</span>
+                                                            </div>
+                                                            <div 
+                                                                className='sized-content v-flex flex-center'
                                                                 style={{
-                                                                    borderRadius: '10px',
-                                                                    backgroundColor: 'var(--color-quaternary)',
-                                                                    gap: '10px',
-                                                                    padding: '10px'
+                                                                    gap: '5px'
                                                                 }}
                                                             >
-                                                                <div className={`sized-content v-flex flex-center`} style={{ minWidth: '70px' }}>
-                                                                    <img className='sized-content h-flex flex-center' style={{ height: '15px' }} src={component.icon}/>
-                                                                    <span className='sized-content h-flex flex-center' style={{ fontSize: 'small' }}>{component.rawObj.name}</span>
-                                                                </div>
-                                                                <div 
-                                                                    className='sized-content v-flex flex-center'
-                                                                    style={{
-                                                                        gap: '5px'
-                                                                    }}
-                                                                >
-                                                                    {
-                                                                        Object.entries(missionGroup.relics)
-                                                                            .filter(([ relicName, relic ]) => com.getRelicRewards(relic.relic)
-                                                                                .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.id) == 0) > -1
-                                                                            )
-                                                                            // .filter(el => { if() console.log(`el`, el); return true; })
-                                                                            .map(([ relicName, relic ], index) => (
-                                                                                <Link href={com.getObjectRouteFromId(relic.relic.id)}
-                                                                                    key={`${relic.name}-${index}`} 
-                                                                                    // onClick={(ev) => { ev.stopPropagation(); router.push(com.getObjectPathNameFromIdObj(relic.relic, "Relics"))}}
-                                                                                    className={`sized-content h-flex flex-center object-page-mission-relic${` ${relic.rarity}` ?? ''}`} 
-                                                                                    style={{ gap: '5px', minWidth: '200px' }}
-                                                                                >
-                                                                                    <div className='sized-content h-flex flex-center' ><img style={{ height: '30px' }} src={`/warfarm/images/${relic.relic.tier}.png`}/></div>
-                                                                                    <div className='sized-content h-flex flex-center' style={{ fontSize: 'small' }}>{relic.relic.name}</div>
-                                                                                    <div className='sized-content v-flex flex-center' style={{ alignItems: 'flex-start', marginLeft: '5px' }}>
-                                                                                        {
-                                                                                            relic.rotations.map((rotation, index) => (
-                                                                                                <div 
-                                                                                                    key={`${rotation.rotation}-${index}`} 
-                                                                                                    className='sized-content h-flex flex-center' 
-                                                                                                    style={{ fontSize: 'small', whiteSpace: 'pre' }}
-                                                                                                >
-                                                                                                    <span style={{ fontWeight: 'bold' }}>{rotation.rotation}</span> - <span style={{ fontStyle: 'italic' }}>{rotation.perc}</span>
-                                                                                                </div>
-                                                                                            ))
-                                                                                        }
-                                                                                    </div>
-                                                                                </Link>
-                                                                        ))
-                                                                    }
+                                                                {
+                                                                    Object.entries(missionGroup.relics)
+                                                                        .filter(([ relicName, relic ]) => com.getRelicRewards(relic.relic)
+                                                                            .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.id) == 0) > -1
+                                                                        )
+                                                                        // .filter(el => { if() console.log(`el`, el); return true; })
+                                                                        .map(([ relicName, relic ], index) => (
+                                                                            <Link href={com.getObjectRouteFromId(relic.relic.id)}
+                                                                                key={`${relic.name}-${index}`} 
+                                                                                // onClick={(ev) => { ev.stopPropagation(); router.push(com.getObjectPathNameFromIdObj(relic.relic, "Relics"))}}
+                                                                                className={`sized-content h-flex flex-center object-page-mission-relic${` ${relic.rarity}` ?? ''}`} 
+                                                                                style={{ gap: '5px', minWidth: '200px' }}
+                                                                            >
+                                                                                <div className='sized-content h-flex flex-center' ><img style={{ height: '30px' }} src={`/warfarm/images/${relic.relic.tier}.png`}/></div>
+                                                                                <div className='sized-content h-flex flex-center' style={{ fontSize: 'small' }}>{relic.relic.name}</div>
+                                                                                <div className='sized-content v-flex flex-center' style={{ alignItems: 'flex-start', marginLeft: '5px' }}>
+                                                                                    {
+                                                                                        relic.rotations.map((rotation, index) => (
+                                                                                            <div 
+                                                                                                key={`${rotation.rotation}-${index}`} 
+                                                                                                className='sized-content h-flex flex-center' 
+                                                                                                style={{ fontSize: 'small', whiteSpace: 'pre' }}
+                                                                                            >
+                                                                                                <span style={{ fontWeight: 'bold' }}>{rotation.rotation}</span> - <span style={{ fontStyle: 'italic' }}>{rotation.perc}</span>
+                                                                                            </div>
+                                                                                        ))
+                                                                                    }
+                                                                                </div>
+                                                                            </Link>
+                                                                    ))
+                                                                }
+                                                            </div>
+                                                        </Link>
+                                                ))
+                                            :
+                                            groupBy === "relic" ?
+                                                Object.entries(missionGroup.relics)
+                                                    .filter(([ relicId, relic ]) => 
+                                                    !components
+                                                        .filter(component => com.relicDropsComponent(relic.relic, component.rawObj))
+                                                        .every(component => com.objectIsFarmed(component))
+                                                    )
+                                                    .toSorted(([ _, a ], [ __, b ]) => relicMinRotation(a) - relicMinRotation(b))
+                                                    .map(([ relicId, relic ], index) => (
+                                                        <div
+                                                            key={`${index}-${relicId}`}
+                                                            className='sized-content h-flex flex-center'
+                                                            style={{
+                                                            justifyContent: 'flex-start',
+                                                            alignSelf: 'stretch'
+                                                            }}
+                                                        >
+                                                            <div 
+                                                            className='sized-content h-flex flex-center'
+                                                            style={{
+                                                                backgroundColor: 'var(--color-quaternary)',
+                                                                borderRadius: '10px',
+                                                                padding: '10px',
+                                                                gap: '10px',
+                                                                alignSelf: 'stretch'
+                                                            }}
+                                                            >
+                                                            <Link href={com.getObjectRouteFromId(relic.relic.id)}
+                                                                // onClick={(ev) => { ev.stopPropagation(); router.push(com.getObjectRouteFromId(relic.relic.id)); }}
+                                                                className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center`}
+                                                                style={{
+                                                                    gap: '5px',
+                                                                    opacity: relic.relic.vaulted ? '50%' : '100%',
+                                                                    width: '75px',
+                                                                    height: '75px'
+                                                                }}
+                                                            >
+                                                                <div className='sized-content h-flex flex-center' style={{ width: '35px', height: '35px' }}><img src={com.getObjectIcon(relic.relic)}/></div>
+                                                                <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
+                                                                    <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{relic.relic.name}</div>
                                                                 </div>
                                                             </Link>
-                                                    ))
-                                                :
-                                                groupBy === "relic" ?
-                                                    Object.entries(missionGroup.relics)
-                                                        .filter(([ relicId, relic ]) => 
-                                                        !components
-                                                            .filter(component => com.relicDropsComponent(relic.relic, component.rawObj))
-                                                            .every(component => com.objectIsFarmed(component))
-                                                        )
-                                                        .toSorted(([ _, a ], [ __, b ]) => relicMinRotation(a) - relicMinRotation(b))
-                                                        .map(([ relicId, relic ], index) => (
-                                                            <div
-                                                                key={`${index}-${relicId}`}
-                                                                className='sized-content h-flex flex-center'
+                                                            <div className='sized-content v-flex flex-center' style={{ alignItems: 'flex-start', marginLeft: '5px' }}>
+                                                                {
+                                                                    relic.rotations.map((rotation, index) => (
+                                                                        <div 
+                                                                            key={`${rotation.rotation}-${index}`} 
+                                                                            className='sized-content h-flex flex-center' 
+                                                                            style={{fontSize: 'small', whiteSpace: 'pre' }}
+                                                                        >
+                                                                            <span style={{ fontWeight: 'bold' }}>{rotation.rotation}</span> - <span style={{ fontStyle: 'italic' }}>{rotation.perc}</span>
+                                                                        </div>
+                                                                    ))
+                                                                }
+                                                            </div>
+                                                            <div 
+                                                                className='sized-content v-flex flex-center'
                                                                 style={{
-                                                                justifyContent: 'flex-start',
-                                                                alignSelf: 'stretch'
+                                                                gap: '5px'
                                                                 }}
                                                             >
-                                                                <div 
-                                                                className='sized-content h-flex flex-center'
-                                                                style={{
-                                                                    backgroundColor: 'var(--color-quaternary)',
-                                                                    borderRadius: '10px',
-                                                                    padding: '10px',
-                                                                    gap: '10px',
-                                                                    alignSelf: 'stretch'
-                                                                }}
-                                                                >
-                                                                <Link href={com.getObjectRouteFromId(relic.relic.id)}
-                                                                    // onClick={(ev) => { ev.stopPropagation(); router.push(com.getObjectRouteFromId(relic.relic.id)); }}
-                                                                    className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center`}
-                                                                    style={{
-                                                                        gap: '5px',
-                                                                        opacity: relic.relic.vaulted ? '50%' : '100%',
-                                                                        width: '75px',
-                                                                        height: '75px'
-                                                                    }}
-                                                                >
-                                                                    <div className='sized-content h-flex flex-center' style={{ width: '35px', height: '35px' }}><img src={com.getObjectIcon(relic.relic)}/></div>
-                                                                    <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
-                                                                        <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{relic.relic.name}</div>
-                                                                    </div>
-                                                                </Link>
-                                                                <div className='sized-content v-flex flex-center' style={{ alignItems: 'flex-start', marginLeft: '5px' }}>
-                                                                    {
-                                                                        relic.rotations.map((rotation, index) => (
-                                                                            <div 
-                                                                                key={`${rotation.rotation}-${index}`} 
-                                                                                className='sized-content h-flex flex-center' 
-                                                                                style={{fontSize: 'small', whiteSpace: 'pre' }}
-                                                                            >
-                                                                                <span style={{ fontWeight: 'bold' }}>{rotation.rotation}</span> - <span style={{ fontStyle: 'italic' }}>{rotation.perc}</span>
-                                                                            </div>
-                                                                        ))
-                                                                    }
-                                                                </div>
-                                                                <div 
-                                                                    className='sized-content v-flex flex-center'
-                                                                    style={{
-                                                                    gap: '5px'
-                                                                    }}
-                                                                >
-                                                                    {
-                                                                    components
-                                                                        .filter(component => com.relicDropsComponent(relic.relic, component.rawObj))
-                                                                        .toSorted((a, b) => 
-                                                                            rarityPriorities[com.getComponentRarityInRelationToRelic(a.rawObj, relic.relic)]
-                                                                            -
-                                                                            rarityPriorities[com.getComponentRarityInRelationToRelic(b.rawObj, relic.relic)]
-                                                                        )
-                                                                        .map(component => (
-                                                                        <Link href={component.route}
-                                                                            key={`${index}-${component.rawObj.id}`} 
-                                                                            // onClick={() => router.push(component.route)}
-                                                                            className={`sized-content item-page-component-container tracker-item-parent h-flex flex-center${` ${com.getComponentRarityInRelationToRelic(component.rawObj, relic.relic)}` ?? ''}`}
-                                                                            style={{
-                                                                                width: '210px',
-                                                                                gap: '5px',
-                                                                                opacity: component.vaulted ? '50%' : '100%'
-                                                                            }}
-                                                                        >
-                                                                            <div className='sized-content h-flex flex-center'><img style={{ height: '25px' }} src={component.icon}/></div>
-                                                                            <div className='sized-content h-flex flex-center' style={{ gap: '1px' }}>
-                                                                                <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', paddingRight: '5px' }}>{component.rawObj.fullName}</div>
-                                                                            </div>
-                                                                        </Link>
-                                                                        ))
-                                                                    }
-                                                                </div>
-                                                                </div>
+                                                                {
+                                                                components
+                                                                    .filter(component => com.relicDropsComponent(relic.relic, component.rawObj))
+                                                                    .toSorted((a, b) => 
+                                                                        rarityPriorities[com.getComponentRarityInRelationToRelic(a.rawObj, relic.relic)]
+                                                                        -
+                                                                        rarityPriorities[com.getComponentRarityInRelationToRelic(b.rawObj, relic.relic)]
+                                                                    )
+                                                                    .map(component => (
+                                                                    <Link href={component.route}
+                                                                        key={`${index}-${component.rawObj.id}`} 
+                                                                        // onClick={() => router.push(component.route)}
+                                                                        className={`sized-content item-page-component-container tracker-item-parent h-flex flex-center${` ${com.getComponentRarityInRelationToRelic(component.rawObj, relic.relic)}` ?? ''}`}
+                                                                        style={{
+                                                                            width: '210px',
+                                                                            gap: '5px',
+                                                                            opacity: component.vaulted ? '50%' : '100%'
+                                                                        }}
+                                                                    >
+                                                                        <div className='sized-content h-flex flex-center'><img style={{ height: '25px' }} src={component.icon}/></div>
+                                                                        <div className='sized-content h-flex flex-center' style={{ gap: '1px' }}>
+                                                                            <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', paddingRight: '5px' }}>{component.rawObj.fullName}</div>
+                                                                        </div>
+                                                                    </Link>
+                                                                    ))
+                                                                }
                                                             </div>
-                                                            ))
-                                                :null
-                                            }
-                                        </div>
+                                                            </div>
+                                                        </div>
+                                                        ))
+                                            :null
+                                        }
                                     </div>
                                 </div>
-                        </Link>
+                            </div>
+                        </div>
                     )) 
                     }
                 </div>

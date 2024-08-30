@@ -13,7 +13,7 @@ import ObtainedResurgenceGroup from '@/components/ObtainedResurgenceGroup';
 export default function MainItemTitleComponent({ itemId, iconUrl, labelHeader, label, labelFooter }){
     return (
         <div 
-            className='sized-content main-title-page-view-element tracker-item-parent v-flex flex-center' 
+            className='sized-content main-title-page-view-element item-check-parent tracker-item-parent v-flex flex-center' 
             style={{ 
                 backgroundColor: 'var(--color-quaternary)',
                 borderRadius: '10px',

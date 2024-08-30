@@ -11,6 +11,7 @@ import { SearchBarContext } from './SearchBarContext';
 import TrackItemButton from './TrackItemButton';
 import ObtainedLabelButton from './ObtainedLabelButton';
 import ObtainedItemCheck from './ObtainedItemCheck';
+import ResurgenceItemIcon from './ResurgenceItemIcon';
 
 const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCallback, rawObj }) => {
   const router = useRouter();
@@ -53,7 +54,7 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
   return (
     <Link
       href={com.getObjectRouteFromId(rawObj.id)} 
-      className="sized-remaining global-search-result tracker-item-parent h-flex" 
+      className="sized-remaining global-search-result item-check-parent tracker-item-parent h-flex" 
       style={{
         display: 'flex',
         gap: '10px',
@@ -78,19 +79,21 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
           style={{ justifyContent: 'flex-start', gap: '10px', margin: '0px', fontSize: 'large', position: 'relative' }}
         >
           {com.getObjectDisplayName(rawObj)}{vaulted ? <div style={{ marginLeft: '5px', fontSize: 'x-small' }}>vaulted</div> : null }
-          <ObtainedItemCheck positionAbsolute={false} itemId={id}/>
+        
+          { 
+            category === "Components" && rawObj.required > 0 ? 
+            <div className='sized-remaining h-flex flex-center'>
+              <ObtainedLabelButton component={rawObj} isRawObj={true}/> 
+            </div>
+            : null 
+          }
+
+          <ResurgenceItemIcon positionAbsolute={false} itemId={id}/>
+          <ObtainedItemCheck positionAbsolute={false} hollowAbsolute={false} itemId={id}/>
           <TrackItemButton positionAbsolute={false} itemId={id}/>
         </h2>
         <div style={{ color: '#9d9488' }}>{category}{type ? ` - ${type}` : ``}</div>
       </div>
-
-      { 
-        category === "Components" && rawObj.required > 0 ? 
-        <div className='sized-remaining h-flex flex-center'>
-          <ObtainedLabelButton component={rawObj} isRawObj={true}/> 
-        </div>
-        : null 
-      }
 
       {/* Control area with tabs */}
       <div className="sized-remaining" style={{ display: 'flex', gap: '5px', flexDirection: 'column' }}>

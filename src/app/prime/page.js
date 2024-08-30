@@ -37,6 +37,7 @@ import ObtainedItemCheck from '@/components/ObtainedItemCheck.js';
 import SelectorComponent from '@/components/SelectorComponent.js';
 import ObtainedResurgenceGroup from '@/components/ObtainedResurgenceGroup.js';
 import LabelCheckbox from '@/components/LabelCheckbox.js';
+import useUserDataPreferences from '@/hooks/useUserDataPreferences.js';
 
 const ComponentTab = ({ hideFarmed, trackedItems}) => {
   const router = useRouter();
@@ -168,7 +169,7 @@ const ComponentTab = ({ hideFarmed, trackedItems}) => {
                   )) 
                 }
               </div>
-              <ObtainedResurgenceGroup itemId={itemName}/>
+              <ObtainedResurgenceGroup itemId={itemName} positionAbsolute={true}/>
             </div>
           ))
       }
@@ -462,7 +463,7 @@ const MissionTab = ({ groupBy, hideFarmed, trackedItems, rarityPriorities=null }
             Object.entries(missionGroups)
               .toSorted(([ idA, missionA ], [ idB, missionB ]) => customMissionSort(idA, idB, missionA, missionB))
               .map(([ missionId, missionGroup ], index) => (
-                <Link href={missionGroup.infoObj.route}
+                <div
                     key={`${index}-${missionGroup.infoObj.name}`} 
                     // onClick={() => router.push(missionGroup.infoObj.route)}
                     className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center`}
@@ -475,10 +476,12 @@ const MissionTab = ({ groupBy, hideFarmed, trackedItems, rarityPriorities=null }
                       width: groupBy === "component" ? '350px' : '410px'
                     }}
                 >
-                    <div className='sized-content h-flex flex-center' ><img style={{ height: '75px' }} src={missionGroup.infoObj.icon}/></div>
-                    <div className='sized-content mission-relic-component v-flex flex-center' style={{ gap: '1px' }}>
+                    <Link  href={missionGroup.infoObj.route} className='sized-content mission-relic-component v-flex flex-center'>
+                      <div className='sized-content h-flex flex-center' ><img style={{ height: '75px' }} src={missionGroup.infoObj.icon}/></div>
                       <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', fontWeight: 'bold' }}>{missionGroup.infoObj.rawObj.mission.type}</div>
                       <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{missionGroup.infoObj.id}</div>
+                    </Link>
+                    <div className='sized-content mission-relic-component v-flex flex-center' style={{ gap: '1px' }}>
                       <div className='sized-content v-flex' style={{ gap: '5px', marginTop: '5px' }}>
                           {
                               groupBy === "component" ?
@@ -503,7 +506,16 @@ const MissionTab = ({ groupBy, hideFarmed, trackedItems, rarityPriorities=null }
                                         >
                                             <div className={`sized-content v-flex flex-center`} style={{ minWidth: '70px' }}>
                                                 <img className='sized-content h-flex flex-center' style={{ height: '15px' }} src={component.icon}/>
-                                                <span className='sized-content h-flex flex-center' style={{ textAlign: 'center', fontSize: 'small' }}>{component.rawObj.fullName}</span>
+                                                <span 
+                                                  className='sized-content h-flex flex-center' 
+                                                  style={{ 
+                                                    textAlign: 'center', 
+                                                    fontSize: 'small',
+                                                    color: !hideFarmed && com.objectIsFarmed(component.rawObj) ? 'var(--color-text-farmed)' : 'inherit' 
+                                                  }}
+                                                >
+                                                  {component.rawObj.fullName}
+                                                </span>
                                             </div>
                                             <div 
                                                 className='sized-content v-flex flex-center'
@@ -651,7 +663,7 @@ const MissionTab = ({ groupBy, hideFarmed, trackedItems, rarityPriorities=null }
                           }
                       </div>
                     </div>
-                </Link>
+                </div>
             )) 
           }
         </div>
@@ -666,8 +678,8 @@ function HideFarmedItemsCheckbox({ setHideFarmed }){
       type="checkbox" 
       value="farmed" 
       textLabel="Hide Farmed Items"
-      onChange={(ev) => { setHideFarmed(ev.target.checked) }}
-      checked={true}
+      onChange={(ev) => { com.setUserDataPreference("hideFarmed", ev.target.checked); /*setHideFarmed(ev.target.checked)*/ }}
+      checked={com.getUserDataPreference("hideFarmed")}
     />
   )
 }
@@ -675,10 +687,13 @@ function HideFarmedItemsCheckbox({ setHideFarmed }){
 function FarmingSheet({ trackedItems }){
   const [ groupBy, setGroupBy ] = useState("relic");
   const [ hideFarmed, setHideFarmed ] = useState(true);
+  const [ userPreferences, setUserPreferences ] = useUserDataPreferences();
 
   const onChangeHideFarmedItems = (hide) => {
     setHideFarmed(hide);
   };
+
+  // console.log(`rerendering!`,com.getUserDataPreference("hideFarmed", false) );
 
   return (
     <div className='sized-component v-flex flex-center' style={{ gap: '10px' }}>
@@ -686,9 +701,9 @@ function FarmingSheet({ trackedItems }){
       <TabComponent
         defaultTab={"Components"}
         tabs={{
-          "Components": <ComponentTab hideFarmed={hideFarmed} trackedItems={trackedItems}/>,
-          "Relics": <RelicTab hideFarmed={hideFarmed} trackedItems={trackedItems}/>,
-          "Missions": <MissionTab groupBy={groupBy} hideFarmed={hideFarmed} trackedItems={trackedItems}/>
+          "Components": <ComponentTab hideFarmed={com.getUserDataPreference("hideFarmed", false)} trackedItems={trackedItems}/>,
+          "Relics": <RelicTab hideFarmed={com.getUserDataPreference("hideFarmed", false)} trackedItems={trackedItems}/>,
+          "Missions": <MissionTab groupBy={groupBy} hideFarmed={com.getUserDataPreference("hideFarmed", false)} trackedItems={trackedItems}/>
         }}
         headerControls={{
           "Missions": (
@@ -744,7 +759,7 @@ export function TrackedItemsComponent(){
                   Object.entries(trackedItems)
                     .filter(([ itemId, trackedItem ]) => trackedItem.tracked ?? false)
                     .sort(([ a, _ ], [ b, __ ]) => 
-                      com.objectIsFarmed(com.getObjectFromId(a)) - com.objectIsFarmed(com.getObjectFromId(b))
+                      com.objectIsFarmedPerc(com.getObjectFromId(a)) - com.objectIsFarmedPerc(com.getObjectFromId(b))
                     )
                     .map(([ itemId, trackedItem ], index) => (
                       <Link href={com.getObjectRouteFromId(itemId)} 
@@ -760,12 +775,12 @@ export function TrackedItemsComponent(){
                         //      window.open(com.getObjectRouteFromId(itemId), "_blank") 
                         //   } 
                         // }}
-                        className={`sized-content tracked-items-button v-flex flex-center${com.objectIsFarmed(com.getObjectFromId(itemId), obtainedComponents) ? ` object-farmed-main-page` : ``}`}
+                        className={`sized-content item-check-parent tracked-items-button v-flex flex-center${com.objectIsFarmed(com.getObjectFromId(itemId), obtainedComponents) ? ` object-farmed-main-page` : ``}`}
                         style={{ 
                           position: 'relative', 
                           cursor: 'pointer',
                           alignSelf: 'stretch',
-                          minWidth: '110px' 
+                          minWidth: '150px' 
                         }}
                       >
                         <img className='sized-content tracked-items-icon h-flex' style={{ minWidth: 'fit-content', height: '90px' }} src={com.getObjectIcon(com.getObjectFromId(itemId))}/>

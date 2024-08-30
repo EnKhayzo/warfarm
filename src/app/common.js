@@ -214,6 +214,58 @@ export function clearUserDataMissionPriorityPreferences(){
   saveSetting("userData", userData);
 }
 
+export function getUserDataHasFirstAccessed(){
+  const userData = loadSetting("userData");
+
+  if(userData.hasFirstAccessed == null) return true;
+
+  return userData.hasFirstAccessed;
+}
+
+export function setUserDataHasFirstAccessed(hasFirstAccessed){
+  const userData = loadSetting("userData");
+
+  userData.hasFirstAccessed = hasFirstAccessed;
+
+  saveSetting("userData", userData);
+}
+
+export function getUserDataPreferences() {
+  const userData = loadSetting("userData");
+
+  if(userData.userPreferences == null) return {};
+
+  return userData.userPreferences;
+}
+
+export function setUserDataPreferences(userPreferences) {
+  if(userPreferences == null) return;
+  const userData = loadSetting("userData");
+
+  userData.userPreferences = userPreferences;
+  preferencesObservable.set(userPreferences);
+
+  saveSetting("userData", userData);
+}
+
+export function getUserDataPreference(preferenceName, defaultValue=null) {
+  const userDataPreferences = getUserDataPreferences();
+  if(userDataPreferences[preferenceName] == null) return defaultValue; // return defaultValue == null ? {} : defaultValue;
+
+  return userDataPreferences[preferenceName];
+}
+
+export function setUserDataPreference(preferenceName, value) {
+  if(value == null) { console.warn(`setting value to null for preference!`, preferenceName, value); }
+  const userDataPreferences = getUserDataPreferences();
+  
+  userDataPreferences[preferenceName] = value;
+
+  setUserDataPreferences(userDataPreferences);
+}
+
+
+
 // Function to download the object as a JSON file
 export function downloadJSON(obj, filename) {
   // Convert the object to a JSON string
@@ -470,6 +522,7 @@ export async function initialize(local=false) {
       obtainedObservable.set(getObtainedComponents());
       missionPrioritiesObservable.set(getDefaultMissionTypePriorities());
       dialogsUiObservable.set([]);
+      preferencesObservable.set(getUserDataPreferences());
     }
 
     initialized = true;
@@ -480,6 +533,7 @@ export function refreshUserData(newUserData) {
   trackedItemsOvervable.set(newUserData.trackedItems ?? {});
   obtainedObservable.set(newUserData.componentsObtained ?? {});
   missionPrioritiesObservable.set(newUserData.missionPriorityPreferences ?? getDefaultMissionTypePriorities());
+  preferencesObservable.set(newUserData.preferencesObservable ?? getUserDataPreferences());
   // dialogsUiObservable.set([]);
 }
 
@@ -542,15 +596,44 @@ export function getTabsForSearchResult(rawObj){
 export function getDefaultMissionTypePriorities(){
   const userDataMissions = getUserDataMissionPriorityPreferences();
   return userDataMissions != null && Object.keys(userDataMissions).length > 0 ? userDataMissions :
-    {
-      "Disruption": 1,
-      "Capture": 2,
-      "Exterminate": 3,
-      "Survival": 4,
-      "Defense": 5,
-      "Spy": 6,
-      "Interception": 7
-    };
+  {
+    "Disruption": 1, 
+    "Capture": 2, 
+    "Exterminate": 3, 
+    "Survival": 4, 
+    "Defense": 5, 
+    "Spy": 6, 
+    "Interception": 7, 
+    "Rescue": 8, 
+    "Caches": 9, 
+    "Assassination": 10, 
+    "Excavation": 11, 
+    "Mobile Defense": 12, 
+    "Sabotage": 13, 
+    "Pursuit": 14, 
+    "Conclave": 15, 
+    "Defection": 16, 
+    "Ascension": 17, 
+    "Arena": 18, 
+    "Infested Salvage": 19, 
+    "Rush": 20, 
+    "Alchemy": 21, 
+    "Sanctuary Onslaught": 22, 
+    "Void Flood": 23, 
+    "Void Cascade": 24, 
+    "Void Armageddon": 25, 
+    "Hard": 26
+  }  
+  
+  // {
+    //   "Disruption": 1,
+    //   "Capture": 2,
+    //   "Exterminate": 3,
+    //   "Survival": 4,
+    //   "Defense": 5,
+    //   "Spy": 6,
+    //   "Interception": 7
+    // };
 }
 
 export function getRotationPriorities(){
@@ -1049,6 +1132,7 @@ export let trackedItemsOvervable = new CustomObservable();
 export let obtainedObservable = new CustomObservable();
 export let missionPrioritiesObservable = new CustomObservable();
 export let dialogsUiObservable = new CustomObservable();
+export let preferencesObservable = new CustomObservable();
 
 /** please try using this as little as possible (see Observer Pattern and Custom Observer), pollInterval is in ms */
 export async function waitUntil(predicate, pollInterval=250){
@@ -1224,6 +1308,42 @@ export function duplicatesRemoved(list, idFunction){
   return Object.values(map);
 }
 
+export function componentIsFarmedPerc(rawObj, obtainedComponents=null){
+  if(rawObj == null) { console.warn(`rawObj is null!`, rawObj); return false; }
+  if(rawObj.required <= 0) return 0;
+
+  if(!obtainedComponents) obtainedComponents = getObtainedComponents();
+  if(obtainedComponents[rawObj.id] == null) return 0;
+
+  // console.log(`component is famred?`, rawObj, obtainedComponents);
+
+  return obtainedComponents[rawObj.id].obtained/rawObj.required;
+}
+
+export function itemIsFarmedPerc(rawObj, obtainedComponents=null){
+  if(rawObj.components == null) return true;
+  return (
+            Object.keys(rawObj.components)
+              .map(id => components[id])
+              .reduce((acc, component) => {
+                acc += componentIsFarmedPerc(component, obtainedComponents);
+                return acc;
+              }, 0)
+          )
+          /
+            Object.keys(rawObj.components).length;
+}
+
+export function objectIsFarmedPerc(rawObj, obtainedComponents=null){
+  return  rawObj.category === 'items' ? 
+            itemIsFarmedPerc(rawObj, obtainedComponents) 
+          : 
+          rawObj.category === 'components' ? 
+            componentIsFarmedPerc(rawObj, obtainedComponents)
+          :
+            0;
+}
+
 export function componentIsFarmed(rawObj, obtainedComponents=null){
   if(rawObj == null) { console.warn(`rawObj is null!`, rawObj); return false; }
   if(rawObj.required <= 0) return false;
@@ -1248,6 +1368,33 @@ export function objectIsFarmed(rawObj, obtainedComponents=null){
             componentIsFarmed(rawObj, obtainedComponents)
           :
             false;
+}
+
+
+export function setComponentToFarmed(rawObj, farmed, obtainedComponents=null){
+  if(rawObj == null) { console.warn(`rawObj is null!`, rawObj); return; }
+  if(rawObj.required == null || rawObj.required <= 0) return;
+  
+  setUserDataComponentSetting(rawObj.id, "obtained", farmed ? rawObj.required : 0);
+}
+
+export function setItemToFarmed(rawObj, farmed){
+  if(rawObj == null) { console.warn(`rawObj is null!`, rawObj); return false; }
+
+  getItemComponents(rawObj.id).forEach(component => setComponentToFarmed(component, farmed));
+}
+
+export function setObjectToFarmed(rawObj, farmed){
+  if(rawObj == null) { console.warn(`rawObj is null!`, rawObj); return; }
+  
+  _match(rawObj.category, {
+    "items": () => {
+      setItemToFarmed(rawObj, farmed);
+    },
+    "components": () => {
+      setComponentToFarmed(rawObj, farmed);
+    }
+  })
 }
 
 export function relicDropsComponent(rawRelic, rawComponent){
@@ -1368,7 +1515,7 @@ export function isComponentResurgence(id){
   return getRelicsThatDropComponent(id).some(relicInfo => relicInfo.relic.id in relicsResurgence);
 }
 
-export function isItemResurgcence(id){
+export function isItemResurgence(id){
   const obj = getObjectFromId(id);
   if(!obj) { console.warn(`obj is null!`, itemId); return; }
   
@@ -1383,7 +1530,7 @@ export function isObjectResurgence(itemId){
   let res = false;
   _match(obj.category, {
     "items": () => {
-      res = isItemResurgcence(itemId);
+      res = isItemResurgence(itemId);
     },
     "components": () => {
       res = isComponentResurgence(itemId);

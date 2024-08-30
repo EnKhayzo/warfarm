@@ -58,7 +58,9 @@ const ContextMenuButton = ({ top, children, buttons, headerContent, className, s
             backgroundColor: 'var(--color-sextenary)',
             borderRadius: '5px',
             zIndex: 1000,
-            margin: '5px'
+            margin: '5px',
+            overflow: 'auto',
+            maxHeight: '80vh'
           }, style)}
         >
           {

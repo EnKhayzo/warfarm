@@ -21,7 +21,7 @@ export default function ComponentAddButton({ component, fullName=false, iconHeig
         <div className='sized-content v-flex' style={{ alignSelf: 'stretch', gap: '5px' }}>
             <div 
                 onClick={() => router.push(component.route)}
-                className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center${` ${component.rarity}` ?? ''}`}
+                className={`sized-content item-page-component-container item-check-parent tracker-item-parent v-flex flex-center${` ${component.rarity}` ?? ''}`}
                 style={{
                     gap: '5px',
                     position: 'relative',
@@ -37,7 +37,7 @@ export default function ComponentAddButton({ component, fullName=false, iconHeig
                     { componentIsAnomalous ? null : <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', fontStyle: 'italic', minWidth: 'fit-content' }}>{`${obtainedComponents && obtainedComponents[component.rawObj.id] ? obtainedComponents[component.rawObj.id].obtained : '0'}/${component.rawObj.required}`}</div>}
                 </div>
                 <TrackItemButton itemId={component.rawObj.id}/>
-                <ObtainedResurgenceGroup itemId={component.rawObj.id}/>
+                <ObtainedResurgenceGroup itemId={component.rawObj.id} positionAbsolute={true}/>
             </div>
             {
                 componentIsAnomalous ? null:

@@ -33,10 +33,13 @@ import ObtainedItemCheck from '@/components/ObtainedItemCheck';
 import useObtainedComponents from '@/hooks/useObtainedComponents.js';
 import ObtainedLabelObject from '@/components/ObtainedLabelObject';
 import ObtainedResurgenceGroup from '@/components/ObtainedResurgenceGroup';
+import useMissionPriorities from '@/hooks/useMissionPriorities.js';
 
 
 const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) => {
   const router = useRouter();
+
+  const [ missionPriorities, setMissionPriorities ] = useMissionPriorities();
 
   const groups = Object.entries(
     category === "Items" ?
@@ -70,7 +73,15 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
       }, {})
       :
     category === "Missions" ?
-      objects.reduce((acc, mission) => {
+      objects
+      .toSorted((a, b) => 
+        (
+          (missionPriorities[a.type]+1 || Infinity)
+          -
+          (missionPriorities[b.type]+1 || Infinity)
+        )
+      )
+      .reduce((acc, mission) => {
         if(!acc[mission.type]) acc[mission.type] = { title: mission.type, objects: [] };
 
         acc[mission.type].objects.push(mission);
@@ -81,6 +92,16 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
 
   const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
 
+  const farmedObjectClass = (object) => {
+    // return com.objectIsFarmed(object, obtainedComponents) ? ` object-farmed` : ``
+    const farmedPerc = com.objectIsFarmedPerc(object, obtainedComponents);
+
+    if(farmedPerc >= 1) return " object-farmed";
+    else if(farmedPerc > 0) return " object-partial-farmed";
+
+    return "";
+  };
+
   return (
     <div className='sized-remaining v-flex flex-center' style={{ gap: '5px' }}>
       <div 
@@ -88,7 +109,7 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
         style={{ 
           flexWrap: 'wrap', 
           overflow: 'auto', 
-          maxHeight: '65vh',
+          maxHeight: '80vh',
           gap: '30px' 
         }}
       >
@@ -100,13 +121,13 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
                 style={{ 
                   padding: '10px', 
                   width: '100%', 
-                  justifyContent: 'flex-start',
+                  justifyContent: 'center',
                   fontSize: 'small',
                   fontStyle: 'italic',
                   color: 'var(--color-text-section)' 
                 }}
                 >
-                  {com.capitalizeFirstLetter(groupName)}
+                  {com.capitalizeFirstLetter(groupName === "undefined" ? "?" : groupName)}
               </div>
               <div 
                 className='sized-remaining h-flex flex-center'
@@ -119,7 +140,7 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
                   group.map((object, index) => (
                     <Link href={com.getObjectRouteFromId(object.id)}
                       key={`${index}-${object.name}`} 
-                      className={`sized-content main-view-item-single-container item-check-parent tracker-item-parent${com.objectIsFarmed(object, obtainedComponents) ? ` object-farmed` : ``} v-flex flex-center`}
+                      className={`sized-content main-view-item-single-container item-check-parent tracker-item-parent${farmedObjectClass(object)} v-flex flex-center`}
                       style={{ 
                         width: '140px',
                         opacity: object.vaulted ? '50%' : '100%', 
@@ -234,7 +255,14 @@ const ObjectSectionBuilder = ({ category }) => {
         <ObjectSection 
           category="Missions"
           titleLabel="Missions" 
-          objects={Object.values(allMissions).toSorted((a, b) => `${a.name}, ${a.planet}`.localeCompare(`${b.name}, ${b.planet}`))} 
+          objects={
+                    Object.values(allMissions)
+                      .toSorted(
+                        (a, b) => (
+                          a.fullName.localeCompare(b.fullName)
+                        )
+                      )
+          } 
           imageFunc={ (object) => `${object.planet}` } 
           labelFunc={ (object) => `${object.name}, ${object.planet}` } 
         />
