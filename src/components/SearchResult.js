@@ -52,8 +52,7 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
   };
 
   return (
-    <Link
-      href={com.getObjectRouteFromId(rawObj.id)} 
+    <div
       className="sized-remaining global-search-result item-check-parent tracker-item-parent h-flex" 
       style={{
         display: 'flex',
@@ -69,31 +68,36 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
       }}
       onClick={(ev) => { closeSearchBarCallback(ev); router.push(com.getObjectRouteFromId(rawObj.id)); }}
     >
-      {/* Image */}
-      <img src={imageUrl} alt={id} style={{ width: '80px' }} />
+      <Link 
+        href={com.getObjectRouteFromId(rawObj.id)} 
+        className='sized-remaining h-flex flex-center' style={{ justifyContent: 'flex-start', gap: '10px' }}
+      >
+        {/* Image */}
+        <img src={imageUrl} alt={id} style={{ width: '80px' }} />
 
-      {/* Name [vaulted] - category */}
-      <div className='sized-content v-flex' style={{ gap: '0px' }}>
-        <h2 
-          className='sized-content h-flex flex-center' 
-          style={{ justifyContent: 'flex-start', gap: '10px', margin: '0px', fontSize: 'large', position: 'relative' }}
-        >
-          {com.getObjectDisplayName(rawObj)}{vaulted ? <div style={{ marginLeft: '5px', fontSize: 'x-small' }}>vaulted</div> : null }
-        
-          { 
-            category === "Components" && rawObj.required > 0 ? 
-            <div className='sized-remaining h-flex flex-center'>
-              <ObtainedLabelButton component={rawObj} isRawObj={true}/> 
-            </div>
-            : null 
-          }
+        {/* Name [vaulted] - category */}
+        <div className='sized-content v-flex' style={{ gap: '0px' }}>
+          <h2 
+            className='sized-content h-flex flex-center' 
+            style={{ justifyContent: 'flex-start', gap: '10px', margin: '0px', fontSize: 'large', position: 'relative' }}
+          >
+            {com.getObjectDisplayName(rawObj)}{vaulted ? <div style={{ marginLeft: '5px', fontSize: 'x-small' }}>vaulted</div> : null }
+          
+            { 
+              category === "Components" && rawObj.required > 0 ? 
+              <div className='sized-remaining h-flex flex-center'>
+                <ObtainedLabelButton component={rawObj} isRawObj={true}/> 
+              </div>
+              : null 
+            }
 
-          <ResurgenceItemIcon positionAbsolute={false} itemId={id}/>
-          <ObtainedItemCheck positionAbsolute={false} hollowAbsolute={false} itemId={id}/>
-          <TrackItemButton positionAbsolute={false} itemId={id}/>
-        </h2>
-        <div style={{ color: '#9d9488' }}>{category}{type ? ` - ${type}` : ``}</div>
-      </div>
+            <ResurgenceItemIcon positionAbsolute={false} itemId={id}/>
+            <ObtainedItemCheck positionAbsolute={false} hollowAbsolute={false} itemId={id}/>
+            <TrackItemButton positionAbsolute={false} itemId={id}/>
+          </h2>
+          <div style={{ color: '#9d9488' }}>{category}{type ? ` - ${type}` : ``}</div>
+        </div>
+      </Link>
 
       {/* Control area with tabs */}
       <div className="sized-remaining" style={{ display: 'flex', gap: '5px', flexDirection: 'column' }}>
@@ -145,7 +149,7 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
             </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

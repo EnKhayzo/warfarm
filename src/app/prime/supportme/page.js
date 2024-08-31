@@ -35,7 +35,6 @@ function KoFiComponent(){
 function PatreonComponent(){
   return (
     <div className='sized-content v-flex flex-center' style={{ gap: '5px' }}>
-      <div>(still working on this! almost ready)</div>
       <div
         className='become-patron-button'
         dangerouslySetInnerHTML={{ __html:

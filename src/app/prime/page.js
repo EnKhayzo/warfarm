@@ -67,7 +67,16 @@ const ComponentTab = ({ hideFarmed, trackedItems}) => {
           .reduce((acc, component) => {
             if(component.rawObj.parentItem == null) { 
               acc[component.rawObj.id] = { 
-                item: { category: "Components", componentFullName: component.rawObj.fullName, name: component.rawObj.fullName }, 
+                item: { 
+                  category: "Components", 
+                  fullName: component.rawObj.fullName,
+                  icon: component.icon,
+                  route: component.route,
+                  id: component.rawObj.id, 
+                  type: '?',
+                  componentFullName: component.rawObj.fullName, 
+                  name: component.rawObj.fullName 
+                }, 
                 components: [ component ]
               }; 
               return acc;
@@ -372,6 +381,7 @@ const MissionTab = ({ groupBy, hideFarmed, trackedItems, rarityPriorities=null }
       const parentItem = com.getObjectFromId(trackedItem.parentItem);
       const components = [ com.getSearchResultRelatedObjectsSingle("Items", "components", { item: parentItem, component: trackedItem }, router) ]
                           .filter(componentInfo => !hideFarmed || !com.componentIsFarmed(componentInfo.rawObj, obtainedComponents));
+      
       acc.components = com.duplicatesRemoved(
         acc.components.concat(components), 
         component => component.searchObjId

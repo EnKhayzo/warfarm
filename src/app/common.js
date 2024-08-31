@@ -1241,7 +1241,11 @@ export function getObjectPathObjFromId(id){
 export function getObjectRouteFromId(id){
   // console.log(`trying od`,id);
   // return (getObjectPathObjFromId(id) ?? {route:'/prime'}).route;
-  return getObjectPathObjFromId(id).route;
+  
+  const obj = getObjectPathObjFromId(id);
+  if(obj == null){ console.warn(`object is null!`, id, obj); return '/prime'; }
+
+  return obj.route;
 }
 
 export function getObjectPathNameFromIdObj(rawObj, category=null){
