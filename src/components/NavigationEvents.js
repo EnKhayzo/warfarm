@@ -15,5 +15,5 @@ export function NavigationEvents() {
     // ...
   }, [pathname, searchParams])
  
-  return '...'
+  return null;
 }
