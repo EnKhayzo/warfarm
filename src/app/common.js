@@ -831,9 +831,9 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
             icon: getObjectIcon(component), 
             vaulted: relic.vaulted, 
             rarity: tier,
-            labelHeading: `${component.fullName}`, 
-            labelFooter: null,
-            label: `${component.obtained ?? getUserDataComponentSetting(component.id, "obtained") ?? '0'}/${component.required}`, 
+            labelHeading: `${component.parentItem ? component.parentItem : component.name}`, 
+            label: component.parentItem ?  component.name : null, 
+            labelFooter: component.parentItem ?  `${component.obtained ?? getUserDataComponentSetting(component.id, "obtained") ?? '0'}/${component.required}` : null,
             onClick: () => incrementUserDataComponentObtained(component.id), 
             type: relic.type,
             rawObj: component,
@@ -1544,4 +1544,38 @@ export function isObjectResurgence(itemId){
     }
   })
   return res;
+}
+
+export function scrollRestoreSave(mainScrollableRef, pathName) {
+  const targetElement = mainScrollableRef.current;
+  if (targetElement) {
+    let locationMap = JSON.parse(sessionStorage.getItem("locationMap") ?? "{}");
+    if(locationMap == null) locationMap = {};
+    if(!locationMap[pathName]) locationMap[pathName] = { age: 0, scroll: 0 };
+
+    locationMap[pathName].scroll = targetElement.scrollTop;
+
+    sessionStorage.setItem("locationMap", JSON.stringify(locationMap ?? "{}"));
+  }
+}
+
+export function scrollRestoreLoad(mainScrollableRef, pathName){
+  let locationMap = JSON.parse(sessionStorage.getItem("locationMap") ?? "{}");
+  if(locationMap == null) locationMap = {};
+  if(!locationMap[pathName]) locationMap[pathName] = { age: 0, scroll: 0 };
+
+  // locationMap[pathName].age++; 
+  // if(locationMap[pathName].age > 4) delete locationMap[pathName];
+  // else locationMap[pathName] = 0;
+
+
+  // console.log(`pathName`, pathName, router);
+  const savedScrollPosition = locationMap && locationMap[pathName] ? locationMap[pathName].scroll : null; //sessionStorage.getItem('scrollPosition');
+  if (savedScrollPosition !== null) {
+    const targetElement = mainScrollableRef.current;
+    if (targetElement) {
+      targetElement.scrollTop = savedScrollPosition;
+    }
+    sessionStorage.removeItem('scrollPosition'); // Clear after restoring
+  }
 }

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 
-import { SearchBarContext } from './SearchBarContext';
+import { SearchBarContext } from '../contexts/SearchBarContext';
 import SearchResult from './SearchResult';
 import ContextMenuButton from './ContextMenuButton';
 import LabelCheckbox from './LabelCheckbox';

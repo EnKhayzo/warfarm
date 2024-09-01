@@ -7,7 +7,7 @@ import Link from 'next/link';
 import ControlButton from './ControlButton';
 import * as com from "../app/common.js"
 
-import { SearchBarContext } from './SearchBarContext';
+import { SearchBarContext } from '../contexts/SearchBarContext';
 import TrackItemButton from './TrackItemButton';
 import ObtainedLabelButton from './ObtainedLabelButton';
 import ObtainedItemCheck from './ObtainedItemCheck';
@@ -70,7 +70,8 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
     >
       <Link 
         href={com.getObjectRouteFromId(rawObj.id)} 
-        className='sized-remaining h-flex flex-center' style={{ justifyContent: 'flex-start', gap: '10px' }}
+        // temporary patch, but it should in general make relics' reward fully visible in the search bar
+        className={`${rawObj.category === "Relics" ? ` sized-content` : ` sized-remaining`} h-flex flex-center`} style={{ justifyContent: 'flex-start', gap: '10px' }}
       >
         {/* Image */}
         <img src={imageUrl} alt={id} style={{ width: '80px' }} />

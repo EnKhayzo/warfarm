@@ -20,10 +20,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext, Suspense } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import { useParams, usePathname, useRouter } from 'next/navigation';
+import { useParams, usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import SearchBar from '../../components/SearchBar.js';
 import ContextMenuButton from '../../components/ContextMenuButton.js';
@@ -36,6 +36,8 @@ import FallbackObject from "./[category]/[routeId]/FallbackObject";
 import LazyLoaded from "@/components/LazyLoaded";
 import HoverElement from "@/components/HoverElement";
 import LegendComponent from "./LegendComponent";
+import { ScrollPaneContext } from "@/contexts/ScrollPaneContext";
+import { NavigationEvents } from "@/components/NavigationEvents";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -96,8 +98,10 @@ function MediaQueryCollapseContextMenuButton({children}){
 export function MainLayoutComponent({children}){
   const router = useRouter();
   const pathName = usePathname();  
+  const searchParams = useSearchParams();
   // console.log(`pathname`, pathName);
   const [ dialogUis, setDialogUis ] = useDialogUis();
+  const mainScrollableRef = useRef(null);
   
   const [ hasFirstAccessed, setHasFirstAccessed ] = useState(false);
   
@@ -190,6 +194,36 @@ export function MainLayoutComponent({children}){
   const handleSearchCollapse = () => {
     setSearchExpanded(false);
   };
+
+  // hack; create a map of urls, on every route change increment the value of each map of 1 value
+  // (to get how 'old' the value in the map is)
+  // if you get to a url, and said url is in the map, and the map's corresponding value is '2' (i think, or 1)
+  // reset the value each time you hit the corresponding url (AFTER the check below)
+  // then it means you have pushed the back button
+  // this only works if your site doesn't have a way to go back to a url by going through less than 2 urls of course
+  useEffect(() => {
+    // console.warn(`history length`, history);
+    const handleLinkClick = (event) => {
+      com.scrollRestoreSave(mainScrollableRef, pathName);
+    };
+  
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+      // console.log(`setting event listener to`, link);
+      link.addEventListener('click', handleLinkClick);
+    });
+  
+    return () => {
+      links.forEach(link => {
+        link.removeEventListener('click', handleLinkClick);
+      });
+    };
+  }, [pathName]);
+  
+  useEffect(() => {
+    com.scrollRestoreLoad(mainScrollableRef, pathName);
+  }, [pathName,searchParams]); // Trigger scroll restoration on route change
+  
 
   return (
     <div className='sized-remaining v-flex'>
@@ -370,9 +404,11 @@ export function MainLayoutComponent({children}){
           }
           
         </div>
-        <div className='sized-remaining main-content v-flex' style={{ marginBottom: '10px' }}>
-          <div className="sized-remaining v-flex">
-            {children}
+        <div ref={mainScrollableRef} className='sized-remaining main-content v-flex' style={{ marginBottom: '10px' }}>
+          <div className="sized-remaining main-scrollable v-flex">
+            <ScrollPaneContext.Provider value={{mainScrollableRef}}>
+              {children}
+            </ScrollPaneContext.Provider>
           </div>
           <div className='sized-content v-flex flex-center' style={{ textAlign: 'center', marginTop: '50px', fontSize: 'small' }}>
             <div>This site is not endorsed by or affiliated with Digital Extremes Ltd.</div>
@@ -442,6 +478,9 @@ export function MainLayoutComponent({children}){
           }
         </div>
       }
+      <Suspense fallback={null}>
+        <NavigationEvents />
+      </Suspense>
     </div>
   );
 }

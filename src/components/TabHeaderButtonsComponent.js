@@ -1,16 +1,22 @@
 'use client';
 
-import { React, useState, useRef } from 'react';
-import { useRouter } from 'next/navigation';
+import { React, useState, useEffect, useRef, useContext } from 'react';
+import Link from 'next/link';
+import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 
 
 import * as com from "@/app/common.js"
 import IconButton from './IconButton';
 import ContextMenuButton from './ContextMenuButton';
+import { ScrollPaneContext } from '@/contexts/ScrollPaneContext';
 
 /** changeTab: callback function to change the current tab */
 export default function TabHeaderButtonsComponent({ tabs, activeTab, changeTab, headerControls=null }){
     const router = useRouter();
+    const pathName = usePathname();  
+    const searchParams = useSearchParams();
+
+    const scrollPaneContext = useContext(ScrollPaneContext);
 
     return (
         <div 
@@ -23,18 +29,19 @@ export default function TabHeaderButtonsComponent({ tabs, activeTab, changeTab, 
             >
                 {
                     tabs.map((tab, index) => (
-                        <a 
+                        <Link 
                             key={`${index}-${tab.title}`}
                             href={`?tab=${tab.id}`}
                             title={tab.title} 
-                            onClick={(ev) => { 
-                                ev.preventDefault();
+                            onClick={(ev) => {
+                                if(`${pathName}?${searchParams.toString()}` === `${pathName}?tab=${tab.id}`) {  ev.preventDefault(); ev.stopPropagation();  return;}
+
                                 changeTab(tab.id); 
                             }} 
-                            className={`tab-header-tab-button${activeTab.localeCompare(tab.id) == 0 ? ` selected` : ``}`}
+                            className={`tab-header-link tab-header-tab-button${activeTab.localeCompare(tab.id) == 0 ? ` selected` : ``}`}
                         >
                             {tab.label}
-                        </a>
+                        </Link>
                     ))
                 }
             </div>
