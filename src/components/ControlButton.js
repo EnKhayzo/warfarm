@@ -22,12 +22,12 @@ const ControlButton = ({ rawObj, infoObj=null, icon, vaulted, rarity, _labelHead
 
       onClick(ev); // Call the passed onClick function
 
-      if(rawObj.category === "components"){
-        if(rawObj.parentItem == null) return; 
-        const stringToSet = `${com.getUserDataComponentSetting(rawObj.id, "obtained")}/${rawObj.required}`;
-        if(infoObj.category === "Relics") setObtainedFooter(stringToSet);
-        else setLabel(stringToSet);
-      }
+      // if(rawObj.category === "components"){
+      //   if(rawObj.parentItem == null) return; 
+      //   const stringToSet = `${com.getUserDataComponentSetting(rawObj.id, "obtained")}/${rawObj.required}`;
+      //   if(infoObj.category === "Relics") setObtainedFooter(stringToSet);
+      //   else setLabel(stringToSet);
+      // }
     }
   };
 
@@ -60,8 +60,35 @@ const ControlButton = ({ rawObj, infoObj=null, icon, vaulted, rarity, _labelHead
       { labelHeading ?                              <div className='sized-content' style={{ fontSize: 'small', fontWeight: 'bold', color: '#b2aca2' }}>{labelHeading}</div> : null }
       {/* { rawObj.category !== "components" && label ? <div className='sized-content' style={{ fontSize: 'small', color: '#b2aca2' }}>{label}</div> : null } */}
       {/* { rawObj.category === "components" ?          <div className='sized-content' style={{ fontSize: 'small', color: '#b2aca2' }}>{`${obtained && obtained[rawObj.id] ? obtained[rawObj.id].obtained : '0'}/${rawObj.required}`}</div> : null } */}
-      { label ?                                     <div className='sized-content' style={{ fontSize: 'small', color: '#b2aca2' }}>{label}</div> : null }
-      { labelFooter ?                               <div className='sized-content' style={{ fontSize: 'x-small', fontStyle: 'italic', color: '#b2aca2' }}>{labelFooter}</div> : null }
+      {/* { label ?                                     <div className='sized-content' style={{ fontSize: 'small', color: '#b2aca2' }}>{label}</div> : null } */}
+      {/* { labelFooter ?                               <div className='sized-content' style={{ fontSize: 'x-small', fontStyle: 'italic', color: '#b2aca2' }}>{labelFooter}</div> : null } */}
+      
+      {
+        rawObj.category === "components" ? (
+          rawObj.parentItem == null ? null:
+          infoObj.category === "Relics"  ? (
+            <>
+              <div className='sized-content' style={{ fontSize: 'small', color: '#b2aca2' }}>{rawObj.name}</div>
+              <div className='sized-content' style={{ fontSize: 'x-small', fontStyle: 'italic', color: '#b2aca2' }}>{`${obtained && obtained[rawObj.id] ? obtained[rawObj.id].obtained : '0'}/${rawObj.required}`}</div>
+            </>
+          )
+          :
+          (
+            <>
+              <div className='sized-content' style={{ fontSize: 'small', color: '#b2aca2' }}>{`${obtained && obtained[rawObj.id] ? obtained[rawObj.id].obtained : '0'}/${rawObj.required}`}</div>
+            </>
+          )
+        )
+        : 
+        (
+          <>
+            { label ?                                     <div className='sized-content' style={{ fontSize: 'small', color: '#b2aca2' }}>{label}</div> : null }
+            { labelFooter ?                               <div className='sized-content' style={{ fontSize: 'x-small', fontStyle: 'italic', color: '#b2aca2' }}>{labelFooter}</div> : null }
+          </>
+        )
+
+      }
+
     </div>
   );
 
