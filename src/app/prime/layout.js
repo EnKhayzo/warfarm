@@ -20,7 +20,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import React, { useState, useEffect, useRef, useContext, Suspense } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef, useContext, Suspense } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import { useParams, usePathname, useRouter, useSearchParams } from 'next/navigation';
@@ -201,7 +201,7 @@ export function MainLayoutComponent({children}){
   // reset the value each time you hit the corresponding url (AFTER the check below)
   // then it means you have pushed the back button
   // this only works if your site doesn't have a way to go back to a url by going through less than 2 urls of course
-  useEffect(() => {
+  useLayoutEffect(() => {
     // console.warn(`history length`, history);
     const handleLinkClick = (event) => {
       com.scrollRestoreSave(mainScrollableRef, pathName);
@@ -220,7 +220,7 @@ export function MainLayoutComponent({children}){
     };
   }, [pathName]);
   
-  useEffect(() => {
+  useLayoutEffect(() => {
     com.scrollRestoreLoad(mainScrollableRef, pathName);
   }, [pathName,searchParams]); // Trigger scroll restoration on route change
   
@@ -479,7 +479,7 @@ export function MainLayoutComponent({children}){
         </div>
       }
       <Suspense fallback={null}>
-        <NavigationEvents />
+        <NavigationEvents mainScrollableRef={mainScrollableRef}/>
       </Suspense>
     </div>
   );
