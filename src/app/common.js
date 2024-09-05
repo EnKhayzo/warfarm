@@ -443,7 +443,7 @@ export function setUserDataCurrentTrackListId(id){
   saveUserData(userData);
 
   currentTrackListIdObservable.set(id);
-  console.log(`set tracked list`, id);
+  // console.log(`set tracked list`, id);
 }
 
 // export function getUserDataCurrentTrackList(){
@@ -846,7 +846,7 @@ export function refreshUserData(newUserData) {
 
   createEmptyTrackListIfNoTrackLists();
 
-  console.log(`refreshed user data!`);
+  // console.log(`refreshed user data!`);
 }
 
 export function setAllUserData(userData){

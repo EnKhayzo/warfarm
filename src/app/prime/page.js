@@ -768,7 +768,7 @@ export function TrackedItemsComponent(){
 
   const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
 
-  console.log(`track lists tracked items!`, trackLists, trackedItems);
+  // console.log(`track lists tracked items!`, trackLists, trackedItems);
 
   return (
       <div className='sized-content tracked-items v-flex flex-center' style={{ gap: '50px' }}>

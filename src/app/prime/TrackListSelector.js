@@ -201,7 +201,7 @@ export default function TrackListSelector({}){
                                 iconUrl={`${com.getBaseEnvPath().basePath}/icons/save.svg`} 
                                 iconClassName={`icon-default-filter track-list-icon`}
                                 onClick={() => {
-                                    console.log(`save!`, currentTrackList);
+                                    // console.log(`save!`, currentTrackList);
                                     com.showDialogUi({
                                         title: "Choose the name that this Track List will have:",
                                         value: sharedTrackList.id,
@@ -211,7 +211,7 @@ export default function TrackListSelector({}){
                                             let newTrackList = sharedTrackList;
 
                                             newTrackList.id = text;
-                                            console.log(`tracklists`, id);
+                                            // console.log(`tracklists`, id);
 
                                             const addTrackList = () => {
                                                 com.addUserDataTrackList(newTrackList);
@@ -256,7 +256,7 @@ export default function TrackListSelector({}){
                                 iconUrl={`${com.getBaseEnvPath().basePath}/icons/edit.svg`} 
                                 iconClassName={'icon-default-filter track-list-icon'}
                                 onClick={() => {
-                                    console.log(`edit!`, currentTrackList);
+                                    // console.log(`edit!`, currentTrackList);
 
                                     com.showDialogUi({
                                         title: `Set new name for ${currentTrackList}:`,
@@ -266,7 +266,7 @@ export default function TrackListSelector({}){
                                             const newName = text;
 
                                             const renameList = () => {
-                                                console.log(`renaming to!`, currentTrackList, text);
+                                                // console.log(`renaming to!`, currentTrackList, text);
                                                 com.renameUserDataTrackList(currentTrackList, text);
                                                 com.setUserDataCurrentTrackListId(text);
                                             };
@@ -296,7 +296,7 @@ export default function TrackListSelector({}){
                                 iconUrl={`${com.getBaseEnvPath().basePath}/icons/add.svg`} 
                                 iconClassName={'icon-default-filter track-list-icon'}
                                 onClick={() => {
-                                    console.log(`add!`);
+                                    // console.log(`add!`);
                                     const newName = com.generateTrackListName();
                                     com.addUserDataTrackList({ id: newName, trackedItems: {} });
                                     com.setUserDataActiveTrackList(newName);
@@ -310,12 +310,12 @@ export default function TrackListSelector({}){
                                         iconUrl={`${com.getBaseEnvPath().basePath}/icons/trash-bin.svg`} 
                                         iconClassName={'icon-default-filter track-list-icon'}
                                         onClick={() => {
-                                            console.log(`delete!`, currentTrackList);
+                                            // console.log(`delete!`, currentTrackList);
                                         }}
                                     />
                                 }
                                 onConfirm={() => {
-                                    console.log(`confirm!`);
+                                    // console.log(`confirm!`);
                                     com.removeUserDataTrackList(com.getUserDataCurrentTrackListId());
                                 }}
                             />
@@ -333,7 +333,7 @@ export default function TrackListSelector({}){
 
                                     const urlString = `${window.location.href.split('?')[0]}?sharedTrackList=${com.encodeToBase64(trackListToShare)}`;
 
-                                    console.log(`share!`, urlString);
+                                    // console.log(`share!`, urlString);
                                     navigator.clipboard.writeText(urlString);
                                     com.showNotificationUi({ label: "url copied to clipboard!", type: "success" });
                                 }}
