@@ -115,7 +115,7 @@ export function loadUserData(){
   // const userData = storageData[currentUser];
   // if(userData == null) userData = {}
 
-  console.log(`LOAD USER DATA`, getBaseEnvPath().userData);
+  // console.log(`LOAD USER DATA`, getBaseEnvPath().userData);
 
   const userData = loadSetting(getBaseEnvPath().userData);
   if(!userData.version) userData.version = "1.0.0";
