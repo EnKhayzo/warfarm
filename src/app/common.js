@@ -266,6 +266,8 @@ export function setUserDataPreference(preferenceName, value) {
 
 /** statusObj = { hasClickedBanner: bool, lastClicked: Date, bannerTargetDate: Date } */
 export function setUserDataBannerStatus(statusObj){
+  if(statusObj == null) statusObj = {};
+
   const userData = loadSetting("userData");
   userData.bannerStatus = statusObj;
   saveSetting("userData", userData);
