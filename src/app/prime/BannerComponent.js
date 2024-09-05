@@ -18,7 +18,7 @@ export default function BannerComponent({}){
 
         const bannerStatus = com.getUserDataBannerStatus();
         if(bannerStatus != null && !com.isDictEmpty(bannerStatus)){
-            console.log(`bannerstatus`, bannerStatus, Date.now() < bannerStatus.bannerTargetDate);
+            // console.log(`bannerstatus`, bannerStatus, Date.now() < bannerStatus.bannerTargetDate);
             if(
                 (bannerStatus.bannerTargetDate != null && Date.now() < bannerStatus.bannerTargetDate) && 
                 (bannerStatus.lastClicked != null && Date.now()-bannerStatus.lastClicked > 60*60*8*1000)
