@@ -10,7 +10,6 @@ export const namesMap = {
     },
     "prod": {
         "userData_export_file_name": "userData_warfarm",
-        "userData": "userData_warfarm_test",
         "userData": "userData",
         "basePath": "/warfarm",
         "titleName": "Warfarm"

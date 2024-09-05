@@ -115,6 +115,8 @@ export function loadUserData(){
   // const userData = storageData[currentUser];
   // if(userData == null) userData = {}
 
+  console.log(`LOAD USER DATA`, getBaseEnvPath().userData);
+
   const userData = loadSetting(getBaseEnvPath().userData);
   if(!userData.version) userData.version = "1.0.0";
 
@@ -1874,7 +1876,7 @@ export function filterDict(dict, filterFunc) {
 }
 
 export function generatePageTitle(pageTitle) {
-  return `${pageTitle} | Warfarm TEST`;
+  return `${pageTitle} | ${getBaseEnvPath().titleName}`;
 }
 
 export function getItemComponents(itemId){
