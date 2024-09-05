@@ -128,7 +128,7 @@ export default function RelicPage({ routeId, pathObj }) {
               <div className='sized-remaining v-flex flex-center' style={{ gap: '50px' }}>
                   <div className='sized-content h-flex' style={{ marginTop: '20px' }}></div>
                   { relic.vaulted ? (<div className='sized-content h-flex flex-center'>{`${relic.name} is`}<span style={{ fontWeight: 'bold', whiteSpace: 'pre' }}> vaulted</span>.</div>) : null}
-                  <MainItemTitleComponent itemId={relic.id} iconUrl={`/warfarm/images/${pathObj.id.split(" ")[0].trim()}.png`} label={pathObj.id}/>
+                  <MainItemTitleComponent itemId={relic.id} iconUrl={`${com.getBaseEnvPath().basePath}/images/${pathObj.id.split(" ")[0].trim()}.png`} label={pathObj.id}/>
                   
                   <ComponentTab components={components}/>
                   { relic.vaulted ? null :

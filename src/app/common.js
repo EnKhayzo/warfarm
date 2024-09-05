@@ -15,6 +15,10 @@
  * along with Warfarm. If not, see <https://www.gnu.org/licenses/>.
  */
 
+
+import * as global from "@/app/globalNameVariables.js"
+import { inflate, deflate } from "pako";
+
 export function _match(value, cases){
   if(Array.isArray(cases)){
       for(var i=0; i<cases.length; i++){
@@ -57,10 +61,16 @@ export function shallowMerge(a, b){
 }
 
 export function loadSetting(name){
-    const value = JSON.parse(localStorage.getItem(name));
-    if(name === "userData" && value == null) { console.warn(`userData was null on disk! returning {}`, name, value); return {} };
+  let value = null;
+  try{
+    value = JSON.parse(localStorage.getItem(name));
+  } catch(e){ 
+    console.error(`failed to load setting!`, name, e); 
+  }
 
-    return value;
+  if(name === getBaseEnvPath().userData && value == null) { console.warn(`userData was null on disk! returning {}`, name, value); return {} };
+
+  return value;
 }
 
 export function saveSetting(name, value){
@@ -76,35 +86,66 @@ export function editSetting(name, func){
     saveSetting(name, setting);
 }
 
-export function setAllUserData(userData){
-  saveSetting("userData", userData);
-  obtainedObservable.set(userData.componentsObtained ?? {});
-  trackedItemsOvervable.set(userData.trackedItems ?? {});
-  missionPrioritiesObservable.set(userData.missionPriorityPreferences ?? {});
+export function parseVersion(versionStr){
+  const splitVersion = versionStr.split(".");
+  if(splitVersion.length < 3){ console.warn(`version length < 3!`); return; }
+  return { major: splitVersion[0], minor: splitVersion[1], patch: splitVersion[2] };
 }
 
-export function clearAllUserData(){
-  saveSetting("userData", {});
-  obtainedObservable.set({});
-  trackedItemsOvervable.set({});
-  missionPrioritiesObservable.set({});
+export function loadStorageData(){
+  const storageData = loadSetting("storageData");
+  if(!storageData.version) storageData.version = "1.0.0";
+
+  // current storage data version: 1.0.0
+  // i'll update the storageData structure here if it becomes necessary
+
+
+  return storageData;
+}
+
+export function saveStorageData(storageData){
+  saveSetting("storageData", storageData);
+}
+
+// let currentUser = "default";
+
+// this is the data specific to the current user
+export function loadUserData(){
+  // const storageData = loadStorageData();
+  // const userData = storageData[currentUser];
+  // if(userData == null) userData = {}
+
+  const userData = loadSetting(getBaseEnvPath().userData);
+  if(!userData.version) userData.version = "1.0.0";
+
+  // current user data version: 1.0.1
+  // i'll update the userData structure here if it becomes necessary
+
+
+
+  return userData;
+}
+
+export function saveUserData(userData){
+  if(userData == null) { console.warn(`trying to save userData as null! aborting`); return; }
+  saveSetting(getBaseEnvPath().userData, userData);
 }
 
 export function getUserDataSetting(name, defaultValue=null){
-  return loadSetting("userData")[name] ?? defaultValue;
+  return loadUserData()[name] ?? defaultValue;
 }
 
 export function clearUserDataObtainedItems(){
-  let userData = loadSetting("userData");
+  let userData = loadUserData();
 
   if(userData.componentsObtained != null) delete userData.componentsObtained;
-  obtainedObservable.set({});
+  saveUserData(userData);
 
-  saveSetting("userData", userData);
+  obtainedObservable.set({});
 }
 
 export function setUserDataComponentSetting(componentId, name, value){
-    let userData = loadSetting("userData");
+    let userData = loadUserData();
 
     if(userData == null) userData = {};
 
@@ -113,9 +154,9 @@ export function setUserDataComponentSetting(componentId, name, value){
 
 
     userData.componentsObtained[componentId][name] = value;
+    saveUserData(userData);
+    
     obtainedObservable.set(userData.componentsObtained);
-
-    saveSetting("userData", userData);
 }
 
 export function incrementUserDataComponentObtained(componentId){
@@ -136,7 +177,7 @@ export function decrementUserDataComponentObtained(componentId){
 
 /** setting name refers to the setting inside the component, can be 'obtained' or others */
 export function getUserDataComponentSetting(componentId, settingName){
-    const userData = loadSetting("userData");
+    const userData = loadUserData();
 
     if(userData == null) return null;
     if(!("componentsObtained" in userData)) return null;
@@ -146,21 +187,23 @@ export function getUserDataComponentSetting(componentId, settingName){
 }
 
 export function getObtainedComponents(){
-  const userData = loadSetting("userData");
+  const userData = loadUserData();
   return userData.componentsObtained ?? {};
 }
 
 export function getUserDataTrackedItems(){
-  const userData = loadSetting("userData");
+  const userData = loadUserData();
   if(!userData.trackedItems) return {};
 
   return userData.trackedItems;
 }
 
 export function setUserDataTrackedItems(trackedItems){
-  const userData = loadSetting("userData");
+  const userData = loadUserData();
   userData.trackedItems = trackedItems;
-  saveSetting("userData", userData);
+  saveUserData(userData);
+
+  trackedItemsOvervable.set(trackedItems);
 }
 
 export function getUserDataTrackedItem(itemId){
@@ -169,26 +212,37 @@ export function getUserDataTrackedItem(itemId){
 }
 
 export function clearUserDataTrackedItems(){
-  let userData = loadSetting("userData");
+  let userData = loadUserData();
   
   if(userData.trackedItems != null) delete userData.trackedItems;
-  trackedItemsOvervable.set({});
+  saveUserData(userData);
 
-  saveSetting("userData", userData);
+  trackedItemsOvervable.set({});
 }
 
 export function setUserDataTrackedItem(itemId, value){
   const trackedItems = getUserDataTrackedItems();
 
   trackedItems[itemId] = value;
-
-  trackedItemsOvervable.set(trackedItems);
-  
   setUserDataTrackedItems(trackedItems);
+
+  const trackList = getUserDataCurrentActiveTrackList();
+  trackList.trackedItems = trackedItems;
+  setUserDataTrackList(trackList.id, trackList);
+}
+
+export function getUserDataCurrentActiveTrackList(){
+  const trackLists = getUserDataTrackLists();
+  if(trackLists == null || isDictEmpty(trackLists)) { console.warn(`no track lists!`); return {}; }
+
+  const currentId = getUserDataCurrentTrackListId();
+  if(trackLists[currentId] == null || isDictEmpty(trackLists[currentId])){ console.warn(`no current tracklist!`); return {}; }
+
+  return trackLists[currentId];
 }
 
 export function getUserDataMissionPriorityPreferences(){
-  const userData = loadSetting("userData");
+  const userData = loadUserData();
 
   const missionPriorities = userData.missionPriorityPreferences ?? {};
 
@@ -197,25 +251,25 @@ export function getUserDataMissionPriorityPreferences(){
 
 export function setUserDataMissionPriorityPreferences(missionPriorities){
   if(missionPriorities == null) { console.warn(`null passed to setUserDataMissionPriorityPreferences!`); return; }
-  const userData = loadSetting("userData");
+  const userData = loadUserData();
 
   userData.missionPriorityPreferences = missionPriorities;
-  missionPrioritiesObservable.set(missionPriorities);
+  saveUserData(userData);
 
-  saveSetting("userData", userData);
+  missionPrioritiesObservable.set(missionPriorities);
 }
 
 export function clearUserDataMissionPriorityPreferences(){
-  let userData = loadSetting("userData");
+  let userData = loadUserData();
   
   if(userData.missionPriorityPreferences != null) delete userData.missionPriorityPreferences;
-  missionPrioritiesObservable.set({});
+  saveUserData(userData);
 
-  saveSetting("userData", userData);
+  missionPrioritiesObservable.set({});
 }
 
 export function getUserDataHasFirstAccessed(){
-  const userData = loadSetting("userData");
+  const userData = loadUserData();
 
   if(userData.hasFirstAccessed == null) return true;
 
@@ -223,15 +277,15 @@ export function getUserDataHasFirstAccessed(){
 }
 
 export function setUserDataHasFirstAccessed(hasFirstAccessed){
-  const userData = loadSetting("userData");
+  const userData = loadUserData();
 
   userData.hasFirstAccessed = hasFirstAccessed;
 
-  saveSetting("userData", userData);
+  saveUserData(userData);
 }
 
 export function getUserDataPreferences() {
-  const userData = loadSetting("userData");
+  const userData = loadUserData();
 
   if(userData.userPreferences == null) return {};
 
@@ -240,12 +294,12 @@ export function getUserDataPreferences() {
 
 export function setUserDataPreferences(userPreferences) {
   if(userPreferences == null) return;
-  const userData = loadSetting("userData");
+  const userData = loadUserData();
 
   userData.userPreferences = userPreferences;
-  preferencesObservable.set(userPreferences);
+  saveUserData(userData);
 
-  saveSetting("userData", userData);
+  preferencesObservable.set(userPreferences);
 }
 
 export function getUserDataPreference(preferenceName, defaultValue=null) {
@@ -264,18 +318,179 @@ export function setUserDataPreference(preferenceName, value) {
   setUserDataPreferences(userDataPreferences);
 }
 
+export function getUserDataTrackLists(){
+  const userData = loadUserData();
+  if(!userData.trackLists) userData.trackLists = {};
+
+  return userData.trackLists;
+}
+
+export function setUserDataTrackLists(trackLists){
+  const userData = loadUserData();
+
+  userData.trackLists = trackLists;
+  saveUserData(userData);
+
+  trackListsObservable.set(trackLists);
+}
+
+export function getUserDataTrackList(id){
+  const trackLists = getUserDataTrackLists();
+  return trackLists[id] ?? {};
+}
+
+export function createEmptyTrackListIfNoTrackLists(){
+  const trackLists = getUserDataTrackLists();
+  if(!isDictEmpty(trackLists)) return;
+
+  const newName = generateTrackListName();
+  addUserDataTrackList({ id: newName, trackedItems: getUserDataTrackedItems() });
+  setUserDataCurrentTrackListId(newName);
+}
+
+export function setUserDataTrackList(id, trackList){
+  const trackLists = getUserDataTrackLists();
+  trackLists[id] = trackList;
+  setUserDataTrackLists(trackLists);
+}
+
+export function renameUserDataTrackList(id, newId){
+  if(id === newId) return;
+
+  const trackLists = getUserDataTrackLists();
+  if(!trackLists[id]) { console.warn(`no track list exists with id!`, id); return; }
+
+  let trackList = cloneDict(trackLists[id]);
+  trackList.id = newId;
+
+  addUserDataTrackList(trackList);
+  removeUserDataTrackList(id);
+
+  setUserDataActiveTrackList(newId);
+}
+
+export function addUserDataTrackList(obj){
+  if(obj == null || obj.id == null || obj.trackedItems == null){ console.warn(`incomplete obj!`, obj); return; }
+
+  const trackLists = getUserDataTrackLists();
+  trackLists[obj.id] = obj;
+
+  setUserDataTrackLists(trackLists);
+}
+
+export function removeUserDataTrackList(id){
+  if(id == null ){ console.warn(`id is null!`, id); return; }
+
+  // this is because of the listener of trackedItems, it would copy the tracked items in the newly
+  // created track list in case this removal makes track lists empty
+  setUserDataTrackedItems({});
+
+  let trackLists = getUserDataTrackLists();
+  if(trackLists[id] != null) delete trackLists[id];
+
+  setUserDataTrackLists(trackLists);
+
+  createEmptyTrackListIfNoTrackLists();
+  if(getUserDataCurrentTrackListId() === id) setUserDataActiveTrackList(Object.keys(getUserDataTrackLists())[0]);
+
+  // const currentTrackList = getUserDataCurrentTrackListId();
+  // if(id === currentTrackList){
+  //   if(isDictEmpty(trackLists)){
+  //     console.warn(`deleted last track list, regenerating an empty one`);
+  //     addUserDataTrackList({ id:generateTrackListName(), trackedItems: {} });
+
+  //     trackLists = getUserDataTrackLists();
+  //   }
+  //   setUserDataActiveTrackList(Object.keys(trackLists)[0]);
+  // }
+}
+
+/** sets the current active variable AND changes trackedItems to match said track list */
+export function setUserDataActiveTrackList(id){
+  const trackLists = getUserDataTrackLists();
+
+  if(!trackLists[id]){ console.warn(`no track list of id found to set as active!`, id); return; }
+  if(trackLists[id].trackedItems == null){ console.warn(`track list to set has no tracked items (null)!`, id); return; }
+
+  // setUserDataTrackedItems({});
+  setUserDataCurrentTrackListId(id);
+  setUserDataTrackedItems(trackLists[id].trackedItems);
+  // setUserDataTrackedItems(trackLists[id].trackedItems);
+}
+
+// export function setUserDataCurrentTrackList(id){
+//   const userData = loadUserData();
+
+//   let trackedList = getUserDataTrackList(id);
+//   if(trackedList == null) trackedList = {};
+
+//   let trackedItems = trackedList.trackedItems;
+//   if(trackedItems == null) trackedItems = {};
+//   currentTrackListObservable.set(trackedList);
+
+//   userData.currentTrackList = id;
+//   saveUserData(userData);
+//   console.log(`set tracked list`, id, trackedList);
+
+//   setUserDataTrackedItems(trackedItems);
+// }
+export function setUserDataCurrentTrackListId(id){
+  const userData = loadUserData();
+
+  userData.currentTrackList = id;
+  saveUserData(userData);
+
+  currentTrackListIdObservable.set(id);
+  console.log(`set tracked list`, id);
+}
+
+// export function getUserDataCurrentTrackList(){
+//   const userData = loadUserData();
+
+//   const trackLists = getUserDataTrackLists();
+//   const currentTrackList = userData.currentTrackList;
+//   if(currentTrackList == null || !trackLists[currentTrackList]) return {};
+
+//   return trackLists[currentTrackList];
+// }
+export function getUserDataCurrentTrackListId(){
+  const userData = loadUserData();
+  return userData.currentTrackList;
+}
+
+export function generateTrackListName(){
+  const trackLists = getUserDataTrackLists();
+
+  let num = 1;
+  let currentName = `Track List ${num}`;
+  while(trackLists[currentName] != null) {
+    num++;
+    currentName = `Track List ${num}`;
+  }
+
+  return currentName;
+}
+
 /** statusObj = { hasClickedBanner: bool, lastClicked: Date, bannerTargetDate: Date } */
 export function setUserDataBannerStatus(statusObj){
   if(statusObj == null) statusObj = {};
 
-  const userData = loadSetting("userData");
+  const userData = loadUserData();
   userData.bannerStatus = statusObj;
-  saveSetting("userData", userData);
+  saveUserData(userData);
 }
 
 export function getUserDataBannerStatus(){
-  const userData = loadSetting("userData");
+  const userData = loadUserData();
   return userData.bannerStatus ?? {};
+}
+
+
+
+
+
+export function isDictEmpty(dict){
+  return Object.keys(dict).length <= 0;
 }
 
 
@@ -532,24 +747,132 @@ export async function initialize(local=false) {
 
 
     if(local){
+      // this should happen automatically, modify/add the listeners
+      // let currentTrackList = getUserDataCurrentTrackList();
+      // if(currentTrackList == null){
+      //   console.warn(`current track list is null! auto-setting or creating a new one`);
+
+      //   let trackLists = getUserDataTrackLists();
+      //   if(trackLists == null || isDictEmpty(trackLists)){
+      //     console.warn(`track lists is null/empty! auto-populating with a generated one`);
+
+      //     const trackedItems = getUserDataTrackedItems();
+      //     addUserDataTrackList({ id: generateTrackListName(), trackedItems: trackedItems });
+
+      //     trackLists = getUserDataTrackLists();
+      //   }
+
+      //   currentTrackList = Object.keys(trackLists)[0];
+      //   setUserDataCurrentTrackListId(currentTrackList);
+
+      //   // setUserDataTrackList(currentTrackList, trackedItems);
+      // }
+
+      // listener for the track list id
+      // trackListsObservable.addListener((trackLists) => {
+      //   // console.log(`track lists listnere!`);
+      //   const currentTrackListId = getUserDataCurrentTrackListId();
+
+      //   if(isDictEmpty(trackLists)){
+      //     console.warn(`track list map is empty! creating a new one from the current tracked items`);
+      //     const newName = generateTrackListName();
+      //     addUserDataTrackList({ id: newName, trackedItems: cloneDict(getUserDataTrackedItems()) });
+      //   }
+      //   // this else is here to not cause recursive weird loops; 
+      //   // addUserDataTrackList above should take care of making sure this branch is executed (in its listener)
+      //   else{
+      //     if(trackLists[currentTrackListId] == null){
+      //       console.warn(`current track list is null! setting to first one in the map`);
+            
+      //       setUserDataCurrentTrackListId(Object.keys(cloneDict(getUserDataTrackLists()))[0]);
+      //     }
+      //   }
+      // });
+
+      // currentTrackListIdObservable.addListener((id) => {
+      //   const trackLists = getUserDataTrackLists();
+      //   if(trackLists[id] == null) { console.warn(`id does not exist in track lists!`, id); return; }
+      //   if(trackLists[id].trackedItems == null) { console.warn(`tracked items of current tracked list are null!`, id); return; }
+
+      //   // console.log(`aligning tracked items to new current track list!`, id, cloneDict(trackLists[id].trackedItems));
+      //   setUserDataTrackedItems(cloneDict(trackLists[id].trackedItems));
+      // });
+
+      // trackedItemsOvervable.addListener((trackedItems) => {
+      //   const currentTrackList = getUserDataCurrentTrackListId();
+
+      //   // TODO create it if it doesn't exist? like the code above?
+      //   if(currentTrackList == null) { console.warn(`current track list is null!`, currentTrackList); return; }
+        
+      //   // console.log(`setting track list tracked items!`, currentTrackList, trackedItems);
+      //   setUserDataTrackList(currentTrackList, { id: currentTrackList, trackedItems: cloneDict(trackedItems) });
+      // });
+
+      createEmptyTrackListIfNoTrackLists();
+
+
       trackedItemsOvervable.set(getUserDataTrackedItems());
       obtainedObservable.set(getObtainedComponents());
       missionPrioritiesObservable.set(getDefaultMissionTypePriorities());
       dialogsUiObservable.set([]);
+      notificationsUiObservable.set([]);
       preferencesObservable.set(getUserDataPreferences());
+
+      trackListsObservable.set(getUserDataTrackLists());
+      currentTrackListIdObservable.set(getUserDataCurrentTrackListId());
     }
 
     initialized = true;
   };
 
+
 export function refreshUserData(newUserData) {
   // console.log(`new user data!`, newUserData);
-  trackedItemsOvervable.set(newUserData.trackedItems ?? {});
+
+  // this is set to getUserDataTrackedItems() instead of newUserData.trackedItems because
+  // it seemed to create recursive loops with the listeners set up for trackLists
+  // probably something regarding a shared reference?
+  trackedItemsOvervable.set(getUserDataTrackedItems())  // .set(newUserData.trackedItems ?? {});
+
   obtainedObservable.set(newUserData.componentsObtained ?? {});
   missionPrioritiesObservable.set(newUserData.missionPriorityPreferences ?? getDefaultMissionTypePriorities());
   preferencesObservable.set(newUserData.preferencesObservable ?? getUserDataPreferences());
   // dialogsUiObservable.set([]);
+
+  trackListsObservable.set(getUserDataTrackLists());
+  currentTrackListIdObservable.set(getUserDataCurrentTrackListId());
+
+  createEmptyTrackListIfNoTrackLists();
+
+  console.log(`refreshed user data!`);
 }
+
+export function setAllUserData(userData){
+  saveUserData(userData);
+  trackedItemsOvervable.set(getUserDataTrackedItems());
+
+  obtainedObservable.set(userData.componentsObtained ?? {});
+  missionPrioritiesObservable.set(userData.missionPriorityPreferences ?? {});
+  preferencesObservable.set(userData.preferencesObservable ?? getUserDataPreferences());
+
+  trackListsObservable.set(getUserDataTrackLists());
+  currentTrackListIdObservable.set(getUserDataCurrentTrackListId());
+
+  createEmptyTrackListIfNoTrackLists();
+}
+
+export function clearAllUserData(){
+  saveUserData({});
+  obtainedObservable.set({});
+  trackedItemsOvervable.set({});
+  missionPrioritiesObservable.set({});
+
+  currentTrackListIdObservable.set(null);
+  trackListsObservable.set({});
+
+  createEmptyTrackListIfNoTrackLists();
+}
+
 
 export function getIdMap() { return idMap; }
 
@@ -1146,7 +1469,11 @@ export let trackedItemsOvervable = new CustomObservable();
 export let obtainedObservable = new CustomObservable();
 export let missionPrioritiesObservable = new CustomObservable();
 export let dialogsUiObservable = new CustomObservable();
+export let notificationsUiObservable = new CustomObservable();
 export let preferencesObservable = new CustomObservable();
+
+export let trackListsObservable = new CustomObservable();
+export let currentTrackListIdObservable = new CustomObservable();
 
 /** please try using this as little as possible (see Observer Pattern and Custom Observer), pollInterval is in ms */
 export async function waitUntil(predicate, pollInterval=250){
@@ -1226,14 +1553,15 @@ export function getObjectId(rawObj, category=null){
 }
 
 export function getObjectIcon(rawObj, category=null){
+  if(rawObj == null) { console.warn(`rawObj is null!`, rawObj); return ''; }
   if(!category) category = rawObj.category;
 
   category = capitalizeFirstLetter(category);
 
-  return category.localeCompare("Items") == 0 ? `/warfarm/images/${rawObj.name}.png` :
-      category.localeCompare("Components") == 0 ? `/warfarm/images/${rawObj.fullName}.png` :
-      category.localeCompare("Relics") == 0 ? `/warfarm/images/${rawObj.tier}.png` :
-      category.localeCompare("Missions") == 0 ? `/warfarm/images/${ rawObj.planet.includes("Event: ") ? rawObj.planet.replace("Event: ","") : rawObj.planet}.png` : null
+  return category.localeCompare("Items") == 0 ? `${getBaseEnvPath().basePath}/images/${rawObj.name}.png` :
+      category.localeCompare("Components") == 0 ? `${getBaseEnvPath().basePath}/images/${rawObj.fullName}.png` :
+      category.localeCompare("Relics") == 0 ? `${getBaseEnvPath().basePath}/images/${rawObj.tier}.png` :
+      category.localeCompare("Missions") == 0 ? `${getBaseEnvPath().basePath}/images/${ rawObj.planet.includes("Event: ") ? rawObj.planet.replace("Event: ","") : rawObj.planet}.png` : null
 }
 
 export function getObjectPathObjFromRouteId(routeId){
@@ -1339,7 +1667,7 @@ export function componentIsFarmedPerc(rawObj, obtainedComponents=null){
 }
 
 export function itemIsFarmedPerc(rawObj, obtainedComponents=null){
-  if(rawObj.components == null) return true;
+  if(rawObj == null || rawObj.components == null) return 0;
   return (
             Object.keys(rawObj.components)
               .map(id => components[id])
@@ -1353,6 +1681,7 @@ export function itemIsFarmedPerc(rawObj, obtainedComponents=null){
 }
 
 export function objectIsFarmedPerc(rawObj, obtainedComponents=null){
+  if(rawObj == null){ console.warn(`rawObj is null!`, rawObj); return 0; }
   return  rawObj.category === 'items' ? 
             itemIsFarmedPerc(rawObj, obtainedComponents) 
           : 
@@ -1374,11 +1703,12 @@ export function componentIsFarmed(rawObj, obtainedComponents=null){
 }
 
 export function itemIsFarmed(rawObj, obtainedComponents=null){
-  if(rawObj.components == null) return true;
+  if(rawObj == null || rawObj.components == null) return true;
   return Object.keys(rawObj.components).map(id => components[id]).every(component => componentIsFarmed(component, obtainedComponents));
 }
 
 export function objectIsFarmed(rawObj, obtainedComponents=null){
+  if(rawObj == null) return false;
   return  rawObj.category === 'items' ? 
             itemIsFarmed(rawObj, obtainedComponents) 
           : 
@@ -1425,6 +1755,7 @@ export function getComponentsRelicsMerged(trackedItems, router){
     if(!acc.relics) acc.relics = [];
 
     const trackedItem = getObjectFromId(trackedItemId);
+    if(trackedItem == null) { console.warn(`tracked item is null!`, trackedItemId); return acc; }
 
     // console.log(`tracked iertm`, trackedItemId, trackedItem, trackedItems);
 
@@ -1480,6 +1811,34 @@ export function getDialogUis(){
   return dialogsUiObservable.get();
 }
 
+
+export function showNotificationUi(notification) {
+  notificationsUiObservable.set(notificationsUiObservable.get().concat(notification));
+  if(notification.type === "success" || notification.type === "failure"){
+    const timeoutId = () => {
+      removeNotificationUi(notification, timeoutId);
+    };
+
+    setTimeout(timeoutId, 3000);
+  }
+}
+
+export function removeNotificationUi(notification, options) {
+  if(options && options.timeoutId != null) clearTimeout(options.timeoutId);
+
+  const idx = notificationsUiObservable.get().indexOf(notification);
+  if(idx < 0) { console.warn(`no notification found! trying to match`, notification); return; }
+
+  let newList = [ ...notificationsUiObservable.get() ];
+  newList.splice(idx, 1);
+  notificationsUiObservable.set(newList);
+}
+
+export function getNotificationUis() {
+  return notificationsUiObservable.get();
+}
+
+
 let componentRelicRarityRelationCache = {};
 export function getComponentRarityInRelationToRelic(rawComponent, rawRelic){
   const cacheId = `${rawRelic.name}-${rawComponent.id}`;
@@ -1515,7 +1874,7 @@ export function filterDict(dict, filterFunc) {
 }
 
 export function generatePageTitle(pageTitle) {
-  return `${pageTitle} | Warfarm`;
+  return `${pageTitle} | Warfarm TEST`;
 }
 
 export function getItemComponents(itemId){
@@ -1594,6 +1953,30 @@ export function scrollRestoreLoad(mainScrollableRef, pathName){
   }
 }
 
+export function encodeToBase64(obj) {
+  try{
+    // return Buffer.from(deflate(JSON.stringify(obj), { to: 'string' }), 'binary').toString("base64").replaceAll(" ", "+");
+    return Buffer.from(deflate(JSON.stringify(obj), { to: 'string' }), 'binary').toString("base64");
+    // return Buffer.from(JSON.stringify(obj)).toString("base64");
+  } catch(exc) { 
+    console.warn(`could not encode obj!`, exc, obj); 
+    return null; 
+  }
+}
+
+export function decodeFromBase64(base64Str) {
+  try{
+    // console.log(`decoding:`, base64Str);
+    return JSON.parse(inflate(Buffer.from(base64Str.replaceAll(" ", "+"), "base64"), { to: 'string' }));
+    // console.log(`decoding:`, Buffer.from(base64Str, "base64").toString());
+    // return JSON.parse(Buffer.from(base64Str, "base64").toString());
+  } catch(exc) { 
+    console.warn(`corrupt base64 string object! returning null`, exc, base64Str); 
+    return null; 
+  }
+}
+
+
 export function mod(a, b){
   return ((a % b) + b) % b;
 }
@@ -1632,7 +2015,6 @@ export function getTimestampAsDurationString(timestamp){
   return `${isNegative ? "-" : ""}${finalStrParts.join(" ")}`;
 }
 
-
-export function isDictEmpty(dict){
-  return Object.keys(dict).length <= 0;
+export function getBaseEnvPath() {
+  return global.names;
 }

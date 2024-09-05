@@ -11,6 +11,7 @@ export default function ObtainedItemCheck({ positionAbsolute=true, hollowAbsolut
     const [ _obtainedComponents, setObtainedComponents ] = useObtainedComponents();
     
     const obj = com.getObjectFromId(itemId);
+    if(obj == null) return null;
     if(obj.category === "missions" || obj.category === "relics") return (null);
 
     const isObtainedPerc = showPartial ? com.objectIsFarmedPerc(obj, _obtainedComponents) : (com.objectIsFarmed(obj, _obtainedComponents) ? 1 : 0);
@@ -54,7 +55,7 @@ export default function ObtainedItemCheck({ positionAbsolute=true, hollowAbsolut
                         :null
                     }
                     <img 
-                        src={isObtainedPerc < 1 ? `/warfarm/icons/success_hollow.svg` : `/warfarm/icons/success.svg`} 
+                        src={isObtainedPerc < 1 ? `${com.getBaseEnvPath().basePath}/icons/success_hollow.svg` : `${com.getBaseEnvPath().basePath}/icons/success.svg`} 
                         className={`sized-content icon-default-filter flex-center obtained-check-hollow`}
                         onClick={(ev) => { 
                             ev.preventDefault(); 
@@ -79,10 +80,10 @@ export default function ObtainedItemCheck({ positionAbsolute=true, hollowAbsolut
                         <img 
                             src={
                                 isObtainedPerc <= 0 ? 
-                                    `/warfarm/icons/success_hollow.svg` 
+                                    `${com.getBaseEnvPath().basePath}/icons/success_hollow.svg` 
                                 : isObtainedPerc < 1 ? 
-                                    `/warfarm/icons/square.svg` 
-                                :   `/warfarm/icons/success.svg`
+                                    `${com.getBaseEnvPath().basePath}/icons/square.svg` 
+                                :   `${com.getBaseEnvPath().basePath}/icons/success.svg`
                             } 
                             className={`sized-content obtained-check-icon${ isObtainedPerc < 1 ? ` icon-partial-filter` : `` } flex-center${ isObtainedPerc <= 0 ? ` obtained-check-hollow` : ``}`}
                             style={{

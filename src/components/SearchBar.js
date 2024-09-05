@@ -39,7 +39,7 @@ const SearchBar = ({ isExpanded=false }) => {
                         ...item,
                         id: item.name,
                         category: "Items",
-                        imageUrl: `/warfarm/images/${item.name}.png`,
+                        imageUrl: `${com.getBaseEnvPath().basePath}/images/${item.name}.png`,
                     }))
                 ];
             }
@@ -53,7 +53,7 @@ const SearchBar = ({ isExpanded=false }) => {
                         ...component,
                         id: component.id,
                         category: "Components",
-                        imageUrl: `/warfarm/images/${component.fullName}.png`,
+                        imageUrl: `${com.getBaseEnvPath().basePath}/images/${component.fullName}.png`,
                     }))
                 ];
             }
@@ -67,7 +67,7 @@ const SearchBar = ({ isExpanded=false }) => {
                         ...relic,
                         id: relicName,
                         category: "Relics",
-                        imageUrl: `/warfarm/images/${relicName.split(" ")[0].trim()}.png`,
+                        imageUrl: `${com.getBaseEnvPath().basePath}/images/${relicName.split(" ")[0].trim()}.png`,
                     }))
                 ];
             }
@@ -82,7 +82,7 @@ const SearchBar = ({ isExpanded=false }) => {
                         id: `${mission.name}, ${mission.planet}`,
                         missionName: mission.name,
                         category: "Missions",
-                        imageUrl: `/warfarm/images/${mission.planet}.png`,
+                        imageUrl: `${com.getBaseEnvPath().basePath}/images/${mission.planet}.png`,
                     }))
                 ];
             }
@@ -173,7 +173,7 @@ const SearchBar = ({ isExpanded=false }) => {
             <ContextMenuButton 
                 top='40px'
                 className="sized-content global-search-bar-filter-button v-flex"
-                headerContent={<img className="sized-content global-search-bar-filter-icon" src="/warfarm/icons/filter.svg" />}
+                headerContent={<img className="sized-content global-search-bar-filter-icon" src={`${com.getBaseEnvPath().basePath}/icons/filter.svg`} />}
             >
                 {
                     (props) => (

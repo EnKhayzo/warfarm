@@ -178,7 +178,7 @@ const MissionTab = ({component, rarityPriorities}) => {
                               className={`sized-content h-flex flex-center object-page-mission-relic${` ${relic.rarity}` ?? ''}`} 
                               style={{ gap: '5px' }}
                             >
-                              <div className='sized-content h-flex flex-center' ><img style={{ height: '30px' }} src={`/warfarm/images/${relic.relic.tier}.png`}/></div>
+                              <div className='sized-content h-flex flex-center' ><img style={{ height: '30px' }} src={`${com.getBaseEnvPath().basePath}/images/${relic.relic.tier}.png`}/></div>
                               <div className='sized-content h-flex flex-center' style={{ fontSize: 'small' }}>{relic.relic.name}</div>
                               <div className='sized-content v-flex flex-center' style={{ alignItems: 'flex-start', marginLeft: '5px' }}>
                                 {
@@ -241,7 +241,7 @@ export default function ComponentPage({ routeId, pathObj }) {
                         <div>{component.parentItem}</div>
                       </Link>
                   }
-                  <MainItemTitleComponent itemId={component.id} iconUrl={`/warfarm/images/${component.fullName}.png`} label={pathObj.id} />
+                  <MainItemTitleComponent itemId={component.id} iconUrl={`${com.getBaseEnvPath().basePath}/images/${component.fullName}.png`} label={pathObj.id} />
                   <div style={{ marginTop: '5px' }}><ComponentAddButtons component={component}/></div>
                 </div>
                 <TabComponent

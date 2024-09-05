@@ -38,6 +38,7 @@ import HoverElement from "@/components/HoverElement";
 import LegendComponent from "./LegendComponent";
 import { ScrollPaneContext } from "@/contexts/ScrollPaneContext";
 import { NavigationEvents } from "@/components/NavigationEvents";
+import useNotificationUis from "@/hooks/useNotificationUis";
 import BannerComponent from "./BannerComponent";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -51,9 +52,9 @@ function NavBarMainButtons({ forceHomeBlink }){
 
   return (
     <>
-      <Link href="/prime"><IconButton label={'Home'}      iconUrl={`/warfarm/icons/home.svg`}     highlight={pathName === "/prime"}          forceBlinking={forceHomeBlink}  className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
-      <Link href="/prime/explorer"><IconButton label={'Explorer'}  iconUrl={`/warfarm/icons/explorer.svg`} highlight={pathName === "/prime/explorer"} forceBlinking={null}         className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
-      <Link href="/prime/about"><IconButton label={'About'}     iconUrl={`/warfarm/icons/question.svg`} highlight={pathName === "/prime/about"}    forceBlinking={null}            className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
+      <Link href="/prime"><IconButton label={'Home'}      iconUrl={`${com.getBaseEnvPath().basePath}/icons/home.svg`}     highlight={pathName === "/prime"}          forceBlinking={forceHomeBlink}  className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
+      <Link href="/prime/explorer"><IconButton label={'Explorer'}  iconUrl={`${com.getBaseEnvPath().basePath}/icons/explorer.svg`} highlight={pathName === "/prime/explorer"} forceBlinking={null}         className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
+      <Link href="/prime/about"><IconButton label={'About'}     iconUrl={`${com.getBaseEnvPath().basePath}/icons/question.svg`} highlight={pathName === "/prime/about"}    forceBlinking={null}            className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
     </>
   );
 }
@@ -66,7 +67,7 @@ function NavBarSideButtons({}){
       <Link href="/prime/upcoming">
         <IconButton 
           label={'Upcoming'} 
-          iconUrl={`/warfarm/icons/news.svg`} 
+          iconUrl={`${com.getBaseEnvPath().basePath}/icons/news.svg`} 
           highlight={pathName === "/prime/upcoming"} 
           className={'layout-header-button'} 
           iconClassName={'layout-header-icon'}
@@ -82,8 +83,8 @@ function MediaQueryCollapseContextMenuButton({children}){
       className='nav-header-buttons-small-mediaquery-container'
       style={{
       }}
-      iconUrl={`/warfarm/icons/info.svg`}
-      headerContent={<img src="/warfarm/icons/more.svg" style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
+      iconUrl={`${com.getBaseEnvPath().basePath}/icons/info.svg`}
+      headerContent={<img src={`${com.getBaseEnvPath().basePath}/icons/more.svg`} style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
     >
       {
         (props) => (
@@ -102,6 +103,7 @@ export function MainLayoutComponent({children}){
   const searchParams = useSearchParams();
   // console.log(`pathname`, pathName);
   const [ dialogUis, setDialogUis ] = useDialogUis();
+  const [ notificationUis, setNotificationUis ] = useNotificationUis();
   const mainScrollableRef = useRef(null);
   
   const [ hasFirstAccessed, setHasFirstAccessed ] = useState(false);
@@ -119,7 +121,7 @@ export function MainLayoutComponent({children}){
   }, [])
 
   const exportUserData = () => {
-    com.downloadJSON({ userData: com.loadSetting("userData"), epoch: Date.now(), version: "1.0.0" }, "warfarm_userData.json");
+    com.downloadJSON({ userData: com.loadUserData(), epoch: Date.now(), version: "1.0.0" }, `${com.getBaseEnvPath().userData_export_file_name}.json`);
   }
 
   const importUserData = async () => {
@@ -185,6 +187,8 @@ export function MainLayoutComponent({children}){
   }
 
   const areThereDialogUis = dialogUis != null && dialogUis.length > 0;
+  const areThereNotificationUis = notificationUis != null && notificationUis.length > 0;
+
   const [ forceHomeBlink, setForceHomeBlink ] = useState(false);
   const [ searchExpanded, setSearchExpanded ] = useState(false);
 
@@ -225,7 +229,8 @@ export function MainLayoutComponent({children}){
     com.scrollRestoreLoad(mainScrollableRef, pathName);
   }, [pathName,searchParams]); // Trigger scroll restoration on route change
   
-  const isThereBanner = true;
+
+  const isThereBanner = false;
 
   return (
     <div className='sized-remaining v-flex'>
@@ -235,7 +240,7 @@ export function MainLayoutComponent({children}){
             searchExpanded ?
               <div className="sized-content h-flex flex-center search-expanded">
                 <button onClick={handleSearchCollapse} className="sized-content h-flex back-button">
-                  <img className="sized-content icon-default-filter h-flex" src={`/warfarm/icons/arrow.svg`} style={{ marginLeft: '20px', height: '20px', transform: 'rotate(180deg)' }} alt="Back" />
+                  <img className="sized-content icon-default-filter h-flex" src={`${com.getBaseEnvPath().basePath}/icons/arrow.svg`} style={{ marginLeft: '20px', height: '20px', transform: 'rotate(180deg)' }} alt="Back" />
                 </button>
                 <SearchBar isExpanded={true} />
               </div>
@@ -257,7 +262,7 @@ export function MainLayoutComponent({children}){
                     }} 
                     className='sized-content logo-button h-flex flex-center'
                   >
-                      <Link href="/prime"><img style={{ minWidth: '70px' }} className='sized-content logo h-flex flex-center' src={`/warfarm/icons/logo_prime.svg`}/></Link>
+                      <Link href="/prime"><img style={{ minWidth: '70px' }} className='sized-content logo h-flex flex-center' src={`${com.getBaseEnvPath().basePath}/icons/logo_prime.svg`}/></Link>
                   </button>
                 </div>
                 <MediaQueryCollapseContextMenuButton>
@@ -269,7 +274,7 @@ export function MainLayoutComponent({children}){
               </div>
               <div className="sized-remaining h-flex flex-center">
                 <button className="sized-content h-flex search-button" onClick={handleSearchExpand}>
-                  <img style={{ height: '30px' }} className="sized-content h-flex icon-default-filter" src={`/warfarm/icons/search.svg`} alt="Search" />
+                  <img style={{ height: '30px' }} className="sized-content h-flex icon-default-filter" src={`${com.getBaseEnvPath().basePath}/icons/search.svg`} alt="Search" />
                 </button>
                 <div 
                   className="sized-remaining h-flex flex-center global-search-bar-area"
@@ -281,7 +286,7 @@ export function MainLayoutComponent({children}){
                 </div>
               </div>
               <div className="sized-content h-flex flex-center" style={{ gap:'20px', justifyContent: 'flex-end' }}>
-                <Link href="/prime/supportme"><IconButton label={'Support Me'} iconUrl={`/warfarm/icons/heart.svg`} className={'layout-header-button support-me-button'} iconClassName={'support-me-icon'} iconHeight='20px' /></Link>
+                <Link href="/prime/supportme"><IconButton label={'Support Me'} iconUrl={`${com.getBaseEnvPath().basePath}/icons/heart.svg`} className={'layout-header-button support-me-button'} iconClassName={'support-me-icon'} iconHeight='20px' /></Link>
                 <div className="sized-content h-flex flex-center">
                   <MediaQueryCollapseContextMenuButton>
                     <NavBarSideButtons/>
@@ -292,8 +297,8 @@ export function MainLayoutComponent({children}){
                 </div>
                 <div className='sized-content h-flex' style={{ gap: '20px', justifyContent: 'center', alignItems: 'center' }}>
                   {/* <ContextMenuButton 
-                    iconUrl={`/warfarm/icons/info.svg`}
-                    headerContent={<img src="/warfarm/icons/info.svg" style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
+                    iconUrl={`${com.getBaseEnvPath().basePath}/icons/info.svg`}
+                    headerContent={<img src={`${com.getBaseEnvPath().basePath}/icons/info.svg`} style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
                   >
                     {
                       (props) => (
@@ -317,7 +322,7 @@ export function MainLayoutComponent({children}){
                       });
                     }}
                   >
-                    <div className='sized-content h-flex'><img className='sized-content h-flex icon-default-filter nav-bar-standard-icon' src='/warfarm/icons/info.svg'/></div>
+                    <div className='sized-content h-flex'><img className='sized-content h-flex icon-default-filter nav-bar-standard-icon' src={`${com.getBaseEnvPath().basePath}/icons/info.svg`}/></div>
                     {
                       !hasFirstAccessed ? null:
                       <div 
@@ -332,7 +337,7 @@ export function MainLayoutComponent({children}){
                     top='50px' 
                     style={{ right: '0px' }}
                     className='global-settings-button'
-                    headerContent={<img src="/warfarm/icons/settings.svg" style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
+                    headerContent={<img src={`${com.getBaseEnvPath().basePath}/icons/settings.svg`} style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
                   >
                     {
                       (props) => (
@@ -354,7 +359,7 @@ export function MainLayoutComponent({children}){
                                       }}
                                       elems={Object.keys(com.getDefaultMissionTypePriorities()).map(priority => (
                                           <div key={`${priority}`} className='sized-content h-flex flex-center' style={{ gap: '5px', cursor: 'pointer' }}>
-                                              <div className='sized-content h-flex flex-center'><img style={{ filter: 'invert()', width: '5px', height: '5px' }} src='/warfarm/icons/move.svg'/></div>
+                                              <div className='sized-content h-flex flex-center'><img style={{ filter: 'invert()', width: '5px', height: '5px' }} src={`${com.getBaseEnvPath().basePath}/icons/move.svg`}/></div>
                                               <div className='sized-content h-flex flex-center'>{priority}</div>
                                           </div>
                                       ))}
@@ -404,6 +409,7 @@ export function MainLayoutComponent({children}){
               </div>
             </>
           }
+          
         </div>
         { isThereBanner ? <BannerComponent/> : null }
         <div ref={mainScrollableRef} className='sized-remaining main-content v-flex' style={{ marginBottom: '10px' }}>
@@ -442,7 +448,9 @@ export function MainLayoutComponent({children}){
                   minWidth: '25vw',
                   backgroundColor: 'var(--color-secondary)',
                   borderRadius: '10px',
-                  padding: '10px',
+                  padding: '30px',
+                  paddingLeft: '60px',
+                  paddingRight: '60px',
                   gap: '10px' 
                 }}
               >
@@ -453,6 +461,17 @@ export function MainLayoutComponent({children}){
                       <button onClick={ev => { dialogUi.ok(ev); com.removeDialogUi(dialogUi); }} className="sized-content dialog-footer-button h-flex flex-center">Ok</button>
                       <button onClick={(ev) => com.removeDialogUi(dialogUi)} className="sized-content dialog-footer-button h-flex flex-center">Cancel</button>
                     </div>
+                  :
+                  dialogUi.type === "textString" ?
+                  <div className='sized-content dialog-text-string-area v-flex flex-center' style={{ gap: '10px' }}>
+                    <div className='sized-content h-flex flex-center'>
+                      <input className="text-field-string" style={{ backgroundColor: 'var(--color-quaternary)', borderRadius: '10px', padding: '10px' }} type="text" defaultValue={dialogUi.value ?? ""}/>
+                    </div>
+                    <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
+                      <button onClick={ev => { dialogUi.ok(ev, ev.target.closest(".dialog-text-string-area").querySelector(".text-field-string").value); com.removeDialogUi(dialogUi); }} className="sized-content dialog-footer-button h-flex flex-center">Ok</button>
+                      <button onClick={(ev) => com.removeDialogUi(dialogUi)} className="sized-content dialog-footer-button h-flex flex-center">Cancel</button>
+                    </div>
+                  </div>
                   :
                   dialogUi.type === "custom" ?
                     dialogUi.uiFunc({ closeMenu: () => com.removeDialogUi(dialogUi) })
@@ -480,6 +499,61 @@ export function MainLayoutComponent({children}){
           }
         </div>
       }
+      {
+        !areThereNotificationUis ? null:
+        <div 
+          className='sized-remaining v-flex flex-center'
+          style={{ 
+            pointerEvents: 'none',
+            position: 'absolute', 
+            top: '0px', 
+            left: '0px', 
+            width: '100vw', 
+            height: '100vh',
+            backgroundColor: 'transparent', 
+            justifyContent: 'flex-end',
+            gap: '10px',
+            padding: '20px'
+          }}
+        >
+          {
+            notificationUis.map((notificationUi, index) => (
+              <div 
+                key={`${index}-${notificationUi.title}`}
+                className='sized-content h-flex flex-center' 
+                style={{ 
+                  pointerEvents: 'all',
+                  position: 'relative',
+                  backgroundColor: 'var(--color-secondary)',
+                  borderRadius: '10px',
+                  padding: '10px',
+                  gap: '20px' 
+                }}
+              >
+                <div className='sized-content h-flex flex-center' >
+                  {
+                    notificationUi.type === "success" ? 
+                      <img className="icon-success-filter" style={{ width: '20px', height: '20px' }} src={`${com.getBaseEnvPath().basePath}/icons/success.svg`}/>
+                      :
+                    notificationUi.type === "failure" ? 
+                      <img className="icon-success-filter" src={`${com.getBaseEnvPath().basePath}/icons/failure.svg`}/>
+                    :null
+                  }
+                </div>
+                <div className='sized-content h-flex flex-center' >{notificationUi.label}</div>
+                <div className='sized-content h-flex flex-center' >
+                  <IconButton
+                    iconUrl={`${com.getBaseEnvPath().basePath}/icons/failure.svg`}
+                    iconClassName={'icon-default-filter'}
+                    iconStyle={{ width: '10px', height: '10px' }}
+                    onClick={() => com.removeNotificationUi(notificationUi)}
+                  />
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      }
       <Suspense fallback={null}>
         <NavigationEvents mainScrollableRef={mainScrollableRef}/>
       </Suspense>
@@ -496,7 +570,7 @@ export default function RootLayout({ children }) {
     // };
 
     const handleStorageChange = (event) => {
-      if (event.key === 'userData') {
+      if (event.key === com.getBaseEnvPath().userData) { // userData_warfarm_test
         // console.log('LocalStorage data changed in another tab:', event.newValue);
         com.refreshUserData(JSON.parse(event.newValue));
       }
@@ -516,7 +590,7 @@ export default function RootLayout({ children }) {
       fallback={
         <div className="sized-remaining v-flex flex-center" style={{ gap: '10vh' }}>
           {/* <FallbackObject/> */}
-          <img style={{ height: '30vh' }} src='/warfarm/icons/logo_prime.svg'/>
+          <img style={{ height: '30vh' }} src={`${com.getBaseEnvPath().basePath}/icons/logo_prime.svg`}/>
           <div 
             className='sized-content v-flex flex-center' 
             style={{ 
@@ -533,6 +607,7 @@ export default function RootLayout({ children }) {
       }
       loadFunc={async () => {
         // await com.waitFor(() => false, false);
+        console.log(`calling initialize!`);
         await com.initialize(true);
 
         return (

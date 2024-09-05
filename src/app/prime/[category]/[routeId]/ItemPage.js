@@ -450,7 +450,7 @@ const MissionTab = ({ groupBy, item, components, rarityPriorities}) => {
                                                                                 className={`sized-content h-flex flex-center object-page-mission-relic${` ${relic.rarity}` ?? ''}`} 
                                                                                 style={{ gap: '5px', minWidth: '200px' }}
                                                                             >
-                                                                                <div className='sized-content h-flex flex-center' ><img style={{ height: '30px' }} src={`/warfarm/images/${relic.relic.tier}.png`}/></div>
+                                                                                <div className='sized-content h-flex flex-center' ><img style={{ height: '30px' }} src={`${com.getBaseEnvPath().basePath}/images/${relic.relic.tier}.png`}/></div>
                                                                                 <div className='sized-content h-flex flex-center' style={{ fontSize: 'small' }}>{relic.relic.name}</div>
                                                                                 <div className='sized-content v-flex flex-center' style={{ alignItems: 'flex-start', marginLeft: '5px' }}>
                                                                                     {

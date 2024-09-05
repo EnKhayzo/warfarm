@@ -20,13 +20,11 @@ export default function AboutPage() {
           <title>{com.generatePageTitle("Upcoming")}</title>
       </Head>
       <div className='sized-content v-flex flex-center'>
-        <div className='sized-content h-flex flex-center'><img style={{ objectFit: 'contain', width: '200px', height: '200px' }} className='sized-content h-flex flex-center' src={`/warfarm/images/Orokin Ducats.png`} /></div>
+        <div className='sized-content h-flex flex-center'><img style={{ objectFit: 'contain', width: '200px', height: '200px' }} className='sized-content h-flex flex-center' src={`${com.getBaseEnvPath().basePath}/images/Orokin Ducats.png`} /></div>
         <div className='sized-content h-flex flex-center' style={{ fontWeight: 'bold', fontSize: 'x-large' }}>Ducat Mode</div>
         <div className='sized-content h-flex flex-center' style={{ fontStyle: 'italic', fontSize: 'small' }}>Keep track of all extras you have and how much they are worth</div>
       </div>
       <div className='sized-content v-flex flex-center' style={{ whiteSpace: 'pre', gap: '5px' }}>
-        <div>-Multiple Track Lists if you want to temporarily change your farming sheet</div>
-        <div>-Ability to share Track Lists? (no sync with other players tho)</div>
         <div>-Possibly more sorting options for relic/mission tabs</div>
         <div>-Hopefully fix the layout for mobile😂</div>
       </div>

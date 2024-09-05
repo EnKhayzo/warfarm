@@ -6,7 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import * as com from "@/app/common.js"
 
 /** changeTab: callback function to change the current tab */
-export default function IconButton({ label, iconUrl, onClick, className, style, iconClassName, highlight=false, forceBlinking=null, iconHeight='15px' }){
+export default function IconButton({ label, iconUrl, onClick, className, style, iconClassName, iconStyle=null, highlight=false, blinkEnabled=true, forceBlinking=null, iconHeight='15px' }){
   const [ blinking, setBlinking ] = useState(false);
   const timeoutRef = useRef(null);
   const rootElRef = useRef(null);
@@ -58,20 +58,20 @@ export default function IconButton({ label, iconUrl, onClick, className, style, 
           ref={rootElRef}
           className={`sized-content icon-button${highlight ? ` highlight` : ``} h-flex flex-center${className ? ` ${className}` : ``}${blinking ? ` blinking` : ``}`} 
           style={style}
-          onClick={onClick}
+          // onClick={onClick}
+          onClick={(ev) => {
+            if(blinkEnabled) blinkingSystem();
+            
+            if(onClick) onClick(ev);
+          }}
       >
           <div 
               className='sized-content h-flex flex-center'
               style={{
                 gap: '5px'
               }} 
-              onClick={(ev) => {
-                blinkingSystem();
-                
-                if(onClick) onClick(ev);
-              }}
             >
-              <img className={`sized-content v-flex flex-center${iconClassName ? ` ${iconClassName}` : ``}`} style={{ height: iconHeight }} src={iconUrl}/>
+              <img className={`sized-content v-flex flex-center${iconClassName ? ` ${iconClassName}` : ``}`} style={com.shallowMerge({ height: iconHeight }, iconStyle)} src={iconUrl}/>
               <div className='sized-content v-flex flex-center' style={{ marginBottom: '2px' }}>{label}</div>
             </div>
       </div>

@@ -18,7 +18,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, Suspense, lazy } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image'
@@ -38,6 +38,9 @@ import SelectorComponent from '@/components/SelectorComponent.js';
 import ObtainedResurgenceGroup from '@/components/ObtainedResurgenceGroup.js';
 import LabelCheckbox from '@/components/LabelCheckbox.js';
 import useUserDataPreferences from '@/hooks/useUserDataPreferences.js';
+import ResurgenceItemIcon from '@/components/ResurgenceItemIcon.js';
+import TrackListSelector from './TrackListSelector.js';
+import useTrackLists from '@/hooks/useTrackLists.js';
 
 const ComponentTab = ({ hideFarmed, trackedItems}) => {
   const router = useRouter();
@@ -168,7 +171,8 @@ const ComponentTab = ({ hideFarmed, trackedItems}) => {
                                       >
                                           <div className='sized-content h-flex flex-center'><img style={{ height: '25px' }} src={relic.icon}/></div>
                                           <div className='sized-content h-flex flex-center' style={{ gap: '1px' }}>
-                                              <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', paddingRight: '5px' }}>{relic.label}</div>
+                                            <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', paddingRight: '5px' }}>{relic.label}</div>
+                                            <ResurgenceItemIcon positionAbsolute={false} itemId={relic.id}/>
                                           </div>
                                       </Link>
                                   ))
@@ -274,7 +278,7 @@ function RelicTab({ hideFarmed, trackedItems}){
           >
             <Link href={relic.route}
                 // onClick={() => router.push(relic.route)}
-                className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center`}
+                className={`sized-content item-page-component-container item-check-parent tracker-item-parent v-flex flex-center`}
                 style={{
                     gap: '5px',
                     opacity: relic.vaulted ? '50%' : '100%'
@@ -284,6 +288,7 @@ function RelicTab({ hideFarmed, trackedItems}){
                 <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
                     <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{relic.rawObj.relic.name}</div>
                 </div>
+                <ResurgenceItemIcon itemId={relic.id}/>
             </Link>
             <div 
               className='sized-content v-flex flex-center'
@@ -313,7 +318,8 @@ function RelicTab({ hideFarmed, trackedItems}){
                     >
                         <div className='sized-content h-flex flex-center'><img style={{ height: '25px' }} src={component.icon}/></div>
                         <div className='sized-content h-flex flex-center' style={{ gap: '1px' }}>
-                            <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', paddingRight: '5px' }}>{component.rawObj.fullName}</div>
+                          <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', paddingRight: '5px' }}>{component.rawObj.fullName}</div>
+                          <ResurgenceItemIcon positionAbsolute={false} itemId={component.id}/>
                         </div>
                     </Link>
                   ))
@@ -362,6 +368,7 @@ const MissionTab = ({ groupBy, hideFarmed, trackedItems, rarityPriorities=null }
     if(!acc.missions) acc.missions = [];
 
     const trackedItem = com.getObjectFromId(trackedItemId);
+    if(trackedItem == null){ console.warn(`trackedItem is null!`, trackedItemId); return acc; }
 
     if(trackedItem.category === "items"){
       const components = com.getSearchResultRelatedObjects(null, "Items", null, "components", trackedItem, { router: router })
@@ -472,6 +479,7 @@ const MissionTab = ({ groupBy, hideFarmed, trackedItems, rarityPriorities=null }
           { 
             Object.entries(missionGroups)
               .toSorted(([ idA, missionA ], [ idB, missionB ]) => customMissionSort(idA, idB, missionA, missionB))
+              // .slice(0, 5)
               .map(([ missionId, missionGroup ], index) => (
                 <div
                     key={`${index}-${missionGroup.infoObj.name}`} 
@@ -551,7 +559,7 @@ const MissionTab = ({ groupBy, hideFarmed, trackedItems, rarityPriorities=null }
                                                                 className={`sized-content h-flex flex-center object-page-mission-relic${` ${com.getComponentRarityInRelationToRelic(component.rawObj, relic.relic)}` ?? ''}`} 
                                                                 style={{ gap: '5px', minWidth: '200px' }}
                                                             >
-                                                                <div className='sized-content h-flex flex-center' ><img style={{ height: '30px' }} src={`/warfarm/images/${relic.relic.tier}.png`}/></div>
+                                                                <div className='sized-content h-flex flex-center' ><img style={{ height: '30px' }} src={`${com.getBaseEnvPath().basePath}/images/${relic.relic.tier}.png`}/></div>
                                                                 <div className='sized-content h-flex flex-center' style={{ fontSize: 'small' }}>{relic.relic.name}</div>
                                                                 <div className='sized-content v-flex flex-center' style={{ alignItems: 'flex-start', marginLeft: '5px' }}>
                                                                     {
@@ -746,70 +754,91 @@ function FarmingSheet({ trackedItems }){
 
 export function TrackedItemsComponent(){
   const router = useRouter();
-  const [ trackedItems, setTrackedItems ] = useTrackedItems();
+  const searchParams = useSearchParams();
+  const [ _trackedItems, setTrackedItems ] = useTrackedItems();
+  const [ trackLists, setTrackLists ] = useTrackLists();
+
+  
+  const sharedTrackList = searchParams.get("sharedTrackList") ? com.decodeFromBase64(searchParams.get("sharedTrackList")) : null;
+  // console.log(`search params!`, sharedTrackList, searchParams);
+
+  const trackedItems = sharedTrackList ? sharedTrackList.trackedItems : _trackedItems;
 
   const noTrackedItems = Object.entries(trackedItems ?? {}).filter(([ itemId, trackedItem ]) => trackedItem.tracked ?? false).length <= 0;
 
   const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
 
+  console.log(`track lists tracked items!`, trackLists, trackedItems);
+
   return (
       <div className='sized-content tracked-items v-flex flex-center' style={{ gap: '50px' }}>
         {
-          !noTrackedItems && trackedItems ? <div className='sized-content tracked-items h-flex flex-center' style={{ gap: '10px' }}>
-            <div 
-              className='sized-content h-flex flex-center' 
-              style={{ 
-                overflow: 'auto', 
-                maxWidth: '75vw', 
-                gap: '10px',
-                flexWrap: 'wrap' 
-              }}
-            >
-              {
-                  Object.entries(trackedItems)
-                    .filter(([ itemId, trackedItem ]) => trackedItem.tracked ?? false)
-                    .sort(([ a, _ ], [ b, __ ]) => 
-                      com.objectIsFarmedPerc(com.getObjectFromId(a)) - com.objectIsFarmedPerc(com.getObjectFromId(b))
-                    )
-                    .map(([ itemId, trackedItem ], index) => (
-                      <Link href={com.getObjectRouteFromId(itemId)} 
-                        key={`${itemId}-${index}`} 
-                        // onClick={() => { 
-                        //   router.push(com.getObjectRouteFromId(itemId)); 
-                        // }}
-                        // onAuxClick={ev => { 
-                        //   console.log(`aux click!`);
-                        //   if(ev.button === 1) {
-                        //     console.log(`middle click!`);
-                        //      ev.preventDefault(); 
-                        //      window.open(com.getObjectRouteFromId(itemId), "_blank") 
-                        //   } 
-                        // }}
-                        className={`sized-content item-check-parent tracked-items-button v-flex flex-center${com.objectIsFarmed(com.getObjectFromId(itemId), obtainedComponents) ? ` object-farmed-main-page` : ``}`}
-                        style={{ 
-                          position: 'relative', 
-                          cursor: 'pointer',
-                          alignSelf: 'stretch',
-                          minWidth: '150px' 
-                        }}
-                      >
-                        <img className='sized-content tracked-items-icon h-flex' style={{ minWidth: 'fit-content', height: '90px' }} src={com.getObjectIcon(com.getObjectFromId(itemId))}/>
-                        <div className='sized-content h-flex flex-center' style={{ minWidth: 'fit-content', textAlign: 'center' }}>{itemId}</div>
-                        { (() => { 
-                          const trackedObject = com.getObjectFromId(itemId); 
-                          if(trackedObject.category === "items" || trackedObject.category === "components") return (
-                            <ObtainedLabelObject object={trackedObject} />
-                          ); 
-
-                          return null; 
-                        })() }
-                        <TrackItemButton itemId={itemId} positionAbsolute={true}/>
-                        <ObtainedResurgenceGroup itemId={itemId} positionAbsolute={true}/>
-                      </Link>
-                    ))
-              }  
+          com.isDictEmpty(trackLists) || (Object.keys(trackLists).length == 1 && com.isDictEmpty(com.filterDict(trackedItems, entry => entry[1].tracked == true))) ? null:
+            <div>
+              <TrackListSelector/>
             </div>
-          </div>
+        }
+        {
+          !noTrackedItems && trackedItems ? 
+            <>
+              <div className='sized-content tracked-items h-flex flex-center' style={{ gap: '10px' }}>
+                <div 
+                  className='sized-content h-flex flex-center' 
+                  style={{ 
+                    overflow: 'auto', 
+                    maxWidth: '75vw', 
+                    gap: '10px',
+                    flexWrap: 'wrap' 
+                  }}
+                >
+                  {
+                      Object.entries(trackedItems)
+                        .filter(([ itemId, trackedItem ]) => trackedItem.tracked ?? false)
+                        .sort(([ a, _ ], [ b, __ ]) => 
+                          com.objectIsFarmedPerc(com.getObjectFromId(a)) - com.objectIsFarmedPerc(com.getObjectFromId(b))
+                        )
+                        .map(([ itemId, trackedItem ], index) => (
+                          <Link href={com.getObjectRouteFromId(itemId)} 
+                            key={`${itemId}-${index}`} 
+                            // onClick={() => { 
+                            //   router.push(com.getObjectRouteFromId(itemId)); 
+                            // }}
+                            // onAuxClick={ev => { 
+                            //   console.log(`aux click!`);
+                            //   if(ev.button === 1) {
+                            //     console.log(`middle click!`);
+                            //      ev.preventDefault(); 
+                            //      window.open(com.getObjectRouteFromId(itemId), "_blank") 
+                            //   } 
+                            // }}
+                            className={`sized-content item-check-parent tracked-items-button v-flex flex-center${com.objectIsFarmed(com.getObjectFromId(itemId), obtainedComponents) ? ` object-farmed-main-page` : ``}`}
+                            style={{ 
+                              position: 'relative', 
+                              cursor: 'pointer',
+                              alignSelf: 'stretch',
+                              minWidth: '150px' 
+                            }}
+                          >
+                            <img className='sized-content tracked-items-icon h-flex' style={{ minWidth: 'fit-content', height: '90px' }} src={com.getObjectIcon(com.getObjectFromId(itemId))}/>
+                            <div className='sized-content h-flex flex-center' style={{ minWidth: 'fit-content', textAlign: 'center' }}>{itemId}</div>
+                            { (() => { 
+                              const trackedObject = com.getObjectFromId(itemId); 
+                              if(trackedObject == null) return null;
+
+                              if(trackedObject.category === "items" || trackedObject.category === "components") return (
+                                <ObtainedLabelObject object={trackedObject} />
+                              ); 
+
+                              return null; 
+                            })() }
+                            { sharedTrackList != null ? null: <TrackItemButton itemId={itemId} positionAbsolute={true}/> }
+                            <ObtainedResurgenceGroup itemId={itemId} positionAbsolute={true}/>
+                          </Link>
+                        ))
+                  }  
+                </div>
+              </div>
+            </>
           :null
         }
         { noTrackedItems ? 
@@ -824,8 +853,8 @@ export function TrackedItemsComponent(){
                   </div>
                 </div>
               <div className='sized-content v-flex'>
-                <div>You&apos;re not tracking any items. Add some by using the Search Bar or from the <a style={{ cursor: 'pointer' }} onClick={() => router.push('/prime/explorer')}>Explorer</a> page.</div>
-                <div className='sized-content h-flex flex-center'>Track items using the star<img className='sized-content star-button-icon h-flex flex-center' style={{ height: '12px',  }} src="/warfarm/icons/star_hollow.svg"/>button.</div>
+                <div>You&apos;re not tracking any items. Add some by using the Search Bar or from the <Link href='/prime/explorer' style={{ cursor: 'pointer', color:'var(--color-link-text)' }}>Explorer</Link> page, or by selecting a Track List (if you saved any).</div>
+                <div className='sized-content h-flex flex-center'>Track items using the star<img className='sized-content star-button-icon h-flex flex-center' style={{ height: '12px',  }} src={`${com.getBaseEnvPath().basePath}/icons/star_hollow.svg`}/>button.</div>
               </div>
             </div> 
           : 
@@ -864,7 +893,7 @@ export default function Home() {
       {
         !noTrackedItems ? null :
         <div className='sized-content h-flex flex-center' style={{ padding: '10px' }}>
-          <img className='sized-content h-flex flex-center' style={{ width: '400px' }} src={`/warfarm/icons/logo_prime.svg`}/>
+          <img className='sized-content h-flex flex-center' style={{ width: '400px' }} src={`${com.getBaseEnvPath().basePath}/icons/logo_prime.svg`}/>
         </div>
       }
       <div className='sized-remaining v-flex flex-center' style={{ gap: '20px' }}>

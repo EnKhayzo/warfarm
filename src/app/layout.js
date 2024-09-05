@@ -6,6 +6,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import { useParams, useRouter } from 'next/navigation';
 
+import * as com from "@/app/common.js"
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
@@ -17,7 +19,7 @@ export default function RootLayout({ children }) {
         <title>Warfarm</title>
         <meta property="og:title" content="Warfarm" key="title"/>
         <meta name="description" content="Farm your land" />
-        <link rel="shortcut icon" href="/warfarm/favicon.ico" />
+        <link rel="shortcut icon" href={`${com.getBaseEnvPath().basePath}/favicon.ico`} />
       </Head>
       <body className={`${inter.className} v-flex`}>
         {children}

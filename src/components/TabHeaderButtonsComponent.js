@@ -31,7 +31,19 @@ export default function TabHeaderButtonsComponent({ tabs, activeTab, changeTab, 
                     tabs.map((tab, index) => (
                         <Link 
                             key={`${index}-${tab.title}`}
-                            href={`?tab=${tab.id}`}
+                            href={`?${(
+                                    () => {
+                                        // tab=${tab.id}
+
+                                        // Get the current search params
+                                        const currentParams = new URLSearchParams(searchParams.toString());
+
+                                        // Set or update the 'tab' query parameter
+                                        currentParams.set('tab', tab.id);
+
+                                        return currentParams.toString();
+                                    }
+                            )()}`}
                             title={tab.title} 
                             onClick={(ev) => {
                                 if(`${pathName}?${searchParams.toString()}` === `${pathName}?tab=${tab.id}`) {  ev.preventDefault(); ev.stopPropagation();  return;}
@@ -50,7 +62,7 @@ export default function TabHeaderButtonsComponent({ tabs, activeTab, changeTab, 
                 <div className='sized-content h-flex flex-center'>
                     <ContextMenuButton 
                         className='sized-content h-flex tab-component-header-control-button'
-                        headerContent={<img className='sized-content h-flex flex-center icon-default-filter' style={{ width: '20px', height: '20px' }} src="/warfarm/icons/more.svg"/>}
+                        headerContent={<img className='sized-content h-flex flex-center icon-default-filter' style={{ width: '20px', height: '20px' }} src={`${com.getBaseEnvPath().basePath}/icons/more.svg`}/>}
                     >
                        {
                         (props) => (headerControls[activeTab])

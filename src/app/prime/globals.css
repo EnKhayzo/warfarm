@@ -103,6 +103,7 @@ a[href^="ftp://"] {
   --color-text: #b2aca2;
   --color-text-section: #7f949c;
   --color-hint: #aaaaaa;
+  --color-link-text: rgb(61, 112, 207);
 
   --color-text-farmed: #49aa5e;
   --color-secondary-farmed: #14331a; /* #1c3020; */
@@ -172,7 +173,7 @@ html * {
 /* -------------------------- BEGIN ---------------------------  */
 
 .link-text {
-  color: rgb(61, 112, 207);
+  color: var(--color-link-text);
 }
 
 .logo-button {
@@ -711,6 +712,10 @@ html * {
   display: none;
 }
 
+.tab-component-container {
+  /* container-type: inline-size; */
+}
+
 .nav-header-buttons-small-mediaquery-container {
   display: none;
 }
@@ -806,4 +811,50 @@ html * {
 	/* border-left: 0; */
 	margin-left: -10px;
 	margin-top: -20px;
+}
+
+.track-list-button {
+
+}
+
+.track-list-icon {
+  width: 50px;
+  height: 50px;
+}
+
+
+.confirm-button {
+
+}
+
+.confirm-button-area {
+
+}
+
+.confirm-icon {
+  width: 20px;
+  height: 20px;
+  min-width: 10px;
+  min-height: 10px;
+}
+
+.confirm-button-area > * {
+  border-radius: 0px;
+  padding: 5px;
+}
+
+.confirm-button-area > *:first-child {
+  background-color: var(--color-success);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.confirm-button-area > *:last-child {
+  background-color: var(--color-error);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.track-list-selector-option:hover {
+  background-color: var(--color-primary);
 }

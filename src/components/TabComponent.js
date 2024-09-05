@@ -41,14 +41,37 @@ export default function TabComponent({ tabs, defaultTab, onTabChange, className,
     // }, [searchParams]);
 
     const changeTab = (tab) => {
+        // setActiveTab(tab);
+        // // Update the URL with the new tab value
+
+        // // router.query.tab = tab;
+        // // router.push({ query: { ...router.query, tab: tab } }, undefined, { shallow: true });
+
+        // console.log(`router query`, router.query);
+        
+        // router.push(`?tab=${tab}`, undefined, { shallow: true });
+
+        // if (onTabChange) onTabChange(tab);
+
+
         setActiveTab(tab);
-        // Update the URL with the new tab value
-        router.push(`?tab=${tab}`, undefined, { shallow: true });
+
+        // // Get the current search params
+        // const currentParams = new URLSearchParams(searchParams.toString());
+
+        // // Set or update the 'tab' query parameter
+        // currentParams.set('tab', tab);
+
+        // console.log(`currne tparams`, currentParams.toString(), currentParams);
+
+        // // Update the URL with the new query parameters without refreshing the page
+        // router.push(`?${currentParams.toString()}`, undefined, { shallow: true });
+
         if (onTabChange) onTabChange(tab);
     }
 
     return (
-        <div className={`sized-content v-flex flex-center${className ? ` ${className}` : ``}`} style={style}>
+        <div className={`sized-content v-flex tab-component-container flex-center${className ? ` ${className}` : ``}`} style={com.shallowMerge({ minWidth: '980px' }, style)}>
             <TabHeaderButtonsComponent 
                 tabs={Object.keys(tabs).map(tab => ({ title: tab, id: tab, label: tab }))}
                 changeTab={changeTab}

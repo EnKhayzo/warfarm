@@ -72,11 +72,11 @@ export default function LegendComponent({ closeMenu }){
         <div className="sized-content v-flex flex-center">
           <div className="sized-content h-flex" style={{ fontSize: 'x-large', fontWeight: 'bold' }}>Icons</div>
           <div className="sized-content v-flex">
-            <span className="sized-content h-flex" style={{ whiteSpace: 'pre' }}><img className="icon-gold-filter" style={{ width: '20px', height: '20px' }} src="/warfarm/icons/star_hollow_filled.svg"/> = Object that has been tracked, you can click on it to untrack/track.</span>
-            <span className="sized-content h-flex" style={{ whiteSpace: 'pre' }}><img className="icon-default-filter" style={{ width: '20px', height: '20px' }} src="/warfarm/icons/success_hollow.svg"/> = You can click this icon to toggle the item as farmed automatically, it will set all related components to their respective required count.</span>
-            <span className="sized-content h-flex" style={{ whiteSpace: 'pre' }}><img className="icon-partial-filter" style={{ width: '20px', height: '20px' }} src="/warfarm/icons/square.svg"/> = The object has been partially farmed, some parts/components are still missing. The blue fill square indicates how much of the object you have.</span>
-            <span className="sized-content h-flex" style={{ whiteSpace: 'pre' }}><img className="icon-success-filter" style={{ width: '20px', height: '20px' }} src="/warfarm/icons/success.svg"/> = The object has been farmed: in the case of an item it means every component has been obtained. You can click this to toggle remove the farmed status of the object.</span>
-            <span className="sized-content h-flex" style={{ whiteSpace: 'pre' }}><img className="icon-gold-filter" style={{ width: '20px', height: '20px' }} src="/warfarm/icons/resurgence.svg"/> = Prime Resurgence Object, can be an item, a component or a relic.</span>
+            <span className="sized-content h-flex" style={{ whiteSpace: 'pre' }}><img className="icon-gold-filter" style={{ width: '20px', height: '20px' }}    src={`${com.getBaseEnvPath().basePath}/icons/star_hollow_filled.svg`}/> = Object that has been tracked, you can click on it to untrack/track.</span>
+            <span className="sized-content h-flex" style={{ whiteSpace: 'pre' }}><img className="icon-default-filter" style={{ width: '20px', height: '20px' }} src={`${com.getBaseEnvPath().basePath}/icons/success_hollow.svg`}/> = You can click this icon to toggle the item as farmed automatically, it will set all related components to their respective required count.</span>
+            <span className="sized-content h-flex" style={{ whiteSpace: 'pre' }}><img className="icon-partial-filter" style={{ width: '20px', height: '20px' }} src={`${com.getBaseEnvPath().basePath}/icons/square.svg`}/> = The object has been partially farmed, some parts/components are still missing. The blue fill square indicates how much of the object you have.</span>
+            <span className="sized-content h-flex" style={{ whiteSpace: 'pre' }}><img className="icon-success-filter" style={{ width: '20px', height: '20px' }} src={`${com.getBaseEnvPath().basePath}/icons/success.svg`}/> = The object has been farmed: in the case of an item it means every component has been obtained. You can click this to toggle remove the farmed status of the object.</span>
+            <span className="sized-content h-flex" style={{ whiteSpace: 'pre' }}><img className="icon-gold-filter" style={{ width: '20px', height: '20px' }}    src={`${com.getBaseEnvPath().basePath}/icons/resurgence.svg`}/> = Prime Resurgence Object, can be an item, a component or a relic.</span>
           </div>
         </div>
         <div className="sized-content v-flex flex-center">
@@ -121,6 +121,15 @@ export default function LegendComponent({ closeMenu }){
                 <span style={sortSpanStyle}>Alphabetical</span>
               </SortSection>
             </div>
+          </div>
+        </div>
+        <div className="sized-content v-flex flex-center">
+          <div className="sized-content h-flex" style={{ fontSize: 'x-large', fontWeight: 'bold' }}>User Data</div>
+          <div className="sized-content v-flex flex-center" style={{ textAlign: 'center', gap: '5px' }}>
+            <span className="sized-content h-flex flex-center" style={{ whiteSpace: 'pre' }}>Please Export User Data often (<img className="icon-default-filter" style={{ marginTop: '3px', width: '20px', height: '20px' }} src={`${com.getBaseEnvPath().basePath}/icons/settings.svg`}/> -&gt; <button className='sized-content settings-button'>Export User Data</button>) to have backups of what you have obtained:</span>
+            <span>Warfarm doesn&apos;t use a database; everything happens locally on your machine and it isn&apos;t any different for the stored data about obtained/tracked items.</span>
+            <span className="sized-content h-flex flex-center" style={{ whiteSpace: 'pre' }}>I use the browser&apos;s localStorage system, which (AFAIK) could be cleared even by <span className='sized-content h-flex' style={{ fontWeight: 'bold' }}>deleting cookies/navigation data</span>.</span>
+            <span className="sized-content h-flex flex-center">This also has the bad side effect that the user data is not synced between devices or even different browsers. I don&apos;t know if i&apos;ll implement a more resilient system in the future (a db costs unfortunately) but i&apos;ll try mitigating the issue as much as possible.</span>
           </div>
         </div>
       </div>

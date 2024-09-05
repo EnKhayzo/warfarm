@@ -53,7 +53,7 @@ export default function SelectorComponent({ options, onConfirm }){
                 style={{ gap: '5px' }}
             >
                 <div className='sized-content h-flex flex-center' style={{ marginBottom: '2px' }}>{activeOption ?? '?'}</div>
-                <div className='sized-content h-flex flex-center'><img className='sized-content h-flex icon-default-filter flex-center' src='/warfarm/icons/arrow.svg' style={{ width: '10px', transform: 'rotate(90deg)' }}/></div>
+                <div className='sized-content h-flex flex-center'><img className='sized-content h-flex icon-default-filter flex-center' src={`${com.getBaseEnvPath().basePath}/icons/arrow.svg`} style={{ width: '10px', transform: 'rotate(90deg)' }}/></div>
             </div>
             {
                 !menuOpen ? null:
