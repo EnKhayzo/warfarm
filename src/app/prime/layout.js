@@ -38,6 +38,7 @@ import HoverElement from "@/components/HoverElement";
 import LegendComponent from "./LegendComponent";
 import { ScrollPaneContext } from "@/contexts/ScrollPaneContext";
 import { NavigationEvents } from "@/components/NavigationEvents";
+import BannerComponent from "./BannerComponent";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -224,6 +225,7 @@ export function MainLayoutComponent({children}){
     com.scrollRestoreLoad(mainScrollableRef, pathName);
   }, [pathName,searchParams]); // Trigger scroll restoration on route change
   
+  const isThereBanner = true;
 
   return (
     <div className='sized-remaining v-flex'>
@@ -402,8 +404,8 @@ export function MainLayoutComponent({children}){
               </div>
             </>
           }
-          
         </div>
+        { isThereBanner ? <BannerComponent/> : null }
         <div ref={mainScrollableRef} className='sized-remaining main-content v-flex' style={{ marginBottom: '10px' }}>
           <div className="sized-remaining main-scrollable v-flex">
             <ScrollPaneContext.Provider value={{mainScrollableRef}}>

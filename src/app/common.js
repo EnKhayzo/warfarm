@@ -264,6 +264,18 @@ export function setUserDataPreference(preferenceName, value) {
   setUserDataPreferences(userDataPreferences);
 }
 
+/** statusObj = { hasClickedBanner: bool, lastClicked: Date, bannerTargetDate: Date } */
+export function setUserDataBannerStatus(statusObj){
+  const userData = loadSetting("userData");
+  userData.bannerStatus = statusObj;
+  saveSetting("userData", userData);
+}
+
+export function getUserDataBannerStatus(){
+  const userData = loadSetting("userData");
+  return userData.bannerStatus ?? {};
+}
+
 
 
 // Function to download the object as a JSON file
@@ -1578,4 +1590,47 @@ export function scrollRestoreLoad(mainScrollableRef, pathName){
     }
     sessionStorage.removeItem('scrollPosition'); // Clear after restoring
   }
+}
+
+export function mod(a, b){
+  return ((a % b) + b) % b;
+}
+
+export function getTimestampAsDurationString(timestamp){
+  const isNegative = timestamp < 0;
+  if(isNegative) timestamp = -timestamp;
+
+  let timeVals = [
+      Math.floor(timestamp / 1000 / 60 / 60 / 24 / 31 / 12),       // years
+      mod(Math.floor(timestamp / 1000 / 60 / 60 / 24 / 31), 12),   // months
+      mod(Math.floor(timestamp / 1000 / 60 / 60 / 24), 31),        // days
+      mod(Math.floor(timestamp / 1000 / 60 / 60), 24),             // hours
+      mod(Math.floor(timestamp / 1000 / 60), 60),                  // minutes
+      mod(Math.floor(timestamp / 1000), 60),                       // seconds
+      mod(timestamp, 1000)                                         // milliseconds
+  ]
+
+  var finalStrParts = [];
+
+  var stopPropagation = false;
+  var isStillZero = true;
+  timeVals.forEach((timeVal, i) => {
+      isStillZero = timeVal == 0;
+      if(isStillZero || stopPropagation) return;
+
+      if(i == 0) { finalStrParts.push(`${timeVal} year${timeVal > 1 ? "s" : ""}`); stopPropagation = true; }
+      else if(i == 1) { finalStrParts.push(`${timeVal} month${timeVal > 1 ? "s" : ""}`); stopPropagation = true; }
+      else if(i == 2) { finalStrParts.push(`${timeVal} day${timeVal > 1 ? "s" : ""}`); stopPropagation = true; }
+      else if(i == 3) { finalStrParts.push(`${timeVal} hour${timeVal > 1 ? "s" : ""}`); stopPropagation = true; }
+      else if(i == 4) finalStrParts.push(`${timeVal} minute${timeVal > 1 ? "s" : ""}`);
+      else if(i == 5) { finalStrParts.push(`${timeVal} second${timeVal > 1 ? "s" : ""}`); stopPropagation = true; }
+      else if(i == 6) finalStrParts.push(`${timeVal} millisecond${timeVal > 1 ? "s" : ""}`);
+  });
+
+  return `${isNegative ? "-" : ""}${finalStrParts.join(" ")}`;
+}
+
+
+export function isDictEmpty(dict){
+  return Object.keys(dict).length <= 0;
 }
