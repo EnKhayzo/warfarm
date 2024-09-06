@@ -1,6 +1,3 @@
-# Warfarm
-Warfarm is a (for now only) Prime helper site to aid in the journey of farming every Prime item in the game. Based on NextJS and developed as a Single Page Application.
-
 # Build for testing
 Either run 'npm run start' or invoke/click on '_start.bat', a browser tab should open on your default browser, on 'localhost:3000/warfarm'
 
