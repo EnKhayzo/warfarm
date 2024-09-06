@@ -18,12 +18,10 @@ export default function BannerComponent({}){
 
         const bannerStatus = com.getUserDataBannerStatus();
         if(bannerStatus != null && !com.isDictEmpty(bannerStatus)){
-            // console.log(`bannerstatus`, bannerStatus, Date.now() < bannerStatus.bannerTargetDate);
             if(
                 (bannerStatus.bannerTargetDate != null && Date.now() < bannerStatus.bannerTargetDate) && 
                 (bannerStatus.lastClicked != null && Date.now()-bannerStatus.lastClicked > 60*60*8*1000)
             ){
-                console.log(`eight hours passed since last click, reshowing banner`);
                 com.setUserDataBannerStatus({});
                 setBannerClicked(false);
             }
@@ -41,7 +39,6 @@ export default function BannerComponent({}){
         }
 
         setTimeout(timeoutId, 1000);
-        // console.log(`setting!`);
 
         return () => { if(timeoutId) clearTimeout(timeoutId); }
     }, []);

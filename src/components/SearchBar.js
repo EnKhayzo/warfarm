@@ -87,8 +87,6 @@ const SearchBar = ({ isExpanded=false }) => {
                 ];
             }
 
-            // console.log(`all results!`, allResults);
-
             setResults(allResults);
         } 
         else {

@@ -12,9 +12,7 @@ export default function ObtainedLabelObject({ object, className, style, collapse
     const router = useRouter();
 
     const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
-
-    // console.log(`obtained label object`, object);
-
+    
     let obtained = null;
     if(object.category === "items"){
         const components = object.components;

@@ -27,25 +27,7 @@ export default function TrackListSelector({}){
     const [ menuOpen, setMenuOpen ] = useState(false);
     const menuRef = useRef(null);
 
-    // console.log(`compressed`, com.encodeToBase64({
-    //     "id": "Track List 1",
-    //     "trackedItems": {
-    //         "Harrow Prime": {
-    //             "tracked": true
-    //         },
-    //         "Nidus Prime": {
-    //             "tracked": true
-    //         },
-    //         "Vauban Prime": {
-    //             "tracked": true
-    //         }
-    //     }
-    // }));
-
     const sharedTrackList = searchParams.get("sharedTrackList") ? com.decodeFromBase64(searchParams.get("sharedTrackList")) : null;
-    // console.log(`search params!`, sharedTrackList, searchParams);
-
-    
 
     const handleClickOutside = (event) => {
         if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -65,16 +47,8 @@ export default function TrackListSelector({}){
     }, [ menuOpen ]);
 
     const handleConfirm = ([ text, entry ]) => {
-        // console.log(`on confirm!`, text); 
-        // if(onConfirm) onConfirm([ text, entry ]);
-        // setActiveOption(text);
-        
-        console.log(`confirming`, text);
-
         com.setUserDataActiveTrackList(text);
     };
-
-    // console.log(`track lists`, trackLists);
     
     return (
         <div className='sized-content v-flex flex-center' style={{ gap: '10px' }}>
@@ -121,7 +95,6 @@ export default function TrackListSelector({}){
                             >
                                 {
                                     Object.entries(trackLists)
-                                        // .filter(el => { console.log(`el`, el); return true; })
                                         .map(([ trackListId, trackList ], index) => (
                                             <div
                                                 key={`${index}-${trackListId}`}
@@ -142,9 +115,8 @@ export default function TrackListSelector({}){
                                                         {
                                                             trackList.trackedItems == null || com.isDictEmpty(com.filterDict(trackList.trackedItems, entry => entry[1].tracked == true)) ? <div>(Track List is empty)</div> :
                                                             Object.entries(trackList.trackedItems)
-                                                                // .filter(el => { console.log(`el2`, el); return true; })
                                                                 .filter(([ itemId, trackedItem ]) => trackedItem.tracked == true)
-                                                                .map(([ itemId, item ]) => { console.log(`item`, item); return (
+                                                                .map(([ itemId, item ]) => (
                                                                     <Link href={com.getObjectRouteFromId(itemId)} 
                                                                         key={`${itemId}-${index}`} 
                                                                         className={`sized-content item-check-parent tracked-items-button v-flex flex-center${com.objectIsFarmed(com.getObjectFromId(itemId), obtainedComponents) ? ` object-farmed-main-page` : ``}`}
@@ -170,7 +142,7 @@ export default function TrackListSelector({}){
                                                                         {/* <TrackItemButton itemId={itemId} positionAbsolute={true}/> */}
                                                                         <ObtainedResurgenceGroup itemId={itemId} positionAbsolute={true}/>
                                                                     </Link>
-                                                                )})
+                                                                ))
                                                         }
                                                     </div>
                                                 </div>
@@ -201,7 +173,6 @@ export default function TrackListSelector({}){
                                 iconUrl={`${com.getBaseEnvPath().basePath}/icons/save.svg`} 
                                 iconClassName={`icon-default-filter track-list-icon`}
                                 onClick={() => {
-                                    // console.log(`save!`, currentTrackList);
                                     com.showDialogUi({
                                         title: "Choose the name that this Track List will have:",
                                         value: sharedTrackList.id,
@@ -211,11 +182,10 @@ export default function TrackListSelector({}){
                                             let newTrackList = sharedTrackList;
 
                                             newTrackList.id = text;
-                                            // console.log(`tracklists`, id);
 
                                             const addTrackList = () => {
                                                 com.addUserDataTrackList(newTrackList);
-                                                com.setUserDataCurrentTrackListId(id)
+                                                com.setUserDataActiveTrackList(id);
                                                 router.push(window.location.href.split('?')[0]);
                                             }
 
@@ -256,7 +226,6 @@ export default function TrackListSelector({}){
                                 iconUrl={`${com.getBaseEnvPath().basePath}/icons/edit.svg`} 
                                 iconClassName={'icon-default-filter track-list-icon'}
                                 onClick={() => {
-                                    // console.log(`edit!`, currentTrackList);
 
                                     com.showDialogUi({
                                         title: `Set new name for ${currentTrackList}:`,
@@ -266,9 +235,8 @@ export default function TrackListSelector({}){
                                             const newName = text;
 
                                             const renameList = () => {
-                                                // console.log(`renaming to!`, currentTrackList, text);
                                                 com.renameUserDataTrackList(currentTrackList, text);
-                                                com.setUserDataCurrentTrackListId(text);
+                                                com.setUserDataActiveTrackList(text);
                                             };
 
                                             if(trackLists[newName] != null) { 
@@ -296,7 +264,6 @@ export default function TrackListSelector({}){
                                 iconUrl={`${com.getBaseEnvPath().basePath}/icons/add.svg`} 
                                 iconClassName={'icon-default-filter track-list-icon'}
                                 onClick={() => {
-                                    // console.log(`add!`);
                                     const newName = com.generateTrackListName();
                                     com.addUserDataTrackList({ id: newName, trackedItems: {} });
                                     com.setUserDataActiveTrackList(newName);
@@ -309,13 +276,9 @@ export default function TrackListSelector({}){
                                         label={''} 
                                         iconUrl={`${com.getBaseEnvPath().basePath}/icons/trash-bin.svg`} 
                                         iconClassName={'icon-default-filter track-list-icon'}
-                                        onClick={() => {
-                                            // console.log(`delete!`, currentTrackList);
-                                        }}
                                     />
                                 }
                                 onConfirm={() => {
-                                    // console.log(`confirm!`);
                                     com.removeUserDataTrackList(com.getUserDataCurrentTrackListId());
                                 }}
                             />
@@ -333,7 +296,6 @@ export default function TrackListSelector({}){
 
                                     const urlString = `${window.location.href.split('?')[0]}?sharedTrackList=${com.encodeToBase64(trackListToShare)}`;
 
-                                    // console.log(`share!`, urlString);
                                     navigator.clipboard.writeText(urlString);
                                     com.showNotificationUi({ label: "url copied to clipboard!", type: "success" });
                                 }}

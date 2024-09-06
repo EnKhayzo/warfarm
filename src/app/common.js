@@ -115,7 +115,6 @@ export function loadUserData(){
   // const userData = storageData[currentUser];
   // if(userData == null) userData = {}
 
-  // console.log(`LOAD USER DATA`, getBaseEnvPath().userData);
 
   const userData = loadSetting(getBaseEnvPath().userData);
   if(!userData.version) userData.version = "1.0.0";
@@ -347,7 +346,7 @@ export function createEmptyTrackListIfNoTrackLists(){
 
   const newName = generateTrackListName();
   addUserDataTrackList({ id: newName, trackedItems: getUserDataTrackedItems() });
-  setUserDataCurrentTrackListId(newName);
+  setUserDataActiveTrackList(newName);
 }
 
 export function setUserDataTrackList(id, trackList){
@@ -394,17 +393,6 @@ export function removeUserDataTrackList(id){
 
   createEmptyTrackListIfNoTrackLists();
   if(getUserDataCurrentTrackListId() === id) setUserDataActiveTrackList(Object.keys(getUserDataTrackLists())[0]);
-
-  // const currentTrackList = getUserDataCurrentTrackListId();
-  // if(id === currentTrackList){
-  //   if(isDictEmpty(trackLists)){
-  //     console.warn(`deleted last track list, regenerating an empty one`);
-  //     addUserDataTrackList({ id:generateTrackListName(), trackedItems: {} });
-
-  //     trackLists = getUserDataTrackLists();
-  //   }
-  //   setUserDataActiveTrackList(Object.keys(trackLists)[0]);
-  // }
 }
 
 /** sets the current active variable AND changes trackedItems to match said track list */
@@ -414,28 +402,10 @@ export function setUserDataActiveTrackList(id){
   if(!trackLists[id]){ console.warn(`no track list of id found to set as active!`, id); return; }
   if(trackLists[id].trackedItems == null){ console.warn(`track list to set has no tracked items (null)!`, id); return; }
 
-  // setUserDataTrackedItems({});
   setUserDataCurrentTrackListId(id);
   setUserDataTrackedItems(trackLists[id].trackedItems);
-  // setUserDataTrackedItems(trackLists[id].trackedItems);
 }
 
-// export function setUserDataCurrentTrackList(id){
-//   const userData = loadUserData();
-
-//   let trackedList = getUserDataTrackList(id);
-//   if(trackedList == null) trackedList = {};
-
-//   let trackedItems = trackedList.trackedItems;
-//   if(trackedItems == null) trackedItems = {};
-//   currentTrackListObservable.set(trackedList);
-
-//   userData.currentTrackList = id;
-//   saveUserData(userData);
-//   console.log(`set tracked list`, id, trackedList);
-
-//   setUserDataTrackedItems(trackedItems);
-// }
 export function setUserDataCurrentTrackListId(id){
   const userData = loadUserData();
 
@@ -443,18 +413,8 @@ export function setUserDataCurrentTrackListId(id){
   saveUserData(userData);
 
   currentTrackListIdObservable.set(id);
-  // console.log(`set tracked list`, id);
 }
 
-// export function getUserDataCurrentTrackList(){
-//   const userData = loadUserData();
-
-//   const trackLists = getUserDataTrackLists();
-//   const currentTrackList = userData.currentTrackList;
-//   if(currentTrackList == null || !trackLists[currentTrackList]) return {};
-
-//   return trackLists[currentTrackList];
-// }
 export function getUserDataCurrentTrackListId(){
   const userData = loadUserData();
   return userData.currentTrackList;
@@ -492,6 +452,7 @@ export function getUserDataBannerStatus(){
 
 
 export function isDictEmpty(dict){
+  if(dict == null) return true;
   return Object.keys(dict).length <= 0;
 }
 
@@ -621,7 +582,6 @@ export function createContextMenu(event, buttons){
 }
 
 export function extractAlphanumericCharactersOnly(str){
-  // console.log(`replacing ${str} with ${str.replace(/[^\dA-Z]+/gi,"")}`);
   return str.replace(/[^\dA-Z]+/gi,"");
 }
 
@@ -640,7 +600,6 @@ export function getRelicRewards(relic){
 }
 
 export function getRelicsThatDropComponent(componentId){
-  // console.log(`getRelicsThatDropComponent`, componentId);
     return componentId in relicRewardComponentMap.map ?
         relicRewardComponentMap.map[componentId]
           .map(relicId => relicRewardComponentMap.relics[relicId])
@@ -745,73 +704,8 @@ export async function initialize(local=false) {
     objectPaths = Object.fromEntries(tempPaths.map(path => [ path.routeId, path ]));
     objectPathsIds = Object.fromEntries(tempPaths.map(path => [ path.id, path ]));
 
-    // console.log(`objectsath obhjeadid`, objectPaths, objectPathsIds);
-
-
     if(local){
-      // this should happen automatically, modify/add the listeners
-      // let currentTrackList = getUserDataCurrentTrackList();
-      // if(currentTrackList == null){
-      //   console.warn(`current track list is null! auto-setting or creating a new one`);
-
-      //   let trackLists = getUserDataTrackLists();
-      //   if(trackLists == null || isDictEmpty(trackLists)){
-      //     console.warn(`track lists is null/empty! auto-populating with a generated one`);
-
-      //     const trackedItems = getUserDataTrackedItems();
-      //     addUserDataTrackList({ id: generateTrackListName(), trackedItems: trackedItems });
-
-      //     trackLists = getUserDataTrackLists();
-      //   }
-
-      //   currentTrackList = Object.keys(trackLists)[0];
-      //   setUserDataCurrentTrackListId(currentTrackList);
-
-      //   // setUserDataTrackList(currentTrackList, trackedItems);
-      // }
-
-      // listener for the track list id
-      // trackListsObservable.addListener((trackLists) => {
-      //   // console.log(`track lists listnere!`);
-      //   const currentTrackListId = getUserDataCurrentTrackListId();
-
-      //   if(isDictEmpty(trackLists)){
-      //     console.warn(`track list map is empty! creating a new one from the current tracked items`);
-      //     const newName = generateTrackListName();
-      //     addUserDataTrackList({ id: newName, trackedItems: cloneDict(getUserDataTrackedItems()) });
-      //   }
-      //   // this else is here to not cause recursive weird loops; 
-      //   // addUserDataTrackList above should take care of making sure this branch is executed (in its listener)
-      //   else{
-      //     if(trackLists[currentTrackListId] == null){
-      //       console.warn(`current track list is null! setting to first one in the map`);
-            
-      //       setUserDataCurrentTrackListId(Object.keys(cloneDict(getUserDataTrackLists()))[0]);
-      //     }
-      //   }
-      // });
-
-      // currentTrackListIdObservable.addListener((id) => {
-      //   const trackLists = getUserDataTrackLists();
-      //   if(trackLists[id] == null) { console.warn(`id does not exist in track lists!`, id); return; }
-      //   if(trackLists[id].trackedItems == null) { console.warn(`tracked items of current tracked list are null!`, id); return; }
-
-      //   // console.log(`aligning tracked items to new current track list!`, id, cloneDict(trackLists[id].trackedItems));
-      //   setUserDataTrackedItems(cloneDict(trackLists[id].trackedItems));
-      // });
-
-      // trackedItemsOvervable.addListener((trackedItems) => {
-      //   const currentTrackList = getUserDataCurrentTrackListId();
-
-      //   // TODO create it if it doesn't exist? like the code above?
-      //   if(currentTrackList == null) { console.warn(`current track list is null!`, currentTrackList); return; }
-        
-      //   // console.log(`setting track list tracked items!`, currentTrackList, trackedItems);
-      //   setUserDataTrackList(currentTrackList, { id: currentTrackList, trackedItems: cloneDict(trackedItems) });
-      // });
-
       createEmptyTrackListIfNoTrackLists();
-
 
       trackedItemsOvervable.set(getUserDataTrackedItems());
       obtainedObservable.set(getObtainedComponents());
@@ -829,7 +723,6 @@ export async function initialize(local=false) {
 
 
 export function refreshUserData(newUserData) {
-  // console.log(`new user data!`, newUserData);
 
   // this is set to getUserDataTrackedItems() instead of newUserData.trackedItems because
   // it seemed to create recursive loops with the listeners set up for trackLists
@@ -846,7 +739,6 @@ export function refreshUserData(newUserData) {
 
   createEmptyTrackListIfNoTrackLists();
 
-  // console.log(`refreshed user data!`);
 }
 
 export function setAllUserData(userData){
@@ -962,17 +854,7 @@ export function getDefaultMissionTypePriorities(){
     "Void Cascade": 24, 
     "Void Armageddon": 25, 
     "Hard": 26
-  }  
-  
-  // {
-    //   "Disruption": 1,
-    //   "Capture": 2,
-    //   "Exterminate": 3,
-    //   "Survival": 4,
-    //   "Defense": 5,
-    //   "Spy": 6,
-    //   "Interception": 7
-    // };
+  }
 }
 
 export function getRotationPriorities(){
@@ -1034,7 +916,6 @@ export function getItemTypePriorities(){
 export function getSearchResultRelatedObjectsSingle(category, activeTab, objects, router=null){
   let res = null;
 
-  // console.log(`getSearchResultRelatedObjectsSingle called`, category, activeTab, objects);
 
   _match(category, {
     "Items": () => {
@@ -1087,7 +968,6 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
             tab: activeTab,
             searchObjId: `${category}-${activeTab}-(${item?item.id:""}-${component.id}-${relicName})`
           });
-          // console.log(`res`, res);
         },
         "missions": () => {
           const component = objects.component;
@@ -1212,7 +1092,6 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
         "relics": () => {
           const [ relicMissionName, relic ] = objects.relicEntry;
           const relicName = relicMissionName.replace("Relic", "").replace("(Radiant)", "").trim();
-          // console.log(`relic name`, relicMissionName, relicName, relic);
           res = ({
             icon: getObjectIcon(relics[relicName]),
             vaulted: relics[relicName].vaulted, 
@@ -1392,7 +1271,6 @@ export function getSearchResultRelatedObjects(name, category, type, activeTab, r
               )
               .flat(1)
           ]
-          // console.log(`result`, result);
         },
         "missions": () => {
           result = [
@@ -1547,11 +1425,6 @@ export function getObjectId(rawObj, category=null){
   category = capitalizeFirstLetter(category);
 
   return rawObj.id;
-
-  // return category.localeCompare("Items") == 0 ? rawObj.id :
-  //     category.localeCompare("Components") == 0 ? rawObj.id :
-  //     category.localeCompare("Relics") == 0 ? rawObj.id :
-  //     category.localeCompare("Missions") == 0 ? rawObj.id : null
 }
 
 export function getObjectIcon(rawObj, category=null){
@@ -1567,7 +1440,6 @@ export function getObjectIcon(rawObj, category=null){
 }
 
 export function getObjectPathObjFromRouteId(routeId){
-  // console.log(`getObjectPathFromName`, routeId, objectPaths);
   if(!objectPaths) return null;
   return objectPaths[routeId];
 }
@@ -1577,15 +1449,11 @@ export function getObjectRouteFromRouteId(routeId){
 }
 
 export function getObjectPathObjFromId(id){
-  // console.log(`getObjectPathFromId`, id, objectPathsIds, objectPathsIds[id]);
   if(!objectPathsIds) return null;
   return objectPathsIds[id];
 }
 
 export function getObjectRouteFromId(id){
-  // console.log(`trying od`,id);
-  // return (getObjectPathObjFromId(id) ?? {route:'/prime'}).route;
-  
   const obj = getObjectPathObjFromId(id);
   if(obj == null){ console.warn(`object is null!`, id, obj); return '/prime'; }
 
@@ -1594,8 +1462,6 @@ export function getObjectRouteFromId(id){
 
 export function getObjectPathNameFromIdObj(rawObj, category=null){
   if(!category) category = rawObj.category;
-
-  // console.log(`rawObj`, rawObj);
 
   category = capitalizeFirstLetter(category);
 
@@ -1663,8 +1529,6 @@ export function componentIsFarmedPerc(rawObj, obtainedComponents=null){
   if(!obtainedComponents) obtainedComponents = getObtainedComponents();
   if(obtainedComponents[rawObj.id] == null) return 0;
 
-  // console.log(`component is famred?`, rawObj, obtainedComponents);
-
   return obtainedComponents[rawObj.id].obtained/rawObj.required;
 }
 
@@ -1698,8 +1562,6 @@ export function componentIsFarmed(rawObj, obtainedComponents=null){
   if(rawObj.required <= 0) return false;
 
   if(!obtainedComponents) obtainedComponents = getObtainedComponents();
-
-  // console.log(`component is famred?`, rawObj, obtainedComponents);
 
   return obtainedComponents[rawObj.id] != null && obtainedComponents[rawObj.id].obtained >= rawObj.required;
 }
@@ -1758,8 +1620,6 @@ export function getComponentsRelicsMerged(trackedItems, router){
 
     const trackedItem = getObjectFromId(trackedItemId);
     if(trackedItem == null) { console.warn(`tracked item is null!`, trackedItemId); return acc; }
-
-    // console.log(`tracked iertm`, trackedItemId, trackedItem, trackedItems);
 
     if(trackedItem.category === "items"){
       const components = getSearchResultRelatedObjects(null, "Items", null, "components", trackedItem, { router: router });
@@ -1943,8 +1803,6 @@ export function scrollRestoreLoad(mainScrollableRef, pathName){
   // if(locationMap[pathName].age > 4) delete locationMap[pathName];
   // else locationMap[pathName] = 0;
 
-
-  // console.log(`pathName`, pathName, router);
   const savedScrollPosition = locationMap && locationMap[pathName] ? locationMap[pathName].scroll : null; //sessionStorage.getItem('scrollPosition');
   if (savedScrollPosition !== null) {
     const targetElement = mainScrollableRef.current;
@@ -1957,9 +1815,7 @@ export function scrollRestoreLoad(mainScrollableRef, pathName){
 
 export function encodeToBase64(obj) {
   try{
-    // return Buffer.from(deflate(JSON.stringify(obj), { to: 'string' }), 'binary').toString("base64").replaceAll(" ", "+");
     return Buffer.from(deflate(JSON.stringify(obj), { to: 'string' }), 'binary').toString("base64");
-    // return Buffer.from(JSON.stringify(obj)).toString("base64");
   } catch(exc) { 
     console.warn(`could not encode obj!`, exc, obj); 
     return null; 
@@ -1968,10 +1824,7 @@ export function encodeToBase64(obj) {
 
 export function decodeFromBase64(base64Str) {
   try{
-    // console.log(`decoding:`, base64Str);
     return JSON.parse(inflate(Buffer.from(base64Str.replaceAll(" ", "+"), "base64"), { to: 'string' }));
-    // console.log(`decoding:`, Buffer.from(base64Str, "base64").toString());
-    // return JSON.parse(Buffer.from(base64Str, "base64").toString());
   } catch(exc) { 
     console.warn(`corrupt base64 string object! returning null`, exc, base64Str); 
     return null; 

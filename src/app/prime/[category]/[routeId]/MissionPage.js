@@ -36,7 +36,6 @@ const RotationTab = ({mission, rarityPriorities}) => {
     const relicTypePriorities = com.getRelicTypePriorities();
     const relics = com.getSearchResultRelatedObjects(null, "Missions", null, "relics", mission, { router: router });
 
-    // console.log(`relics!`, relics);
   
     return (
         <>

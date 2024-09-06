@@ -43,8 +43,6 @@ const ComponentTab = ({item, components}) => {
 
     const relics = com.getSearchResultRelatedObjects(null, "Items", null, "relics", item, { router: router });
 
-    // console.warn(`got relics result`, relics);
-
     return (
         <div
             className='sized-content component-page-relative-info-container h-flex flex-center'
@@ -197,7 +195,6 @@ function RelicTab({_components}){
             .filter(component => com.relicDropsComponent(relic.rawObj.relic, component.rawObj))
             .map(component => rarityPriorities[com.getComponentRarityInRelationToRelic(component.rawObj, relic.rawObj.relic)])
         )
-        // console.log(`score `, score, relic);
         return score;
     };
 
@@ -211,7 +208,6 @@ function RelicTab({_components}){
         >
             {
             relics
-                // .filter(el => { console.log(`relic`, el); return true; })
                 .toSorted((a, b) => 
                     (a.vaulted-b.vaulted)
                     ||
@@ -442,7 +438,6 @@ const MissionTab = ({ groupBy, item, components, rarityPriorities}) => {
                                                                         .filter(([ relicName, relic ]) => com.getRelicRewards(relic.relic)
                                                                             .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.id) == 0) > -1
                                                                         )
-                                                                        // .filter(el => { if() console.log(`el`, el); return true; })
                                                                         .map(([ relicName, relic ], index) => (
                                                                             <Link href={com.getObjectRouteFromId(relic.relic.id)}
                                                                                 key={`${relic.name}-${index}`} 
@@ -625,7 +620,7 @@ export default function ItemPage({ routeId, pathObj }) {
                                 "Group By Relic":     { value: "relic", defaultOption: true },
                                 "Group By Component": { value: "component" }
                               }}
-                              onConfirm={([ text, entry ]) => { console.log(`set group by!`, entry.value); setGroupBy(entry.value) }}
+                              onConfirm={([ text, entry ]) => setGroupBy(entry.value)}
                             />
                           )
                         }}

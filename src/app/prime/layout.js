@@ -18,7 +18,6 @@
 'use client';
 
 import { Inter } from "next/font/google";
-import "./globals.css";
 
 import React, { useState, useEffect, useLayoutEffect, useRef, useContext, Suspense } from 'react';
 import Link from 'next/link';
@@ -101,7 +100,6 @@ export function MainLayoutComponent({children}){
   const router = useRouter();
   const pathName = usePathname();  
   const searchParams = useSearchParams();
-  // console.log(`pathname`, pathName);
   const [ dialogUis, setDialogUis ] = useDialogUis();
   const [ notificationUis, setNotificationUis ] = useNotificationUis();
   const mainScrollableRef = useRef(null);
@@ -111,7 +109,6 @@ export function MainLayoutComponent({children}){
   useEffect(() => {
     const _hasFirstAccessed = com.getUserDataHasFirstAccessed();
     if(_hasFirstAccessed){
-      console.log(`first access detected!`, _hasFirstAccessed);
       setHasFirstAccessed(_hasFirstAccessed);
     }
 
@@ -214,7 +211,6 @@ export function MainLayoutComponent({children}){
   
     const links = document.querySelectorAll('a');
     links.forEach(link => {
-      // console.log(`setting event listener to`, link);
       link.addEventListener('click', handleLinkClick);
     });
   
@@ -373,8 +369,6 @@ export function MainLayoutComponent({children}){
                                               return [ actualElem, index ]; 
                                             })
                                           ); 
-
-                                          // console.log(`order confirm`, _elemsIdxs, missionPriorities, newMissionPriorities);
 
                                           setMissionPriorities(
                                             newMissionPriorities
@@ -564,14 +558,8 @@ export function MainLayoutComponent({children}){
 export default function RootLayout({ children }) {
 
   useEffect(() => {
-    // const handleFocus = () => {
-    //   const updatedData = localStorage.getItem('userData');
-    //   console.log('LocalStorage updated data:', updatedData);
-    // };
-
     const handleStorageChange = (event) => {
       if (event.key === com.getBaseEnvPath().userData) { // userData_warfarm_test
-        // console.log('LocalStorage data changed in another tab:', event.newValue);
         com.refreshUserData(JSON.parse(event.newValue));
       }
     };
@@ -606,8 +594,6 @@ export default function RootLayout({ children }) {
         </div>
       }
       loadFunc={async () => {
-        // await com.waitFor(() => false, false);
-        console.log(`calling initialize!`);
         await com.initialize(true);
 
         return (

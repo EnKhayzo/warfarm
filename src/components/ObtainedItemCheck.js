@@ -15,9 +15,6 @@ export default function ObtainedItemCheck({ positionAbsolute=true, hollowAbsolut
     if(obj.category === "missions" || obj.category === "relics") return (null);
 
     const isObtainedPerc = showPartial ? com.objectIsFarmedPerc(obj, _obtainedComponents) : (com.objectIsFarmed(obj, _obtainedComponents) ? 1 : 0);
-
-    // console.log(`is obtained?`, itemId, isObtained);
-
     return (
             <div 
                 className={`sized-content obtained-check${ positionAbsolute ? ' absolute' : '' } v-flex flex-center${ isObtainedPerc <= 0 ? ` obtained-item-check-container-unfarmed` : ``}`}

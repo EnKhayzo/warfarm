@@ -8,7 +8,6 @@ export default function useCurrentTrackList(){
     const [ currentTrackList, setCurrentTrackList ] = useState(com.getUserDataCurrentTrackListId());
 
     const listenerFunc = (_currentTrackList) => {
-        // console.log(`got curent track list!`, _currentTrackList);
         setCurrentTrackList(_currentTrackList);
     }
 

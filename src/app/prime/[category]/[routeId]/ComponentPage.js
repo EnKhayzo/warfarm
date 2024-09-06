@@ -105,7 +105,6 @@ function getMissionGroups(missions, rarityPriorities, missionTypesPriorities){
   return missions
     .toSorted((a, b) => com.sortMissionFunc(a.rawObj.mission, b.rawObj.mission, a.rawObj.relic, b.rawObj.relic, missionTypesPriorities))
     .reduce((acc, mission) => {
-      // console.log(`mission!`, mission);
       if(!acc[mission.id]) 
         acc[mission.id] = {
           infoObj: mission,
@@ -147,11 +146,9 @@ const MissionTab = ({component, rarityPriorities}) => {
         >
           { 
             Object.entries(missionGroups)
-              // .filter(([missionId, missionGroup]) => { console.log(`missionId`, missionId, missionGroup); return true; })
               .map(([missionId, missionGroup], index) => (
                 <Link href={missionGroup.infoObj.route}
                     key={`${index}-${missionGroup.infoObj.name}`} 
-                    // onClick={() => router.push(missionGroup.infoObj.route)}
                     className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center`}
                     style={{
                       cursor: 'pointer',
@@ -166,15 +163,12 @@ const MissionTab = ({component, rarityPriorities}) => {
                     <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
                       <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', fontWeight: 'bold' }}>{missionGroup.infoObj.labelHeading}</div>
                       <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{missionGroup.infoObj.label}</div>
-                      {/* <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', fontStyle: 'italic' }}>{missionGroup.infoObj.labelFooter}</div> */}
                       <div className='sized-content v-flex' style={{ gap: '5px', marginTop: '5px' }}>
                         {
                           Object.entries(missionGroup.relics)
-                            // .filter(([ relicName, relic ]) => { console.log(`relicNAme`, relicName, relic); return true; })
                             .map(([ relicName, relic ], index) => (
                             <Link href={com.getObjectRouteFromId(relic.relic.id)}
                               key={`${relic.name}-${index}`} 
-                              // onClick={(ev) => { ev.stopPropagation(); router.push(com.getObjectPathNameFromIdObj(relic.relic, "Relics"))}}
                               className={`sized-content h-flex flex-center object-page-mission-relic${` ${relic.rarity}` ?? ''}`} 
                               style={{ gap: '5px' }}
                             >

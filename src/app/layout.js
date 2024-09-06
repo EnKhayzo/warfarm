@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import { useParams, useRouter } from 'next/navigation';
+import "./globals.css";
 
 import * as com from "@/app/common.js"
 
@@ -21,7 +22,7 @@ export default function RootLayout({ children }) {
         <meta name="description" content="Farm your land" />
         <link rel="shortcut icon" href={`${com.getBaseEnvPath().basePath}/favicon.ico`} />
       </Head>
-      <body className={`${inter.className} v-flex`}>
+      <body className={`${inter.className} v-flex`} style={{ backgroundColor: '#151718' }}> {/* style is to mitigate FOUC */}
         {children}
       </body>
     </html>

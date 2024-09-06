@@ -546,7 +546,6 @@ const MissionTab = ({ groupBy, hideFarmed, trackedItems, rarityPriorities=null }
                                                         .filter(([ relicName, relic ]) => com.getRelicRewards(relic.relic)
                                                             .findIndex(reward => reward.rewardFullName.localeCompare(component.rawObj.id) == 0) > -1
                                                         )
-                                                        // .filter(relicEntry => { console.log(`entry!`, relicEntry[1].rarity, relicEntry); return true})
                                                         // .toSorted((relicEntryA, relicEntryB) =>{ console.warn(`entries SORT!`, relicEntryA, relicEntryB); return ( 
                                                         //   rarityPriorities[relicEntryB[1].rarity]
                                                         //   -
@@ -711,8 +710,6 @@ function FarmingSheet({ trackedItems }){
     setHideFarmed(hide);
   };
 
-  // console.log(`rerendering!`,com.getUserDataPreference("hideFarmed", false) );
-
   return (
     <div className='sized-component v-flex flex-center' style={{ gap: '10px' }}>
       <div className='sized-content h-flex' style={{ fontSize: 'large', fontWeight: 'bold' }}>Farming Sheet</div>
@@ -760,15 +757,12 @@ export function TrackedItemsComponent(){
 
   
   const sharedTrackList = searchParams.get("sharedTrackList") ? com.decodeFromBase64(searchParams.get("sharedTrackList")) : null;
-  // console.log(`search params!`, sharedTrackList, searchParams);
 
   const trackedItems = sharedTrackList ? sharedTrackList.trackedItems : _trackedItems;
 
   const noTrackedItems = Object.entries(trackedItems ?? {}).filter(([ itemId, trackedItem ]) => trackedItem.tracked ?? false).length <= 0;
 
   const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
-
-  // console.log(`track lists tracked items!`, trackLists, trackedItems);
 
   return (
       <div className='sized-content tracked-items v-flex flex-center' style={{ gap: '50px' }}>
@@ -800,17 +794,6 @@ export function TrackedItemsComponent(){
                         .map(([ itemId, trackedItem ], index) => (
                           <Link href={com.getObjectRouteFromId(itemId)} 
                             key={`${itemId}-${index}`} 
-                            // onClick={() => { 
-                            //   router.push(com.getObjectRouteFromId(itemId)); 
-                            // }}
-                            // onAuxClick={ev => { 
-                            //   console.log(`aux click!`);
-                            //   if(ev.button === 1) {
-                            //     console.log(`middle click!`);
-                            //      ev.preventDefault(); 
-                            //      window.open(com.getObjectRouteFromId(itemId), "_blank") 
-                            //   } 
-                            // }}
                             className={`sized-content item-check-parent tracked-items-button v-flex flex-center${com.objectIsFarmed(com.getObjectFromId(itemId), obtainedComponents) ? ` object-farmed-main-page` : ``}`}
                             style={{ 
                               position: 'relative', 

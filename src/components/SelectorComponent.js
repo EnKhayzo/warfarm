@@ -12,7 +12,6 @@ export default function SelectorComponent({ options, onConfirm }){
     const router = useRouter();
 
     const defaultOption = (Object.entries(options).find(([ optionText, option ]) => option.defaultOption)[0]) ?? null
-    // console.log(`default option`, defaultOption);
     const [ activeOption, setActiveOption ] = useState(defaultOption);
 
     const [ menuOpen, setMenuOpen ] = useState(false);
@@ -37,7 +36,6 @@ export default function SelectorComponent({ options, onConfirm }){
     }, [ menuOpen ]);
 
     const handleConfirm = ([ text, entry ]) => {
-        // console.log(`on confirm!`, text); 
         if(onConfirm) onConfirm([ text, entry ]);
         setActiveOption(text);
     };

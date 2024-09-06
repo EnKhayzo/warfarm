@@ -45,9 +45,7 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
 
   // Control buttons based on the active tab
   const getControlButtons = () => {
-
     const controlButtons = com.getSearchResultRelatedObjects(id, category, type, activeTab, rawObj, { missionPriorities: missionPriorities, router: router });
-    // console.log(`contro lbuttons!`, id, controlButtons);
     return controlButtons
   };
 
