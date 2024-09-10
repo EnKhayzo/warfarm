@@ -118,7 +118,8 @@
         "name": "Akbronco Prime",
         "components": {
             "Akbronco Prime Blueprint": true,
-            "Akbronco Prime Link": true
+            "Akbronco Prime Link": true,
+            "Akbronco Prime Bronco Prime": true
         },
         "category": "items",
         "id": "Akbronco Prime",
@@ -513,7 +514,8 @@
         "name": "Aklex Prime",
         "components": {
             "Aklex Prime Link": true,
-            "Aklex Prime Blueprint": true
+            "Aklex Prime Blueprint": true,
+            "Aklex Prime Lex Prime": true
         },
         "category": "items",
         "id": "Aklex Prime",
@@ -590,7 +592,8 @@
         "name": "Akvasto Prime",
         "components": {
             "Akvasto Prime Blueprint": true,
-            "Akvasto Prime Link": true
+            "Akvasto Prime Link": true,
+            "Akvasto Prime Vasto Prime": true
         },
         "category": "items",
         "id": "Akvasto Prime",
@@ -1506,7 +1509,8 @@
         "name": "Akmagnus Prime",
         "components": {
             "Akmagnus Prime Link": true,
-            "Akmagnus Prime Blueprint": true
+            "Akmagnus Prime Blueprint": true,
+            "Akmagnus Prime Magnus Prime": true
         },
         "category": "items",
         "id": "Akmagnus Prime",
