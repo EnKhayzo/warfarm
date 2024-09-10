@@ -4,6 +4,7 @@ import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import * as com from "../app/common.js"
+import ObtainedResurgenceGroup from './ObtainedResurgenceGroup.js';
 
 const ControlButton = ({ rawObj, infoObj=null, icon, vaulted, rarity, _labelHeading, _label, _labelFooter, onClick, onContextMenu, type }) => {  
   const router = useRouter();
@@ -50,9 +51,10 @@ const ControlButton = ({ rawObj, infoObj=null, icon, vaulted, rarity, _labelHead
     <div
       onClick={handleClick}
       onContextMenu={onContextMenu}
-      className={`control-button${rarity ? ` ${rarity}` : ``}${vaulted ? ` vaulted` : ``}${blinking ? ` blinking` : ``}`}
+      className={`control-button tracker-item-parent${rarity ? ` ${rarity}` : ``}${vaulted ? ` vaulted` : ``}${blinking ? ` blinking` : ``}`}
       style={{
         alignSelf: 'stretch',
+        position: 'relative',
         height: '100%'
       }}
     >
@@ -89,6 +91,7 @@ const ControlButton = ({ rawObj, infoObj=null, icon, vaulted, rarity, _labelHead
 
       }
 
+      <ObtainedResurgenceGroup itemId={rawObj.id}/>
     </div>
   );
 

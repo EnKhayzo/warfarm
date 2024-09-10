@@ -1571,7 +1571,28 @@ export function componentIsFarmed(rawObj, obtainedComponents=null){
 
 export function itemIsFarmed(rawObj, obtainedComponents=null){
   if(rawObj == null || rawObj.components == null) return true;
+
+  if(!obtainedComponents) obtainedComponents = getObtainedComponents();
+
   return Object.keys(rawObj.components).map(id => components[id]).every(component => componentIsFarmed(component, obtainedComponents));
+}
+
+export function relicIsFarmed(rawObj, obtainedComponents=null){
+  console.log(`is relic farmed?`, rawObj, obtainedComponents);
+  if(rawObj == null || rawObj.rewards == null) return false;
+
+  if(!obtainedComponents) obtainedComponents = getObtainedComponents();
+
+  const res = getRelicRewards(rawObj)
+          .map(entry => getObjectFromId(entry.rewardFullName))
+          .filter(obj => obj.anomalous == null || obj.anomalous == false)
+          .every(
+            rewardObj => objectIsFarmed(rewardObj, obtainedComponents)
+          );
+
+  console.log(`is relic farmed?`, res);
+
+  return res;
 }
 
 export function objectIsFarmed(rawObj, obtainedComponents=null){
@@ -1581,6 +1602,9 @@ export function objectIsFarmed(rawObj, obtainedComponents=null){
           : 
           rawObj.category === 'components' ? 
             componentIsFarmed(rawObj, obtainedComponents)
+          :
+          rawObj.category === 'relics' ? 
+            relicIsFarmed(rawObj, obtainedComponents)
           :
             false;
 }

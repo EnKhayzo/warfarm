@@ -12,6 +12,7 @@ import TrackItemButton from './TrackItemButton';
 import ObtainedLabelButton from './ObtainedLabelButton';
 import ObtainedItemCheck from './ObtainedItemCheck';
 import ResurgenceItemIcon from './ResurgenceItemIcon';
+import useObtainedComponents from '@/hooks/useObtainedComponents';
 
 const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCallback, rawObj }) => {
   const router = useRouter();
@@ -48,6 +49,7 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
     const controlButtons = com.getSearchResultRelatedObjects(id, category, type, activeTab, rawObj, { missionPriorities: missionPriorities, router: router });
     return controlButtons
   };
+  const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
 
   return (
     <div
@@ -57,12 +59,12 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
         gap: '10px',
         alignItems: 'center',
         padding: '10px',
-        backgroundColor: 'var(--color-tertiary)',
+        backgroundColor: com.objectIsFarmed(com.getObjectFromId(rawObj.id)) ? 'var(--color-quaternary-farmed)' : 'var(--color-tertiary)',
         borderRadius: '5px',
         boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
         width: '50vw',
         cursor: 'pointer',
-        width: 'calc(100% - 40px)'
+        width: 'calc(100% - 40px)',
       }}
       onClick={(ev) => { closeSearchBarCallback(ev); router.push(com.getObjectRouteFromId(rawObj.id)); }}
     >
