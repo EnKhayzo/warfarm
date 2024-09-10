@@ -166,6 +166,7 @@ const MissionTab = ({component, rarityPriorities}) => {
                       <div className='sized-content v-flex' style={{ gap: '5px', marginTop: '5px' }}>
                         {
                           Object.entries(missionGroup.relics)
+                            .toSorted(([_,a], [__,b]) => rarityPriorities[a.rarity]-rarityPriorities[b.rarity])
                             .map(([ relicName, relic ], index) => (
                             <Link href={com.getObjectRouteFromId(relic.relic.id)}
                               key={`${relic.name}-${index}`} 
@@ -231,7 +232,7 @@ export default function ComponentPage({ routeId, pathObj }) {
                         style={{ marginBottom: '20px', gap: '10px' }}
                         // onClick={() => router.push(`/prime/items/${component.parentItem.replaceAll(" ", "").replaceAll("&", "")}`)}
                       >
-                        <img style={{ height: '30px' }} src={com.getObjectIcon(component)}/>
+                        <img style={{ height: '30px' }} src={com.getObjectIcon(com.getObjectFromId(component.parentItem))}/>
                         <div>{component.parentItem}</div>
                       </Link>
                   }

@@ -1120,6 +1120,9 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
 }
 
 export function sortRelicFunc(a, b, relicTypePriorities, rarityPriorities){
+  if(relicTypePriorities == null) relicTypePriorities = getRelicTypePriorities();
+  if(rarityPriorities == null) rarityPriorities = getRarityPriorities();
+
   return (
     (a.vaulted-b.vaulted)
     ||
@@ -1613,7 +1616,7 @@ export function relicDropsComponent(rawRelic, rawComponent){
   return getRelicRewards(rawRelic).findIndex(reward => reward.rewardFullName.localeCompare(rawComponent.id) == 0) > -1;
 }
 
-export function getComponentsRelicsMerged(trackedItems, router){
+export function getComponentsRelicsMergedRelicTab(trackedItems, router){
   const componentsRelicsMerged = trackedItems.reduce((acc, trackedItemId) => {
     if(!acc.components) acc.components = [];
     if(!acc.relics) acc.relics = [];
