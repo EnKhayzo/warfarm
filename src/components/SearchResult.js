@@ -74,7 +74,7 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
         className={`${rawObj.category === "Relics" ? ` sized-content` : ` sized-remaining`} h-flex flex-center`} style={{ justifyContent: 'flex-start', gap: '10px' }}
       >
         {/* Image */}
-        <img src={imageUrl} alt={id} style={{ width: '80px' }} />
+        <img src={com.getObjectIcon(com.getObjectFromId(rawObj.id))} alt={id} style={{ width: '80px' }} />
 
         {/* Name [vaulted] - category */}
         <div className='sized-content v-flex' style={{ gap: '0px' }}>
