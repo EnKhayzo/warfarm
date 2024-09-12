@@ -300,6 +300,8 @@ export function setUserDataPreferences(userPreferences) {
   userData.userPreferences = userPreferences;
   saveUserData(userData);
 
+  // console.log(`set user data preference, notifying observers`);
+
   preferencesObservable.set(userPreferences);
 }
 
@@ -445,6 +447,27 @@ export function setUserDataBannerStatus(statusObj){
 export function getUserDataBannerStatus(){
   const userData = loadUserData();
   return userData.bannerStatus ?? {};
+}
+
+export function setUserDataPrivacyConsentStatus(privacyConsentStatus){
+  // const userData = loadUserData();
+  // userData.privacyConsentStatus = consentStatus;
+
+  // saveUserData(userData);
+
+  setUserDataPreference("privacyConsentStatus", privacyConsentStatus);
+}
+
+export function getUserDataPrivacyConsentStatus(){
+  // const userData = loadUserData();
+
+  // if(!userData.consentStatus) return false;
+
+  // return userData.consentStatus;
+
+  // console.log(`getting getUserDataPrivacyConsentStatus!`, getUserDataPreference("privacyConsentStatus", null));
+
+  return getUserDataPreference("privacyConsentStatus", null);
 }
 
 
@@ -760,6 +783,7 @@ export function clearAllUserData(){
   obtainedObservable.set({});
   trackedItemsOvervable.set({});
   missionPrioritiesObservable.set({});
+  preferencesObservable.set({});
 
   currentTrackListIdObservable.set(null);
   trackListsObservable.set({});
@@ -1578,7 +1602,7 @@ export function itemIsFarmed(rawObj, obtainedComponents=null){
 }
 
 export function relicIsFarmed(rawObj, obtainedComponents=null){
-  console.log(`is relic farmed?`, rawObj, obtainedComponents);
+  // console.log(`is relic farmed?`, rawObj, obtainedComponents);
   if(rawObj == null || rawObj.rewards == null) return false;
 
   if(!obtainedComponents) obtainedComponents = getObtainedComponents();
@@ -1590,7 +1614,7 @@ export function relicIsFarmed(rawObj, obtainedComponents=null){
             rewardObj => objectIsFarmed(rewardObj, obtainedComponents)
           );
 
-  console.log(`is relic farmed?`, res);
+  // console.log(`is relic farmed?`, res);
 
   return res;
 }

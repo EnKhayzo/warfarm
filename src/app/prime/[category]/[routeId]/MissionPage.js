@@ -238,6 +238,7 @@ export default function RelicPage({ routeId, pathObj }) {
                     <div className='sized-content h-flex' style={{ marginTop: '20px' }}></div>
                     <MainItemTitleComponent itemId={mission.id} iconUrl={com.getObjectIcon(com.getObjectFromId(pathObj.id))} label={pathObj.id} labelFooter={mission.type} />
                     <TabComponent
+                        hasMinWidth={true}
                         defaultTab={"Rotations"}
                         tabs={{
                             "Rotations": <RotationTab mission={mission}/>,

@@ -161,7 +161,7 @@ export default function MissionTabBody({ groupBy, hideFarmed, objectIds, rarityP
   }
 
   useEffect(() => {
-    console.log(`main scrollable!`, mainScrollableRef);
+    // console.log(`main scrollable!`, mainScrollableRef);
     mainScrollableRef.current.addEventListener('scroll', scrollListener);
 
     return () => {

@@ -240,6 +240,7 @@ export default function ComponentPage({ routeId, pathObj }) {
                   <div style={{ marginTop: '5px' }}><ComponentAddButtons component={component}/></div>
                 </div>
                 <TabComponent
+                  hasMinWidth={true}
                   defaultTab={"Relics"}
                   tabs={{
                     "Relics": <RelicTab component={component} rarityPriorities={rarityPriorities}/>,

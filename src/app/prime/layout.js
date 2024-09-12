@@ -39,6 +39,11 @@ import { ScrollPaneContext } from "@/contexts/ScrollPaneContext";
 import { NavigationEvents } from "@/components/NavigationEvents";
 import useNotificationUis from "@/hooks/useNotificationUis";
 import BannerComponent from "./BannerComponent";
+import useUserDataPreferences from "@/hooks/useUserDataPreferences.js";
+import ToggleSwitch from "@/components/ToggleSwitch.js";
+import PrivacyConsentPopup from "./PrivacyConsentPopup.js";
+import LabelCheckbox from "@/components/LabelCheckbox.js";
+import Script from "next/script.js";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -103,6 +108,9 @@ export function MainLayoutComponent({children}){
   const [ dialogUis, setDialogUis ] = useDialogUis();
   const [ notificationUis, setNotificationUis ] = useNotificationUis();
   const mainScrollableRef = useRef(null);
+
+  const [ userPreferences, setUserPreferences ] = useUserDataPreferences();
+  // console.log(`user prefrnece!`, userPreferences);
   
   const [ hasFirstAccessed, setHasFirstAccessed ] = useState(false);
   
@@ -229,329 +237,340 @@ export function MainLayoutComponent({children}){
   const isThereBanner = false;
 
   return (
-    <div className='sized-remaining v-flex'>
-      <div className='sized-remaining main-body v-flex'>
-        <div className="sized-content search-bar-global-container h-flex">
-          {
-            searchExpanded ?
-              <div className="sized-content h-flex flex-center search-expanded">
-                <button onClick={handleSearchCollapse} className="sized-content h-flex back-button">
-                  <img className="sized-content icon-default-filter h-flex" src={`${com.getBaseEnvPath().basePath}/icons/arrow.svg`} style={{ marginLeft: '20px', height: '20px', transform: 'rotate(180deg)' }} alt="Back" />
-                </button>
-                <SearchBar isExpanded={true} />
-              </div>
-            :
-            <>
-              <div className="sized-content h-flex flex-center" style={{ gap: '20px', justifyContent: 'flex-start' }}>
-                <div className='sized-content h-flex' style={{ justifyContent: 'center', alignItems: 'center' }}>
-                  <button 
-                    onClick={() => {
-                      if(pathName !== "/prime"){
-                        router.push("/prime");  
-                      }
-                      else{
-                        setForceHomeBlink(true);
-                        setTimeout(() => {
-                          setForceHomeBlink(false);
-                        }, 250);
-                      }
-                    }} 
-                    className='sized-content logo-button h-flex flex-center'
-                  >
-                      <Link href="/prime"><img style={{ minWidth: '70px' }} className='sized-content logo h-flex flex-center' src={`${com.getBaseEnvPath().basePath}/icons/logo_prime.svg`}/></Link>
+    <>
+      {
+        
+        <Script 
+          strategy="lazyOnload"
+          data-domain="enkhayzo.github.io" 
+          src="https://enkhayzomachines.net/js/script.js"
+        />
+
+      }
+      <div className='sized-remaining v-flex'>
+        <div className='sized-remaining main-body v-flex'>
+          <div className="sized-content search-bar-global-container h-flex">
+            {
+              searchExpanded ?
+                <div className="sized-content h-flex flex-center search-expanded">
+                  <button onClick={handleSearchCollapse} className="sized-content h-flex back-button">
+                    <img className="sized-content icon-default-filter h-flex" src={`${com.getBaseEnvPath().basePath}/icons/arrow.svg`} style={{ marginLeft: '20px', height: '20px', transform: 'rotate(180deg)' }} alt="Back" />
                   </button>
+                  <SearchBar isExpanded={true} />
                 </div>
-                <MediaQueryCollapseContextMenuButton>
-                  <NavBarMainButtons forceHomeBlink={forceHomeBlink}/>
-                </MediaQueryCollapseContextMenuButton>
-                <div className='sized-content h-flex header-main-buttons-container' style={{ gap: '10px'}}>
-                    <NavBarMainButtons forceHomeBlink={forceHomeBlink}/>
-                </div>
-              </div>
-              <div className="sized-remaining h-flex flex-center">
-                <button className="sized-content h-flex search-button" onClick={handleSearchExpand}>
-                  <img style={{ height: '30px' }} className="sized-content h-flex icon-default-filter" src={`${com.getBaseEnvPath().basePath}/icons/search.svg`} alt="Search" />
-                </button>
-                <div 
-                  className="sized-remaining h-flex flex-center global-search-bar-area"
-                  style={{
-                    justifyContent: 'flex-start'
-                  }}
-                >
-                  <SearchBar />
-                </div>
-              </div>
-              <div className="sized-content h-flex flex-center" style={{ gap:'20px', justifyContent: 'flex-end' }}>
-                <Link href="/prime/supportme"><IconButton label={'Support Me'} iconUrl={`${com.getBaseEnvPath().basePath}/icons/heart.svg`} className={'layout-header-button support-me-button'} iconClassName={'support-me-icon'} iconHeight='20px' /></Link>
-                <div className="sized-content h-flex flex-center">
+              :
+              <>
+                <div className="sized-content h-flex flex-center" style={{ gap: '20px', justifyContent: 'flex-start' }}>
+                  <div className='sized-content h-flex' style={{ justifyContent: 'center', alignItems: 'center' }}>
+                    <button 
+                      onClick={() => {
+                        if(pathName !== "/prime"){
+                          router.push("/prime");  
+                        }
+                        else{
+                          setForceHomeBlink(true);
+                          setTimeout(() => {
+                            setForceHomeBlink(false);
+                          }, 250);
+                        }
+                      }} 
+                      className='sized-content logo-button h-flex flex-center'
+                    >
+                        <Link href="/prime"><img style={{ minWidth: '70px' }} className='sized-content logo h-flex flex-center' src={`${com.getBaseEnvPath().basePath}/icons/logo_prime.svg`}/></Link>
+                    </button>
+                  </div>
                   <MediaQueryCollapseContextMenuButton>
-                    <NavBarSideButtons/>
+                    <NavBarMainButtons forceHomeBlink={forceHomeBlink}/>
                   </MediaQueryCollapseContextMenuButton>
                   <div className='sized-content h-flex header-main-buttons-container' style={{ gap: '10px'}}>
-                    <NavBarSideButtons/>
+                      <NavBarMainButtons forceHomeBlink={forceHomeBlink}/>
                   </div>
                 </div>
-                <div className='sized-content h-flex' style={{ gap: '20px', justifyContent: 'center', alignItems: 'center' }}>
-                  {/* <ContextMenuButton 
-                    iconUrl={`${com.getBaseEnvPath().basePath}/icons/info.svg`}
-                    headerContent={<img src={`${com.getBaseEnvPath().basePath}/icons/info.svg`} style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
+                <div className="sized-remaining h-flex flex-center">
+                  <button className="sized-content h-flex search-button" onClick={handleSearchExpand}>
+                    <img style={{ height: '30px' }} className="sized-content h-flex icon-default-filter" src={`${com.getBaseEnvPath().basePath}/icons/search.svg`} alt="Search" />
+                  </button>
+                  <div 
+                    className="sized-remaining h-flex flex-center global-search-bar-area"
+                    style={{
+                      justifyContent: 'flex-start'
+                    }}
                   >
-                    {
-                      (props) => (
-                        <>
-                          
+                    <SearchBar />
+                  </div>
+                </div>
+                <div className="sized-content h-flex flex-center" style={{ gap:'20px', justifyContent: 'flex-end' }}>
+                  <Link href="/prime/supportme"><IconButton label={'Support Me'} iconUrl={`${com.getBaseEnvPath().basePath}/icons/heart.svg`} className={'layout-header-button support-me-button'} iconClassName={'support-me-icon'} iconHeight='20px' /></Link>
+                  <div className="sized-content h-flex flex-center">
+                    <MediaQueryCollapseContextMenuButton>
+                      <NavBarSideButtons/>
+                    </MediaQueryCollapseContextMenuButton>
+                    <div className='sized-content h-flex header-main-buttons-container' style={{ gap: '10px'}}>
+                      <NavBarSideButtons/>
+                    </div>
+                  </div>
+                  <div className='sized-content h-flex' style={{ gap: '20px', justifyContent: 'center', alignItems: 'center' }}>
+                    {/* <ContextMenuButton 
+                      iconUrl={`${com.getBaseEnvPath().basePath}/icons/info.svg`}
+                      headerContent={<img src={`${com.getBaseEnvPath().basePath}/icons/info.svg`} style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
+                    >
+                      {
+                        (props) => (
+                          <>
+                            
+                          </>
+                        )
+                      }
+                    </ContextMenuButton> */}
+                    <button 
+                      className='sized-content h-flex'
+                      style={{ position: 'relative' }}
+                      onClick={(ev) => {
+                        com.setUserDataHasFirstAccessed(false); setHasFirstAccessed(false);
+                        com.showDialogUi({
+                          title: 'Warfarm - Legend',
+                          type: 'custom',
+                          uiFunc: (props) => (
+                            <LegendComponent props={props}/>
+                          )
+                        });
+                      }}
+                    >
+                      <div className='sized-content h-flex'><img className='sized-content h-flex icon-default-filter nav-bar-standard-icon' src={`${com.getBaseEnvPath().basePath}/icons/info.svg`}/></div>
+                      {
+                        !hasFirstAccessed ? null:
+                        <div 
+                          style={{ position: 'absolute', top: '43px', left: '-40px', pointerEvents: 'none', cursor: 'default' }}
+                          onClick={ev => { ev.stopPropagation(); ev.preventDefault(); }}
+                        >
+                          <div className="speech-bubble blinking-slow">See Here</div>
+                        </div>
+                      }
+                    </button>
+                    <ContextMenuButton
+                      top='50px' 
+                      style={{ right: '0px' }}
+                      className='global-settings-button'
+                      headerContent={<img src={`${com.getBaseEnvPath().basePath}/icons/settings.svg`} style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
+                    >
+                      {
+                        (props) => (
+                          <>
+                            <li className='sized-content v-flex'>
+                            <div className='sized-content v-flex'>
+                                <div style={{ fontSize: 'x-small', fontStyle: 'italic' }}>Missions</div>
+                                <div className='sized-content v-flex'>
+                                    <div>Mission Priority Preference</div>
+                                    <div style={{ fontSize: 'x-small', fontStyle: 'italic', fontWeight: 'bold' }}>higher in list is prioritized over lower</div>
+                                    <SortableList
+                                        style={{
+                                          marginTop: '5px',
+                                          padding: '10px', 
+                                          backgroundColor: 'var(--color-secondary)',
+                                          borderRadius: '10px', 
+                                          padding: '10px', 
+                                          fontSize: 'small' 
+                                        }}
+                                        elems={Object.keys(com.getDefaultMissionTypePriorities()).map(priority => (
+                                            <div key={`${priority}`} className='sized-content h-flex flex-center' style={{ gap: '5px', cursor: 'pointer' }}>
+                                                <div className='sized-content h-flex flex-center'><img style={{ filter: 'invert()', width: '5px', height: '5px' }} src={`${com.getBaseEnvPath().basePath}/icons/move.svg`}/></div>
+                                                <div className='sized-content h-flex flex-center'>{priority}</div>
+                                            </div>
+                                        ))}
+                                        onOrderConfirm={
+                                          (_elemsIdxs) => { 
+                                            const missionPriorities = com.missionPrioritiesObservable.get();
+
+                                            const newMissionPriorities = Object.fromEntries(_elemsIdxs
+                                              .map((elemIdx, index) => { 
+                                                const actualElem = Object.keys(missionPriorities)[elemIdx];
+                                                return [ actualElem, index ]; 
+                                              })
+                                            ); 
+
+                                            setMissionPriorities(
+                                              newMissionPriorities
+                                            ) 
+                                        }}
+                                    />
+                                </div>
+                            </div>
+                          </li>
+                          <li className='sized-content v-flex'>
+                            <div className='sized-content v-flex' style={{ padding: '5px 0', gap: '5px' }}>
+                              <div style={{ fontSize: 'x-small', fontStyle: 'italic' }}>User Data</div>
+                              <div className='sized-content v-flex' style={{ gap: '5px' }}>
+                                <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
+                                  <button onClick={exportUserData} className='sized-content settings-button'>Export User Data</button>
+                                  <button onClick={importUserData} className='sized-content settings-button'>Import User Data</button>
+                                </div>
+                                <div className='sized-content v-flex' style={{ gap: '5px' }}>
+                                  <button onClick={ev => { clearObtainedItemsData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear Obtained Items data</button>
+                                  <button onClick={ev => { clearTrackedItemsData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear Tracked Items data</button>
+                                  <button onClick={ev => { clearMissionPrioritiesData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear Mission Priority data</button>
+                                  <button onClick={ev => { clearAllUserData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear All User Data</button>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
                         </>
                       )
                     }
-                  </ContextMenuButton> */}
-                  <button 
-                    className='sized-content h-flex'
-                    style={{ position: 'relative' }}
-                    onClick={(ev) => {
-                      com.setUserDataHasFirstAccessed(false); setHasFirstAccessed(false);
-                      com.showDialogUi({
-                        title: 'Warfarm - Legend',
-                        type: 'custom',
-                        uiFunc: (props) => (
-                          <LegendComponent props={props}/>
-                        )
-                      });
-                    }}
-                  >
-                    <div className='sized-content h-flex'><img className='sized-content h-flex icon-default-filter nav-bar-standard-icon' src={`${com.getBaseEnvPath().basePath}/icons/info.svg`}/></div>
-                    {
-                      !hasFirstAccessed ? null:
-                      <div 
-                        style={{ position: 'absolute', top: '43px', left: '-40px', pointerEvents: 'none', cursor: 'default' }}
-                        onClick={ev => { ev.stopPropagation(); ev.preventDefault(); }}
-                      >
-                        <div className="speech-bubble blinking-slow">See Here</div>
-                      </div>
-                    }
-                  </button>
-                  <ContextMenuButton
-                    top='50px' 
-                    style={{ right: '0px' }}
-                    className='global-settings-button'
-                    headerContent={<img src={`${com.getBaseEnvPath().basePath}/icons/settings.svg`} style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
-                  >
-                    {
-                      (props) => (
-                        <>
-                          <li className='sized-content v-flex'>
-                          <div className='sized-content v-flex'>
-                              <div style={{ fontSize: 'x-small', fontStyle: 'italic' }}>Missions</div>
-                              <div className='sized-content v-flex'>
-                                  <div>Mission Priority Preference</div>
-                                  <div style={{ fontSize: 'x-small', fontStyle: 'italic', fontWeight: 'bold' }}>higher in list is prioritized over lower</div>
-                                  <SortableList
-                                      style={{
-                                        marginTop: '5px',
-                                        padding: '10px', 
-                                        backgroundColor: 'var(--color-secondary)',
-                                        borderRadius: '10px', 
-                                        padding: '10px', 
-                                        fontSize: 'small' 
-                                      }}
-                                      elems={Object.keys(com.getDefaultMissionTypePriorities()).map(priority => (
-                                          <div key={`${priority}`} className='sized-content h-flex flex-center' style={{ gap: '5px', cursor: 'pointer' }}>
-                                              <div className='sized-content h-flex flex-center'><img style={{ filter: 'invert()', width: '5px', height: '5px' }} src={`${com.getBaseEnvPath().basePath}/icons/move.svg`}/></div>
-                                              <div className='sized-content h-flex flex-center'>{priority}</div>
-                                          </div>
-                                      ))}
-                                      onOrderConfirm={
-                                        (_elemsIdxs) => { 
-                                          const missionPriorities = com.missionPrioritiesObservable.get();
-
-                                          const newMissionPriorities = Object.fromEntries(_elemsIdxs
-                                            .map((elemIdx, index) => { 
-                                              const actualElem = Object.keys(missionPriorities)[elemIdx];
-                                              return [ actualElem, index ]; 
-                                            })
-                                          ); 
-
-                                          setMissionPriorities(
-                                            newMissionPriorities
-                                          ) 
-                                      }}
-                                  />
-                              </div>
-                          </div>
-                        </li>
-                        <li className='sized-content v-flex'>
-                          <div className='sized-content v-flex' style={{ padding: '5px 0', gap: '5px' }}>
-                            <div style={{ fontSize: 'x-small', fontStyle: 'italic' }}>User Data</div>
-                            <div className='sized-content v-flex' style={{ gap: '5px' }}>
-                              <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
-                                <button onClick={exportUserData} className='sized-content settings-button'>Export User Data</button>
-                                <button onClick={importUserData} className='sized-content settings-button'>Import User Data</button>
-                              </div>
-                              <div className='sized-content v-flex' style={{ gap: '5px' }}>
-                                <button onClick={ev => { clearObtainedItemsData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear Obtained Items data</button>
-                                <button onClick={ev => { clearTrackedItemsData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear Tracked Items data</button>
-                                <button onClick={ev => { clearMissionPrioritiesData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear Mission Priority data</button>
-                                <button onClick={ev => { clearAllUserData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear All User Data</button>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                      </>
-                    )
-                  }
-                  </ContextMenuButton>
-                </div>
-              </div>
-            </>
-          }
-          
-        </div>
-        { isThereBanner ? <BannerComponent/> : null }
-        <div ref={mainScrollableRef} className='sized-remaining main-content v-flex' style={{ marginBottom: '10px' }}>
-          <div className="sized-remaining main-scrollable v-flex">
-            <ScrollPaneContext.Provider value={{mainScrollableRef}}>
-              {children}
-            </ScrollPaneContext.Provider>
-          </div>
-          <div className='sized-content v-flex flex-center' style={{ textAlign: 'center', marginTop: '50px', fontSize: 'small' }}>
-            <div>This site is not endorsed by or affiliated with Digital Extremes Ltd.</div>
-            <div>All images come from Warframe or from websites created and owned by Digital Extremes, who hold the copyright of Warframe.</div>
-            <div>All trademarks and registered trademarks present in images are proprietary to Digital Extremes Ltd.</div>
-          </div>
-        </div>
-      </div>
-      {
-        !areThereDialogUis ? null:
-        <div 
-          className='sized-remaining v-flex flex-center'
-          style={{ 
-            position: 'absolute', 
-            top: '0px', 
-            left: '0px', 
-            width: '100vw', 
-            height: '100vh',
-            backgroundColor: '#22222299' 
-          }}
-        >
-          {
-            dialogUis.map((dialogUi, index) => (
-              <div 
-                key={`${index}-${dialogUi.title}`}
-                className='sized-content v-flex flex-center' 
-                style={{ 
-                  position: 'relative',
-                  minWidth: '25vw',
-                  backgroundColor: 'var(--color-secondary)',
-                  borderRadius: '10px',
-                  padding: '30px',
-                  paddingLeft: '60px',
-                  paddingRight: '60px',
-                  gap: '10px' 
-                }}
-              >
-                <div className='sized-content v-flex flex-center' style={{ textAlign: 'center', fontWeight: 'bold' }}>{dialogUi.title}</div>
-                {
-                  dialogUi.type === "okcancel" ? 
-                    <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
-                      <button onClick={ev => { dialogUi.ok(ev); com.removeDialogUi(dialogUi); }} className="sized-content dialog-footer-button h-flex flex-center">Ok</button>
-                      <button onClick={(ev) => com.removeDialogUi(dialogUi)} className="sized-content dialog-footer-button h-flex flex-center">Cancel</button>
-                    </div>
-                  :
-                  dialogUi.type === "textString" ?
-                  <div className='sized-content dialog-text-string-area v-flex flex-center' style={{ gap: '10px' }}>
-                    <div className='sized-content h-flex flex-center'>
-                      <input className="text-field-string" style={{ backgroundColor: 'var(--color-quaternary)', borderRadius: '10px', padding: '10px' }} type="text" defaultValue={dialogUi.value ?? ""}/>
-                    </div>
-                    <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
-                      <button onClick={ev => { dialogUi.ok(ev, ev.target.closest(".dialog-text-string-area").querySelector(".text-field-string").value); com.removeDialogUi(dialogUi); }} className="sized-content dialog-footer-button h-flex flex-center">Ok</button>
-                      <button onClick={(ev) => com.removeDialogUi(dialogUi)} className="sized-content dialog-footer-button h-flex flex-center">Cancel</button>
-                    </div>
+                    </ContextMenuButton>
                   </div>
-                  :
-                  dialogUi.type === "custom" ?
-                    dialogUi.uiFunc({ closeMenu: () => com.removeDialogUi(dialogUi) })
-                  :null
-                }
-                <button
-                  className="sized-content h-flex flex-center"
-                  style={{
-                    position: 'absolute',
-                    top: '0px',
-                    right: '0px',
-                    margin: '10px',
-                    padding: '5px',
-                    width: '30px',
-                    height: '30px',
-                    backgroundColor: 'var(--color-tertiary)',
-                    borderRadius: '10px'
-                  }}
-                  onClick={() => com.removeDialogUi(dialogUi)}
-                >
-                  X 
-                </button>
-              </div>
-            ))
-          }
+                </div>
+              </>
+            }
+            
+          </div>
+          { isThereBanner ? <BannerComponent/> : null }
+          <div ref={mainScrollableRef} className='sized-remaining main-content v-flex' style={{ marginBottom: '10px' }}>
+            <div className="sized-remaining main-scrollable v-flex">
+              <ScrollPaneContext.Provider value={{mainScrollableRef}}>
+                {children}
+              </ScrollPaneContext.Provider>
+            </div>
+            <div className='sized-content v-flex flex-center' style={{ textAlign: 'center', marginTop: '50px', fontSize: 'small' }}>
+              <div>This site is not endorsed by or affiliated with Digital Extremes Ltd.</div>
+              <div>All images come from Warframe or from websites created and owned by Digital Extremes, who hold the copyright of Warframe.</div>
+              <div>All trademarks and registered trademarks present in images are proprietary to Digital Extremes Ltd.</div>
+            </div>
+          </div>
         </div>
-      }
-      {
-        !areThereNotificationUis ? null:
-        <div 
-          className='sized-remaining v-flex flex-center'
-          style={{ 
-            pointerEvents: 'none',
-            position: 'absolute', 
-            top: '0px', 
-            left: '0px', 
-            width: '100vw', 
-            height: '100vh',
-            backgroundColor: 'transparent', 
-            justifyContent: 'flex-end',
-            gap: '10px',
-            padding: '20px'
-          }}
-        >
-          {
-            notificationUis.map((notificationUi, index) => (
-              <div 
-                key={`${index}-${notificationUi.title}`}
-                className='sized-content h-flex flex-center' 
-                style={{ 
-                  pointerEvents: 'all',
-                  position: 'relative',
-                  backgroundColor: 'var(--color-secondary)',
-                  borderRadius: '10px',
-                  padding: '10px',
-                  gap: '20px' 
-                }}
-              >
-                <div className='sized-content h-flex flex-center' >
+        {
+          !areThereDialogUis ? null:
+          <div 
+            className='sized-remaining v-flex flex-center'
+            style={{ 
+              position: 'absolute', 
+              top: '0px', 
+              left: '0px', 
+              width: '100vw', 
+              height: '100vh',
+              backgroundColor: '#22222299' 
+            }}
+          >
+            {
+              dialogUis.map((dialogUi, index) => (
+                <div 
+                  key={`${index}-${dialogUi.title}`}
+                  className='sized-content v-flex flex-center' 
+                  style={{ 
+                    position: 'relative',
+                    minWidth: '25vw',
+                    backgroundColor: 'var(--color-secondary)',
+                    borderRadius: '10px',
+                    padding: '30px',
+                    paddingLeft: '60px',
+                    paddingRight: '60px',
+                    gap: '10px' 
+                  }}
+                >
+                  <div className='sized-content v-flex flex-center' style={{ textAlign: 'center', fontWeight: 'bold' }}>{dialogUi.title}</div>
                   {
-                    notificationUi.type === "success" ? 
-                      <img className="icon-success-filter" style={{ width: '20px', height: '20px' }} src={`${com.getBaseEnvPath().basePath}/icons/success.svg`}/>
-                      :
-                    notificationUi.type === "failure" ? 
-                      <img className="icon-success-filter" src={`${com.getBaseEnvPath().basePath}/icons/failure.svg`}/>
+                    dialogUi.type === "okcancel" ? 
+                      <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
+                        <button onClick={ev => { dialogUi.ok(ev); com.removeDialogUi(dialogUi); }} className="sized-content dialog-footer-button h-flex flex-center">Ok</button>
+                        <button onClick={(ev) => com.removeDialogUi(dialogUi)} className="sized-content dialog-footer-button h-flex flex-center">Cancel</button>
+                      </div>
+                    :
+                    dialogUi.type === "textString" ?
+                    <div className='sized-content dialog-text-string-area v-flex flex-center' style={{ gap: '10px' }}>
+                      <div className='sized-content h-flex flex-center'>
+                        <input className="text-field-string" style={{ backgroundColor: 'var(--color-quaternary)', borderRadius: '10px', padding: '10px' }} type="text" defaultValue={dialogUi.value ?? ""}/>
+                      </div>
+                      <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
+                        <button onClick={ev => { dialogUi.ok(ev, ev.target.closest(".dialog-text-string-area").querySelector(".text-field-string").value); com.removeDialogUi(dialogUi); }} className="sized-content dialog-footer-button h-flex flex-center">Ok</button>
+                        <button onClick={(ev) => com.removeDialogUi(dialogUi)} className="sized-content dialog-footer-button h-flex flex-center">Cancel</button>
+                      </div>
+                    </div>
+                    :
+                    dialogUi.type === "custom" ?
+                      dialogUi.uiFunc({ closeMenu: () => com.removeDialogUi(dialogUi) })
                     :null
                   }
+                  <button
+                    className="sized-content h-flex flex-center"
+                    style={{
+                      position: 'absolute',
+                      top: '0px',
+                      right: '0px',
+                      margin: '10px',
+                      padding: '5px',
+                      width: '30px',
+                      height: '30px',
+                      backgroundColor: 'var(--color-tertiary)',
+                      borderRadius: '10px'
+                    }}
+                    onClick={() => com.removeDialogUi(dialogUi)}
+                  >
+                    X 
+                  </button>
                 </div>
-                <div className='sized-content h-flex flex-center' >{notificationUi.label}</div>
-                <div className='sized-content h-flex flex-center' >
-                  <IconButton
-                    iconUrl={`${com.getBaseEnvPath().basePath}/icons/failure.svg`}
-                    iconClassName={'icon-default-filter'}
-                    iconStyle={{ width: '10px', height: '10px' }}
-                    onClick={() => com.removeNotificationUi(notificationUi)}
-                  />
+              ))
+            }
+          </div>
+        }
+        {
+          !areThereNotificationUis ? null:
+          <div 
+            className='sized-remaining v-flex flex-center'
+            style={{ 
+              pointerEvents: 'none',
+              position: 'absolute', 
+              top: '0px', 
+              left: '0px', 
+              width: '100vw', 
+              height: '100vh',
+              backgroundColor: 'transparent', 
+              justifyContent: 'flex-end',
+              gap: '10px',
+              padding: '20px'
+            }}
+          >
+            {
+              notificationUis.map((notificationUi, index) => (
+                <div 
+                  key={`${index}-${notificationUi.title}`}
+                  className='sized-content h-flex flex-center' 
+                  style={{ 
+                    pointerEvents: 'all',
+                    position: 'relative',
+                    backgroundColor: 'var(--color-secondary)',
+                    borderRadius: '10px',
+                    padding: '10px',
+                    gap: '20px' 
+                  }}
+                >
+                  <div className='sized-content h-flex flex-center' >
+                    {
+                      notificationUi.type === "success" ? 
+                        <img className="icon-success-filter" style={{ width: '20px', height: '20px' }} src={`${com.getBaseEnvPath().basePath}/icons/success.svg`}/>
+                        :
+                      notificationUi.type === "failure" ? 
+                        <img className="icon-success-filter" src={`${com.getBaseEnvPath().basePath}/icons/failure.svg`}/>
+                      :null
+                    }
+                  </div>
+                  <div className='sized-content h-flex flex-center' >{notificationUi.label}</div>
+                  <div className='sized-content h-flex flex-center' >
+                    <IconButton
+                      iconUrl={`${com.getBaseEnvPath().basePath}/icons/failure.svg`}
+                      iconClassName={'icon-default-filter'}
+                      iconStyle={{ width: '10px', height: '10px' }}
+                      onClick={() => com.removeNotificationUi(notificationUi)}
+                    />
+                  </div>
                 </div>
-              </div>
-            ))
-          }
-        </div>
-      }
-      <Suspense fallback={null}>
-        <NavigationEvents mainScrollableRef={mainScrollableRef}/>
-      </Suspense>
-    </div>
+              ))
+            }
+          </div>
+        }
+        <Suspense fallback={null}>
+          <NavigationEvents mainScrollableRef={mainScrollableRef}/>
+        </Suspense>
+      </div>
+    </>
   );
 }
 

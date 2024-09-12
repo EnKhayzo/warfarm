@@ -8,6 +8,7 @@ import { useParams, useRouter } from 'next/navigation';
 import "./globals.css";
 
 import * as com from "@/app/common.js"
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 

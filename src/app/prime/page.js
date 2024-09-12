@@ -207,6 +207,7 @@ function FarmingSheet({ trackedItems }){
     <div className='sized-component v-flex flex-center' style={{ gap: '10px' }}>
       <div className='sized-content h-flex' style={{ fontSize: 'large', fontWeight: 'bold' }}>Farming Sheet</div>
       <TabComponent
+        hasMinWidth={true}
         defaultTab={"Components"}
         tabs={{
           "Components": <ComponentTab hideFarmed={com.getUserDataPreference("hideFarmed", false)} trackedItems={trackedItems}/>,

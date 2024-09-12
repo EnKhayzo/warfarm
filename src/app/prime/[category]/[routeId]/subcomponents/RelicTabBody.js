@@ -76,7 +76,7 @@ export default function RelicTabBody({ hideFarmed, objects}){
     }
   
     useEffect(() => {
-      console.log(`main scrollable!`, mainScrollableRef);
+      // console.log(`main scrollable!`, mainScrollableRef);
       mainScrollableRef.current.addEventListener('scroll', scrollListener);
   
       return () => {

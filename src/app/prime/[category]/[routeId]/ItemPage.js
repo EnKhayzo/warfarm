@@ -229,6 +229,7 @@ export default function ItemPage({ routeId, pathObj }) {
                         }
                     </div>
                     <TabComponent
+                        hasMinWidth={true}
                         defaultTab={"Components"}
                         tabs={{
                             "Components": <ComponentTab item={item} components={components}/>,
