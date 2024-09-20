@@ -108,6 +108,7 @@ a[href^="ftp://"] {
   --color-text-farmed: #49aa5e;
   --color-secondary-farmed: #14331a; /* #1c3020; */
   --color-quaternary-farmed: #102014; /* #17251d; */
+  --color-quaternary-partial-farmed: #101b20;
 
   --color-component-common: rgb(84, 53, 22);
   --color-component-uncommon: rgb(49, 53, 54);
@@ -288,8 +289,6 @@ html * {
   background-color: var(--color-secondary);
   padding: 15px;
   border-radius: 10px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
 }
 
 .main-view-item-single-container {
@@ -499,6 +498,48 @@ html * {
 }
 
 
+
+
+
+.sell-button {
+
+}
+
+.sell-button-container.absolute {
+  position: relative;
+}
+
+.sell-button.absolute {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.tracker-item-parent .sell-button-icon {
+  opacity: 0%;
+}
+
+.sell-button-icon.sell, 
+.sell-button-icon:hover, 
+.tracker-item-parent:hover .sell-button-icon {
+  opacity: 100%;
+}
+
+
+.sell-button-icon {
+  filter: invert(79%) sepia(14%) saturate(184%) hue-rotate(359deg) brightness(87%) contrast(86%);
+  width: 20px;
+  height: 20px;
+  opacity: 100%
+}
+
+.sell-button-icon.sell {
+  /* #8d651d */
+  filter: invert(35%) sepia(20%) saturate(4292%) hue-rotate(21deg) brightness(94%) contrast(77%);
+}
+
+
+
 .obtained-check {
 
 }
@@ -552,6 +593,14 @@ html * {
 .obtained-label-component.hidden {
   opacity: 0%;
 }
+
+
+.obtained-extra-component {
+  gap: 2px;
+  font-style: italic;
+  font-size: small;
+}
+
 
 .item-check-parent {
   position: relative;
@@ -631,6 +680,10 @@ html * {
   background-color: #00462359;
 }
 
+.object-farmed-partial-main-page {
+  background-color: #002a4659;
+}
+
 
 .object-partial-farmed {
   background-color: #132c4659;
@@ -706,6 +759,11 @@ html * {
 
 .icon-success-filter {
   filter: invert(22%) sepia(94%) saturate(7406%) hue-rotate(159deg) brightness(90%) contrast(82%);
+}
+
+.icon-failure-filter {
+  /* #6b2020 */
+  filter: invert(14%) sepia(60%) saturate(2638%) hue-rotate(341deg) brightness(84%) contrast(89%);
 }
 
 .search-button{
@@ -923,3 +981,19 @@ input:checked + .slider:before {
 }
 
 /*   --------------------------------------- */
+
+.sell-pane-button {
+  background-color: var(--color-component-rare);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.global-context-menu-ui {
+  background-color: var(--color-tertiary);
+}
+
+.confirm-sell-button {
+  background-color: var(--color-component-rare);
+  border-radius: 10px;
+  padding: 10px;
+}

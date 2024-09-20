@@ -198,9 +198,9 @@ export default function ItemPage({ routeId, pathObj }) {
     const [ hideFarmed, setHideFarmed ] = useState(true);
     const [ userPreferences, setUserPreferences ] = useUserDataPreferences();
 
-    useEffect(() => {
-        document.title = com.generatePageTitle(pathObj.id);
-      }, []);
+    // useEffect(() => {
+    //     document.title = com.generatePageTitle(pathObj.id);
+    //   }, []);
 
     const item =  com.getObjectFromId(pathObj.id); // await com.getAllItems().find(item => item.name.localeCompare(pathObj.id) == 0);
     const components = com.getSearchResultRelatedObjects(null, "Items", null, "components", item, { router: router });
@@ -208,9 +208,6 @@ export default function ItemPage({ routeId, pathObj }) {
 
     return (
         <div className='sized-content v-flex'>
-            <Head>
-                <title>{com.generatePageTitle(pathObj.id)}</title>
-            </Head>
             <div className='sized-remaining h-flex flex-center'>
                 <div className='sized-remaining v-flex flex-center' style={{ gap: '50px' }}>
                     <div className='sized-content h-flex' style={{ marginTop: '20px' }}></div>
@@ -224,7 +221,7 @@ export default function ItemPage({ routeId, pathObj }) {
                     >
                         { 
                             components.map((component, index) => (
-                                <Link key={`${index}-${component.id}`}  href={com.getObjectRouteFromId(component.id)}><ComponentAddButton component={component}/></Link>
+                                <ComponentAddButton key={`${index}-${component.id}`} component={component}/>
                             )) 
                         }
                     </div>

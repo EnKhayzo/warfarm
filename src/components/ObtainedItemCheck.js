@@ -12,7 +12,7 @@ export default function ObtainedItemCheck({ positionAbsolute=true, hollowAbsolut
     
     const obj = com.getObjectFromId(itemId);
     if(obj == null) return null;
-    if(obj.category === "missions" || obj.category === "relics") return (null);
+    if(obj.category === "missions") return (null);
 
     const isObtainedPerc = showPartial ? com.objectIsFarmedPerc(obj, _obtainedComponents) : (com.objectIsFarmed(obj, _obtainedComponents) ? 1 : 0);
     return (

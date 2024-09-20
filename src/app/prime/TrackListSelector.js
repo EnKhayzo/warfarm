@@ -4,7 +4,7 @@ import { React, useState, useEffect, useRef, useLayoutEffect } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 
-import TrackItemButton from '@/components/TrackItemButton.js';
+import ItemActionButton from '@/components/ItemActionButton.js';
 
 import * as com from "@/app/common.js"
 import useObtainedComponents from '@/hooks/useObtainedComponents';
@@ -13,8 +13,9 @@ import useCurrentTrackList from '@/hooks/useCurrentTrackList';
 import useTrackedItems from '@/hooks/useTrackedItems';
 import IconButton from '@/components/IconButton';
 import ObtainedResurgenceGroup from '@/components/ObtainedResurgenceGroup';
-import ObtainedLabelObject from '@/components/ObtainedLabelObject';
+import ObjectStateLabel from '@/components/ObjectStateLabel';
 import ConfirmButton from '@/components/ConfirmButton';
+import HomeSelectorComponent from './HomeSelectorComponent';
 
 export default function TrackListSelector({}){
     const router = useRouter();
@@ -51,259 +52,105 @@ export default function TrackListSelector({}){
     };
     
     return (
-        <div className='sized-content v-flex flex-center' style={{ gap: '10px' }}>
-            { sharedTrackList ? <span style={{ fontStyle: 'italic' }}>Shared track list</span> :null }
-            <div 
-                className='sized-content h-flex flex-center' 
-                style={{ position: 'relative', gap: '10px' }}
-            >
-                <div
-                    className='sized-content h-flex flex-center' 
-                    style={{ 
-                        position: 'relative',
-                        gap: '5px',
-                        backgroundColor: 'var(--color-tertiary)',
-                        borderRadius: '10px',
-                        padding: '10px',
-                        cursor: sharedTrackList ? 'default' : 'pointer',
-                        opacity: sharedTrackList ? '50%' : '100%'
-                    }}
-                    onClick={(ev) => { if(sharedTrackList) return; setMenuOpen(!menuOpen); }}
-                >
-                    <div className='sized-content h-flex flex-center' style={{ marginBottom: '2px' }}>{ sharedTrackList ? sharedTrackList.id : currentTrackList ?? '?'}</div>
-                    <div className='sized-content h-flex flex-center'><img className='sized-content h-flex icon-default-filter flex-center' src={`${com.getBaseEnvPath().basePath}/icons/arrow.svg`} style={{ width: '10px', transform: 'rotate(90deg)' }}/></div>
-                    {
-                        !menuOpen ? null:
-                        <div 
-                            ref={menuRef} 
-                            className='sized-content selector-option-wrapper v-flex flex-center'
-                            style={{ 
-                                // width: '400px',
-                                overflow: 'hidden',
-                                position: 'absolute', 
-                                top: '50px',
-                                zIndex: '1000',
-                                width: '75vw',
-                                cursor: 'default'
-                            }}
-                        >
-                            <div 
-                                className='sized-content selector-option-container v-flex flex-center'
-                                style={{ 
-                                    gap: '10px'
-                                }}
-                            >
-                                {
-                                    Object.entries(trackLists)
-                                        .map(([ trackListId, trackList ], index) => (
-                                            <div
-                                                key={`${index}-${trackListId}`}
-                                                className='sized-content h-flex selector-option track-list-selector-option flex-center'
-                                                style={{
-                                                    minWidth: 'fit-content',
-                                                    textAlign: 'center',
-                                                    width: 'auto',
-                                                    padding: '10px',
-                                                    backgroundColor: 'var(--color-secondary)',
-                                                    cursor: 'pointer'
-                                                }}
-                                                onClick={() => handleConfirm([ trackListId, trackList ])}
-                                            >
-                                                <div className='sized-content v-flex flex-center' style={{ gap: '10px' }}>
-                                                    <div className='sized-content h-flex flex-center' style={{ fontWeight: 'bold', fontSize: 'x-large' }}>{trackListId}</div>
-                                                    <div className='sized-content h-flex flex-center' style={{ gap: '10px', flexWrap: 'wrap', pointerEvents: 'none' }}>
-                                                        {
-                                                            trackList.trackedItems == null || com.isDictEmpty(com.filterDict(trackList.trackedItems, entry => entry[1].tracked == true)) ? <div>(Track List is empty)</div> :
-                                                            Object.entries(trackList.trackedItems)
-                                                                .filter(([ itemId, trackedItem ]) => trackedItem.tracked == true)
-                                                                .map(([ itemId, item ]) => (
-                                                                    <Link href={com.getObjectRouteFromId(itemId)} 
-                                                                        key={`${itemId}-${index}`} 
-                                                                        className={`sized-content item-check-parent tracked-items-button v-flex flex-center${com.objectIsFarmed(com.getObjectFromId(itemId), obtainedComponents) ? ` object-farmed-main-page` : ``}`}
-                                                                        style={{ 
-                                                                            position: 'relative', 
-                                                                            cursor: 'pointer',
-                                                                            alignSelf: 'stretch',
-                                                                            minWidth: '150px' 
-                                                                        }}
-                                                                    >
-                                                                        <img className='sized-content tracked-items-icon h-flex' style={{ minWidth: 'fit-content', height: '90px' }} src={com.getObjectIcon(com.getObjectFromId(itemId))}/>
-                                                                        <div className='sized-content h-flex flex-center' style={{ minWidth: 'fit-content', textAlign: 'center' }}>{itemId}</div>
-                                                                            { 
-                                                                            (() => { 
-                                                                                const trackedObject = com.getObjectFromId(itemId); 
-                                                                                if(trackedObject.category === "items" || trackedObject.category === "components") return (
-                                                                                    <ObtainedLabelObject object={trackedObject} />
-                                                                                ); 
+        <HomeSelectorComponent 
+            elemList={trackLists} 
+            sharedList={sharedTrackList} 
+            currentList={currentTrackList}
+            obtainedComponents={obtainedComponents}
+            sharedListLabel={`Shared track list`}
+            emptyListLabel={`Track List is empty`}
+            itemFilterFunc={(item) => item.tracked == true}
+            innerListGetFunc={list => list.trackedItems}
+            onClicks={{
+                handleConfirm: handleConfirm,
+                saveShared: () => {
+                    com.showDialogUi({
+                        title: "Choose the name that this Track List will have:",
+                        value: sharedTrackList.id,
+                        type: "textString",
+                        ok: (ev, text) => {
+                            const id = text;
+                            let newTrackList = sharedTrackList;
 
-                                                                                return null; 
-                                                                            })() 
-                                                                        }
-                                                                        {/* <TrackItemButton itemId={itemId} positionAbsolute={true}/> */}
-                                                                        <ObtainedResurgenceGroup itemId={itemId} positionAbsolute={true}/>
-                                                                    </Link>
-                                                                ))
-                                                        }
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))
-                                }
-                            </div>
-                        </div>
-                    }
-                </div>
-                <div 
-                    className='sized-content h-flex' 
-                    style={{ 
-                        position: 'absolute',
-                        top: '0px',
-                        right: '-140px',
-                        height: '100%',
-                        width: '120px',
-                        gap: '10px'
-                    }}
-                >
-                    {
-                        sharedTrackList ? 
-                        <>
-                            <IconButton 
-                                blinkEnabled={false}
-                                label={''} 
-                                iconUrl={`${com.getBaseEnvPath().basePath}/icons/save.svg`} 
-                                iconClassName={`icon-default-filter track-list-icon`}
-                                onClick={() => {
-                                    com.showDialogUi({
-                                        title: "Choose the name that this Track List will have:",
-                                        value: sharedTrackList.id,
-                                        type: "textString",
-                                        ok: (ev, text) => {
-                                            const id = text;
-                                            let newTrackList = sharedTrackList;
+                            newTrackList.id = text;
 
-                                            newTrackList.id = text;
+                            const addTrackList = () => {
+                                com.addUserDataTrackList(newTrackList);
+                                com.setUserDataActiveTrackList(id);
+                                router.push(window.location.href.split('?')[0]);
+                            }
 
-                                            const addTrackList = () => {
-                                                com.addUserDataTrackList(newTrackList);
-                                                com.setUserDataActiveTrackList(id);
-                                                router.push(window.location.href.split('?')[0]);
-                                            }
+                            if(trackLists[id] != null) { 
+                                console.warn(`track list already exists!`);
+                                
+                                com.showDialogUi({
+                                    title: `A Track List with the name '${id}' already exists! Overwrite?`,
+                                    type: 'okcancel',
+                                    ok: () => {
+                                        addTrackList();
+                                    }
+                                })
 
-                                            if(trackLists[id] != null) { 
-                                                console.warn(`track list already exists!`);
-                                                
-                                                com.showDialogUi({
-                                                    title: `A Track List with the name '${id}' already exists! Overwrite?`,
-                                                    type: 'okcancel',
-                                                    ok: () => {
-                                                        addTrackList();
-                                                    }
-                                                })
+                                return; 
+                            }
 
-                                                return; 
-                                            }
+                            addTrackList();
+                        }
+                    })
+                },
+                cancelSaveShared: () => { router.push(window.location.href.split('?')[0]) },
+                editList: () => {
+                    com.showDialogUi({
+                        title: `Set new name for ${currentTrackList}:`,
+                        type: "textString",
+                        value: currentTrackList,
+                        ok: (ev, text) => {
+                            const newName = text;
 
-                                            addTrackList();
-                                        }
-                                    })
-                                }}
-                            />
-                            <IconButton 
-                                blinkEnabled={false}
-                                label={''} 
-                                iconUrl={`${com.getBaseEnvPath().basePath}/icons/failure.svg`} 
-                                iconClassName={'icon-default-filter track-list-icon'}
-                                onClick={() => {
-                                    router.push(window.location.href.split('?')[0]);
-                                }}
-                            />
-                        </>
-                        :
-                        <>
-                            <IconButton 
-                                blinkEnabled={false}
-                                label={''} 
-                                iconUrl={`${com.getBaseEnvPath().basePath}/icons/edit.svg`} 
-                                iconClassName={'icon-default-filter track-list-icon'}
-                                onClick={() => {
+                            const renameList = () => {
+                                com.renameUserDataTrackList(currentTrackList, text);
+                                com.setUserDataActiveTrackList(text);
+                            };
 
-                                    com.showDialogUi({
-                                        title: `Set new name for ${currentTrackList}:`,
-                                        type: "textString",
-                                        value: currentTrackList,
-                                        ok: (ev, text) => {
-                                            const newName = text;
+                            if(trackLists[newName] != null) { 
+                                console.warn(`track list already exists!`);
+                                
+                                com.showDialogUi({
+                                    title: `A Track List with the name '${newName}' already exists! Overwrite?`,
+                                    type: 'okcancel',
+                                    ok: () => {
+                                        renameList();
+                                    }
+                                })
 
-                                            const renameList = () => {
-                                                com.renameUserDataTrackList(currentTrackList, text);
-                                                com.setUserDataActiveTrackList(text);
-                                            };
+                                return; 
+                            }
+                            
+                            renameList();
+                        }
+                    })
+                },
+                addList: () => {
+                    const newName = com.generateTrackListName();
+                    com.addUserDataTrackList({ id: newName, trackedItems: {} });
+                    com.setUserDataActiveTrackList(newName);
+                },
+                deleteList: () => {
+                    com.removeUserDataTrackList(com.getUserDataCurrentTrackListId());
+                },
+                shareList: () => {
+                    let trackListToShare = com.cloneDict(trackLists[currentTrackList]);
+                    trackListToShare.trackedItems = com.filterDict(
+                        trackListToShare.trackedItems,
+                        ([ name, item ]) => item.tracked == true 
+                    )
 
-                                            if(trackLists[newName] != null) { 
-                                                console.warn(`track list already exists!`);
-                                                
-                                                com.showDialogUi({
-                                                    title: `A Track List with the name '${newName}' already exists! Overwrite?`,
-                                                    type: 'okcancel',
-                                                    ok: () => {
-                                                        renameList();
-                                                    }
-                                                })
+                    const urlString = `${window.location.href.split('?')[0]}?sharedTrackList=${com.encodeToBase64(trackListToShare)}`;
 
-                                                return; 
-                                            }
-                                            
-                                            renameList();
-                                        }
-                                    })
-                                }}
-                            />
-                            <IconButton 
-                                blinkEnabled={false}
-                                label={''} 
-                                iconUrl={`${com.getBaseEnvPath().basePath}/icons/add.svg`} 
-                                iconClassName={'icon-default-filter track-list-icon'}
-                                onClick={() => {
-                                    const newName = com.generateTrackListName();
-                                    com.addUserDataTrackList({ id: newName, trackedItems: {} });
-                                    com.setUserDataActiveTrackList(newName);
-                                }}
-                            />
-                            <ConfirmButton 
-                                headerContent={
-                                    <IconButton 
-                                        blinkEnabled={false}
-                                        label={''} 
-                                        iconUrl={`${com.getBaseEnvPath().basePath}/icons/trash-bin.svg`} 
-                                        iconClassName={'icon-default-filter track-list-icon'}
-                                    />
-                                }
-                                onConfirm={() => {
-                                    com.removeUserDataTrackList(com.getUserDataCurrentTrackListId());
-                                }}
-                            />
-                            <IconButton 
-                                blinkEnabled={false}
-                                label={''} 
-                                iconUrl={`${com.getBaseEnvPath().basePath}/icons/share.svg`} 
-                                iconClassName={'icon-default-filter track-list-icon'}
-                                onClick={() => {
-                                    let trackListToShare = com.cloneDict(trackLists[currentTrackList]);
-                                    trackListToShare.trackedItems = com.filterDict(
-                                        trackListToShare.trackedItems,
-                                        ([ name, item ]) => item.tracked == true 
-                                    )
-
-                                    const urlString = `${window.location.href.split('?')[0]}?sharedTrackList=${com.encodeToBase64(trackListToShare)}`;
-
-                                    navigator.clipboard.writeText(urlString);
-                                    com.showNotificationUi({ label: "url copied to clipboard!", type: "success" });
-                                }}
-                            />
-                        </>
-                    }
-                </div>
-            </div>
-        </div>
+                    navigator.clipboard.writeText(urlString);
+                    com.showNotificationUi({ label: "url copied to clipboard!", type: "success" });
+                }
+            }}
+        />
     );
 }

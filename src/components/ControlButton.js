@@ -5,6 +5,10 @@ import { useRouter } from 'next/navigation';
 
 import * as com from "../app/common.js"
 import ObtainedResurgenceGroup from './ObtainedResurgenceGroup.js';
+import DucatLabel from './DucatLabel.js';
+import useGlobalMode from '@/hooks/useGlobalMode.js';
+import useObtainedExtras from '@/hooks/useObtainedExtras.js';
+import ExtrasLabelObject from './ExtrasLabelObject.js';
 
 const ControlButton = ({ rawObj, infoObj=null, icon, vaulted, rarity, _labelHeading, _label, _labelFooter, onClick, onContextMenu, type }) => {  
   const router = useRouter();
@@ -47,6 +51,11 @@ const ControlButton = ({ rawObj, infoObj=null, icon, vaulted, rarity, _labelHead
     return () => {};
   }, []);
 
+  const [ globalMode, setGlobalMode ] = useGlobalMode();
+  const isFarmMode = globalMode == null || globalMode === "farmMode";
+
+  const [ obtainedExtras, setObtainedExtras ] = useObtainedExtras();
+
   const elem = (
     <div
       onClick={handleClick}
@@ -71,14 +80,23 @@ const ControlButton = ({ rawObj, infoObj=null, icon, vaulted, rarity, _labelHead
           infoObj.category === "Relics"  ? (
             <>
               <div className='sized-content' style={{ fontSize: 'small', color: '#b2aca2' }}>{rawObj.name}</div>
-              <div className='sized-content' style={{ fontSize: 'x-small', fontStyle: 'italic', color: '#b2aca2' }}>{`${obtained && obtained[rawObj.id] ? obtained[rawObj.id].obtained : '0'}/${rawObj.required}`}</div>
+              {
+                isFarmMode ?
+                  <div className='sized-content' style={{ fontSize: 'x-small', fontStyle: 'italic', color: '#b2aca2' }}>{`${obtained && obtained[rawObj.id] ? obtained[rawObj.id].obtained : '0'}/${rawObj.required}`}</div>
+                :
+                  <ExtrasLabelObject object={rawObj}/>
+              }
             </>
           )
           :
           (
             <>
-              <div className='sized-content' style={{ fontSize: 'small', color: '#b2aca2' }}>{`${obtained && obtained[rawObj.id] ? obtained[rawObj.id].obtained : '0'}/${rawObj.required}`}</div>
-            </>
+              {
+                isFarmMode ?
+                  <div className='sized-content' style={{ fontSize: 'small', fontStyle: 'italic', color: '#b2aca2' }}>{`${obtained && obtained[rawObj.id] ? obtained[rawObj.id].obtained : '0'}/${rawObj.required}`}</div>
+                :
+                  <ExtrasLabelObject object={rawObj}/>
+              }            </>
           )
         )
         : 
@@ -92,6 +110,7 @@ const ControlButton = ({ rawObj, infoObj=null, icon, vaulted, rarity, _labelHead
       }
 
       <ObtainedResurgenceGroup itemId={rawObj.id}/>
+      <DucatLabel rawObj={com.getObjectFromId(rawObj.id)}/>
     </div>
   );
 

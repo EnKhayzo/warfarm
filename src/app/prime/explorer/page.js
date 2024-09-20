@@ -24,16 +24,17 @@ import Head from 'next/head';
 
 import LazyLoaded from '@/components/LazyLoaded.js';
 import FillSpinner from '@/components/FillSpinner.js';
-import TrackItemButton from '@/components/TrackItemButton.js';
+import ItemActionButton from '@/components/ItemActionButton.js';
 
 import * as com from "@/app/common.js"
 import TabComponent from '@/components/TabComponent';
 import ObtainedItemCheck from '@/components/ObtainedItemCheck';
 
 import useObtainedComponents from '@/hooks/useObtainedComponents.js';
-import ObtainedLabelObject from '@/components/ObtainedLabelObject';
+import ObjectStateLabel from '@/components/ObjectStateLabel';
 import ObtainedResurgenceGroup from '@/components/ObtainedResurgenceGroup';
 import useMissionPriorities from '@/hooks/useMissionPriorities.js';
+import DucatLabel from '@/components/DucatLabel';
 
 
 const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) => {
@@ -158,9 +159,11 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
                     >
                       <div className='sized-content h-flex flex-center' style={{ objectFit: 'contain', height: '90px' }}><img  className='sized-content h-flex main-view-item-image flex-center' style={{ height: '100px', width: '100px', objectFit: 'contain' }} src={com.getObjectIcon(object)}/></div>
                       <div className='sized-content main-view-item-label h-flex flex-center' style={{ textAlign: 'center' }}>{ labelFunc(object) }</div>
-                      {/* <ObtainedLabelObject object={object}/> */}
-                      <TrackItemButton itemId={com.getObjectId(object, category)}/>
+                      {/* <ObjectStateLabel object={object}/> */}
+                      <ItemActionButton itemId={com.getObjectId(object, category)}/>
                       <ObtainedResurgenceGroup itemId={com.getObjectId(object, category)} positionAbsolute={true}/>
+                      <ObjectStateLabel object={object} exclusiveMode={"ducatMode"}/>
+                      <DucatLabel rawObj={object}/>
                     </Link>
                   )) 
                 }
@@ -276,15 +279,12 @@ const ObjectSectionBuilder = ({ category }) => {
 export default function ExplorerPage() {
   const router = useRouter();
 
-  useEffect(() => {
-    document.title = com.generatePageTitle("Explorer");
-  }, []);
+  // useEffect(() => {
+  //   document.title = com.generatePageTitle("Explorer");
+  // }, []);
 
   return (
     <div className='sized-remaining v-flex flex-center' style={{ gap: '20px' }}>
-      <Head>
-          <title>{com.generatePageTitle("Explorer")}</title>
-      </Head>
       <TabComponent
         style={{ width: '95vw' }}
         defaultTab={"Items"}

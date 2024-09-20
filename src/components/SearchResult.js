@@ -8,11 +8,14 @@ import ControlButton from './ControlButton';
 import * as com from "../app/common.js"
 
 import { SearchBarContext } from '../contexts/SearchBarContext';
-import TrackItemButton from './TrackItemButton';
+import ItemActionButton from './ItemActionButton';
 import ObtainedLabelButton from './ObtainedLabelButton';
 import ObtainedItemCheck from './ObtainedItemCheck';
 import ResurgenceItemIcon from './ResurgenceItemIcon';
 import useObtainedComponents from '@/hooks/useObtainedComponents';
+import DucatLabel from './DucatLabel';
+import useGlobalMode from '@/hooks/useGlobalMode';
+import CraftedButtonExtras from './CraftedButtonExtras';
 
 const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCallback, rawObj }) => {
   const router = useRouter();
@@ -51,6 +54,13 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
   };
   const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
 
+  const farmedPerc = com.objectIsFarmedPerc(com.getObjectFromId(rawObj.id));
+
+  const [ globalMode, setGlobalMode ] = useGlobalMode();
+  const isFarmMode = globalMode == null || globalMode === "farmMode";
+
+  const _rawObj = com.getObjectFromId(rawObj.id);
+
   return (
     <div
       className="sized-remaining global-search-result item-check-parent tracker-item-parent h-flex" 
@@ -59,7 +69,7 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
         gap: '10px',
         alignItems: 'center',
         padding: '10px',
-        backgroundColor: com.objectIsFarmed(com.getObjectFromId(rawObj.id)) ? 'var(--color-quaternary-farmed)' : 'var(--color-tertiary)',
+        backgroundColor: farmedPerc <= 0 ? 'var(--color-tertiary)' : farmedPerc >= 1 ? 'var(--color-quaternary-farmed)' : 'var(--color-quaternary-partial-farmed)',
         borderRadius: '5px',
         boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
         width: '50vw',
@@ -87,16 +97,18 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
             { 
               category === "Components" && rawObj.required > 0 ? 
               <div className='sized-remaining h-flex flex-center'>
-                <ObtainedLabelButton component={rawObj} isRawObj={true}/> 
+                <ObtainedLabelButton component={_rawObj} isRawObj={true}/> 
               </div>
               : null 
             }
 
             <ResurgenceItemIcon positionAbsolute={false} itemId={id}/>
             <ObtainedItemCheck positionAbsolute={false} hollowAbsolute={false} itemId={id}/>
-            <TrackItemButton positionAbsolute={false} itemId={id}/>
+            { !(_rawObj.category==="items" && !isFarmMode) ? null: <CraftedButtonExtras object={_rawObj} isRawObj={true}/>}
+            <ItemActionButton positionAbsolute={false} itemId={id} horizontal={true}/>
           </h2>
           <div style={{ color: '#9d9488' }}>{category}{type ? ` - ${type}` : ``}</div>
+          <DucatLabel rawObj={com.getObjectFromId(id)} style={{ marginTop: '3px', justifyContent: 'flex-start' }}/>
         </div>
       </Link>
 

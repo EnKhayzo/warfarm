@@ -115,9 +115,10 @@ const SearchBar = ({ isExpanded=false }) => {
     const handleClickOutside = (ev) => {
         if (resultAreaRef.current && 
             !resultAreaRef.current.contains(ev.target) && 
-            ev.target.closest(".global-search-bar-container") == null) {
+            ev.target.closest(".global-search-bar-container") == null &&
+            ev.target.closest(".global-context-menu-ui") == null) {
                 setShowResultArea(false);
-        }
+            }
       };
     
       useEffect(() => {

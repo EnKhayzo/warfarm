@@ -7,8 +7,8 @@ import * as com from "../app/common.js"
  * keep in mind: this automatically sets the body of the context menu style to 'top: 50px' 
  * consider overriding it via the style to better set the position of the body  
  */
-const ContextMenuButton = ({ top, children, buttons, headerContent, className, style }) => {
-  const [showContextMenu, setShowContextMenu] = useState(false);
+const ContextMenuButton = ({ top, children, buttons, headerContent, className, style, forceShowState=null }) => {
+  const [showContextMenu, setShowContextMenu] = useState(forceShowState ?? false);
   const contextMenuRef = useRef(null);
 
   const toggleContextMenu = () => {

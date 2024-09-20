@@ -8,7 +8,8 @@ export function NavigationEvents() {
   const searchParams = useSearchParams()
  
   useEffect(() => {
-    const url = `${pathname}?${searchParams}`;
+    // const url = `${pathname}?${searchParams}`;
+    // console.log(`pathname`, pathname);
   }, [pathname, searchParams])
  
   return null;

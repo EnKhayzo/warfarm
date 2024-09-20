@@ -28,7 +28,13 @@ import MainItemTitleComponent from './subcomponents/MainItemTitleComponent.js';
 import TabComponent from '@/components/TabComponent.js';
 import FallbackObject from './FallbackObject.js';
 
+const FarmingSheetTab = ({mission, rarityPriorities}) => {
 
+  
+    return (
+        <></>
+    );
+  }
 
 const RotationTab = ({mission, rarityPriorities}) => {
     const router = useRouter();
@@ -224,15 +230,12 @@ export default function RelicPage({ routeId, pathObj }) {
   const mission = com.getObjectFromId(pathObj.id);
 
 
-  useEffect(() => {
-    document.title = com.generatePageTitle(pathObj.id);
-  }, []);
+//   useEffect(() => {
+//     document.title = com.generatePageTitle(pathObj.id);
+//   }, []);
 
     return (
         <div className='sized-content v-flex'>
-            <Head>
-                <title>{com.generatePageTitle(pathObj.id)}</title>
-            </Head>
             <div className='sized-remaining h-flex flex-center'>
                 <div className='sized-remaining v-flex flex-center' style={{ gap: '50px' }}>
                     <div className='sized-content h-flex' style={{ marginTop: '20px' }}></div>
@@ -241,6 +244,7 @@ export default function RelicPage({ routeId, pathObj }) {
                         hasMinWidth={true}
                         defaultTab={"Rotations"}
                         tabs={{
+                            "Farming Sheet": <FarmingSheetTab mission={mission}/>,
                             "Rotations": <RotationTab mission={mission}/>,
                             "Relics": <RelicTab mission={mission}/>,
                         }}

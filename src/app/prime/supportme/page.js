@@ -59,9 +59,9 @@ function PatreonComponent(){
 export default function SupportMePage() {
   const router = useRouter();
 
-  useEffect(() => {
-    document.title = com.generatePageTitle("Support Me");
-  }, []);
+  // useEffect(() => {
+  //   document.title = com.generatePageTitle("Support Me");
+  // }, []);
 
   return (
     <div 
@@ -70,9 +70,6 @@ export default function SupportMePage() {
         padding: '10px'
       }}
     >
-      <Head>
-        <title>{com.generatePageTitle("Support Me")}</title>
-      </Head>
       <div 
         className='sized-remaining v-flex flex-center'
         style={{ 

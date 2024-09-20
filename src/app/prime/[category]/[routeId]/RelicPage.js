@@ -40,7 +40,7 @@ const ComponentTab = ({components}) => {
     >
           { 
             components.map((component, index) => (
-              <Link key={`${index}-${component.name}`} href={com.getObjectRouteFromId(component.id)}><ComponentAddButton component={component} fullName={true} /></Link>
+              <ComponentAddButton key={`${index}-${component.id}`} component={component} fullName={true} />
             )) 
           }
         </div>
@@ -108,9 +108,9 @@ export default function RelicPage({ routeId, pathObj }) {
   const router = useRouter();
   const [ missionPriorities, setMissionPriorities ] = useMissionPriorities();
 
-  useEffect(() => {
-    document.title = com.generatePageTitle(pathObj.id);
-  }, []);
+  // useEffect(() => {
+  //   document.title = com.generatePageTitle(pathObj.id);
+  // }, []);
 
   const relic = com.getObjectFromId(pathObj.id); // (await com.waitFor(async () => await com.getAllRelics(), null))[pathObj.id]
 
@@ -119,9 +119,6 @@ export default function RelicPage({ routeId, pathObj }) {
 
   return (
       <div className='sized-content v-flex'>
-          <Head>
-              <title>{com.generatePageTitle(pathObj.id)}</title>
-          </Head>
           <div className='sized-remaining h-flex flex-center'>
               <div className='sized-remaining v-flex flex-center' style={{ gap: '50px' }}>
                   <div className='sized-content h-flex' style={{ marginTop: '20px' }}></div>

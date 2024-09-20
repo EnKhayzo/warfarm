@@ -6,6 +6,7 @@ import { useParams } from 'next/navigation';
 import useTrackedItems from '@/hooks/useTrackedItems.js'
 
 import * as com from "@/app/common.js"
+import useGlobalMode from '@/hooks/useGlobalMode';
 
 export default function TrackItemButton({ positionAbsolute=true, itemId }){
     const [ trackedItems, setTrackedItems ] = useTrackedItems();

@@ -3,12 +3,13 @@
 import React from 'react';
 import { useParams } from 'next/navigation';
 
-import TrackItemButton from '@/components/TrackItemButton.js';
+import ItemActionButton from '@/components/ItemActionButton.js';
 
 import * as com from "@/app/common.js"
-import ObtainedLabelObject from '@/components/ObtainedLabelObject';
+import ObjectStateLabel from '@/components/ObjectStateLabel';
 import ResurgenceItemIcon from '@/components/ResurgenceItemIcon';
 import ObtainedResurgenceGroup from '@/components/ObtainedResurgenceGroup';
+import DucatLabel from '@/components/DucatLabel';
 
 export default function MainItemTitleComponent({ itemId, iconUrl, labelHeader, label, labelFooter }){
     return (
@@ -26,9 +27,10 @@ export default function MainItemTitleComponent({ itemId, iconUrl, labelHeader, l
             { labelHeader ? <div className='sized-content h-flex flex-center'>{labelHeader}</div> : null }
             { label ? <div className='sized-content h-flex flex-center' style={{ fontWeight: 'bold' }}>{label}</div> : null }
             { labelFooter ? <div className='sized-content h-flex flex-center' style={{ fontStyle: 'italic' }}>{labelFooter}</div> : null }
-            <ObtainedLabelObject object={com.getObjectFromId(itemId)} collapseWhenNull={false}/>
-            <TrackItemButton itemId={itemId}/>
+            <ObjectStateLabel object={com.getObjectFromId(itemId)} collapseWhenNull={false}/>
+            <ItemActionButton itemId={itemId}/>
             <ObtainedResurgenceGroup itemId={itemId}/>
+            <DucatLabel rawObj={com.getObjectFromId(itemId)}/>
         </div>
     );
 }

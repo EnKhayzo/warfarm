@@ -10,15 +10,12 @@ import * as com from "@/app/common.js"
 export default function AboutPage() {
   const router = useRouter();
 
-  useEffect(() => {
-    document.title = com.generatePageTitle("Upcoming");
-  }, []);
+  // useEffect(() => {
+  //   document.title = com.generatePageTitle("Upcoming");
+  // }, []);
 
   return (
     <div className='sized-remaining v-flex flex-center' style={{ whiteSpace: 'pre', gap: '50px' }}>
-      <Head>
-          <title>{com.generatePageTitle("Upcoming")}</title>
-      </Head>
       <div className='sized-content v-flex flex-center'>
         <div className='sized-content h-flex flex-center'><img style={{ objectFit: 'contain', width: '200px', height: '200px' }} className='sized-content h-flex flex-center' src={`${com.getBaseEnvPath().basePath}/images/Orokin Ducats.png`} /></div>
         <div className='sized-content h-flex flex-center' style={{ fontWeight: 'bold', fontSize: 'x-large' }}>Ducat Mode</div>
