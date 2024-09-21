@@ -64,7 +64,7 @@ const ControlButton = ({ rawObj, infoObj=null, icon, vaulted, rarity, _labelHead
       style={{
         alignSelf: 'stretch',
         position: 'relative',
-        height: rawObj.category === "components" ?  '100px' : '100%',
+        minHeight: rawObj.category === "components" ?  '100px' : '100%',
         minWidth: rawObj.category === "components" ? '80px' : 'unset'
       }}
     >

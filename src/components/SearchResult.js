@@ -142,7 +142,7 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
             <div className="sized-remaining h-flex" style={{ gap: '5px', width: '1px' }}>
                 <div className="sized-remaining">{/** spacer */}</div>
                 {getControlButtons().length > 0 ? getControlButtons().map((infoObj, index) => (
-                    <Link className='control-button' style={{ padding: '0px' }} href={infoObj.route} key={(() => { const key = `${infoObj.id}-${activeTab}-${index}`; return key})()}>
+                    <Link className='control-button' style={{ padding: '0px', alignSelf: 'stretch' }} href={infoObj.route} key={(() => { const key = `${infoObj.id}-${activeTab}-${index}`; return key})()}>
                       <ControlButton 
                         icon={infoObj.icon} 
                         rawObj={infoObj.rawObj}
