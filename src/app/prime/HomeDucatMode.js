@@ -252,6 +252,26 @@ export default function HomeDucatMode() {
   const [ sellItems, setSellItems ] = useSellItems();
   const noSellItems = Object.entries(sellItems ?? {}).filter(([ itemId, trackedItem ]) => com.getUserDataSellItemValue(itemId) > 0).length <= 0;
   
+  // const [ worldState, setWorldState ] = useState(null);
+  // useEffect(() => {
+  //   (async () => {
+  //     try {
+  //       // Fetch the JSON response from the URL
+  //       const response = await fetch('https://content.warframe.com/dynamic/worldState.php');
+        
+  //       // Parse the response as JSON
+  //       const data = await response.json();
+        
+  //       console.log(`set world state!`, data);
+
+  //       // Update state with the fetched data
+  //       setWorldState(data);
+  //     } catch (error) {
+  //       console.error('Error fetching data:', error);
+  //     }
+  //   })();
+  // }, []);
+
   // useEffect(() => {
   //   document.title = com.generatePageTitle("Home");
   // }, []);
@@ -264,6 +284,9 @@ export default function HomeDucatMode() {
           <img className='sized-content h-flex flex-center' style={{ width: '400px' }} src={`${com.getBaseEnvPath().basePath}/icons/logo_prime.svg`}/>
         </div>
       }
+      <div className='sized-remaining v-flex flex-center' style={{ gap: '50px' }}>
+        <div>Baro will arrive in</div>
+      </div>
       <div className='sized-remaining v-flex flex-center' style={{ gap: '100px' }}>
         <SellItemsComponent/>
         <DuplicatesComponent/>

@@ -36,6 +36,7 @@ export default function SellItemButton({ positionAbsolute=true, itemId }){
     return (
         <>
             <button 
+                title={`Sell components`}
                 className={`sized-content sell-button${ positionAbsolute ? ' absolute' : '' } v-flex flex-center`}
                 onClick={(ev) => { 
                     ev.stopPropagation(); 
@@ -45,13 +46,13 @@ export default function SellItemButton({ positionAbsolute=true, itemId }){
                                         
                     const sellItem = com.getUserDataSellItem(id) ?? {};
 
-                    if(!isFarmed && !(com.getUserDataSellItemValue(itemId) > 0)) {
-                        com.showNotificationUi({
-                            type: "failure",
-                            label: "Cannot sell non-farmed (and crafted) element"
-                        });
-                        return;
-                    }
+                    // if(!isFarmed && !(com.getUserDataSellItemValue(itemId) > 0)) {
+                    //     com.showNotificationUi({
+                    //         type: "failure",
+                    //         label: "Cannot sell non-farmed element"
+                    //     });
+                    //     return;
+                    // }
 
                     // com.setUserDataSellItemValue(id, com.getUserDataSellItemValue(itemId) ? 1 : 0);
 

@@ -27,6 +27,7 @@ export default function DuplicateItemButton({ positionAbsolute=true, itemId }){
     return (
         <>
             <button 
+                title={`Set duplicate components`}
                 className={`sized-content sell-button${ positionAbsolute ? ' absolute' : '' } v-flex flex-center`}
                 onClick={(ev) => { 
                     ev.stopPropagation(); 

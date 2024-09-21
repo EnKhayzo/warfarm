@@ -20,6 +20,7 @@ export default function AboutPage() {
         <div className='sized-content h-flex flex-center'><img style={{ objectFit: 'contain', width: '200px', height: '200px' }} className='sized-content h-flex flex-center' src={`${com.getBaseEnvPath().basePath}/images/Orokin Ducats.png`} /></div>
         <div className='sized-content h-flex flex-center' style={{ fontWeight: 'bold', fontSize: 'x-large' }}>Ducat Mode</div>
         <div className='sized-content h-flex flex-center' style={{ fontStyle: 'italic', fontSize: 'small' }}>Keep track of all extras you have and how much they are worth</div>
+        <div className='sized-content h-flex flex-center' style={{ fontStyle: 'italic', fontWeight: 'bold', fontSize: 'medium', marginTop: '30px', backgroundColor: 'var(--color-component-rare)', borderRadius: '10px', padding: '10px' }}>Ducat Mode is now available! Click on the &apos;Farm Mode&apos; button next to the Search Bar to switch.</div>
       </div>
       <div className='sized-content v-flex flex-center' style={{ whiteSpace: 'pre', gap: '5px' }}>
         <div>-Possibly more sorting options for relic/mission tabs</div>
