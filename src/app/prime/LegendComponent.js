@@ -55,7 +55,7 @@ const sortSpanStyle = {
 
 function GeneralComponent({}){
   return (
-    <div className='sized-content v-flex flex-center'>
+    <div className='sized-content v-flex flex-center' style={{ gap: '30px' }}>
       <div className="sized-content v-flex flex-center">
           <div className="sized-content h-flex" style={{ fontSize: 'x-large', fontWeight: 'bold' }}>Icons - Lists</div>
           <div className="sized-content v-flex">
@@ -73,7 +73,7 @@ function GeneralComponent({}){
 
 function FarmModeComponent({}){
   return (
-      <div className='sized-content v-flex flex-center'>
+      <div className='sized-content v-flex flex-center' style={{ gap: '30px' }}>
         <div className="sized-content v-flex flex-center">
             <div className="sized-content h-flex" style={{ fontSize: 'x-large', fontWeight: 'bold' }}>Icons</div>
             <div className="sized-content v-flex">
