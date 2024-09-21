@@ -25,6 +25,7 @@ export default function ObtainedLabelButtonObtained({ component, isRawObj=false,
                 componentIsAnomalous ? null:
                 <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
                     <button 
+                        title='Increase farmed amount'
                         className='sized-content h-flex object-page-component-owned-button flex-center'
                         onClick={(ev) => {
                             ev.preventDefault();
@@ -36,6 +37,7 @@ export default function ObtainedLabelButtonObtained({ component, isRawObj=false,
                     </button>
                     { !showLabel ? null: <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', fontStyle: 'italic', minWidth: 'fit-content' }}>{`${obtainedComponents && obtainedComponents[_component.id] ? obtainedComponents[_component.id].obtained : '0'}/${_component.required}`}</div> }
                     <button 
+                        title='Decrease farmed amount'
                         className='sized-content h-flex object-page-component-owned-button flex-center'
                         onClick={(ev) => {
                             ev.preventDefault();

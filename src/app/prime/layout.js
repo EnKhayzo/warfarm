@@ -58,9 +58,9 @@ function NavBarMainButtons({ forceHomeBlink }){
 
   return (
     <>
-      <Link href="/prime"><IconButton label={'Home'}      iconUrl={`${com.getBaseEnvPath().basePath}/icons/home.svg`}     highlight={pathName === "/prime"}          forceBlinking={forceHomeBlink}  className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
-      <Link href="/prime/explorer"><IconButton label={'Explorer'}  iconUrl={`${com.getBaseEnvPath().basePath}/icons/explorer.svg`} highlight={pathName === "/prime/explorer"} forceBlinking={null}         className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
-      <Link href="/prime/about"><IconButton label={'About'}     iconUrl={`${com.getBaseEnvPath().basePath}/icons/question.svg`} highlight={pathName === "/prime/about"}    forceBlinking={null}            className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
+      <Link title='Home Page' href="/prime"><IconButton label={'Home'}      iconUrl={`${com.getBaseEnvPath().basePath}/icons/home.svg`}     highlight={pathName === "/prime"}          forceBlinking={forceHomeBlink}  className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
+      <Link title='Explorer Page' href="/prime/explorer"><IconButton label={'Explorer'}  iconUrl={`${com.getBaseEnvPath().basePath}/icons/explorer.svg`} highlight={pathName === "/prime/explorer"} forceBlinking={null}         className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
+      <Link title='About Page' href="/prime/about"><IconButton label={'About'}     iconUrl={`${com.getBaseEnvPath().basePath}/icons/question.svg`} highlight={pathName === "/prime/about"}    forceBlinking={null}            className={'layout-header-button'} iconClassName={'layout-header-icon'} /></Link>
     </>
   );
 }
@@ -72,6 +72,7 @@ function NavBarSideButtons({}){
     <>
       <Link href="/prime/upcoming">
         <IconButton 
+          title='Upcoming Page'
           label={'Upcoming'} 
           iconUrl={`${com.getBaseEnvPath().basePath}/icons/news.svg`} 
           highlight={pathName === "/prime/upcoming"} 
@@ -110,6 +111,7 @@ function DucatModeButton(){
 
   return (
     <IconButton 
+      title='Switch Mode' 
       label={ isFarmMode ? 'Farm Mode' : "Ducat Mode" }
       iconUrl={isFarmMode ? `${com.getBaseEnvPath().basePath}/icons/farm.svg` : `${com.getBaseEnvPath().basePath}/images/Orokin Ducats.png`}
       className={'layout-header-button'}
@@ -291,6 +293,7 @@ export function MainLayoutComponent({children}){
                 <div className="sized-content h-flex flex-center" style={{ gap: '20px', justifyContent: 'flex-start' }}>
                   <div className='sized-content h-flex' style={{ justifyContent: 'center', alignItems: 'center' }}>
                     <button 
+                      title='Home Page' 
                       onClick={() => {
                         if(pathName !== "/prime"){
                           router.push("/prime");  
@@ -315,7 +318,7 @@ export function MainLayoutComponent({children}){
                   </div>
                 </div>
                 <div className="sized-remaining h-flex flex-center">
-                  <button className="sized-content h-flex search-button" onClick={handleSearchExpand}>
+                  <button title='Show Search Bar' className="sized-content h-flex search-button" onClick={handleSearchExpand}>
                     <img style={{ height: '30px' }} className="sized-content h-flex icon-default-filter" src={`${com.getBaseEnvPath().basePath}/icons/search.svg`} alt="Search" />
                   </button>
                   <div 
@@ -329,7 +332,7 @@ export function MainLayoutComponent({children}){
                   </div>
                 </div>
                 <div className="sized-content h-flex flex-center" style={{ gap:'20px', justifyContent: 'flex-end' }}>
-                  <Link href="/prime/supportme"><IconButton label={'Support Me'} iconUrl={`${com.getBaseEnvPath().basePath}/icons/heart.svg`} className={'layout-header-button support-me-button'} iconClassName={'support-me-icon'} iconHeight='20px' /></Link>
+                  <Link href="/prime/supportme"><IconButton title='Donation Page' label={'Support Me'} iconUrl={`${com.getBaseEnvPath().basePath}/icons/heart.svg`} className={'layout-header-button support-me-button'} iconClassName={'support-me-icon'} iconHeight='20px' /></Link>
                   <div className="sized-content h-flex flex-center">
                     <MediaQueryCollapseContextMenuButton>
                       <NavBarSideButtons/>
@@ -352,6 +355,7 @@ export function MainLayoutComponent({children}){
                       }
                     </ContextMenuButton> */}
                     <button 
+                      title='Info Page'
                       className='sized-content h-flex'
                       style={{ position: 'relative' }}
                       onClick={(ev) => {
@@ -377,6 +381,7 @@ export function MainLayoutComponent({children}){
                       }
                     </button>
                     <ContextMenuButton
+                      title='Settings'
                       top='50px' 
                       style={{ right: '0px' }}
                       className='global-settings-button'

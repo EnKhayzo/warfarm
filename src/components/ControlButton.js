@@ -64,7 +64,8 @@ const ControlButton = ({ rawObj, infoObj=null, icon, vaulted, rarity, _labelHead
       style={{
         alignSelf: 'stretch',
         position: 'relative',
-        height: '100%'
+        height: rawObj.category === "components" ?  '100px' : '100%',
+        minWidth: rawObj.category === "components" ? '80px' : 'unset'
       }}
     >
       <img className='sized-content' src={icon} alt={label} style={{ height: '30px', marginBottom: '5px' }} />

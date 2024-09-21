@@ -36,6 +36,8 @@ import useSellLists from '@/hooks/useSellLists.js';
 import SellValueLabelObject from '@/components/SellValueLabelObject.js';
 import useObtainedExtras from '@/hooks/useObtainedExtras.js';
 import ComponentAddButton from './[category]/[routeId]/subcomponents/ComponentAddButton.js';
+import ObtainedLabelButtonExtras from '@/components/ObtainedLabelButtonExtras.js';
+import SellItemButtons from '@/components/SellItemButtons.js';
 
 
 export function SellItemsComponent(){
@@ -77,7 +79,7 @@ export function SellItemsComponent(){
   };
 
   return (
-      <div className='sized-content tracked-items v-flex flex-center' style={{ gap: '50px' }}>
+      <div className='sized-content tracked-items v-flex flex-center' style={{ gap: '50px', minHeight: '620px' }}>
         <div 
           className='sized-content h-flex'
           style={{ fontSize: 'x-large', fontWeight: 'bold', whiteSpace: 'pre' }}
@@ -170,12 +172,12 @@ export function SellItemsComponent(){
               >
                 <button 
                   className='sized-content h-flex confirm-sell-button'
-                  title='owned values will be deducted by the sell amout specified for each component'
+                  title='Owned values will be deducted by the sell amout specified for each component'
                   onClick={confirmSell} 
                 >
                   Confirm Sell
                 </button>
-                {/* <button onClick={confirmSellAndClear} title='owned values will be deducted by the sell amout specified for each component, the list will be cleared of all sell items'>Confirm Sell & Clear</button> */}
+                {/* <button onClick={confirmSellAndClear} title='Owned values will be deducted by the sell amout specified for each component, the list will be cleared of all sell items'>Confirm Sell & Clear</button> */}
               </div>
             </>
           :null
@@ -192,8 +194,8 @@ export function SellItemsComponent(){
                   </div>
                 </div>
               <div className='sized-content v-flex'>
-                <div>You&apos;re not selling any items. Add some by using the Search Bar or from the <Link href='/prime/explorer' style={{ cursor: 'pointer', color:'var(--color-link-text)' }}>Explorer</Link> page, or by selecting a Sell List (if you saved any).</div>
-                <div className='sized-content h-flex flex-center'>Sell items using the sell<img className='sized-content star-button-icon h-flex flex-center' style={{ height: '12px',  }} src={`${com.getBaseEnvPath().basePath}/icons/sell_hollow.svg`}/>button and specifying a quantity.</div>
+                <div className='sized-content h-flex flex-center'>You&apos;re not selling any items. Add some by using the Duplicates pane below (if you&apos;ve set any<img className='sized-content star-button-icon h-flex flex-center' style={{ height: '12px',  }} src={`${com.getBaseEnvPath().basePath}/icons/duplicates.svg`}/>duplicates), using the Search Bar or from the <Link href='/prime/explorer' style={{ cursor: 'pointer', color:'var(--color-link-text)' }}>Explorer</Link> page, or by selecting a Sell List (if you saved any).</div>
+                <div className='sized-content h-flex flex-center'>Sell items using the sell<img className='sized-content star-button-icon h-flex flex-center' style={{ height: '12px',  }} src={`${com.getBaseEnvPath().basePath}/icons/sell_hollow.svg`}/>button and specifying a quantity (you need to have set<img className='sized-content star-button-icon h-flex flex-center' style={{ height: '12px',  }} src={`${com.getBaseEnvPath().basePath}/icons/duplicates.svg`}/>duplicates first in order to sell). In the Duplicates pane you can directly sell items using the corresponding buttons.</div>
               </div>
             </div> 
           : 
@@ -221,7 +223,7 @@ export function DuplicatesComponent(){
         gap: '10px'
       }}
     >
-      <div className='sized-content h-flex flex-center' style={{ fontSize: 'x-large', fontWeight: 'bold' }}>Duplicates</div>
+      <div className='sized-content h-flex flex-center' style={{ fontSize: 'x-large', fontWeight: 'bold' }}>Duplicates you have</div>
       <div
         className='sized-content h-flex flex-center'
         style={{
@@ -233,14 +235,24 @@ export function DuplicatesComponent(){
         {
           Object.entries(obtainedExtras)
             .filter(([ componentId, extraObj ]) => extraObj.owned != null && extraObj.owned > 0)
-            .map(([ componentId, extraObj ], index) => (
-              <ComponentAddButton 
-                key={`${index}-${componentId}`} 
-                component={com.getObjectFromId(componentId)}
-                isRawObj={true}
-                fullName={true}
-              />
-            ))
+            .toSorted(([idA, a ], [ idB, b ]) => 
+              b.owned - a.owned 
+              || 
+              idA.localeCompare(idB)
+            )
+            .map(([ componentId, extraObj ], index) => { const component = com.getObjectFromId(componentId); return (
+              <div key={`${index}-${componentId}`}  className='sized-content v-flex flex-center' style={{ gap: '5px' }}>
+                <ComponentAddButton 
+                  component={com.getObjectFromId(componentId)}
+                  isRawObj={true}
+                  fullName={true}
+                  showButtons={false}
+                  showCorrespondingItem={true}
+                  style={{ minWidth: '205px' }}
+                />
+                <SellItemButtons component={component} showLabel={true} alwaysShowLabel={true}/>
+              </div>
+            )})
         }
       </div>
     </div>
@@ -278,15 +290,15 @@ export default function HomeDucatMode() {
 
   return (
     <div className='sized-remaining v-flex' style={{ justifyContent: 'center', gap: '0px' }}>
-      {
+      {/* {
         !noSellItems ? null :
         <div className='sized-content h-flex flex-center' style={{ padding: '10px' }}>
           <img className='sized-content h-flex flex-center' style={{ width: '400px' }} src={`${com.getBaseEnvPath().basePath}/icons/logo_prime.svg`}/>
         </div>
-      }
-      <div className='sized-remaining v-flex flex-center' style={{ gap: '50px' }}>
+      } */}
+      {/* <div className='sized-remaining v-flex flex-center' style={{ gap: '50px' }}>
         <div>Baro will arrive in</div>
-      </div>
+      </div> */}
       <div className='sized-remaining v-flex flex-center' style={{ gap: '100px' }}>
         <SellItemsComponent/>
         <DuplicatesComponent/>

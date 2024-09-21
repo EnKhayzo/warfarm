@@ -8,6 +8,7 @@ import useObtainedComponents from '@/hooks/useObtainedComponents.js';
 import * as com from "@/app/common.js"
 import ObtainedItemCheck from './ObtainedItemCheck';
 import ResurgenceItemIcon from './ResurgenceItemIcon';
+import CraftedButtonExtras from './CraftedButtonExtras';
 
 export default function ObtainedResurgenceGroup({ itemId, positionAbsolute=false, obtainedComponents=null }){
     return (
@@ -24,6 +25,13 @@ export default function ObtainedResurgenceGroup({ itemId, positionAbsolute=false
         >
             <ResurgenceItemIcon positionAbsolute={false} itemId={itemId}/>
             <ObtainedItemCheck positionAbsolute={false} itemId={itemId}/>
+            <CraftedButtonExtras 
+                positionAbsolute={false} 
+                object={com.getObjectFromId(itemId)} 
+                isRawObj={true} 
+                onlyShowOnHover={true}
+                iconStyle={{ width: '20px', height: '20px' }}
+            />
         </div>
     );
 }

@@ -24,7 +24,7 @@ export default function ExtrasLabelObject({ object, className, style, collapseWh
     }
     else if(object.category === "components"){
         const extrasObtained = com.getUserDataExtrasObtained(object.id);
-        extras = `${extrasObtained} duplicates`;
+        extras = `${extrasObtained} duplicate${ extrasObtained == 1 ? `` : `s` }`;
     }
     else extras = null;
 

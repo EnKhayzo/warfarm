@@ -24,6 +24,8 @@ const LabelCheckbox = ({ textLabel, name, value, onChange, onClick, checked, con
       stopPropagation: () => {}
     };
 
+    console.log(`triggering synthetic event`);
+
     // Call the React onChange handler to notify the parent of the change
     if (onChange) {
       onChange(syntheticEvent);
@@ -45,8 +47,8 @@ const LabelCheckbox = ({ textLabel, name, value, onChange, onClick, checked, con
         type="checkbox" 
         name={name} 
         value={value} 
-        onClick={onClick} 
-        onChange={onChange} 
+        onClick={ev => { ev.stopPropagation(); if(onClick) onClick(ev); }} 
+        onChange={ev => { ev.stopPropagation(); if(onChange) onChange(ev); }} 
         defaultChecked={checked ?? false}
       />
       <div className='sized-content' style={{ marginBottom: '2px' }}>{textLabel}</div>

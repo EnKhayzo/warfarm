@@ -104,7 +104,7 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
 
             <ResurgenceItemIcon positionAbsolute={false} itemId={id}/>
             <ObtainedItemCheck positionAbsolute={false} hollowAbsolute={false} itemId={id}/>
-            { !(_rawObj.category==="items" && !isFarmMode) ? null: <CraftedButtonExtras object={_rawObj} isRawObj={true}/>}
+            { !(_rawObj.category==="items" || _rawObj.category==="components") ? null: <CraftedButtonExtras onlyShowOnHover={true} object={_rawObj} isRawObj={true}/>}
             <ItemActionButton positionAbsolute={false} itemId={id} horizontal={true}/>
           </h2>
           <div style={{ color: '#9d9488' }}>{category}{type ? ` - ${type}` : ``}</div>

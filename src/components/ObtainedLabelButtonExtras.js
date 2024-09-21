@@ -53,6 +53,7 @@ export default function ObtainedLabelButtonExtras({ component, isRawObj=false, w
                         componentIsAnomalous ? null:
                         <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
                             <button 
+                                title='Increase duplicates amount'
                                 className='sized-content h-flex object-page-component-owned-button flex-center'
                                 onClick={(ev) => {
                                     ev.preventDefault();
@@ -64,6 +65,7 @@ export default function ObtainedLabelButtonExtras({ component, isRawObj=false, w
                             </button>
                             { !showLabel ? null: <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', fontStyle: 'italic', minWidth: 'fit-content' }}>{`${duplicatesNum} duplicates`}</div> }
                             <button 
+                                title='Decrease duplicates amount'
                                 className='sized-content h-flex object-page-component-owned-button flex-center'
                                 onClick={(ev) => {
                                     ev.preventDefault();
@@ -89,7 +91,7 @@ export default function ObtainedLabelButtonExtras({ component, isRawObj=false, w
                                     com.setUserDataExtrasCrafted(rawComponent.id, !isCrafted);
                                 }}
                             /> */}
-                            <CraftedButtonExtras object={rawComponent} isRawObj={true}/>
+                            {/* <CraftedButtonExtras object={rawComponent} isRawObj={true}/> */}
                         </div>
                     }
                 </div>

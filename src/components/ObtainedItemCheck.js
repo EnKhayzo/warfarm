@@ -17,11 +17,11 @@ export default function ObtainedItemCheck({ positionAbsolute=true, hollowAbsolut
     const isObtainedPerc = showPartial ? com.objectIsFarmedPerc(obj, _obtainedComponents) : (com.objectIsFarmed(obj, _obtainedComponents) ? 1 : 0);
     return (
             <div 
-                className={`sized-content obtained-check${ positionAbsolute ? ' absolute' : '' } v-flex flex-center${ isObtainedPerc <= 0 ? ` obtained-item-check-container-unfarmed` : ``}`}
+                className={`sized-content h-flex obtained-check${ positionAbsolute ? ' absolute' : '' } v-flex flex-center${ isObtainedPerc <= 0 ? ` obtained-item-check-container-unfarmed` : ``}`}
                 style={{ 
                     position: positionAbsolute ? 'absolute' : 'relative' ,
                     width: '20px',
-                    heigth: '20px'
+                    height: '20px'
                 }}
             >
                 <div 
@@ -29,7 +29,7 @@ export default function ObtainedItemCheck({ positionAbsolute=true, hollowAbsolut
                     style={{ 
                         position: 'relative',
                         width: '20px',
-                        heigth: '20px'
+                        height: '20px'
                     }}
                 >
                     {
@@ -52,6 +52,7 @@ export default function ObtainedItemCheck({ positionAbsolute=true, hollowAbsolut
                         :null
                     }
                     <img 
+                        title={`Item is${isObtainedPerc <= 0 ? ` not` : isObtainedPerc < 1 ? ` partially` : ``} farmed`}
                         src={isObtainedPerc < 1 ? `${com.getBaseEnvPath().basePath}/icons/success_hollow.svg` : `${com.getBaseEnvPath().basePath}/icons/success.svg`} 
                         className={`sized-content icon-default-filter flex-center obtained-check-hollow`}
                         onClick={(ev) => { 

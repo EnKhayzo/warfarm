@@ -15,6 +15,7 @@ export default function TrackItemButton({ positionAbsolute=true, itemId }){
 
     return (
             <button 
+                title='Track/Untrack Item'
                 className={`sized-content star-button${ positionAbsolute ? ' absolute' : '' } v-flex flex-center`}
                 onClick={(ev) => { 
                     ev.stopPropagation(); 

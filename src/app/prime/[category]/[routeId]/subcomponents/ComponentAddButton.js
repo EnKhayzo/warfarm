@@ -15,7 +15,7 @@ import ObjectStateLabel from '@/components/ObjectStateLabel';
 import ObtainedLabelObject from '@/components/ObtainedLabelObject';
 import ObtainedLabelButton from '@/components/ObtainedLabelButton';
 
-export default function ComponentAddButton({ component, isRawObj=false, fullName=false, iconHeight='75px', width=null }){
+export default function ComponentAddButton({ component, showCorrespondingItem=false, showButtons=true, isRawObj=false, fullName=false, iconHeight='75px', width=null, className, style }){
     const router = useRouter();
 
     const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
@@ -32,7 +32,7 @@ export default function ComponentAddButton({ component, isRawObj=false, fullName
     const componentIsAnomalous = component.required <= 0;
 
     return (
-        <div className='sized-content v-flex' style={{ alignSelf: 'stretch', gap: '5px' }}>
+        <div className={`sized-content v-flex${ className ? ` ${className}` : `` }`} style={com.shallowMerge({ alignSelf: 'stretch', gap: '5px' }, style)}>
             <Link 
                 href={route}
                 // onClick={() => router.push(route)}
@@ -45,7 +45,10 @@ export default function ComponentAddButton({ component, isRawObj=false, fullName
                     alignSelf: 'stretch'
                 }}
             >
-                <div className='sized-content h-flex flex-center'><img style={{ height: iconHeight }} src={`${com.getBaseEnvPath().basePath}/images/${component.fullName}.png`}/></div>
+                <div className='sized-content h-flex flex-center'>
+                    { !showCorrespondingItem ? null : <img style={{ height: `${Number(iconHeight.replace('px', ''))/1.7}px` }} src={`${com.getBaseEnvPath().basePath}/images/${component.parentItem}.png`}/> }
+                    <img style={{ height: iconHeight }} src={`${com.getBaseEnvPath().basePath}/images/${component.fullName}.png`}/>
+                </div>
                 <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
                     <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', textAlign: 'center' }}>{fullName ? component.fullName : component.name}</div>
                     {/* <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', fontStyle: 'italic', minWidth: 'fit-content' }}>{`${com.getUserDataComponentSetting(component.rawObj.id, "obtained") ?? '0'}/${component.rawObj.required}`}</div> */}
@@ -56,7 +59,7 @@ export default function ComponentAddButton({ component, isRawObj=false, fullName
                 <ObtainedResurgenceGroup itemId={component.id} positionAbsolute={true}/>
                 <DucatLabel rawObj={com.getObjectFromId(component.id)}/>
             </Link>
-            <ObtainedLabelButton component={component} isRawObj={true} showLabel={false}/>
+            { !showButtons ? null: <ObtainedLabelButton component={component} isRawObj={true} showLabel={false}/> }
         </div>
     );
 }

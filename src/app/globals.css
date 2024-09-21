@@ -539,6 +539,17 @@ html * {
 }
 
 
+.icon-default-show-hover{
+  display: none;
+  width: 20px;
+  height: 20px;
+}
+
+.icon-default-show-hover.absolute {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
 
 .obtained-check {
 
@@ -548,7 +559,7 @@ html * {
   display: none;
 }
 
-.item-check-parent:hover .obtained-check-hollow {
+.item-check-parent:hover .obtained-check-hollow, .item-check-parent:hover .icon-default-show-hover {
   display: flex;
 }
 

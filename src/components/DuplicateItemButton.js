@@ -19,9 +19,11 @@ import ObtainedLabelButtonExtras from './ObtainedLabelButtonExtras';
 export default function DuplicateItemButton({ positionAbsolute=true, itemId }){
     const [ obtainedExtras, setObtainedExtras ] = useObtainedExtras();
     
+    const rawObj = com.getObjectFromId(itemId);
+    if(rawObj.category !== "items" && rawObj.category !== "components") return null;
+
     const hasDuplicates = com.getUserDataExtrasObtained(itemId) > 0;
 
-    const rawObj = com.getObjectFromId(itemId);
     const isFarmed = com.objectIsFarmed(rawObj);
 
     return (

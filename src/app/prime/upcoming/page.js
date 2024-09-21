@@ -23,7 +23,10 @@ export default function AboutPage() {
         <div className='sized-content h-flex flex-center' style={{ fontStyle: 'italic', fontWeight: 'bold', fontSize: 'medium', marginTop: '30px', backgroundColor: 'var(--color-component-rare)', borderRadius: '10px', padding: '10px' }}>Ducat Mode is now available! Click on the &apos;Farm Mode&apos; button next to the Search Bar to switch.</div>
       </div>
       <div className='sized-content v-flex flex-center' style={{ whiteSpace: 'pre', gap: '5px' }}>
+        <div>-Warframe WorldState fetch somehow (e.g Time until Baro, Void Fissures available)</div>
+        <div>-Relics owned system?</div>
         <div>-Possibly more sorting options for relic/mission tabs</div>
+        <div>-Layout fix for different screen sizes</div>
         <div>-Hopefully fix the layout for mobile😂</div>
       </div>
       <div className='sized-content v-flex flex-center' style={{ whiteSpace: 'pre', gap: '5px', fontStyle: 'italic' }}>

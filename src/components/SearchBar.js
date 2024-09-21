@@ -170,6 +170,7 @@ const SearchBar = ({ isExpanded=false }) => {
                 }}
             />
             <ContextMenuButton 
+                title='Filters'
                 top='40px'
                 className="sized-content global-search-bar-filter-button v-flex"
                 headerContent={<img className="sized-content global-search-bar-filter-icon" src={`${com.getBaseEnvPath().basePath}/icons/filter.svg`} />}

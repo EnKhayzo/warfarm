@@ -32,7 +32,7 @@ const FarmingSheetTab = ({mission, rarityPriorities}) => {
 
   
     return (
-        <></>
+        <>(Work in Progress)</>
     );
   }
 

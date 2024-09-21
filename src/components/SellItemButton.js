@@ -13,17 +13,24 @@ import DucatLabel from './DucatLabel';
 import ObjectStateLabel from './ObjectStateLabel';
 import ResurgenceItemIcon from './ResurgenceItemIcon';
 import SellValueLabelObject from './SellValueLabelObject';
+import useObtainedExtras from '@/hooks/useObtainedExtras';
+import SellItemButtons from './SellItemButtons';
 
 export default function SellItemButton({ positionAbsolute=true, itemId }){
+    const [ obtainedExtras, setObtainedExtras ] = useObtainedExtras();
     const [ sellItems, setSellItems ] = useSellItems();
 
 
     const rawObj = com.getObjectFromId(itemId);
-    const isSell = rawObj.category === "items" ? 
-                com.getItemComponentIds(itemId)
-                    .some(componentId => com.getUserDataSellItemValue(componentId) > 0) 
-            : 
-                com.getUserDataSellItemValue(itemId) > 0;
+    if(rawObj.category !== "items" && rawObj.category !== "components") return null;
+
+    const sellValue = rawObj.category === "items" ? 
+        com.getItemComponentIds(itemId)
+            .reduce((acc, id) => acc += com.getUserDataSellItemValue(id), 0) 
+    : 
+        com.getUserDataSellItemValue(itemId);
+
+    const isSell = sellValue > 0;
 
     const isFarmed = com.objectIsFarmed(rawObj);
 
@@ -37,7 +44,8 @@ export default function SellItemButton({ positionAbsolute=true, itemId }){
         <>
             <button 
                 title={`Sell components`}
-                className={`sized-content sell-button${ positionAbsolute ? ' absolute' : '' } v-flex flex-center`}
+                className={`sized-content h-flex sell-button${ positionAbsolute ? ' absolute' : '' } v-flex flex-center`}
+                style={{ gap: '5px' }}
                 onClick={(ev) => { 
                     ev.stopPropagation(); 
                     ev.preventDefault();
@@ -79,10 +87,11 @@ export default function SellItemButton({ positionAbsolute=true, itemId }){
                                         (rawObj.category === "items" ? com.getItemComponents(rawObj.id) : [ rawObj ])
                                             .map((component, index) => { 
                                                 const componentIsAnomalous = component.required <= 0; 
+                                                // const hasDuplicates = com.getUserDataExtrasObtained(component.id); 
                                                 return (
                                                     <div 
                                                         key={`${index}-${component.id}`} 
-                                                        className='sized-content v-flex' 
+                                                        className='sized-content v-flex flex-center' 
                                                         style={{ alignSelf: 'stretch', gap: '5px' }}
                                                     >
                                                         <div 
@@ -105,38 +114,9 @@ export default function SellItemButton({ positionAbsolute=true, itemId }){
                                                             </div>
                                                             {/* <ItemActionButton itemId={component.id}/> */}
                                                             <ResurgenceItemIcon positionAbsolute={false} itemId={itemId}/>
-                                                            <DucatLabel rawObj={com.getObjectFromId(component.id)}/>
+                                                            <DucatLabel rawObj={component}/>
                                                         </div>
-                                                        {
-                                                            componentIsAnomalous ? null:
-                                                            <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
-                                                                <div 
-                                                                    className='sized-content h-flex object-page-component-owned-button flex-center'
-                                                                    style={{ cursor: 'pointer' }}
-                                                                    onClick={(ev) => {
-                                                                        ev.preventDefault();
-                                                                        ev.stopPropagation();
-
-                                                                        // console.log(`increment!`);
-                                                                        com.incrementUserDataSellItemValue(component.id);
-                                                                    }}
-                                                                >
-                                                                    +
-                                                                </div>
-                                                                <div 
-                                                                    className='sized-content h-flex object-page-component-owned-button flex-center'
-                                                                    style={{ cursor: 'pointer' }}
-                                                                    onClick={(ev) => {
-                                                                        ev.preventDefault();
-                                                                        ev.stopPropagation();
-
-                                                                        com.decrementUserDataSellItemValue(component.id);
-                                                                     }}
-                                                                >
-                                                                    -
-                                                                </div>
-                                                            </div>
-                                                        }
+                                                        <SellItemButtons component={component}/>
                                                         <SellValueLabelObject object={component} collapseWhenNull={false}/>
                                                     </div>
                                                 )
@@ -164,6 +144,7 @@ export default function SellItemButton({ positionAbsolute=true, itemId }){
 
                     }}
                 />
+                { !(sellValue > 0) ? null: <span className='sized-content h-flex flex-center' style={{ marginBottom: '2px', fontSize: 'small', fontStyle: 'italic' }}>{sellValue}</span> }
             </button>
         </>
     );
