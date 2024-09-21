@@ -68,7 +68,7 @@ function GeneralComponent({}){
           </div>
         </div>
       </div>
-);
+  );
 }
 
 function FarmModeComponent({}){

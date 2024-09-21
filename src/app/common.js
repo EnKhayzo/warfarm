@@ -2198,7 +2198,7 @@ export function getDialogUis(){
   return dialogsUiObservable.get();
 }
 
-/** notification: { type, label } */
+/** notification: { type: 'failure'|'success', label } */
 export function showNotificationUi(notification) {
   notificationsUiObservable.set(notificationsUiObservable.get().concat(notification));
   if(notification.type === "success" || notification.type === "failure"){
