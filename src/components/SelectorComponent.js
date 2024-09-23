@@ -43,7 +43,7 @@ export default function SelectorComponent({ options, onConfirm }){
     return (
         <div 
             className='sized-content selector-component h-flex flex-center' 
-            style={{ position: 'relative', gap: '5px' }}
+            style={{ position: 'relative', gap: '5px', cursor: 'pointer' }}
             onClick={(ev) => { setMenuOpen(!menuOpen); }}
         >
             <div
@@ -63,6 +63,7 @@ export default function SelectorComponent({ options, onConfirm }){
                         overflow: 'hidden',
                         position: 'absolute', 
                         top: '50px',
+                        zIndex: '1000'
                     }}
                 >
                     <div 

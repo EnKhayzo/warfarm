@@ -1008,3 +1008,65 @@ input:checked + .slider:before {
   border-radius: 10px;
   padding: 10px;
 }
+
+
+/* Collapsible.css */
+
+.collapsible-container {
+  width: 100%;
+  margin: 20px auto;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.collapsible {
+  cursor: pointer;
+  padding: 18px;
+  /* width: 100%; */
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.collapsible:hover {
+}
+
+.collapsible.active {
+}
+
+.collapsible-arrow {
+  position: absolute;
+  /* right: 20px; */
+  border-color: #988f8b;
+  margin-left: 10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease;
+  border-width: 0 2px 2px 0;
+  padding: 5px;
+  display: inline-block;
+}
+
+.collapsible-arrow.open {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.collapsible-content {
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.collapsible-content-inner {
+  padding: 18px;
+}
+
+.void-fissures-collapsible {
+  max-width: 75vw;
+}
+
+.omnia-fissure {
+  opacity: 50%;
+}

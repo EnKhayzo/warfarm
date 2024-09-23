@@ -259,34 +259,92 @@ export function DuplicatesComponent(){
   );
 }
 
+function BaroComponent(){
+  const [ seed, setSeed ] = useState(1);
+
+  const [ worldState, setWorldState ] = useState(null);
+  useEffect(() => {
+    const fetchData = async(setTimer=true) => {
+      try {
+        // Fetch the JSON response from the URL
+        const response = await fetch('https://enkhayzomachines.net:8443/voidtraders');
+        
+        // Parse the response as JSON
+        const data = await response.json();
+        
+        // console.log(`set world state!`, data);
+
+        // Update state with the fetched data
+        setWorldState(data);
+
+        if(setTimer) setTimeout(timerFunc, 1000);
+
+        if(data == null) setTimeout(() => fetchData(false), 5*60*1000); // 5 minutes
+        
+        let targetDate = Date.now()+1*24*60*60*1000; // 1 day
+        const lowestDate = data.reduce((acc, trader) => {
+          const traderExpiryDate = com.accessDateAPI(trader.Expiry);
+          if(traderExpiryDate < acc) acc = traderExpiryDate;
+
+          return acc;
+        }, targetDate);
+
+        if(lowestDate < targetDate) targetDate = lowestDate;
+
+        let timeToWait = targetDate-Date.now();
+        if(timeToWait <= 0) timeToWait = 20*1000; // 20 seconds
+
+        // console.log(`time until refetch`, com.getTimestampAsDurationString(timeToWait, false, true));
+        setTimeout(refetchData, timeToWait);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+
+    const refetchData = () => fetchData(false);
+
+    const timerFunc = () => {
+      setSeed(Math.random());
+      setTimeout(timerFunc, 1000);
+    }
+
+    fetchData();
+
+    return () => {
+      clearTimeout(timerFunc);
+      clearTimeout(refetchData);
+    }
+  }, []);
+
+  let timeSinceStartBaro = null;
+  let timeUntilBaro = null;
+  let baroLocation = null;
+  if(worldState != null) {
+    const baroState = worldState.find(trader => trader.Character === "Baro'Ki Teel");
+    if(baroState != null){
+      const activationDate = com.accessDateAPI(baroState.Activation);
+      if(activationDate != null) timeSinceStartBaro = Date.now() - activationDate;
+
+      const expiryDate = com.accessDateAPI(baroState.Expiry);
+      if(expiryDate != null) timeUntilBaro = expiryDate - Date.now();
+
+      baroLocation = com.getAPINodeName(baroState.Node);
+      console.log(`baro locaion`, baroLocation,baroState.Node);
+    }
+  }
+
+  return (
+    worldState == null || timeUntilBaro == null ? null:
+      <div className='sized-remaining v-flex flex-center' style={{ gap: '50px', marginBottom: '40px' }}>
+        <div className='sized-content h-flex flex-center' style={{ whiteSpace: 'pre', fontSize: 'x-large' }}>Baro Ki&apos;Teer { timeSinceStartBaro < 0 ? <>will arrive{ baroLocation != null ? <> at <span style={{ fontWeight: 'bold' }}>{baroLocation}</span></> : `` }</> : <>has arrived{ baroLocation != null ? <> at <span style={{ fontWeight: 'bold' }}>{baroLocation}</span></> : `` } and will go away</>} in <span className='sized-content h-flex flex-center' style={{ fontWeight: 'bold' }}>{com.getTimestampAsDurationString(timeUntilBaro)}</span></div>
+      </div>
+  );
+}
+
 export default function HomeDucatMode() {
   const router = useRouter();
   const [ sellItems, setSellItems ] = useSellItems();
   const noSellItems = Object.entries(sellItems ?? {}).filter(([ itemId, trackedItem ]) => com.getUserDataSellItemValue(itemId) > 0).length <= 0;
-  
-  // const [ worldState, setWorldState ] = useState(null);
-  // useEffect(() => {
-  //   (async () => {
-  //     try {
-  //       // Fetch the JSON response from the URL
-  //       const response = await fetch('https://content.warframe.com/dynamic/worldState.php');
-        
-  //       // Parse the response as JSON
-  //       const data = await response.json();
-        
-  //       console.log(`set world state!`, data);
-
-  //       // Update state with the fetched data
-  //       setWorldState(data);
-  //     } catch (error) {
-  //       console.error('Error fetching data:', error);
-  //     }
-  //   })();
-  // }, []);
-
-  // useEffect(() => {
-  //   document.title = com.generatePageTitle("Home");
-  // }, []);
 
   return (
     <div className='sized-remaining v-flex' style={{ justifyContent: 'center', gap: '0px' }}>
@@ -296,9 +354,7 @@ export default function HomeDucatMode() {
           <img className='sized-content h-flex flex-center' style={{ width: '400px' }} src={`${com.getBaseEnvPath().basePath}/icons/logo_prime.svg`}/>
         </div>
       } */}
-      {/* <div className='sized-remaining v-flex flex-center' style={{ gap: '50px' }}>
-        <div>Baro will arrive in</div>
-      </div> */}
+      <BaroComponent/>
       <div className='sized-remaining v-flex flex-center' style={{ gap: '100px' }}>
         <SellItemsComponent/>
         <DuplicatesComponent/>

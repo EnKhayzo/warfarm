@@ -46,6 +46,7 @@ import RelicTabBody from './[category]/[routeId]/subcomponents/RelicTabBody.js';
 import MissionTabBody from './[category]/[routeId]/subcomponents/MissionTabBody.js';
 import HideFarmedItemsCheckbox from './[category]/[routeId]/subcomponents/HideFarmedItemsCheckbox.js';
 import DucatLabel from '@/components/DucatLabel.js';
+import Collapsible from '@/components/Collapsible.js';
 
 const ComponentTab = ({ hideFarmed, trackedItems}) => {
   const router = useRouter();
@@ -245,6 +246,194 @@ function FarmingSheet({ trackedItems }){
   );
 }
 
+function VoidFissuresComponent(){
+  const [ sortBy, setSortBy ] = useState("relicType");
+
+  const [ seed, setSeed ] = useState(1);
+  const [ worldState, setWorldState ] = useState(null);
+  useEffect(() => {
+
+
+    const fetchData = async(setTimer=true) => {
+      try {
+        // Fetch the JSON response from the URL
+        const response = await fetch('https://enkhayzomachines.net:8443/activemissions');
+        
+        // Parse the response as JSON
+        const data = await response.json();
+        
+        // console.log(`set world state!`, data);
+
+        // Update state with the fetched data
+        setWorldState(data);
+
+        if(setTimer) setTimeout(timerFunc, 1000);
+
+        if(data == null) setTimeout(() => fetchData(false), 5*60*1000); // 5 minutes
+        
+        let targetDate = Date.now()+5*60*1000; // 5 minutes
+        const lowestDate = data.reduce((acc, fissure) => {
+          const fissureExpiryDate = com.accessDateAPI(fissure.Expiry);
+          if(fissureExpiryDate < acc) acc = fissureExpiryDate;
+
+          return acc;
+        }, targetDate);
+        if(lowestDate < targetDate) targetDate = lowestDate;
+
+        let timeToWait = targetDate-Date.now();
+        if(timeToWait <= 0) timeToWait = 20*1000; // 20 seconds
+
+        // console.log(`time until refetch`, com.getTimestampAsDurationString(timeToWait));
+        setTimeout(refetchData, timeToWait);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+
+    const refetchData = () => fetchData(false);
+
+    const timerFunc = () => {
+      setSeed(Math.random());
+      setTimeout(timerFunc, 1000);
+    }
+
+    fetchData();
+
+    return () => {
+      clearTimeout(timerFunc);
+      clearTimeout(refetchData);
+    }
+  }, []);
+
+  const fissureMissionCache = worldState == null ? null:
+    Object.fromEntries(
+      worldState.map(
+        fissure => {
+          const nodeObj = com.getAPINodeObj(fissure.Node)
+          const obj = com.getObjectFromId(nodeObj.id);
+          return [ nodeObj.nodeId, obj ];
+        }
+      )
+    );
+
+  
+  const [ missionPriorities, setMissionPriorities ] = useMissionPriorities();
+
+  const relicTypePriorities = com.getRelicTypePriorities();
+
+  const calcRelicType = (modifier) => 
+    modifier === "VoidT1" ?
+      "Lith"
+    : modifier === "VoidT2" ?
+      "Meso"
+    : modifier === "VoidT3" ?
+      "Neo"
+    : modifier === "VoidT4" ?
+      "Axi"
+    : modifier === "VoidT5" ?
+      "Requiem"
+    : null;
+
+  return (
+      worldState == null ? null:
+      <Collapsible 
+        className='sized-content v-flex flex-center void-fissures-collapsible' 
+        title={<span style={{ fontWeight: 'bold', fontSize: 'large' }}>Available Void Fissures</span>}
+      >
+          <SelectorComponent
+            options={{
+              "Relic Type": { value: "relicType", defaultOption: true },
+              "Mission Type Preference":     { value: "preference" }
+            }}
+            onConfirm={([ text, entry ]) => setSortBy(entry.value)}
+          />
+          <div 
+            className='sized-content h-flex flex-center'
+            style={{
+              flexWrap: 'wrap',
+              padding: '10px',
+              gap: '10px'
+            }}
+          >
+            {
+              worldState
+                .toSorted((a,b) => { 
+                  const missionA = fissureMissionCache[a.Node];
+                  const missionB = fissureMissionCache[b.Node];
+
+                  const relicTypeA = calcRelicType(a.Modifier);
+                  const relicTypeB = calcRelicType(b.Modifier);
+
+                  // console.log(`adasd `, sortBy, missionA.type, missionPriorities[missionA.type], missionB.type, missionPriorities[missionB.type]);
+
+                  return (
+                    (
+                    sortBy === "preference" ? 
+                      (
+                        (missionPriorities[missionA.type] ?? Infinity) 
+                        - 
+                        (missionPriorities[missionB.type] ?? Infinity) 
+                      )
+                    :
+                      (
+                        (relicTypePriorities[relicTypeA] ?? Infinity) 
+                        - 
+                        (relicTypePriorities[relicTypeB] ?? Infinity) 
+                      )
+                    )
+                    ||
+                    (a.Hard != null ? 1 : -1)
+                    -
+                    (b.Hard != null ? 1 : -1)
+                  ); 
+                })
+                .map((fissure, index) => { 
+                  const nodeObj = com.getAPINodeObj(fissure.Node); 
+                  const mission = com.getObjectFromId(nodeObj.id);
+                  const expireTime = com.accessDateAPI(fissure.Expiry);
+                  const expireTimeUntil = expireTime - Date.now();
+
+                  const relicType = calcRelicType(fissure.Modifier);
+
+                  return (
+                    <div 
+                      key={`${index}-${fissure.Node}-${mission.type}`}
+                      className='sized-content v-flex flex-center' 
+                      style={{
+                        borderRadius: '10px',
+                        padding: '10px',
+                        backgroundColor: 'var(--color-tertiary)',
+                        width: '250px',
+                        textAlign: 'center',
+                        justifyContent: 'flex-start',
+                        alignSelf: 'stretch',
+                        gap: '5px'
+                      }}
+                    >
+                      <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
+                        {
+                          relicType != null ?
+                            <img className='sized-content v-flex flex-center' style={{ width: '100px', height: '100px', objectFit: 'contain' }} src={`${com.getBaseEnvPath().basePath}/images/${relicType}.png`}/>
+                          :
+                            <div className='sized-content v-flex flex-center' style={{ width: '100px', height: '100px', objectFit: 'contain' }}><img className='sized-content v-flex flex-center icon-default-filter omnia-fissure' style={{ width: '60px', height: '60px', objectFit: 'contain' }} src={`${com.getBaseEnvPath().basePath}/icons/question.svg`}/></div>
+                        }
+                        <img className='sized-content v-flex flex-center' style={{ width: '50px', height: '50px', objectFit: 'contain' }} src={com.getObjectIcon(mission)}/>
+                      </div>
+                      <div className='sized-content v-flex flex-center'>
+                        <span className='sized-content v-flex flex-center' style={{ fontStyle: 'italic' }}>{relicType ?? "Omnia"}</span>
+                        <span className='sized-content v-flex flex-center' style={{ fontWeight: 'bold' }}>{mission.type}{ fissure.Hard == null ? null: <> (Steel Path)</>}</span>
+                        <span className='sized-content v-flex flex-center'>{nodeObj.id}</span>
+                        <span className='sized-content v-flex flex-center' style={{ whiteSpace: 'pre' }}>Expires in {com.getTimestampAsDurationString(expireTimeUntil, true)}</span>
+                      </div>
+                    </div>
+                  )
+                })
+            }
+          </div>
+      </Collapsible>
+  );
+}
+
 export function TrackedItemsComponent(){
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -259,6 +448,7 @@ export function TrackedItemsComponent(){
   const noTrackedItems = Object.entries(trackedItems ?? {}).filter(([ itemId, trackedItem ]) => trackedItem.tracked ?? false).length <= 0;
 
   const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
+
 
   return (
       <div className='sized-content tracked-items v-flex flex-center' style={{ gap: '50px' }}>
@@ -321,6 +511,7 @@ export function TrackedItemsComponent(){
             </>
           :null
         }
+        <VoidFissuresComponent/>
         { noTrackedItems ? 
             <div className='sized-content v-flex' style={{ gap: '10px', fontSize: 'small', fontStyle: 'italic', whiteSpace: 'pre' }}>
               <div className='sized-content h-flex flex-center'>

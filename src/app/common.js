@@ -1072,6 +1072,7 @@ export function getInitializing(){
 let items = null;
 let relics = null;
 let missions = null;
+let nodeNameMap = null;
 
 let relicsResurgence = null;
 
@@ -1099,6 +1100,7 @@ export async function initialize(local=false) {
       (await import(`../../public/data/missions.json`)).default, 
       ([ id, mission ]) => defaultMissionInitializeFilter(id)
     );
+    nodeNameMap = (await import(`../../public/data/node_name_map.json`)).default;
 
     relicsResurgence = (await import(`../../public/data/relics_resurgence.json`)).default;
 
@@ -2430,7 +2432,7 @@ export function mod(a, b){
   return ((a % b) + b) % b;
 }
 
-export function getTimestampAsDurationString(timestamp){
+export function getTimestampAsDurationString(timestamp, shorten=false){
   const isNegative = timestamp < 0;
   if(isNegative) timestamp = -timestamp;
 
@@ -2452,13 +2454,13 @@ export function getTimestampAsDurationString(timestamp){
       isStillZero = timeVal == 0;
       if(isStillZero || stopPropagation) return;
 
-      if(i == 0) { finalStrParts.push(`${timeVal} year${timeVal > 1 ? "s" : ""}`); stopPropagation = true; }
-      else if(i == 1) { finalStrParts.push(`${timeVal} month${timeVal > 1 ? "s" : ""}`); stopPropagation = true; }
-      else if(i == 2) { finalStrParts.push(`${timeVal} day${timeVal > 1 ? "s" : ""}`); stopPropagation = true; }
-      else if(i == 3) { finalStrParts.push(`${timeVal} hour${timeVal > 1 ? "s" : ""}`); stopPropagation = true; }
-      else if(i == 4) finalStrParts.push(`${timeVal} minute${timeVal > 1 ? "s" : ""}`);
-      else if(i == 5) { finalStrParts.push(`${timeVal} second${timeVal > 1 ? "s" : ""}`); stopPropagation = true; }
-      else if(i == 6) finalStrParts.push(`${timeVal} millisecond${timeVal > 1 ? "s" : ""}`);
+      if(i == 0) { finalStrParts.push(`${timeVal} ${ shorten ? `y` : `year${timeVal > 1 ? "s" : ""}`}`); stopPropagation = true; }
+      else if(i == 1) { finalStrParts.push(`${timeVal} ${ shorten ? `M` : `month${timeVal > 1 ? "s" : ""}`}`); stopPropagation = true; }
+      else if(i == 2) { finalStrParts.push(`${timeVal} ${ shorten ? `d` : `day${timeVal > 1 ? "s" : ""}`}`); stopPropagation = true; }
+      else if(i == 3) { finalStrParts.push(`${timeVal} ${ shorten ? `h` : `hour${timeVal > 1 ? "s" : ""}`}`); stopPropagation = true; }
+      else if(i == 4) finalStrParts.push(`${timeVal} ${ shorten ? `m` : `minute${timeVal > 1 ? "s" : ""}`}`);
+      else if(i == 5) { finalStrParts.push(`${timeVal} ${ shorten ? `s` : `second${timeVal > 1 ? "s" : ""}`}`); stopPropagation = true; }
+      else if(i == 6) finalStrParts.push(`${timeVal} ${ shorten ? `ms` : `millisecond${timeVal > 1 ? "s" : ""}`}`);
   });
 
   return `${isNegative ? "-" : ""}${finalStrParts.join(" ")}`;
@@ -2512,4 +2514,32 @@ export function getDucatValue(rawObj){
             getDucatValueRelic(rawObj)
           :
             0;
+}
+
+export function accessDateAPI(obj){
+  return (
+      obj != null && 
+      obj["$date"] != null && 
+      obj["$date"]["$numberLong"] != null 
+      ? 
+          Number(obj["$date"]["$numberLong"])
+      : 
+          null
+  );
+
+}
+
+export function accessExpiryAPI(obj){
+  return accessDateAPI(obj.Expiry);
+}
+
+export function getAPINodeObj(nodeId){
+  if(nodeId == null) { console.warn(`nodeId is null!`, nodeId); return null; }
+  if(nodeNameMap[nodeId] == null) { console.warn(`nodeMap has no nodeId of this value!`, nodeId); return null; }
+
+  return nodeNameMap[nodeId];
+}
+
+export function getAPINodeName(nodeId){
+  return getAPINodeObj(nodeId).id;
 }

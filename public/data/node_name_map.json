@@ -1,0 +1,1550 @@
+{
+    "SolNode94": {
+        "id": "Apollodorus, Mercury",
+        "nodeId": "SolNode94",
+        "name": "Apollodorus",
+        "systemName": "Mercury"
+    },
+    "SolNode130": {
+        "id": "Lares, Mercury",
+        "nodeId": "SolNode130",
+        "name": "Lares",
+        "systemName": "Mercury"
+    },
+    "SolNode119": {
+        "id": "Caloris, Mercury",
+        "nodeId": "SolNode119",
+        "name": "Caloris",
+        "systemName": "Mercury"
+    },
+    "SolNode12": {
+        "id": "Elion, Mercury",
+        "nodeId": "SolNode12",
+        "name": "Elion",
+        "systemName": "Mercury"
+    },
+    "SolNode103": {
+        "id": "M Prime, Mercury",
+        "nodeId": "SolNode103",
+        "name": "M Prime",
+        "systemName": "Mercury"
+    },
+    "SolNode28": {
+        "id": "Terminus, Mercury",
+        "nodeId": "SolNode28",
+        "name": "Terminus",
+        "systemName": "Mercury"
+    },
+    "SolNode108": {
+        "id": "Tolstoj, Mercury",
+        "nodeId": "SolNode108",
+        "name": "Tolstoj",
+        "systemName": "Mercury"
+    },
+    "SolNode223": {
+        "id": "Boethius, Mercury",
+        "nodeId": "SolNode223",
+        "name": "Boethius",
+        "systemName": "Mercury"
+    },
+    "SolNode224": {
+        "id": "Odin, Mercury",
+        "nodeId": "SolNode224",
+        "name": "Odin",
+        "systemName": "Mercury"
+    },
+    "SolNode225": {
+        "id": "Suisei, Mercury",
+        "nodeId": "SolNode225",
+        "name": "Suisei",
+        "systemName": "Mercury"
+    },
+    "SolNode226": {
+        "id": "Pantheon, Mercury",
+        "nodeId": "SolNode226",
+        "name": "Pantheon",
+        "systemName": "Mercury"
+    },
+    "SolNode129": {
+        "id": "Orb Vallis, Venus",
+        "nodeId": "SolNode129",
+        "name": "Orb Vallis",
+        "systemName": "Venus"
+    },
+    "SolNode123": {
+        "id": "V Prime, Venus",
+        "nodeId": "SolNode123",
+        "name": "V Prime",
+        "systemName": "Venus"
+    },
+    "SolNode61": {
+        "id": "Ishtar, Venus",
+        "nodeId": "SolNode61",
+        "name": "Ishtar",
+        "systemName": "Venus"
+    },
+    "SolNode2": {
+        "id": "Aphrodite, Venus",
+        "nodeId": "SolNode2",
+        "name": "Aphrodite",
+        "systemName": "Venus"
+    },
+    "SolNode23": {
+        "id": "Cytherean, Venus",
+        "nodeId": "SolNode23",
+        "name": "Cytherean",
+        "systemName": "Venus"
+    },
+    "SolNode128": {
+        "id": "E Gate, Venus",
+        "nodeId": "SolNode128",
+        "name": "E Gate",
+        "systemName": "Venus"
+    },
+    "SolNode109": {
+        "id": "Linea, Venus",
+        "nodeId": "SolNode109",
+        "name": "Linea",
+        "systemName": "Venus"
+    },
+    "SolNode104": {
+        "id": "Fossa, Venus",
+        "nodeId": "SolNode104",
+        "name": "Fossa",
+        "systemName": "Venus"
+    },
+    "SolNode66": {
+        "id": "Unda, Venus",
+        "nodeId": "SolNode66",
+        "name": "Unda",
+        "systemName": "Venus"
+    },
+    "ClanNode1": {
+        "id": "Malva, Venus",
+        "nodeId": "ClanNode1",
+        "name": "Malva",
+        "systemName": "Venus"
+    },
+    "SolNode107": {
+        "id": "Venera, Venus",
+        "nodeId": "SolNode107",
+        "name": "Venera",
+        "systemName": "Venus"
+    },
+    "SolNode22": {
+        "id": "Tessera, Venus",
+        "nodeId": "SolNode22",
+        "name": "Tessera",
+        "systemName": "Venus"
+    },
+    "SolNode101": {
+        "id": "Kiliken, Venus",
+        "nodeId": "SolNode101",
+        "name": "Kiliken",
+        "systemName": "Venus"
+    },
+    "ClanNode0": {
+        "id": "Romula, Venus",
+        "nodeId": "ClanNode0",
+        "name": "Romula",
+        "systemName": "Venus"
+    },
+    "SolNode902": {
+        "id": "Montes, Venus",
+        "nodeId": "SolNode902",
+        "name": "Montes",
+        "systemName": "Venus"
+    },
+    "SolNode63": {
+        "id": "Mantle, Earth",
+        "nodeId": "SolNode63",
+        "name": "Mantle",
+        "systemName": "Earth"
+    },
+    "SolNode27": {
+        "id": "E Prime, Earth",
+        "nodeId": "SolNode27",
+        "name": "E Prime",
+        "systemName": "Earth"
+    },
+    "SolNode79": {
+        "id": "Cambria, Earth",
+        "nodeId": "SolNode79",
+        "name": "Cambria",
+        "systemName": "Earth"
+    },
+    "SolNode39": {
+        "id": "Everest, Earth",
+        "nodeId": "SolNode39",
+        "name": "Everest",
+        "systemName": "Earth"
+    },
+    "SolNode15": {
+        "id": "Pacific, Earth",
+        "nodeId": "SolNode15",
+        "name": "Pacific",
+        "systemName": "Earth"
+    },
+    "SolNode26": {
+        "id": "Lith, Earth",
+        "nodeId": "SolNode26",
+        "name": "Lith",
+        "systemName": "Earth"
+    },
+    "SolNode89": {
+        "id": "Mariana, Earth",
+        "nodeId": "SolNode89",
+        "name": "Mariana",
+        "systemName": "Earth"
+    },
+    "SolNode85": {
+        "id": "Gaia, Earth",
+        "nodeId": "SolNode85",
+        "name": "Gaia",
+        "systemName": "Earth"
+    },
+    "SolNode59": {
+        "id": "Eurasia, Earth",
+        "nodeId": "SolNode59",
+        "name": "Eurasia",
+        "systemName": "Earth"
+    },
+    "SolNode75": {
+        "id": "Cervantes, Earth",
+        "nodeId": "SolNode75",
+        "name": "Cervantes",
+        "systemName": "Earth"
+    },
+    "SolNode24": {
+        "id": "Oro, Earth",
+        "nodeId": "SolNode24",
+        "name": "Oro",
+        "systemName": "Earth"
+    },
+    "ClanNode2": {
+        "id": "Coba, Earth",
+        "nodeId": "ClanNode2",
+        "name": "Coba",
+        "systemName": "Earth"
+    },
+    "SolNode903": {
+        "id": "Erpo, Earth",
+        "nodeId": "SolNode903",
+        "name": "Erpo",
+        "systemName": "Earth"
+    },
+    "ClanNode3": {
+        "id": "Tikal, Earth",
+        "nodeId": "ClanNode3",
+        "name": "Tikal",
+        "systemName": "Earth"
+    },
+    "SolNode228": {
+        "id": "Plains of Eidolon, Earth",
+        "nodeId": "SolNode228",
+        "name": "Plains of Eidolon",
+        "systemName": "Earth"
+    },
+    "SolNode30": {
+        "id": "Olympus, Mars",
+        "nodeId": "SolNode30",
+        "name": "Olympus",
+        "systemName": "Mars"
+    },
+    "SolNode113": {
+        "id": "Ares, Mars",
+        "nodeId": "SolNode113",
+        "name": "Ares",
+        "systemName": "Mars"
+    },
+    "SolNode46": {
+        "id": "Spear, Mars",
+        "nodeId": "SolNode46",
+        "name": "Spear",
+        "systemName": "Mars"
+    },
+    "SolNode68": {
+        "id": "Vallis, Mars",
+        "nodeId": "SolNode68",
+        "name": "Vallis",
+        "systemName": "Mars"
+    },
+    "SolNode58": {
+        "id": "Hellas, Mars",
+        "nodeId": "SolNode58",
+        "name": "Hellas",
+        "systemName": "Mars"
+    },
+    "SolNode106": {
+        "id": "Alator, Mars",
+        "nodeId": "SolNode106",
+        "name": "Alator",
+        "systemName": "Mars"
+    },
+    "SolNode41": {
+        "id": "Arval, Mars",
+        "nodeId": "SolNode41",
+        "name": "Arval",
+        "systemName": "Mars"
+    },
+    "SolNode14": {
+        "id": "Ultor, Mars",
+        "nodeId": "SolNode14",
+        "name": "Ultor",
+        "systemName": "Mars"
+    },
+    "SolNode16": {
+        "id": "Augustus, Mars",
+        "nodeId": "SolNode16",
+        "name": "Augustus",
+        "systemName": "Mars"
+    },
+    "SolNode45": {
+        "id": "Ara, Mars",
+        "nodeId": "SolNode45",
+        "name": "Ara",
+        "systemName": "Mars"
+    },
+    "SolNode36": {
+        "id": "Martialis, Mars",
+        "nodeId": "SolNode36",
+        "name": "Martialis",
+        "systemName": "Mars"
+    },
+    "ClanNode8": {
+        "id": "Kadesh, Mars",
+        "nodeId": "ClanNode8",
+        "name": "Kadesh",
+        "systemName": "Mars"
+    },
+    "SolNode99": {
+        "id": "War, Mars",
+        "nodeId": "SolNode99",
+        "name": "War",
+        "systemName": "Mars"
+    },
+    "SolNode65": {
+        "id": "Gradivus, Mars",
+        "nodeId": "SolNode65",
+        "name": "Gradivus",
+        "systemName": "Mars"
+    },
+    "ClanNode9": {
+        "id": "Wahiba, Mars",
+        "nodeId": "ClanNode9",
+        "name": "Wahiba",
+        "systemName": "Mars"
+    },
+    "SolNode11": {
+        "id": "Tharsis, Mars",
+        "nodeId": "SolNode11",
+        "name": "Tharsis",
+        "systemName": "Mars"
+    },
+    "SolNode904": {
+        "id": "Syrtis, Mars",
+        "nodeId": "SolNode904",
+        "name": "Syrtis",
+        "systemName": "Mars"
+    },
+    "SolNode450": {
+        "id": "Tyana Pass, Mars",
+        "nodeId": "SolNode450",
+        "name": "Tyana Pass",
+        "systemName": "Mars"
+    },
+    "SolNode87": {
+        "id": "Ganymede, Jupiter",
+        "nodeId": "SolNode87",
+        "name": "Ganymede",
+        "systemName": "Jupiter"
+    },
+    "SolNode88": {
+        "id": "Adrastea, Jupiter",
+        "nodeId": "SolNode88",
+        "name": "Adrastea",
+        "systemName": "Jupiter"
+    },
+    "SolNode97": {
+        "id": "Amalthea, Jupiter",
+        "nodeId": "SolNode97",
+        "name": "Amalthea",
+        "systemName": "Jupiter"
+    },
+    "SolNode126": {
+        "id": "Metis, Jupiter",
+        "nodeId": "SolNode126",
+        "name": "Metis",
+        "systemName": "Jupiter"
+    },
+    "SolNode125": {
+        "id": "Io, Jupiter",
+        "nodeId": "SolNode125",
+        "name": "Io",
+        "systemName": "Jupiter"
+    },
+    "SolNode100": {
+        "id": "Elara, Jupiter",
+        "nodeId": "SolNode100",
+        "name": "Elara",
+        "systemName": "Jupiter"
+    },
+    "SolNode10": {
+        "id": "Thebe, Jupiter",
+        "nodeId": "SolNode10",
+        "name": "Thebe",
+        "systemName": "Jupiter"
+    },
+    "SolNode25": {
+        "id": "Callisto, Jupiter",
+        "nodeId": "SolNode25",
+        "name": "Callisto",
+        "systemName": "Jupiter"
+    },
+    "SolNode121": {
+        "id": "Carpo, Jupiter",
+        "nodeId": "SolNode121",
+        "name": "Carpo",
+        "systemName": "Jupiter"
+    },
+    "SolNode53": {
+        "id": "Themisto, Jupiter",
+        "nodeId": "SolNode53",
+        "name": "Themisto",
+        "systemName": "Jupiter"
+    },
+    "SolNode74": {
+        "id": "Carme, Jupiter",
+        "nodeId": "SolNode74",
+        "name": "Carme",
+        "systemName": "Jupiter"
+    },
+    "SolNode740": {
+        "id": "The Ropalolyst, Jupiter",
+        "nodeId": "SolNode740",
+        "name": "The Ropalolyst",
+        "systemName": "Jupiter"
+    },
+    "ClanNode4": {
+        "id": "Sinai, Jupiter",
+        "nodeId": "ClanNode4",
+        "name": "Sinai",
+        "systemName": "Jupiter"
+    },
+    "SolNode73": {
+        "id": "Ananke, Jupiter",
+        "nodeId": "SolNode73",
+        "name": "Ananke",
+        "systemName": "Jupiter"
+    },
+    "SolNode905": {
+        "id": "Galilea, Jupiter",
+        "nodeId": "SolNode905",
+        "name": "Galilea",
+        "systemName": "Jupiter"
+    },
+    "ClanNode5": {
+        "id": "Cameria, Jupiter",
+        "nodeId": "ClanNode5",
+        "name": "Cameria",
+        "systemName": "Jupiter"
+    },
+    "SolNode42": {
+        "id": "Helene, Saturn",
+        "nodeId": "SolNode42",
+        "name": "Helene",
+        "systemName": "Saturn"
+    },
+    "SolNode19": {
+        "id": "Enceladus, Saturn",
+        "nodeId": "SolNode19",
+        "name": "Enceladus",
+        "systemName": "Saturn"
+    },
+    "SolNode96": {
+        "id": "Titan, Saturn",
+        "nodeId": "SolNode96",
+        "name": "Titan",
+        "systemName": "Saturn"
+    },
+    "SolNode67": {
+        "id": "Dione, Saturn",
+        "nodeId": "SolNode67",
+        "name": "Dione",
+        "systemName": "Saturn"
+    },
+    "SolNode93": {
+        "id": "Keeler, Saturn",
+        "nodeId": "SolNode93",
+        "name": "Keeler",
+        "systemName": "Saturn"
+    },
+    "SolNode32": {
+        "id": "Tethys, Saturn",
+        "nodeId": "SolNode32",
+        "name": "Tethys",
+        "systemName": "Saturn"
+    },
+    "SolNode18": {
+        "id": "Rhea, Saturn",
+        "nodeId": "SolNode18",
+        "name": "Rhea",
+        "systemName": "Saturn"
+    },
+    "SolNode20": {
+        "id": "Telesto, Saturn",
+        "nodeId": "SolNode20",
+        "name": "Telesto",
+        "systemName": "Saturn"
+    },
+    "SolNode70": {
+        "id": "Cassini, Saturn",
+        "nodeId": "SolNode70",
+        "name": "Cassini",
+        "systemName": "Saturn"
+    },
+    "SolNode31": {
+        "id": "Anthe, Saturn",
+        "nodeId": "SolNode31",
+        "name": "Anthe",
+        "systemName": "Saturn"
+    },
+    "SolNode50": {
+        "id": "Numa, Saturn",
+        "nodeId": "SolNode50",
+        "name": "Numa",
+        "systemName": "Saturn"
+    },
+    "SolNode82": {
+        "id": "Calypso, Saturn",
+        "nodeId": "SolNode82",
+        "name": "Calypso",
+        "systemName": "Saturn"
+    },
+    "SolNode906": {
+        "id": "Pandora, Saturn",
+        "nodeId": "SolNode906",
+        "name": "Pandora",
+        "systemName": "Saturn"
+    },
+    "ClanNode13": {
+        "id": "Piscinas, Saturn",
+        "nodeId": "ClanNode13",
+        "name": "Piscinas",
+        "systemName": "Saturn"
+    },
+    "ClanNode12": {
+        "id": "Caracol, Saturn",
+        "nodeId": "ClanNode12",
+        "name": "Caracol",
+        "systemName": "Saturn"
+    },
+    "SolNode33": {
+        "id": "Ariel, Uranus",
+        "nodeId": "SolNode33",
+        "name": "Ariel",
+        "systemName": "Uranus"
+    },
+    "SolNode105": {
+        "id": "Titania, Uranus",
+        "nodeId": "SolNode105",
+        "name": "Titania",
+        "systemName": "Uranus"
+    },
+    "SolNode64": {
+        "id": "Umbriel, Uranus",
+        "nodeId": "SolNode64",
+        "name": "Umbriel",
+        "systemName": "Uranus"
+    },
+    "SolNode69": {
+        "id": "Ophelia, Uranus",
+        "nodeId": "SolNode69",
+        "name": "Ophelia",
+        "systemName": "Uranus"
+    },
+    "SolNode83": {
+        "id": "Cressida, Uranus",
+        "nodeId": "SolNode83",
+        "name": "Cressida",
+        "systemName": "Uranus"
+    },
+    "SolNode98": {
+        "id": "Desdemona, Uranus",
+        "nodeId": "SolNode98",
+        "name": "Desdemona",
+        "systemName": "Uranus"
+    },
+    "SolNode9": {
+        "id": "Rosalind, Uranus",
+        "nodeId": "SolNode9",
+        "name": "Rosalind",
+        "systemName": "Uranus"
+    },
+    "SolNode60": {
+        "id": "Caliban, Uranus",
+        "nodeId": "SolNode60",
+        "name": "Caliban",
+        "systemName": "Uranus"
+    },
+    "SolNode114": {
+        "id": "Puck, Uranus",
+        "nodeId": "SolNode114",
+        "name": "Puck",
+        "systemName": "Uranus"
+    },
+    "ClanNode16": {
+        "id": "Ur, Uranus",
+        "nodeId": "ClanNode16",
+        "name": "Ur",
+        "systemName": "Uranus"
+    },
+    "SolNode34": {
+        "id": "Sycorax, Uranus",
+        "nodeId": "SolNode34",
+        "name": "Sycorax",
+        "systemName": "Uranus"
+    },
+    "SolNode122": {
+        "id": "Stephano, Uranus",
+        "nodeId": "SolNode122",
+        "name": "Stephano",
+        "systemName": "Uranus"
+    },
+    "SolNode907": {
+        "id": "Caelus, Uranus",
+        "nodeId": "SolNode907",
+        "name": "Caelus",
+        "systemName": "Uranus"
+    },
+    "ClanNode17": {
+        "id": "Assur, Uranus",
+        "nodeId": "ClanNode17",
+        "name": "Assur",
+        "systemName": "Uranus"
+    },
+    "SolNode49": {
+        "id": "Larissa, Neptune",
+        "nodeId": "SolNode49",
+        "name": "Larissa",
+        "systemName": "Neptune"
+    },
+    "SolNode1": {
+        "id": "Galatea, Neptune",
+        "nodeId": "SolNode1",
+        "name": "Galatea",
+        "systemName": "Neptune"
+    },
+    "SolNode17": {
+        "id": "Proteus, Neptune",
+        "nodeId": "SolNode17",
+        "name": "Proteus",
+        "systemName": "Neptune"
+    },
+    "SolNode78": {
+        "id": "Triton, Neptune",
+        "nodeId": "SolNode78",
+        "name": "Triton",
+        "systemName": "Neptune"
+    },
+    "SolNode6": {
+        "id": "Despina, Neptune",
+        "nodeId": "SolNode6",
+        "name": "Despina",
+        "systemName": "Neptune"
+    },
+    "SolNode57": {
+        "id": "Sao, Neptune",
+        "nodeId": "SolNode57",
+        "name": "Sao",
+        "systemName": "Neptune"
+    },
+    "SolNode62": {
+        "id": "Neso, Neptune",
+        "nodeId": "SolNode62",
+        "name": "Neso",
+        "systemName": "Neptune"
+    },
+    "SolNode908": {
+        "id": "Salacia, Neptune",
+        "nodeId": "SolNode908",
+        "name": "Salacia",
+        "systemName": "Neptune"
+    },
+    "SolNode127": {
+        "id": "Psamathe, Neptune",
+        "nodeId": "SolNode127",
+        "name": "Psamathe",
+        "systemName": "Neptune"
+    },
+    "SolNode118": {
+        "id": "Laomedeia, Neptune",
+        "nodeId": "SolNode118",
+        "name": "Laomedeia",
+        "systemName": "Neptune"
+    },
+    "SolNode84": {
+        "id": "Nereid, Neptune",
+        "nodeId": "SolNode84",
+        "name": "Nereid",
+        "systemName": "Neptune"
+    },
+    "ClanNode20": {
+        "id": "Yursa, Neptune",
+        "nodeId": "ClanNode20",
+        "name": "Yursa",
+        "systemName": "Neptune"
+    },
+    "ClanNode21": {
+        "id": "Kelashin, Neptune",
+        "nodeId": "ClanNode21",
+        "name": "Kelashin",
+        "systemName": "Neptune"
+    },
+    "SolNode4": {
+        "id": "Acheron, Pluto",
+        "nodeId": "SolNode4",
+        "name": "Acheron",
+        "systemName": "Pluto"
+    },
+    "SolNode72": {
+        "id": "Outer Terminus, Pluto",
+        "nodeId": "SolNode72",
+        "name": "Outer Terminus",
+        "systemName": "Pluto"
+    },
+    "SolNode48": {
+        "id": "Regna, Pluto",
+        "nodeId": "SolNode48",
+        "name": "Regna",
+        "systemName": "Pluto"
+    },
+    "SolNode21": {
+        "id": "Narcissus, Pluto",
+        "nodeId": "SolNode21",
+        "name": "Narcissus",
+        "systemName": "Pluto"
+    },
+    "SolNode76": {
+        "id": "Hydra, Pluto",
+        "nodeId": "SolNode76",
+        "name": "Hydra",
+        "systemName": "Pluto"
+    },
+    "SolNode51": {
+        "id": "Hades, Pluto",
+        "nodeId": "SolNode51",
+        "name": "Hades",
+        "systemName": "Pluto"
+    },
+    "SolNode38": {
+        "id": "Minthe, Pluto",
+        "nodeId": "SolNode38",
+        "name": "Minthe",
+        "systemName": "Pluto"
+    },
+    "SolNode56": {
+        "id": "Cypress, Pluto",
+        "nodeId": "SolNode56",
+        "name": "Cypress",
+        "systemName": "Pluto"
+    },
+    "SolNode43": {
+        "id": "Cerberus, Pluto",
+        "nodeId": "SolNode43",
+        "name": "Cerberus",
+        "systemName": "Pluto"
+    },
+    "SolNode81": {
+        "id": "Palus, Pluto",
+        "nodeId": "SolNode81",
+        "name": "Palus",
+        "systemName": "Pluto"
+    },
+    "ClanNode24": {
+        "id": "Sechura, Pluto",
+        "nodeId": "ClanNode24",
+        "name": "Sechura",
+        "systemName": "Pluto"
+    },
+    "SolNode102": {
+        "id": "Oceanum, Pluto",
+        "nodeId": "SolNode102",
+        "name": "Oceanum",
+        "systemName": "Pluto"
+    },
+    "ClanNode25": {
+        "id": "Hieracon, Pluto",
+        "nodeId": "ClanNode25",
+        "name": "Hieracon",
+        "systemName": "Pluto"
+    },
+    "SolNode131": {
+        "id": "Pallas, Ceres",
+        "nodeId": "SolNode131",
+        "name": "Pallas",
+        "systemName": "Ceres"
+    },
+    "SolNode135": {
+        "id": "Thon, Ceres",
+        "nodeId": "SolNode135",
+        "name": "Thon",
+        "systemName": "Ceres"
+    },
+    "SolNode132": {
+        "id": "Bode, Ceres",
+        "nodeId": "SolNode132",
+        "name": "Bode",
+        "systemName": "Ceres"
+    },
+    "SolNode139": {
+        "id": "Lex, Ceres",
+        "nodeId": "SolNode139",
+        "name": "Lex",
+        "systemName": "Ceres"
+    },
+    "SolNode141": {
+        "id": "Ker, Ceres",
+        "nodeId": "SolNode141",
+        "name": "Ker",
+        "systemName": "Ceres"
+    },
+    "SolNode137": {
+        "id": "Nuovo, Ceres",
+        "nodeId": "SolNode137",
+        "name": "Nuovo",
+        "systemName": "Ceres"
+    },
+    "SolNode140": {
+        "id": "Kiste, Ceres",
+        "nodeId": "SolNode140",
+        "name": "Kiste",
+        "systemName": "Ceres"
+    },
+    "SolNode138": {
+        "id": "Ludi, Ceres",
+        "nodeId": "SolNode138",
+        "name": "Ludi",
+        "systemName": "Ceres"
+    },
+    "SolNode144": {
+        "id": "Exta, Ceres",
+        "nodeId": "SolNode144",
+        "name": "Exta",
+        "systemName": "Ceres"
+    },
+    "SolNode149": {
+        "id": "Casta, Ceres",
+        "nodeId": "SolNode149",
+        "name": "Casta",
+        "systemName": "Ceres"
+    },
+    "SolNode147": {
+        "id": "Cinxia, Ceres",
+        "nodeId": "SolNode147",
+        "name": "Cinxia",
+        "systemName": "Ceres"
+    },
+    "SolNode146": {
+        "id": "Draco, Ceres",
+        "nodeId": "SolNode146",
+        "name": "Draco",
+        "systemName": "Ceres"
+    },
+    "ClanNode23": {
+        "id": "Gabii, Ceres",
+        "nodeId": "ClanNode23",
+        "name": "Gabii",
+        "systemName": "Ceres"
+    },
+    "ClanNode22": {
+        "id": "Seimeni, Ceres",
+        "nodeId": "ClanNode22",
+        "name": "Seimeni",
+        "systemName": "Ceres"
+    },
+    "SolNode153": {
+        "id": "Brugia, Eris",
+        "nodeId": "SolNode153",
+        "name": "Brugia",
+        "systemName": "Eris"
+    },
+    "SolNode164": {
+        "id": "Kala-azar, Eris",
+        "nodeId": "SolNode164",
+        "name": "Kala-azar",
+        "systemName": "Eris"
+    },
+    "SolNode162": {
+        "id": "Isos, Eris",
+        "nodeId": "SolNode162",
+        "name": "Isos",
+        "systemName": "Eris"
+    },
+    "SolNode171": {
+        "id": "Saxis, Eris",
+        "nodeId": "SolNode171",
+        "name": "Saxis",
+        "systemName": "Eris"
+    },
+    "SolNode167": {
+        "id": "Oestrus, Eris",
+        "nodeId": "SolNode167",
+        "name": "Oestrus",
+        "systemName": "Eris"
+    },
+    "SolNode166": {
+        "id": "Nimus, Eris",
+        "nodeId": "SolNode166",
+        "name": "Nimus",
+        "systemName": "Eris"
+    },
+    "SolNode173": {
+        "id": "Solium, Eris",
+        "nodeId": "SolNode173",
+        "name": "Solium",
+        "systemName": "Eris"
+    },
+    "ClanNode18": {
+        "id": "Akkad, Eris",
+        "nodeId": "ClanNode18",
+        "name": "Akkad",
+        "systemName": "Eris"
+    },
+    "SolNode172": {
+        "id": "Xini, Eris",
+        "nodeId": "SolNode172",
+        "name": "Xini",
+        "systemName": "Eris"
+    },
+    "ClanNode19": {
+        "id": "Zabala, Eris",
+        "nodeId": "ClanNode19",
+        "name": "Zabala",
+        "systemName": "Eris"
+    },
+    "SolNode175": {
+        "id": "Naeglar, Eris",
+        "nodeId": "SolNode175",
+        "name": "Naeglar",
+        "systemName": "Eris"
+    },
+    "SolNode177": {
+        "id": "Kappa, Sedna",
+        "nodeId": "SolNode177",
+        "name": "Kappa",
+        "systemName": "Sedna"
+    },
+    "SolNode184": {
+        "id": "Rusalka, Sedna",
+        "nodeId": "SolNode184",
+        "name": "Rusalka",
+        "systemName": "Sedna"
+    },
+    "SolNode181": {
+        "id": "Adaro, Sedna",
+        "nodeId": "SolNode181",
+        "name": "Adaro",
+        "systemName": "Sedna"
+    },
+    "SolNode183": {
+        "id": "Vodyanoi, Sedna",
+        "nodeId": "SolNode183",
+        "name": "Vodyanoi",
+        "systemName": "Sedna"
+    },
+    "SolNode190": {
+        "id": "Nakki, Sedna",
+        "nodeId": "SolNode190",
+        "name": "Nakki",
+        "systemName": "Sedna"
+    },
+    "SolNode185": {
+        "id": "Berehynia, Sedna",
+        "nodeId": "SolNode185",
+        "name": "Berehynia",
+        "systemName": "Sedna"
+    },
+    "SolNode187": {
+        "id": "Selkie, Sedna",
+        "nodeId": "SolNode187",
+        "name": "Selkie",
+        "systemName": "Sedna"
+    },
+    "SolNode191": {
+        "id": "Marid, Sedna",
+        "nodeId": "SolNode191",
+        "name": "Marid",
+        "systemName": "Sedna"
+    },
+    "SolNode188": {
+        "id": "Kelpie, Sedna",
+        "nodeId": "SolNode188",
+        "name": "Kelpie",
+        "systemName": "Sedna"
+    },
+    "SolNode189": {
+        "id": "Naga, Sedna",
+        "nodeId": "SolNode189",
+        "name": "Naga",
+        "systemName": "Sedna"
+    },
+    "SolNode199": {
+        "id": "Yam, Sedna",
+        "nodeId": "SolNode199",
+        "name": "Yam",
+        "systemName": "Sedna"
+    },
+    "SolNode193": {
+        "id": "Merrow, Sedna",
+        "nodeId": "SolNode193",
+        "name": "Merrow",
+        "systemName": "Sedna"
+    },
+    "SolNode196": {
+        "id": "Charybdis, Sedna",
+        "nodeId": "SolNode196",
+        "name": "Charybdis",
+        "systemName": "Sedna"
+    },
+    "SolNode195": {
+        "id": "Hydron, Sedna",
+        "nodeId": "SolNode195",
+        "name": "Hydron",
+        "systemName": "Sedna"
+    },
+    "ClanNode14": {
+        "id": "Amarna, Sedna",
+        "nodeId": "ClanNode14",
+        "name": "Amarna",
+        "systemName": "Sedna"
+    },
+    "ClanNode15": {
+        "id": "Sangeru, Sedna",
+        "nodeId": "ClanNode15",
+        "name": "Sangeru",
+        "systemName": "Sedna"
+    },
+    "SolNode203": {
+        "id": "Abaddon, Europa",
+        "nodeId": "SolNode203",
+        "name": "Abaddon",
+        "systemName": "Europa"
+    },
+    "SolNode204": {
+        "id": "Armaros, Europa",
+        "nodeId": "SolNode204",
+        "name": "Armaros",
+        "systemName": "Europa"
+    },
+    "SolNode209": {
+        "id": "Morax, Europa",
+        "nodeId": "SolNode209",
+        "name": "Morax",
+        "systemName": "Europa"
+    },
+    "SolNode210": {
+        "id": "Naamah, Europa",
+        "nodeId": "SolNode210",
+        "name": "Naamah",
+        "systemName": "Europa"
+    },
+    "SolNode205": {
+        "id": "Baal, Europa",
+        "nodeId": "SolNode205",
+        "name": "Baal",
+        "systemName": "Europa"
+    },
+    "SolNode216": {
+        "id": "Valefor, Europa",
+        "nodeId": "SolNode216",
+        "name": "Valefor",
+        "systemName": "Europa"
+    },
+    "SolNode214": {
+        "id": "Sorath, Europa",
+        "nodeId": "SolNode214",
+        "name": "Sorath",
+        "systemName": "Europa"
+    },
+    "SolNode211": {
+        "id": "Ose, Europa",
+        "nodeId": "SolNode211",
+        "name": "Ose",
+        "systemName": "Europa"
+    },
+    "SolNode215": {
+        "id": "Valac, Europa",
+        "nodeId": "SolNode215",
+        "name": "Valac",
+        "systemName": "Europa"
+    },
+    "SolNode212": {
+        "id": "Paimon, Europa",
+        "nodeId": "SolNode212",
+        "name": "Paimon",
+        "systemName": "Europa"
+    },
+    "SolNode217": {
+        "id": "Orias, Europa",
+        "nodeId": "SolNode217",
+        "name": "Orias",
+        "systemName": "Europa"
+    },
+    "ClanNode6": {
+        "id": "Larzac, Europa",
+        "nodeId": "ClanNode6",
+        "name": "Larzac",
+        "systemName": "Europa"
+    },
+    "SolNode220": {
+        "id": "Kokabiel, Europa",
+        "nodeId": "SolNode220",
+        "name": "Kokabiel",
+        "systemName": "Europa"
+    },
+    "ClanNode7": {
+        "id": "Cholistan, Europa",
+        "nodeId": "ClanNode7",
+        "name": "Cholistan",
+        "systemName": "Europa"
+    },
+    "SolNode400": {
+        "id": "Teshub, Void",
+        "nodeId": "SolNode400",
+        "name": "Teshub",
+        "systemName": "Void"
+    },
+    "SolNode401": {
+        "id": "Hepit, Void",
+        "nodeId": "SolNode401",
+        "name": "Hepit",
+        "systemName": "Void"
+    },
+    "SolNode402": {
+        "id": "Taranis, Void",
+        "nodeId": "SolNode402",
+        "name": "Taranis",
+        "systemName": "Void"
+    },
+    "SolNode403": {
+        "id": "Tiwaz, Void",
+        "nodeId": "SolNode403",
+        "name": "Tiwaz",
+        "systemName": "Void"
+    },
+    "SolNode404": {
+        "id": "Stribog, Void",
+        "nodeId": "SolNode404",
+        "name": "Stribog",
+        "systemName": "Void"
+    },
+    "SolNode405": {
+        "id": "Ani, Void",
+        "nodeId": "SolNode405",
+        "name": "Ani",
+        "systemName": "Void"
+    },
+    "SolNode406": {
+        "id": "Ukko, Void",
+        "nodeId": "SolNode406",
+        "name": "Ukko",
+        "systemName": "Void"
+    },
+    "SolNode407": {
+        "id": "Oxomoco, Void",
+        "nodeId": "SolNode407",
+        "name": "Oxomoco",
+        "systemName": "Void"
+    },
+    "SolNode408": {
+        "id": "Belenus, Void",
+        "nodeId": "SolNode408",
+        "name": "Belenus",
+        "systemName": "Void"
+    },
+    "SolNode409": {
+        "id": "Mot, Void",
+        "nodeId": "SolNode409",
+        "name": "Mot",
+        "systemName": "Void"
+    },
+    "SolNode410": {
+        "id": "Aten, Void",
+        "nodeId": "SolNode410",
+        "name": "Aten",
+        "systemName": "Void"
+    },
+    "SolNode411": {
+        "id": "Marduk, Void",
+        "nodeId": "SolNode411",
+        "name": "Marduk",
+        "systemName": "Void"
+    },
+    "SolNode412": {
+        "id": "Mithra, Void",
+        "nodeId": "SolNode412",
+        "name": "Mithra",
+        "systemName": "Void"
+    },
+    "SettlementNode1": {
+        "id": "Roche, Phobos",
+        "nodeId": "SettlementNode1",
+        "name": "Roche",
+        "systemName": "Phobos"
+    },
+    "SettlementNode3": {
+        "id": "Stickney, Phobos",
+        "nodeId": "SettlementNode3",
+        "name": "Stickney",
+        "systemName": "Phobos"
+    },
+    "SettlementNode2": {
+        "id": "Skyresh, Phobos",
+        "nodeId": "SettlementNode2",
+        "name": "Skyresh",
+        "systemName": "Phobos"
+    },
+    "SettlementNode12": {
+        "id": "Monolith, Phobos",
+        "nodeId": "SettlementNode12",
+        "name": "Monolith",
+        "systemName": "Phobos"
+    },
+    "SettlementNode10": {
+        "id": "Kepler, Phobos",
+        "nodeId": "SettlementNode10",
+        "name": "Kepler",
+        "systemName": "Phobos"
+    },
+    "SettlementNode15": {
+        "id": "Sharpless, Phobos",
+        "nodeId": "SettlementNode15",
+        "name": "Sharpless",
+        "systemName": "Phobos"
+    },
+    "SettlementNode11": {
+        "id": "Gulliver, Phobos",
+        "nodeId": "SettlementNode11",
+        "name": "Gulliver",
+        "systemName": "Phobos"
+    },
+    "SettlementNode14": {
+        "id": "Shklovsky, Phobos",
+        "nodeId": "SettlementNode14",
+        "name": "Shklovsky",
+        "systemName": "Phobos"
+    },
+    "ClanNode10": {
+        "id": "Memphis, Phobos",
+        "nodeId": "ClanNode10",
+        "name": "Memphis",
+        "systemName": "Phobos"
+    },
+    "SettlementNode20": {
+        "id": "Iliad, Phobos",
+        "nodeId": "SettlementNode20",
+        "name": "Iliad",
+        "systemName": "Phobos"
+    },
+    "ClanNode11": {
+        "id": "Zeugma, Phobos",
+        "nodeId": "ClanNode11",
+        "name": "Zeugma",
+        "systemName": "Phobos"
+    },
+    "SolNode706": {
+        "id": "Horend, Deimos",
+        "nodeId": "SolNode706",
+        "name": "Horend",
+        "systemName": "Deimos"
+    },
+    "SolNode707": {
+        "id": "Hyf, Deimos",
+        "nodeId": "SolNode707",
+        "name": "Hyf",
+        "systemName": "Deimos"
+    },
+    "SolNode708": {
+        "id": "Phlegyas, Deimos",
+        "nodeId": "SolNode708",
+        "name": "Phlegyas",
+        "systemName": "Deimos"
+    },
+    "SolNode709": {
+        "id": "Dirus, Deimos",
+        "nodeId": "SolNode709",
+        "name": "Dirus",
+        "systemName": "Deimos"
+    },
+    "SolNode710": {
+        "id": "Formido, Deimos",
+        "nodeId": "SolNode710",
+        "name": "Formido",
+        "systemName": "Deimos"
+    },
+    "SolNode711": {
+        "id": "Terrorem, Deimos",
+        "nodeId": "SolNode711",
+        "name": "Terrorem",
+        "systemName": "Deimos"
+    },
+    "SolNode712": {
+        "id": "Magnacidium, Deimos",
+        "nodeId": "SolNode712",
+        "name": "Magnacidium",
+        "systemName": "Deimos"
+    },
+    "SolNode713": {
+        "id": "Exequias, Deimos",
+        "nodeId": "SolNode713",
+        "name": "Exequias",
+        "systemName": "Deimos"
+    },
+    "SolNode229": {
+        "id": "Cambion Drift, Deimos",
+        "nodeId": "SolNode229",
+        "name": "Cambion Drift",
+        "systemName": "Deimos"
+    },
+    "SolNode715": {
+        "id": "Effervo, Deimos",
+        "nodeId": "SolNode715",
+        "name": "Effervo",
+        "systemName": "Deimos"
+    },
+    "SolNode716": {
+        "id": "Nex, Deimos",
+        "nodeId": "SolNode716",
+        "name": "Nex",
+        "systemName": "Deimos"
+    },
+    "SolNode717": {
+        "id": "Persto, Deimos",
+        "nodeId": "SolNode717",
+        "name": "Persto",
+        "systemName": "Deimos"
+    },
+    "SolNode718": {
+        "id": "Cambire, Deimos",
+        "nodeId": "SolNode718",
+        "name": "Cambire",
+        "systemName": "Deimos"
+    },
+    "SolNode719": {
+        "id": "Munio, Deimos",
+        "nodeId": "SolNode719",
+        "name": "Munio",
+        "systemName": "Deimos"
+    },
+    "SolNode721": {
+        "id": "Armatus, Deimos",
+        "nodeId": "SolNode721",
+        "name": "Armatus",
+        "systemName": "Deimos"
+    },
+    "SolNode300": {
+        "id": "Plato, Lua",
+        "nodeId": "SolNode300",
+        "name": "Plato",
+        "systemName": "Lua"
+    },
+    "SolNode306": {
+        "id": "Pavlov, Lua",
+        "nodeId": "SolNode306",
+        "name": "Pavlov",
+        "systemName": "Lua"
+    },
+    "SolNode302": {
+        "id": "Tycho, Lua",
+        "nodeId": "SolNode302",
+        "name": "Tycho",
+        "systemName": "Lua"
+    },
+    "SolNode305": {
+        "id": "Stöfler, Lua",
+        "nodeId": "SolNode305",
+        "name": "Stöfler",
+        "systemName": "Lua"
+    },
+    "SolNode304": {
+        "id": "Copernicus, Lua",
+        "nodeId": "SolNode304",
+        "name": "Copernicus",
+        "systemName": "Lua"
+    },
+    "SolNode301": {
+        "id": "Grimaldi, Lua",
+        "nodeId": "SolNode301",
+        "name": "Grimaldi",
+        "systemName": "Lua"
+    },
+    "SolNode307": {
+        "id": "Zeipel, Lua",
+        "nodeId": "SolNode307",
+        "name": "Zeipel",
+        "systemName": "Lua"
+    },
+    "SolNode308": {
+        "id": "Apollo, Lua",
+        "nodeId": "SolNode308",
+        "name": "Apollo",
+        "systemName": "Lua"
+    },
+    "SolNode309": {
+        "id": "Yuvarium, Lua",
+        "nodeId": "SolNode309",
+        "name": "Yuvarium",
+        "systemName": "Lua"
+    },
+    "SolNode310": {
+        "id": "Circulus, Lua",
+        "nodeId": "SolNode310",
+        "name": "Circulus",
+        "systemName": "Lua"
+    },
+    "SolNode741": {
+        "id": "Koro, Kuva Fortress",
+        "nodeId": "SolNode741",
+        "name": "Koro",
+        "systemName": "Kuva Fortress"
+    },
+    "SolNode742": {
+        "id": "Nabuk, Kuva Fortress",
+        "nodeId": "SolNode742",
+        "name": "Nabuk",
+        "systemName": "Kuva Fortress"
+    },
+    "SolNode743": {
+        "id": "Rotuma, Kuva Fortress",
+        "nodeId": "SolNode743",
+        "name": "Rotuma",
+        "systemName": "Kuva Fortress"
+    },
+    "SolNode744": {
+        "id": "Taveuni, Kuva Fortress",
+        "nodeId": "SolNode744",
+        "name": "Taveuni",
+        "systemName": "Kuva Fortress"
+    },
+    "SolNode745": {
+        "id": "Tamu, Kuva Fortress",
+        "nodeId": "SolNode745",
+        "name": "Tamu",
+        "systemName": "Kuva Fortress"
+    },
+    "SolNode746": {
+        "id": "Dakata, Kuva Fortress",
+        "nodeId": "SolNode746",
+        "name": "Dakata",
+        "systemName": "Kuva Fortress"
+    },
+    "SolNode747": {
+        "id": "Pago, Kuva Fortress",
+        "nodeId": "SolNode747",
+        "name": "Pago",
+        "systemName": "Kuva Fortress"
+    },
+    "SolNode748": {
+        "id": "Garus, Kuva Fortress",
+        "nodeId": "SolNode748",
+        "name": "Garus",
+        "systemName": "Kuva Fortress"
+    },
+    "SolNode230": {
+        "id": "Everview Arc, Zariman",
+        "nodeId": "SolNode230",
+        "name": "Everview Arc",
+        "systemName": "Zariman"
+    },
+    "SolNode231": {
+        "id": "Halako Perimeter, Zariman",
+        "nodeId": "SolNode231",
+        "name": "Halako Perimeter",
+        "systemName": "Zariman"
+    },
+    "SolNode232": {
+        "id": "Tuvul Commons, Zariman",
+        "nodeId": "SolNode232",
+        "name": "Tuvul Commons",
+        "systemName": "Zariman"
+    },
+    "SolNode233": {
+        "id": "Oro Works, Zariman",
+        "nodeId": "SolNode233",
+        "name": "Oro Works",
+        "systemName": "Zariman"
+    },
+    "SolNode235": {
+        "id": "The Greenway, Zariman",
+        "nodeId": "SolNode235",
+        "name": "The Greenway",
+        "systemName": "Zariman"
+    },
+    "SolNode236": {
+        "id": "The Duviri Experience, Duviri",
+        "nodeId": "SolNode236",
+        "name": "The Duviri Experience",
+        "systemName": "Duviri"
+    },
+    "SolNode237": {
+        "id": "The Lone Story, Duviri",
+        "nodeId": "SolNode237",
+        "name": "The Lone Story",
+        "systemName": "Duviri"
+    },
+    "SolNode238": {
+        "id": "The Circuit, Duviri",
+        "nodeId": "SolNode238",
+        "name": "The Circuit",
+        "systemName": "Duviri"
+    },
+    "MercuryHUB": {
+        "id": "Larunda Relay, Mercury",
+        "name": "Larunda Relay",
+        "systemName": "Mercury",
+        "nodeId": "MercuryHUB"
+    },
+    "VenusHUB": {
+        "id": "Vesper Relay, Venus",
+        "name": "Vesper Relay",
+        "systemName": "Venus",
+        "nodeId": "VenusHUB"
+    },
+    "EarthHUB": {
+        "id": "Strata Relay, Earth",
+        "name": "Strata Relay",
+        "systemName": "Earth",
+        "nodeId": "EarthHUB"
+    },
+    "SaturnHUB": {
+        "id": "Kronia Relay, Saturn",
+        "name": "Kronia Relay",
+        "systemName": "Saturn",
+        "nodeId": "SaturnHUB"
+    },
+    "ErisHUB": {
+        "id": "Kuiper Relay, Eris",
+        "name": "Kuiper Relay",
+        "systemName": "Eris",
+        "nodeId": "ErisHUB"
+    },
+    "EuropaHUB": {
+        "id": "Leonov Relay, Europa",
+        "name": "Leonov Relay",
+        "systemName": "Europa",
+        "nodeId": "EuropaHUB"
+    },
+    "PlutoHUB": {
+        "id": "Orcus Relay, Pluto",
+        "name": "Orcus Relay",
+        "systemName": "Pluto",
+        "nodeId": "PlutoHUB"
+    },
+    "TradeHUB1": {
+        "id": "Maroo's Bazaar, Mars",
+        "name": "Maroo's Bazaar",
+        "systemName": "Mars",
+        "nodeId": "TradeHUB1"
+    }
+}

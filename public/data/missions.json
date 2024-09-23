@@ -284,7 +284,7 @@
         "name": "Elion",
         "planet": "Mercury",
         "fullName": "Elion, Mercury",
-        "type": "Capture",
+        "type": "Mobile Defense",
         "category": "missions",
         "id": "Elion, Mercury",
         "rewards": {}
@@ -293,7 +293,7 @@
         "name": "Terminus",
         "planet": "Mercury",
         "fullName": "Terminus, Mercury",
-        "type": "Caches",
+        "type": "Sabotage",
         "category": "missions",
         "id": "Terminus, Mercury",
         "rewards": {}
@@ -667,7 +667,7 @@
         "name": "Ishtar",
         "planet": "Venus",
         "fullName": "Ishtar, Venus",
-        "type": "Caches",
+        "type": "Sabotage",
         "category": "missions",
         "id": "Ishtar, Venus",
         "rewards": {}
@@ -990,7 +990,7 @@
         "name": "Malva",
         "planet": "Venus",
         "fullName": "Malva, Venus",
-        "type": "Survival",
+        "type": "Dark Sector Survival",
         "category": "missions",
         "id": "Malva, Venus",
         "rewards": {
@@ -1379,7 +1379,7 @@
         "name": "Romula",
         "planet": "Venus",
         "fullName": "Romula, Venus",
-        "type": "Defense",
+        "type": "Dark Sector Defense",
         "category": "missions",
         "id": "Romula, Venus",
         "rewards": {
@@ -1599,7 +1599,7 @@
         "name": "Montes",
         "planet": "Venus",
         "fullName": "Montes, Venus",
-        "type": "Exterminate",
+        "type": "Extermination (Archwing)",
         "category": "missions",
         "id": "Montes, Venus",
         "rewards": {}
@@ -2128,7 +2128,7 @@
         "name": "Cervantes",
         "planet": "Earth",
         "fullName": "Cervantes, Earth",
-        "type": "Caches",
+        "type": "Sabotage",
         "category": "missions",
         "id": "Cervantes, Earth",
         "rewards": {}
@@ -2146,7 +2146,7 @@
         "name": "Coba",
         "planet": "Earth",
         "fullName": "Coba, Earth",
-        "type": "Defense",
+        "type": "Dark Sector Defense",
         "category": "missions",
         "id": "Coba, Earth",
         "rewards": {
@@ -2366,7 +2366,7 @@
         "name": "Erpo",
         "planet": "Earth",
         "fullName": "Erpo, Earth",
-        "type": "Mobile Defense",
+        "type": "Mobile Defense (Archwing)",
         "category": "missions",
         "id": "Erpo, Earth",
         "rewards": {}
@@ -2375,7 +2375,7 @@
         "name": "Tikal",
         "planet": "Earth",
         "fullName": "Tikal, Earth",
-        "type": "Excavation",
+        "type": "Dark Sector Excavation",
         "category": "missions",
         "id": "Tikal, Earth",
         "rewards": {
@@ -3275,7 +3275,7 @@
         "name": "Kadesh",
         "planet": "Mars",
         "fullName": "Kadesh, Mars",
-        "type": "Defense",
+        "type": "Dark Sector Defense",
         "category": "missions",
         "id": "Kadesh, Mars",
         "rewards": {
@@ -3504,7 +3504,7 @@
         "name": "Gradivus",
         "planet": "Mars",
         "fullName": "Gradivus, Mars",
-        "type": "Caches",
+        "type": "Sabotage",
         "category": "missions",
         "id": "Gradivus, Mars",
         "rewards": {}
@@ -3513,7 +3513,7 @@
         "name": "Wahiba",
         "planet": "Mars",
         "fullName": "Wahiba, Mars",
-        "type": "Survival",
+        "type": "Dark Sector Survival",
         "category": "missions",
         "id": "Wahiba, Mars",
         "rewards": {
@@ -3644,7 +3644,7 @@
         "name": "Syrtis",
         "planet": "Mars",
         "fullName": "Syrtis, Mars",
-        "type": "Exterminate",
+        "type": "Extermination (Archwing)",
         "category": "missions",
         "id": "Syrtis, Mars",
         "rewards": {}
@@ -3653,7 +3653,7 @@
         "name": "Tyana Pass",
         "planet": "Mars",
         "fullName": "Tyana Pass, Mars",
-        "type": "Defense",
+        "type": "Mirror Defense",
         "category": "missions",
         "id": "Tyana Pass, Mars",
         "rewards": {
@@ -3995,7 +3995,7 @@
         "name": "Adrastea",
         "planet": "Jupiter",
         "fullName": "Adrastea, Jupiter",
-        "type": "Caches",
+        "type": "Spy",
         "category": "missions",
         "id": "Adrastea, Jupiter",
         "rewards": {}
@@ -4529,7 +4529,7 @@
         "name": "Carpo",
         "planet": "Jupiter",
         "fullName": "Carpo, Jupiter",
-        "type": "Caches",
+        "type": "Extermination",
         "category": "missions",
         "id": "Carpo, Jupiter",
         "rewards": {}
@@ -4556,7 +4556,7 @@
         "name": "Sinai",
         "planet": "Jupiter",
         "fullName": "Sinai, Jupiter",
-        "type": "Defense",
+        "type": "Dark Sector Survival",
         "category": "missions",
         "id": "Sinai, Jupiter",
         "rewards": {
@@ -4785,7 +4785,7 @@
         "name": "Galilea",
         "planet": "Jupiter",
         "fullName": "Galilea, Jupiter",
-        "type": "Sabotage",
+        "type": "Sabotage (Archwing)",
         "category": "missions",
         "id": "Galilea, Jupiter",
         "rewards": {}
@@ -4794,7 +4794,7 @@
         "name": "Cameria",
         "planet": "Jupiter",
         "fullName": "Cameria, Jupiter",
-        "type": "Survival",
+        "type": "Dark Sector Survival",
         "category": "missions",
         "id": "Cameria, Jupiter",
         "rewards": {
@@ -5561,7 +5561,7 @@
         "name": "Calypso",
         "planet": "Saturn",
         "fullName": "Calypso, Saturn",
-        "type": "Caches",
+        "type": "Sabotage",
         "category": "missions",
         "id": "Calypso, Saturn",
         "rewards": {}
@@ -5570,7 +5570,7 @@
         "name": "Pandora",
         "planet": "Saturn",
         "fullName": "Pandora, Saturn",
-        "type": "Pursuit",
+        "type": "Pursuit (Archwing)",
         "category": "missions",
         "id": "Pandora, Saturn",
         "rewards": {
@@ -5672,7 +5672,7 @@
         "name": "Piscinas",
         "planet": "Saturn",
         "fullName": "Piscinas, Saturn",
-        "type": "Survival",
+        "type": "Dark Sector Survival",
         "category": "missions",
         "id": "Piscinas, Saturn",
         "rewards": {
@@ -5794,7 +5794,7 @@
         "name": "Caracol",
         "planet": "Saturn",
         "fullName": "Caracol, Saturn",
-        "type": "Defection",
+        "type": "Dark Sector Defection",
         "category": "missions",
         "id": "Caracol, Saturn",
         "rewards": {
@@ -5943,7 +5943,7 @@
         "name": "Ariel",
         "planet": "Uranus",
         "fullName": "Ariel, Uranus",
-        "type": "Capture",
+        "type": "Sabotage",
         "category": "missions",
         "id": "Ariel, Uranus",
         "rewards": {}
@@ -6420,7 +6420,7 @@
         "name": "Desdemona",
         "planet": "Uranus",
         "fullName": "Desdemona, Uranus",
-        "type": "Caches",
+        "type": "Capture",
         "category": "missions",
         "id": "Desdemona, Uranus",
         "rewards": {}
@@ -6873,7 +6873,7 @@
         "name": "Ur",
         "planet": "Uranus",
         "fullName": "Ur, Uranus",
-        "type": "Disruption",
+        "type": "Dark Sector Disruption",
         "category": "missions",
         "id": "Ur, Uranus",
         "rewards": {
@@ -7210,7 +7210,7 @@
         "name": "Caelus",
         "planet": "Uranus",
         "fullName": "Caelus, Uranus",
-        "type": "Interception",
+        "type": "Interception (Archwing)",
         "category": "missions",
         "id": "Caelus, Uranus",
         "rewards": {
@@ -7276,7 +7276,7 @@
         "name": "Assur",
         "planet": "Uranus",
         "fullName": "Assur, Uranus",
-        "type": "Survival",
+        "type": "Dark Sector Survival",
         "category": "missions",
         "id": "Assur, Uranus",
         "rewards": {
@@ -7868,7 +7868,7 @@
         "name": "Salacia",
         "planet": "Neptune",
         "fullName": "Salacia, Neptune",
-        "type": "Mobile Defense",
+        "type": "Mobile Defense (Archwing)",
         "category": "missions",
         "id": "Salacia, Neptune",
         "rewards": {}
@@ -7895,7 +7895,7 @@
         "name": "Nereid",
         "planet": "Neptune",
         "fullName": "Nereid, Neptune",
-        "type": "Spy",
+        "type": "Hijack",
         "category": "missions",
         "id": "Nereid, Neptune",
         "rewards": {
@@ -8017,7 +8017,7 @@
         "name": "Yursa",
         "planet": "Neptune",
         "fullName": "Yursa, Neptune",
-        "type": "Defection",
+        "type": "Dark Sector Defection",
         "category": "missions",
         "id": "Yursa, Neptune",
         "rewards": {
@@ -8139,7 +8139,7 @@
         "name": "Kelashin",
         "planet": "Neptune",
         "fullName": "Kelashin, Neptune",
-        "type": "Survival",
+        "type": "Dark Sector Survival",
         "category": "missions",
         "id": "Kelashin, Neptune",
         "rewards": {
@@ -8506,7 +8506,7 @@
         "name": "Cypress",
         "planet": "Pluto",
         "fullName": "Cypress, Pluto",
-        "type": "Caches",
+        "type": "Sabotage",
         "category": "missions",
         "id": "Cypress, Pluto",
         "rewards": {}
@@ -8801,7 +8801,7 @@
         "name": "Sechura",
         "planet": "Pluto",
         "fullName": "Sechura, Pluto",
-        "type": "Defense",
+        "type": "Dark Sector Defense",
         "category": "missions",
         "id": "Sechura, Pluto",
         "rewards": {
@@ -9143,7 +9143,7 @@
         "name": "Hieracon",
         "planet": "Pluto",
         "fullName": "Hieracon, Pluto",
-        "type": "Excavation",
+        "type": "Dark Sector Excavation",
         "category": "missions",
         "id": "Hieracon, Pluto",
         "rewards": {
@@ -9283,7 +9283,7 @@
         "name": "Thon",
         "planet": "Ceres",
         "fullName": "Thon, Ceres",
-        "type": "Caches",
+        "type": "Sabotage",
         "category": "missions",
         "id": "Thon, Ceres",
         "rewards": {}
@@ -9531,7 +9531,7 @@
         "name": "Ker",
         "planet": "Ceres",
         "fullName": "Ker, Ceres",
-        "type": "Caches",
+        "type": "Sabotage",
         "category": "missions",
         "id": "Ker, Ceres",
         "rewards": {}
@@ -10238,7 +10238,7 @@
         "name": "Gabii",
         "planet": "Ceres",
         "fullName": "Gabii, Ceres",
-        "type": "Survival",
+        "type": "Dark Sector Survival",
         "category": "missions",
         "id": "Gabii, Ceres",
         "rewards": {
@@ -10346,7 +10346,7 @@
         "name": "Seimeni",
         "planet": "Ceres",
         "fullName": "Seimeni, Ceres",
-        "type": "Defense",
+        "type": "Dark Sector Defense",
         "category": "missions",
         "id": "Seimeni, Ceres",
         "rewards": {
@@ -11895,7 +11895,7 @@
         "name": "Akkad",
         "planet": "Eris",
         "fullName": "Akkad, Eris",
-        "type": "Defense",
+        "type": "Dark Sector Defense",
         "category": "missions",
         "id": "Akkad, Eris",
         "rewards": {
@@ -12297,7 +12297,7 @@
         "name": "Zabala",
         "planet": "Eris",
         "fullName": "Zabala, Eris",
-        "type": "Survival",
+        "type": "Dark Sector Survival",
         "category": "missions",
         "id": "Zabala, Eris",
         "rewards": {
@@ -12419,7 +12419,7 @@
         "name": "Naeglar",
         "planet": "Eris",
         "fullName": "Naeglar, Eris",
-        "type": "Caches",
+        "type": "Hive",
         "category": "missions",
         "id": "Naeglar, Eris",
         "rewards": {}
@@ -12606,7 +12606,7 @@
         "name": "Rusalka",
         "planet": "Sedna",
         "fullName": "Rusalka, Sedna",
-        "type": "Caches",
+        "type": "Capture",
         "category": "missions",
         "id": "Rusalka, Sedna",
         "rewards": {}
@@ -13789,7 +13789,7 @@
         "name": "Amarna",
         "planet": "Sedna",
         "fullName": "Amarna, Sedna",
-        "type": "Survival",
+        "type": "Dark Sector Survival",
         "category": "missions",
         "id": "Amarna, Sedna",
         "rewards": {
@@ -13920,7 +13920,7 @@
         "name": "Sangeru",
         "planet": "Sedna",
         "fullName": "Sangeru, Sedna",
-        "type": "Defense",
+        "type": "Dark Sector Defense",
         "category": "missions",
         "id": "Sangeru, Sedna",
         "rewards": {
@@ -14954,7 +14954,7 @@
         "name": "Larzac",
         "planet": "Europa",
         "fullName": "Larzac, Europa",
-        "type": "Defense",
+        "type": "Dark Sector Defense",
         "category": "missions",
         "id": "Larzac, Europa",
         "rewards": {
@@ -15192,7 +15192,7 @@
         "name": "Cholistan",
         "planet": "Europa",
         "fullName": "Cholistan, Europa",
-        "type": "Excavation",
+        "type": "Dark Sector Excavation",
         "category": "missions",
         "id": "Cholistan, Europa",
         "rewards": {
@@ -15314,7 +15314,7 @@
         "name": "Teshub",
         "planet": "Void",
         "fullName": "Teshub, Void",
-        "type": "Exterminate",
+        "type": "Extermination",
         "category": "missions",
         "id": "Teshub, Void",
         "rewards": {
@@ -15946,7 +15946,7 @@
         "name": "Stribog",
         "planet": "Void",
         "fullName": "Stribog, Void",
-        "type": "Caches",
+        "type": "Orokin Sabotage",
         "category": "missions",
         "id": "Stribog, Void",
         "rewards": {}
@@ -16399,7 +16399,7 @@
         "name": "Oxomoco",
         "planet": "Void",
         "fullName": "Oxomoco, Void",
-        "type": "Exterminate",
+        "type": "Extermination",
         "category": "missions",
         "id": "Oxomoco, Void",
         "rewards": {
@@ -17145,7 +17145,7 @@
         "name": "Marduk",
         "planet": "Void",
         "fullName": "Marduk, Void",
-        "type": "Caches",
+        "type": "Sabotage",
         "category": "missions",
         "id": "Marduk, Void",
         "rewards": {}
@@ -17743,7 +17743,7 @@
         "name": "Kepler",
         "planet": "Phobos",
         "fullName": "Kepler, Phobos",
-        "type": "Rush",
+        "type": "Rush (Archwing)",
         "category": "missions",
         "id": "Kepler, Phobos",
         "rewards": {
@@ -18264,7 +18264,7 @@
         "name": "Memphis",
         "planet": "Phobos",
         "fullName": "Memphis, Phobos",
-        "type": "Defection",
+        "type": "Dark Sector Defection",
         "category": "missions",
         "id": "Memphis, Phobos",
         "rewards": {
@@ -18601,7 +18601,7 @@
         "name": "Zeugma",
         "planet": "Phobos",
         "fullName": "Zeugma, Phobos",
-        "type": "Survival",
+        "type": "Dark Sector Survival",
         "category": "missions",
         "id": "Zeugma, Phobos",
         "rewards": {
@@ -18845,7 +18845,7 @@
         "name": "Formido",
         "planet": "Deimos",
         "fullName": "Formido, Deimos",
-        "type": "Caches",
+        "type": "Sabotage",
         "category": "missions",
         "id": "Formido, Deimos",
         "rewards": {}
@@ -19107,7 +19107,7 @@
         "name": "Nex",
         "planet": "Deimos",
         "fullName": "Nex, Deimos",
-        "type": "Exterminate",
+        "type": "Extermination",
         "category": "missions",
         "id": "Nex, Deimos",
         "rewards": {
@@ -19417,7 +19417,7 @@
         "name": "Munio",
         "planet": "Deimos",
         "fullName": "Munio, Deimos",
-        "type": "Defense",
+        "type": "Mirror Defense",
         "category": "missions",
         "id": "Munio, Deimos",
         "rewards": {
@@ -19709,7 +19709,7 @@
         "name": "Plato",
         "planet": "Lua",
         "fullName": "Plato, Lua",
-        "type": "Caches",
+        "type": "Extermination",
         "category": "missions",
         "id": "Plato, Lua",
         "rewards": {}
@@ -20013,7 +20013,7 @@
         "name": "Copernicus",
         "planet": "Lua",
         "fullName": "Copernicus, Lua",
-        "type": "Capture",
+        "type": "Mobile Defense",
         "category": "missions",
         "id": "Copernicus, Lua",
         "rewards": {}
@@ -20213,7 +20213,7 @@
         "name": "Nabuk",
         "planet": "Kuva Fortress",
         "fullName": "Nabuk, Kuva Fortress",
-        "type": "Defense",
+        "type": "Capture",
         "category": "missions",
         "id": "Nabuk, Kuva Fortress",
         "rewards": {
@@ -20508,7 +20508,7 @@
         "name": "Dakata",
         "planet": "Kuva Fortress",
         "fullName": "Dakata, Kuva Fortress",
-        "type": "Caches",
+        "type": "Extermination",
         "category": "missions",
         "id": "Dakata, Kuva Fortress",
         "rewards": {}
@@ -21174,7 +21174,7 @@
         "name": "Halako Perimeter",
         "planet": "Zariman",
         "fullName": "Halako Perimeter, Zariman",
-        "type": "Exterminate",
+        "type": "Extermination",
         "category": "missions",
         "id": "Halako Perimeter, Zariman",
         "rewards": {
@@ -24684,5 +24684,518 @@
                 }
             ]
         }
+    },
+    "M Prime, Mercury": {
+        "name": "M Prime",
+        "planet": "Mercury",
+        "fullName": "M Prime, Mercury",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "M Prime, Mercury",
+        "rewards": {}
+    },
+    "Boethius, Mercury": {
+        "name": "Boethius",
+        "planet": "Mercury",
+        "fullName": "Boethius, Mercury",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "Boethius, Mercury",
+        "rewards": {}
+    },
+    "Pantheon, Mercury": {
+        "name": "Pantheon",
+        "planet": "Mercury",
+        "fullName": "Pantheon, Mercury",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "Pantheon, Mercury",
+        "rewards": {}
+    },
+    "Orb Vallis, Venus": {
+        "name": "Orb Vallis",
+        "planet": "Venus",
+        "fullName": "Orb Vallis, Venus",
+        "type": "Free Roam",
+        "category": "missions",
+        "id": "Orb Vallis, Venus",
+        "rewards": {}
+    },
+    "Aphrodite, Venus": {
+        "name": "Aphrodite",
+        "planet": "Venus",
+        "fullName": "Aphrodite, Venus",
+        "type": "Mobile Defense",
+        "category": "missions",
+        "id": "Aphrodite, Venus",
+        "rewards": {}
+    },
+    "E Gate, Venus": {
+        "name": "E Gate",
+        "planet": "Venus",
+        "fullName": "E Gate, Venus",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "E Gate, Venus",
+        "rewards": {}
+    },
+    "E Prime, Earth": {
+        "name": "E Prime",
+        "planet": "Earth",
+        "fullName": "E Prime, Earth",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "E Prime, Earth",
+        "rewards": {}
+    },
+    "Mariana, Earth": {
+        "name": "Mariana",
+        "planet": "Earth",
+        "fullName": "Mariana, Earth",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "Mariana, Earth",
+        "rewards": {}
+    },
+    "Eurasia, Earth": {
+        "name": "Eurasia",
+        "planet": "Earth",
+        "fullName": "Eurasia, Earth",
+        "type": "Mobile Defense",
+        "category": "missions",
+        "id": "Eurasia, Earth",
+        "rewards": {}
+    },
+    "Plains of Eidolon, Earth": {
+        "name": "Plains of Eidolon",
+        "planet": "Earth",
+        "fullName": "Plains of Eidolon, Earth",
+        "type": "Free Roam",
+        "category": "missions",
+        "id": "Plains of Eidolon, Earth",
+        "rewards": {}
+    },
+    "Ares, Mars": {
+        "name": "Ares",
+        "planet": "Mars",
+        "fullName": "Ares, Mars",
+        "type": "Sabotage",
+        "category": "missions",
+        "id": "Ares, Mars",
+        "rewards": {}
+    },
+    "Vallis, Mars": {
+        "name": "Vallis",
+        "planet": "Mars",
+        "fullName": "Vallis, Mars",
+        "type": "Mobile Defense",
+        "category": "missions",
+        "id": "Vallis, Mars",
+        "rewards": {}
+    },
+    "Hellas, Mars": {
+        "name": "Hellas",
+        "planet": "Mars",
+        "fullName": "Hellas, Mars",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "Hellas, Mars",
+        "rewards": {}
+    },
+    "Ultor, Mars": {
+        "name": "Ultor",
+        "planet": "Mars",
+        "fullName": "Ultor, Mars",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "Ultor, Mars",
+        "rewards": {}
+    },
+    "Tharsis, Mars": {
+        "name": "Tharsis",
+        "planet": "Mars",
+        "fullName": "Tharsis, Mars",
+        "type": "Hijack",
+        "category": "missions",
+        "id": "Tharsis, Mars",
+        "rewards": {}
+    },
+    "Thebe, Jupiter": {
+        "name": "Thebe",
+        "planet": "Jupiter",
+        "fullName": "Thebe, Jupiter",
+        "type": "Sabotage",
+        "category": "missions",
+        "id": "Thebe, Jupiter",
+        "rewards": {}
+    },
+    "Carme, Jupiter": {
+        "name": "Carme",
+        "planet": "Jupiter",
+        "fullName": "Carme, Jupiter",
+        "type": "Mobile Defense",
+        "category": "missions",
+        "id": "Carme, Jupiter",
+        "rewards": {}
+    },
+    "Enceladus, Saturn": {
+        "name": "Enceladus",
+        "planet": "Saturn",
+        "fullName": "Enceladus, Saturn",
+        "type": "Sabotage",
+        "category": "missions",
+        "id": "Enceladus, Saturn",
+        "rewards": {}
+    },
+    "Keeler, Saturn": {
+        "name": "Keeler",
+        "planet": "Saturn",
+        "fullName": "Keeler, Saturn",
+        "type": "Mobile Defense",
+        "category": "missions",
+        "id": "Keeler, Saturn",
+        "rewards": {}
+    },
+    "Telesto, Saturn": {
+        "name": "Telesto",
+        "planet": "Saturn",
+        "fullName": "Telesto, Saturn",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "Telesto, Saturn",
+        "rewards": {}
+    },
+    "Cressida, Uranus": {
+        "name": "Cressida",
+        "planet": "Uranus",
+        "fullName": "Cressida, Uranus",
+        "type": "Mobile Defense",
+        "category": "missions",
+        "id": "Cressida, Uranus",
+        "rewards": {}
+    },
+    "Puck, Uranus": {
+        "name": "Puck",
+        "planet": "Uranus",
+        "fullName": "Puck, Uranus",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "Puck, Uranus",
+        "rewards": {}
+    },
+    "Sycorax, Uranus": {
+        "name": "Sycorax",
+        "planet": "Uranus",
+        "fullName": "Sycorax, Uranus",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "Sycorax, Uranus",
+        "rewards": {}
+    },
+    "Larissa, Neptune": {
+        "name": "Larissa",
+        "planet": "Neptune",
+        "fullName": "Larissa, Neptune",
+        "type": "Mobile Defense",
+        "category": "missions",
+        "id": "Larissa, Neptune",
+        "rewards": {}
+    },
+    "Sao, Neptune": {
+        "name": "Sao",
+        "planet": "Neptune",
+        "fullName": "Sao, Neptune",
+        "type": "Sabotage",
+        "category": "missions",
+        "id": "Sao, Neptune",
+        "rewards": {}
+    },
+    "Neso, Neptune": {
+        "name": "Neso",
+        "planet": "Neptune",
+        "fullName": "Neso, Neptune",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "Neso, Neptune",
+        "rewards": {}
+    },
+    "Acheron, Pluto": {
+        "name": "Acheron",
+        "planet": "Pluto",
+        "fullName": "Acheron, Pluto",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "Acheron, Pluto",
+        "rewards": {}
+    },
+    "Narcissus, Pluto": {
+        "name": "Narcissus",
+        "planet": "Pluto",
+        "fullName": "Narcissus, Pluto",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "Narcissus, Pluto",
+        "rewards": {}
+    },
+    "Minthe, Pluto": {
+        "name": "Minthe",
+        "planet": "Pluto",
+        "fullName": "Minthe, Pluto",
+        "type": "Mobile Defense",
+        "category": "missions",
+        "id": "Minthe, Pluto",
+        "rewards": {}
+    },
+    "Pallas, Ceres": {
+        "name": "Pallas",
+        "planet": "Ceres",
+        "fullName": "Pallas, Ceres",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "Pallas, Ceres",
+        "rewards": {}
+    },
+    "Kiste, Ceres": {
+        "name": "Kiste",
+        "planet": "Ceres",
+        "fullName": "Kiste, Ceres",
+        "type": "Mobile Defense",
+        "category": "missions",
+        "id": "Kiste, Ceres",
+        "rewards": {}
+    },
+    "Ludi, Ceres": {
+        "name": "Ludi",
+        "planet": "Ceres",
+        "fullName": "Ludi, Ceres",
+        "type": "Hijack",
+        "category": "missions",
+        "id": "Ludi, Ceres",
+        "rewards": {}
+    },
+    "Kala-azar, Eris": {
+        "name": "Kala-azar",
+        "planet": "Eris",
+        "fullName": "Kala-azar, Eris",
+        "type": "Defense",
+        "category": "missions",
+        "id": "Kala-azar, Eris",
+        "rewards": {}
+    },
+    "Saxis, Eris": {
+        "name": "Saxis",
+        "planet": "Eris",
+        "fullName": "Saxis, Eris",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "Saxis, Eris",
+        "rewards": {}
+    },
+    "Solium, Eris": {
+        "name": "Solium",
+        "planet": "Eris",
+        "fullName": "Solium, Eris",
+        "type": "Mobile Defense",
+        "category": "missions",
+        "id": "Solium, Eris",
+        "rewards": {}
+    },
+    "Adaro, Sedna": {
+        "name": "Adaro",
+        "planet": "Sedna",
+        "fullName": "Adaro, Sedna",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "Adaro, Sedna",
+        "rewards": {}
+    },
+    "Marid, Sedna": {
+        "name": "Marid",
+        "planet": "Sedna",
+        "fullName": "Marid, Sedna",
+        "type": "Hijack",
+        "category": "missions",
+        "id": "Marid, Sedna",
+        "rewards": {}
+    },
+    "Charybdis, Sedna": {
+        "name": "Charybdis",
+        "planet": "Sedna",
+        "fullName": "Charybdis, Sedna",
+        "type": "Mobile Defense",
+        "category": "missions",
+        "id": "Charybdis, Sedna",
+        "rewards": {}
+    },
+    "Armaros, Europa": {
+        "name": "Armaros",
+        "planet": "Europa",
+        "fullName": "Armaros, Europa",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "Armaros, Europa",
+        "rewards": {}
+    },
+    "Morax, Europa": {
+        "name": "Morax",
+        "planet": "Europa",
+        "fullName": "Morax, Europa",
+        "type": "Mobile Defense",
+        "category": "missions",
+        "id": "Morax, Europa",
+        "rewards": {}
+    },
+    "Baal, Europa": {
+        "name": "Baal",
+        "planet": "Europa",
+        "fullName": "Baal, Europa",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "Baal, Europa",
+        "rewards": {}
+    },
+    "Sorath, Europa": {
+        "name": "Sorath",
+        "planet": "Europa",
+        "fullName": "Sorath, Europa",
+        "type": "Hijack",
+        "category": "missions",
+        "id": "Sorath, Europa",
+        "rewards": {}
+    },
+    "Kokabiel, Europa": {
+        "name": "Kokabiel",
+        "planet": "Europa",
+        "fullName": "Kokabiel, Europa",
+        "type": "Sabotage",
+        "category": "missions",
+        "id": "Kokabiel, Europa",
+        "rewards": {}
+    },
+    "Roche, Phobos": {
+        "name": "Roche",
+        "planet": "Phobos",
+        "fullName": "Roche, Phobos",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "Roche, Phobos",
+        "rewards": {}
+    },
+    "Sharpless, Phobos": {
+        "name": "Sharpless",
+        "planet": "Phobos",
+        "fullName": "Sharpless, Phobos",
+        "type": "Mobile Defense",
+        "category": "missions",
+        "id": "Sharpless, Phobos",
+        "rewards": {}
+    },
+    "Horend, Deimos": {
+        "name": "Horend",
+        "planet": "Deimos",
+        "fullName": "Horend, Deimos",
+        "type": "Capture",
+        "category": "missions",
+        "id": "Horend, Deimos",
+        "rewards": {}
+    },
+    "Phlegyas, Deimos": {
+        "name": "Phlegyas",
+        "planet": "Deimos",
+        "fullName": "Phlegyas, Deimos",
+        "type": "Extermination",
+        "category": "missions",
+        "id": "Phlegyas, Deimos",
+        "rewards": {}
+    },
+    "Dirus, Deimos": {
+        "name": "Dirus",
+        "planet": "Deimos",
+        "fullName": "Dirus, Deimos",
+        "type": "Mobile Defense",
+        "category": "missions",
+        "id": "Dirus, Deimos",
+        "rewards": {}
+    },
+    "Exequias, Deimos": {
+        "name": "Exequias",
+        "planet": "Deimos",
+        "fullName": "Exequias, Deimos",
+        "type": "Assassination",
+        "category": "missions",
+        "id": "Exequias, Deimos",
+        "rewards": {}
+    },
+    "Cambion Drift, Deimos": {
+        "name": "Cambion Drift",
+        "planet": "Deimos",
+        "fullName": "Cambion Drift, Deimos",
+        "type": "Free Roam",
+        "category": "missions",
+        "id": "Cambion Drift, Deimos",
+        "rewards": {}
+    },
+    "Stöfler, Lua": {
+        "name": "Stöfler",
+        "planet": "Lua",
+        "fullName": "Stöfler, Lua",
+        "type": "Defense",
+        "category": "missions",
+        "id": "Stöfler, Lua",
+        "rewards": {}
+    },
+    "Grimaldi, Lua": {
+        "name": "Grimaldi",
+        "planet": "Lua",
+        "fullName": "Grimaldi, Lua",
+        "type": "Mobile Defense",
+        "category": "missions",
+        "id": "Grimaldi, Lua",
+        "rewards": {}
+    },
+    "Koro, Kuva Fortress": {
+        "name": "Koro",
+        "planet": "Kuva Fortress",
+        "fullName": "Koro, Kuva Fortress",
+        "type": "Assault",
+        "category": "missions",
+        "id": "Koro, Kuva Fortress",
+        "rewards": {}
+    },
+    "Rotuma, Kuva Fortress": {
+        "name": "Rotuma",
+        "planet": "Kuva Fortress",
+        "fullName": "Rotuma, Kuva Fortress",
+        "type": "Mobile Defense",
+        "category": "missions",
+        "id": "Rotuma, Kuva Fortress",
+        "rewards": {}
+    },
+    "The Duviri Experience, Duviri": {
+        "name": "The Duviri Experience",
+        "planet": "Duviri",
+        "fullName": "The Duviri Experience, Duviri",
+        "type": "Free Roam",
+        "category": "missions",
+        "id": "The Duviri Experience, Duviri",
+        "rewards": {}
+    },
+    "The Lone Story, Duviri": {
+        "name": "The Lone Story",
+        "planet": "Duviri",
+        "fullName": "The Lone Story, Duviri",
+        "type": "Free Roam",
+        "category": "missions",
+        "id": "The Lone Story, Duviri",
+        "rewards": {}
+    },
+    "The Circuit, Duviri": {
+        "name": "The Circuit",
+        "planet": "Duviri",
+        "fullName": "The Circuit, Duviri",
+        "type": "Free Roam",
+        "category": "missions",
+        "id": "The Circuit, Duviri",
+        "rewards": {}
     }
 }
