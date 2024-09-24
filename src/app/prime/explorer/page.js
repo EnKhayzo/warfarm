@@ -35,6 +35,8 @@ import ObjectStateLabel from '@/components/ObjectStateLabel';
 import ObtainedResurgenceGroup from '@/components/ObtainedResurgenceGroup';
 import useMissionPriorities from '@/hooks/useMissionPriorities.js';
 import DucatLabel from '@/components/DucatLabel';
+import LazyLoadVisibleWrapper from '@/components/LazyLoadVisibleWrapper';
+import useGlobalMode from '@/hooks/useGlobalMode';
 
 
 const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) => {
@@ -103,6 +105,9 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
     return "";
   };
 
+  const [ globalMode, setGlobalMode ] = useGlobalMode();
+  const isFarmMode = globalMode == null || globalMode === "farmMode";
+
   return (
     <div className='sized-remaining v-flex flex-center' style={{ gap: '5px' }}>
       <div 
@@ -139,32 +144,33 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
               >
                 { 
                   group.map((object, index) => (
-                    <Link href={com.getObjectRouteFromId(object.id)}
-                      key={`${index}-${object.name}`} 
-                      className={`sized-content main-view-item-single-container item-check-parent tracker-item-parent${farmedObjectClass(object)} v-flex flex-center`}
-                      style={{ 
-                        width: '140px',
-                        opacity: object.vaulted ? '50%' : '100%', 
-                        position: 'relative',
-                        cursor: 'pointer',
-                        alignSelf: 'stretch' 
-                      }}
-                      // onClick={() => router.push(
-                      //   com.getObjectRouteFromId(object.id)
-                      //   // category.localeCompare("Items") == 0 ? `/prime/items/${object.name.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
-                      //   // category.localeCompare("Components") == 0 ? `/prime/components/${object.fullName.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
-                      //   // category.localeCompare("Relics") == 0 ? `/prime/relics/${object.name.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
-                      //   // category.localeCompare("Missions") == 0 ? `/prime/missions/${`${object.name}${object.planet}`}` : ''
-                      // )}
-                    >
-                      <div className='sized-content h-flex flex-center' style={{ objectFit: 'contain', height: '90px' }}><img  className='sized-content h-flex main-view-item-image flex-center' style={{ height: '100px', width: '100px', objectFit: 'contain' }} src={com.getObjectIcon(object)}/></div>
-                      <div className='sized-content main-view-item-label h-flex flex-center' style={{ textAlign: 'center' }}>{ labelFunc(object) }</div>
-                      {/* <ObjectStateLabel object={object}/> */}
-                      <ItemActionButton itemId={com.getObjectId(object, category)}/>
-                      <ObtainedResurgenceGroup itemId={com.getObjectId(object, category)} positionAbsolute={true}/>
-                      <ObjectStateLabel object={object} exclusiveMode={"ducatMode"}/>
-                      <DucatLabel rawObj={object}/>
-                    </Link>
+                    <LazyLoadVisibleWrapper key={`${index}-${object.name}`} style={{ width: '140px', minHeight: isFarmMode ? '140px' : '190px' }}>
+                      <Link href={com.getObjectRouteFromId(object.id)}
+                        className={`sized-content main-view-item-single-container item-check-parent tracker-item-parent${farmedObjectClass(object)} v-flex flex-center`}
+                        style={{ 
+                          width: '140px',
+                          opacity: object.vaulted ? '50%' : '100%', 
+                          position: 'relative',
+                          cursor: 'pointer',
+                          alignSelf: 'stretch' 
+                        }}
+                        // onClick={() => router.push(
+                        //   com.getObjectRouteFromId(object.id)
+                        //   // category.localeCompare("Items") == 0 ? `/prime/items/${object.name.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
+                        //   // category.localeCompare("Components") == 0 ? `/prime/components/${object.fullName.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
+                        //   // category.localeCompare("Relics") == 0 ? `/prime/relics/${object.name.replaceAll(" ", "").replaceAll(" ", "").replaceAll("&", "")}` :
+                        //   // category.localeCompare("Missions") == 0 ? `/prime/missions/${`${object.name}${object.planet}`}` : ''
+                        // )}
+                      >
+                        <div className='sized-content h-flex flex-center' style={{ objectFit: 'contain', height: '90px' }}><img  className='sized-content h-flex main-view-item-image flex-center' style={{ height: '100px', width: '100px', objectFit: 'contain' }} src={com.getObjectIcon(object)}/></div>
+                        <div className='sized-content main-view-item-label h-flex flex-center' style={{ textAlign: 'center' }}>{ labelFunc(object) }</div>
+                        {/* <ObjectStateLabel object={object}/> */}
+                        <ItemActionButton itemId={com.getObjectId(object, category)}/>
+                        <ObtainedResurgenceGroup itemId={com.getObjectId(object, category)} positionAbsolute={true}/>
+                        <ObjectStateLabel object={object} exclusiveMode={"ducatMode"}/>
+                        <DucatLabel rawObj={object}/>
+                      </Link>
+                    </LazyLoadVisibleWrapper>
                   )) 
                 }
               </div>

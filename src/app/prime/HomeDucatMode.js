@@ -38,6 +38,8 @@ import useObtainedExtras from '@/hooks/useObtainedExtras.js';
 import ComponentAddButton from './[category]/[routeId]/subcomponents/ComponentAddButton.js';
 import ObtainedLabelButtonExtras from '@/components/ObtainedLabelButtonExtras.js';
 import SellItemButtons from '@/components/SellItemButtons.js';
+import LazyLoadVisibleWrapper from '@/components/LazyLoadVisibleWrapper.js';
+import useGlobalMode from '@/hooks/useGlobalMode.js';
 
 
 export function SellItemsComponent(){
@@ -241,17 +243,19 @@ export function DuplicatesComponent(){
               idA.localeCompare(idB)
             )
             .map(([ componentId, extraObj ], index) => { const component = com.getObjectFromId(componentId); return (
-              <div key={`${index}-${componentId}`}  className='sized-content v-flex flex-center' style={{ gap: '5px' }}>
-                <ComponentAddButton 
-                  component={com.getObjectFromId(componentId)}
-                  isRawObj={true}
-                  fullName={true}
-                  showButtons={false}
-                  showCorrespondingItem={true}
-                  style={{ minWidth: '205px' }}
-                />
-                <SellItemButtons component={component} showLabel={true} alwaysShowLabel={true}/>
-              </div>
+              <LazyLoadVisibleWrapper key={`${index}-${componentId}`} style={{ width: '205px', minHeight: '190px' }}>
+                <div className='sized-content v-flex flex-center' style={{ gap: '5px' }}>
+                  <ComponentAddButton 
+                    component={com.getObjectFromId(componentId)}
+                    isRawObj={true}
+                    fullName={true}
+                    showButtons={false}
+                    showCorrespondingItem={true}
+                    style={{ minWidth: '205px' }}
+                  />
+                  <SellItemButtons component={component} showLabel={true} alwaysShowLabel={true}/>
+                </div>
+              </LazyLoadVisibleWrapper>
             )})
         }
       </div>

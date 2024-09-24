@@ -34,7 +34,7 @@ import useDialogUis from "@/hooks/useDialogUis";
 import FallbackObject from "./[category]/[routeId]/FallbackObject";
 import LazyLoaded from "@/components/LazyLoaded";
 import HoverElement from "@/components/HoverElement";
-import LegendComponent from "./LegendComponent";
+import InfoPageComponent from "./InfoPageComponent.js";
 import { ScrollPaneContext } from "@/contexts/ScrollPaneContext";
 import { NavigationEvents } from "@/components/NavigationEvents";
 import useNotificationUis from "@/hooks/useNotificationUis";
@@ -46,6 +46,7 @@ import LabelCheckbox from "@/components/LabelCheckbox.js";
 import Script from "next/script.js";
 import useGlobalMode from "@/hooks/useGlobalMode.js";
 import useContextMenuUis from "@/hooks/useContextMenuUis.js";
+import SidePane from "@/components/SidePane.js";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -65,21 +66,52 @@ function NavBarMainButtons({ forceHomeBlink }){
   );
 }
 
-function NavBarSideButtons({}){
+function NavBarSideButtons({ showDucatButton=true, expandLabels=false, setHasFirstAccessed, exportUserData, importUserData, setMissionPriorities, clearObtainedItemsData, clearTrackedItemsData, clearMissionPrioritiesData, clearAllUserData }){
   const pathName = usePathname(); 
 
   return (
     <>
+      { !showDucatButton ? null: <DucatModeButton/> }
       <Link href="/prime/upcoming">
         <IconButton 
           title='Upcoming Page'
-          label={'Upcoming'} 
+          label={expandLabels ? 'Upcoming' : ''} 
           iconUrl={`${com.getBaseEnvPath().basePath}/icons/news.svg`} 
           highlight={pathName === "/prime/upcoming"} 
           className={'layout-header-button'} 
           iconClassName={'layout-header-icon'}
+          iconHeight={expandLabels ? '15px' : '20px'}
         />
       </Link>
+      <Link href="/prime/supportme">
+        <IconButton 
+          title='Donation Page' 
+          label={expandLabels ? 'Support Me' : ''} 
+          iconUrl={`${com.getBaseEnvPath().basePath}/icons/heart.svg`} 
+          className={'layout-header-button support-me-button'} 
+          iconClassName={'support-me-icon'} 
+          iconHeight={expandLabels ? '15px' : '20px'}
+        />
+      </Link>
+      <IconButton 
+        title='Info Page' 
+        label={expandLabels ? 'Info Page' : ''} 
+        iconUrl={`${com.getBaseEnvPath().basePath}/icons/info.svg`} 
+        className={'layout-header-button'} 
+        iconClassName={'layout-header-icon'} 
+        iconHeight={expandLabels ? '15px' : '20px'}
+        onClick={(ev) => { showInfoPage(setHasFirstAccessed); }}
+      />
+      <SettingsButton 
+        showLabel={expandLabels}
+        exportUserData={exportUserData} 
+        importUserData={importUserData} 
+        setMissionPriorities={setMissionPriorities}
+        clearObtainedItemsData={clearObtainedItemsData}
+        clearTrackedItemsData={clearTrackedItemsData}
+        clearMissionPrioritiesData={clearMissionPrioritiesData}
+        clearAllUserData={clearAllUserData}
+      />
     </>
   );
 }
@@ -128,6 +160,158 @@ function DucatModeButton(){
       }}
     />
   );
+}
+
+function PortraitHeader({ handleSearchExpand, forceHomeBlink, setHasFirstAccessed, exportUserData, importUserData, setMissionPriorities, clearObtainedItemsData, clearTrackedItemsData, clearMissionPrioritiesData, clearAllUserData }){
+  const [isPaneOpen, setIsPaneOpen] = useState(false);
+
+  const togglePane = () => {
+    setIsPaneOpen((prev) => !prev);
+  };
+
+  return (
+    <>
+      <div className="sized-remaining h-flex flex-center portrait-header">
+        <div className="sized-remaining h-flex" style={{ justifyContent: 'flex-start' }}>
+          <IconButton 
+            title='Open Navigation Pane'
+            label={''} 
+            iconUrl={`${com.getBaseEnvPath().basePath}/icons/move.svg`} 
+            className={'layout-header-button'} 
+            iconClassName={'layout-header-icon'}
+            iconStyle={{ width: '30px', height: '30px' }}
+            onClick={togglePane}
+          />
+        </div>
+        <div className="sized-remaining h-flex flex-center">
+          <Link href="/prime">
+            <img style={{ minWidth: '70px' }} className='sized-content logo h-flex flex-center' src={`${com.getBaseEnvPath().basePath}/icons/logo_prime.svg`}/>
+          </Link>
+        </div>
+        <div className="sized-remaining h-flex" style={{ justifyContent: 'flex-end' }}>
+          <IconButton 
+            title='Show Search Bar'
+            label={''} 
+            iconUrl={`${com.getBaseEnvPath().basePath}/icons/search.svg`} 
+            className={'layout-header-button'} 
+            iconClassName={'layout-header-icon'}
+            iconStyle={{ width: '30px', height: '30px' }}
+            onClick={handleSearchExpand}
+          />
+        </div>
+      </div>
+
+      {/* Side Pane */}
+      <SidePane isOpen={isPaneOpen} onClose={() => setIsPaneOpen(false)}>
+        {/* Your navigation or any other components */}
+        <DucatModeButton/>
+        <NavBarMainButtons forceHomeBlink={forceHomeBlink}/>
+        <NavBarSideButtons 
+          showDucatButton={false} 
+          expandLabels={true}
+          setHasFirstAccessed={setHasFirstAccessed}
+          exportUserData={exportUserData} 
+          importUserData={importUserData} 
+          setMissionPriorities={setMissionPriorities}
+          clearObtainedItemsData={clearObtainedItemsData}
+          clearTrackedItemsData={clearTrackedItemsData}
+          clearMissionPrioritiesData={clearMissionPrioritiesData}
+          clearAllUserData={clearAllUserData}
+        />
+      </SidePane>
+    </>
+  );
+}
+
+function SettingsButton({showLabel=false, exportUserData, importUserData, setMissionPriorities, clearObtainedItemsData, clearTrackedItemsData, clearMissionPrioritiesData, clearAllUserData}){
+  return (
+    <ContextMenuButton
+      title='Settings'
+      top='50px' 
+      style={{ right: '0px' }}
+      className='global-settings-button flex-center'
+      headerContent={
+        <div 
+          className="sized-content h-flex flex-center" 
+          style={{ gap:'5px' }}>
+            <img src={`${com.getBaseEnvPath().basePath}/icons/settings.svg`} style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>
+            { !showLabel ? null:<span>Settings</span> }
+        </div>
+      }
+    >
+      {
+        (props) => (
+          <>
+            <li className='sized-content v-flex'>
+            <div className='sized-content v-flex'>
+                <div style={{ fontSize: 'x-small', fontStyle: 'italic' }}>Missions</div>
+                <div className='sized-content v-flex'>
+                    <div>Mission Priority Preference</div>
+                    <div style={{ fontSize: 'x-small', fontStyle: 'italic', fontWeight: 'bold' }}>higher in list is prioritized over lower</div>
+                    <SortableList
+                        style={{
+                          marginTop: '5px',
+                          padding: '10px', 
+                          backgroundColor: 'var(--color-secondary)',
+                          borderRadius: '10px', 
+                          padding: '10px', 
+                          fontSize: 'small' 
+                        }}
+                        elems={Object.keys(com.getDefaultMissionTypePriorities()).map(priority => (
+                            <div key={`${priority}`} className='sized-content h-flex flex-center' style={{ gap: '5px', cursor: 'pointer' }}>
+                                <div className='sized-content h-flex flex-center'><img style={{ filter: 'invert()', width: '5px', height: '5px' }} src={`${com.getBaseEnvPath().basePath}/icons/move.svg`}/></div>
+                                <div className='sized-content h-flex flex-center'>{priority}</div>
+                            </div>
+                        ))}
+                        onOrderConfirm={
+                          (_elemsIdxs) => { 
+                            const missionPriorities = com.missionPrioritiesObservable.get();
+
+                            const newMissionPriorities = Object.fromEntries(_elemsIdxs
+                              .map((elemIdx, index) => { 
+                                const actualElem = Object.keys(missionPriorities)[elemIdx];
+                                return [ actualElem, index ]; 
+                              })
+                            ); 
+
+                            setMissionPriorities(
+                              newMissionPriorities
+                            ) 
+                        }}
+                    />
+                </div>
+            </div>
+          </li>
+          <li className='sized-content v-flex'>
+            <div className='sized-content v-flex' style={{ padding: '5px 0', gap: '5px' }}>
+              <div style={{ fontSize: 'x-small', fontStyle: 'italic' }}>User Data</div>
+              <div className='sized-content v-flex' style={{ gap: '5px' }}>
+                <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
+                  <button onClick={exportUserData} className='sized-content settings-button'>Export User Data</button>
+                  <button onClick={importUserData} className='sized-content settings-button'>Import User Data</button>
+                </div>
+                <div className='sized-content v-flex' style={{ gap: '5px' }}>
+                  <button onClick={ev => { clearAllUserData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear User Data</button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </>
+      )
+    }
+    </ContextMenuButton>
+  );
+}
+
+function showInfoPage(setHasFirstAccessed){
+  com.setUserDataHasFirstAccessed(false); setHasFirstAccessed(false);
+  com.showDialogUi({
+    title: 'Warfarm - Legend',
+    type: 'custom',
+    uiFunc: (props) => (
+      <InfoPageComponent props={props}/>
+    )
+  });
 }
 
 export function MainLayoutComponent({children}){
@@ -279,178 +463,127 @@ export function MainLayoutComponent({children}){
       }
       <div className='sized-remaining v-flex'>
         <div className='sized-remaining main-body v-flex'>
-          <div className="sized-content search-bar-global-container h-flex">
+          <div className="sized-content global-header search-bar-global-container h-flex">
             {
               searchExpanded ?
                 <div className="sized-content h-flex flex-center search-expanded">
                   <button onClick={handleSearchCollapse} className="sized-content h-flex back-button">
-                    <img className="sized-content icon-default-filter h-flex" src={`${com.getBaseEnvPath().basePath}/icons/arrow.svg`} style={{ marginLeft: '20px', height: '20px', transform: 'rotate(180deg)' }} alt="Back" />
+                    <img className="sized-content icon-default icon-default-filter h-flex" src={`${com.getBaseEnvPath().basePath}/icons/arrow.svg`} style={{ marginLeft: '20px', height: '20px', transform: 'rotate(180deg)' }} alt="Back" />
                   </button>
                   <SearchBar isExpanded={true} />
                 </div>
               :
               <>
-                <div className="sized-content h-flex flex-center" style={{ gap: '20px', justifyContent: 'flex-start' }}>
-                  <div className='sized-content h-flex' style={{ justifyContent: 'center', alignItems: 'center' }}>
-                    <button 
-                      title='Home Page' 
-                      onClick={() => {
-                        if(pathName !== "/prime"){
-                          router.push("/prime");  
-                        }
-                        else{
-                          setForceHomeBlink(true);
-                          setTimeout(() => {
-                            setForceHomeBlink(false);
-                          }, 250);
-                        }
-                      }} 
-                      className='sized-content logo-button h-flex flex-center'
-                    >
-                        <Link href="/prime"><img style={{ minWidth: '70px' }} className='sized-content logo h-flex flex-center' src={`${com.getBaseEnvPath().basePath}/icons/logo_prime.svg`}/></Link>
-                    </button>
-                  </div>
-                  <MediaQueryCollapseContextMenuButton>
-                    <NavBarMainButtons forceHomeBlink={forceHomeBlink}/>
-                  </MediaQueryCollapseContextMenuButton>
-                  <div className='sized-content h-flex header-main-buttons-container' style={{ gap: '10px'}}>
-                      <NavBarMainButtons forceHomeBlink={forceHomeBlink}/>
-                  </div>
-                </div>
-                <div className="sized-remaining h-flex flex-center">
-                  <button title='Show Search Bar' className="sized-content h-flex search-button" onClick={handleSearchExpand}>
-                    <img style={{ height: '30px' }} className="sized-content h-flex icon-default-filter" src={`${com.getBaseEnvPath().basePath}/icons/search.svg`} alt="Search" />
-                  </button>
-                  <div 
-                    className="sized-remaining h-flex flex-center global-search-bar-area"
-                    style={{
-                      justifyContent: 'flex-start'
-                    }}
-                  >
-                    <SearchBar />
-                    <DucatModeButton/>
-                  </div>
-                </div>
-                <div className="sized-content h-flex flex-center" style={{ gap:'20px', justifyContent: 'flex-end' }}>
-                  <Link href="/prime/supportme"><IconButton title='Donation Page' label={'Support Me'} iconUrl={`${com.getBaseEnvPath().basePath}/icons/heart.svg`} className={'layout-header-button support-me-button'} iconClassName={'support-me-icon'} iconHeight='20px' /></Link>
-                  <div className="sized-content h-flex flex-center">
+                <PortraitHeader 
+                  handleSearchExpand={handleSearchExpand} 
+                  forceHomeBlink={forceHomeBlink} 
+                  setHasFirstAccessed={setHasFirstAccessed}
+                  exportUserData={exportUserData} 
+                  importUserData={importUserData} 
+                  setMissionPriorities={setMissionPriorities}
+                  clearObtainedItemsData={clearObtainedItemsData}
+                  clearTrackedItemsData={clearTrackedItemsData}
+                  clearMissionPrioritiesData={clearMissionPrioritiesData}
+                  clearAllUserData={clearAllUserData}
+                />
+                <div className="sized-remaining h-flex flex-center landscape-header">
+                  <div className="sized-remaining h-flex flex-center" style={{ gap: '20px', justifyContent: 'flex-start' }}>
+                    <div className='sized-content h-flex' style={{ justifyContent: 'center', alignItems: 'center' }}>
+                      <button 
+                        title='Home Page' 
+                        onClick={() => {
+                          if(pathName !== "/prime"){
+                            router.push("/prime");  
+                          }
+                          else{
+                            setForceHomeBlink(true);
+                            setTimeout(() => {
+                              setForceHomeBlink(false);
+                            }, 250);
+                          }
+                        }} 
+                        className='sized-content logo-button h-flex flex-center'
+                      >
+                          <Link href="/prime"><img style={{ minWidth: '70px' }} className='sized-content logo h-flex flex-center' src={`${com.getBaseEnvPath().basePath}/icons/logo_prime.svg`}/></Link>
+                      </button>
+                    </div>
                     <MediaQueryCollapseContextMenuButton>
-                      <NavBarSideButtons/>
+                      <NavBarMainButtons forceHomeBlink={forceHomeBlink}/>
                     </MediaQueryCollapseContextMenuButton>
                     <div className='sized-content h-flex header-main-buttons-container' style={{ gap: '10px'}}>
-                      <NavBarSideButtons/>
+                        <NavBarMainButtons forceHomeBlink={forceHomeBlink}/>
                     </div>
                   </div>
-                  <div className='sized-content h-flex' style={{ gap: '20px', justifyContent: 'center', alignItems: 'center' }}>
-                    {/* <ContextMenuButton 
-                      iconUrl={`${com.getBaseEnvPath().basePath}/icons/info.svg`}
-                      headerContent={<img src={`${com.getBaseEnvPath().basePath}/icons/info.svg`} style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
-                    >
-                      {
-                        (props) => (
-                          <>
-                            
-                          </>
-                        )
-                      }
-                    </ContextMenuButton> */}
-                    <button 
-                      title='Info Page'
-                      className='sized-content h-flex'
-                      style={{ position: 'relative' }}
-                      onClick={(ev) => {
-                        com.setUserDataHasFirstAccessed(false); setHasFirstAccessed(false);
-                        com.showDialogUi({
-                          title: 'Warfarm - Legend',
-                          type: 'custom',
-                          uiFunc: (props) => (
-                            <LegendComponent props={props}/>
-                          )
-                        });
+                  <div className="sized-content h-flex flex-center" style={{ width: '50vw' }}>
+                    <button title='Show Search Bar' className="sized-content h-flex search-button" onClick={handleSearchExpand}>
+                      <img style={{ height: '30px' }} className="sized-content h-flex icon-default icon-default-filter" src={`${com.getBaseEnvPath().basePath}/icons/search.svg`} alt="Search" />
+                    </button>
+                    <div 
+                      className="sized-remaining h-flex flex-center global-search-bar-area"
+                      style={{
+                        justifyContent: 'flex-start'
                       }}
                     >
-                      <div className='sized-content h-flex'><img className='sized-content h-flex icon-default-filter nav-bar-standard-icon' src={`${com.getBaseEnvPath().basePath}/icons/info.svg`}/></div>
-                      {
-                        !hasFirstAccessed ? null:
-                        <div 
-                          style={{ position: 'absolute', top: '43px', left: '-40px', pointerEvents: 'none', cursor: 'default' }}
-                          onClick={ev => { ev.stopPropagation(); ev.preventDefault(); }}
-                        >
-                          <div className="speech-bubble blinking-slow">See Here</div>
-                        </div>
-                      }
-                    </button>
-                    <ContextMenuButton
-                      title='Settings'
-                      top='50px' 
-                      style={{ right: '0px' }}
-                      className='global-settings-button'
-                      headerContent={<img src={`${com.getBaseEnvPath().basePath}/icons/settings.svg`} style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
-                    >
-                      {
-                        (props) => (
-                          <>
-                            <li className='sized-content v-flex'>
-                            <div className='sized-content v-flex'>
-                                <div style={{ fontSize: 'x-small', fontStyle: 'italic' }}>Missions</div>
-                                <div className='sized-content v-flex'>
-                                    <div>Mission Priority Preference</div>
-                                    <div style={{ fontSize: 'x-small', fontStyle: 'italic', fontWeight: 'bold' }}>higher in list is prioritized over lower</div>
-                                    <SortableList
-                                        style={{
-                                          marginTop: '5px',
-                                          padding: '10px', 
-                                          backgroundColor: 'var(--color-secondary)',
-                                          borderRadius: '10px', 
-                                          padding: '10px', 
-                                          fontSize: 'small' 
-                                        }}
-                                        elems={Object.keys(com.getDefaultMissionTypePriorities()).map(priority => (
-                                            <div key={`${priority}`} className='sized-content h-flex flex-center' style={{ gap: '5px', cursor: 'pointer' }}>
-                                                <div className='sized-content h-flex flex-center'><img style={{ filter: 'invert()', width: '5px', height: '5px' }} src={`${com.getBaseEnvPath().basePath}/icons/move.svg`}/></div>
-                                                <div className='sized-content h-flex flex-center'>{priority}</div>
-                                            </div>
-                                        ))}
-                                        onOrderConfirm={
-                                          (_elemsIdxs) => { 
-                                            const missionPriorities = com.missionPrioritiesObservable.get();
-
-                                            const newMissionPriorities = Object.fromEntries(_elemsIdxs
-                                              .map((elemIdx, index) => { 
-                                                const actualElem = Object.keys(missionPriorities)[elemIdx];
-                                                return [ actualElem, index ]; 
-                                              })
-                                            ); 
-
-                                            setMissionPriorities(
-                                              newMissionPriorities
-                                            ) 
-                                        }}
-                                    />
-                                </div>
-                            </div>
-                          </li>
-                          <li className='sized-content v-flex'>
-                            <div className='sized-content v-flex' style={{ padding: '5px 0', gap: '5px' }}>
-                              <div style={{ fontSize: 'x-small', fontStyle: 'italic' }}>User Data</div>
-                              <div className='sized-content v-flex' style={{ gap: '5px' }}>
-                                <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
-                                  <button onClick={exportUserData} className='sized-content settings-button'>Export User Data</button>
-                                  <button onClick={importUserData} className='sized-content settings-button'>Import User Data</button>
-                                </div>
-                                <div className='sized-content v-flex' style={{ gap: '5px' }}>
-                                  <button onClick={ev => { clearObtainedItemsData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear Obtained Items data</button>
-                                  <button onClick={ev => { clearTrackedItemsData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear Tracked Items data</button>
-                                  <button onClick={ev => { clearMissionPrioritiesData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear Mission Priority data</button>
-                                  <button onClick={ev => { clearAllUserData(ev); props.closeMenu(); }} className='sized-content settings-button settings-button-delete'>Clear All User Data</button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                        </>
-                      )
-                    }
-                    </ContextMenuButton>
+                      <SearchBar />
+                    </div>
+                  </div>
+                  <div className="sized-remaining h-flex flex-center" style={{ gap:'20px', justifyContent: 'flex-end' }}>
+                    <div className="sized-content h-flex flex-center">
+                      <div className='sized-content h-flex header-main-buttons-container' style={{ gap: '10px'}}>
+                        <NavBarSideButtons 
+                          setHasFirstAccessed={setHasFirstAccessed}
+                          exportUserData={exportUserData} 
+                          importUserData={importUserData} 
+                          setMissionPriorities={setMissionPriorities}
+                          clearObtainedItemsData={clearObtainedItemsData}
+                          clearTrackedItemsData={clearTrackedItemsData}
+                          clearMissionPrioritiesData={clearMissionPrioritiesData}
+                          clearAllUserData={clearAllUserData}
+                        />
+                      </div>
+                    </div>
+                    <div className='sized-content h-flex' style={{ gap: '20px', justifyContent: 'center', alignItems: 'center' }}>
+                      {/* <ContextMenuButton 
+                        iconUrl={`${com.getBaseEnvPath().basePath}/icons/info.svg`}
+                        headerContent={<img src={`${com.getBaseEnvPath().basePath}/icons/info.svg`} style={{ minWidth: '10px', filter: 'invert()', height: '20px', opacity: '70%' }}/>}
+                      >
+                        {
+                          (props) => (
+                            <>
+                              
+                            </>
+                          )
+                        }
+                      </ContextMenuButton> */}
+                      {/* <button 
+                        title='Info Page'
+                        className='sized-content h-flex'
+                        style={{ position: 'relative' }}
+                        onClick={(ev) => {
+                          showInfoPage(setHasFirstAccessed);
+                        }}
+                      >
+                        <div className='sized-content h-flex'><img className='sized-content h-flex icon-default-filter nav-bar-standard-icon' src={`${com.getBaseEnvPath().basePath}/icons/info.svg`}/></div>
+                        {
+                          !hasFirstAccessed ? null:
+                          <div 
+                            style={{ position: 'absolute', top: '43px', left: '-40px', pointerEvents: 'none', cursor: 'default' }}
+                            onClick={ev => { ev.stopPropagation(); ev.preventDefault(); }}
+                          >
+                            <div className="speech-bubble blinking-slow">See Here</div>
+                          </div>
+                        }
+                      </button>
+                      <SettingsButton 
+                        exportUserData={exportUserData} 
+                        importUserData={importUserData} 
+                        setMissionPriorities={setMissionPriorities}
+                        clearObtainedItemsData={clearObtainedItemsData}
+                        clearTrackedItemsData={clearTrackedItemsData}
+                        clearMissionPrioritiesData={clearMissionPrioritiesData}
+                        clearAllUserData={clearAllUserData}
+                      /> */}
+                    </div>
                   </div>
                 </div>
               </>
@@ -459,7 +592,7 @@ export function MainLayoutComponent({children}){
           </div>
           { isThereBanner ? <BannerComponent/> : null }
           <div ref={mainScrollableRef} className='sized-remaining main-content v-flex' style={{ marginBottom: '10px' }}>
-            <div className="sized-remaining main-scrollable v-flex">
+            <div className="sized-remaining main-scrollable v-flex" style={{ margin: 'auto' }}> 
               <ScrollPaneContext.Provider value={{mainScrollableRef}}>
                 {children}
               </ScrollPaneContext.Provider>
@@ -662,7 +795,7 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     const handleStorageChange = (event) => {
       if (event.key === com.getBaseEnvPath().userData) { // userData_warfarm_test
-        com.refreshUserData(JSON.parse(event.newValue));
+        com.onOtherTabUpdate(JSON.parse(event.newValue));
       }
     };
 

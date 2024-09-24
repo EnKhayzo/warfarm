@@ -33,11 +33,11 @@ const ContextMenuButton = ({ top, children, title, buttons, headerContent, class
   }, [ showContextMenu ]);
 
     return (
-      <div style={{ padding: '0px', margin: '0px' }}>
+      <div className='sized-content v-flex flex-center' style={{ padding: '0px', margin: '0px' }}>
       <button 
         title={title} 
         onClick={toggleContextMenu} 
-        className={`global-settings-button${ className ? ` ${className}` : `` }`}
+        className={`sized-content h-flex global-settings-button${ className ? ` ${className}` : `` }`}
         style={{
           borderRadius: '5px',
           padding: '5px'

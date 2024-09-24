@@ -1161,6 +1161,36 @@ export async function initialize(local=false) {
     initialized = true;
   };
 
+/**
+ * when another tab updates the user data\
+ * alias for refreshUserData but with some quirks (ie. farm mode doesn't update) 
+ */
+export function onOtherTabUpdate(newUserData){
+
+  // this is set to getUserDataTrackedItems() instead of newUserData.trackedItems because
+  // it seemed to create recursive loops with the listeners set up for trackLists
+  // probably something regarding a shared reference?
+  trackedItemsOvervable.set(getUserDataTrackedItems());  // .set(newUserData.trackedItems ?? {});
+
+  obtainedObservable.set(newUserData.componentsObtained ?? {});
+  missionPrioritiesObservable.set(newUserData.missionPriorityPreferences ?? getDefaultMissionTypePriorities());
+  preferencesObservable.set(newUserData.preferencesObservable ?? getUserDataPreferences());
+  // dialogsUiObservable.set([]);
+
+  trackListsObservable.set(getUserDataTrackLists());
+  currentTrackListIdObservable.set(getUserDataCurrentTrackListId());
+
+  extrasObservable.set(getObtainedExtras());
+
+  // globalModeObservable.set(getUserDataGlobalMode());
+
+  sellItemsOvervable.set(getUserDataSellItems());
+  sellListsObservable.set(getUserDataSellLists());
+  currentSellListIdObservable.set(getUserDataCurrentSellListId());
+
+  createEmptyTrackListIfNoTrackLists();
+  createEmptySellListIfNoSellLists();
+}
 
 export function refreshUserData(newUserData) {
 

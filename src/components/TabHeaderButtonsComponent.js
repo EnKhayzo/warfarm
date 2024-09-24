@@ -62,13 +62,13 @@ export default function TabHeaderButtonsComponent({ tabs, activeTab, changeTab, 
                 <div className='sized-content h-flex flex-center'>
                     <ContextMenuButton 
                         className='sized-content h-flex tab-component-header-control-button'
-                        headerContent={<img className='sized-content h-flex flex-center icon-default-filter' style={{ width: '20px', height: '20px' }} src={`${com.getBaseEnvPath().basePath}/icons/more.svg`}/>}
+                        headerContent={<img className='sized-content h-flex flex-center icon-default-filter' style={{ width: '20px', height: '20px' }} src={`${com.getBaseEnvPath().basePath}/icons/filter.svg`}/>}
                     >
                        {
                         (props) => (headerControls[activeTab])
                        } 
                     </ContextMenuButton>
-                    <div 
+                    {/* <div 
                         className='sized-content h-flex flex-center tab-component-header-control-container'
                         style={{ 
                             position: 'absolute',
@@ -78,7 +78,7 @@ export default function TabHeaderButtonsComponent({ tabs, activeTab, changeTab, 
                         }}
                     >
                         {headerControls[activeTab]}
-                    </div>
+                    </div> */}
                 </div>
             }
         </div>

@@ -72,7 +72,7 @@ export default function IconButton({ label, title=null, iconUrl, onClick, classN
                 gap: '5px'
               }} 
             >
-              <img className={`sized-content v-flex flex-center${iconClassName ? ` ${iconClassName}` : ``}`} style={com.shallowMerge({ height: iconHeight }, iconStyle)} src={iconUrl}/>
+              <img className={`sized-content v-flex flex-center icon-default${iconClassName ? ` ${iconClassName}` : ``}`} style={com.shallowMerge({ height: iconHeight }, iconStyle)} src={iconUrl}/>
               { label == null || label.length <= 0 ? null: <div className='sized-content v-flex flex-center' style={{ marginBottom: '2px' }}>{label}</div>}
             </div>
       </div>

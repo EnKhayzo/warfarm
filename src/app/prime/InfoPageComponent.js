@@ -168,7 +168,7 @@ function DucatModeComponent({}){
   );
 }
 
-export default function LegendComponent({ closeMenu }){
+export default function InfoPageComponent({ closeMenu }){
 
   return (
     <div 
@@ -177,10 +177,11 @@ export default function LegendComponent({ closeMenu }){
         maxHeight: '75vh',
         width: '70vw',
         overflow: 'auto',
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start',
+        margin: 'auto'
       }}
     >
-      <div className="sized-content v-flex flex-center" style={{ gap: '50px' }}>
+      <div className="sized-content v-flex flex-center" style={{ gap: '50px', margin: 'auto' }}>
         <div className="sized-content v-flex flex-center">
           <span>When i refer to an &apos;object&apos;, i mean either an item, a component, a relic or a mission.</span>
           <span>By &apos;item&apos; i mean anything that needs components to be crafted (Warframes, Weapons, Companions, etc).</span>

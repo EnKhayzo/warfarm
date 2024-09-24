@@ -24,7 +24,7 @@ export default function TabComponent({ tabs, defaultTab, onTabChange, className,
     }
 
     return (
-        <div className={`sized-content v-flex tab-component-container flex-center${className ? ` ${className}` : ``}`} style={com.shallowMerge({ minWidth: hasMinWidth ? '980px' : 'inherit' }, style)}>
+        <div className={`sized-content v-flex tab-component-container flex-center${className ? ` ${className}` : ``}`} style={com.shallowMerge({}, style)}>
             <TabHeaderButtonsComponent 
                 tabs={Object.keys(tabs).map(tab => ({ title: tab, id: tab, label: tab }))}
                 changeTab={changeTab}
