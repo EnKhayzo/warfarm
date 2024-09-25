@@ -144,15 +144,25 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
               >
                 { 
                   group.map((object, index) => (
-                    <LazyLoadVisibleWrapper key={`${index}-${object.name}`} style={{ width: '140px', minHeight: isFarmMode ? '140px' : '190px' }}>
+                    <LazyLoadVisibleWrapper 
+                      key={`${index}-${object.name}`} 
+                      className={'sized-content v-flex flex-center'}
+                      style={{ 
+                        width: '140px', 
+                        minHeight: isFarmMode ? '140px' : '190px' ,
+                        justifyContent: 'flex-start',
+                        alignSelf: 'stretch'
+                      }}
+                    >
                       <Link href={com.getObjectRouteFromId(object.id)}
-                        className={`sized-content main-view-item-single-container item-check-parent tracker-item-parent${farmedObjectClass(object)} v-flex flex-center`}
+                        className={`sized-remaining main-view-item-single-container item-check-parent tracker-item-parent${farmedObjectClass(object)} v-flex flex-center`}
                         style={{ 
                           width: '140px',
                           opacity: object.vaulted ? '50%' : '100%', 
                           position: 'relative',
                           cursor: 'pointer',
-                          alignSelf: 'stretch' 
+                          alignSelf: 'stretch',
+                          justifyContent: 'flex-start'
                         }}
                         // onClick={() => router.push(
                         //   com.getObjectRouteFromId(object.id)

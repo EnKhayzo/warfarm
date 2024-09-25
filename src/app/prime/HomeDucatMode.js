@@ -83,8 +83,8 @@ export function SellItemsComponent(){
   return (
       <div className='sized-content tracked-items v-flex flex-center' style={{ gap: '50px', minHeight: '620px' }}>
         <div 
-          className='sized-content h-flex'
-          style={{ fontSize: 'x-large', fontWeight: 'bold', whiteSpace: 'pre' }}
+          className='sized-content h-flex flex-center'
+          style={{ fontSize: 'x-large', fontWeight: 'bold', whiteSpace: 'pre', textAlign: 'center', textWrap: 'wrap', flexWrap: 'wrap' }}
         >
           You have a Grand Total of <img style={{ marginTop: '2px', width: '40px', height: '40px', objectFit: 'contain' }} src={`${com.getBaseEnvPath().basePath}/images/Orokin Ducats.png`}/>
           {
@@ -195,9 +195,9 @@ export function SellItemsComponent(){
                     +
                   </div>
                 </div>
-              <div className='sized-content v-flex'>
-                <div className='sized-content h-flex flex-center'>You&apos;re not selling any items. Add some by using the Duplicates pane below (if you&apos;ve set any<img className='sized-content star-button-icon h-flex flex-center' style={{ height: '12px',  }} src={`${com.getBaseEnvPath().basePath}/icons/duplicates.svg`}/>duplicates), using the Search Bar or from the <Link href='/prime/explorer' style={{ cursor: 'pointer', color:'var(--color-link-text)' }}>Explorer</Link> page, or by selecting a Sell List (if you saved any).</div>
-                <div className='sized-content h-flex flex-center'>Sell items using the sell<img className='sized-content star-button-icon h-flex flex-center' style={{ height: '12px',  }} src={`${com.getBaseEnvPath().basePath}/icons/sell_hollow.svg`}/>button and specifying a quantity (you need to have set<img className='sized-content star-button-icon h-flex flex-center' style={{ height: '12px',  }} src={`${com.getBaseEnvPath().basePath}/icons/duplicates.svg`}/>duplicates first in order to sell). In the Duplicates pane you can directly sell items using the corresponding buttons.</div>
+              <div className='sized-content v-flex' style={{ textAlign: 'center', padding: '10px', gap: '10px' }}>
+                <div className='sized-content h-flex flex-center' style={{ textWrap: 'wrap', flexWrap: 'wrap' }}>You&apos;re not selling any items. Add some by using the Duplicates pane below (if you&apos;ve set any<img className='sized-content star-button-icon h-flex flex-center' style={{ height: '12px',  }} src={`${com.getBaseEnvPath().basePath}/icons/duplicates.svg`}/>duplicates), using the Search Bar or from the <Link href='/prime/explorer' style={{ cursor: 'pointer', color:'var(--color-link-text)' }}>Explorer</Link> page, or by selecting a Sell List (if you saved any).</div>
+                <div className='sized-content h-flex flex-center' style={{ textWrap: 'wrap', flexWrap: 'wrap' }}>Sell items using the sell<img className='sized-content star-button-icon h-flex flex-center' style={{ height: '12px',  }} src={`${com.getBaseEnvPath().basePath}/icons/sell_hollow.svg`}/>button and specifying a quantity (you need to have set<img className='sized-content star-button-icon h-flex flex-center' style={{ height: '12px',  }} src={`${com.getBaseEnvPath().basePath}/icons/duplicates.svg`}/>duplicates first in order to sell). In the Duplicates pane you can directly sell items using the corresponding buttons.</div>
               </div>
             </div> 
           : 
@@ -339,8 +339,8 @@ function BaroComponent(){
 
   return (
     worldState == null || timeUntilBaro == null ? null:
-      <div className='sized-remaining v-flex flex-center' style={{ gap: '50px', marginBottom: '40px' }}>
-        <div className='sized-content h-flex flex-center' style={{ whiteSpace: 'pre', fontSize: 'x-large' }}>Baro Ki&apos;Teer { timeSinceStartBaro < 0 ? <>will arrive{ baroLocation != null ? <> at <span style={{ fontWeight: 'bold' }}>{baroLocation}</span></> : `` }</> : <>has arrived{ baroLocation != null ? <> at <span style={{ fontWeight: 'bold' }}>{baroLocation}</span></> : `` } and will go away</>} in <span className='sized-content h-flex flex-center' style={{ fontWeight: 'bold' }}>{com.getTimestampAsDurationString(timeUntilBaro)}</span></div>
+      <div className='sized-remaining v-flex flex-center' style={{ gap: '50px', marginBottom: '40px', textWrap: 'wrap', flexWrap: 'wrap', padding: '10px' }}>
+        <div className='sized-content h-flex flex-center' style={{ whiteSpace: 'pre', fontSize: 'x-large', textWrap: 'wrap', flexWrap: 'wrap' }}>Baro Ki&apos;Teer { timeSinceStartBaro < 0 ? <>will arrive{ baroLocation != null ? <> at <span style={{ fontWeight: 'bold' }}>{baroLocation}</span></> : `` }</> : <>has arrived{ baroLocation != null ? <> at <span style={{ fontWeight: 'bold' }}>{baroLocation}</span></> : `` } and will go away</>} in <span className='sized-content h-flex flex-center' style={{ fontWeight: 'bold' }}>{com.getTimestampAsDurationString(timeUntilBaro)}</span></div>
       </div>
   );
 }

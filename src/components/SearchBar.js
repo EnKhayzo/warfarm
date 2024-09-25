@@ -242,7 +242,8 @@ const SearchBar = ({ isExpanded=false }) => {
                     paddingTop: '20px',
                     paddingBottom: '20px',
                     display: !showResultArea || results.length <= 0 ? 'none' : '',
-                    zIndex: '999'
+                    zIndex: '999', 
+                    overflow: 'auto'
                 }}
                 ref={resultAreaRef}
             >

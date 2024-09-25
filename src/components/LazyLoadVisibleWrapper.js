@@ -3,14 +3,14 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
-export default function LazyLoadVisibleWrapper({ children, style }) {
+export default function LazyLoadVisibleWrapper({ children, className, style }) {
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: false, // Set to false to allow unmounting when not in view
   });
 
   return (
-    <div ref={ref} style={style}>
+    <div ref={ref} style={style} className={className}>
       {
       inView ? 
         children 

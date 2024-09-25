@@ -514,7 +514,7 @@ export function MainLayoutComponent({children}){
                         <NavBarMainButtons forceHomeBlink={forceHomeBlink}/>
                     </div>
                   </div>
-                  <div className="sized-content h-flex flex-center" style={{ width: '50vw' }}>
+                  <div className="sized-remaining h-flex flex-center global-search-bar-container-container" style={{ maxWidth: '50vw' }}>
                     <button title='Show Search Bar' className="sized-content h-flex search-button" onClick={handleSearchExpand}>
                       <img style={{ height: '30px' }} className="sized-content h-flex icon-default icon-default-filter" src={`${com.getBaseEnvPath().basePath}/icons/search.svg`} alt="Search" />
                     </button>
@@ -596,11 +596,11 @@ export function MainLayoutComponent({children}){
               <ScrollPaneContext.Provider value={{mainScrollableRef}}>
                 {children}
               </ScrollPaneContext.Provider>
-            </div>
-            <div className='sized-content v-flex flex-center' style={{ textAlign: 'center', marginTop: '50px', fontSize: 'small' }}>
-              <div>This site is not endorsed by or affiliated with Digital Extremes Ltd.</div>
-              <div>All images come from Warframe or from websites created and owned by Digital Extremes, who hold the copyright of Warframe.</div>
-              <div>All trademarks and registered trademarks present in images are proprietary to Digital Extremes Ltd.</div>
+              <div className='sized-content v-flex flex-center' style={{ padding: '10px', textAlign: 'center', marginTop: '50px', fontSize: 'small' }}>
+                <div>This site is not endorsed by or affiliated with Digital Extremes Ltd.</div>
+                <div>All images come from Warframe or from websites created and owned by Digital Extremes, who hold the copyright of Warframe.</div>
+                <div>All trademarks and registered trademarks present in images are proprietary to Digital Extremes Ltd.</div>
+              </div>
             </div>
           </div>
         </div>
@@ -810,10 +810,10 @@ export default function RootLayout({ children }) {
 
   return (
     <>        
-      <Head>
+      {/* <Head>
         <title>{com.generatePageTitleFromSiteMap(pathname)}</title>
         <meta property="og:title" content={`${com.generatePageTitleFromSiteMap(pathname)}`} key="title"/>
-      </Head>
+      </Head> */}
       <LazyLoaded
         fallback={
           <div className="sized-remaining v-flex flex-center" style={{ gap: '10vh' }}>

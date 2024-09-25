@@ -541,6 +541,8 @@ html * {
 
 .icon-default-show-hover{
   display: none;
+  min-width: 20px;
+  min-height: 20px;
   width: 20px;
   height: 20px;
 }
@@ -798,7 +800,7 @@ html * {
 }
 
 /* Hide the search bar and show the search button on small screens */
-@media (max-width: 810px) {
+@media (max-width: 840px) {
   .portrait-header {
     display: flex;
   }
@@ -812,7 +814,11 @@ html * {
 .tab-component-header-control-button {
 }
 
-@media (max-width: 1200px) {
+.global-search-bar-container-container {
+  width: 100%;
+}
+
+@media (max-width: 1610px) {
   .global-search-bar-area {
     display: none;
   }
@@ -833,6 +839,10 @@ html * {
     background: none;
     border: none;
     cursor: pointer;
+  }
+
+  .global-search-bar-container-container {
+    width: unset;
   }
 }
 

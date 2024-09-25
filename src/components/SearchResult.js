@@ -72,9 +72,11 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
         backgroundColor: farmedPerc <= 0 ? 'var(--color-tertiary)' : farmedPerc >= 1 ? 'var(--color-quaternary-farmed)' : 'var(--color-quaternary-partial-farmed)',
         borderRadius: '5px',
         boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
-        width: '50vw',
+        // maxWidth: '50vw',
         cursor: 'pointer',
         width: 'calc(100% - 40px)',
+        minWidth: '600px',
+        margin: 'auto'
       }}
       onClick={(ev) => { closeSearchBarCallback(ev); router.push(com.getObjectRouteFromId(rawObj.id)); }}
     >

@@ -25,7 +25,7 @@ export default function TabHeaderButtonsComponent({ tabs, activeTab, changeTab, 
         >
             <div 
                 className='sized-remaining tab-header-tab-button-container h-flex flex-center'
-                style={{ overflow: 'auto' }}
+                style={{ overflow: 'auto', flexWrap: 'wrap' }}
             >
                 {
                     tabs.map((tab, index) => (

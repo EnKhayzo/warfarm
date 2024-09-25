@@ -523,7 +523,7 @@ export function TrackedItemsComponent(){
                     +
                   </div>
                 </div>
-              <div className='sized-content v-flex'>
+              <div className='sized-content v-flex' style={{ textWrap: 'wrap', flexWrap: 'wrap' }}>
                 <div>You&apos;re not tracking any items. Add some by using the Search Bar or from the <Link href='/prime/explorer' style={{ cursor: 'pointer', color:'var(--color-link-text)' }}>Explorer</Link> page, or by selecting a Track List (if you saved any).</div>
                 <div className='sized-content h-flex flex-center'>Track items using the star<img className='sized-content star-button-icon h-flex flex-center' style={{ height: '12px',  }} src={`${com.getBaseEnvPath().basePath}/icons/star_hollow.svg`}/>button.</div>
               </div>
