@@ -16,6 +16,9 @@ import useObtainedComponents from '@/hooks/useObtainedComponents';
 import DucatLabel from './DucatLabel';
 import useGlobalMode from '@/hooks/useGlobalMode';
 import CraftedButtonExtras from './CraftedButtonExtras';
+import RelicsOwnedLabelAddButton from './RelicsOwnedLabelAddButton';
+import RelicsOwnedButton from './RelicsOwnedButton';
+import ComponentsObtainedButton from './ComponentsObtainedButton';
 
 const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCallback, rawObj }) => {
   const router = useRouter();
@@ -95,22 +98,24 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
             style={{ justifyContent: 'flex-start', gap: '10px', margin: '0px', fontSize: 'large', position: 'relative' }}
           >
             {com.getObjectDisplayName(rawObj)}{vaulted ? <div style={{ marginLeft: '5px', fontSize: 'x-small' }}>vaulted</div> : null }
-          
-            { 
-              category === "Components" && rawObj.required > 0 ? 
-              <div className='sized-remaining h-flex flex-center'>
-                <ObtainedLabelButton component={_rawObj} isRawObj={true}/> 
-              </div>
-              : null 
-            }
 
             <ResurgenceItemIcon positionAbsolute={false} itemId={id}/>
             <ObtainedItemCheck positionAbsolute={false} hollowAbsolute={false} itemId={id}/>
+            <ComponentsObtainedButton itemId={id} positionAbsolute={false}/>
             { !(_rawObj.category==="items" || _rawObj.category==="components") ? null: <CraftedButtonExtras onlyShowOnHover={true} object={_rawObj} isRawObj={true}/>}
+            { _rawObj.category !== "relics" ? null: <RelicsOwnedButton itemId={id} positionAbsolute={false}/> }
             <ItemActionButton positionAbsolute={false} itemId={id} horizontal={true}/>
           </h2>
           <div style={{ color: '#9d9488' }}>{category}{type ? ` - ${type}` : ``}</div>
           <DucatLabel rawObj={com.getObjectFromId(id)} style={{ marginTop: '3px', justifyContent: 'flex-start' }}/>
+          
+          { 
+              category === "Components" && rawObj.required > 0 ? 
+              <div className='sized-remaining h-flex flex-center' style={{ justifyContent: 'flex-start' }}>
+                <ObtainedLabelButton component={_rawObj} isRawObj={true}/> 
+              </div>
+              : null 
+            }
         </div>
       </Link>
 

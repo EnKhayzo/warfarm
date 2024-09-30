@@ -110,7 +110,7 @@ const ControlButton = ({ rawObj, infoObj=null, icon, vaulted, rarity, _labelHead
 
       }
 
-      <ObtainedResurgenceGroup itemId={rawObj.id}/>
+      <ObtainedResurgenceGroup itemId={rawObj.id} showEyeButton={false}/>
       <DucatLabel rawObj={com.getObjectFromId(rawObj.id)}/>
     </div>
   );

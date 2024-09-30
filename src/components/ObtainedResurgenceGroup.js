@@ -9,8 +9,10 @@ import * as com from "@/app/common.js"
 import ObtainedItemCheck from './ObtainedItemCheck';
 import ResurgenceItemIcon from './ResurgenceItemIcon';
 import CraftedButtonExtras from './CraftedButtonExtras';
+import RelicsOwnedButton from './RelicsOwnedButton';
+import ComponentsObtainedButton from './ComponentsObtainedButton';
 
-export default function ObtainedResurgenceGroup({ itemId, positionAbsolute=false, obtainedComponents=null }){
+export default function ObtainedResurgenceGroup({ itemId, showEyeButton=true, positionAbsolute=false, obtainedComponents=null }){
     return (
         <div 
             className='sized-content v-flex item-check-parent' 
@@ -25,6 +27,8 @@ export default function ObtainedResurgenceGroup({ itemId, positionAbsolute=false
         >
             <ResurgenceItemIcon positionAbsolute={false} itemId={itemId}/>
             <ObtainedItemCheck positionAbsolute={false} itemId={itemId}/>
+            { !showEyeButton ? null: <ComponentsObtainedButton itemId={itemId} positionAbsolute={false}/> }
+            <RelicsOwnedButton positionAbsolute={false} itemId={itemId}/>
             <CraftedButtonExtras 
                 positionAbsolute={false} 
                 object={com.getObjectFromId(itemId)} 

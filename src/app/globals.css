@@ -593,6 +593,11 @@ html * {
   opacity: 100%
 }
 
+.eye-icon {
+  width: 20px;
+  height: 20px;
+}
+
 .main-title-page-view-element {
 
 }

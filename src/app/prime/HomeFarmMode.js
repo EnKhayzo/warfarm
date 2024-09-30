@@ -47,6 +47,7 @@ import MissionTabBody from './[category]/[routeId]/subcomponents/MissionTabBody.
 import HideFarmedItemsCheckbox from './[category]/[routeId]/subcomponents/HideFarmedItemsCheckbox.js';
 import DucatLabel from '@/components/DucatLabel.js';
 import Collapsible from '@/components/Collapsible.js';
+import RelicsOwnedButton from '@/components/RelicsOwnedButton.js';
 
 const ComponentTab = ({ hideFarmed, trackedItems}) => {
   const router = useRouter();
@@ -61,6 +62,8 @@ const ComponentTab = ({ hideFarmed, trackedItems}) => {
 
   const rarityPriorities = com.getRarityPriorities();
   const relicTypePriorities = com.getRelicTypePriorities();
+
+  const totalMap = com.getTotalRelicsOwnedMap();
 
   return (
     <div
@@ -144,9 +147,11 @@ const ComponentTab = ({ hideFarmed, trackedItems}) => {
                             <ComponentAddButton width={'70px'} iconHeight={'45px'} component={component}/>
                         </div>
                         <div 
-                          className='sized-content h-flex flex-center' 
+                          className='sized-content v-flex flex-center' 
                           style={{ 
                             maxWidth: '500px',
+                            maxHeight: '300px',
+                            overflow: 'auto',
                             gap: '5px', 
                             flexWrap: 'wrap',
                             alignItems: "flex-start" ,
@@ -158,6 +163,10 @@ const ComponentTab = ({ hideFarmed, trackedItems}) => {
                                   .filter(relic => relic.componentFullName.localeCompare(component.rawObj.fullName) == 0)
                                   .toSorted((a, b) => 
                                       (a.vaulted-b.vaulted)
+                                      ||
+                                      ((com.isRelicResurgence(b.id) ? 1 : -1) - (com.isRelicResurgence(a.id) ? 1 : -1))
+                                      ||
+                                      ((totalMap[b.id]??0)-(totalMap[a.id]??0))
                                       ||
                                       (rarityPriorities[a.rarity]-rarityPriorities[b.rarity])
                                       ||
@@ -171,16 +180,17 @@ const ComponentTab = ({ hideFarmed, trackedItems}) => {
                                           // onClick={() => router.push(relic.route)}
                                           className={`sized-content item-page-component-container tracker-item-parent h-flex flex-center${` ${relic.rarity}` ?? ''}`}
                                           style={{
-                                            width: '110px',
+                                            width: '140px',
                                             gap: '5px',
                                             opacity: relic.vaulted ? '50%' : '100%'
                                           }}
-                                      >
-                                          <div className='sized-content h-flex flex-center'><img style={{ height: '25px' }} src={relic.icon}/></div>
-                                          <div className='sized-content h-flex flex-center' style={{ gap: '1px' }}>
-                                            <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', paddingRight: '5px' }}>{relic.label}</div>
-                                            <ResurgenceItemIcon positionAbsolute={false} itemId={relic.id}/>
-                                          </div>
+                                      >  
+                                        <RelicsOwnedButton positionAbsolute={false} itemId={relic.id} showIfHas={false} iconStyle={{ width: '10px', height: '10px' }}/>
+                                        <div className='sized-content h-flex flex-center'><img style={{ height: '25px' }} src={relic.icon}/></div>
+                                        <div className='sized-content h-flex flex-center' style={{ gap: '1px' }}>
+                                          <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', paddingRight: '5px' }}>{relic.label}</div>
+                                          <ResurgenceItemIcon positionAbsolute={false} itemId={relic.id} iconStyle={{ minWidth: '10px', minHeight: '10px', width: '10px', height: '10px' }}/>
+                                        </div>
                                       </Link>
                                   ))
                             }

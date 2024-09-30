@@ -9,7 +9,7 @@ import * as com from "@/app/common.js"
 import useObtainedComponents from '@/hooks/useObtainedComponents';
 import ObjectStateLabel from './ObjectStateLabel';
 
-export default function ObtainedLabelButtonObtained({ component, isRawObj=false, width=null, showLabel=true }){
+export default function ObtainedLabelButtonObtained({ component, isRawObj=false, width=null, showLabel=true, style }){
     const router = useRouter();
 
     const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
@@ -23,7 +23,7 @@ export default function ObtainedLabelButtonObtained({ component, isRawObj=false,
         <div className='sized-content v-flex' style={{ alignSelf: 'stretch', gap: '5px', width: width ?? 'auto' }}>
             {
                 componentIsAnomalous ? null:
-                <div className='sized-content h-flex flex-center' style={{ gap: '5px' }}>
+                <div className='sized-content h-flex flex-center' style={com.shallowMerge({ gap: '5px' }, style)}>
                     <button 
                         title='Increase farmed amount'
                         className='sized-content h-flex object-page-component-owned-button flex-center'

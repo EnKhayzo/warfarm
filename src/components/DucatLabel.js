@@ -10,13 +10,13 @@ import useObtainedComponents from '@/hooks/useObtainedComponents';
 import useObtainedExtras from '@/hooks/useObtainedExtras';
 import useGlobalMode from '@/hooks/useGlobalMode';
 
-export default function DucatLabel({ rawObj, className, style }){
+export default function DucatLabel({ rawObj, className, forceShow=false, style }){
     const router = useRouter();
 
     const [ obtainedExtras, setObtainedExtras ] = useObtainedExtras();
     const [ globalMode, setGlobalMode ] = useGlobalMode();
 
-    if(rawObj == null || globalMode !== "ducatMode") return null;
+    if((rawObj == null || globalMode !== "ducatMode") && !forceShow) return null;
 
 
     let extrasForObject = com.getUserDataExtrasObtained(rawObj.id);

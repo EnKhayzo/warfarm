@@ -78,11 +78,11 @@ export default function DuplicateItemButton({ positionAbsolute=true, itemId }){
                                                                 <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', textAlign: 'center' }}>{component.name}</div>
                                                                 {/* <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', fontStyle: 'italic', minWidth: 'fit-content' }}>{`${com.getUserDataComponentSetting(component.rawObj.id, "obtained") ?? '0'}/${component.rawObj.required}`}</div> */}
                                                                 {/* { componentIsAnomalous ? null : <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', fontStyle: 'italic', minWidth: 'fit-content' }}>{`${obtainedComponents && obtainedComponents[component.rawObj.id] ? obtainedComponents[component.rawObj.id].obtained : '0'}/${component.rawObj.required}`}</div>} */}
-                                                                { componentIsAnomalous ? null : <ObjectStateLabel object={component}/> }
+                                                                { componentIsAnomalous ? null : <ObjectStateLabel forceMode={"ducatMode"} object={component}/> }
                                                             </div>
                                                             {/* <ItemActionButton itemId={component.id}/> */}
                                                             <ResurgenceItemIcon positionAbsolute={false} itemId={itemId}/>
-                                                            <DucatLabel rawObj={com.getObjectFromId(component.id)}/>
+                                                            <DucatLabel forceShow={true} rawObj={com.getObjectFromId(component.id)}/>
                                                         </div>
                                                         {
                                                             componentIsAnomalous ? null:

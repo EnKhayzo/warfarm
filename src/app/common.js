@@ -173,6 +173,17 @@ export function setUserDataComponentObtainedSetting(componentId, name, value){
     // }
 }
 
+/** setting name refers to the setting inside the component, can be 'obtained' or others */
+export function getUserDataComponentSetting(componentId, settingName){
+    const userData = loadUserData();
+
+    if(userData == null) return null;
+    if(!("componentsObtained" in userData)) return null;
+    if(!(componentId in userData.componentsObtained)) return null;
+
+    return userData.componentsObtained[componentId][settingName];
+}
+
 export function incrementUserDataComponentObtained(componentId){
   let oldObtained = Number(getUserDataComponentSetting(componentId, "obtained"));
   oldObtained++;
@@ -189,15 +200,8 @@ export function decrementUserDataComponentObtained(componentId){
   setUserDataComponentObtainedSetting(componentId, "obtained", oldObtained);
 }
 
-/** setting name refers to the setting inside the component, can be 'obtained' or others */
-export function getUserDataComponentSetting(componentId, settingName){
-    const userData = loadUserData();
-
-    if(userData == null) return null;
-    if(!("componentsObtained" in userData)) return null;
-    if(!(componentId in userData.componentsObtained)) return null;
-
-    return userData.componentsObtained[componentId][settingName];
+export function getUserDataComponentObtainedValue(componentId){
+  return getUserDataComponentSetting(componentId, "obtained") ?? 0;
 }
 
 export function getObtainedComponents(){
@@ -800,6 +804,88 @@ export function generateSellListName(){
 /* --------------- /DUCAT USER DATA SECTION --------------- */
 
 
+/* --------------- RELICS OWNED USER DATA SECTION --------------- */
+
+export function clearUserDataRelicsOwned(){
+  let userData = loadUserData();
+
+  if(userData.relicsOwned != null) delete userData.relicsOwned;
+  saveUserData(userData);
+
+  relicsOwnedObservable.set({});
+}
+
+export function setUserDataRelicsOwnedSetting(relicId, name, value){
+    let userData = loadUserData();
+
+    if(userData == null) userData = {};
+
+    if(!("relicsOwned" in userData)) userData.relicsOwned = {};
+    if(!(relicId in userData.relicsOwned)) userData.relicsOwned[relicId] = {};
+
+    userData.relicsOwned[relicId][name] = value;
+    saveUserData(userData);
+    
+    relicsOwnedObservable.set(userData.relicsOwned);
+}
+
+/** setting name refers to the setting inside the relic, can be 'owned' or others */
+export function getUserDataRelicsOwnedSetting(relicId, settingName){
+    const userData = loadUserData();
+
+    if(userData == null) return null;
+    if(!("relicsOwned" in userData)) return null;
+    if(!(relicId in userData.relicsOwned)) return null;
+
+    return userData.relicsOwned[relicId][settingName];
+}
+
+export function getRelicRefinements(){
+  return [
+    'intact',
+    'exceptional',
+    'flawless',
+    'radiant'
+  ];
+}
+
+export function getUserDataRelicsOwnedValue(relicId, refinement="intact"){
+  return Number(getUserDataRelicsOwnedSetting(relicId, refinement) ?? 0);
+}
+
+export function getUserDataRelicsOwnedValueTotal(relicId){
+  return getRelicRefinements().reduce((acc, val) => {
+    acc += getUserDataRelicsOwnedValue(relicId, val);
+    return acc;
+  }, 0);
+}
+
+export function incrementUserDataRelicsOwned(relicId, refinement="intact"){
+  let oldObtained = getUserDataRelicsOwnedValue(relicId, refinement);
+  oldObtained++;
+
+  setUserDataRelicsOwnedSetting(relicId, refinement, oldObtained);
+}
+
+export function decrementUserDataRelicsOwned(relicId, refinement="intact"){
+  let oldObtained = getUserDataRelicsOwnedValue(relicId, refinement);
+  oldObtained--;
+  if(oldObtained < 0) oldObtained = 0;
+
+  setUserDataRelicsOwnedSetting(relicId, refinement, oldObtained);
+}
+
+export function getUserDataRelicsOwned(){
+  const userData = loadUserData();
+  return userData.relicsOwned ?? {};
+}
+
+export function getRelicsOwned(){
+  const userData = loadUserData();
+  return userData.relicsOwned ?? {};
+}
+
+/* --------------- /RELICS OWNED USER DATA SECTION --------------- */
 
 
 
@@ -1057,6 +1143,8 @@ export let sellItemsOvervable = new CustomObservable();
 export let sellListsObservable = new CustomObservable();
 export let currentSellListIdObservable = new CustomObservable();
 
+export let relicsOwnedObservable = new CustomObservable();
+
 
 let initializing = true;
 
@@ -1156,6 +1244,8 @@ export async function initialize(local=false) {
       sellItemsOvervable.set(getUserDataSellItems());
       sellListsObservable.set(getUserDataSellLists());
       currentSellListIdObservable.set(getUserDataCurrentSellListId());
+
+      relicsOwnedObservable.set(getUserDataRelicsOwned());
     }
 
     initialized = true;
@@ -1188,6 +1278,8 @@ export function onOtherTabUpdate(newUserData){
   sellListsObservable.set(getUserDataSellLists());
   currentSellListIdObservable.set(getUserDataCurrentSellListId());
 
+  relicsOwnedObservable.set(getUserDataRelicsOwned());
+
   createEmptyTrackListIfNoTrackLists();
   createEmptySellListIfNoSellLists();
 }
@@ -1215,6 +1307,8 @@ export function refreshUserData(newUserData) {
   sellListsObservable.set(getUserDataSellLists());
   currentSellListIdObservable.set(getUserDataCurrentSellListId());
 
+  relicsOwnedObservable.set(getUserDataRelicsOwned());
+
   createEmptyTrackListIfNoTrackLists();
   createEmptySellListIfNoSellLists();
 }
@@ -1238,6 +1332,8 @@ export function setAllUserData(userData){
   sellListsObservable.set(getUserDataSellLists());
   currentSellListIdObservable.set(getUserDataCurrentSellListId());
 
+  relicsOwnedObservable.set(getUserDataRelicsOwned());
+
   createEmptyTrackListIfNoTrackLists();
   createEmptySellListIfNoSellLists();
 }
@@ -1259,6 +1355,8 @@ export function clearAllUserData(){
   sellItemsOvervable.set({});
   sellListsObservable.set({});
   currentSellListIdObservable.set(null);
+
+  relicsOwnedObservable.set({});
 
   createEmptyTrackListIfNoTrackLists();
 }
@@ -2572,4 +2670,38 @@ export function getAPINodeObj(nodeId){
 
 export function getAPINodeName(nodeId){
   return getAPINodeObj(nodeId).id;
+}
+
+/** this is different from getRelicRewards in the sense that it returns the actual components */
+export function getComponentsDroppedByRelic(relic){
+  if(relic == null) { console.warn(`relic is null!`, relic); return null; }
+  return getRelicRewards(relic).map(({ rewardFullName, rarity }) => getObjectFromId(rewardFullName));
+}
+
+/** applies to items and relics, for items it returns the components of the item and for relics it returns the rewards */
+export function getObjectComponents(rawObj){
+  if(rawObj == null) { console.warn(`rawObj is null!`, rawObj); return null; }
+  if(rawObj.category !== "components" && rawObj.category !== "items" && rawObj.category !== "relics") return null;
+
+  return rawObj.category === "components" ? 
+      [ rawObj ] : 
+    rawObj.category === "items" ? 
+      getItemComponents(rawObj.id) : 
+    rawObj.category === "relics" ? 
+      getComponentsDroppedByRelic(rawObj)
+    : null;
+}
+
+export function getTotalRelicsOwnedMap(){
+  const refinements = getRelicRefinements();
+  return Object.fromEntries(
+    Object.entries(getUserDataRelicsOwned())
+      .map(([ id, relicObj ]) => [ 
+        id, 
+        refinements.reduce((acc, refinement) => {
+          acc += relicObj[refinement] ?? 0;
+          return acc;
+        }, 0) 
+    ])
+  );
 }

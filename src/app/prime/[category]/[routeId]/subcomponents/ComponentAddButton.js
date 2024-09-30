@@ -15,7 +15,7 @@ import ObjectStateLabel from '@/components/ObjectStateLabel';
 import ObtainedLabelObject from '@/components/ObtainedLabelObject';
 import ObtainedLabelButton from '@/components/ObtainedLabelButton';
 
-export default function ComponentAddButton({ component, showCorrespondingItem=false, showButtons=true, isRawObj=false, fullName=false, iconHeight='75px', width=null, className, style }){
+export default function ComponentAddButton({ component, showCorrespondingItem=false, showButtons=true, isRawObj=false, forceMode=null, fullName=false, iconHeight='75px', width=null, className, style }){
     const router = useRouter();
 
     const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
@@ -53,13 +53,13 @@ export default function ComponentAddButton({ component, showCorrespondingItem=fa
                     <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', textAlign: 'center' }}>{fullName ? component.fullName : component.name}</div>
                     {/* <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', fontStyle: 'italic', minWidth: 'fit-content' }}>{`${com.getUserDataComponentSetting(component.rawObj.id, "obtained") ?? '0'}/${component.rawObj.required}`}</div> */}
                     {/* { componentIsAnomalous ? null : <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', fontStyle: 'italic', minWidth: 'fit-content' }}>{`${obtainedComponents && obtainedComponents[component.rawObj.id] ? obtainedComponents[component.rawObj.id].obtained : '0'}/${component.rawObj.required}`}</div>} */}
-                    { componentIsAnomalous ? null : <ObjectStateLabel object={com.getObjectFromId(component.id)}/> }
+                    { componentIsAnomalous ? null : <ObjectStateLabel forceMode={forceMode} object={com.getObjectFromId(component.id)}/> }
                 </div>
                 <ItemActionButton itemId={component.id}/>
-                <ObtainedResurgenceGroup itemId={component.id} positionAbsolute={true}/>
-                <DucatLabel rawObj={com.getObjectFromId(component.id)}/>
+                <ObtainedResurgenceGroup itemId={component.id} positionAbsolute={true} showEyeButton={false}/>
+                { !(forceMode !== "farmMode") ? null: <DucatLabel rawObj={com.getObjectFromId(component.id)}/>}
             </Link>
-            { !showButtons ? null: <ObtainedLabelButton component={component} isRawObj={true} showLabel={false}/> }
+            { !showButtons ? null: <ObtainedLabelButton component={component} isRawObj={true} forceMode={forceMode} showLabel={false}/> }
         </div>
     );
 }
