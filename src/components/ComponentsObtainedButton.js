@@ -34,7 +34,7 @@ export default function ComponentsObtainedButton({ positionAbsolute=true, itemId
     return (
         <>
             <button 
-                title={`Set duplicate components`}
+                title={`Set obtained/farmed components`}
                 className={`sized-content sell-button${ positionAbsolute ? ' absolute' : '' } h-flex`}
                 style={{ gap: '5px' }}
                 onClick={(ev) => { 
@@ -61,7 +61,7 @@ export default function ComponentsObtainedButton({ positionAbsolute=true, itemId
                             >
                                 {
                                     components.map((component, index) => (
-                                        <ComponentAddButton key={`${index}-${component.id}`} component={component} isRawObj={true} forceMode={"farmMode"}/>
+                                        <ComponentAddButton key={`${index}-${component.id}`} fullName={true} component={component} isRawObj={true} forceMode={"farmMode"}/>
                                     ))
                                 }
                             </div>

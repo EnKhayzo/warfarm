@@ -30,7 +30,7 @@ export default function RelicsOwnedButton({ positionAbsolute=true, itemId, showI
         !(showIfHas || (!showIfHas && relicNum > 0)) ? null:
             <>
                 <button 
-                    title={`Set duplicate components`}
+                    title={`Set owned relics (per refinement level)`}
                     className={`sized-content sell-button${ positionAbsolute ? ' absolute' : '' } h-flex`}
                     style={{ gap: '5px', alignItems: 'center' }}
                     onClick={(ev) => { 
