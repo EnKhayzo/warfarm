@@ -176,17 +176,30 @@ const FarmingSheetTab = ({ mission, hideFarmed }) => {
                                                     // onClick={() => router.push(relic.route)}
                                                     className={`sized-content item-page-component-container tracker-item-parent h-flex flex-center${` ${relic.rarity}` ?? ''}`}
                                                     style={{
-                                                    width: '140px',
+                                                    width: '220px',
                                                     gap: '5px',
                                                     opacity: relic.vaulted ? '50%' : '100%'
                                                     }}
                                                 >  
-                                                <RelicsOwnedButton positionAbsolute={false} itemId={relic.id} showIfHas={false} iconStyle={{ width: '10px', height: '10px' }}/>
-                                                <div className='sized-content h-flex flex-center'><img style={{ height: '25px' }} src={relic.icon}/></div>
-                                                <div className='sized-content h-flex flex-center' style={{ gap: '1px' }}>
-                                                    <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', paddingRight: '5px' }}>{relic.label}</div>
-                                                    <ResurgenceItemIcon positionAbsolute={false} itemId={relic.id} iconStyle={{ minWidth: '10px', minHeight: '10px', width: '10px', height: '10px' }}/>
-                                                </div>
+                                                    <RelicsOwnedButton positionAbsolute={false} itemId={relic.id} showIfHas={false} iconStyle={{ width: '10px', height: '10px' }}/>
+                                                    <div className='sized-content h-flex flex-center'><img style={{ height: '25px' }} src={relic.icon}/></div>
+                                                    <div className='sized-content h-flex flex-center' style={{ gap: '1px' }}>
+                                                        <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', paddingRight: '5px' }}>{relic.label}</div>
+                                                        <ResurgenceItemIcon positionAbsolute={false} itemId={relic.id} iconStyle={{ minWidth: '10px', minHeight: '10px', width: '10px', height: '10px' }}/>
+                                                    </div>
+                                                    <div className='sized-content v-flex flex-center' style={{ alignItems: 'flex-start', marginLeft: '5px' }}>
+                                                        {
+                                                            missionRelics[relic.id].percObj.map((rotation, index) => (
+                                                                <div 
+                                                                    key={`${rotation.rotation}-${index}`} 
+                                                                    className='sized-content h-flex flex-center' 
+                                                                    style={{fontSize: 'small', whiteSpace: 'pre' }}
+                                                                >
+                                                                    <span style={{ fontWeight: 'bold' }}>{rotation.rotation}</span> - <span style={{ fontStyle: 'italic' }}>{rotation.perc}</span>
+                                                                </div>
+                                                            ))
+                                                        }
+                                                    </div>
                                                 </Link>
                                             ))
                                     }
