@@ -21,6 +21,9 @@ export default function AboutPage() {
         <div>Warfarm is distributed through GitHub Pages, see the public repo <Link className='link-text' href="https://github.com/EnKhayzo/warfarm">here</Link>.</div>
         <div>Created by <span style={{ fontWeight: 'bold' }}>EnKhayzo</span>.</div>
       </div>
+      <div className='sized-remaining v-flex flex-center' style={{ whiteSpace: 'pre', gap: '5px', textAlign: 'center', textWrap: 'wrap' }}>
+        <div>Last Drop Table Update: <span style={{ fontWeight: 'bold' }}>{com.getDatasetLastDropTableUpdate()}</span>.</div>
+      </div>
       <div className='sized-remaining v-flex flex-center' style={{ whiteSpace: 'pre', gap: '30px' }}>
         <span className='sized-content h-flex flex-center' style={{ fontSize: 'large', fontWeight: 'bold' }}>Contacts</span>
         <div className='sized-content h-flex flex-center' style={{ whiteSpace: 'pre', gap: '40px', flexWrap: 'wrap' }}>

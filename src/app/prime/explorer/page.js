@@ -38,6 +38,7 @@ import DucatLabel from '@/components/DucatLabel';
 import LazyLoadVisibleWrapper from '@/components/LazyLoadVisibleWrapper';
 import useGlobalMode from '@/hooks/useGlobalMode';
 import RelicsOwnedLabelAddButton from '@/components/RelicsOwnedLabelAddButton';
+import MobileMoreOptionsButton from '@/components/MobileMoreOptionsButton';
 
 
 const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) => {
@@ -176,10 +177,11 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
                         <div className='sized-content h-flex flex-center' style={{ objectFit: 'contain', height: '90px' }}><img  className='sized-content h-flex main-view-item-image flex-center' style={{ height: '100px', width: '100px', objectFit: 'contain' }} src={com.getObjectIcon(object)}/></div>
                         <div className='sized-content main-view-item-label h-flex flex-center' style={{ textAlign: 'center' }}>{ labelFunc(object) }</div>
                         {/* { object.category !== "relics" ? null: <RelicsOwnedLabelAddButton relic={object}/> } */}
-                        <ItemActionButton itemId={com.getObjectId(object, category)}/>
+                        <ItemActionButton itemId={com.getObjectId(object, category)} mobileAlwaysHide={true}/>
                         <ObtainedResurgenceGroup itemId={com.getObjectId(object, category)} positionAbsolute={true}/>
                         <ObjectStateLabel object={object} exclusiveMode={"ducatMode"}/>
                         <DucatLabel rawObj={object}/>
+                        <MobileMoreOptionsButton itemId={object.id}/>
                       </Link>
                     </LazyLoadVisibleWrapper>
                   )) 

@@ -16,11 +16,11 @@ import SellValueLabelObject from './SellValueLabelObject';
 import useObtainedExtras from '@/hooks/useObtainedExtras';
 import ObtainedLabelButtonExtras from './ObtainedLabelButtonExtras';
 
-export default function DuplicateItemButton({ positionAbsolute=true, itemId }){
+export default function DuplicateItemButton({ positionAbsolute=true, itemId, showLabel=false, alwaysShow=false, alwaysHide=false, mobileAlwaysShow=true, mobileAlwaysHide=false }){
     const [ obtainedExtras, setObtainedExtras ] = useObtainedExtras();
     
     const rawObj = com.getObjectFromId(itemId);
-    if(rawObj.category !== "items" && rawObj.category !== "components") return null;
+    if(rawObj == null || (rawObj.category !== "items" && rawObj.category !== "components")) return null;
 
     const hasDuplicates = com.getUserDataExtrasObtained(itemId) > 0;
 
@@ -30,7 +30,8 @@ export default function DuplicateItemButton({ positionAbsolute=true, itemId }){
         <>
             <button 
                 title={`Set duplicate components`}
-                className={`sized-content sell-button${ positionAbsolute ? ' absolute' : '' } v-flex flex-center`}
+                className={`sized-content sell-button${ positionAbsolute ? ' absolute' : '' }${ alwaysShow ?  ` always-show` : `` }${ alwaysHide ?  ` always-hide` : `` }${ mobileAlwaysShow ?  ` mobile-always-show` : `` }${ mobileAlwaysHide ?  ` mobile-always-hide` : `` } h-flex flex-center`}
+                style={{ gap: '5px' }}
                 onClick={(ev) => { 
                     ev.stopPropagation(); 
                     ev.preventDefault();
@@ -100,11 +101,12 @@ export default function DuplicateItemButton({ positionAbsolute=true, itemId }){
             >
                 <img 
                     src={`${com.getBaseEnvPath().basePath}/icons/duplicates.svg`} 
-                    className={`sized-content sell-button-icon flex-center`}
+                    className={`sized-content sell-button-icon flex-center${ alwaysShow ?  ` always-show` : `` }${ alwaysHide ?  ` always-hide` : `` }${ mobileAlwaysShow ?  ` mobile-always-show` : `` }${ mobileAlwaysHide ?  ` mobile-always-hide` : `` }`}
                     style={{
 
                     }}
                 />
+                { !showLabel ? null: <span className='sized-content h-flex flex-center' style={{ marginBottom: '2px', fontSize: 'small' }}>Duplicates</span> }
             </button>
         </>
     );

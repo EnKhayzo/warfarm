@@ -767,8 +767,8 @@
         "components": {
             "Nagantaka Prime Receiver": true,
             "Nagantaka Prime Barrel": true,
-            "Nagantaka Prime Stock": true,
-            "Nagantaka Prime Blueprint": true
+            "Nagantaka Prime Blueprint": true,
+            "Nagantaka Prime Stock": true
         },
         "category": "items",
         "id": "Nagantaka Prime",
@@ -1254,6 +1254,19 @@
         "vaulted": false,
         "type": "Warframe"
     },
+    "Khora Prime": {
+        "name": "Khora Prime",
+        "components": {
+            "Khora Prime Chassis Blueprint": true,
+            "Khora Prime Neuroptics Blueprint": true,
+            "Khora Prime Systems Blueprint": true,
+            "Khora Prime Blueprint": true
+        },
+        "category": "items",
+        "id": "Khora Prime",
+        "vaulted": true,
+        "type": "Warframe"
+    },
     "Redeemer Prime": {
         "name": "Redeemer Prime",
         "components": {
@@ -1389,19 +1402,6 @@
         },
         "category": "items",
         "id": "Octavia Prime",
-        "vaulted": true,
-        "type": "Warframe"
-    },
-    "Khora Prime": {
-        "name": "Khora Prime",
-        "components": {
-            "Khora Prime Neuroptics Blueprint": true,
-            "Khora Prime Chassis Blueprint": true,
-            "Khora Prime Systems Blueprint": true,
-            "Khora Prime Blueprint": true
-        },
-        "category": "items",
-        "id": "Khora Prime",
         "vaulted": true,
         "type": "Warframe"
     },

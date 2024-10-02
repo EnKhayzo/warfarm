@@ -174,7 +174,7 @@ export function SellItemsComponent(){
               >
                 <button 
                   className='sized-content h-flex confirm-sell-button'
-                  title='Owned values will be deducted by the sell amout specified for each component'
+                  title='Sell amounts will be deducted from the Duplicate number for each component, and the current Sell List cleared'
                   onClick={confirmSell} 
                 >
                   Confirm Sell
@@ -237,17 +237,21 @@ export function DuplicatesComponent(){
         {
           Object.entries(obtainedExtras)
             .filter(([ componentId, extraObj ]) => extraObj.owned != null && extraObj.owned > 0)
-            .toSorted(([idA, a ], [ idB, b ]) => 
+            .map(([ componentId, extraObj ]) => ([ componentId, [ extraObj, com.getObjectFromId(componentId) ] ]))
+            .toSorted(([idA, [ a, rawA ] ], [ idB, [ b, rawB ] ]) => 
+              ((rawA.vaulted ? 1 : -1) - (rawB.vaulted ? 1 : -1))
+              ||
               b.owned - a.owned 
               || 
               idA.localeCompare(idB)
             )
-            .map(([ componentId, extraObj ], index) => { const component = com.getObjectFromId(componentId); return (
+            .map(([ componentId, extraObjEntry ], index) => { const component = com.getObjectFromId(componentId); return (
               <LazyLoadVisibleWrapper key={`${index}-${componentId}`} style={{ width: '205px', minHeight: '190px' }}>
                 <div className='sized-content v-flex flex-center' style={{ gap: '5px' }}>
                   <ComponentAddButton 
                     component={com.getObjectFromId(componentId)}
                     isRawObj={true}
+                    darkenIfVaulted={true}
                     fullName={true}
                     showButtons={false}
                     showCorrespondingItem={true}

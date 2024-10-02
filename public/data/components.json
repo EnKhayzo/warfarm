@@ -2155,6 +2155,32 @@
         "vaulted": false,
         "ducats": 45
     },
+    "Khora Prime Chassis Blueprint": {
+        "name": "Chassis",
+        "fullName": "Khora Prime Chassis",
+        "parentItem": "Khora Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Khora Prime Chassis Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": true,
+        "ducats": 45
+    },
+    "Hystrix Prime Barrel": {
+        "name": "Barrel",
+        "fullName": "Hystrix Prime Barrel",
+        "parentItem": "Hystrix Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Hystrix Prime Barrel",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Secondary Weapon",
+        "vaulted": true,
+        "ducats": 15
+    },
     "Gram Prime Handle": {
         "name": "Handle",
         "fullName": "Gram Prime Handle",
@@ -3325,6 +3351,32 @@
         "vaulted": true,
         "ducats": 15
     },
+    "Nagantaka Prime Blueprint": {
+        "name": "Blueprint",
+        "fullName": "Nagantaka Prime Blueprint",
+        "parentItem": "Nagantaka Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Nagantaka Prime Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
+        "vaulted": true,
+        "ducats": 100
+    },
+    "Khora Prime Systems Blueprint": {
+        "name": "Systems",
+        "fullName": "Khora Prime Systems",
+        "parentItem": "Khora Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Khora Prime Systems Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": true,
+        "ducats": 15
+    },
     "Carrier Prime Carapace": {
         "name": "Carapace",
         "fullName": "Carrier Prime Carapace",
@@ -3753,19 +3805,6 @@
         "type": "Primary Weapon",
         "vaulted": true,
         "ducats": 100
-    },
-    "Hystrix Prime Barrel": {
-        "name": "Barrel",
-        "fullName": "Hystrix Prime Barrel",
-        "parentItem": "Hystrix Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Hystrix Prime Barrel",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Secondary Weapon",
-        "vaulted": true,
-        "ducats": 15
     },
     "Hildryn Prime Systems Blueprint": {
         "name": "Systems",
@@ -5015,19 +5054,6 @@
         "vaulted": false,
         "ducats": 100
     },
-    "Khora Prime Chassis Blueprint": {
-        "name": "Chassis",
-        "fullName": "Khora Prime Chassis",
-        "parentItem": "Khora Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Khora Prime Chassis Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Warframe",
-        "vaulted": true,
-        "ducats": 45
-    },
     "Acceltra Prime Blueprint": {
         "name": "Blueprint",
         "fullName": "Acceltra Prime Blueprint",
@@ -5261,6 +5287,19 @@
         "type": "Melee Weapon",
         "vaulted": true,
         "ducats": 15
+    },
+    "Nagantaka Prime Stock": {
+        "name": "Stock",
+        "fullName": "Nagantaka Prime Stock",
+        "parentItem": "Nagantaka Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Nagantaka Prime Stock",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
+        "vaulted": true,
+        "ducats": 45
     },
     "Rhino Prime Chassis Blueprint": {
         "name": "Chassis",
@@ -5522,32 +5561,6 @@
         "vaulted": true,
         "ducats": 100
     },
-    "Nagantaka Prime Stock": {
-        "name": "Stock",
-        "fullName": "Nagantaka Prime Stock",
-        "parentItem": "Nagantaka Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Nagantaka Prime Stock",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Primary Weapon",
-        "vaulted": true,
-        "ducats": 45
-    },
-    "Khora Prime Systems Blueprint": {
-        "name": "Systems",
-        "fullName": "Khora Prime Systems",
-        "parentItem": "Khora Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Khora Prime Systems Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Warframe",
-        "vaulted": true,
-        "ducats": 15
-    },
     "Fulmin Prime Blueprint": {
         "name": "Blueprint",
         "fullName": "Fulmin Prime Blueprint",
@@ -5766,19 +5779,6 @@
         "required": 2,
         "isAnomalousItemComponent": false,
         "type": "Melee Weapon",
-        "vaulted": true,
-        "ducats": 100
-    },
-    "Nagantaka Prime Blueprint": {
-        "name": "Blueprint",
-        "fullName": "Nagantaka Prime Blueprint",
-        "parentItem": "Nagantaka Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Nagantaka Prime Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Primary Weapon",
         "vaulted": true,
         "ducats": 100
     },

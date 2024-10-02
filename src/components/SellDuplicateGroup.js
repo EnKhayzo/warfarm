@@ -11,7 +11,7 @@ import TrackItemButton from './TrackItemButton';
 import SellItemButton from './SellItemButton';
 import DuplicateItemButton from './DuplicateItemButton';
 
-export default function SellDuplicateGroup({ positionAbsolute=true, itemId, horizontal=false }){
+export default function SellDuplicateGroup({ positionAbsolute=true, itemId, horizontal=false, mobileAlwaysHide=false, mobileAlwaysShow=true }){
     const [ trackedItems, setTrackedItems ] = useTrackedItems();
 
     return (
@@ -21,8 +21,8 @@ export default function SellDuplicateGroup({ positionAbsolute=true, itemId, hori
                 gap: '5px'
             }}
         >
-            <SellItemButton itemId={itemId} positionAbsolute={false}/>
-            <DuplicateItemButton itemId={itemId} positionAbsolute={false}/>
+            <SellItemButton itemId={itemId} positionAbsolute={false} mobileAlwaysShow={mobileAlwaysShow} mobileAlwaysHide={mobileAlwaysHide}/>
+            <DuplicateItemButton itemId={itemId} positionAbsolute={false} mobileAlwaysShow={mobileAlwaysShow} mobileAlwaysHide={mobileAlwaysHide}/>
         </div>
     );
 }

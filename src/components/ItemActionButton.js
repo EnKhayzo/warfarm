@@ -13,12 +13,12 @@ import SellDuplicateGroup from './SellDuplicateGroup';
 import DuplicateItemButton from './DuplicateItemButton';
 import TrackItemGroup from './TrackItemGroup';
 
-export default function ItemActionButton({ positionAbsolute=true, itemId, horizontal=false }){
+export default function ItemActionButton({ positionAbsolute=true, itemId, horizontal=false, mobileAlwaysHide=false, mobileAlwaysShow=true }){
     const [ trackedItems, setTrackedItems ] = useTrackedItems();
 
     const [ globalMode, setGlobalMode ] = useGlobalMode();
     const isFarmMode = globalMode == null || globalMode === "farmMode";
 
-    if(!isFarmMode) return (<SellDuplicateGroup horizontal={horizontal} positionAbsolute={positionAbsolute} itemId={itemId}/>);
-    else return (<TrackItemGroup horizontal={horizontal} positionAbsolute={positionAbsolute} itemId={itemId}/>);
+    if(!isFarmMode) return (<SellDuplicateGroup horizontal={horizontal} positionAbsolute={positionAbsolute} itemId={itemId} mobileAlwaysHide={mobileAlwaysHide} mobileAlwaysShow={mobileAlwaysShow}/>);
+    else return (<TrackItemGroup horizontal={horizontal} positionAbsolute={positionAbsolute} itemId={itemId} mobileAlwaysHide={mobileAlwaysHide} mobileAlwaysShow={mobileAlwaysShow}/>);
 }

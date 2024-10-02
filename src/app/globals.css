@@ -804,6 +804,21 @@ html * {
   display: none;
 }
 
+.mobile-more-options-button {
+  display:none;
+}
+
+.mobile-more-options-button.absolute {
+  position: absolute;
+  right: 5px;
+  top: 5px;  
+}
+
+.mobile-more-options-button {
+  width: 20px;
+  height: 20px;
+}
+
 /* Hide the search bar and show the search button on small screens */
 @media (max-width: 840px) {
   .portrait-header {
@@ -812,6 +827,18 @@ html * {
   
   .landscape-header {
     display: none;
+  }
+
+  .mobile-more-options-button {
+    display: flex;
+  }
+
+  .mobile-always-show {
+    display: flex;
+  }
+
+  .mobile-always-hide {
+    display:none;
   }
 }
 
@@ -1140,3 +1167,19 @@ input:checked + .slider:before {
   border-radius: 10px;
   padding: 10px;
 }
+
+.always-show {
+  display: flex;
+}
+
+.always-hide {
+  display: none;
+}
+
+/* .mobile-always-show {
+  display: flex;
+}
+
+.mobile-always-hide {
+  display: none;
+} */

@@ -101,10 +101,10 @@ const SearchResult = ({ id, category, type, vaulted, imageUrl, closeSearchBarCal
 
             <ResurgenceItemIcon positionAbsolute={false} itemId={id}/>
             <ObtainedItemCheck positionAbsolute={false} hollowAbsolute={false} itemId={id}/>
-            <ComponentsObtainedButton itemId={id} positionAbsolute={false}/>
+            <ComponentsObtainedButton itemId={id} positionAbsolute={false} mobileAlwaysShow={true}/>
             { !(_rawObj.category==="items" || _rawObj.category==="components") ? null: <CraftedButtonExtras onlyShowOnHover={true} object={_rawObj} isRawObj={true}/>}
-            { _rawObj.category !== "relics" ? null: <RelicsOwnedButton itemId={id} positionAbsolute={false}/> }
-            <ItemActionButton positionAbsolute={false} itemId={id} horizontal={true}/>
+            { _rawObj.category !== "relics" ? null: <RelicsOwnedButton itemId={id} positionAbsolute={false} mobileAlwaysShow={true}/> }
+            <ItemActionButton positionAbsolute={false} itemId={id} horizontal={true} mobileAlwaysShow={true}/>
           </h2>
           <div style={{ color: '#9d9488' }}>{category}{type ? ` - ${type}` : ``}</div>
           <DucatLabel rawObj={com.getObjectFromId(id)} style={{ marginTop: '3px', justifyContent: 'flex-start' }}/>

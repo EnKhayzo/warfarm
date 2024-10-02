@@ -19,7 +19,7 @@ import useRelicsOwned from '@/hooks/useRelicsOwned';
 import RelicsOwnedLabelAddButton from './RelicsOwnedLabelAddButton';
 import useObtainedComponents from '@/hooks/useObtainedComponents';
 
-export default function ComponentsObtainedButton({ positionAbsolute=true, itemId }){
+export default function ComponentsObtainedButton({ positionAbsolute=true, itemId, showLabel=false, alwaysShow=false, alwaysHide=false, mobileAlwaysShow=true, mobileAlwaysHide=false }){
     const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
     
     const rawObj = com.getObjectFromId(itemId);
@@ -35,7 +35,7 @@ export default function ComponentsObtainedButton({ positionAbsolute=true, itemId
         <>
             <button 
                 title={`Set obtained/farmed components`}
-                className={`sized-content sell-button${ positionAbsolute ? ' absolute' : '' } h-flex`}
+                className={`sized-content sell-button${ positionAbsolute ? ' absolute' : '' }${ alwaysShow ?  ` always-show` : `` }${ alwaysHide ?  ` always-hide` : `` }${ mobileAlwaysShow ?  ` mobile-always-show` : `` }${ mobileAlwaysHide ?  ` mobile-always-hide` : `` } h-flex`}
                 style={{ gap: '5px' }}
                 onClick={(ev) => { 
                     ev.stopPropagation(); 
@@ -71,12 +71,13 @@ export default function ComponentsObtainedButton({ positionAbsolute=true, itemId
             > 
                 <img 
                     src={`${com.getBaseEnvPath().basePath}/icons/eye.svg`} 
-                    className={`sized-content ${ obtainedNum > 0 ? `eye-icon` : `sell-button-icon` } icon-default-filter flex-center`}
+                    className={`sized-content ${ obtainedNum > 0 ? `eye-icon` : `sell-button-icon` }${ alwaysShow ?  ` always-show` : `` }${ alwaysHide ?  ` always-hide` : `` }${ mobileAlwaysShow ?  ` mobile-always-show` : `` }${ mobileAlwaysHide ?  ` mobile-always-hide` : `` } icon-default-filter flex-center`}
                     style={{
 
                     }}
                 />
                 { !(obtainedNum > 0) ? null: <span className='sized-content h-flex flex-center' style={{ marginBottom: '2px', fontSize: 'small', fontStyle: 'italic' }}>{obtainedNum}</span>}
+                { !showLabel ? null: <span className='sized-content h-flex flex-center' style={{ marginBottom: '2px', fontSize: 'small' }}>Obtained/Farmed</span> }
             </button>
         </>
     );

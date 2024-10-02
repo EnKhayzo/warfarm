@@ -18,7 +18,7 @@ import ObtainedLabelButtonExtras from './ObtainedLabelButtonExtras';
 import useRelicsOwned from '@/hooks/useRelicsOwned';
 import RelicsOwnedLabelAddButton from './RelicsOwnedLabelAddButton';
 
-export default function RelicsOwnedButton({ positionAbsolute=true, itemId, showIfHas=true, iconStyle }){
+export default function RelicsOwnedButton({ positionAbsolute=true, itemId, showIfHas=true, iconStyle, showLabel=false, alwaysShow=false, alwaysHide=false, mobileAlwaysShow=true, mobileAlwaysHide=false }){
     const [ relicsOwned, setRelicsOwned ] = useRelicsOwned();
     
     const rawObj = com.getObjectFromId(itemId);
@@ -31,7 +31,7 @@ export default function RelicsOwnedButton({ positionAbsolute=true, itemId, showI
             <>
                 <button 
                     title={`Set owned relics (per refinement level)`}
-                    className={`sized-content sell-button${ positionAbsolute ? ' absolute' : '' } h-flex`}
+                    className={`sized-content sell-button${ positionAbsolute ? ' absolute' : '' }${ alwaysShow ?  ` always-show` : `` }${ alwaysHide ?  ` always-hide` : `` }${ mobileAlwaysShow ?  ` mobile-always-show` : `` }${ mobileAlwaysHide ?  ` mobile-always-hide` : `` } h-flex`}
                     style={{ gap: '5px', alignItems: 'center' }}
                     onClick={(ev) => { 
                         ev.stopPropagation(); 
@@ -73,15 +73,15 @@ export default function RelicsOwnedButton({ positionAbsolute=true, itemId, showI
                         });
                     }}
                 >
-                            <img 
-                                src={`${com.getBaseEnvPath().basePath}/icons/owned.svg`} 
-                                className={`sized-content ${ relicNum > 0 ? `eye-icon` : `sell-button-icon` } icon-default-filter flex-center`}
-                                style={com.shallowMerge({
+                    <img 
+                        src={`${com.getBaseEnvPath().basePath}/icons/owned.svg`} 
+                        className={`sized-content ${ relicNum > 0 ? `eye-icon` : `sell-button-icon` }${ alwaysShow ?  ` always-show` : `` }${ alwaysHide ?  ` always-hide` : `` }${ mobileAlwaysShow ?  ` mobile-always-show` : `` }${ mobileAlwaysHide ?  ` mobile-always-hide` : `` } icon-default-filter flex-center`}
+                        style={com.shallowMerge({
 
-                                }, iconStyle)}
-                            />
-                            { !(relicNum > 0) ? null: <span className='sized-content h-flex flex-center' style={{ marginBottom: '2px', fontSize: 'small', fontStyle: 'italic' }}>{relicNum}</span> }
-                        
+                        }, iconStyle)}
+                    />
+                    { !(relicNum > 0) ? null: <span className='sized-content h-flex flex-center' style={{ marginBottom: '2px', fontSize: 'small', fontStyle: 'italic' }}>{relicNum}</span> }
+                    { !showLabel ? null: <span className='sized-content h-flex flex-center' style={{ marginBottom: '2px', fontSize: 'small' }}>Owned</span> }
                 </button>
             </>
     );

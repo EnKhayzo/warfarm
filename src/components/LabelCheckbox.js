@@ -24,7 +24,7 @@ const LabelCheckbox = ({ textLabel, name, value, onChange, onClick, checked, con
       stopPropagation: () => {}
     };
 
-    console.log(`triggering synthetic event`);
+    // console.log(`triggering synthetic event`);
 
     // Call the React onChange handler to notify the parent of the change
     if (onChange) {

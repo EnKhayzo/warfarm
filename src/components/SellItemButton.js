@@ -16,7 +16,7 @@ import SellValueLabelObject from './SellValueLabelObject';
 import useObtainedExtras from '@/hooks/useObtainedExtras';
 import SellItemButtons from './SellItemButtons';
 
-export default function SellItemButton({ positionAbsolute=true, itemId }){
+export default function SellItemButton({ positionAbsolute=true, itemId, showLabel=false, alwaysShow=false, alwaysHide=false, mobileAlwaysShow=true, mobileAlwaysHide=false }){
     const [ obtainedExtras, setObtainedExtras ] = useObtainedExtras();
     const [ sellItems, setSellItems ] = useSellItems();
 
@@ -44,7 +44,7 @@ export default function SellItemButton({ positionAbsolute=true, itemId }){
         <>
             <button 
                 title={`Sell components`}
-                className={`sized-content h-flex sell-button${ positionAbsolute ? ' absolute' : '' } v-flex flex-center`}
+                className={`sized-content h-flex sell-button${ positionAbsolute ? ' absolute' : '' }${ alwaysShow ?  ` always-show` : `` }${ alwaysHide ?  ` always-hide` : `` }${ mobileAlwaysShow ?  ` mobile-always-show` : `` }${ mobileAlwaysHide ?  ` mobile-always-hide` : `` } v-flex flex-center`}
                 style={{ gap: '5px' }}
                 onClick={(ev) => { 
                     ev.stopPropagation(); 
@@ -139,12 +139,13 @@ export default function SellItemButton({ positionAbsolute=true, itemId }){
             >
                 <img 
                     src={ isSell ? `${com.getBaseEnvPath().basePath}/icons/sell_filled.svg` : `${com.getBaseEnvPath().basePath}/icons/sell_hollow.svg`} 
-                    className={`sized-content sell-button-icon flex-center${ isSell ? ` sell` : `` }`}
+                    className={`sized-content sell-button-icon flex-center${ isSell ? ` sell` : `` }${ alwaysShow ?  ` always-show` : `` }${ alwaysHide ?  ` always-hide` : `` }${ mobileAlwaysShow ?  ` mobile-always-show` : `` }${ mobileAlwaysHide ?  ` mobile-always-hide` : `` }`}
                     style={{
 
                     }}
                 />
                 { !(sellValue > 0) ? null: <span className='sized-content h-flex flex-center' style={{ marginBottom: '2px', fontSize: 'small', fontStyle: 'italic' }}>{sellValue}</span> }
+                { !showLabel ? null: <span className='sized-content h-flex flex-center' style={{ marginBottom: '2px', fontSize: 'small' }}>Sell Items</span> }
             </button>
         </>
     );

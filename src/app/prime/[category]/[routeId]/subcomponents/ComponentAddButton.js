@@ -15,7 +15,7 @@ import ObjectStateLabel from '@/components/ObjectStateLabel';
 import ObtainedLabelObject from '@/components/ObtainedLabelObject';
 import ObtainedLabelButton from '@/components/ObtainedLabelButton';
 
-export default function ComponentAddButton({ component, showCorrespondingItem=false, showButtons=true, isRawObj=false, forceMode=null, fullName=false, iconHeight='75px', width=null, className, style }){
+export default function ComponentAddButton({ component, showCorrespondingItem=false, darkenIfVaulted=false, showButtons=true, isRawObj=false, forceMode=null, fullName=false, iconHeight='75px', width=null, className, style }){
     const router = useRouter();
 
     const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
@@ -42,7 +42,8 @@ export default function ComponentAddButton({ component, showCorrespondingItem=fa
                     position: 'relative',
                     cursor: 'pointer',
                     width: width ?? 'auto', 
-                    alignSelf: 'stretch'
+                    alignSelf: 'stretch',
+                    opacity: darkenIfVaulted ? (component.vaulted ? '50%' : '100%') : 'unset'
                 }}
             >
                 <div className='sized-content h-flex flex-center'>

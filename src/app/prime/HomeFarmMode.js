@@ -400,6 +400,8 @@ function VoidFissuresComponent(){
                 .map((fissure, index) => { 
                   const nodeObj = com.getAPINodeObj(fissure.Node); 
                   const mission = com.getObjectFromId(nodeObj.id);
+
+                  if(mission == null){ console.warn(`mission is null!`, nodeObj.id); return null; }
                   const expireTime = com.accessDateAPI(fissure.Expiry);
                   const expireTimeUntil = expireTime - Date.now();
 
