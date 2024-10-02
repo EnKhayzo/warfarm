@@ -1550,6 +1550,39 @@
         },
         "vaulted": true
     },
+    "Axi G13": {
+        "name": "Axi G13",
+        "category": "relics",
+        "id": "Axi G13",
+        "tier": "Axi",
+        "rewards": {
+            "Garuda Prime Neuroptics Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Nagantaka Prime Receiver": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Khora Prime Chassis Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Hystrix Prime Barrel": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Lex Prime Barrel": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
     "Axi G2": {
         "name": "Axi G2",
         "category": "relics",
@@ -2963,6 +2996,39 @@
                 "perc": "25.33%"
             },
             "Tatsu Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
+    "Axi N11": {
+        "name": "Axi N11",
+        "category": "relics",
+        "id": "Axi N11",
+        "tier": "Axi",
+        "rewards": {
+            "Nagantaka Prime Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Garuda Prime Chassis Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Fang Prime Handle": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Khora Prime Systems Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Burston Prime Receiver": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
                 "rarity": "common",
                 "perc": "25.33%"
             }
@@ -6325,6 +6391,39 @@
                 "perc": "25.33%"
             },
             "Fang Prime Blade": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
+    "Lith D6": {
+        "name": "Lith D6",
+        "category": "relics",
+        "id": "Lith D6",
+        "tier": "Lith",
+        "rewards": {
+            "Dual Keres Prime Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Nagantaka Prime Stock": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Lex Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Corvas Prime Receiver": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Burston Prime Blueprint": {
                 "rarity": "common",
                 "perc": "25.33%"
             },
@@ -12370,6 +12469,39 @@
         },
         "vaulted": false
     },
+    "Meso H8": {
+        "name": "Meso H8",
+        "category": "relics",
+        "id": "Meso H8",
+        "tier": "Meso",
+        "rewards": {
+            "Hystrix Prime Receiver": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Corvas Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Dual Keres Prime Handle": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Nagantaka Prime Barrel": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Lex Prime Receiver": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
     "Meso I1": {
         "name": "Meso I1",
         "category": "relics",
@@ -16363,6 +16495,39 @@
         },
         "vaulted": true
     },
+    "Neo C5": {
+        "name": "Neo C5",
+        "category": "relics",
+        "id": "Neo C5",
+        "tier": "Neo",
+        "rewards": {
+            "Corvas Prime Barrel": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Hystrix Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Khora Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Garuda Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Burston Prime Stock": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
     "Neo D1": {
         "name": "Neo D1",
         "category": "relics",
@@ -17512,6 +17677,39 @@
                 "perc": "25.33%"
             },
             "Fulmin Prime Barrel": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
+    "Neo K8": {
+        "name": "Neo K8",
+        "category": "relics",
+        "id": "Neo K8",
+        "tier": "Neo",
+        "rewards": {
+            "Khora Prime Neuroptics Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Garuda Prime Systems Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Burston Prime Barrel": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Corvas Prime Stock": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Dual Keres Prime Blade": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
                 "rarity": "common",
                 "perc": "25.33%"
             }

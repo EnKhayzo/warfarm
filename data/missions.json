@@ -2479,6 +2479,72 @@
             ]
         }
     },
+    "Saya's Visions, Earth": {
+        "name": "Saya's Visions",
+        "planet": "Earth",
+        "fullName": "Saya's Visions, Earth",
+        "type": "Shrine Defense",
+        "category": "missions",
+        "id": "Saya's Visions, Earth",
+        "rewards": {
+            "Meso F5 Relic": [
+                {
+                    "name": "Meso F5 Relic",
+                    "rotation": null,
+                    "rarity": "rare",
+                    "perc": "6.43%"
+                }
+            ],
+            "Meso V9 Relic": [
+                {
+                    "name": "Meso V9 Relic",
+                    "rotation": null,
+                    "rarity": "rare",
+                    "perc": "6.43%"
+                }
+            ],
+            "Meso H7 Relic": [
+                {
+                    "name": "Meso H7 Relic",
+                    "rotation": null,
+                    "rarity": "rare",
+                    "perc": "6.43%"
+                }
+            ],
+            "Meso N17 Relic": [
+                {
+                    "name": "Meso N17 Relic",
+                    "rotation": null,
+                    "rarity": "rare",
+                    "perc": "6.43%"
+                }
+            ],
+            "Meso A7 Relic": [
+                {
+                    "name": "Meso A7 Relic",
+                    "rotation": null,
+                    "rarity": "rare",
+                    "perc": "6.43%"
+                }
+            ],
+            "Meso W4 Relic": [
+                {
+                    "name": "Meso W4 Relic",
+                    "rotation": null,
+                    "rarity": "rare",
+                    "perc": "6.43%"
+                }
+            ],
+            "Meso B9 Relic": [
+                {
+                    "name": "Meso B9 Relic",
+                    "rotation": null,
+                    "rarity": "rare",
+                    "perc": "6.43%"
+                }
+            ]
+        }
+    },
     "Arcadia, Event: Mars": {
         "name": "Arcadia",
         "planet": "Event: Mars",
@@ -15415,6 +15481,14 @@
                     "rarity": "rare",
                     "perc": "6.67%"
                 }
+            ],
+            "Aya": [
+                {
+                    "name": "Aya",
+                    "rotation": null,
+                    "rarity": "rare",
+                    "perc": "6.67%"
+                }
             ]
         }
     },
@@ -15519,6 +15593,14 @@
                 },
                 {
                     "name": "Lith W4 Relic",
+                    "rotation": null,
+                    "rarity": "rare",
+                    "perc": "6.67%"
+                }
+            ],
+            "Aya": [
+                {
+                    "name": "Aya",
                     "rotation": null,
                     "rarity": "rare",
                     "perc": "6.67%"
@@ -15711,6 +15793,38 @@
                 },
                 {
                     "name": "Lith W4 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "6.67%"
+                }
+            ],
+            "Aya": [
+                {
+                    "name": "Aya",
+                    "rotation": "A",
+                    "rarity": "rare",
+                    "perc": "6.67%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "2.05%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "2.05%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "2.05%"
+                },
+                {
+                    "name": "Aya",
                     "rotation": "C",
                     "rarity": "rare",
                     "perc": "6.67%"
@@ -15935,6 +16049,14 @@
             "Meso B9 Relic": [
                 {
                     "name": "Meso B9 Relic",
+                    "rotation": null,
+                    "rarity": "rare",
+                    "perc": "6.67%"
+                }
+            ],
+            "Aya": [
+                {
+                    "name": "Aya",
                     "rotation": null,
                     "rarity": "rare",
                     "perc": "6.67%"
@@ -16167,6 +16289,56 @@
                     "perc": "6.49%"
                 }
             ],
+            "Aya": [
+                {
+                    "name": "Aya",
+                    "rotation": "A",
+                    "rarity": "rare",
+                    "perc": "2.05%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": "A",
+                    "rarity": "rare",
+                    "perc": "2.05%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": "A",
+                    "rarity": "rare",
+                    "perc": "2.05%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "2.05%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "2.05%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "2.05%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "6.49%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": "C",
+                    "rarity": "ultra rare",
+                    "perc": "1.29%"
+                }
+            ],
             "Neo M5 Relic": [
                 {
                     "name": "Neo M5 Relic",
@@ -16392,6 +16564,14 @@
                     "rarity": "rare",
                     "perc": "6.67%"
                 }
+            ],
+            "Aya": [
+                {
+                    "name": "Aya",
+                    "rotation": null,
+                    "rarity": "rare",
+                    "perc": "6.67%"
+                }
             ]
         }
     },
@@ -16514,6 +16694,14 @@
                     "rarity": "rare",
                     "perc": "6.67%"
                 }
+            ],
+            "Aya": [
+                {
+                    "name": "Aya",
+                    "rotation": null,
+                    "rarity": "rare",
+                    "perc": "6.67%"
+                }
             ]
         }
     },
@@ -16579,6 +16767,38 @@
                     "rotation": "A",
                     "rarity": "rare",
                     "perc": "6.96%"
+                }
+            ],
+            "Aya": [
+                {
+                    "name": "Aya",
+                    "rotation": "A",
+                    "rarity": "rare",
+                    "perc": "6.96%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": "A",
+                    "rarity": "ultra rare",
+                    "perc": "1.29%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "9.09%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "2.82%"
                 }
             ],
             "Neo M5 Relic": [
@@ -16921,6 +17141,26 @@
                     "perc": "12.50%"
                 }
             ],
+            "Aya": [
+                {
+                    "name": "Aya",
+                    "rotation": "A",
+                    "rarity": "rare",
+                    "perc": "9.09%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": "B",
+                    "rarity": "uncommon",
+                    "perc": "12.50%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": "C",
+                    "rarity": "uncommon",
+                    "perc": "22.11%"
+                }
+            ],
             "Axi A18 Relic": [
                 {
                     "name": "Axi A18 Relic",
@@ -17138,6 +17378,20 @@
                     "rarity": "rare",
                     "perc": "6.25%"
                 }
+            ],
+            "Aya": [
+                {
+                    "name": "Aya",
+                    "rotation": null,
+                    "rarity": "rare",
+                    "perc": "6.25%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": null,
+                    "rarity": "rare",
+                    "perc": "6.25%"
+                }
             ]
         }
     },
@@ -17272,6 +17526,26 @@
                     "rotation": "B",
                     "rarity": "uncommon",
                     "perc": "12.50%"
+                }
+            ],
+            "Aya": [
+                {
+                    "name": "Aya",
+                    "rotation": "A",
+                    "rarity": "rare",
+                    "perc": "9.09%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": "B",
+                    "rarity": "uncommon",
+                    "perc": "12.50%"
+                },
+                {
+                    "name": "Aya",
+                    "rotation": "C",
+                    "rarity": "uncommon",
+                    "perc": "22.11%"
                 }
             ],
             "Axi A18 Relic": [
