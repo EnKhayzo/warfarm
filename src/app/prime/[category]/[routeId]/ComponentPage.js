@@ -30,6 +30,7 @@ import FallbackObject from './FallbackObject.js';
 import useMissionPriorities from '@/hooks/useMissionPriorities.js';
 import ResurgenceItemIcon from '@/components/ResurgenceItemIcon.js';
 import ObtainedLabelButton from '@/components/ObtainedLabelButton.js';
+import RelicsOwnedButton from '@/components/RelicsOwnedButton.js';
 
 const RelicTab = ({component, rarityPriorities}) => {
   const router = useRouter();
@@ -90,6 +91,7 @@ const RelicTab = ({component, rarityPriorities}) => {
                             <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{relic.labelHeading}</div>
                         </div>
                         <ResurgenceItemIcon itemId={relic.id}/>
+                        <RelicsOwnedButton positionAbsolute={true} itemId={relic.id}/>
                     </Link>
                 )) 
               }
@@ -155,7 +157,7 @@ const MissionTab = ({component, rarityPriorities}) => {
                       gap: '5px',
                       opacity: missionGroup.infoObj.vaulted ? '50%' : '100%',
                       alignSelf: 'stretch',
-                      width: '200px',
+                      width: '220px',
                       justifyContent: 'flex-start'
                     }}
                 >
@@ -173,6 +175,7 @@ const MissionTab = ({component, rarityPriorities}) => {
                               className={`sized-content h-flex flex-center object-page-mission-relic${` ${relic.rarity}` ?? ''}`} 
                               style={{ gap: '5px' }}
                             >
+                              <RelicsOwnedButton positionAbsolute={false} itemId={relic.relic.id} showIfHas={false} iconStyle={{ width: '10px', height: '10px' }}/>
                               <div className='sized-content h-flex flex-center' ><img style={{ height: '30px' }} src={`${com.getBaseEnvPath().basePath}/images/${relic.relic.tier}.png`}/></div>
                               <div className='sized-content h-flex flex-center' style={{ fontSize: 'small' }}>{relic.relic.name}</div>
                               <div className='sized-content v-flex flex-center' style={{ alignItems: 'flex-start', marginLeft: '5px' }}>

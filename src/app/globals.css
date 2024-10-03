@@ -833,11 +833,11 @@ html * {
     display: flex;
   }
 
-  .mobile-always-show {
+  .mobile-show {
     display: flex;
   }
 
-  .mobile-always-hide {
+  .mobile-hide {
     display:none;
   }
 }
@@ -1176,10 +1176,10 @@ input:checked + .slider:before {
   display: none;
 }
 
-/* .mobile-always-show {
+/* .mobile-show {
   display: flex;
 }
 
-.mobile-always-hide {
+.mobile-hide {
   display: none;
 } */

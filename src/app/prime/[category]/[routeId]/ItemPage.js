@@ -40,6 +40,7 @@ import RelicTabBody from './subcomponents/RelicTabBody.js';
 import MissionTabBody from './subcomponents/MissionTabBody.js';
 import HideFarmedItemsCheckbox from './subcomponents/HideFarmedItemsCheckbox.js';
 import useUserDataPreferences from '@/hooks/useUserDataPreferences.js';
+import RelicsOwnedButton from '@/components/RelicsOwnedButton.js';
 
 const ComponentTab = ({item, components}) => {
     const router = useRouter();
@@ -155,6 +156,7 @@ const ComponentTab = ({item, components}) => {
                                                                 <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content', textWrap: 'nowrap' }}>{relic.label}</div>
                                                             </div>
                                                             <ResurgenceItemIcon itemId={relic.rawObj.relic.id}/>
+                                                            <RelicsOwnedButton positionAbsolute={true} itemId={relic.rawObj.relic.id}/>
                                                         </Link>
                                                     ))
                                             }

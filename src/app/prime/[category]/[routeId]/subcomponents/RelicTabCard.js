@@ -11,6 +11,7 @@ import useObtainedComponents from '@/hooks/useObtainedComponents';
 import ResurgenceItemIcon from '@/components/ResurgenceItemIcon';
 import ObtainedResurgenceGroup from '@/components/ObtainedResurgenceGroup';
 import DucatLabel from '@/components/DucatLabel';
+import RelicsOwnedButton from '@/components/RelicsOwnedButton';
 
 export default function RelicTabCard({ relicInfo, components, hideFarmed=false }){
     const router = useRouter();
@@ -48,6 +49,7 @@ export default function RelicTabCard({ relicInfo, components, hideFarmed=false }
                 </div>
                 <ResurgenceItemIcon itemId={relic.id}/>
                 <DucatLabel rawObj={com.getObjectFromId(relic.id)}/>
+                <RelicsOwnedButton positionAbsolute={true} itemId={relic.id}/>
             </Link>
             <div 
               className='sized-content v-flex flex-center'

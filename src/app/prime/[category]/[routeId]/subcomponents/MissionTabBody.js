@@ -13,6 +13,7 @@ import ObtainedResurgenceGroup from '@/components/ObtainedResurgenceGroup';
 import RelicTabCard from './RelicTabCard';
 import useMissionPriorities from '@/hooks/useMissionPriorities';
 import { ScrollPaneContext } from '@/contexts/ScrollPaneContext';
+import RelicsOwnedButton from '@/components/RelicsOwnedButton';
 
 
 
@@ -263,8 +264,9 @@ export default function MissionTabBody({ groupBy, hideFarmed, objectIds, rarityP
                                                                 key={`${relic.name}-${index}`} 
                                                                 // onClick={(ev) => { ev.stopPropagation(); router.push(com.getObjectPathNameFromIdObj(relic.relic, "Relics"))}}
                                                                 className={`sized-content h-flex flex-center object-page-mission-relic${` ${com.getComponentRarityInRelationToRelic(component.rawObj, relic.relic)}` ?? ''}`} 
-                                                                style={{ gap: '5px', minWidth: '200px' }}
+                                                                style={{ gap: '5px', minWidth: '220px' }}
                                                             >
+                                                                <RelicsOwnedButton positionAbsolute={false} itemId={relic.relic.id} showIfHas={false} iconStyle={{ width: '10px', height: '10px' }}/>
                                                                 <div className='sized-content h-flex flex-center' ><img style={{ height: '30px' }} src={`${com.getBaseEnvPath().basePath}/images/${relic.relic.tier}.png`}/></div>
                                                                 <div className='sized-content h-flex flex-center' style={{ fontSize: 'small' }}>{relic.relic.name}</div>
                                                                 <div className='sized-content v-flex flex-center' style={{ alignItems: 'flex-start', marginLeft: '5px' }}>
@@ -320,7 +322,7 @@ export default function MissionTabBody({ groupBy, hideFarmed, objectIds, rarityP
                                       >
                                         <Link href={com.getObjectRouteFromId(relic.relic.id)} 
                                             // onClick={(ev) => { ev.stopPropagation(); router.push(com.getObjectRouteFromId(relic.relic.id)); }}
-                                            className={`sized-content item-page-component-container tracker-item-parent v-flex flex-center`}
+                                            className={`sized-content item-page-component-container tracker-item-parent item-check-parent v-flex flex-center`}
                                             style={{
                                                 gap: '5px',
                                                 opacity: relic.relic.vaulted ? '50%' : '100%',
@@ -328,10 +330,11 @@ export default function MissionTabBody({ groupBy, hideFarmed, objectIds, rarityP
                                                 height: '75px'
                                             }}
                                         >
-                                            <div className='sized-content h-flex flex-center' style={{ width: '35px', height: '35px' }}><img src={com.getObjectIcon(relic.relic)}/></div>
-                                            <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
-                                                <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{relic.relic.name}</div>
-                                            </div>
+                                          <div className='sized-content h-flex flex-center' style={{ width: '35px', height: '35px' }}><img src={com.getObjectIcon(relic.relic)}/></div>
+                                          <div className='sized-content v-flex flex-center' style={{ gap: '1px' }}>
+                                              <div className='sized-content h-flex flex-center' style={{ fontSize: 'small', minWidth: 'fit-content' }}>{relic.relic.name}</div>
+                                          </div>
+                                          <RelicsOwnedButton positionAbsolute={true} itemId={relic.relic.id}/>
                                         </Link>
                                         <div className='sized-content v-flex flex-center' style={{ alignItems: 'flex-start', marginLeft: '5px' }}>
                                             {

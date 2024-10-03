@@ -18,7 +18,7 @@ import ObtainedLabelButtonExtras from './ObtainedLabelButtonExtras';
 import useRelicsOwned from '@/hooks/useRelicsOwned';
 import RelicsOwnedLabelAddButton from './RelicsOwnedLabelAddButton';
 
-export default function RelicsOwnedButton({ positionAbsolute=true, itemId, showIfHas=true, iconStyle, showLabel=false, alwaysShow=false, alwaysHide=false, mobileAlwaysShow=true, mobileAlwaysHide=false }){
+export default function RelicsOwnedButton({ positionAbsolute=true, itemId, style, showIfHas=true, iconStyle, showLabel=false, alwaysShow=false, alwaysHide=false, mobileAlwaysShow=true, mobileAlwaysHide=false }){
     const [ relicsOwned, setRelicsOwned ] = useRelicsOwned();
     
     const rawObj = com.getObjectFromId(itemId);
@@ -32,7 +32,7 @@ export default function RelicsOwnedButton({ positionAbsolute=true, itemId, showI
                 <button 
                     title={`Set owned relics (per refinement level)`}
                     className={`sized-content sell-button${ positionAbsolute ? ' absolute' : '' }${ alwaysShow ?  ` always-show` : `` }${ alwaysHide ?  ` always-hide` : `` }${ mobileAlwaysShow ?  ` mobile-always-show` : `` }${ mobileAlwaysHide ?  ` mobile-always-hide` : `` } h-flex`}
-                    style={{ gap: '5px', alignItems: 'center' }}
+                    style={com.shallowMerge({ gap: '5px', alignItems: 'center' }, style)}
                     onClick={(ev) => { 
                         ev.stopPropagation(); 
                         ev.preventDefault();
