@@ -303,6 +303,84 @@ function SettingsButton({showLabel=false, exportUserData, importUserData, setMis
   );
 }
 
+function ContextMenuItem({ contextMenuUi, index }) {
+  const ref = useRef(null);
+  const [correctedPosition, setCorrectedPosition] = useState(null);
+
+
+  // Extract initial positions
+  const position = {
+    top: contextMenuUi.position?.top || 'unset',
+    left: contextMenuUi.position?.left || 'unset',
+    right: contextMenuUi.position?.right || 'unset',
+    bottom: contextMenuUi.position?.bottom || 'unset',
+  };
+
+  useLayoutEffect(() => {
+    const element = ref.current;
+    if (element) {
+      const rect = element.getBoundingClientRect();
+      const screenBB = {
+        top: 0,
+        left: 0,
+        right: window.innerWidth,
+        bottom: window.innerHeight
+      };
+
+      // Convert positions to numbers
+      const top = position.top !== 'unset' ? parseFloat(position.top) : null;
+      const left = position.left !== 'unset' ? parseFloat(position.left) : null;
+
+      // Adjust positions to ensure the element is within the screen
+      let correctedTop = top;
+      let correctedLeft = left;
+
+      if (top !== null && (top + rect.height > screenBB.bottom)) {
+        correctedTop = screenBB.bottom - rect.height;
+      }
+
+      if (left !== null && (left + rect.width > screenBB.right)) {
+        correctedLeft = screenBB.right - rect.width;
+      }
+
+      // Ensure positions are not negative
+      if (correctedTop < 0) correctedTop = 0;
+      if (correctedLeft < 0) correctedLeft = 0;
+
+      setCorrectedPosition({
+        top: correctedTop !== null ? `${correctedTop}px` : 'unset',
+        left: correctedLeft !== null ? `${correctedLeft}px` : 'unset',
+        right: position.right,
+        bottom: position.bottom,
+      });
+    }
+  }, []);
+
+  // Render the element with corrected positions
+  return (
+    <div
+      ref={ref}
+      key={`${index}-${contextMenuUi.children}`}
+      className="sized-content h-flex flex-center global-context-menu-ui"
+      style={{
+        position: 'absolute',
+        pointerEvents: 'all',
+        top: correctedPosition?.top || position.top,
+        left: correctedPosition?.left || position.left,
+        right: correctedPosition?.right || position.right,
+        bottom: correctedPosition?.bottom || position.bottom,
+        borderRadius: '10px',
+        padding: '10px',
+        visibility: correctedPosition ? 'visible' : 'hidden', // Hide until positioned
+        flexWrap: 'wrap'
+      }}
+    >
+      {contextMenuUi.children ? contextMenuUi.children({}) : null}
+    </div>
+  );
+}
+
+
 function showInfoPage(setHasFirstAccessed){
   com.setUserDataHasFirstAccessed(false); setHasFirstAccessed(false);
   com.showDialogUi({
@@ -696,28 +774,9 @@ export function MainLayoutComponent({children}){
               zIndex: '1000', // to go over the search bar result pane
             }}
           >
-
-            {     
+            {
               contextMenuUis.map((contextMenuUi, index) => (
-                <div
-                key={`${index}-${contextMenuUi.children}`}
-                  className="sized-content h-flex flex-center global-context-menu-ui"
-                  style={{
-                    position: 'absolute',
-                    pointerEvents: 'all',
-                    top: contextMenuUi.position && contextMenuUi.position.top ? contextMenuUi.position.top : 'unset',
-                    left: contextMenuUi.position && contextMenuUi.position.left ? contextMenuUi.position.left : 'unset',
-                    right: contextMenuUi.position && contextMenuUi.position.right ? contextMenuUi.position.right : 'unset',
-                    bottom: contextMenuUi.position && contextMenuUi.position.bottom ? contextMenuUi.position.bottom : 'unset',
-                    borderRadius: '10px',
-                    padding: '10px'
-                  }}
-                >
-                  { 
-                    contextMenuUi.children == null ? null:
-                      contextMenuUi.children({})
-                  }
-                </div>
+                <ContextMenuItem key={index} contextMenuUi={contextMenuUi} index={index} />
               ))
             }
           </div>

@@ -51,7 +51,13 @@ export default function DuplicateItemButton({ positionAbsolute=true, itemId, sho
                                 <div className='sized-content h-flex flex-center' style={{ whiteSpace: 'pre' }}>{rawObj.fullName ?? rawObj.name}{'\'s duplicates'}</div>
                                 <div 
                                     className='sized-content h-flex flex-center'
-                                    style={{ borderRadius: '10px', padding: '10px', alignSelf: 'stretch', gap: '20px' }}
+                                    style={{ 
+                                        borderRadius: '10px', 
+                                        padding: '10px', 
+                                        alignSelf: 'stretch', 
+                                        gap: '20px',
+                                        flexWrap: 'wrap'
+                                    }}
                                 >
                                     {
                                         (rawObj.category === "items" ? com.getItemComponents(rawObj.id) : [ rawObj ])

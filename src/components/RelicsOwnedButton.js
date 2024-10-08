@@ -51,7 +51,8 @@ export default function RelicsOwnedButton({ positionAbsolute=true, itemId, style
                                         borderRadius: '10px', 
                                         padding: '10px', 
                                         alignSelf: 'stretch', 
-                                        gap: '20px' 
+                                        gap: '20px',
+                                        flexWrap: 'wrap'
                                     }}
                                     onClick={(ev) => { ev.stopPropagation(); ev.preventDefault(); }}
                                 >

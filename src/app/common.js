@@ -1212,16 +1212,24 @@ export async function initialize(local=false) {
 
     
   
-    let tempPaths = [];
+    // let tempPaths = [];
 
-    tempPaths = [ ...tempPaths, ...Object.entries(await getAllItems()).map(([ id, item ]) =>            ({ title: `${item.name}`,           category: "items",       route: `/prime/items/${extractAlphanumericCharactersOnly(id)}`,       routeId: extractAlphanumericCharactersOnly(id), id: id })).flat(1) ];
-    tempPaths = [ ...tempPaths, ...Object.entries(await getAllComponents()).map(([ id, component ]) =>  ({ title: `${component.fullName}`,  category: "components",  route: `/prime/components/${extractAlphanumericCharactersOnly(id)}`,  routeId: extractAlphanumericCharactersOnly(id), id: id })).flat(1) ];
-    tempPaths = [ ...tempPaths, ...Object.entries(await getAllRelics()).map(([ id, relic ]) =>          ({ title: `${relic.name}`,          category: "relics",      route: `/prime/relics/${extractAlphanumericCharactersOnly(id)}`,      routeId: extractAlphanumericCharactersOnly(id), id: id })).flat(1) ];
-    tempPaths = [ ...tempPaths, ...Object.entries(await getAllMissions()).map(([ id, mission ]) =>      ({ title: `${mission.fullName}`,    category: "missions",    route: `/prime/missions/${extractAlphanumericCharactersOnly(id)}`,    routeId: extractAlphanumericCharactersOnly(id), id: id })).flat(1) ];
+    // tempPaths = [ ...tempPaths, ...Object.entries(await getAllItems()).map(([ id, item ]) =>            ({ title: `${item.name}`,           category: "items",       route: `/prime/items/${extractAlphanumericCharactersOnly(id)}`,       routeId: extractAlphanumericCharactersOnly(id), id: id })).flat(1) ];
+    // tempPaths = [ ...tempPaths, ...Object.entries(await getAllComponents()).map(([ id, component ]) =>  ({ title: `${component.fullName}`,  category: "components",  route: `/prime/components/${extractAlphanumericCharactersOnly(id)}`,  routeId: extractAlphanumericCharactersOnly(id), id: id })).flat(1) ];
+    // tempPaths = [ ...tempPaths, ...Object.entries(await getAllRelics()).map(([ id, relic ]) =>          ({ title: `${relic.name}`,          category: "relics",      route: `/prime/relics/${extractAlphanumericCharactersOnly(id)}`,      routeId: extractAlphanumericCharactersOnly(id), id: id })).flat(1) ];
+    // tempPaths = [ ...tempPaths, ...Object.entries(await getAllMissions()).map(([ id, mission ]) =>      ({ title: `${mission.fullName}`,    category: "missions",    route: `/prime/missions/${extractAlphanumericCharactersOnly(id)}`,    routeId: extractAlphanumericCharactersOnly(id), id: id })).flat(1) ];
     
 
-    objectPaths = Object.fromEntries(tempPaths.map(path => [ path.routeId, path ]));
-    objectPathsIds = Object.fromEntries(tempPaths.map(path => [ path.id, path ]));
+    // objectPaths = Object.fromEntries(tempPaths.map(path => [ path.routeId, path ]));
+    // objectPathsIds = Object.fromEntries(tempPaths.map(path => [ path.id, path ]));
+
+
+    objectPaths = Object.fromEntries(Object.entries(po.pathObjs).map(([ id, path]) => [ path.routeId, path ]));
+    objectPathsIds = Object.fromEntries(Object.entries(po.pathObjs).map(([ id, path]) => [ path.id, path ]));
+
+
+    // console.log(``, objectPaths, objectPathsIds)
+
 
     // sitePaths = Object.fromEntries([ 
     //   ...objectPaths,
@@ -1938,7 +1946,7 @@ export async function waitFor(getValueFunc, initialState, pollInterval=250){
 }
 
 export function clamp(val, min, max){
-  return Math.min(max, Math.max(min, val))
+  return Math.min(max, Math.max(min, val));
 }
 
 export function getChildIndex(child){
@@ -2727,4 +2735,8 @@ export function getDatasetDates(){
 export function getDatasetLastDropTableUpdate(){
   if(datasetDates == null) { console.warn(`datasetDates is nul!`); return "?"; }
   return datasetDates.last_update ?? "?";
+}
+
+export function extractNumberFromPx(strVal){
+  return Number(strVal.replace("px", ""));
 }

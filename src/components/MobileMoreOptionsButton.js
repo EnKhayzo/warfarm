@@ -51,7 +51,8 @@ export default function MobileMoreOptionsButton({ positionAbsolute=true, itemId 
                                     alignSelf: 'stretch', 
                                     gap: '20px',
                                     justifyContent: 'flex-start',
-                                    alignItems: 'flex-start'
+                                    alignItems: 'flex-start',
+                                    flexWrap: 'wrap'
                                 }}
                                 onClick={(ev) => { ev.stopPropagation(); ev.preventDefault(); }}
                             >
