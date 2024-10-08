@@ -20850,38 +20850,5 @@
             }
         },
         "vaulted": true
-    },
-    "Requiem": {
-        "name": "Requiem",
-        "category": "relics",
-        "id": "Requiem",
-        "tier": "Requiem",
-        "rewards": {
-            "Exilus Weapon Adapter Blueprint": {
-                "rarity": "rare",
-                "perc": "2.00%"
-            },
-            "Lohk": {
-                "rarity": "uncommon",
-                "perc": "11.00%"
-            },
-            "Xata": {
-                "rarity": "uncommon",
-                "perc": "11.00%"
-            },
-            "1200X Kuva": {
-                "rarity": "common",
-                "perc": "25.33%"
-            },
-            "Ayatan Amber Star": {
-                "rarity": "common",
-                "perc": "25.33%"
-            },
-            "Riven Sliver": {
-                "rarity": "common",
-                "perc": "25.33%"
-            }
-        },
-        "vaulted": true
     }
 }
