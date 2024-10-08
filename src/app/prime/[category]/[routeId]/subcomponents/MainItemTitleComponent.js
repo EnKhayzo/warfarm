@@ -12,6 +12,7 @@ import ObtainedResurgenceGroup from '@/components/ObtainedResurgenceGroup';
 import DucatLabel from '@/components/DucatLabel';
 
 export default function MainItemTitleComponent({ itemId, iconUrl, labelHeader, label, labelFooter }){
+    // console.log(`main title!`, itemId, com.getObjectFromId(itemId))
     return (
         <div 
             className='sized-content main-title-page-view-element item-check-parent tracker-item-parent v-flex flex-center' 

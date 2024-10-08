@@ -9029,33 +9029,26 @@ export const pathObjs = {
         "routeId": "RequiemI",
         "id": "Requiem I"
     },
-    "/prime/relics/RequiemIi": {
-        "title": "Requiem Ii",
+    "/prime/relics/RequiemII": {
+        "title": "Requiem II",
         "category": "relics",
-        "route": "/prime/relics/RequiemIi",
-        "routeId": "RequiemIi",
-        "id": "Requiem Ii"
+        "route": "/prime/relics/RequiemII",
+        "routeId": "RequiemII",
+        "id": "Requiem II"
     },
-    "/prime/relics/RequiemIii": {
-        "title": "Requiem Iii",
+    "/prime/relics/RequiemIII": {
+        "title": "Requiem III",
         "category": "relics",
-        "route": "/prime/relics/RequiemIii",
-        "routeId": "RequiemIii",
-        "id": "Requiem Iii"
+        "route": "/prime/relics/RequiemIII",
+        "routeId": "RequiemIII",
+        "id": "Requiem III"
     },
-    "/prime/relics/RequiemIv": {
-        "title": "Requiem Iv",
+    "/prime/relics/RequiemIV": {
+        "title": "Requiem IV",
         "category": "relics",
-        "route": "/prime/relics/RequiemIv",
-        "routeId": "RequiemIv",
-        "id": "Requiem Iv"
-    },
-    "/prime/relics/Requiem": {
-        "title": "Requiem",
-        "category": "relics",
-        "route": "/prime/relics/Requiem",
-        "routeId": "Requiem",
-        "id": "Requiem"
+        "route": "/prime/relics/RequiemIV",
+        "routeId": "RequiemIV",
+        "id": "Requiem IV"
     },
     "/prime/missions/ApollodorusMercury": {
         "title": "Apollodorus, Mercury",

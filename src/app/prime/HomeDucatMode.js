@@ -337,7 +337,7 @@ function BaroComponent(){
       if(expiryDate != null) timeUntilBaro = expiryDate - Date.now();
 
       baroLocation = com.getAPINodeName(baroState.Node);
-      console.log(`baro locaion`, baroLocation,baroState.Node);
+      // console.log(`baro locaion`, baroLocation,baroState.Node);
     }
   }
 

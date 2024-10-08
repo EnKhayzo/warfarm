@@ -117,6 +117,8 @@ export default function RelicPage({ routeId, pathObj }) {
   const components = com.getSearchResultRelatedObjects(null, "Relics", null, "components", relic, { router: router });
   const missions = com.getSearchResultRelatedObjects(null, "Relics", null, "missions", relic, { missionPriorities: missionPriorities, router: router });
 
+  // console.log(`relic page!`, relic, pathObj);
+
   return (
       <div className='sized-content v-flex'>
           <div className='sized-remaining h-flex flex-center'>

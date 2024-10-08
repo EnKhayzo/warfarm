@@ -20752,10 +20752,10 @@
         },
         "vaulted": true
     },
-    "Requiem Ii": {
-        "name": "Requiem Ii",
+    "Requiem II": {
+        "name": "Requiem II",
         "category": "relics",
-        "id": "Requiem Ii",
+        "id": "Requiem II",
         "tier": "Requiem",
         "rewards": {
             "Exilus Weapon Adapter Blueprint": {
@@ -20785,10 +20785,10 @@
         },
         "vaulted": true
     },
-    "Requiem Iii": {
-        "name": "Requiem Iii",
+    "Requiem III": {
+        "name": "Requiem III",
         "category": "relics",
-        "id": "Requiem Iii",
+        "id": "Requiem III",
         "tier": "Requiem",
         "rewards": {
             "Exilus Weapon Adapter Blueprint": {
@@ -20818,10 +20818,10 @@
         },
         "vaulted": true
     },
-    "Requiem Iv": {
-        "name": "Requiem Iv",
+    "Requiem IV": {
+        "name": "Requiem IV",
         "category": "relics",
-        "id": "Requiem Iv",
+        "id": "Requiem IV",
         "tier": "Requiem",
         "rewards": {
             "Exilus Weapon Adapter Blueprint": {
@@ -20833,39 +20833,6 @@
                 "perc": "11.00%"
             },
             "Khra": {
-                "rarity": "uncommon",
-                "perc": "11.00%"
-            },
-            "1200X Kuva": {
-                "rarity": "common",
-                "perc": "25.33%"
-            },
-            "Ayatan Amber Star": {
-                "rarity": "common",
-                "perc": "25.33%"
-            },
-            "Riven Sliver": {
-                "rarity": "common",
-                "perc": "25.33%"
-            }
-        },
-        "vaulted": true
-    },
-    "Requiem": {
-        "name": "Requiem",
-        "category": "relics",
-        "id": "Requiem",
-        "tier": "Requiem",
-        "rewards": {
-            "Exilus Weapon Adapter Blueprint": {
-                "rarity": "rare",
-                "perc": "2.00%"
-            },
-            "Lohk": {
-                "rarity": "uncommon",
-                "perc": "11.00%"
-            },
-            "Xata": {
                 "rarity": "uncommon",
                 "perc": "11.00%"
             },
