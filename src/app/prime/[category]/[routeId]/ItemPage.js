@@ -241,8 +241,8 @@ export default function ItemPage({ routeId, pathObj }) {
                             <HideFarmedItemsCheckbox setHideFarmed={setHideFarmed}/>
                             <SelectorComponent
                                 options={{
-                                "Group By Relic":     { value: "relic", defaultOption: true },
-                                "Group By Component": { value: "component" }
+                                    "Group By Relic":     { value: "relic", defaultOption: true },
+                                    "Group By Component": { value: "component" }
                                 }}
                                 onConfirm={([ text, entry ]) => setGroupBy(entry.value)}
                             />
@@ -250,12 +250,12 @@ export default function ItemPage({ routeId, pathObj }) {
                         ),
                         // "Components": (
                         //     <div className='sized-content h-flex flex-center' style={{ gap: '10px' }}>
-                        //     <HideFarmedItemsCheckbox setHideFarmed={setHideFarmed}/>
+                        //          <HideFarmedItemsCheckbox setHideFarmed={setHideFarmed}/>
                         //     </div>
                         // ),
                         "Relics": (
                             <div className='sized-content h-flex flex-center' style={{ gap: '10px' }}>
-                            <HideFarmedItemsCheckbox setHideFarmed={setHideFarmed}/>
+                                <HideFarmedItemsCheckbox setHideFarmed={setHideFarmed}/>
                             </div>
                         )
                         }}
