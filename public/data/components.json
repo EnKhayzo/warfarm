@@ -164,8 +164,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 100
+        "vaulted": true
     },
     "Pangolin Prime Blade": {
         "name": "Blade",
@@ -450,7 +449,7 @@
         "required": 2,
         "isAnomalousItemComponent": false,
         "type": "Secondary Weapon",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 100
     },
     "Revenant Prime Systems Blueprint": {
@@ -476,8 +475,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 45
+        "vaulted": true
     },
     "Scourge Prime Blade": {
         "name": "Blade",
@@ -619,6 +617,58 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Melee Weapon",
+        "vaulted": true,
+        "ducats": 15
+    },
+    "Xaku Prime Systems Blueprint": {
+        "name": "Systems",
+        "fullName": "Xaku Prime Systems",
+        "parentItem": "Xaku Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Xaku Prime Systems Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": false,
+        "ducats": 45
+    },
+    "Larkspur Prime Receiver": {
+        "name": "Receiver",
+        "fullName": "Larkspur Prime Receiver",
+        "parentItem": "Larkspur Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Larkspur Prime Receiver",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Arch Gun",
+        "vaulted": false,
+        "ducats": 45
+    },
+    "Bronco Prime Receiver": {
+        "name": "Receiver",
+        "fullName": "Bronco Prime Receiver",
+        "parentItem": "Bronco Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Bronco Prime Receiver",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Secondary Weapon",
+        "vaulted": false,
+        "ducats": 15
+    },
+    "Epitaph Prime Blueprint": {
+        "name": "Blueprint",
+        "fullName": "Epitaph Prime Blueprint",
+        "parentItem": "Epitaph Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Epitaph Prime Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Secondary Weapon",
         "vaulted": false,
         "ducats": 15
     },
@@ -697,8 +747,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 45
+        "vaulted": true
     },
     "Cernos Prime String": {
         "name": "String",
@@ -749,8 +798,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 15
+        "vaulted": true
     },
     "Akvasto Prime Blueprint": {
         "name": "Blueprint",
@@ -1203,8 +1251,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": false,
-        "ducats": 100
+        "vaulted": true
     },
     "Nagantaka Prime Receiver": {
         "name": "Receiver",
@@ -1281,7 +1328,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Secondary Weapon",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 15
     },
     "Gauss Prime Blueprint": {
@@ -1359,8 +1406,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 25
+        "vaulted": true
     },
     "Vectis Prime Barrel": {
         "name": "Barrel",
@@ -1736,8 +1782,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 15
+        "vaulted": true
     },
     "Latron Prime Barrel": {
         "name": "Barrel",
@@ -1762,8 +1807,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 15
+        "vaulted": true
     },
     "Dual Keres Prime Blueprint": {
         "name": "Blueprint",
@@ -1801,8 +1845,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 45
+        "vaulted": true
     },
     "Akarius Prime Barrel": {
         "name": "Barrel",
@@ -1957,8 +2000,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": false,
-        "ducats": 45
+        "vaulted": false
     },
     "Revenant Prime Chassis Blueprint": {
         "name": "Chassis",
@@ -1971,19 +2013,6 @@
         "isAnomalousItemComponent": false,
         "type": "Warframe",
         "vaulted": true,
-        "ducats": 15
-    },
-    "Bronco Prime Receiver": {
-        "name": "Receiver",
-        "fullName": "Bronco Prime Receiver",
-        "parentItem": "Bronco Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Bronco Prime Receiver",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Secondary Weapon",
-        "vaulted": false,
         "ducats": 15
     },
     "Masseter Prime Handle": {
@@ -2064,19 +2093,6 @@
         "vaulted": true,
         "ducats": 100
     },
-    "Larkspur Prime Receiver": {
-        "name": "Receiver",
-        "fullName": "Larkspur Prime Receiver",
-        "parentItem": "Larkspur Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Larkspur Prime Receiver",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Arch Gun",
-        "vaulted": false,
-        "ducats": 45
-    },
     "Corvas Prime Receiver": {
         "name": "Receiver",
         "fullName": "Corvas Prime Receiver",
@@ -2113,7 +2129,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Secondary Weapon",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 45
     },
     "Shade Prime Cerebrum": {
@@ -2139,8 +2155,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 100
+        "vaulted": true
     },
     "Masseter Prime Blueprint": {
         "name": "Blueprint",
@@ -2181,6 +2196,44 @@
         "vaulted": true,
         "ducats": 15
     },
+    "Zylok Prime Receiver": {
+        "name": "Receiver",
+        "fullName": "Zylok Prime Receiver",
+        "parentItem": "Zylok Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Zylok Prime Receiver",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Secondary Weapon",
+        "vaulted": false,
+        "ducats": 45
+    },
+    "Quassus Prime Handle": {
+        "name": "Handle",
+        "fullName": "Quassus Prime Handle",
+        "parentItem": "Quassus Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Quassus Prime Handle",
+        "required": 2,
+        "isAnomalousItemComponent": false,
+        "type": "Melee Weapon",
+        "vaulted": false,
+        "ducats": 15
+    },
+    "Sevagoth Prime Neuroptics Blueprint": {
+        "name": "Neuroptics",
+        "fullName": "Sevagoth Prime Neuroptics",
+        "parentItem": "Sevagoth Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Sevagoth Prime Neuroptics Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": false
+    },
     "Gram Prime Handle": {
         "name": "Handle",
         "fullName": "Gram Prime Handle",
@@ -2217,8 +2270,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 15
+        "vaulted": true
     },
     "Akbolto Prime Blueprint": {
         "name": "Blueprint",
@@ -2386,7 +2438,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Melee Weapon",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 45
     },
     "Helios Prime Cerebrum": {
@@ -2516,8 +2568,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 15
+        "vaulted": true
     },
     "Hildryn Prime Blueprint": {
         "name": "Blueprint",
@@ -2584,6 +2635,32 @@
         "vaulted": false,
         "ducats": 45
     },
+    "Fulmin Prime Blueprint": {
+        "name": "Blueprint",
+        "fullName": "Fulmin Prime Blueprint",
+        "parentItem": "Fulmin Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Fulmin Prime Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
+        "vaulted": false,
+        "ducats": 45
+    },
+    "Zylok Prime Barrel": {
+        "name": "Barrel",
+        "fullName": "Zylok Prime Barrel",
+        "parentItem": "Zylok Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Zylok Prime Barrel",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Secondary Weapon",
+        "vaulted": false,
+        "ducats": 15
+    },
     "Inaros Prime Neuroptics Blueprint": {
         "name": "Neuroptics",
         "fullName": "Inaros Prime Neuroptics",
@@ -2594,8 +2671,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 100
+        "vaulted": true
     },
     "Dethcube Prime Systems": {
         "name": "Systems",
@@ -2724,7 +2800,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Melee Weapon",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 45
     },
     "Scourge Prime Handle": {
@@ -2880,8 +2956,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 15
+        "vaulted": true
     },
     "Corvas Prime Blueprint": {
         "name": "Blueprint",
@@ -2906,8 +2981,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 100
+        "vaulted": true
     },
     "Octavia Prime Chassis Blueprint": {
         "name": "Chassis",
@@ -2997,8 +3071,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 100
+        "vaulted": true
     },
     "Tiberon Prime Blueprint": {
         "name": "Blueprint",
@@ -3117,19 +3190,6 @@
         "vaulted": false,
         "ducats": 100
     },
-    "Zylok Prime Barrel": {
-        "name": "Barrel",
-        "fullName": "Zylok Prime Barrel",
-        "parentItem": "Zylok Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Zylok Prime Barrel",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Secondary Weapon",
-        "vaulted": false,
-        "ducats": 15
-    },
     "Mirage Prime Blueprint": {
         "name": "Blueprint",
         "fullName": "Mirage Prime Blueprint",
@@ -3205,8 +3265,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 100
+        "vaulted": true
     },
     "Ballistica Prime Upper Limb": {
         "name": "Upper Limb",
@@ -3296,8 +3355,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 100
+        "vaulted": true
     },
     "Phantasma Prime Blueprint": {
         "name": "Blueprint",
@@ -3335,7 +3393,7 @@
         "required": 2,
         "isAnomalousItemComponent": false,
         "type": "Secondary Weapon",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 15
     },
     "Tatsu Prime Blueprint": {
@@ -3413,8 +3471,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 45
+        "vaulted": true
     },
     "Nekros Prime Blueprint": {
         "name": "Blueprint",
@@ -3504,8 +3561,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 45
+        "vaulted": true
     },
     "Saryn Prime Blueprint": {
         "name": "Blueprint",
@@ -3582,8 +3638,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 100
+        "vaulted": true
     },
     "Strun Prime Barrel": {
         "name": "Barrel",
@@ -3676,19 +3731,6 @@
         "vaulted": false,
         "ducats": 100
     },
-    "Zylok Prime Receiver": {
-        "name": "Receiver",
-        "fullName": "Zylok Prime Receiver",
-        "parentItem": "Zylok Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Zylok Prime Receiver",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Secondary Weapon",
-        "vaulted": false,
-        "ducats": 45
-    },
     "Acceltra Prime Receiver": {
         "name": "Receiver",
         "fullName": "Acceltra Prime Receiver",
@@ -3701,19 +3743,6 @@
         "type": "Primary Weapon",
         "vaulted": false,
         "ducats": 45
-    },
-    "Epitaph Prime Blueprint": {
-        "name": "Blueprint",
-        "fullName": "Epitaph Prime Blueprint",
-        "parentItem": "Epitaph Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Epitaph Prime Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Secondary Weapon",
-        "vaulted": false,
-        "ducats": 15
     },
     "Pyrana Prime Blueprint": {
         "name": "Blueprint",
@@ -3842,7 +3871,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 15
     },
     "Rhino Prime Blueprint": {
@@ -4076,8 +4105,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 45
+        "vaulted": true
     },
     "Knell Prime Receiver": {
         "name": "Receiver",
@@ -4128,8 +4156,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": false,
-        "ducats": 45
+        "vaulted": false
     },
     "Larkspur Prime Blueprint": {
         "name": "Blueprint",
@@ -4167,8 +4194,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": false,
-        "ducats": 15
+        "vaulted": false
     },
     "Sicarus Prime Receiver": {
         "name": "Receiver",
@@ -4417,6 +4443,32 @@
         "vaulted": false,
         "ducats": 45
     },
+    "Trumna Prime Receiver": {
+        "name": "Receiver",
+        "fullName": "Trumna Prime Receiver",
+        "parentItem": "Trumna Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Trumna Prime Receiver",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
+        "vaulted": false,
+        "ducats": 100
+    },
+    "Gunsen Prime Handle": {
+        "name": "Handle",
+        "fullName": "Gunsen Prime Handle",
+        "parentItem": "Gunsen Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Gunsen Prime Handle",
+        "required": 2,
+        "isAnomalousItemComponent": false,
+        "type": "Melee Weapon",
+        "vaulted": false,
+        "ducats": 45
+    },
     "Tipedo Prime Handle": {
         "name": "Handle",
         "fullName": "Tipedo Prime Handle",
@@ -4440,8 +4492,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 15
+        "vaulted": true
     },
     "Corinth Prime Blueprint": {
         "name": "Blueprint",
@@ -4518,8 +4569,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 45
+        "vaulted": true
     },
     "Odonata Prime Systems Blueprint": {
         "name": "Systems Blueprint",
@@ -4557,8 +4607,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 65
+        "vaulted": true
     },
     "Venka Prime Gauntlet": {
         "name": "Gauntlet",
@@ -4713,8 +4762,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 45
+        "vaulted": true
     },
     "Wukong Prime Blueprint": {
         "name": "Blueprint",
@@ -4856,8 +4904,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 45
+        "vaulted": true
     },
     "Boltor Prime Receiver": {
         "name": "Receiver",
@@ -4895,7 +4942,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 100
     },
     "Phantasma Prime Receiver": {
@@ -5038,8 +5085,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 15
+        "vaulted": true
     },
     "Cobra & Crane Prime Guard": {
         "name": "Guard",
@@ -5051,7 +5097,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Melee Weapon",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 100
     },
     "Acceltra Prime Blueprint": {
@@ -5129,8 +5175,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 100
+        "vaulted": true
     },
     "Helios Prime Blueprint": {
         "name": "Blueprint",
@@ -5168,8 +5213,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": false,
-        "ducats": 45
+        "vaulted": false
     },
     "Spira Prime Blueprint": {
         "name": "Blueprint",
@@ -5246,8 +5290,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 15
+        "vaulted": true
     },
     "Zakti Prime Barrel": {
         "name": "Barrel",
@@ -5389,8 +5432,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": false,
-        "ducats": 45
+        "vaulted": false
     },
     "Fulmin Prime Barrel": {
         "name": "Barrel",
@@ -5506,8 +5548,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 45
+        "vaulted": true
     },
     "Tatsu Prime Blade": {
         "name": "Blade",
@@ -5560,19 +5601,6 @@
         "type": "Secondary Weapon",
         "vaulted": true,
         "ducats": 100
-    },
-    "Fulmin Prime Blueprint": {
-        "name": "Blueprint",
-        "fullName": "Fulmin Prime Blueprint",
-        "parentItem": "Fulmin Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Fulmin Prime Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Primary Weapon",
-        "vaulted": false,
-        "ducats": 45
     },
     "Ivara Prime Chassis Blueprint": {
         "name": "Chassis",
@@ -5743,6 +5771,32 @@
         "vaulted": true,
         "ducats": 45
     },
+    "Masseter Prime Blade": {
+        "name": "Blade",
+        "fullName": "Masseter Prime Blade",
+        "parentItem": "Masseter Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Masseter Prime Blade",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Melee Weapon",
+        "vaulted": false,
+        "ducats": 100
+    },
+    "Gauss Prime Chassis Blueprint": {
+        "name": "Chassis",
+        "fullName": "Gauss Prime Chassis",
+        "parentItem": "Gauss Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Gauss Prime Chassis Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": false,
+        "ducats": 15
+    },
     "Nova Prime Chassis Blueprint": {
         "name": "Chassis",
         "fullName": "Nova Prime Chassis",
@@ -5805,6 +5859,19 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
+        "vaulted": true,
+        "ducats": 45
+    },
+    "Trumna Prime Stock": {
+        "name": "Stock",
+        "fullName": "Trumna Prime Stock",
+        "parentItem": "Trumna Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Trumna Prime Stock",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
         "vaulted": false,
         "ducats": 45
     },
@@ -5831,8 +5898,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 100
+        "vaulted": true
     },
     "Ballistica Prime Receiver": {
         "name": "Receiver",
@@ -6039,8 +6105,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 100
+        "vaulted": true
     },
     "Carrier Prime Blueprint": {
         "name": "Blueprint",
@@ -6094,6 +6159,19 @@
         "vaulted": false,
         "ducats": 15
     },
+    "Xaku Prime Blueprint": {
+        "name": "Blueprint",
+        "fullName": "Xaku Prime Blueprint",
+        "parentItem": "Xaku Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Xaku Prime Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": false,
+        "ducats": 100
+    },
     "Zephyr Prime Systems Blueprint": {
         "name": "Systems",
         "fullName": "Zephyr Prime Systems",
@@ -6145,19 +6223,6 @@
         "type": "Secondary Weapon",
         "vaulted": false,
         "ducats": 100
-    },
-    "Sevagoth Prime Neuroptics Blueprint": {
-        "name": "Neuroptics",
-        "fullName": "Sevagoth Prime Neuroptics",
-        "parentItem": "Sevagoth Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Sevagoth Prime Neuroptics Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Warframe",
-        "vaulted": false,
-        "ducats": 15
     },
     "Mag Prime Chassis Blueprint": {
         "name": "Chassis",
@@ -6250,6 +6315,31 @@
         "vaulted": true,
         "ducats": 100
     },
+    "Epitaph Prime Receiver": {
+        "name": "Receiver",
+        "fullName": "Epitaph Prime Receiver",
+        "parentItem": "Epitaph Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Epitaph Prime Receiver",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Secondary Weapon",
+        "vaulted": false,
+        "ducats": 100
+    },
+    "Xaku Prime Neuroptics Blueprint": {
+        "name": "Neuroptics",
+        "fullName": "Xaku Prime Neuroptics",
+        "parentItem": "Xaku Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Xaku Prime Neuroptics Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": false
+    },
     "Frost Prime Blueprint": {
         "name": "Blueprint",
         "fullName": "Frost Prime Blueprint",
@@ -6286,8 +6376,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 15
+        "vaulted": true
     },
     "Boar Prime Blueprint": {
         "name": "Blueprint",
@@ -6315,6 +6404,19 @@
         "vaulted": false,
         "ducats": 45
     },
+    "Quassus Prime Blueprint": {
+        "name": "Blueprint",
+        "fullName": "Quassus Prime Blueprint",
+        "parentItem": "Quassus Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Quassus Prime Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Melee Weapon",
+        "vaulted": false,
+        "ducats": 45
+    },
     "Gauss Prime Neuroptics Blueprint": {
         "name": "Neuroptics",
         "fullName": "Gauss Prime Neuroptics",
@@ -6325,8 +6427,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": false,
-        "ducats": 45
+        "vaulted": false
     },
     "Ankyros Prime Gauntlet": {
         "name": "Gauntlet",
@@ -6341,19 +6442,6 @@
         "vaulted": true,
         "ducats": 15
     },
-    "Masseter Prime Blade": {
-        "name": "Blade",
-        "fullName": "Masseter Prime Blade",
-        "parentItem": "Masseter Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Masseter Prime Blade",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Melee Weapon",
-        "vaulted": false,
-        "ducats": 100
-    },
     "Nyx Prime Neuroptics Blueprint": {
         "name": "Neuroptics",
         "fullName": "Nyx Prime Neuroptics",
@@ -6364,8 +6452,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": false,
-        "ducats": 100
+        "vaulted": false
     },
     "Nautilus Prime Blueprint": {
         "name": "Blueprint",
@@ -6390,8 +6477,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": true,
-        "ducats": 15
+        "vaulted": true
     },
     "Panthera Prime Receiver": {
         "name": "Receiver",
@@ -6458,6 +6544,19 @@
         "vaulted": true,
         "ducats": 45
     },
+    "Trumna Prime Barrel": {
+        "name": "Barrel",
+        "fullName": "Trumna Prime Barrel",
+        "parentItem": "Trumna Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Trumna Prime Barrel",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
+        "vaulted": false,
+        "ducats": 100
+    },
     "Velox Prime Barrel": {
         "name": "Barrel",
         "fullName": "Velox Prime Barrel",
@@ -6471,19 +6570,6 @@
         "vaulted": false,
         "ducats": 100
     },
-    "Gunsen Prime Handle": {
-        "name": "Handle",
-        "fullName": "Gunsen Prime Handle",
-        "parentItem": "Gunsen Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Gunsen Prime Handle",
-        "required": 2,
-        "isAnomalousItemComponent": false,
-        "type": "Melee Weapon",
-        "vaulted": false,
-        "ducats": 45
-    },
     "Sevagoth Prime Blueprint": {
         "name": "Blueprint",
         "fullName": "Sevagoth Prime Blueprint",
@@ -6496,19 +6582,6 @@
         "type": "Warframe",
         "vaulted": false,
         "ducats": 45
-    },
-    "Epitaph Prime Receiver": {
-        "name": "Receiver",
-        "fullName": "Epitaph Prime Receiver",
-        "parentItem": "Epitaph Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Epitaph Prime Receiver",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Secondary Weapon",
-        "vaulted": false,
-        "ducats": 100
     },
     "Bo Prime Handle": {
         "name": "Handle",
@@ -6536,16 +6609,42 @@
         "vaulted": false,
         "ducats": 15
     },
-    "Gauss Prime Chassis Blueprint": {
+    "Xaku Prime Chassis Blueprint": {
         "name": "Chassis",
-        "fullName": "Gauss Prime Chassis",
-        "parentItem": "Gauss Prime",
+        "fullName": "Xaku Prime Chassis",
+        "parentItem": "Xaku Prime",
         "anomalous": false,
         "category": "components",
-        "id": "Gauss Prime Chassis Blueprint",
+        "id": "Xaku Prime Chassis Blueprint",
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
+        "vaulted": false,
+        "ducats": 45
+    },
+    "Quassus Prime Blade": {
+        "name": "Blade",
+        "fullName": "Quassus Prime Blade",
+        "parentItem": "Quassus Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Quassus Prime Blade",
+        "required": 2,
+        "isAnomalousItemComponent": false,
+        "type": "Melee Weapon",
+        "vaulted": false,
+        "ducats": 100
+    },
+    "Trumna Prime Blueprint": {
+        "name": "Blueprint",
+        "fullName": "Trumna Prime Blueprint",
+        "parentItem": "Trumna Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Trumna Prime Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
         "vaulted": false,
         "ducats": 15
     },

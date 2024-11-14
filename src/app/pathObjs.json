@@ -1,4 +1,4 @@
-export const pathObjs = {
+{
     "/prime/items/AkstilettoPrime": {
         "title": "Akstiletto Prime",
         "category": "items",
@@ -11528,4 +11528,4 @@ export const pathObjs = {
         "routeId": "_root",
         "id": "/"
     }
-};
+}
