@@ -245,6 +245,12 @@
         "name": "Plains of Eidolon",
         "systemName": "Earth"
     },
+    "SolNode451": {
+        "id": "Saya's Visions, Earth",
+        "nodeId": "SolNode451",
+        "name": "Saya's Visions",
+        "systemName": "Earth"
+    },
     "SolNode30": {
         "id": "Olympus, Mars",
         "nodeId": "SolNode30",
