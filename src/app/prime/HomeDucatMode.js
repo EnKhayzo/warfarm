@@ -120,7 +120,7 @@ export function SellItemsComponent(){
                         .filter(([ itemId, sellItem ]) => com.getUserDataSellItemValue(itemId) > 0)
                         .filter(([ itemId, sellItem ]) => com.getObjectFromId(itemId) != null)
                         .sort(([ a, _ ], [ b, __ ]) => 
-                          com.objectIsFarmedPerc(com.getObjectFromId(a)) - com.objectIsFarmedPerc(com.getObjectFromId(b))
+                          a.localeCompare(b)
                         )
                         .map(([ itemId, sellItem ], index) => { const farmedPerc = com.objectIsFarmedPerc(com.getObjectFromId(itemId), obtainedComponents); return (
                           <div key={`${itemId}-${index}`} className='sized-content v-flex flex-center'>
