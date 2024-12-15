@@ -1183,3 +1183,8 @@ input:checked + .slider:before {
 .mobile-always-hide {
   display: none;
 } */
+
+.home-farm-mode-progress-text {
+  font-weight: bold;
+  font-size: x-large;
+}

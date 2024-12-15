@@ -461,7 +461,6 @@ export function TrackedItemsComponent(){
 
   const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
 
-
   return (
       <div className='sized-content tracked-items v-flex flex-center' style={{ gap: '50px' }}>
         {
@@ -523,7 +522,6 @@ export function TrackedItemsComponent(){
             </>
           :null
         }
-        <VoidFissuresComponent/>
         { noTrackedItems ? 
             <div className='sized-content v-flex' style={{ gap: '10px', fontSize: 'small', fontStyle: 'italic', whiteSpace: 'pre' }}>
               <div className='sized-content h-flex flex-center'>
@@ -543,6 +541,50 @@ export function TrackedItemsComponent(){
           : 
             null 
         }
+
+        <VoidFissuresComponent/>
+
+        {
+          // progress string
+          Object.entries(trackedItems).filter(([ _, tracked ]) => tracked.tracked).length <= 0 ? null:
+            <span 
+              className="sized-content h-flex flex-center" 
+              style={{ 
+                whiteSpace: 'pre',
+                fontSize: 'large',
+              }}
+            >
+              You&apos;ve farmed {
+                (() => {
+                  const farmed = Object.entries(trackedItems)
+                    .filter(([ _, tracked ]) => tracked?.tracked)
+                    .reduce((acc, [ trackedItem, _ ]) => {
+                      const obj = com.getObjectFromId(trackedItem);
+                
+                      if(obj.category === "items") acc += com.getItemComponentIds(obj.id).reduce((acc, componentId) => acc + com.getUserDataComponentObtainedValue(componentId), 0);
+                      else if(obj.category === "components") acc += com.componentIsFarmed(obj);
+                      
+                      return acc;
+                    }, 0);
+
+                  const total = Object.entries(trackedItems)
+                    .filter(([ _, tracked ]) => tracked?.tracked)
+                    .reduce((acc, [ trackedItem, _ ]) => {
+                      const obj = com.getObjectFromId(trackedItem);
+                
+                      if(obj.category === "items") acc += com.getItemComponents(obj.id).reduce((acc, component) => acc + component.required, 0);
+                      else if(obj.category === "components") acc += 1;
+                      
+                      return acc;
+                    }, 0)
+
+                    const perc = farmed/total * 100.0
+                  return <><span className="sized-content h-flex home-farm-mode-progress-text">{farmed} / {total}</span> components (<span className="sized-content h-flex home-farm-mode-progress-text">{perc.toFixed(0)}%</span>, missing <span className="sized-content h-flex home-farm-mode-progress-text">{total-farmed}</span> components)</>
+                })()
+              }
+            </span>
+        }
+
         {
           !noTrackedItems ? (
             <FarmingSheet 

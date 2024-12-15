@@ -1541,16 +1541,17 @@ export function getSearchResultRelatedObjectsSingle(category, activeTab, objects
           const component = objects.component;
           res = {
             icon: getObjectIcon(component), 
-            vaulted: item ? item.vaulted : false, 
-            rarity: (() => { 
-                // take the rarity with the highest chance
-                const rarities = { "common": 0, "uncommon": 1, "rare": 2 };
-                return getRelicsThatDropComponent(component.id).map(relic => [ relic.relic.name, relic ])
-                  .filter(([ relicName, relic ]) => (item ? item.vaulted:false) || !relic.vaulted)  
-                  .map(([ relicName, relic ]) => relic.rarity)
-                  .toSorted((rarityA, rarityB) => rarities[rarityA] - rarities[rarityB])
-                  [0]
-            })(),
+            vaulted: item ? item.vaulted : false,
+            rarity: getComponentRarity(component),
+            // rarity: (() => { 
+            //     // take the rarity with the highest chance
+            //     const rarities = { "common": 0, "uncommon": 1, "rare": 2 };
+            //     return getRelicsThatDropComponent(component.id).map(relic => [ relic.relic.name, relic ])
+            //       .filter(([ relicName, relic ]) => (item ? item.vaulted:false) || !relic.vaulted)  
+            //       .map(([ relicName, relic ]) => relic.rarity)
+            //       .toSorted((rarityA, rarityB) => rarities[rarityA] - rarities[rarityB])
+            //       [0]
+            // })(),
             labelHeading: `${component.name}`, 
             labelFooter: null,
             label: `${component.obtained ?? getUserDataComponentSetting(component.id, "obtained") ?? '0'}/${component.required}`, 
@@ -2420,10 +2421,15 @@ export function getContextMenuUis() {
 export function getComponentRarity(rawComponent){
   // take the rarity with the highest chance
   const rarities = { "common": 0, "uncommon": 1, "rare": 2 };
-  return getRelicsThatDropComponent(rawComponent.id).map(relic => [ relic.relic.name, relic ])
-    .map(([ relicName, relic ]) => relic.rarity)
-    .toSorted((rarityA, rarityB) => rarities[rarityA] - rarities[rarityB])
-    [0]
+  return getRelicsThatDropComponent(rawComponent.id)
+    .toSorted((relicA, relicB) => (
+      (relicA.vaulted-relicB.vaulted)
+      ||
+      (isRelicResurgence(relicB.relic.id)-isRelicResurgence(relicA.relic.id))
+      ||
+      (rarities[relicA.rarity] - rarities[relicB.rarity])
+    ))
+    [0].rarity
 }
 
 let componentRelicRarityRelationCache = {};

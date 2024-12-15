@@ -44,6 +44,8 @@ export default function RelicTabBody({ hideFarmed, objects}){
       .toSorted((relicA, relicB) => 
         (relicA.vaulted-relicB.vaulted)
         ||
+        (com.isRelicResurgence(relicA.id)-com.isRelicResurgence(relicB.id))
+        ||
         (relicTypePriorities[relicA.rawObj.relic.tier]-relicTypePriorities[relicB.rawObj.relic.tier])
         ||
         (relicA.rawObj.relic.name.localeCompare(relicB.rawObj.relic.name))
@@ -119,6 +121,8 @@ export default function RelicTabBody({ hideFarmed, objects}){
                   relicSection
                     .toSorted((a, b) => 
                       (a.vaulted-b.vaulted)
+                      ||
+                      (com.isRelicResurgence(b.id)-com.isRelicResurgence(a.id))
                       ||
                       (relicComponentScore(b)-relicComponentScore(a))
                       ||
