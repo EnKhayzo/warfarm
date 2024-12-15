@@ -2421,15 +2421,17 @@ export function getContextMenuUis() {
 export function getComponentRarity(rawComponent){
   // take the rarity with the highest chance
   const rarities = { "common": 0, "uncommon": 1, "rare": 2 };
-  return getRelicsThatDropComponent(rawComponent.id)
+  const array = getRelicsThatDropComponent(rawComponent.id)
     .toSorted((relicA, relicB) => (
       (relicA.vaulted-relicB.vaulted)
       ||
       (isRelicResurgence(relicB.relic.id)-isRelicResurgence(relicA.relic.id))
       ||
       (rarities[relicA.rarity] - rarities[relicB.rarity])
-    ))
-    [0].rarity
+    ));
+
+    if(array.length > 0 && array[0].rarity != null) return array[0].rarity;
+    else { console.warn(`no rarity found!`, array); return null; }
 }
 
 let componentRelicRarityRelationCache = {};
