@@ -2431,7 +2431,7 @@ export function getComponentRarity(rawComponent){
     ));
 
     if(array.length > 0 && array[0].rarity != null) return array[0].rarity;
-    else { console.warn(`no rarity found!`, array); return null; }
+    else { console.warn(`no rarity found!`, rawComponent, array); return null; }
 }
 
 let componentRelicRarityRelationCache = {};
