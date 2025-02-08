@@ -135,6 +135,8 @@ const ComponentTab = ({item, components}) => {
                                             {
                                                 relicSection
                                                     .toSorted((a, b) => 
+                                                        (com.isRelicResurgence(b.id)-com.isRelicResurgence(a.id))
+                                                        ||
                                                         (rarityPriorities[a.rarity]-rarityPriorities[b.rarity])
                                                         ||
                                                         (relicTypePriorities[a.rawObj.relic.tier]-relicTypePriorities[b.rawObj.relic.tier])
