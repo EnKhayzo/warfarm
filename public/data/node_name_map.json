@@ -1505,6 +1505,54 @@
         "name": "The Circuit",
         "systemName": "Duviri"
     },
+    "SolNode850": {
+        "id": "Legacyte Harvest, Höllvania",
+        "nodeId": "SolNode850",
+        "name": "Legacyte Harvest",
+        "systemName": "Höllvania"
+    },
+    "SolNode851": {
+        "id": "Hell-Scrub: Scaldra, Höllvania",
+        "nodeId": "SolNode851",
+        "name": "Hell-Scrub: Scaldra",
+        "systemName": "Höllvania"
+    },
+    "SolNode852": {
+        "id": "Hell-Scrub: Techrot, Höllvania",
+        "nodeId": "SolNode852",
+        "name": "Hell-Scrub: Techrot",
+        "systemName": "Höllvania"
+    },
+    "SolNode853": {
+        "id": "Exterminate: Scaldra, Höllvania",
+        "nodeId": "SolNode853",
+        "name": "Exterminate: Scaldra",
+        "systemName": "Höllvania"
+    },
+    "SolNode854": {
+        "id": "Exterminate: Techrot, Höllvania",
+        "nodeId": "SolNode854",
+        "name": "Exterminate: Techrot",
+        "systemName": "Höllvania"
+    },
+    "SolNode855": {
+        "id": "Faceoff: Squad VS Squad, Höllvania",
+        "nodeId": "SolNode855",
+        "name": "Faceoff: Squad VS Squad",
+        "systemName": "Höllvania"
+    },
+    "SolNode857": {
+        "id": "Faceoff: Single Squad, Höllvania",
+        "nodeId": "SolNode857",
+        "name": "Faceoff: Single Squad",
+        "systemName": "Höllvania"
+    },
+    "SolNode856": {
+        "id": "Assassinate: H-09 Tank, Höllvania",
+        "nodeId": "SolNode856",
+        "name": "Assassinate: H-09 Tank",
+        "systemName": "Höllvania"
+    },
     "MercuryHUB": {
         "id": "Larunda Relay, Mercury",
         "name": "Larunda Relay",

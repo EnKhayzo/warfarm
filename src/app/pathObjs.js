@@ -671,6 +671,13 @@ export const pathObjs = {
         "routeId": "MasseterPrime",
         "id": "Masseter Prime"
     },
+    "/prime/items/LavosPrime": {
+        "title": "Lavos Prime",
+        "category": "items",
+        "route": "/prime/items/LavosPrime",
+        "routeId": "LavosPrime",
+        "id": "Lavos Prime"
+    },
     "/prime/items/GalatinePrime": {
         "title": "Galatine Prime",
         "category": "items",
@@ -867,6 +874,13 @@ export const pathObjs = {
         "routeId": "AkmagnusPrime",
         "id": "Akmagnus Prime"
     },
+    "/prime/items/CedoPrime": {
+        "title": "Cedo Prime",
+        "category": "items",
+        "route": "/prime/items/CedoPrime",
+        "routeId": "CedoPrime",
+        "id": "Cedo Prime"
+    },
     "/prime/items/PhantasmaPrime": {
         "title": "Phantasma Prime",
         "category": "items",
@@ -894,6 +908,27 @@ export const pathObjs = {
         "route": "/prime/items/ProteaPrime",
         "routeId": "ProteaPrime",
         "id": "Protea Prime"
+    },
+    "/prime/items/DualZorenPrime": {
+        "title": "Dual Zoren Prime",
+        "category": "items",
+        "route": "/prime/items/DualZorenPrime",
+        "routeId": "DualZorenPrime",
+        "id": "Dual Zoren Prime"
+    },
+    "/prime/items/GunsenPrime": {
+        "title": "Gunsen Prime",
+        "category": "items",
+        "route": "/prime/items/GunsenPrime",
+        "routeId": "GunsenPrime",
+        "id": "Gunsen Prime"
+    },
+    "/prime/items/TrumnaPrime": {
+        "title": "Trumna Prime",
+        "category": "items",
+        "route": "/prime/items/TrumnaPrime",
+        "routeId": "TrumnaPrime",
+        "id": "Trumna Prime"
     },
     "/prime/items/RhinoPrime": {
         "title": "Rhino Prime",
@@ -971,20 +1006,6 @@ export const pathObjs = {
         "route": "/prime/items/TigrisPrime",
         "routeId": "TigrisPrime",
         "id": "Tigris Prime"
-    },
-    "/prime/items/TrumnaPrime": {
-        "title": "Trumna Prime",
-        "category": "items",
-        "route": "/prime/items/TrumnaPrime",
-        "routeId": "TrumnaPrime",
-        "id": "Trumna Prime"
-    },
-    "/prime/items/GunsenPrime": {
-        "title": "Gunsen Prime",
-        "category": "items",
-        "route": "/prime/items/GunsenPrime",
-        "routeId": "GunsenPrime",
-        "id": "Gunsen Prime"
     },
     "/prime/items/ValkyrPrime": {
         "title": "Valkyr Prime",
@@ -2092,6 +2113,13 @@ export const pathObjs = {
         "routeId": "MasseterPrimeHandle",
         "id": "Masseter Prime Handle"
     },
+    "/prime/components/LavosPrimeBlueprint": {
+        "title": "Lavos Prime Blueprint",
+        "category": "components",
+        "route": "/prime/components/LavosPrimeBlueprint",
+        "routeId": "LavosPrimeBlueprint",
+        "id": "Lavos Prime Blueprint"
+    },
     "/prime/components/GalatinePrimeBlueprint": {
         "title": "Galatine Prime Blueprint",
         "category": "components",
@@ -2792,6 +2820,34 @@ export const pathObjs = {
         "routeId": "AkmagnusPrimeBlueprint",
         "id": "Akmagnus Prime Blueprint"
     },
+    "/prime/components/MasseterPrimeBlade": {
+        "title": "Masseter Prime Blade",
+        "category": "components",
+        "route": "/prime/components/MasseterPrimeBlade",
+        "routeId": "MasseterPrimeBlade",
+        "id": "Masseter Prime Blade"
+    },
+    "/prime/components/CedoPrimeReceiver": {
+        "title": "Cedo Prime Receiver",
+        "category": "components",
+        "route": "/prime/components/CedoPrimeReceiver",
+        "routeId": "CedoPrimeReceiver",
+        "id": "Cedo Prime Receiver"
+    },
+    "/prime/components/AcceltraPrimeBlueprint": {
+        "title": "Acceltra Prime Blueprint",
+        "category": "components",
+        "route": "/prime/components/AcceltraPrimeBlueprint",
+        "routeId": "AcceltraPrimeBlueprint",
+        "id": "Acceltra Prime Blueprint"
+    },
+    "/prime/components/GrendelPrimeNeuropticsBlueprint": {
+        "title": "Grendel Prime Neuroptics",
+        "category": "components",
+        "route": "/prime/components/GrendelPrimeNeuropticsBlueprint",
+        "routeId": "GrendelPrimeNeuropticsBlueprint",
+        "id": "Grendel Prime Neuroptics Blueprint"
+    },
     "/prime/components/AkstilettoPrimeLink": {
         "title": "Akstiletto Prime Link",
         "category": "components",
@@ -3093,6 +3149,55 @@ export const pathObjs = {
         "routeId": "BaruukPrimeSystemsBlueprint",
         "id": "Baruuk Prime Systems Blueprint"
     },
+    "/prime/components/EpitaphPrimeBarrel": {
+        "title": "Epitaph Prime Barrel",
+        "category": "components",
+        "route": "/prime/components/EpitaphPrimeBarrel",
+        "routeId": "EpitaphPrimeBarrel",
+        "id": "Epitaph Prime Barrel"
+    },
+    "/prime/components/DualZorenPrimeHandle": {
+        "title": "Dual Zoren Prime Handle",
+        "category": "components",
+        "route": "/prime/components/DualZorenPrimeHandle",
+        "routeId": "DualZorenPrimeHandle",
+        "id": "Dual Zoren Prime Handle"
+    },
+    "/prime/components/VeloxPrimeReceiver": {
+        "title": "Velox Prime Receiver",
+        "category": "components",
+        "route": "/prime/components/VeloxPrimeReceiver",
+        "routeId": "VeloxPrimeReceiver",
+        "id": "Velox Prime Receiver"
+    },
+    "/prime/components/ProteaPrimeSystemsBlueprint": {
+        "title": "Protea Prime Systems",
+        "category": "components",
+        "route": "/prime/components/ProteaPrimeSystemsBlueprint",
+        "routeId": "ProteaPrimeSystemsBlueprint",
+        "id": "Protea Prime Systems Blueprint"
+    },
+    "/prime/components/GaussPrimeNeuropticsBlueprint": {
+        "title": "Gauss Prime Neuroptics",
+        "category": "components",
+        "route": "/prime/components/GaussPrimeNeuropticsBlueprint",
+        "routeId": "GaussPrimeNeuropticsBlueprint",
+        "id": "Gauss Prime Neuroptics Blueprint"
+    },
+    "/prime/components/GunsenPrimeBlueprint": {
+        "title": "Gunsen Prime Blueprint",
+        "category": "components",
+        "route": "/prime/components/GunsenPrimeBlueprint",
+        "routeId": "GunsenPrimeBlueprint",
+        "id": "Gunsen Prime Blueprint"
+    },
+    "/prime/components/TrumnaPrimeBlueprint": {
+        "title": "Trumna Prime Blueprint",
+        "category": "components",
+        "route": "/prime/components/TrumnaPrimeBlueprint",
+        "routeId": "TrumnaPrimeBlueprint",
+        "id": "Trumna Prime Blueprint"
+    },
     "/prime/components/RhinoPrimeBlueprint": {
         "title": "Rhino Prime Blueprint",
         "category": "components",
@@ -3260,13 +3365,6 @@ export const pathObjs = {
         "route": "/prime/components/SevagothPrimeChassisBlueprint",
         "routeId": "SevagothPrimeChassisBlueprint",
         "id": "Sevagoth Prime Chassis Blueprint"
-    },
-    "/prime/components/GrendelPrimeNeuropticsBlueprint": {
-        "title": "Grendel Prime Neuroptics",
-        "category": "components",
-        "route": "/prime/components/GrendelPrimeNeuropticsBlueprint",
-        "routeId": "GrendelPrimeNeuropticsBlueprint",
-        "id": "Grendel Prime Neuroptics Blueprint"
     },
     "/prime/components/SicarusPrimeReceiver": {
         "title": "Sicarus Prime Receiver",
@@ -3597,6 +3695,27 @@ export const pathObjs = {
         "routeId": "ZaktiPrimeBlueprint",
         "id": "Zakti Prime Blueprint"
     },
+    "/prime/components/ZylokPrimeBlueprint": {
+        "title": "Zylok Prime Blueprint",
+        "category": "components",
+        "route": "/prime/components/ZylokPrimeBlueprint",
+        "routeId": "ZylokPrimeBlueprint",
+        "id": "Zylok Prime Blueprint"
+    },
+    "/prime/components/SevagothPrimeBlueprint": {
+        "title": "Sevagoth Prime Blueprint",
+        "category": "components",
+        "route": "/prime/components/SevagothPrimeBlueprint",
+        "routeId": "SevagothPrimeBlueprint",
+        "id": "Sevagoth Prime Blueprint"
+    },
+    "/prime/components/FulminPrimeBarrel": {
+        "title": "Fulmin Prime Barrel",
+        "category": "components",
+        "route": "/prime/components/FulminPrimeBarrel",
+        "routeId": "FulminPrimeBarrel",
+        "id": "Fulmin Prime Barrel"
+    },
     "/prime/components/VectisPrimeBlueprint": {
         "title": "Vectis Prime Blueprint",
         "category": "components",
@@ -3638,6 +3757,27 @@ export const pathObjs = {
         "route": "/prime/components/AkariusPrimeReceiver",
         "routeId": "AkariusPrimeReceiver",
         "id": "Akarius Prime Receiver"
+    },
+    "/prime/components/CedoPrimeStock": {
+        "title": "Cedo Prime Stock",
+        "category": "components",
+        "route": "/prime/components/CedoPrimeStock",
+        "routeId": "CedoPrimeStock",
+        "id": "Cedo Prime Stock"
+    },
+    "/prime/components/SevagothPrimeSystemsBlueprint": {
+        "title": "Sevagoth Prime Systems",
+        "category": "components",
+        "route": "/prime/components/SevagothPrimeSystemsBlueprint",
+        "routeId": "SevagothPrimeSystemsBlueprint",
+        "id": "Sevagoth Prime Systems Blueprint"
+    },
+    "/prime/components/NautilusPrimeCarapace": {
+        "title": "Nautilus Prime Carapace",
+        "category": "components",
+        "route": "/prime/components/NautilusPrimeCarapace",
+        "routeId": "NautilusPrimeCarapace",
+        "id": "Nautilus Prime Carapace"
     },
     "/prime/components/BoarPrimeStock": {
         "title": "Boar Prime Stock",
@@ -3758,33 +3898,12 @@ export const pathObjs = {
         "routeId": "CobraCranePrimeGuard",
         "id": "Cobra & Crane Prime Guard"
     },
-    "/prime/components/AcceltraPrimeBlueprint": {
-        "title": "Acceltra Prime Blueprint",
-        "category": "components",
-        "route": "/prime/components/AcceltraPrimeBlueprint",
-        "routeId": "AcceltraPrimeBlueprint",
-        "id": "Acceltra Prime Blueprint"
-    },
-    "/prime/components/GunsenPrimeBlueprint": {
-        "title": "Gunsen Prime Blueprint",
-        "category": "components",
-        "route": "/prime/components/GunsenPrimeBlueprint",
-        "routeId": "GunsenPrimeBlueprint",
-        "id": "Gunsen Prime Blueprint"
-    },
     "/prime/components/GrendelPrimeChassisBlueprint": {
         "title": "Grendel Prime Chassis",
         "category": "components",
         "route": "/prime/components/GrendelPrimeChassisBlueprint",
         "routeId": "GrendelPrimeChassisBlueprint",
         "id": "Grendel Prime Chassis Blueprint"
-    },
-    "/prime/components/SevagothPrimeSystemsBlueprint": {
-        "title": "Sevagoth Prime Systems",
-        "category": "components",
-        "route": "/prime/components/SevagothPrimeSystemsBlueprint",
-        "routeId": "SevagothPrimeSystemsBlueprint",
-        "id": "Sevagoth Prime Systems Blueprint"
     },
     "/prime/components/NamiSkylaPrimeHandle": {
         "title": "Nami Skyla Prime Handle",
@@ -3940,13 +4059,6 @@ export const pathObjs = {
         "routeId": "HildrynPrimeNeuropticsBlueprint",
         "id": "Hildryn Prime Neuroptics Blueprint"
     },
-    "/prime/components/FulminPrimeBarrel": {
-        "title": "Fulmin Prime Barrel",
-        "category": "components",
-        "route": "/prime/components/FulminPrimeBarrel",
-        "routeId": "FulminPrimeBarrel",
-        "id": "Fulmin Prime Barrel"
-    },
     "/prime/components/GaussPrimeSystemsBlueprint": {
         "title": "Gauss Prime Systems",
         "category": "components",
@@ -4073,6 +4185,13 @@ export const pathObjs = {
         "routeId": "TekkoPrimeBlueprint",
         "id": "Tekko Prime Blueprint"
     },
+    "/prime/components/LavosPrimeSystemsBlueprint": {
+        "title": "Lavos Prime Systems Blueprint",
+        "category": "components",
+        "route": "/prime/components/LavosPrimeSystemsBlueprint",
+        "routeId": "LavosPrimeSystemsBlueprint",
+        "id": "Lavos Prime Systems Blueprint"
+    },
     "/prime/components/MagPrimeBlueprint": {
         "title": "Mag Prime Blueprint",
         "category": "components",
@@ -4121,13 +4240,6 @@ export const pathObjs = {
         "route": "/prime/components/ReaperPrimeBlade",
         "routeId": "ReaperPrimeBlade",
         "id": "Reaper Prime Blade"
-    },
-    "/prime/components/MasseterPrimeBlade": {
-        "title": "Masseter Prime Blade",
-        "category": "components",
-        "route": "/prime/components/MasseterPrimeBlade",
-        "routeId": "MasseterPrimeBlade",
-        "id": "Masseter Prime Blade"
     },
     "/prime/components/GaussPrimeChassisBlueprint": {
         "title": "Gauss Prime Chassis",
@@ -4213,12 +4325,12 @@ export const pathObjs = {
         "routeId": "PhantasmaPrimeBarrel",
         "id": "Phantasma Prime Barrel"
     },
-    "/prime/components/ProteaPrimeSystemsBlueprint": {
-        "title": "Protea Prime Systems",
+    "/prime/components/QuassusPrimeBlade": {
+        "title": "Quassus Prime Blade",
         "category": "components",
-        "route": "/prime/components/ProteaPrimeSystemsBlueprint",
-        "routeId": "ProteaPrimeSystemsBlueprint",
-        "id": "Protea Prime Systems Blueprint"
+        "route": "/prime/components/QuassusPrimeBlade",
+        "routeId": "QuassusPrimeBlade",
+        "id": "Quassus Prime Blade"
     },
     "/prime/components/RevenantPrimeBlueprint": {
         "title": "Revenant Prime Blueprint",
@@ -4248,6 +4360,20 @@ export const pathObjs = {
         "routeId": "StrunPrimeBlueprint",
         "id": "Strun Prime Blueprint"
     },
+    "/prime/components/DualZorenPrimeBlueprint": {
+        "title": "Dual Zoren Prime Blueprint",
+        "category": "components",
+        "route": "/prime/components/DualZorenPrimeBlueprint",
+        "routeId": "DualZorenPrimeBlueprint",
+        "id": "Dual Zoren Prime Blueprint"
+    },
+    "/prime/components/XakuPrimeNeuropticsBlueprint": {
+        "title": "Xaku Prime Neuroptics",
+        "category": "components",
+        "route": "/prime/components/XakuPrimeNeuropticsBlueprint",
+        "routeId": "XakuPrimeNeuropticsBlueprint",
+        "id": "Xaku Prime Neuroptics Blueprint"
+    },
     "/prime/components/SilvaAegisPrimeGuard": {
         "title": "Silva & Aegis Prime Guard",
         "category": "components",
@@ -4261,13 +4387,6 @@ export const pathObjs = {
         "route": "/prime/components/DualKeresPrimeHandle",
         "routeId": "DualKeresPrimeHandle",
         "id": "Dual Keres Prime Handle"
-    },
-    "/prime/components/VeloxPrimeReceiver": {
-        "title": "Velox Prime Receiver",
-        "category": "components",
-        "route": "/prime/components/VeloxPrimeReceiver",
-        "routeId": "VeloxPrimeReceiver",
-        "id": "Velox Prime Receiver"
     },
     "/prime/components/TiberonPrimeStock": {
         "title": "Tiberon Prime Stock",
@@ -4318,13 +4437,6 @@ export const pathObjs = {
         "routeId": "WispPrimeChassisBlueprint",
         "id": "Wisp Prime Chassis Blueprint"
     },
-    "/prime/components/EpitaphPrimeBarrel": {
-        "title": "Epitaph Prime Barrel",
-        "category": "components",
-        "route": "/prime/components/EpitaphPrimeBarrel",
-        "routeId": "EpitaphPrimeBarrel",
-        "id": "Epitaph Prime Barrel"
-    },
     "/prime/components/ProteaPrimeBlueprint": {
         "title": "Protea Prime Blueprint",
         "category": "components",
@@ -4366,6 +4478,20 @@ export const pathObjs = {
         "route": "/prime/components/AkariusPrimeBlueprint",
         "routeId": "AkariusPrimeBlueprint",
         "id": "Akarius Prime Blueprint"
+    },
+    "/prime/components/LavosPrimeNeuropticsBlueprint": {
+        "title": "Lavos Prime Neuroptics Blueprint",
+        "category": "components",
+        "route": "/prime/components/LavosPrimeNeuropticsBlueprint",
+        "routeId": "LavosPrimeNeuropticsBlueprint",
+        "id": "Lavos Prime Neuroptics Blueprint"
+    },
+    "/prime/components/OkinaPrimeHandle": {
+        "title": "Okina Prime Handle",
+        "category": "components",
+        "route": "/prime/components/OkinaPrimeHandle",
+        "routeId": "OkinaPrimeHandle",
+        "id": "Okina Prime Handle"
     },
     "/prime/components/MagPrimeChassisBlueprint": {
         "title": "Mag Prime Chassis",
@@ -4423,13 +4549,6 @@ export const pathObjs = {
         "routeId": "EpitaphPrimeReceiver",
         "id": "Epitaph Prime Receiver"
     },
-    "/prime/components/XakuPrimeNeuropticsBlueprint": {
-        "title": "Xaku Prime Neuroptics",
-        "category": "components",
-        "route": "/prime/components/XakuPrimeNeuropticsBlueprint",
-        "routeId": "XakuPrimeNeuropticsBlueprint",
-        "id": "Xaku Prime Neuroptics Blueprint"
-    },
     "/prime/components/FrostPrimeBlueprint": {
         "title": "Frost Prime Blueprint",
         "category": "components",
@@ -4458,26 +4577,12 @@ export const pathObjs = {
         "routeId": "BoarPrimeBlueprint",
         "id": "Boar Prime Blueprint"
     },
-    "/prime/components/OkinaPrimeHandle": {
-        "title": "Okina Prime Handle",
-        "category": "components",
-        "route": "/prime/components/OkinaPrimeHandle",
-        "routeId": "OkinaPrimeHandle",
-        "id": "Okina Prime Handle"
-    },
     "/prime/components/QuassusPrimeBlueprint": {
         "title": "Quassus Prime Blueprint",
         "category": "components",
         "route": "/prime/components/QuassusPrimeBlueprint",
         "routeId": "QuassusPrimeBlueprint",
         "id": "Quassus Prime Blueprint"
-    },
-    "/prime/components/GaussPrimeNeuropticsBlueprint": {
-        "title": "Gauss Prime Neuroptics",
-        "category": "components",
-        "route": "/prime/components/GaussPrimeNeuropticsBlueprint",
-        "routeId": "GaussPrimeNeuropticsBlueprint",
-        "id": "Gauss Prime Neuroptics Blueprint"
     },
     "/prime/components/AnkyrosPrimeGauntlet": {
         "title": "Ankyros Prime Gauntlet",
@@ -4556,12 +4661,19 @@ export const pathObjs = {
         "routeId": "VeloxPrimeBarrel",
         "id": "Velox Prime Barrel"
     },
-    "/prime/components/SevagothPrimeBlueprint": {
-        "title": "Sevagoth Prime Blueprint",
+    "/prime/components/CedoPrimeBlueprint": {
+        "title": "Cedo Prime Blueprint",
         "category": "components",
-        "route": "/prime/components/SevagothPrimeBlueprint",
-        "routeId": "SevagothPrimeBlueprint",
-        "id": "Sevagoth Prime Blueprint"
+        "route": "/prime/components/CedoPrimeBlueprint",
+        "routeId": "CedoPrimeBlueprint",
+        "id": "Cedo Prime Blueprint"
+    },
+    "/prime/components/DualZorenPrimeBlade": {
+        "title": "Dual Zoren Prime Blade",
+        "category": "components",
+        "route": "/prime/components/DualZorenPrimeBlade",
+        "routeId": "DualZorenPrimeBlade",
+        "id": "Dual Zoren Prime Blade"
     },
     "/prime/components/BoPrimeHandle": {
         "title": "Bo Prime Handle",
@@ -4570,13 +4682,6 @@ export const pathObjs = {
         "routeId": "BoPrimeHandle",
         "id": "Bo Prime Handle"
     },
-    "/prime/components/NautilusPrimeCarapace": {
-        "title": "Nautilus Prime Carapace",
-        "category": "components",
-        "route": "/prime/components/NautilusPrimeCarapace",
-        "routeId": "NautilusPrimeCarapace",
-        "id": "Nautilus Prime Carapace"
-    },
     "/prime/components/XakuPrimeChassisBlueprint": {
         "title": "Xaku Prime Chassis",
         "category": "components",
@@ -4584,26 +4689,19 @@ export const pathObjs = {
         "routeId": "XakuPrimeChassisBlueprint",
         "id": "Xaku Prime Chassis Blueprint"
     },
-    "/prime/components/QuassusPrimeBlade": {
-        "title": "Quassus Prime Blade",
+    "/prime/components/CedoPrimeBarrel": {
+        "title": "Cedo Prime Barrel",
         "category": "components",
-        "route": "/prime/components/QuassusPrimeBlade",
-        "routeId": "QuassusPrimeBlade",
-        "id": "Quassus Prime Blade"
+        "route": "/prime/components/CedoPrimeBarrel",
+        "routeId": "CedoPrimeBarrel",
+        "id": "Cedo Prime Barrel"
     },
-    "/prime/components/TrumnaPrimeBlueprint": {
-        "title": "Trumna Prime Blueprint",
+    "/prime/components/LavosPrimeChassisBlueprint": {
+        "title": "Lavos Prime Chassis Blueprint",
         "category": "components",
-        "route": "/prime/components/TrumnaPrimeBlueprint",
-        "routeId": "TrumnaPrimeBlueprint",
-        "id": "Trumna Prime Blueprint"
-    },
-    "/prime/components/ZylokPrimeBlueprint": {
-        "title": "Zylok Prime Blueprint",
-        "category": "components",
-        "route": "/prime/components/ZylokPrimeBlueprint",
-        "routeId": "ZylokPrimeBlueprint",
-        "id": "Zylok Prime Blueprint"
+        "route": "/prime/components/LavosPrimeChassisBlueprint",
+        "routeId": "LavosPrimeChassisBlueprint",
+        "id": "Lavos Prime Chassis Blueprint"
     },
     "/prime/components/ZhugePrimeBarrel": {
         "title": "Zhuge Prime Barrel",
@@ -5032,6 +5130,13 @@ export const pathObjs = {
         "routeId": "AxiF2",
         "id": "Axi F2"
     },
+    "/prime/relics/AxiF3": {
+        "title": "Axi F3",
+        "category": "relics",
+        "route": "/prime/relics/AxiF3",
+        "routeId": "AxiF3",
+        "id": "Axi F3"
+    },
     "/prime/relics/AxiG1": {
         "title": "Axi G1",
         "category": "relics",
@@ -5368,6 +5473,13 @@ export const pathObjs = {
         "routeId": "AxiM5",
         "id": "Axi M5"
     },
+    "/prime/relics/AxiM6": {
+        "title": "Axi M6",
+        "category": "relics",
+        "route": "/prime/relics/AxiM6",
+        "routeId": "AxiM6",
+        "id": "Axi M6"
+    },
     "/prime/relics/AxiN1": {
         "title": "Axi N1",
         "category": "relics",
@@ -5535,6 +5647,20 @@ export const pathObjs = {
         "route": "/prime/relics/AxiP7",
         "routeId": "AxiP7",
         "id": "Axi P7"
+    },
+    "/prime/relics/AxiP8": {
+        "title": "Axi P8",
+        "category": "relics",
+        "route": "/prime/relics/AxiP8",
+        "routeId": "AxiP8",
+        "id": "Axi P8"
+    },
+    "/prime/relics/AxiP9": {
+        "title": "Axi P9",
+        "category": "relics",
+        "route": "/prime/relics/AxiP9",
+        "routeId": "AxiP9",
+        "id": "Axi P9"
     },
     "/prime/relics/AxiR1": {
         "title": "Axi R1",
@@ -5872,6 +5998,13 @@ export const pathObjs = {
         "routeId": "AxiZ1",
         "id": "Axi Z1"
     },
+    "/prime/relics/AxiZ2": {
+        "title": "Axi Z2",
+        "category": "relics",
+        "route": "/prime/relics/AxiZ2",
+        "routeId": "AxiZ2",
+        "id": "Axi Z2"
+    },
     "/prime/relics/LithA1": {
         "title": "Lith A1",
         "category": "relics",
@@ -5913,6 +6046,13 @@ export const pathObjs = {
         "route": "/prime/relics/LithA6",
         "routeId": "LithA6",
         "id": "Lith A6"
+    },
+    "/prime/relics/LithA7": {
+        "title": "Lith A7",
+        "category": "relics",
+        "route": "/prime/relics/LithA7",
+        "routeId": "LithA7",
+        "id": "Lith A7"
     },
     "/prime/relics/LithB1": {
         "title": "Lith B1",
@@ -6411,6 +6551,13 @@ export const pathObjs = {
         "routeId": "LithL4",
         "id": "Lith L4"
     },
+    "/prime/relics/LithL5": {
+        "title": "Lith L5",
+        "category": "relics",
+        "route": "/prime/relics/LithL5",
+        "routeId": "LithL5",
+        "id": "Lith L5"
+    },
     "/prime/relics/LithM1": {
         "title": "Lith M1",
         "category": "relics",
@@ -6670,6 +6817,13 @@ export const pathObjs = {
         "routeId": "LithP9",
         "id": "Lith P9"
     },
+    "/prime/relics/LithQ1": {
+        "title": "Lith Q1",
+        "category": "relics",
+        "route": "/prime/relics/LithQ1",
+        "routeId": "LithQ1",
+        "id": "Lith Q1"
+    },
     "/prime/relics/LithR1": {
         "title": "Lith R1",
         "category": "relics",
@@ -6753,6 +6907,13 @@ export const pathObjs = {
         "route": "/prime/relics/LithS15",
         "routeId": "LithS15",
         "id": "Lith S15"
+    },
+    "/prime/relics/LithS16": {
+        "title": "Lith S16",
+        "category": "relics",
+        "route": "/prime/relics/LithS16",
+        "routeId": "LithS16",
+        "id": "Lith S16"
     },
     "/prime/relics/LithS2": {
         "title": "Lith S2",
@@ -7068,6 +7229,13 @@ export const pathObjs = {
         "route": "/prime/relics/MesoA7",
         "routeId": "MesoA7",
         "id": "Meso A7"
+    },
+    "/prime/relics/MesoA8": {
+        "title": "Meso A8",
+        "category": "relics",
+        "route": "/prime/relics/MesoA8",
+        "routeId": "MesoA8",
+        "id": "Meso A8"
     },
     "/prime/relics/MesoB1": {
         "title": "Meso B1",
@@ -7748,6 +7916,13 @@ export const pathObjs = {
         "routeId": "MesoP14",
         "id": "Meso P14"
     },
+    "/prime/relics/MesoP15": {
+        "title": "Meso P15",
+        "category": "relics",
+        "route": "/prime/relics/MesoP15",
+        "routeId": "MesoP15",
+        "id": "Meso P15"
+    },
     "/prime/relics/MesoP2": {
         "title": "Meso P2",
         "category": "relics",
@@ -8315,6 +8490,13 @@ export const pathObjs = {
         "routeId": "NeoC5",
         "id": "Neo C5"
     },
+    "/prime/relics/NeoC6": {
+        "title": "Neo C6",
+        "category": "relics",
+        "route": "/prime/relics/NeoC6",
+        "routeId": "NeoC6",
+        "id": "Neo C6"
+    },
     "/prime/relics/NeoD1": {
         "title": "Neo D1",
         "category": "relics",
@@ -8370,6 +8552,13 @@ export const pathObjs = {
         "route": "/prime/relics/NeoD8",
         "routeId": "NeoD8",
         "id": "Neo D8"
+    },
+    "/prime/relics/NeoD9": {
+        "title": "Neo D9",
+        "category": "relics",
+        "route": "/prime/relics/NeoD9",
+        "routeId": "NeoD9",
+        "id": "Neo D9"
     },
     "/prime/relics/NeoE1": {
         "title": "Neo E1",
@@ -9071,6 +9260,13 @@ export const pathObjs = {
         "routeId": "NeoT8",
         "id": "Neo T8"
     },
+    "/prime/relics/NeoT9": {
+        "title": "Neo T9",
+        "category": "relics",
+        "route": "/prime/relics/NeoT9",
+        "routeId": "NeoT9",
+        "id": "Neo T9"
+    },
     "/prime/relics/NeoV1": {
         "title": "Neo V1",
         "category": "relics",
@@ -9154,6 +9350,13 @@ export const pathObjs = {
         "route": "/prime/relics/NeoW2",
         "routeId": "NeoW2",
         "id": "Neo W2"
+    },
+    "/prime/relics/NeoX1": {
+        "title": "Neo X1",
+        "category": "relics",
+        "route": "/prime/relics/NeoX1",
+        "routeId": "NeoX1",
+        "id": "Neo X1"
     },
     "/prime/relics/NeoZ1": {
         "title": "Neo Z1",
@@ -11163,6 +11366,48 @@ export const pathObjs = {
         "route": "/prime/missions/TheGreenwayZariman",
         "routeId": "TheGreenwayZariman",
         "id": "The Greenway, Zariman"
+    },
+    "/prime/missions/LegacyteHarvestHLlvania": {
+        "title": "Legacyte Harvest, HöLlvania",
+        "category": "missions",
+        "route": "/prime/missions/LegacyteHarvestHLlvania",
+        "routeId": "LegacyteHarvestHLlvania",
+        "id": "Legacyte Harvest, HöLlvania"
+    },
+    "/prime/missions/HellScrubScaldraHLlvania": {
+        "title": "Hell-Scrub: Scaldra, HöLlvania",
+        "category": "missions",
+        "route": "/prime/missions/HellScrubScaldraHLlvania",
+        "routeId": "HellScrubScaldraHLlvania",
+        "id": "Hell-Scrub: Scaldra, HöLlvania"
+    },
+    "/prime/missions/HellScrubTechrotHLlvania": {
+        "title": "Hell-Scrub: Techrot, HöLlvania",
+        "category": "missions",
+        "route": "/prime/missions/HellScrubTechrotHLlvania",
+        "routeId": "HellScrubTechrotHLlvania",
+        "id": "Hell-Scrub: Techrot, HöLlvania"
+    },
+    "/prime/missions/ExterminateScaldraHLlvania": {
+        "title": "Exterminate: Scaldra, HöLlvania",
+        "category": "missions",
+        "route": "/prime/missions/ExterminateScaldraHLlvania",
+        "routeId": "ExterminateScaldraHLlvania",
+        "id": "Exterminate: Scaldra, HöLlvania"
+    },
+    "/prime/missions/ExterminateTechrotHLlvania": {
+        "title": "Exterminate: Techrot, HöLlvania",
+        "category": "missions",
+        "route": "/prime/missions/ExterminateTechrotHLlvania",
+        "routeId": "ExterminateTechrotHLlvania",
+        "id": "Exterminate: Techrot, HöLlvania"
+    },
+    "/prime/missions/AssassinateH09TankHLlvania": {
+        "title": "Assassinate: H-09 Tank, HöLlvania",
+        "category": "missions",
+        "route": "/prime/missions/AssassinateH09TankHLlvania",
+        "routeId": "AssassinateH09TankHLlvania",
+        "id": "Assassinate: H-09 Tank, HöLlvania"
     },
     "/prime/missions/EndlessTier1Duviri": {
         "title": "Endless: Tier 1, Duviri",
