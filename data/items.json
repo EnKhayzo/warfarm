@@ -455,7 +455,7 @@
         },
         "category": "items",
         "id": "Shade Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Companion"
     },
     "Wisp Prime": {
@@ -475,8 +475,8 @@
         "name": "Acceltra Prime",
         "components": {
             "Acceltra Prime Stock": true,
-            "Acceltra Prime Receiver": true,
             "Acceltra Prime Blueprint": true,
+            "Acceltra Prime Receiver": true,
             "Acceltra Prime Barrel": true
         },
         "category": "items",
@@ -494,7 +494,7 @@
         },
         "category": "items",
         "id": "Hildryn Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Warframe"
     },
     "Cobra & Crane Prime": {
@@ -514,8 +514,8 @@
         "name": "Xaku Prime",
         "components": {
             "Xaku Prime Systems Blueprint": true,
-            "Xaku Prime Blueprint": true,
             "Xaku Prime Neuroptics Blueprint": true,
+            "Xaku Prime Blueprint": true,
             "Xaku Prime Chassis Blueprint": true
         },
         "category": "items",
@@ -533,7 +533,7 @@
         },
         "category": "items",
         "id": "Larkspur Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Arch Gun"
     },
     "Bronco Prime": {
@@ -854,9 +854,9 @@
         "name": "Gauss Prime",
         "components": {
             "Gauss Prime Blueprint": true,
+            "Gauss Prime Neuroptics Blueprint": true,
             "Gauss Prime Systems Blueprint": true,
-            "Gauss Prime Chassis Blueprint": true,
-            "Gauss Prime Neuroptics Blueprint": true
+            "Gauss Prime Chassis Blueprint": true
         },
         "category": "items",
         "id": "Gauss Prime",
@@ -1215,6 +1215,19 @@
         "vaulted": false,
         "type": "Melee Weapon"
     },
+    "Lavos Prime": {
+        "name": "Lavos Prime",
+        "components": {
+            "Lavos Prime Blueprint": true,
+            "Lavos Prime Systems Blueprint": true,
+            "Lavos Prime Neuroptics Blueprint": true,
+            "Lavos Prime Chassis Blueprint": true
+        },
+        "category": "items",
+        "id": "Lavos Prime",
+        "vaulted": false,
+        "type": "Warframe"
+    },
     "Galatine Prime": {
         "name": "Galatine Prime",
         "components": {
@@ -1308,8 +1321,8 @@
         "name": "Quassus Prime",
         "components": {
             "Quassus Prime Handle": true,
-            "Quassus Prime Blueprint": true,
-            "Quassus Prime Blade": true
+            "Quassus Prime Blade": true,
+            "Quassus Prime Blueprint": true
         },
         "category": "items",
         "id": "Quassus Prime",
@@ -1321,8 +1334,8 @@
         "components": {
             "Sevagoth Prime Neuroptics Blueprint": true,
             "Sevagoth Prime Chassis Blueprint": true,
-            "Sevagoth Prime Systems Blueprint": true,
-            "Sevagoth Prime Blueprint": true
+            "Sevagoth Prime Blueprint": true,
+            "Sevagoth Prime Systems Blueprint": true
         },
         "category": "items",
         "id": "Sevagoth Prime",
@@ -1567,6 +1580,19 @@
         "vaulted": true,
         "type": "Secondary Weapon"
     },
+    "Cedo Prime": {
+        "name": "Cedo Prime",
+        "components": {
+            "Cedo Prime Receiver": true,
+            "Cedo Prime Stock": true,
+            "Cedo Prime Blueprint": true,
+            "Cedo Prime Barrel": true
+        },
+        "category": "items",
+        "id": "Cedo Prime",
+        "vaulted": false,
+        "type": "Primary Weapon"
+    },
     "Phantasma Prime": {
         "name": "Phantasma Prime",
         "components": {
@@ -1608,14 +1634,51 @@
         "name": "Protea Prime",
         "components": {
             "Protea Prime Chassis Blueprint": true,
-            "Protea Prime Neuroptics Blueprint": true,
             "Protea Prime Systems Blueprint": true,
+            "Protea Prime Neuroptics Blueprint": true,
             "Protea Prime Blueprint": true
         },
         "category": "items",
         "id": "Protea Prime",
         "vaulted": false,
         "type": "Warframe"
+    },
+    "Dual Zoren Prime": {
+        "name": "Dual Zoren Prime",
+        "components": {
+            "Dual Zoren Prime Handle": true,
+            "Dual Zoren Prime Blueprint": true,
+            "Dual Zoren Prime Blade": true
+        },
+        "category": "items",
+        "id": "Dual Zoren Prime",
+        "vaulted": false,
+        "type": "Melee Weapon"
+    },
+    "Gunsen Prime": {
+        "name": "Gunsen Prime",
+        "components": {
+            "Gunsen Prime Blueprint": true,
+            "Gunsen Prime Handle": true,
+            "Gunsen Prime Blade": true
+        },
+        "category": "items",
+        "id": "Gunsen Prime",
+        "vaulted": false,
+        "type": "Melee Weapon"
+    },
+    "Trumna Prime": {
+        "name": "Trumna Prime",
+        "components": {
+            "Trumna Prime Blueprint": true,
+            "Trumna Prime Receiver": true,
+            "Trumna Prime Stock": true,
+            "Trumna Prime Barrel": true
+        },
+        "category": "items",
+        "id": "Trumna Prime",
+        "vaulted": false,
+        "type": "Primary Weapon"
     },
     "Rhino Prime": {
         "name": "Rhino Prime",
@@ -1683,9 +1746,9 @@
         "name": "Nautilus Prime",
         "components": {
             "Nautilus Prime Systems": true,
+            "Nautilus Prime Carapace": true,
             "Nautilus Prime Cerebrum": true,
-            "Nautilus Prime Blueprint": true,
-            "Nautilus Prime Carapace": true
+            "Nautilus Prime Blueprint": true
         },
         "category": "items",
         "id": "Nautilus Prime",
@@ -1755,31 +1818,6 @@
         "id": "Tigris Prime",
         "vaulted": true,
         "type": "Primary Weapon"
-    },
-    "Trumna Prime": {
-        "name": "Trumna Prime",
-        "components": {
-            "Trumna Prime Receiver": true,
-            "Trumna Prime Stock": true,
-            "Trumna Prime Barrel": true,
-            "Trumna Prime Blueprint": true
-        },
-        "category": "items",
-        "id": "Trumna Prime",
-        "vaulted": false,
-        "type": "Primary Weapon"
-    },
-    "Gunsen Prime": {
-        "name": "Gunsen Prime",
-        "components": {
-            "Gunsen Prime Handle": true,
-            "Gunsen Prime Blueprint": true,
-            "Gunsen Prime Blade": true
-        },
-        "category": "items",
-        "id": "Gunsen Prime",
-        "vaulted": false,
-        "type": "Melee Weapon"
     },
     "Valkyr Prime": {
         "name": "Valkyr Prime",

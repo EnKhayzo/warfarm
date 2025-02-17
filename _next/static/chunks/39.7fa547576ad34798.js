@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[39],{39:function(e){e.exports=JSON.parse('{"last_update":"14 February, 2025"}')}}]);
