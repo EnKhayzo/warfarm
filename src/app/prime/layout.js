@@ -535,7 +535,7 @@ export function MainLayoutComponent({children}){
         <Script 
           strategy="lazyOnload"
           data-domain="enkhayzo.github.io" 
-          src="https://plausible.enkhayzomachines.net/js/script.js"
+          src="https://pl.enkhayzomachines.net/js/script.js"
         />
 
       }
