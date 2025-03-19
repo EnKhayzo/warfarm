@@ -3200,6 +3200,39 @@
         },
         "vaulted": true
     },
+    "Axi N12": {
+        "name": "Axi N12",
+        "category": "relics",
+        "id": "Axi N12",
+        "tier": "Axi",
+        "rewards": {
+            "Nidus Prime Chassis Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Saryn Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Strun Prime Barrel": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Nikana Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Paris Prime String": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
     "Axi N2": {
         "name": "Axi N2",
         "category": "relics",
@@ -9866,6 +9899,39 @@
         },
         "vaulted": false
     },
+    "Lith S17": {
+        "name": "Lith S17",
+        "category": "relics",
+        "id": "Lith S17",
+        "tier": "Lith",
+        "rewards": {
+            "Saryn Prime Chassis Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Nidus Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Braton Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Spira Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Paris Prime Lower Limb": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
     "Lith S2": {
         "name": "Lith S2",
         "category": "relics",
@@ -13624,6 +13690,39 @@
         },
         "vaulted": true
     },
+    "Meso M5": {
+        "name": "Meso M5",
+        "category": "relics",
+        "id": "Meso M5",
+        "tier": "Meso",
+        "rewards": {
+            "Magnus Prime Barrel": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Spira Prime Blade": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Strun Prime Stock": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Saryn Prime Systems Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Braton Prime Stock": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
     "Meso N1": {
         "name": "Meso N1",
         "category": "relics",
@@ -15231,6 +15330,39 @@
                 "perc": "25.33%"
             },
             "Ankyros Prime Gauntlet": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
+    "Meso S15": {
+        "name": "Meso S15",
+        "category": "relics",
+        "id": "Meso S15",
+        "tier": "Meso",
+        "rewards": {
+            "Spira Prime Pouch": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Nikana Prime Blade": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Paris Prime Grip": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Magnus Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Braton Prime Barrel": {
                 "rarity": "common",
                 "perc": "25.33%"
             },
@@ -19201,6 +19333,39 @@
         },
         "vaulted": true
     },
+    "Neo N19": {
+        "name": "Neo N19",
+        "category": "relics",
+        "id": "Neo N19",
+        "tier": "Neo",
+        "rewards": {
+            "Nikana Prime Hilt": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Magnus Prime Receiver": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Paris Prime Upper Limb": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Nidus Prime Systems Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Braton Prime Receiver": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
     "Neo N2": {
         "name": "Neo N2",
         "category": "relics",
@@ -20416,6 +20581,39 @@
                 "perc": "25.33%"
             },
             "Hildryn Prime Systems Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
+    "Neo S19": {
+        "name": "Neo S19",
+        "category": "relics",
+        "id": "Neo S19",
+        "tier": "Neo",
+        "rewards": {
+            "Strun Prime Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Saryn Prime Neuroptics Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Nidus Prime Neuroptics Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Strun Prime Receiver": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Paris Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
                 "rarity": "common",
                 "perc": "25.33%"
             }
