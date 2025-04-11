@@ -3440,7 +3440,7 @@
         "isAnomalousItemComponent": false,
         "type": "Warframe",
         "vaulted": true,
-        "ducats": 100
+        "ducats": 65
     },
     "Phantasma Prime Blueprint": {
         "name": "Blueprint",
@@ -3518,6 +3518,58 @@
         "isAnomalousItemComponent": false,
         "type": "Warframe",
         "vaulted": true,
+        "ducats": 15
+    },
+    "Nidus Prime Chassis Blueprint": {
+        "name": "Chassis",
+        "fullName": "Nidus Prime Chassis",
+        "parentItem": "Nidus Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Nidus Prime Chassis Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": true,
+        "ducats": 100
+    },
+    "Saryn Prime Blueprint": {
+        "name": "Blueprint",
+        "fullName": "Saryn Prime Blueprint",
+        "parentItem": "Saryn Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Saryn Prime Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": true,
+        "ducats": 65
+    },
+    "Strun Prime Barrel": {
+        "name": "Barrel",
+        "fullName": "Strun Prime Barrel",
+        "parentItem": "Strun Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Strun Prime Barrel",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
+        "vaulted": true,
+        "ducats": 45
+    },
+    "Paris Prime String": {
+        "name": "String",
+        "fullName": "Paris Prime String",
+        "parentItem": "Paris Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Paris Prime String",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
+        "vaulted": false,
         "ducats": 15
     },
     "Carrier Prime Carapace": {
@@ -3650,19 +3702,6 @@
         "vaulted": true,
         "ducats": 45
     },
-    "Saryn Prime Blueprint": {
-        "name": "Blueprint",
-        "fullName": "Saryn Prime Blueprint",
-        "parentItem": "Saryn Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Saryn Prime Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Warframe",
-        "vaulted": true,
-        "ducats": 65
-    },
     "Nezha Prime Chassis Blueprint": {
         "name": "Chassis",
         "fullName": "Nezha Prime Chassis",
@@ -3728,19 +3767,6 @@
         "vaulted": true,
         "ducats": 100
     },
-    "Strun Prime Barrel": {
-        "name": "Barrel",
-        "fullName": "Strun Prime Barrel",
-        "parentItem": "Strun Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Strun Prime Barrel",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Primary Weapon",
-        "vaulted": true,
-        "ducats": 45
-    },
     "Pandero Prime Blueprint": {
         "name": "Blueprint",
         "fullName": "Pandero Prime Blueprint",
@@ -3752,19 +3778,6 @@
         "isAnomalousItemComponent": false,
         "type": "Secondary Weapon",
         "vaulted": true,
-        "ducats": 15
-    },
-    "Paris Prime String": {
-        "name": "String",
-        "fullName": "Paris Prime String",
-        "parentItem": "Paris Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Paris Prime String",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Primary Weapon",
-        "vaulted": false,
         "ducats": 15
     },
     "Venka Prime Blueprint": {
@@ -6016,19 +6029,6 @@
         "vaulted": true,
         "ducats": 100
     },
-    "Nidus Prime Chassis Blueprint": {
-        "name": "Chassis",
-        "fullName": "Nidus Prime Chassis",
-        "parentItem": "Nidus Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Nidus Prime Chassis Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Warframe",
-        "vaulted": true,
-        "ducats": 100
-    },
     "Ninkondi Prime Handle": {
         "name": "Handle",
         "fullName": "Ninkondi Prime Handle",
@@ -6236,6 +6236,19 @@
         "type": "Warframe",
         "vaulted": false,
         "ducats": 15
+    },
+    "Saryn Prime Chassis Blueprint": {
+        "name": "Chassis",
+        "fullName": "Saryn Prime Chassis",
+        "parentItem": "Saryn Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Saryn Prime Chassis Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": true,
+        "ducats": 100
     },
     "Silva & Aegis Prime Guard": {
         "name": "Guard",
@@ -6702,19 +6715,6 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Primary Weapon",
-        "vaulted": true,
-        "ducats": 100
-    },
-    "Saryn Prime Chassis Blueprint": {
-        "name": "Chassis",
-        "fullName": "Saryn Prime Chassis",
-        "parentItem": "Saryn Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Saryn Prime Chassis Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Warframe",
         "vaulted": true,
         "ducats": 100
     },

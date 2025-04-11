@@ -1,13 +1,8 @@
 { 
-   "Lith E1": true,
-   "Meso B10": true,
-   "Meso S14": true,
-   "Neo G6": true,
-   "Axi R4": true,
-   "Lith V10": true,
-   "Meso C7": true,
-   "Meso P12": true,
-   "Neo A10": true,
-   "Axi I3": true,
-   "Axi K12": true
+   "Lith K5": true,
+   "Lith M7": true,
+   "Meso E5": true,
+   "Neo B6": true,
+   "Axi H5": true,
+   "Axi A12": true
 }
