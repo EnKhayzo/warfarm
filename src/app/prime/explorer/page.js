@@ -39,6 +39,7 @@ import LazyLoadVisibleWrapper from '@/components/LazyLoadVisibleWrapper';
 import useGlobalMode from '@/hooks/useGlobalMode';
 import RelicsOwnedLabelAddButton from '@/components/RelicsOwnedLabelAddButton';
 import MobileMoreOptionsButton from '@/components/MobileMoreOptionsButton';
+import LabelCheckbox from '@/components/LabelCheckbox';
 
 
 const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) => {
@@ -47,6 +48,15 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
   const [ missionPriorities, setMissionPriorities ] = useMissionPriorities();
 
   const groups = Object.entries(
+    category === "Prime Resurgence" ?
+      objects.reduce((acc, item) => {
+        if(!acc[item.category]) acc[item.category] = { title: item.category, objects: [] };
+
+        acc[item.category].objects.push(item);
+
+        return acc;
+      }, {})
+      : 
     category === "Items" ?
       objects.reduce((acc, item) => {
         if(!acc[item.type]) acc[item.type] = { title: item.type, objects: [] };
@@ -195,13 +205,45 @@ const ObjectSection = ({ objects, imageFunc, labelFunc, titleLabel, category }) 
   );
 }
 
-const ObjectSectionBuilder = ({ category }) => {
+const ObjectSectionBuilder = ({ category, hideVaulted }) => {
   const relicTypePriorities = com.getRelicTypePriorities();
   const itemTypePriorities = com.getItemTypePriorities();
   
   let res = (<div>Unknown</div>);
 
   com._match(category, {
+    "Prime Resurgence": () => {
+      const allObjects = com.filterDict(
+        com.getAllObjects(),
+        ([ id, object ]) => { return object.category !== "missions" && com.isObjectResurgence(object.id)}
+      );
+
+      const categoryPriorities = {
+        "items":     0,
+        "components":1,
+        "relics":    2
+      };
+
+      res = (
+        <ObjectSection 
+          category="Prime Resurgence"
+          titleLabel="Prime Resurgence" 
+          objects={
+            Object.values(allObjects).toSorted((a, b) => 
+              (categoryPriorities[a.category]-categoryPriorities[b.category])
+              ||
+              (a.vaulted-b.vaulted) 
+              ||
+              (itemTypePriorities[a.type]-itemTypePriorities[b.type])
+              || 
+              (a.name.localeCompare(b.name)) 
+            )
+          } 
+          imageFunc={ (object) => `${object.name}` } 
+          labelFunc={ (object) => `${object.fullName ?? object.name}` } 
+        />
+      )
+    },
     "Items": () => {
       const allItems = com.getAllItems();
 
@@ -210,13 +252,15 @@ const ObjectSectionBuilder = ({ category }) => {
           category="Items"
           titleLabel="Items" 
           objects={
-            Object.values(allItems).toSorted((a, b) => 
-              (a.vaulted-b.vaulted) 
-              ||
-              (itemTypePriorities[a.type]-itemTypePriorities[b.type])
-              || 
-              (a.name.localeCompare(b.name)) 
-            )
+            Object.values(allItems)
+              .filter(item => !hideVaulted || !item.vaulted)
+              .toSorted((a, b) => 
+                (a.vaulted-b.vaulted) 
+                ||
+                (itemTypePriorities[a.type]-itemTypePriorities[b.type])
+                || 
+                (a.name.localeCompare(b.name)) 
+              )
           } 
           imageFunc={ (object) => `${object.name}` } 
           labelFunc={ (object) => `${object.name}` } 
@@ -231,13 +275,15 @@ const ObjectSectionBuilder = ({ category }) => {
           category="Components"
           titleLabel="Components" 
           objects={
-            allComponents.toSorted((a, b) => 
-              (a.vaulted-b.vaulted)
-              ||
-              (itemTypePriorities[a.type]-itemTypePriorities[b.type])
-              ||
-              (a.fullName.localeCompare(b.fullName))
-            )
+            allComponents
+              .filter(item => !hideVaulted || !item.vaulted)
+              .toSorted((a, b) => 
+                (a.vaulted-b.vaulted)
+                ||
+                (itemTypePriorities[a.type]-itemTypePriorities[b.type])
+                ||
+                (a.fullName.localeCompare(b.fullName))
+              )
           } 
           imageFunc={ (object) => `${object.fullName}` } 
           labelFunc={ (object) => `${object.fullName}` } 
@@ -256,6 +302,7 @@ const ObjectSectionBuilder = ({ category }) => {
           objects={ 
                     Object.entries(allRelics)
                       .map(([ relicName, relic ]) => relic)
+                      .filter(item => !hideVaulted || !item.vaulted)
                       .toSorted((a, b) => 
                         (
                           (a.vaulted-b.vaulted)
@@ -301,12 +348,27 @@ const ObjectSectionBuilder = ({ category }) => {
   return res;
 }
 
+export function HideVaultedCheckbox({ setHideVaulted, checked }){
+  return (
+    <LabelCheckbox
+      type="checkbox" 
+      value="vaulted" 
+      textLabel="Hide Vaulted"
+      onChange={(ev) => { setHideVaulted(ev.target.checked) }}
+      checked={checked ?? false}
+    />
+  )
+}
+
 export default function ExplorerPage() {
   const router = useRouter();
+  const [ hideVaulted, setHideVaulted ] = useState(false);
 
   // useEffect(() => {
   //   document.title = com.generatePageTitle("Explorer");
   // }, []);
+
+
 
   return (
     <div className='sized-remaining v-flex flex-center' style={{ gap: '20px' }}>
@@ -314,10 +376,25 @@ export default function ExplorerPage() {
         style={{ width: '95vw' }}
         defaultTab={"Items"}
         tabs={{
-          "Items": <ObjectSectionBuilder category={"Items"} />,
-          "Components": <ObjectSectionBuilder category={"Components"} />,
-          "Relics": <ObjectSectionBuilder category={"Relics"} />,
-          "Missions": <ObjectSectionBuilder category={"Missions"} />
+          "Prime Resurgence": <ObjectSectionBuilder category={"Prime Resurgence"} hideVaulted={hideVaulted} />,
+          "Items": <ObjectSectionBuilder category={"Items"} hideVaulted={hideVaulted} />,
+          "Components": <ObjectSectionBuilder category={"Components"} hideVaulted={hideVaulted} />,
+          "Relics": <ObjectSectionBuilder category={"Relics"} hideVaulted={hideVaulted} />,
+          "Missions": <ObjectSectionBuilder category={"Missions"} hideVaulted={hideVaulted} />
+        }}
+        headerControls={{
+          "Items": 
+            (<div className='sized-content h-flex flex-center' style={{ gap: '10px' }}>
+              <HideVaultedCheckbox setHideVaulted={setHideVaulted} checked={hideVaulted}/>
+            </div>),
+          "Components": 
+            (<div className='sized-content h-flex flex-center' style={{ gap: '10px' }}>
+              <HideVaultedCheckbox setHideVaulted={setHideVaulted} checked={hideVaulted}/>
+            </div>),
+          "Relics": 
+            (<div className='sized-content h-flex flex-center' style={{ gap: '10px' }}>
+              <HideVaultedCheckbox setHideVaulted={setHideVaulted} checked={hideVaulted}/>
+            </div>)
         }}
       />
     </div>

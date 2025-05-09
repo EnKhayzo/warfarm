@@ -1175,6 +1175,7 @@ let missions = null;
 let nodeNameMap = null;
 
 let relicsResurgence = null;
+let resurgenceDates = null;
 
 let relicRewardComponentMap = null;
 let missionRewardComponentMap = null;
@@ -1205,6 +1206,7 @@ export async function initialize(local=false) {
     nodeNameMap = (await import(`../../public/data/node_name_map.json`)).default;
 
     relicsResurgence = (await import(`../../public/data/relics_resurgence.json`)).default;
+    resurgenceDates = (await import(`../../public/data/resurgence_dates.json`)).default;
 
     relicRewardComponentMap = await import(`../../public/data/indices/relic_reward_component_map.json`);
     missionRewardComponentMap = await import(`../../public/data/indices/mission_reward_component_map.json`);
@@ -1393,23 +1395,32 @@ export function getAllComponents(){ return components; }
 export function getAllRelics(){ return relics; }
 export function getAllMissions(){ return missions; }
 
-export async function getAllObjects(category) {
+export function getAllObjects(category) {
   let result = null;
 
-  await _matchAsync(category, {
-    "items": async () => {
-      result = await getAllItems();
+  _match(category, {
+    "items": () => {
+      result = getAllItems();
     },
-    "components": async () => {
-      result = await getAllComponents();
+    "components": () => {
+      result = getAllComponents();
     },
-    "relics": async () => {
-      result = await getAllRelics();
+    "relics": () => {
+      result = getAllRelics();
     },
-    "missions": async () => {
-      result = await getAllMissions();
+    "missions": () => {
+      result = getAllMissions();
     }
   });
+
+  if(category == null) {
+    return Object.fromEntries([
+      ...Object.entries(getAllItems()),
+      ...Object.entries(getAllComponents()),
+      ...Object.entries(getAllRelics()),
+      ...Object.entries(getAllMissions()),
+    ]);
+  }
 
   return result.res;
 }
@@ -2459,14 +2470,94 @@ export function getObjectDisplayName(rawObj, category=null){
           category.localeCompare("Missions") == 0 ? `${rawObj.name}, ${rawObj.planet}` : null
 }
 
-/** 
- * wrapper around Object.fromEntries(Object.entries(dict).filter(filterFunc)) \
- * takes a dict as input, converts it into a list and filters it; then reassembles it into 
- * a dict to then return.
+/**
+ * 
+ * @param {any[]} arr 
+ * @param {function} asyncFunc 
+ * @param {{ awaitItems: boolean }} options 
+ * @returns
  */
+export async function mapAsync(arr, asyncFunc, options=null) {
+  const awaitItems = options?.awaitItems ?? true;
+  if(awaitItems){
+      let res = [];
+
+      for(const [ i, item ] of enumerate(arr)){
+          res.push(await asyncFunc(item, i, arr));
+      }
+
+      return res;
+  }
+  else return await Promise.all(arr.map(asyncFunc));
+}
+
+/**
+* 
+* @param {any[]} arr 
+* @param {function} asyncFunc 
+* @param {{ awaitItems: boolean }} options 
+* @returns
+*/
+export async function forEachAsync(arr, asyncFunc, options=null) {
+  const awaitItems = options?.awaitItems ?? true;
+  if(awaitItems){
+      for(const [ i, item ] of enumerate(arr)){
+          await asyncFunc(item, i, arr);
+      }
+  }
+  else return await Promise.all(arr.forEach(asyncFunc));
+}
+
+export function enumerate(list) {
+  if(list == null) return null;
+  return list.map((value, i) => [ i, value ]);
+}
+
+/**
+* 
+* @param {any[]} arr 
+* @param {function} asyncFunc 
+* @param {{ awaitItems: boolean }} options 
+* @returns
+*/
+export async function filterAsync(arr, asyncFunc, options=null) {
+  if(asyncFunc == null) return arr;
+
+  const awaitItems = options?.awaitItems ?? true;
+  if(awaitItems){
+      let res = [];
+
+      for(const [ i, item ] of enumerate(arr)){
+          if(await asyncFunc(item, i, arr))
+              res.push(item);
+      }
+
+      return res;
+  }
+  else return await Promise.all(arr.map(asyncFunc));
+}
+
+/**
+* 
+* @param {{ [k: string]: any }} dict 
+* @param {function} filterFunc 
+* @returns 
+*/
 export function filterDict(dict, filterFunc) {
-  // console.log(`filterDict entries`, Object.entries(dict), Object.fromEntries(Object.entries(dict)))
   return Object.fromEntries(Object.entries(dict).filter(filterFunc));
+}
+
+/**
+* 
+* @param {{ [k: string]: any }} dict 
+* @param {function} filterFunc 
+* @returns 
+*/
+export async function filterDictAsync(dict, filterFunc) {
+  if(dict == null) return null;
+  if(filterFunc == null) return dict;
+
+  return Object.fromEntries(await filterAsync(Object.entries(dict), filterFunc));
 }
 
 export function generatePageTitleFromSiteMap(pathObjId) {
@@ -2503,6 +2594,10 @@ export function isRelicResurgence(id){
 
 export function isComponentResurgence(id){
   return getRelicsThatDropComponent(id).some(relicInfo => relicInfo.relic.id in relicsResurgence);
+}
+
+export function getResurgenceDates() {
+  return resurgenceDates;
 }
 
 export function isItemResurgence(id){
@@ -2747,4 +2842,25 @@ export function getDatasetLastDropTableUpdate(){
 
 export function extractNumberFromPx(strVal){
   return Number(strVal.replace("px", ""));
+}
+
+/**
+ * Formats a Date object into a string with the format YYYY/MM/DD.
+ *
+ * @param {Date} date - The Date instance to format. If not a valid Date, it may produce an incorrect result.
+ * @returns {string} A string representation of the date in "YYYY/MM/DD" format, with leading zeros for month and day.
+ *
+ * @example
+ * // returns "2025/05/08"
+ * formatYYYYMMDD(new Date(2025, 4, 8)); // months are zero-based, so 4 = May
+ */
+export function formatYYYYMMDD(date){
+  const d = date;
+  const yyyy = d.getFullYear();
+  const mm   = String(d.getMonth() + 1).padStart(2, '0'); // months are 0-based
+  const dd   = String(d.getDate()).padStart(2, '0');
+
+  const formatted = `${yyyy}/${mm}/${dd}`;
+  console.log(formatted); // e.g. "2025/05/08"
+  return formatted;
 }

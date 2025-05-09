@@ -14,6 +14,7 @@ const SearchBar = ({ isExpanded=false }) => {
     const [ query, setQuery ] = useState('');
     const [ results, setResults ] = useState([]);
     const [ filters, setFilters ] = useState({});
+    const [ searchInputTimeout, setSearchInputTimeout ] = useState(null);
 
     const [ missionPriorities, setMissionPriorities ] = useMissionPriorities();
 
@@ -99,16 +100,35 @@ const SearchBar = ({ isExpanded=false }) => {
         else setShowResultArea(false);
     }, [results]);
 
-    let inputTimeout = null;
     const onInputChange = (e) => {
         const value = e.target.value;
         setQuery(value);
 
-        if(inputTimeout) clearTimeout(inputTimeout);
-        inputTimeout = setTimeout(() => {
+        if(searchInputTimeout) clearTimeout(searchInputTimeout);
+        setSearchInputTimeout(setTimeout(() => {
             handleSearch(e.target.value);
-        }, 250);
+        }, 400));
     }
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            // Prevent the default form submission if needed:
+            e.preventDefault();
+            handleSearch(query);
+        }
+    };
+
+    const handleMouseDown = (e) => {
+        const input = e.target;
+        // If the input is not already focused, schedule a select()
+        if (document.activeElement !== input) {
+            // Use setTimeout to let the focus event happen first
+            setTimeout(() => {
+                input.select();
+            }, 0);
+        }
+        // Otherwise do nothing (clicks when already focused won’t re-select)
+    };
 
     const [ showResultArea, setShowResultArea ] = useState(false);
     const resultAreaRef = useRef(null);
@@ -162,6 +182,8 @@ const SearchBar = ({ isExpanded=false }) => {
                 value={query}
                 onClick={() => { if(!showResultArea) setShowResultArea(true); }}
                 onChange={onInputChange}
+                onKeyDown={handleKeyDown}
+                onMouseDown={handleMouseDown}
                 style={{
                     padding: '10px',
                     fontSize: '16px',

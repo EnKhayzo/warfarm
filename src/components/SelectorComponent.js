@@ -46,7 +46,7 @@ export default function SelectorComponent({ options, onConfirm }){
     };
 
     const onClick = (ev) => {
-        console.log(`targetref`, targetRef)
+        // console.log(`targetref`, targetRef)
         if(!targetRef) return;
 
         const targetBB = targetRef.current.getBoundingClientRect();

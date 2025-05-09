@@ -446,6 +446,101 @@ function VoidFissuresComponent(){
   );
 }
 
+function PrimeResurgenceComponent(){
+  const resurgenceDates = com.getResurgenceDates();
+  const nowTime = new Date().getTime();
+
+  const [ obtainedComponents, setObtainedComponents ] = useObtainedComponents();
+
+  return (
+    <Collapsible 
+      className='sized-content v-flex flex-center void-fissures-collapsible' 
+      title={<span style={{ fontWeight: 'bold', fontSize: 'large' }}>Prime Resurgence</span>}
+    >
+      <div className='sized-content v-flex' style={{ gap:'40px' }}>
+        <div className='sized-content v-flex flex-center' style={{ gap:'10px' }}>
+          <span className='sized-content h-flex flex-center' style={{ fontSize: 'large', fontWeight: 'bold' }}>Time Remaining</span>
+          <div className='sized-content v-flex flex-center'>
+            {
+              resurgenceDates.map((resurgenceDate, i) => (
+                <div key={`${i}-${resurgenceDate}`} className='sized-content h-flex' style={{ gap: '50px' }}>
+                  <span 
+                    style={{ 
+                      fontWeight: 'bold', 
+                      width: '300px'
+                    }}
+                  >
+                    {resurgenceDate.subjects}
+                  </span>
+                  <span 
+                    style={{ 
+                      fontWeight: 'normal', 
+                      color: (
+                        resurgenceDate.expiryDate - new Date().getTime() < 86400*1000*5 ? 
+                          'red' : 
+                        resurgenceDate.expiryDate - new Date().getTime() < 86400*1000*10 ? 
+                          'yellow' :
+                          'rgb(0, 180, 0)'
+                      ) 
+                    }}
+                  >
+                    {`${com.getTimestampAsDurationString(resurgenceDate.expiryDate - new Date().getTime())} remaining (${com.formatYYYYMMDD(new Date(resurgenceDate.expiryDate))})`}
+                  </span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <div className='sized-content h-flex' style={{ gap:'10px' }}>
+          {
+            Object.entries(com.getAllItems())
+              .filter(([ itemId, item ]) => com.isItemResurgence(itemId))
+              .toSorted(([ a, _ ], [ b, __ ]) => 
+                com.objectIsFarmedPerc(com.getObjectFromId(a)) - com.objectIsFarmedPerc(com.getObjectFromId(b))
+              )
+              .map(([ itemId, item ], index) => {
+                const farmedPerc = com.objectIsFarmedPerc(com.getObjectFromId(itemId), obtainedComponents);
+                return (
+                  <ItemComponent key={`${itemId}-${index}`}  itemId={itemId} farmedPerc={farmedPerc} sharedTrackList={null}/>
+                )
+              })
+          }
+        </div>
+      </div>
+    </Collapsible>
+  )
+}
+
+export function ItemComponent({ itemId, farmedPerc, sharedTrackList }) {
+  return (
+    <Link href={com.getObjectRouteFromId(itemId)} 
+      className={`sized-content item-check-parent tracked-items-button v-flex flex-center${farmedPerc <= 0 ? `` : farmedPerc >= 1 ? ` object-farmed-main-page` : ` object-farmed-partial-main-page`}`}
+      style={{ 
+        position: 'relative', 
+        cursor: 'pointer',
+        alignSelf: 'stretch',
+        minWidth: '150px' 
+      }}
+    >
+      <img className='sized-content tracked-items-icon h-flex' style={{ minWidth: 'fit-content', height: '90px' }} src={com.getObjectIcon(com.getObjectFromId(itemId))}/>
+      <div className='sized-content h-flex flex-center' style={{ minWidth: 'fit-content', textAlign: 'center' }}>{itemId}</div>
+      { (() => { 
+        const trackedObject = com.getObjectFromId(itemId); 
+        if(trackedObject == null) return null;
+
+        if(trackedObject.category === "items" || trackedObject.category === "components") return (
+          <ObjectStateLabel object={trackedObject} />
+        ); 
+
+        return null; 
+      })() }
+      { sharedTrackList != null ? null: <ItemActionButton itemId={itemId} positionAbsolute={true}/> }
+      <ObtainedResurgenceGroup itemId={itemId} positionAbsolute={true}/>
+      <DucatLabel rawObj={com.getObjectFromId(itemId)}/>
+    </Link>
+  );
+}
+
 export function TrackedItemsComponent(){
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -489,32 +584,7 @@ export function TrackedItemsComponent(){
                           com.objectIsFarmedPerc(com.getObjectFromId(a)) - com.objectIsFarmedPerc(com.getObjectFromId(b))
                         )
                         .map(([ itemId, trackedItem ], index) => { const farmedPerc = com.objectIsFarmedPerc(com.getObjectFromId(itemId), obtainedComponents); return (
-                          <Link href={com.getObjectRouteFromId(itemId)} 
-                            key={`${itemId}-${index}`} 
-                            className={`sized-content item-check-parent tracked-items-button v-flex flex-center${farmedPerc <= 0 ? `` : farmedPerc >= 1 ? ` object-farmed-main-page` : ` object-farmed-partial-main-page`}`}
-                            style={{ 
-                              position: 'relative', 
-                              cursor: 'pointer',
-                              alignSelf: 'stretch',
-                              minWidth: '150px' 
-                            }}
-                          >
-                            <img className='sized-content tracked-items-icon h-flex' style={{ minWidth: 'fit-content', height: '90px' }} src={com.getObjectIcon(com.getObjectFromId(itemId))}/>
-                            <div className='sized-content h-flex flex-center' style={{ minWidth: 'fit-content', textAlign: 'center' }}>{itemId}</div>
-                            { (() => { 
-                              const trackedObject = com.getObjectFromId(itemId); 
-                              if(trackedObject == null) return null;
-
-                              if(trackedObject.category === "items" || trackedObject.category === "components") return (
-                                <ObjectStateLabel object={trackedObject} />
-                              ); 
-
-                              return null; 
-                            })() }
-                            { sharedTrackList != null ? null: <ItemActionButton itemId={itemId} positionAbsolute={true}/> }
-                            <ObtainedResurgenceGroup itemId={itemId} positionAbsolute={true}/>
-                            <DucatLabel rawObj={com.getObjectFromId(itemId)}/>
-                          </Link>
+                          <ItemComponent key={`${itemId}-${index}`}  itemId={itemId} farmedPerc={farmedPerc} sharedTrackList={sharedTrackList}/>
                         )})
                   }  
                 </div>
@@ -543,6 +613,8 @@ export function TrackedItemsComponent(){
         }
 
         <VoidFissuresComponent/>
+
+        <PrimeResurgenceComponent/>
 
         {
           // progress string
