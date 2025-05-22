@@ -410,8 +410,8 @@
         "name": "Revenant Prime",
         "components": {
             "Revenant Prime Systems Blueprint": true,
-            "Revenant Prime Neuroptics Blueprint": true,
             "Revenant Prime Chassis Blueprint": true,
+            "Revenant Prime Neuroptics Blueprint": true,
             "Revenant Prime Blueprint": true
         },
         "category": "items",
@@ -501,9 +501,9 @@
         "name": "Cobra & Crane Prime",
         "components": {
             "Cobra & Crane Prime Hilt": true,
-            "Cobra & Crane Prime Blade": true,
             "Cobra & Crane Prime Blueprint": true,
-            "Cobra & Crane Prime Guard": true
+            "Cobra & Crane Prime Guard": true,
+            "Cobra & Crane Prime Blade": true
         },
         "category": "items",
         "id": "Cobra & Crane Prime",
@@ -514,9 +514,9 @@
         "name": "Xaku Prime",
         "components": {
             "Xaku Prime Systems Blueprint": true,
+            "Xaku Prime Chassis Blueprint": true,
             "Xaku Prime Neuroptics Blueprint": true,
-            "Xaku Prime Blueprint": true,
-            "Xaku Prime Chassis Blueprint": true
+            "Xaku Prime Blueprint": true
         },
         "category": "items",
         "id": "Xaku Prime",
@@ -803,8 +803,8 @@
         "name": "Baruuk Prime",
         "components": {
             "Baruuk Prime Neuroptics Blueprint": true,
-            "Baruuk Prime Systems Blueprint": true,
             "Baruuk Prime Blueprint": true,
+            "Baruuk Prime Systems Blueprint": true,
             "Baruuk Prime Chassis Blueprint": true
         },
         "category": "items",
@@ -1001,6 +1001,31 @@
         "vaulted": true,
         "type": "Warframe"
     },
+    "Tatsu Prime": {
+        "name": "Tatsu Prime",
+        "components": {
+            "Tatsu Prime Blade": true,
+            "Tatsu Prime Blueprint": true,
+            "Tatsu Prime Handle": true
+        },
+        "category": "items",
+        "id": "Tatsu Prime",
+        "vaulted": true,
+        "type": "Melee Weapon"
+    },
+    "Phantasma Prime": {
+        "name": "Phantasma Prime",
+        "components": {
+            "Phantasma Prime Stock": true,
+            "Phantasma Prime Blueprint": true,
+            "Phantasma Prime Receiver": true,
+            "Phantasma Prime Barrel": true
+        },
+        "category": "items",
+        "id": "Phantasma Prime",
+        "vaulted": true,
+        "type": "Primary Weapon"
+    },
     "Destreza Prime": {
         "name": "Destreza Prime",
         "components": {
@@ -1188,7 +1213,7 @@
         },
         "category": "items",
         "id": "Fulmin Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Primary Weapon"
     },
     "Velox Prime": {
@@ -1593,30 +1618,43 @@
         "vaulted": false,
         "type": "Primary Weapon"
     },
-    "Phantasma Prime": {
-        "name": "Phantasma Prime",
+    "Nautilus Prime": {
+        "name": "Nautilus Prime",
         "components": {
-            "Phantasma Prime Blueprint": true,
-            "Phantasma Prime Stock": true,
-            "Phantasma Prime Receiver": true,
-            "Phantasma Prime Barrel": true
+            "Nautilus Prime Cerebrum": true,
+            "Nautilus Prime Systems": true,
+            "Nautilus Prime Carapace": true,
+            "Nautilus Prime Blueprint": true
         },
         "category": "items",
-        "id": "Phantasma Prime",
-        "vaulted": true,
-        "type": "Primary Weapon"
+        "id": "Nautilus Prime",
+        "vaulted": false,
+        "type": "Companion"
     },
-    "Tatsu Prime": {
-        "name": "Tatsu Prime",
+    "Kompressa Prime": {
+        "name": "Kompressa Prime",
         "components": {
-            "Tatsu Prime Blueprint": true,
-            "Tatsu Prime Handle": true,
-            "Tatsu Prime Blade": true
+            "Kompressa Prime Reciever": true,
+            "Kompressa Prime Barrel": true,
+            "Kompressa Prime Blueprint": true
         },
         "category": "items",
-        "id": "Tatsu Prime",
-        "vaulted": true,
-        "type": "Melee Weapon"
+        "id": "Kompressa Prime",
+        "vaulted": false,
+        "type": "Secondary Weapon"
+    },
+    "Protea Prime": {
+        "name": "Protea Prime",
+        "components": {
+            "Protea Prime Blueprint": true,
+            "Protea Prime Chassis Blueprint": true,
+            "Protea Prime Systems Blueprint": true,
+            "Protea Prime Neuroptics Blueprint": true
+        },
+        "category": "items",
+        "id": "Protea Prime",
+        "vaulted": false,
+        "type": "Warframe"
     },
     "Venka Prime": {
         "name": "Venka Prime",
@@ -1629,19 +1667,6 @@
         "id": "Venka Prime",
         "vaulted": false,
         "type": "Melee Weapon"
-    },
-    "Protea Prime": {
-        "name": "Protea Prime",
-        "components": {
-            "Protea Prime Chassis Blueprint": true,
-            "Protea Prime Systems Blueprint": true,
-            "Protea Prime Neuroptics Blueprint": true,
-            "Protea Prime Blueprint": true
-        },
-        "category": "items",
-        "id": "Protea Prime",
-        "vaulted": false,
-        "type": "Warframe"
     },
     "Dual Zoren Prime": {
         "name": "Dual Zoren Prime",
@@ -1664,7 +1689,7 @@
         },
         "category": "items",
         "id": "Gunsen Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Melee Weapon"
     },
     "Trumna Prime": {
@@ -1742,19 +1767,6 @@
         "vaulted": true,
         "type": "Melee Weapon"
     },
-    "Nautilus Prime": {
-        "name": "Nautilus Prime",
-        "components": {
-            "Nautilus Prime Systems": true,
-            "Nautilus Prime Carapace": true,
-            "Nautilus Prime Cerebrum": true,
-            "Nautilus Prime Blueprint": true
-        },
-        "category": "items",
-        "id": "Nautilus Prime",
-        "vaulted": false,
-        "type": "Companion"
-    },
     "Nyx Prime": {
         "name": "Nyx Prime",
         "components": {
@@ -1829,6 +1841,33 @@
         },
         "category": "items",
         "id": "Valkyr Prime",
+        "vaulted": false,
+        "type": "Warframe"
+    },
+    "Daikyu Prime": {
+        "name": "Daikyu Prime",
+        "components": {
+            "Daikyu Prime String": true,
+            "Daikyu Prime Lower Limb": true,
+            "Daikyu Prime Blueprint": true,
+            "Daikyu Prime Upper Limb": true,
+            "Daikyu Prime Grip": true
+        },
+        "category": "items",
+        "id": "Daikyu Prime",
+        "vaulted": false,
+        "type": "Primary Weapon"
+    },
+    "Yareli Prime": {
+        "name": "Yareli Prime",
+        "components": {
+            "Yareli Prime Systems Blueprint": true,
+            "Yareli Prime Neuroptics Blueprint": true,
+            "Yareli Prime Chassis Blueprint": true,
+            "Yareli Prime Blueprint": true
+        },
+        "category": "items",
+        "id": "Yareli Prime",
         "vaulted": false,
         "type": "Warframe"
     }

@@ -890,6 +890,39 @@
         },
         "vaulted": true
     },
+    "Axi B9": {
+        "name": "Axi B9",
+        "category": "relics",
+        "id": "Axi B9",
+        "tier": "Axi",
+        "rewards": {
+            "Baruuk Prime Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Cobra & Crane Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Baruuk Prime Neuroptics Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Afuris Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Braton Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
     "Axi C1": {
         "name": "Axi C1",
         "category": "relics",
@@ -1144,6 +1177,39 @@
                 "perc": "25.33%"
             },
             "Burston Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
+    "Axi C9": {
+        "name": "Axi C9",
+        "category": "relics",
+        "id": "Axi C9",
+        "tier": "Axi",
+        "rewards": {
+            "Cobra & Crane Prime Guard": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Tatsu Prime Blade": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Phantasma Prime Stock": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Revenant Prime Chassis Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Braton Prime Receiver": {
                 "rarity": "common",
                 "perc": "25.33%"
             },
@@ -1482,7 +1548,7 @@
                 "perc": "25.33%"
             }
         },
-        "vaulted": false
+        "vaulted": true
     },
     "Axi G1": {
         "name": "Axi G1",
@@ -3233,6 +3299,39 @@
         },
         "vaulted": true
     },
+    "Axi N13": {
+        "name": "Axi N13",
+        "category": "relics",
+        "id": "Axi N13",
+        "tier": "Axi",
+        "rewards": {
+            "Nautilus Prime Cerebrum": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Kompressa Prime Reciever": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "2X Forma Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Quassus Prime Handle": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Protea Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Okina Prime Blade": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": false
+    },
     "Axi N2": {
         "name": "Axi N2",
         "category": "relics",
@@ -3990,7 +4089,7 @@
                 "perc": "25.33%"
             }
         },
-        "vaulted": false
+        "vaulted": true
     },
     "Axi R1": {
         "name": "Axi R1",
@@ -5180,6 +5279,39 @@
         },
         "vaulted": true
     },
+    "Axi V12": {
+        "name": "Axi V12",
+        "category": "relics",
+        "id": "Axi V12",
+        "tier": "Axi",
+        "rewards": {
+            "Velox Prime Barrel": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Xaku Prime Chassis Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Gauss Prime Neuroptics Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Daikyu Prime String": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Zylok Prime Barrel": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": false
+    },
     "Axi V2": {
         "name": "Axi V2",
         "category": "relics",
@@ -5543,6 +5675,39 @@
         },
         "vaulted": true
     },
+    "Axi Y1": {
+        "name": "Axi Y1",
+        "category": "relics",
+        "id": "Axi Y1",
+        "tier": "Axi",
+        "rewards": {
+            "Yareli Prime Systems Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Paris Prime Upper Limb": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Lavos Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Fang Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Sevagoth Prime Neuroptics Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": false
+    },
     "Axi Z1": {
         "name": "Axi Z1",
         "category": "relics",
@@ -5607,7 +5772,7 @@
                 "perc": "25.33%"
             }
         },
-        "vaulted": false
+        "vaulted": true
     },
     "Lith A1": {
         "name": "Lith A1",
@@ -5838,7 +6003,73 @@
                 "perc": "25.33%"
             }
         },
+        "vaulted": true
+    },
+    "Lith A8": {
+        "name": "Lith A8",
+        "category": "relics",
+        "id": "Lith A8",
+        "tier": "Lith",
+        "rewards": {
+            "Akarius Prime Receiver": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Daikyu Prime Lower Limb": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Masseter Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Bronco Prime Receiver": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Braton Prime Barrel": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Akbronco Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
         "vaulted": false
+    },
+    "Lith A9": {
+        "name": "Lith A9",
+        "category": "relics",
+        "id": "Lith A9",
+        "tier": "Lith",
+        "rewards": {
+            "Afuris Prime Receiver": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Phantasma Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Orthos Prime Blade": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Tatsu Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Cobra & Crane Prime Hilt": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
     },
     "Lith B1": {
         "name": "Lith B1",
@@ -7059,7 +7290,7 @@
                 "perc": "25.33%"
             }
         },
-        "vaulted": false
+        "vaulted": true
     },
     "Lith G2": {
         "name": "Lith G2",
@@ -8249,6 +8480,39 @@
         },
         "vaulted": true
     },
+    "Lith M10": {
+        "name": "Lith M10",
+        "category": "relics",
+        "id": "Lith M10",
+        "tier": "Lith",
+        "rewards": {
+            "Masseter Prime Blade": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Burston Prime Barrel": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Grendel Prime Chassis Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Orthos Prime Handle": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Sevagoth Prime Systems Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Acceltra Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": false
+    },
     "Lith M2": {
         "name": "Lith M2",
         "category": "relics",
@@ -8775,7 +9039,7 @@
                 "perc": "25.33%"
             }
         },
-        "vaulted": false
+        "vaulted": true
     },
     "Lith N2": {
         "name": "Lith N2",
@@ -9464,6 +9728,39 @@
                 "perc": "25.33%"
             },
             "Wisp Prime Systems Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
+    "Lith Q2": {
+        "name": "Lith Q2",
+        "category": "relics",
+        "id": "Lith Q2",
+        "tier": "Lith",
+        "rewards": {
+            "Quassus Prime Blade": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Epitaph Prime Barrel": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Nautilus Prime Systems": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Daikyu Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Burston Prime Stock": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Trumna Prime Blueprint": {
                 "rarity": "common",
                 "perc": "25.33%"
             }
@@ -10328,6 +10625,39 @@
         },
         "vaulted": true
     },
+    "Lith T13": {
+        "name": "Lith T13",
+        "category": "relics",
+        "id": "Lith T13",
+        "tier": "Lith",
+        "rewards": {
+            "Tatsu Prime Handle": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Revenant Prime Neuroptics Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Baruuk Prime Chassis Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Phantasma Prime Receiver": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Braton Prime Barrel": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
     "Lith T2": {
         "name": "Lith T2",
         "category": "relics",
@@ -11052,7 +11382,7 @@
                 "perc": "25.33%"
             }
         },
-        "vaulted": false
+        "vaulted": true
     },
     "Lith X1": {
         "name": "Lith X1",
@@ -11086,6 +11416,39 @@
             }
         },
         "vaulted": true
+    },
+    "Lith Y1": {
+        "name": "Lith Y1",
+        "category": "relics",
+        "id": "Lith Y1",
+        "tier": "Lith",
+        "rewards": {
+            "Yareli Prime Neuroptics Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Trumna Prime Stock": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Zylok Prime Receiver": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Braton Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Nautilus Prime Carapace": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Lex Prime Barrel": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": false
     },
     "Lith Z1": {
         "name": "Lith Z1",
@@ -11185,6 +11548,39 @@
             }
         },
         "vaulted": true
+    },
+    "Lith Z4": {
+        "name": "Lith Z4",
+        "category": "relics",
+        "id": "Lith Z4",
+        "tier": "Lith",
+        "rewards": {
+            "Zylok Prime Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Okina Prime Handle": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Sevagoth Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Velox Prime Receiver": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Yareli Prime Chassis Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": false
     },
     "Meso A1": {
         "name": "Meso A1",
@@ -13492,6 +13888,39 @@
         },
         "vaulted": true
     },
+    "Meso K7": {
+        "name": "Meso K7",
+        "category": "relics",
+        "id": "Meso K7",
+        "tier": "Meso",
+        "rewards": {
+            "Kompressa Prime Barrel": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "2X Forma Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Acceltra Prime Receiver": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Epitaph Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Masseter Prime Handle": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Protea Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": false
+    },
     "Meso L1": {
         "name": "Meso L1",
         "category": "relics",
@@ -14711,6 +15140,39 @@
                 "perc": "25.33%"
             }
         },
+        "vaulted": true
+    },
+    "Meso P16": {
+        "name": "Meso P16",
+        "category": "relics",
+        "id": "Meso P16",
+        "tier": "Meso",
+        "rewards": {
+            "Protea Prime Systems Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Daikyu Prime Upper Limb": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Akarius Prime Link": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Trumna Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Braton Prime Stock": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
         "vaulted": false
     },
     "Meso P2": {
@@ -15132,6 +15594,39 @@
                 "perc": "25.33%"
             },
             "Baruuk Prime Systems Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
+    "Meso R6": {
+        "name": "Meso R6",
+        "category": "relics",
+        "id": "Meso R6",
+        "tier": "Meso",
+        "rewards": {
+            "Revenant Prime Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Cobra & Crane Prime Blade": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Orthos Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Afuris Prime Barrel": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Braton Prime Stock": {
                 "rarity": "common",
                 "perc": "25.33%"
             },
@@ -15932,7 +16427,7 @@
                 "perc": "25.33%"
             }
         },
-        "vaulted": false
+        "vaulted": true
     },
     "Meso V2": {
         "name": "Meso V2",
@@ -16687,6 +17182,39 @@
                 "perc": "25.33%"
             },
             "Akarius Prime Barrel": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
+    "Neo A14": {
+        "name": "Neo A14",
+        "category": "relics",
+        "id": "Neo A14",
+        "tier": "Neo",
+        "rewards": {
+            "Acceltra Prime Barrel": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Yareli Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "2X Forma Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Cedo Prime Stock": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Gauss Prime Chassis Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Bronco Prime Blueprint": {
                 "rarity": "common",
                 "perc": "25.33%"
             }
@@ -17485,6 +18013,39 @@
         },
         "vaulted": true
     },
+    "Neo D10": {
+        "name": "Neo D10",
+        "category": "relics",
+        "id": "Neo D10",
+        "tier": "Neo",
+        "rewards": {
+            "Daikyu Prime Grip": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Velox Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Gauss Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Lex Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Akarius Prime Barrel": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": false
+    },
     "Neo D2": {
         "name": "Neo D2",
         "category": "relics",
@@ -18238,6 +18799,39 @@
                 "perc": "25.33%"
             },
             "Bronco Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
+    "Neo G9": {
+        "name": "Neo G9",
+        "category": "relics",
+        "id": "Neo G9",
+        "tier": "Neo",
+        "rewards": {
+            "Gauss Prime Systems Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Bronco Prime Barrel": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Masseter Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Kompressa Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Bronco Prime Receiver": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Gauss Prime Blueprint": {
                 "rarity": "common",
                 "perc": "25.33%"
             }
@@ -20059,6 +20653,39 @@
         },
         "vaulted": true
     },
+    "Neo P8": {
+        "name": "Neo P8",
+        "category": "relics",
+        "id": "Neo P8",
+        "tier": "Neo",
+        "rewards": {
+            "Phantasma Prime Barrel": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Revenant Prime Systems Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Afuris Prime Link": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Baruuk Prime Systems Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Orthos Prime Handle": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
     "Neo Q1": {
         "name": "Neo Q1",
         "category": "relics",
@@ -21542,7 +22169,7 @@
                 "perc": "25.33%"
             }
         },
-        "vaulted": false
+        "vaulted": true
     },
     "Neo X1": {
         "name": "Neo X1",
