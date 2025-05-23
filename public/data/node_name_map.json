@@ -1541,16 +1541,22 @@
         "name": "Faceoff: Squad VS Squad",
         "systemName": "Höllvania"
     },
+    "SolNode856": {
+        "id": "Assassinate: H-09 Tank, Höllvania",
+        "nodeId": "SolNode856",
+        "name": "Assassinate: H-09 Tank",
+        "systemName": "Höllvania"
+    },
     "SolNode857": {
         "id": "Faceoff: Single Squad, Höllvania",
         "nodeId": "SolNode857",
         "name": "Faceoff: Single Squad",
         "systemName": "Höllvania"
     },
-    "SolNode856": {
-        "id": "Assassinate: H-09 Tank, Höllvania",
-        "nodeId": "SolNode856",
-        "name": "Assassinate: H-09 Tank",
+    "SolNode858": {
+        "id": "Solstice Square, Höllvania",
+        "nodeId": "SolNode858",
+        "name": "Solstice Square",
         "systemName": "Höllvania"
     },
     "MercuryHUB": {

@@ -552,6 +552,20 @@
         "routeId": "GaraPrime",
         "id": "Gara Prime"
     },
+    "/prime/items/TatsuPrime": {
+        "title": "Tatsu Prime",
+        "category": "items",
+        "route": "/prime/items/TatsuPrime",
+        "routeId": "TatsuPrime",
+        "id": "Tatsu Prime"
+    },
+    "/prime/items/PhantasmaPrime": {
+        "title": "Phantasma Prime",
+        "category": "items",
+        "route": "/prime/items/PhantasmaPrime",
+        "routeId": "PhantasmaPrime",
+        "id": "Phantasma Prime"
+    },
     "/prime/items/DestrezaPrime": {
         "title": "Destreza Prime",
         "category": "items",
@@ -881,26 +895,19 @@
         "routeId": "CedoPrime",
         "id": "Cedo Prime"
     },
-    "/prime/items/PhantasmaPrime": {
-        "title": "Phantasma Prime",
+    "/prime/items/NautilusPrime": {
+        "title": "Nautilus Prime",
         "category": "items",
-        "route": "/prime/items/PhantasmaPrime",
-        "routeId": "PhantasmaPrime",
-        "id": "Phantasma Prime"
+        "route": "/prime/items/NautilusPrime",
+        "routeId": "NautilusPrime",
+        "id": "Nautilus Prime"
     },
-    "/prime/items/TatsuPrime": {
-        "title": "Tatsu Prime",
+    "/prime/items/KompressaPrime": {
+        "title": "Kompressa Prime",
         "category": "items",
-        "route": "/prime/items/TatsuPrime",
-        "routeId": "TatsuPrime",
-        "id": "Tatsu Prime"
-    },
-    "/prime/items/VenkaPrime": {
-        "title": "Venka Prime",
-        "category": "items",
-        "route": "/prime/items/VenkaPrime",
-        "routeId": "VenkaPrime",
-        "id": "Venka Prime"
+        "route": "/prime/items/KompressaPrime",
+        "routeId": "KompressaPrime",
+        "id": "Kompressa Prime"
     },
     "/prime/items/ProteaPrime": {
         "title": "Protea Prime",
@@ -908,6 +915,13 @@
         "route": "/prime/items/ProteaPrime",
         "routeId": "ProteaPrime",
         "id": "Protea Prime"
+    },
+    "/prime/items/VenkaPrime": {
+        "title": "Venka Prime",
+        "category": "items",
+        "route": "/prime/items/VenkaPrime",
+        "routeId": "VenkaPrime",
+        "id": "Venka Prime"
     },
     "/prime/items/DualZorenPrime": {
         "title": "Dual Zoren Prime",
@@ -965,13 +979,6 @@
         "routeId": "GuandaoPrime",
         "id": "Guandao Prime"
     },
-    "/prime/items/NautilusPrime": {
-        "title": "Nautilus Prime",
-        "category": "items",
-        "route": "/prime/items/NautilusPrime",
-        "routeId": "NautilusPrime",
-        "id": "Nautilus Prime"
-    },
     "/prime/items/NyxPrime": {
         "title": "Nyx Prime",
         "category": "items",
@@ -1013,6 +1020,20 @@
         "route": "/prime/items/ValkyrPrime",
         "routeId": "ValkyrPrime",
         "id": "Valkyr Prime"
+    },
+    "/prime/items/DaikyuPrime": {
+        "title": "Daikyu Prime",
+        "category": "items",
+        "route": "/prime/items/DaikyuPrime",
+        "routeId": "DaikyuPrime",
+        "id": "Daikyu Prime"
+    },
+    "/prime/items/YareliPrime": {
+        "title": "Yareli Prime",
+        "category": "items",
+        "route": "/prime/items/YareliPrime",
+        "routeId": "YareliPrime",
+        "id": "Yareli Prime"
     },
     "/prime/components/AkstilettoPrimeBarrel": {
         "title": "Akstiletto Prime Barrel",
@@ -1763,6 +1784,20 @@
         "routeId": "OkinaPrimeBlade",
         "id": "Okina Prime Blade"
     },
+    "/prime/components/BaruukPrimeBlueprint": {
+        "title": "Baruuk Prime Blueprint",
+        "category": "components",
+        "route": "/prime/components/BaruukPrimeBlueprint",
+        "routeId": "BaruukPrimeBlueprint",
+        "id": "Baruuk Prime Blueprint"
+    },
+    "/prime/components/CobraCranePrimeBlueprint": {
+        "title": "Cobra & Crane Prime Blueprint",
+        "category": "components",
+        "route": "/prime/components/CobraCranePrimeBlueprint",
+        "routeId": "CobraCranePrimeBlueprint",
+        "id": "Cobra & Crane Prime Blueprint"
+    },
     "/prime/components/CernosPrimeLowerLimb": {
         "title": "Cernos Prime Lower Limb",
         "category": "components",
@@ -1909,6 +1944,41 @@
         "route": "/prime/components/GaraPrimeSystemsBlueprint",
         "routeId": "GaraPrimeSystemsBlueprint",
         "id": "Gara Prime Systems Blueprint"
+    },
+    "/prime/components/CobraCranePrimeGuard": {
+        "title": "Cobra & Crane Prime Guard",
+        "category": "components",
+        "route": "/prime/components/CobraCranePrimeGuard",
+        "routeId": "CobraCranePrimeGuard",
+        "id": "Cobra & Crane Prime Guard"
+    },
+    "/prime/components/TatsuPrimeBlade": {
+        "title": "Tatsu Prime Blade",
+        "category": "components",
+        "route": "/prime/components/TatsuPrimeBlade",
+        "routeId": "TatsuPrimeBlade",
+        "id": "Tatsu Prime Blade"
+    },
+    "/prime/components/PhantasmaPrimeStock": {
+        "title": "Phantasma Prime Stock",
+        "category": "components",
+        "route": "/prime/components/PhantasmaPrimeStock",
+        "routeId": "PhantasmaPrimeStock",
+        "id": "Phantasma Prime Stock"
+    },
+    "/prime/components/RevenantPrimeChassisBlueprint": {
+        "title": "Revenant Prime Chassis",
+        "category": "components",
+        "route": "/prime/components/RevenantPrimeChassisBlueprint",
+        "routeId": "RevenantPrimeChassisBlueprint",
+        "id": "Revenant Prime Chassis Blueprint"
+    },
+    "/prime/components/BratonPrimeReceiver": {
+        "title": "Braton Prime Receiver",
+        "category": "components",
+        "route": "/prime/components/BratonPrimeReceiver",
+        "routeId": "BratonPrimeReceiver",
+        "id": "Braton Prime Receiver"
     },
     "/prime/components/DestrezaPrimeBlade": {
         "title": "Destreza Prime Blade",
@@ -2098,13 +2168,6 @@
         "route": "/prime/components/WispPrimeNeuropticsBlueprint",
         "routeId": "WispPrimeNeuropticsBlueprint",
         "id": "Wisp Prime Neuroptics Blueprint"
-    },
-    "/prime/components/RevenantPrimeChassisBlueprint": {
-        "title": "Revenant Prime Chassis",
-        "category": "components",
-        "route": "/prime/components/RevenantPrimeChassisBlueprint",
-        "routeId": "RevenantPrimeChassisBlueprint",
-        "id": "Revenant Prime Chassis Blueprint"
     },
     "/prime/components/MasseterPrimeHandle": {
         "title": "Masseter Prime Handle",
@@ -2421,13 +2484,6 @@
         "routeId": "HildrynPrimeBlueprint",
         "id": "Hildryn Prime Blueprint"
     },
-    "/prime/components/BratonPrimeReceiver": {
-        "title": "Braton Prime Receiver",
-        "category": "components",
-        "route": "/prime/components/BratonPrimeReceiver",
-        "routeId": "BratonPrimeReceiver",
-        "id": "Braton Prime Receiver"
-    },
     "/prime/components/GarudaPrimeBlueprint": {
         "title": "Garuda Prime Blueprint",
         "category": "components",
@@ -2532,13 +2588,6 @@
         "route": "/prime/components/StrunPrimeStock",
         "routeId": "StrunPrimeStock",
         "id": "Strun Prime Stock"
-    },
-    "/prime/components/CobraCranePrimeBlueprint": {
-        "title": "Cobra & Crane Prime Blueprint",
-        "category": "components",
-        "route": "/prime/components/CobraCranePrimeBlueprint",
-        "routeId": "CobraCranePrimeBlueprint",
-        "id": "Cobra & Crane Prime Blueprint"
     },
     "/prime/components/ScourgePrimeHandle": {
         "title": "Scourge Prime Handle",
@@ -2939,6 +2988,27 @@
         "routeId": "ParisPrimeString",
         "id": "Paris Prime String"
     },
+    "/prime/components/NautilusPrimeCerebrum": {
+        "title": "Nautilus Prime Cerebrum",
+        "category": "components",
+        "route": "/prime/components/NautilusPrimeCerebrum",
+        "routeId": "NautilusPrimeCerebrum",
+        "id": "Nautilus Prime Cerebrum"
+    },
+    "/prime/components/KompressaPrimeReciever": {
+        "title": "Kompressa Prime Reciever",
+        "category": "components",
+        "route": "/prime/components/KompressaPrimeReciever",
+        "routeId": "KompressaPrimeReciever",
+        "id": "Kompressa Prime Reciever"
+    },
+    "/prime/components/ProteaPrimeBlueprint": {
+        "title": "Protea Prime Blueprint",
+        "category": "components",
+        "route": "/prime/components/ProteaPrimeBlueprint",
+        "routeId": "ProteaPrimeBlueprint",
+        "id": "Protea Prime Blueprint"
+    },
     "/prime/components/CarrierPrimeCarapace": {
         "title": "Carrier Prime Carapace",
         "category": "components",
@@ -3127,13 +3197,6 @@
         "route": "/prime/components/PanderoPrimeReceiver",
         "routeId": "PanderoPrimeReceiver",
         "id": "Pandero Prime Receiver"
-    },
-    "/prime/components/PhantasmaPrimeStock": {
-        "title": "Phantasma Prime Stock",
-        "category": "components",
-        "route": "/prime/components/PhantasmaPrimeStock",
-        "routeId": "PhantasmaPrimeStock",
-        "id": "Phantasma Prime Stock"
     },
     "/prime/components/HildrynPrimeSystemsBlueprint": {
         "title": "Hildryn Prime Systems",
@@ -3632,6 +3695,27 @@
         "routeId": "AstillaPrimeStock",
         "id": "Astilla Prime Stock"
     },
+    "/prime/components/VeloxPrimeBarrel": {
+        "title": "Velox Prime Barrel",
+        "category": "components",
+        "route": "/prime/components/VeloxPrimeBarrel",
+        "routeId": "VeloxPrimeBarrel",
+        "id": "Velox Prime Barrel"
+    },
+    "/prime/components/XakuPrimeChassisBlueprint": {
+        "title": "Xaku Prime Chassis",
+        "category": "components",
+        "route": "/prime/components/XakuPrimeChassisBlueprint",
+        "routeId": "XakuPrimeChassisBlueprint",
+        "id": "Xaku Prime Chassis Blueprint"
+    },
+    "/prime/components/DaikyuPrimeString": {
+        "title": "Daikyu Prime String",
+        "category": "components",
+        "route": "/prime/components/DaikyuPrimeString",
+        "routeId": "DaikyuPrimeString",
+        "id": "Daikyu Prime String"
+    },
     "/prime/components/ValkyrPrimeChassisBlueprint": {
         "title": "Valkyr Prime Chassis",
         "category": "components",
@@ -3694,6 +3778,13 @@
         "route": "/prime/components/WispPrimeBlueprint",
         "routeId": "WispPrimeBlueprint",
         "id": "Wisp Prime Blueprint"
+    },
+    "/prime/components/YareliPrimeSystemsBlueprint": {
+        "title": "Yareli Prime Systems",
+        "category": "components",
+        "route": "/prime/components/YareliPrimeSystemsBlueprint",
+        "routeId": "YareliPrimeSystemsBlueprint",
+        "id": "Yareli Prime Systems Blueprint"
     },
     "/prime/components/ZaktiPrimeBlueprint": {
         "title": "Zakti Prime Blueprint",
@@ -3786,6 +3877,13 @@
         "routeId": "NautilusPrimeCarapace",
         "id": "Nautilus Prime Carapace"
     },
+    "/prime/components/DaikyuPrimeLowerLimb": {
+        "title": "Daikyu Prime Lower Limb",
+        "category": "components",
+        "route": "/prime/components/DaikyuPrimeLowerLimb",
+        "routeId": "DaikyuPrimeLowerLimb",
+        "id": "Daikyu Prime Lower Limb"
+    },
     "/prime/components/BoarPrimeStock": {
         "title": "Boar Prime Stock",
         "category": "components",
@@ -3813,13 +3911,6 @@
         "route": "/prime/components/AnkyrosPrimeBlueprint",
         "routeId": "AnkyrosPrimeBlueprint",
         "id": "Ankyros Prime Blueprint"
-    },
-    "/prime/components/BaruukPrimeBlueprint": {
-        "title": "Baruuk Prime Blueprint",
-        "category": "components",
-        "route": "/prime/components/BaruukPrimeBlueprint",
-        "routeId": "BaruukPrimeBlueprint",
-        "id": "Baruuk Prime Blueprint"
     },
     "/prime/components/PhantasmaPrimeReceiver": {
         "title": "Phantasma Prime Receiver",
@@ -3897,13 +3988,6 @@
         "route": "/prime/components/NovaPrimeNeuropticsBlueprint",
         "routeId": "NovaPrimeNeuropticsBlueprint",
         "id": "Nova Prime Neuroptics Blueprint"
-    },
-    "/prime/components/CobraCranePrimeGuard": {
-        "title": "Cobra & Crane Prime Guard",
-        "category": "components",
-        "route": "/prime/components/CobraCranePrimeGuard",
-        "routeId": "CobraCranePrimeGuard",
-        "id": "Cobra & Crane Prime Guard"
     },
     "/prime/components/GrendelPrimeChassisBlueprint": {
         "title": "Grendel Prime Chassis",
@@ -4122,13 +4206,6 @@
         "routeId": "TitaniaPrimeNeuropticsBlueprint",
         "id": "Titania Prime Neuroptics Blueprint"
     },
-    "/prime/components/TatsuPrimeBlade": {
-        "title": "Tatsu Prime Blade",
-        "category": "components",
-        "route": "/prime/components/TatsuPrimeBlade",
-        "routeId": "TatsuPrimeBlade",
-        "id": "Tatsu Prime Blade"
-    },
     "/prime/components/GrendelPrimeBlueprint": {
         "title": "Grendel Prime Blueprint",
         "category": "components",
@@ -4269,13 +4346,6 @@
         "routeId": "NinkondiPrimeHandle",
         "id": "Ninkondi Prime Handle"
     },
-    "/prime/components/NautilusPrimeCerebrum": {
-        "title": "Nautilus Prime Cerebrum",
-        "category": "components",
-        "route": "/prime/components/NautilusPrimeCerebrum",
-        "routeId": "NautilusPrimeCerebrum",
-        "id": "Nautilus Prime Cerebrum"
-    },
     "/prime/components/BaruukPrimeChassisBlueprint": {
         "title": "Baruuk Prime Chassis",
         "category": "components",
@@ -4331,6 +4401,13 @@
         "route": "/prime/components/QuassusPrimeBlade",
         "routeId": "QuassusPrimeBlade",
         "id": "Quassus Prime Blade"
+    },
+    "/prime/components/DaikyuPrimeBlueprint": {
+        "title": "Daikyu Prime Blueprint",
+        "category": "components",
+        "route": "/prime/components/DaikyuPrimeBlueprint",
+        "routeId": "DaikyuPrimeBlueprint",
+        "id": "Daikyu Prime Blueprint"
     },
     "/prime/components/RevenantPrimeBlueprint": {
         "title": "Revenant Prime Blueprint",
@@ -4444,13 +4521,6 @@
         "routeId": "WispPrimeChassisBlueprint",
         "id": "Wisp Prime Chassis Blueprint"
     },
-    "/prime/components/ProteaPrimeBlueprint": {
-        "title": "Protea Prime Blueprint",
-        "category": "components",
-        "route": "/prime/components/ProteaPrimeBlueprint",
-        "routeId": "ProteaPrimeBlueprint",
-        "id": "Protea Prime Blueprint"
-    },
     "/prime/components/XakuPrimeBlueprint": {
         "title": "Xaku Prime Blueprint",
         "category": "components",
@@ -4458,12 +4528,33 @@
         "routeId": "XakuPrimeBlueprint",
         "id": "Xaku Prime Blueprint"
     },
+    "/prime/components/YareliPrimeNeuropticsBlueprint": {
+        "title": "Yareli Prime Neuroptics",
+        "category": "components",
+        "route": "/prime/components/YareliPrimeNeuropticsBlueprint",
+        "routeId": "YareliPrimeNeuropticsBlueprint",
+        "id": "Yareli Prime Neuroptics Blueprint"
+    },
     "/prime/components/ZephyrPrimeSystemsBlueprint": {
         "title": "Zephyr Prime Systems",
         "category": "components",
         "route": "/prime/components/ZephyrPrimeSystemsBlueprint",
         "routeId": "ZephyrPrimeSystemsBlueprint",
         "id": "Zephyr Prime Systems Blueprint"
+    },
+    "/prime/components/OkinaPrimeHandle": {
+        "title": "Okina Prime Handle",
+        "category": "components",
+        "route": "/prime/components/OkinaPrimeHandle",
+        "routeId": "OkinaPrimeHandle",
+        "id": "Okina Prime Handle"
+    },
+    "/prime/components/YareliPrimeChassisBlueprint": {
+        "title": "Yareli Prime Chassis",
+        "category": "components",
+        "route": "/prime/components/YareliPrimeChassisBlueprint",
+        "routeId": "YareliPrimeChassisBlueprint",
+        "id": "Yareli Prime Chassis Blueprint"
     },
     "/prime/components/NidusPrimeSystemsBlueprint": {
         "title": "Nidus Prime Systems",
@@ -4492,13 +4583,6 @@
         "route": "/prime/components/LavosPrimeNeuropticsBlueprint",
         "routeId": "LavosPrimeNeuropticsBlueprint",
         "id": "Lavos Prime Neuroptics Blueprint"
-    },
-    "/prime/components/OkinaPrimeHandle": {
-        "title": "Okina Prime Handle",
-        "category": "components",
-        "route": "/prime/components/OkinaPrimeHandle",
-        "routeId": "OkinaPrimeHandle",
-        "id": "Okina Prime Handle"
     },
     "/prime/components/MagPrimeChassisBlueprint": {
         "title": "Mag Prime Chassis",
@@ -4591,6 +4675,13 @@
         "routeId": "QuassusPrimeBlueprint",
         "id": "Quassus Prime Blueprint"
     },
+    "/prime/components/KompressaPrimeBarrel": {
+        "title": "Kompressa Prime Barrel",
+        "category": "components",
+        "route": "/prime/components/KompressaPrimeBarrel",
+        "routeId": "KompressaPrimeBarrel",
+        "id": "Kompressa Prime Barrel"
+    },
     "/prime/components/AnkyrosPrimeGauntlet": {
         "title": "Ankyros Prime Gauntlet",
         "category": "components",
@@ -4618,6 +4709,13 @@
         "route": "/prime/components/LokiPrimeNeuropticsBlueprint",
         "routeId": "LokiPrimeNeuropticsBlueprint",
         "id": "Loki Prime Neuroptics Blueprint"
+    },
+    "/prime/components/DaikyuPrimeUpperLimb": {
+        "title": "Daikyu Prime Upper Limb",
+        "category": "components",
+        "route": "/prime/components/DaikyuPrimeUpperLimb",
+        "routeId": "DaikyuPrimeUpperLimb",
+        "id": "Daikyu Prime Upper Limb"
     },
     "/prime/components/PantheraPrimeReceiver": {
         "title": "Panthera Prime Receiver",
@@ -4654,12 +4752,12 @@
         "routeId": "TrumnaPrimeBarrel",
         "id": "Trumna Prime Barrel"
     },
-    "/prime/components/VeloxPrimeBarrel": {
-        "title": "Velox Prime Barrel",
+    "/prime/components/YareliPrimeBlueprint": {
+        "title": "Yareli Prime Blueprint",
         "category": "components",
-        "route": "/prime/components/VeloxPrimeBarrel",
-        "routeId": "VeloxPrimeBarrel",
-        "id": "Velox Prime Barrel"
+        "route": "/prime/components/YareliPrimeBlueprint",
+        "routeId": "YareliPrimeBlueprint",
+        "id": "Yareli Prime Blueprint"
     },
     "/prime/components/CedoPrimeBlueprint": {
         "title": "Cedo Prime Blueprint",
@@ -4667,6 +4765,13 @@
         "route": "/prime/components/CedoPrimeBlueprint",
         "routeId": "CedoPrimeBlueprint",
         "id": "Cedo Prime Blueprint"
+    },
+    "/prime/components/DaikyuPrimeGrip": {
+        "title": "Daikyu Prime Grip",
+        "category": "components",
+        "route": "/prime/components/DaikyuPrimeGrip",
+        "routeId": "DaikyuPrimeGrip",
+        "id": "Daikyu Prime Grip"
     },
     "/prime/components/DualZorenPrimeBlade": {
         "title": "Dual Zoren Prime Blade",
@@ -4682,12 +4787,12 @@
         "routeId": "BoPrimeHandle",
         "id": "Bo Prime Handle"
     },
-    "/prime/components/XakuPrimeChassisBlueprint": {
-        "title": "Xaku Prime Chassis",
+    "/prime/components/KompressaPrimeBlueprint": {
+        "title": "Kompressa Prime Blueprint",
         "category": "components",
-        "route": "/prime/components/XakuPrimeChassisBlueprint",
-        "routeId": "XakuPrimeChassisBlueprint",
-        "id": "Xaku Prime Chassis Blueprint"
+        "route": "/prime/components/KompressaPrimeBlueprint",
+        "routeId": "KompressaPrimeBlueprint",
+        "id": "Kompressa Prime Blueprint"
     },
     "/prime/components/CedoPrimeBarrel": {
         "title": "Cedo Prime Barrel",
@@ -5011,6 +5116,13 @@
         "routeId": "AxiB8",
         "id": "Axi B8"
     },
+    "/prime/relics/AxiB9": {
+        "title": "Axi B9",
+        "category": "relics",
+        "route": "/prime/relics/AxiB9",
+        "routeId": "AxiB9",
+        "id": "Axi B9"
+    },
     "/prime/relics/AxiC1": {
         "title": "Axi C1",
         "category": "relics",
@@ -5066,6 +5178,13 @@
         "route": "/prime/relics/AxiC8",
         "routeId": "AxiC8",
         "id": "Axi C8"
+    },
+    "/prime/relics/AxiC9": {
+        "title": "Axi C9",
+        "category": "relics",
+        "route": "/prime/relics/AxiC9",
+        "routeId": "AxiC9",
+        "id": "Axi C9"
     },
     "/prime/relics/AxiD1": {
         "title": "Axi D1",
@@ -5508,6 +5627,13 @@
         "routeId": "AxiN12",
         "id": "Axi N12"
     },
+    "/prime/relics/AxiN13": {
+        "title": "Axi N13",
+        "category": "relics",
+        "route": "/prime/relics/AxiN13",
+        "routeId": "AxiN13",
+        "id": "Axi N13"
+    },
     "/prime/relics/AxiN2": {
         "title": "Axi N2",
         "category": "relics",
@@ -5921,6 +6047,13 @@
         "routeId": "AxiV11",
         "id": "Axi V11"
     },
+    "/prime/relics/AxiV12": {
+        "title": "Axi V12",
+        "category": "relics",
+        "route": "/prime/relics/AxiV12",
+        "routeId": "AxiV12",
+        "id": "Axi V12"
+    },
     "/prime/relics/AxiV2": {
         "title": "Axi V2",
         "category": "relics",
@@ -5998,6 +6131,13 @@
         "routeId": "AxiW3",
         "id": "Axi W3"
     },
+    "/prime/relics/AxiY1": {
+        "title": "Axi Y1",
+        "category": "relics",
+        "route": "/prime/relics/AxiY1",
+        "routeId": "AxiY1",
+        "id": "Axi Y1"
+    },
     "/prime/relics/AxiZ1": {
         "title": "Axi Z1",
         "category": "relics",
@@ -6060,6 +6200,20 @@
         "route": "/prime/relics/LithA7",
         "routeId": "LithA7",
         "id": "Lith A7"
+    },
+    "/prime/relics/LithA8": {
+        "title": "Lith A8",
+        "category": "relics",
+        "route": "/prime/relics/LithA8",
+        "routeId": "LithA8",
+        "id": "Lith A8"
+    },
+    "/prime/relics/LithA9": {
+        "title": "Lith A9",
+        "category": "relics",
+        "route": "/prime/relics/LithA9",
+        "routeId": "LithA9",
+        "id": "Lith A9"
     },
     "/prime/relics/LithB1": {
         "title": "Lith B1",
@@ -6572,6 +6726,13 @@
         "routeId": "LithM1",
         "id": "Lith M1"
     },
+    "/prime/relics/LithM10": {
+        "title": "Lith M10",
+        "category": "relics",
+        "route": "/prime/relics/LithM10",
+        "routeId": "LithM10",
+        "id": "Lith M10"
+    },
     "/prime/relics/LithM2": {
         "title": "Lith M2",
         "category": "relics",
@@ -6831,6 +6992,13 @@
         "routeId": "LithQ1",
         "id": "Lith Q1"
     },
+    "/prime/relics/LithQ2": {
+        "title": "Lith Q2",
+        "category": "relics",
+        "route": "/prime/relics/LithQ2",
+        "routeId": "LithQ2",
+        "id": "Lith Q2"
+    },
     "/prime/relics/LithR1": {
         "title": "Lith R1",
         "category": "relics",
@@ -7013,6 +7181,13 @@
         "routeId": "LithT12",
         "id": "Lith T12"
     },
+    "/prime/relics/LithT13": {
+        "title": "Lith T13",
+        "category": "relics",
+        "route": "/prime/relics/LithT13",
+        "routeId": "LithT13",
+        "id": "Lith T13"
+    },
     "/prime/relics/LithT2": {
         "title": "Lith T2",
         "category": "relics",
@@ -7174,6 +7349,13 @@
         "routeId": "LithX1",
         "id": "Lith X1"
     },
+    "/prime/relics/LithY1": {
+        "title": "Lith Y1",
+        "category": "relics",
+        "route": "/prime/relics/LithY1",
+        "routeId": "LithY1",
+        "id": "Lith Y1"
+    },
     "/prime/relics/LithZ1": {
         "title": "Lith Z1",
         "category": "relics",
@@ -7194,6 +7376,13 @@
         "route": "/prime/relics/LithZ3",
         "routeId": "LithZ3",
         "id": "Lith Z3"
+    },
+    "/prime/relics/LithZ4": {
+        "title": "Lith Z4",
+        "category": "relics",
+        "route": "/prime/relics/LithZ4",
+        "routeId": "LithZ4",
+        "id": "Lith Z4"
     },
     "/prime/relics/MesoA1": {
         "title": "Meso A1",
@@ -7685,6 +7874,13 @@
         "routeId": "MesoK6",
         "id": "Meso K6"
     },
+    "/prime/relics/MesoK7": {
+        "title": "Meso K7",
+        "category": "relics",
+        "route": "/prime/relics/MesoK7",
+        "routeId": "MesoK7",
+        "id": "Meso K7"
+    },
     "/prime/relics/MesoL1": {
         "title": "Meso L1",
         "category": "relics",
@@ -7944,6 +8140,13 @@
         "routeId": "MesoP15",
         "id": "Meso P15"
     },
+    "/prime/relics/MesoP16": {
+        "title": "Meso P16",
+        "category": "relics",
+        "route": "/prime/relics/MesoP16",
+        "routeId": "MesoP16",
+        "id": "Meso P16"
+    },
     "/prime/relics/MesoP2": {
         "title": "Meso P2",
         "category": "relics",
@@ -8034,6 +8237,13 @@
         "route": "/prime/relics/MesoR5",
         "routeId": "MesoR5",
         "id": "Meso R5"
+    },
+    "/prime/relics/MesoR6": {
+        "title": "Meso R6",
+        "category": "relics",
+        "route": "/prime/relics/MesoR6",
+        "routeId": "MesoR6",
+        "id": "Meso R6"
     },
     "/prime/relics/MesoS1": {
         "title": "Meso S1",
@@ -8364,6 +8574,13 @@
         "routeId": "NeoA13",
         "id": "Neo A13"
     },
+    "/prime/relics/NeoA14": {
+        "title": "Neo A14",
+        "category": "relics",
+        "route": "/prime/relics/NeoA14",
+        "routeId": "NeoA14",
+        "id": "Neo A14"
+    },
     "/prime/relics/NeoA2": {
         "title": "Neo A2",
         "category": "relics",
@@ -8532,6 +8749,13 @@
         "routeId": "NeoD1",
         "id": "Neo D1"
     },
+    "/prime/relics/NeoD10": {
+        "title": "Neo D10",
+        "category": "relics",
+        "route": "/prime/relics/NeoD10",
+        "routeId": "NeoD10",
+        "id": "Neo D10"
+    },
     "/prime/relics/NeoD2": {
         "title": "Neo D2",
         "category": "relics",
@@ -8692,6 +8916,13 @@
         "route": "/prime/relics/NeoG8",
         "routeId": "NeoG8",
         "id": "Neo G8"
+    },
+    "/prime/relics/NeoG9": {
+        "title": "Neo G9",
+        "category": "relics",
+        "route": "/prime/relics/NeoG9",
+        "routeId": "NeoG9",
+        "id": "Neo G9"
     },
     "/prime/relics/NeoH1": {
         "title": "Neo H1",
@@ -9077,6 +9308,13 @@
         "route": "/prime/relics/NeoP7",
         "routeId": "NeoP7",
         "id": "Neo P7"
+    },
+    "/prime/relics/NeoP8": {
+        "title": "Neo P8",
+        "category": "relics",
+        "route": "/prime/relics/NeoP8",
+        "routeId": "NeoP8",
+        "id": "Neo P8"
     },
     "/prime/relics/NeoQ1": {
         "title": "Neo Q1",
@@ -11409,61 +11647,61 @@
         "routeId": "TheGreenwayZariman",
         "id": "The Greenway, Zariman"
     },
-    "/prime/missions/TheCircuitDuviri": {
-        "title": "The Circuit, Duviri",
+    "/prime/missions/LegacyteHarvestHllvania": {
+        "title": "Legacyte Harvest, Höllvania",
         "category": "missions",
-        "route": "/prime/missions/TheCircuitDuviri",
-        "routeId": "TheCircuitDuviri",
-        "id": "The Circuit, Duviri"
+        "route": "/prime/missions/LegacyteHarvestHllvania",
+        "routeId": "LegacyteHarvestHllvania",
+        "id": "Legacyte Harvest, Höllvania"
     },
-    "/prime/missions/LegacyteHarvestHLlvania": {
-        "title": "Legacyte Harvest, HöLlvania",
+    "/prime/missions/HellScrubScaldraHllvania": {
+        "title": "Hell-Scrub: Scaldra, Höllvania",
         "category": "missions",
-        "route": "/prime/missions/LegacyteHarvestHLlvania",
-        "routeId": "LegacyteHarvestHLlvania",
-        "id": "Legacyte Harvest, HöLlvania"
+        "route": "/prime/missions/HellScrubScaldraHllvania",
+        "routeId": "HellScrubScaldraHllvania",
+        "id": "Hell-Scrub: Scaldra, Höllvania"
     },
-    "/prime/missions/HellScrubScaldraHLlvania": {
-        "title": "Hell-Scrub: Scaldra, HöLlvania",
+    "/prime/missions/HellScrubTechrotHllvania": {
+        "title": "Hell-Scrub: Techrot, Höllvania",
         "category": "missions",
-        "route": "/prime/missions/HellScrubScaldraHLlvania",
-        "routeId": "HellScrubScaldraHLlvania",
-        "id": "Hell-Scrub: Scaldra, HöLlvania"
+        "route": "/prime/missions/HellScrubTechrotHllvania",
+        "routeId": "HellScrubTechrotHllvania",
+        "id": "Hell-Scrub: Techrot, Höllvania"
     },
-    "/prime/missions/HellScrubTechrotHLlvania": {
-        "title": "Hell-Scrub: Techrot, HöLlvania",
+    "/prime/missions/ExterminateScaldraHllvania": {
+        "title": "Exterminate: Scaldra, Höllvania",
         "category": "missions",
-        "route": "/prime/missions/HellScrubTechrotHLlvania",
-        "routeId": "HellScrubTechrotHLlvania",
-        "id": "Hell-Scrub: Techrot, HöLlvania"
+        "route": "/prime/missions/ExterminateScaldraHllvania",
+        "routeId": "ExterminateScaldraHllvania",
+        "id": "Exterminate: Scaldra, Höllvania"
     },
-    "/prime/missions/ExterminateScaldraHLlvania": {
-        "title": "Exterminate: Scaldra, HöLlvania",
+    "/prime/missions/ExterminateTechrotHllvania": {
+        "title": "Exterminate: Techrot, Höllvania",
         "category": "missions",
-        "route": "/prime/missions/ExterminateScaldraHLlvania",
-        "routeId": "ExterminateScaldraHLlvania",
-        "id": "Exterminate: Scaldra, HöLlvania"
+        "route": "/prime/missions/ExterminateTechrotHllvania",
+        "routeId": "ExterminateTechrotHllvania",
+        "id": "Exterminate: Techrot, Höllvania"
     },
-    "/prime/missions/ExterminateTechrotHLlvania": {
-        "title": "Exterminate: Techrot, HöLlvania",
+    "/prime/missions/AssassinateH09TankHllvania": {
+        "title": "Assassinate: H-09 Tank, Höllvania",
         "category": "missions",
-        "route": "/prime/missions/ExterminateTechrotHLlvania",
-        "routeId": "ExterminateTechrotHLlvania",
-        "id": "Exterminate: Techrot, HöLlvania"
+        "route": "/prime/missions/AssassinateH09TankHllvania",
+        "routeId": "AssassinateH09TankHllvania",
+        "id": "Assassinate: H-09 Tank, Höllvania"
     },
-    "/prime/missions/AssassinateH09TankHLlvania": {
-        "title": "Assassinate: H-09 Tank, HöLlvania",
+    "/prime/missions/SolsticeSquareHllvania": {
+        "title": "Solstice Square, Höllvania",
         "category": "missions",
-        "route": "/prime/missions/AssassinateH09TankHLlvania",
-        "routeId": "AssassinateH09TankHLlvania",
-        "id": "Assassinate: H-09 Tank, HöLlvania"
+        "route": "/prime/missions/SolsticeSquareHllvania",
+        "routeId": "SolsticeSquareHllvania",
+        "id": "Solstice Square, Höllvania"
     },
-    "/prime/missions/SolsticeSquareHLlvania": {
-        "title": "Solstice Square, HöLlvania",
+    "/prime/missions/AntivirusBountyEventHllvania": {
+        "title": "Antivirus Bounty, Event: Höllvania",
         "category": "missions",
-        "route": "/prime/missions/SolsticeSquareHLlvania",
-        "routeId": "SolsticeSquareHLlvania",
-        "id": "Solstice Square, HöLlvania"
+        "route": "/prime/missions/AntivirusBountyEventHllvania",
+        "routeId": "AntivirusBountyEventHllvania",
+        "id": "Antivirus Bounty, Event: Höllvania"
     },
     "/prime/missions/EndlessTier1Duviri": {
         "title": "Endless: Tier 1, Duviri",
