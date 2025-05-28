@@ -3309,7 +3309,7 @@
                 "rarity": "rare",
                 "perc": "2.00%"
             },
-            "Kompressa Prime Reciever": {
+            "Kompressa Prime Receiver": {
                 "rarity": "uncommon",
                 "perc": "11.00%"
             },
@@ -16357,6 +16357,39 @@
                 "perc": "25.33%"
             },
             "Burston Prime Stock": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
+    "Meso T8": {
+        "name": "Meso T8",
+        "category": "relics",
+        "id": "Meso T8",
+        "tier": "Meso",
+        "rewards": {
+            "Trumna Prime Barrel": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Protea Prime Neuroptics Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Akarius Prime Link": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Burston Prime Stock": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Xaku Prime Neuroptics Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Lex Prime Receiver": {
                 "rarity": "common",
                 "perc": "25.33%"
             }

@@ -2995,12 +2995,12 @@ export const pathObjs = {
         "routeId": "NautilusPrimeCerebrum",
         "id": "Nautilus Prime Cerebrum"
     },
-    "/prime/components/KompressaPrimeReciever": {
-        "title": "Kompressa Prime Reciever",
+    "/prime/components/KompressaPrimeReceiver": {
+        "title": "Kompressa Prime Receiver",
         "category": "components",
-        "route": "/prime/components/KompressaPrimeReciever",
-        "routeId": "KompressaPrimeReciever",
-        "id": "Kompressa Prime Reciever"
+        "route": "/prime/components/KompressaPrimeReceiver",
+        "routeId": "KompressaPrimeReceiver",
+        "id": "Kompressa Prime Receiver"
     },
     "/prime/components/ProteaPrimeBlueprint": {
         "title": "Protea Prime Blueprint",
@@ -8398,6 +8398,13 @@ export const pathObjs = {
         "route": "/prime/relics/MesoT7",
         "routeId": "MesoT7",
         "id": "Meso T7"
+    },
+    "/prime/relics/MesoT8": {
+        "title": "Meso T8",
+        "category": "relics",
+        "route": "/prime/relics/MesoT8",
+        "routeId": "MesoT8",
+        "id": "Meso T8"
     },
     "/prime/relics/MesoV1": {
         "title": "Meso V1",

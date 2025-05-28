@@ -468,7 +468,7 @@
         },
         "category": "items",
         "id": "Wisp Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Warframe"
     },
     "Acceltra Prime": {
@@ -1634,7 +1634,7 @@
     "Kompressa Prime": {
         "name": "Kompressa Prime",
         "components": {
-            "Kompressa Prime Reciever": true,
+            "Kompressa Prime Receiver": true,
             "Kompressa Prime Barrel": true,
             "Kompressa Prime Blueprint": true
         },
