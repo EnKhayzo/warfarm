@@ -541,7 +541,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 15
     },
     "Braton Prime Barrel": {
@@ -3637,13 +3637,13 @@
         "vaulted": false,
         "ducats": 100
     },
-    "Kompressa Prime Reciever": {
-        "name": "Reciever",
-        "fullName": "Kompressa Prime Reciever",
+    "Kompressa Prime Receiver": {
+        "name": "Receiver",
+        "fullName": "Kompressa Prime Receiver",
         "parentItem": "Kompressa Prime",
         "anomalous": false,
         "category": "components",
-        "id": "Kompressa Prime Reciever",
+        "id": "Kompressa Prime Receiver",
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Secondary Weapon",
