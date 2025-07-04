@@ -491,7 +491,7 @@ function PrimeResurgenceComponent(){
             }
           </div>
         </div>
-        <div className='sized-content h-flex' style={{ gap:'10px' }}>
+        <div className='sized-content h-flex flex-center' style={{ gap:'10px', flexWrap: 'wrap' }}>
           {
             Object.entries(com.getAllItems())
               .filter(([ itemId, item ]) => com.isItemResurgence(itemId))
