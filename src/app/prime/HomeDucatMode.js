@@ -344,7 +344,7 @@ function BaroComponent(){
   return (
     worldState == null || timeUntilBaro == null ? null:
       <div className='sized-remaining v-flex flex-center' style={{ gap: '50px', marginBottom: '40px', textWrap: 'wrap', flexWrap: 'wrap', padding: '10px' }}>
-        <div className='sized-content h-flex flex-center' style={{ whiteSpace: 'pre', fontSize: 'x-large', textWrap: 'wrap', flexWrap: 'wrap' }}>Baro Ki&apos;Teer { timeSinceStartBaro < 0 ? <>will arrive{ baroLocation != null ? <> at <span style={{ fontWeight: 'bold' }}>{baroLocation}</span></> : `` }</> : <>has arrived{ baroLocation != null ? <> at <span style={{ fontWeight: 'bold' }}>{baroLocation}</span></> : `` } and will go away</>} in <span className='sized-content h-flex flex-center' style={{ fontWeight: 'bold' }}>{com.getTimestampAsDurationString(timeUntilBaro)}</span></div>
+        <div className='sized-content h-flex flex-center' style={{ whiteSpace: 'pre', fontSize: 'x-large', textWrap: 'wrap', flexWrap: 'wrap' }}>Baro Ki&apos;Teer { timeSinceStartBaro < 0 ? <>will arrive{ baroLocation != null ? <> at <span style={{ fontWeight: 'bold' }}>{baroLocation}</span></> : `` }</> : <>has arrived{ baroLocation != null ? <> at <span style={{ fontWeight: 'bold' }}>{baroLocation}</span></> : `` } and will go away</>} in <span className='sized-content h-flex flex-center' style={{ fontWeight: 'bold' }}>{com.getTimestampAsDurationString(timeSinceStartBaro < 0 ? -timeSinceStartBaro : timeUntilBaro)}</span></div>
       </div>
   );
 }
