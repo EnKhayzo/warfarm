@@ -1,9 +1,8 @@
 { 
-   "Lith G11": true,
-   "Lith T11": true,
-   "Meso A6": true,
-   "Meso C10": true,
-   "Neo P5": true,
-   "Axi C8": true,
-   "Axi V11": true
+   "Lith N13": true,
+   "Lith S13": true,
+   "Meso W2": true,
+   "Neo Z9": true,
+   "Neo E3": true,
+   "Axi T9": true
 }
