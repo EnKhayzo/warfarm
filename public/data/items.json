@@ -855,8 +855,8 @@
         "components": {
             "Gauss Prime Blueprint": true,
             "Gauss Prime Neuroptics Blueprint": true,
-            "Gauss Prime Systems Blueprint": true,
-            "Gauss Prime Chassis Blueprint": true
+            "Gauss Prime Chassis Blueprint": true,
+            "Gauss Prime Systems Blueprint": true
         },
         "category": "items",
         "id": "Gauss Prime",
@@ -899,6 +899,46 @@
         "id": "Vectis Prime",
         "vaulted": true,
         "type": "Primary Weapon"
+    },
+    "Caliban Prime": {
+        "name": "Caliban Prime",
+        "components": {
+            "Caliban Prime Systems Blueprint": true,
+            "Caliban Prime Neuroptics Blueprint": true,
+            "Caliban Prime Chassis Blueprint": true,
+            "Caliban Prime Blueprint": true
+        },
+        "category": "items",
+        "id": "Caliban Prime",
+        "vaulted": false,
+        "type": "Warframe"
+    },
+    "Daikyu Prime": {
+        "name": "Daikyu Prime",
+        "components": {
+            "Daikyu Prime Lower Limb": true,
+            "Daikyu Prime String": true,
+            "Daikyu Prime Blueprint": true,
+            "Daikyu Prime Upper Limb": true,
+            "Daikyu Prime Grip": true
+        },
+        "category": "items",
+        "id": "Daikyu Prime",
+        "vaulted": false,
+        "type": "Primary Weapon"
+    },
+    "Lavos Prime": {
+        "name": "Lavos Prime",
+        "components": {
+            "Lavos Prime Chassis Blueprint": true,
+            "Lavos Prime Blueprint": true,
+            "Lavos Prime Systems Blueprint": true,
+            "Lavos Prime Neuroptics Blueprint": true
+        },
+        "category": "items",
+        "id": "Lavos Prime",
+        "vaulted": false,
+        "type": "Warframe"
     },
     "Silva & Aegis Prime": {
         "name": "Silva & Aegis Prime",
@@ -1144,8 +1184,8 @@
         "name": "Akarius Prime",
         "components": {
             "Akarius Prime Barrel": true,
-            "Akarius Prime Receiver": true,
             "Akarius Prime Link": true,
+            "Akarius Prime Receiver": true,
             "Akarius Prime Blueprint": true
         },
         "category": "items",
@@ -1237,21 +1277,8 @@
         },
         "category": "items",
         "id": "Masseter Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Melee Weapon"
-    },
-    "Lavos Prime": {
-        "name": "Lavos Prime",
-        "components": {
-            "Lavos Prime Blueprint": true,
-            "Lavos Prime Systems Blueprint": true,
-            "Lavos Prime Neuroptics Blueprint": true,
-            "Lavos Prime Chassis Blueprint": true
-        },
-        "category": "items",
-        "id": "Lavos Prime",
-        "vaulted": false,
-        "type": "Warframe"
     },
     "Galatine Prime": {
         "name": "Galatine Prime",
@@ -1314,7 +1341,7 @@
         },
         "category": "items",
         "id": "Grendel Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Warframe"
     },
     "Khora Prime": {
@@ -1339,7 +1366,7 @@
         },
         "category": "items",
         "id": "Zylok Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Secondary Weapon"
     },
     "Quassus Prime": {
@@ -1635,8 +1662,8 @@
         "name": "Kompressa Prime",
         "components": {
             "Kompressa Prime Receiver": true,
-            "Kompressa Prime Barrel": true,
-            "Kompressa Prime Blueprint": true
+            "Kompressa Prime Blueprint": true,
+            "Kompressa Prime Barrel": true
         },
         "category": "items",
         "id": "Kompressa Prime",
@@ -1667,6 +1694,19 @@
         "id": "Venka Prime",
         "vaulted": false,
         "type": "Melee Weapon"
+    },
+    "Yareli Prime": {
+        "name": "Yareli Prime",
+        "components": {
+            "Yareli Prime Neuroptics Blueprint": true,
+            "Yareli Prime Systems Blueprint": true,
+            "Yareli Prime Chassis Blueprint": true,
+            "Yareli Prime Blueprint": true
+        },
+        "category": "items",
+        "id": "Yareli Prime",
+        "vaulted": false,
+        "type": "Warframe"
     },
     "Dual Zoren Prime": {
         "name": "Dual Zoren Prime",
@@ -1767,6 +1807,19 @@
         "vaulted": true,
         "type": "Melee Weapon"
     },
+    "Vadarya Prime": {
+        "name": "Vadarya Prime",
+        "components": {
+            "Vadarya Prime Receiver": true,
+            "Vadarya Prime Stock": true,
+            "Vadarya Prime Blueprint": true,
+            "Vadarya Prime Barrel": true
+        },
+        "category": "items",
+        "id": "Vadarya Prime",
+        "vaulted": false,
+        "type": "Primary Weapon"
+    },
     "Nyx Prime": {
         "name": "Nyx Prime",
         "components": {
@@ -1844,31 +1897,16 @@
         "vaulted": false,
         "type": "Warframe"
     },
-    "Daikyu Prime": {
-        "name": "Daikyu Prime",
+    "Venato Prime": {
+        "name": "Venato Prime",
         "components": {
-            "Daikyu Prime String": true,
-            "Daikyu Prime Lower Limb": true,
-            "Daikyu Prime Blueprint": true,
-            "Daikyu Prime Upper Limb": true,
-            "Daikyu Prime Grip": true
+            "Venato Prime Blade": true,
+            "Venato Prime Blueprint": true,
+            "Venato Prime Handle": true
         },
         "category": "items",
-        "id": "Daikyu Prime",
+        "id": "Venato Prime",
         "vaulted": false,
-        "type": "Primary Weapon"
-    },
-    "Yareli Prime": {
-        "name": "Yareli Prime",
-        "components": {
-            "Yareli Prime Systems Blueprint": true,
-            "Yareli Prime Neuroptics Blueprint": true,
-            "Yareli Prime Chassis Blueprint": true,
-            "Yareli Prime Blueprint": true
-        },
-        "category": "items",
-        "id": "Yareli Prime",
-        "vaulted": false,
-        "type": "Warframe"
+        "type": "Melee Weapon"
     }
 }
