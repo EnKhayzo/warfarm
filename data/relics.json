@@ -3827,39 +3827,6 @@
         },
         "vaulted": true
     },
-    "Axi Y2": {
-        "name": "Axi Y2",
-        "category": "relics",
-        "id": "Axi Y2",
-        "tier": "Axi",
-        "rewards": {
-            "Yareli Prime Neuroptics Blueprint": {
-                "rarity": "rare",
-                "perc": "2.00%"
-            },
-            "Akarius Prime Link": {
-                "rarity": "uncommon",
-                "perc": "11.00%"
-            },
-            "Epitaph Prime Barrel": {
-                "rarity": "uncommon",
-                "perc": "11.00%"
-            },
-            "Orthos Prime Handle": {
-                "rarity": "common",
-                "perc": "25.33%"
-            },
-            "Kompressa Prime Blueprint": {
-                "rarity": "common",
-                "perc": "25.33%"
-            },
-            "Fang Prime Blueprint": {
-                "rarity": "common",
-                "perc": "25.33%"
-            }
-        },
-        "vaulted": false
-    },
     "Axi P1": {
         "name": "Axi P1",
         "category": "relics",
@@ -5834,6 +5801,39 @@
                 "perc": "25.33%"
             },
             "Sevagoth Prime Neuroptics Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": false
+    },
+    "Axi Y2": {
+        "name": "Axi Y2",
+        "category": "relics",
+        "id": "Axi Y2",
+        "tier": "Axi",
+        "rewards": {
+            "Yareli Prime Neuroptics Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Akarius Prime Link": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Epitaph Prime Barrel": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Orthos Prime Handle": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Kompressa Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Fang Prime Blueprint": {
                 "rarity": "common",
                 "perc": "25.33%"
             }
