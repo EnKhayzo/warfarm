@@ -1695,19 +1695,6 @@
         "vaulted": false,
         "type": "Melee Weapon"
     },
-    "Yareli Prime": {
-        "name": "Yareli Prime",
-        "components": {
-            "Yareli Prime Neuroptics Blueprint": true,
-            "Yareli Prime Systems Blueprint": true,
-            "Yareli Prime Chassis Blueprint": true,
-            "Yareli Prime Blueprint": true
-        },
-        "category": "items",
-        "id": "Yareli Prime",
-        "vaulted": false,
-        "type": "Warframe"
-    },
     "Dual Zoren Prime": {
         "name": "Dual Zoren Prime",
         "components": {
@@ -1908,5 +1895,18 @@
         "id": "Venato Prime",
         "vaulted": false,
         "type": "Melee Weapon"
+    },
+    "Yareli Prime": {
+        "name": "Yareli Prime",
+        "components": {
+            "Yareli Prime Systems Blueprint": true,
+            "Yareli Prime Neuroptics Blueprint": true,
+            "Yareli Prime Chassis Blueprint": true,
+            "Yareli Prime Blueprint": true
+        },
+        "category": "items",
+        "id": "Yareli Prime",
+        "vaulted": false,
+        "type": "Warframe"
     }
 }

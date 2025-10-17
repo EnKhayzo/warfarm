@@ -317,13 +317,13 @@ function VoidFissuresComponent(){
 
   const fissureMissionCache = worldState == null ? null:
     Object.fromEntries(
-      worldState.map(
+      worldState?.map?.(
         fissure => {
           const nodeObj = com.getAPINodeObj(fissure.Node)
           const obj = com.getObjectFromId(nodeObj.id);
           return [ nodeObj.nodeId, obj ];
         }
-      )
+      ) ?? []
     );
 
   
@@ -345,7 +345,7 @@ function VoidFissuresComponent(){
     : null;
 
   return (
-      worldState == null ? null:
+      worldState == null || worldState?.error != null ? null:
       <Collapsible 
         className='sized-content v-flex flex-center void-fissures-collapsible' 
         title={<span style={{ fontWeight: 'bold', fontSize: 'large' }}>Available Void Fissures</span>}
@@ -367,7 +367,7 @@ function VoidFissuresComponent(){
           >
             {
               worldState
-                .toSorted((a,b) => { 
+                ?.toSorted?.((a,b) => { 
                   const missionA = fissureMissionCache[a.Node];
                   const missionB = fissureMissionCache[b.Node];
 

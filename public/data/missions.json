@@ -22608,13 +22608,121 @@
             ]
         }
     },
-    "Legacyte Harvest, Höllvania": {
+    "The Circuit, Duviri": {
+        "name": "The Circuit",
+        "planet": "Duviri",
+        "fullName": "The Circuit, Duviri",
+        "type": "Free Roam",
+        "category": "missions",
+        "id": "The Circuit, Duviri",
+        "rewards": {
+            "Lith C13 Relic": [
+                {
+                    "name": "Lith C13 Relic",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "7.69%"
+                },
+                {
+                    "name": "Lith C13 Relic",
+                    "rotation": "C",
+                    "rarity": "uncommon",
+                    "perc": "11.06%"
+                }
+            ],
+            "Lith E2 Relic": [
+                {
+                    "name": "Lith E2 Relic",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "7.69%"
+                },
+                {
+                    "name": "Lith E2 Relic",
+                    "rotation": "C",
+                    "rarity": "uncommon",
+                    "perc": "11.06%"
+                }
+            ],
+            "Lith K12 Relic": [
+                {
+                    "name": "Lith K12 Relic",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "7.69%"
+                },
+                {
+                    "name": "Lith K12 Relic",
+                    "rotation": "C",
+                    "rarity": "uncommon",
+                    "perc": "11.06%"
+                }
+            ],
+            "Lith A10 Relic": [
+                {
+                    "name": "Lith A10 Relic",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "7.69%"
+                },
+                {
+                    "name": "Lith A10 Relic",
+                    "rotation": "C",
+                    "rarity": "uncommon",
+                    "perc": "11.06%"
+                }
+            ],
+            "Lith O4 Relic": [
+                {
+                    "name": "Lith O4 Relic",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "7.69%"
+                },
+                {
+                    "name": "Lith O4 Relic",
+                    "rotation": "C",
+                    "rarity": "uncommon",
+                    "perc": "11.06%"
+                }
+            ],
+            "Lith N17 Relic": [
+                {
+                    "name": "Lith N17 Relic",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "7.69%"
+                },
+                {
+                    "name": "Lith N17 Relic",
+                    "rotation": "C",
+                    "rarity": "uncommon",
+                    "perc": "11.06%"
+                }
+            ],
+            "Lith Q2 Relic": [
+                {
+                    "name": "Lith Q2 Relic",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "7.69%"
+                },
+                {
+                    "name": "Lith Q2 Relic",
+                    "rotation": "C",
+                    "rarity": "uncommon",
+                    "perc": "11.06%"
+                }
+            ]
+        }
+    },
+    "Legacyte Harvest, HöLlvania": {
         "name": "Legacyte Harvest",
-        "planet": "Höllvania",
-        "fullName": "Legacyte Harvest, Höllvania",
+        "planet": "HöLlvania",
+        "fullName": "Legacyte Harvest, HöLlvania",
         "type": "Legacyte Harvest",
         "category": "missions",
-        "id": "Legacyte Harvest, Höllvania",
+        "id": "Legacyte Harvest, HöLlvania",
         "rewards": {
             "Meso A8 Relic": [
                 {
@@ -22756,13 +22864,13 @@
             ]
         }
     },
-    "Hell-Scrub: Scaldra, Höllvania": {
+    "Hell-Scrub: Scaldra, HöLlvania": {
         "name": "Hell-Scrub: Scaldra",
-        "planet": "Höllvania",
-        "fullName": "Hell-Scrub: Scaldra, Höllvania",
+        "planet": "HöLlvania",
+        "fullName": "Hell-Scrub: Scaldra, HöLlvania",
         "type": "Survival",
         "category": "missions",
-        "id": "Hell-Scrub: Scaldra, Höllvania",
+        "id": "Hell-Scrub: Scaldra, HöLlvania",
         "rewards": {
             "Meso A8 Relic": [
                 {
@@ -22904,13 +23012,13 @@
             ]
         }
     },
-    "Hell-Scrub: Techrot, Höllvania": {
+    "Hell-Scrub: Techrot, HöLlvania": {
         "name": "Hell-Scrub: Techrot",
-        "planet": "Höllvania",
-        "fullName": "Hell-Scrub: Techrot, Höllvania",
+        "planet": "HöLlvania",
+        "fullName": "Hell-Scrub: Techrot, HöLlvania",
         "type": "Survival",
         "category": "missions",
-        "id": "Hell-Scrub: Techrot, Höllvania",
+        "id": "Hell-Scrub: Techrot, HöLlvania",
         "rewards": {
             "Meso A8 Relic": [
                 {
@@ -23052,31 +23160,31 @@
             ]
         }
     },
-    "Exterminate: Scaldra, Höllvania": {
+    "Exterminate: Scaldra, HöLlvania": {
         "name": "Exterminate: Scaldra",
-        "planet": "Höllvania",
-        "fullName": "Exterminate: Scaldra, Höllvania",
+        "planet": "HöLlvania",
+        "fullName": "Exterminate: Scaldra, HöLlvania",
         "type": "Caches",
         "category": "missions",
-        "id": "Exterminate: Scaldra, Höllvania",
+        "id": "Exterminate: Scaldra, HöLlvania",
         "rewards": {}
     },
-    "Exterminate: Techrot, Höllvania": {
+    "Exterminate: Techrot, HöLlvania": {
         "name": "Exterminate: Techrot",
-        "planet": "Höllvania",
-        "fullName": "Exterminate: Techrot, Höllvania",
+        "planet": "HöLlvania",
+        "fullName": "Exterminate: Techrot, HöLlvania",
         "type": "Caches",
         "category": "missions",
-        "id": "Exterminate: Techrot, Höllvania",
+        "id": "Exterminate: Techrot, HöLlvania",
         "rewards": {}
     },
-    "Assassinate: H-09 Tank, Höllvania": {
+    "Assassinate: H-09 Tank, HöLlvania": {
         "name": "Assassinate: H-09 Tank",
-        "planet": "Höllvania",
-        "fullName": "Assassinate: H-09 Tank, Höllvania",
+        "planet": "HöLlvania",
+        "fullName": "Assassinate: H-09 Tank, HöLlvania",
         "type": "Assassination",
         "category": "missions",
-        "id": "Assassinate: H-09 Tank, Höllvania",
+        "id": "Assassinate: H-09 Tank, HöLlvania",
         "rewards": {
             "Meso A8 Relic": [
                 {
@@ -23144,13 +23252,13 @@
             ]
         }
     },
-    "Solstice Square, Höllvania": {
+    "Solstice Square, HöLlvania": {
         "name": "Solstice Square",
-        "planet": "Höllvania",
-        "fullName": "Solstice Square, Höllvania",
+        "planet": "HöLlvania",
+        "fullName": "Solstice Square, HöLlvania",
         "type": "Defense",
         "category": "missions",
-        "id": "Solstice Square, Höllvania",
+        "id": "Solstice Square, HöLlvania",
         "rewards": {
             "Meso A8 Relic": [
                 {
@@ -23322,13 +23430,13 @@
             ]
         }
     },
-    "Antivirus Bounty, Event: Höllvania": {
+    "Antivirus Bounty, Event: HöLlvania": {
         "name": "Antivirus Bounty",
-        "planet": "Event: Höllvania",
-        "fullName": "Antivirus Bounty, Event: Höllvania",
+        "planet": "Event: HöLlvania",
+        "fullName": "Antivirus Bounty, Event: HöLlvania",
         "type": "Caches",
         "category": "missions",
-        "id": "Antivirus Bounty, Event: Höllvania",
+        "id": "Antivirus Bounty, Event: HöLlvania",
         "rewards": {}
     },
     "Endless: Tier 1, Duviri": {
@@ -27060,15 +27168,6 @@
         "type": "Free Roam",
         "category": "missions",
         "id": "The Lone Story, Duviri",
-        "rewards": {}
-    },
-    "The Circuit, Duviri": {
-        "name": "The Circuit",
-        "planet": "Duviri",
-        "fullName": "The Circuit, Duviri",
-        "type": "Free Roam",
-        "category": "missions",
-        "id": "The Circuit, Duviri",
         "rewards": {}
     }
 }

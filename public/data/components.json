@@ -3975,58 +3975,6 @@
         "vaulted": false,
         "ducats": 45
     },
-    "Yareli Prime Neuroptics Blueprint": {
-        "name": "Neuroptics",
-        "fullName": "Yareli Prime Neuroptics",
-        "parentItem": "Yareli Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Yareli Prime Neuroptics Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Warframe",
-        "vaulted": false,
-        "ducats": 100
-    },
-    "Akarius Prime Link": {
-        "name": "Link",
-        "fullName": "Akarius Prime Link",
-        "parentItem": "Akarius Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Akarius Prime Link",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Secondary Weapon",
-        "vaulted": false,
-        "ducats": 45
-    },
-    "Epitaph Prime Barrel": {
-        "name": "Barrel",
-        "fullName": "Epitaph Prime Barrel",
-        "parentItem": "Epitaph Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Epitaph Prime Barrel",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Secondary Weapon",
-        "vaulted": false,
-        "ducats": 45
-    },
-    "Kompressa Prime Blueprint": {
-        "name": "Blueprint",
-        "fullName": "Kompressa Prime Blueprint",
-        "parentItem": "Kompressa Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Kompressa Prime Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Secondary Weapon",
-        "vaulted": false,
-        "ducats": 15
-    },
     "Pyrana Prime Blueprint": {
         "name": "Blueprint",
         "fullName": "Pyrana Prime Blueprint",
@@ -4143,6 +4091,19 @@
         "type": "Warframe",
         "vaulted": true,
         "ducats": 15
+    },
+    "Epitaph Prime Barrel": {
+        "name": "Barrel",
+        "fullName": "Epitaph Prime Barrel",
+        "parentItem": "Epitaph Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Epitaph Prime Barrel",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Secondary Weapon",
+        "vaulted": false,
+        "ducats": 45
     },
     "Dual Zoren Prime Handle": {
         "name": "Handle",
@@ -5236,6 +5197,45 @@
         "vaulted": false,
         "ducats": 100
     },
+    "Yareli Prime Neuroptics Blueprint": {
+        "name": "Neuroptics",
+        "fullName": "Yareli Prime Neuroptics",
+        "parentItem": "Yareli Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Yareli Prime Neuroptics Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": false,
+        "ducats": 100
+    },
+    "Akarius Prime Link": {
+        "name": "Link",
+        "fullName": "Akarius Prime Link",
+        "parentItem": "Akarius Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Akarius Prime Link",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Secondary Weapon",
+        "vaulted": false,
+        "ducats": 45
+    },
+    "Kompressa Prime Blueprint": {
+        "name": "Blueprint",
+        "fullName": "Kompressa Prime Blueprint",
+        "parentItem": "Kompressa Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Kompressa Prime Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Secondary Weapon",
+        "vaulted": false,
+        "ducats": 15
+    },
     "Zakti Prime Blueprint": {
         "name": "Blueprint",
         "fullName": "Zakti Prime Blueprint",
@@ -5883,8 +5883,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Melee Weapon",
-        "vaulted": false,
-        "ducats": 45
+        "vaulted": false
     },
     "Daikyu Prime Blueprint": {
         "name": "Blueprint",
@@ -7053,8 +7052,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Primary Weapon",
-        "vaulted": false,
-        "ducats": 100
+        "vaulted": false
     },
     "Yareli Prime Blueprint": {
         "name": "Blueprint",

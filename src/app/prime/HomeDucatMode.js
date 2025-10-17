@@ -287,10 +287,12 @@ function BaroComponent(){
 
         if(setTimer) setTimeout(timerFunc, 1000);
 
+        console.warn(`DATA!`, data);
+
         if(data == null) setTimeout(() => fetchData(false), 5*60*1000); // 5 minutes
         
         let targetDate = Date.now()+1*24*60*60*1000; // 1 day
-        const lowestDate = data.reduce((acc, trader) => {
+        const lowestDate = data?.reduce?.((acc, trader) => {
           const traderExpiryDate = com.accessDateAPI(trader.Expiry);
           if(traderExpiryDate < acc) acc = traderExpiryDate;
 
@@ -328,7 +330,7 @@ function BaroComponent(){
   let timeUntilBaro = null;
   let baroLocation = null;
   if(worldState != null) {
-    const baroState = worldState.find(trader => trader.Character === "Baro'Ki Teel");
+    const baroState = worldState?.find?.(trader => trader.Character === "Baro'Ki Teel");
     if(baroState != null){
       const activationDate = com.accessDateAPI(baroState.Activation);
       if(activationDate != null) timeSinceStartBaro = Date.now() - activationDate;

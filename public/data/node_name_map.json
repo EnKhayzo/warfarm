@@ -155,6 +155,12 @@
         "name": "Montes",
         "systemName": "Venus"
     },
+    "NokkoColony": {
+        "id": "Deepmines, Venus",
+        "nodeId": "NokkoColony",
+        "name": "Deepmines",
+        "systemName": "Venus"
+    },
     "SolNode63": {
         "id": "Mantle, Earth",
         "nodeId": "SolNode63",
