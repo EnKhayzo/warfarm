@@ -344,6 +344,8 @@ function VoidFissuresComponent(){
       "Requiem"
     : null;
 
+  //TODO check for status not for null or absence of properties
+  
   return (
       worldState == null || worldState?.error != null ? null:
       <Collapsible 
