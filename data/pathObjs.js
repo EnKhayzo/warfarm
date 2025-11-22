@@ -11864,61 +11864,61 @@ export const pathObjs = {
         "routeId": "TheCircuitDuviri",
         "id": "The Circuit, Duviri"
     },
-    "/prime/missions/LegacyteHarvestHLlvania": {
-        "title": "Legacyte Harvest, HöLlvania",
+    "/prime/missions/LegacyteHarvestHllvania": {
+        "title": "Legacyte Harvest, Höllvania",
         "category": "missions",
-        "route": "/prime/missions/LegacyteHarvestHLlvania",
-        "routeId": "LegacyteHarvestHLlvania",
-        "id": "Legacyte Harvest, HöLlvania"
+        "route": "/prime/missions/LegacyteHarvestHllvania",
+        "routeId": "LegacyteHarvestHllvania",
+        "id": "Legacyte Harvest, Höllvania"
     },
-    "/prime/missions/HellScrubScaldraHLlvania": {
-        "title": "Hell-Scrub: Scaldra, HöLlvania",
+    "/prime/missions/HellScrubScaldraHllvania": {
+        "title": "Hell-Scrub: Scaldra, Höllvania",
         "category": "missions",
-        "route": "/prime/missions/HellScrubScaldraHLlvania",
-        "routeId": "HellScrubScaldraHLlvania",
-        "id": "Hell-Scrub: Scaldra, HöLlvania"
+        "route": "/prime/missions/HellScrubScaldraHllvania",
+        "routeId": "HellScrubScaldraHllvania",
+        "id": "Hell-Scrub: Scaldra, Höllvania"
     },
-    "/prime/missions/HellScrubTechrotHLlvania": {
-        "title": "Hell-Scrub: Techrot, HöLlvania",
+    "/prime/missions/HellScrubTechrotHllvania": {
+        "title": "Hell-Scrub: Techrot, Höllvania",
         "category": "missions",
-        "route": "/prime/missions/HellScrubTechrotHLlvania",
-        "routeId": "HellScrubTechrotHLlvania",
-        "id": "Hell-Scrub: Techrot, HöLlvania"
+        "route": "/prime/missions/HellScrubTechrotHllvania",
+        "routeId": "HellScrubTechrotHllvania",
+        "id": "Hell-Scrub: Techrot, Höllvania"
     },
-    "/prime/missions/ExterminateScaldraHLlvania": {
-        "title": "Exterminate: Scaldra, HöLlvania",
+    "/prime/missions/ExterminateScaldraHllvania": {
+        "title": "Exterminate: Scaldra, Höllvania",
         "category": "missions",
-        "route": "/prime/missions/ExterminateScaldraHLlvania",
-        "routeId": "ExterminateScaldraHLlvania",
-        "id": "Exterminate: Scaldra, HöLlvania"
+        "route": "/prime/missions/ExterminateScaldraHllvania",
+        "routeId": "ExterminateScaldraHllvania",
+        "id": "Exterminate: Scaldra, Höllvania"
     },
-    "/prime/missions/ExterminateTechrotHLlvania": {
-        "title": "Exterminate: Techrot, HöLlvania",
+    "/prime/missions/ExterminateTechrotHllvania": {
+        "title": "Exterminate: Techrot, Höllvania",
         "category": "missions",
-        "route": "/prime/missions/ExterminateTechrotHLlvania",
-        "routeId": "ExterminateTechrotHLlvania",
-        "id": "Exterminate: Techrot, HöLlvania"
+        "route": "/prime/missions/ExterminateTechrotHllvania",
+        "routeId": "ExterminateTechrotHllvania",
+        "id": "Exterminate: Techrot, Höllvania"
     },
-    "/prime/missions/AssassinateH09TankHLlvania": {
-        "title": "Assassinate: H-09 Tank, HöLlvania",
+    "/prime/missions/AssassinateH09TankHllvania": {
+        "title": "Assassinate: H-09 Tank, Höllvania",
         "category": "missions",
-        "route": "/prime/missions/AssassinateH09TankHLlvania",
-        "routeId": "AssassinateH09TankHLlvania",
-        "id": "Assassinate: H-09 Tank, HöLlvania"
+        "route": "/prime/missions/AssassinateH09TankHllvania",
+        "routeId": "AssassinateH09TankHllvania",
+        "id": "Assassinate: H-09 Tank, Höllvania"
     },
-    "/prime/missions/SolsticeSquareHLlvania": {
-        "title": "Solstice Square, HöLlvania",
+    "/prime/missions/SolsticeSquareHllvania": {
+        "title": "Solstice Square, Höllvania",
         "category": "missions",
-        "route": "/prime/missions/SolsticeSquareHLlvania",
-        "routeId": "SolsticeSquareHLlvania",
-        "id": "Solstice Square, HöLlvania"
+        "route": "/prime/missions/SolsticeSquareHllvania",
+        "routeId": "SolsticeSquareHllvania",
+        "id": "Solstice Square, Höllvania"
     },
-    "/prime/missions/AntivirusBountyEventHLlvania": {
-        "title": "Antivirus Bounty, Event: HöLlvania",
+    "/prime/missions/AntivirusBountyEventHllvania": {
+        "title": "Antivirus Bounty, Event: Höllvania",
         "category": "missions",
-        "route": "/prime/missions/AntivirusBountyEventHLlvania",
-        "routeId": "AntivirusBountyEventHLlvania",
-        "id": "Antivirus Bounty, Event: HöLlvania"
+        "route": "/prime/missions/AntivirusBountyEventHllvania",
+        "routeId": "AntivirusBountyEventHllvania",
+        "id": "Antivirus Bounty, Event: Höllvania"
     },
     "/prime/missions/EndlessTier1Duviri": {
         "title": "Endless: Tier 1, Duviri",

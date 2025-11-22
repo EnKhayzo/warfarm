@@ -22716,13 +22716,13 @@
             ]
         }
     },
-    "Legacyte Harvest, HöLlvania": {
+    "Legacyte Harvest, Höllvania": {
         "name": "Legacyte Harvest",
-        "planet": "HöLlvania",
-        "fullName": "Legacyte Harvest, HöLlvania",
+        "planet": "Höllvania",
+        "fullName": "Legacyte Harvest, Höllvania",
         "type": "Legacyte Harvest",
         "category": "missions",
-        "id": "Legacyte Harvest, HöLlvania",
+        "id": "Legacyte Harvest, Höllvania",
         "rewards": {
             "Meso A8 Relic": [
                 {
@@ -22864,13 +22864,13 @@
             ]
         }
     },
-    "Hell-Scrub: Scaldra, HöLlvania": {
+    "Hell-Scrub: Scaldra, Höllvania": {
         "name": "Hell-Scrub: Scaldra",
-        "planet": "HöLlvania",
-        "fullName": "Hell-Scrub: Scaldra, HöLlvania",
+        "planet": "Höllvania",
+        "fullName": "Hell-Scrub: Scaldra, Höllvania",
         "type": "Survival",
         "category": "missions",
-        "id": "Hell-Scrub: Scaldra, HöLlvania",
+        "id": "Hell-Scrub: Scaldra, Höllvania",
         "rewards": {
             "Meso A8 Relic": [
                 {
@@ -23012,13 +23012,13 @@
             ]
         }
     },
-    "Hell-Scrub: Techrot, HöLlvania": {
+    "Hell-Scrub: Techrot, Höllvania": {
         "name": "Hell-Scrub: Techrot",
-        "planet": "HöLlvania",
-        "fullName": "Hell-Scrub: Techrot, HöLlvania",
+        "planet": "Höllvania",
+        "fullName": "Hell-Scrub: Techrot, Höllvania",
         "type": "Survival",
         "category": "missions",
-        "id": "Hell-Scrub: Techrot, HöLlvania",
+        "id": "Hell-Scrub: Techrot, Höllvania",
         "rewards": {
             "Meso A8 Relic": [
                 {
@@ -23160,31 +23160,31 @@
             ]
         }
     },
-    "Exterminate: Scaldra, HöLlvania": {
+    "Exterminate: Scaldra, Höllvania": {
         "name": "Exterminate: Scaldra",
-        "planet": "HöLlvania",
-        "fullName": "Exterminate: Scaldra, HöLlvania",
+        "planet": "Höllvania",
+        "fullName": "Exterminate: Scaldra, Höllvania",
         "type": "Caches",
         "category": "missions",
-        "id": "Exterminate: Scaldra, HöLlvania",
+        "id": "Exterminate: Scaldra, Höllvania",
         "rewards": {}
     },
-    "Exterminate: Techrot, HöLlvania": {
+    "Exterminate: Techrot, Höllvania": {
         "name": "Exterminate: Techrot",
-        "planet": "HöLlvania",
-        "fullName": "Exterminate: Techrot, HöLlvania",
+        "planet": "Höllvania",
+        "fullName": "Exterminate: Techrot, Höllvania",
         "type": "Caches",
         "category": "missions",
-        "id": "Exterminate: Techrot, HöLlvania",
+        "id": "Exterminate: Techrot, Höllvania",
         "rewards": {}
     },
-    "Assassinate: H-09 Tank, HöLlvania": {
+    "Assassinate: H-09 Tank, Höllvania": {
         "name": "Assassinate: H-09 Tank",
-        "planet": "HöLlvania",
-        "fullName": "Assassinate: H-09 Tank, HöLlvania",
+        "planet": "Höllvania",
+        "fullName": "Assassinate: H-09 Tank, Höllvania",
         "type": "Assassination",
         "category": "missions",
-        "id": "Assassinate: H-09 Tank, HöLlvania",
+        "id": "Assassinate: H-09 Tank, Höllvania",
         "rewards": {
             "Meso A8 Relic": [
                 {
@@ -23252,13 +23252,13 @@
             ]
         }
     },
-    "Solstice Square, HöLlvania": {
+    "Solstice Square, Höllvania": {
         "name": "Solstice Square",
-        "planet": "HöLlvania",
-        "fullName": "Solstice Square, HöLlvania",
+        "planet": "Höllvania",
+        "fullName": "Solstice Square, Höllvania",
         "type": "Defense",
         "category": "missions",
-        "id": "Solstice Square, HöLlvania",
+        "id": "Solstice Square, Höllvania",
         "rewards": {
             "Meso A8 Relic": [
                 {
@@ -23430,13 +23430,13 @@
             ]
         }
     },
-    "Antivirus Bounty, Event: HöLlvania": {
+    "Antivirus Bounty, Event: Höllvania": {
         "name": "Antivirus Bounty",
-        "planet": "Event: HöLlvania",
-        "fullName": "Antivirus Bounty, Event: HöLlvania",
+        "planet": "Event: Höllvania",
+        "fullName": "Antivirus Bounty, Event: Höllvania",
         "type": "Caches",
         "category": "missions",
-        "id": "Antivirus Bounty, Event: HöLlvania",
+        "id": "Antivirus Bounty, Event: Höllvania",
         "rewards": {}
     },
     "Endless: Tier 1, Duviri": {
