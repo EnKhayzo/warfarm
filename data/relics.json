@@ -23226,5 +23226,203 @@
             }
         },
         "vaulted": true
+    },
+    "Lith F3": {
+        "name": "Lith F3",
+        "category": "relics",
+        "id": "Lith F3",
+        "tier": "Lith",
+        "rewards": {
+            "Fulmin Prime Receiver": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Burston Prime Barrel": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Larkspur Prime Stock": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Fang Prime Handle": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Shade Prime Cerebrum": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
+    "Lith L6": {
+        "name": "Lith L6",
+        "category": "relics",
+        "id": "Lith L6",
+        "tier": "Lith",
+        "rewards": {
+            "Larkspur Prime Barrel": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Wisp Prime Neuroptics Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Shade Prime Systems": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Burston Prime Receiver": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Gunsen Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
+    "Meso G10": {
+        "name": "Meso G10",
+        "category": "relics",
+        "id": "Meso G10",
+        "tier": "Meso",
+        "rewards": {
+            "Gunsen Prime Blade": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Hildryn Prime Chassis Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Larkspur Prime Receiver": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Wisp Prime Systems Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Burston Prime Stock": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
+    "Neo H4": {
+        "name": "Neo H4",
+        "category": "relics",
+        "id": "Neo H4",
+        "tier": "Neo",
+        "rewards": {
+            "Hildryn Prime Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Fulmin Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Wisp Prime Chassis Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Fang Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Larkspur Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
+    "Axi S19": {
+        "name": "Axi S19",
+        "category": "relics",
+        "id": "Axi S19",
+        "tier": "Axi",
+        "rewards": {
+            "Shade Prime Carapace": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Fulmin Prime Stock": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Gunsen Prime Handle": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Hildryn Prime Systems Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Burston Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
+    "Axi W4": {
+        "name": "Axi W4",
+        "category": "relics",
+        "id": "Axi W4",
+        "tier": "Axi",
+        "rewards": {
+            "Wisp Prime Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Hildryn Prime Neuroptics Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Shade Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Fulmin Prime Barrel": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Fang Prime Blade": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
     }
 }
