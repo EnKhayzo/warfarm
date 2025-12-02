@@ -937,13 +937,6 @@
         "routeId": "VenkaPrime",
         "id": "Venka Prime"
     },
-    "/prime/items/YareliPrime": {
-        "title": "Yareli Prime",
-        "category": "items",
-        "route": "/prime/items/YareliPrime",
-        "routeId": "YareliPrime",
-        "id": "Yareli Prime"
-    },
     "/prime/items/DualZorenPrime": {
         "title": "Dual Zoren Prime",
         "category": "items",
@@ -1055,6 +1048,13 @@
         "route": "/prime/items/VenatoPrime",
         "routeId": "VenatoPrime",
         "id": "Venato Prime"
+    },
+    "/prime/items/YareliPrime": {
+        "title": "Yareli Prime",
+        "category": "items",
+        "route": "/prime/items/YareliPrime",
+        "routeId": "YareliPrime",
+        "id": "Yareli Prime"
     },
     "/prime/components/AkstilettoPrimeBarrel": {
         "title": "Akstiletto Prime Barrel",
@@ -1841,7 +1841,7 @@
         "id": "Vectis Prime Barrel"
     },
     "/prime/components/CalibanPrimeSystemsBlueprint": {
-        "title": "Caliban Prime Systems Blueprint",
+        "title": "Caliban Prime Systems",
         "category": "components",
         "route": "/prime/components/CalibanPrimeSystemsBlueprint",
         "routeId": "CalibanPrimeSystemsBlueprint",
@@ -3198,34 +3198,6 @@
         "routeId": "AcceltraPrimeReceiver",
         "id": "Acceltra Prime Receiver"
     },
-    "/prime/components/YareliPrimeNeuropticsBlueprint": {
-        "title": "Yareli Prime Neuroptics",
-        "category": "components",
-        "route": "/prime/components/YareliPrimeNeuropticsBlueprint",
-        "routeId": "YareliPrimeNeuropticsBlueprint",
-        "id": "Yareli Prime Neuroptics Blueprint"
-    },
-    "/prime/components/AkariusPrimeLink": {
-        "title": "Akarius Prime Link",
-        "category": "components",
-        "route": "/prime/components/AkariusPrimeLink",
-        "routeId": "AkariusPrimeLink",
-        "id": "Akarius Prime Link"
-    },
-    "/prime/components/EpitaphPrimeBarrel": {
-        "title": "Epitaph Prime Barrel",
-        "category": "components",
-        "route": "/prime/components/EpitaphPrimeBarrel",
-        "routeId": "EpitaphPrimeBarrel",
-        "id": "Epitaph Prime Barrel"
-    },
-    "/prime/components/KompressaPrimeBlueprint": {
-        "title": "Kompressa Prime Blueprint",
-        "category": "components",
-        "route": "/prime/components/KompressaPrimeBlueprint",
-        "routeId": "KompressaPrimeBlueprint",
-        "id": "Kompressa Prime Blueprint"
-    },
     "/prime/components/PyranaPrimeBlueprint": {
         "title": "Pyrana Prime Blueprint",
         "category": "components",
@@ -3288,6 +3260,13 @@
         "route": "/prime/components/BaruukPrimeSystemsBlueprint",
         "routeId": "BaruukPrimeSystemsBlueprint",
         "id": "Baruuk Prime Systems Blueprint"
+    },
+    "/prime/components/EpitaphPrimeBarrel": {
+        "title": "Epitaph Prime Barrel",
+        "category": "components",
+        "route": "/prime/components/EpitaphPrimeBarrel",
+        "routeId": "EpitaphPrimeBarrel",
+        "id": "Epitaph Prime Barrel"
     },
     "/prime/components/DualZorenPrimeHandle": {
         "title": "Dual Zoren Prime Handle",
@@ -3877,6 +3856,27 @@
         "routeId": "YareliPrimeSystemsBlueprint",
         "id": "Yareli Prime Systems Blueprint"
     },
+    "/prime/components/YareliPrimeNeuropticsBlueprint": {
+        "title": "Yareli Prime Neuroptics",
+        "category": "components",
+        "route": "/prime/components/YareliPrimeNeuropticsBlueprint",
+        "routeId": "YareliPrimeNeuropticsBlueprint",
+        "id": "Yareli Prime Neuroptics Blueprint"
+    },
+    "/prime/components/AkariusPrimeLink": {
+        "title": "Akarius Prime Link",
+        "category": "components",
+        "route": "/prime/components/AkariusPrimeLink",
+        "routeId": "AkariusPrimeLink",
+        "id": "Akarius Prime Link"
+    },
+    "/prime/components/KompressaPrimeBlueprint": {
+        "title": "Kompressa Prime Blueprint",
+        "category": "components",
+        "route": "/prime/components/KompressaPrimeBlueprint",
+        "routeId": "KompressaPrimeBlueprint",
+        "id": "Kompressa Prime Blueprint"
+    },
     "/prime/components/ZaktiPrimeBlueprint": {
         "title": "Zakti Prime Blueprint",
         "category": "components",
@@ -4074,7 +4074,7 @@
         "id": "Grendel Prime Chassis Blueprint"
     },
     "/prime/components/CalibanPrimeNeuropticsBlueprint": {
-        "title": "Caliban Prime Neuroptics Blueprint",
+        "title": "Caliban Prime Neuroptics",
         "category": "components",
         "route": "/prime/components/CalibanPrimeNeuropticsBlueprint",
         "routeId": "CalibanPrimeNeuropticsBlueprint",
@@ -4361,7 +4361,7 @@
         "id": "Kompressa Prime Barrel"
     },
     "/prime/components/CalibanPrimeChassisBlueprint": {
-        "title": "Caliban Prime Chassis Blueprint",
+        "title": "Caliban Prime Chassis",
         "category": "components",
         "route": "/prime/components/CalibanPrimeChassisBlueprint",
         "routeId": "CalibanPrimeChassisBlueprint",
@@ -5837,13 +5837,6 @@
         "routeId": "AxiO6",
         "id": "Axi O6"
     },
-    "/prime/relics/AxiO7": {
-        "title": "Axi O7",
-        "category": "relics",
-        "route": "/prime/relics/AxiO7",
-        "routeId": "AxiO7",
-        "id": "Axi O7"
-    },
     "/prime/relics/AxiP1": {
         "title": "Axi P1",
         "category": "relics",
@@ -6263,6 +6256,13 @@
         "route": "/prime/relics/AxiY1",
         "routeId": "AxiY1",
         "id": "Axi Y1"
+    },
+    "/prime/relics/AxiY2": {
+        "title": "Axi Y2",
+        "category": "relics",
+        "route": "/prime/relics/AxiY2",
+        "routeId": "AxiY2",
+        "id": "Axi Y2"
     },
     "/prime/relics/AxiZ1": {
         "title": "Axi Z1",
@@ -9953,6 +9953,48 @@
         "routeId": "RequiemIV",
         "id": "Requiem IV"
     },
+    "/prime/relics/LithF3": {
+        "title": "Lith F3",
+        "category": "relics",
+        "route": "/prime/relics/LithF3",
+        "routeId": "LithF3",
+        "id": "Lith F3"
+    },
+    "/prime/relics/LithL6": {
+        "title": "Lith L6",
+        "category": "relics",
+        "route": "/prime/relics/LithL6",
+        "routeId": "LithL6",
+        "id": "Lith L6"
+    },
+    "/prime/relics/MesoG10": {
+        "title": "Meso G10",
+        "category": "relics",
+        "route": "/prime/relics/MesoG10",
+        "routeId": "MesoG10",
+        "id": "Meso G10"
+    },
+    "/prime/relics/NeoH4": {
+        "title": "Neo H4",
+        "category": "relics",
+        "route": "/prime/relics/NeoH4",
+        "routeId": "NeoH4",
+        "id": "Neo H4"
+    },
+    "/prime/relics/AxiS19": {
+        "title": "Axi S19",
+        "category": "relics",
+        "route": "/prime/relics/AxiS19",
+        "routeId": "AxiS19",
+        "id": "Axi S19"
+    },
+    "/prime/relics/AxiW4": {
+        "title": "Axi W4",
+        "category": "relics",
+        "route": "/prime/relics/AxiW4",
+        "routeId": "AxiW4",
+        "id": "Axi W4"
+    },
     "/prime/missions/ApollodorusMercury": {
         "title": "Apollodorus, Mercury",
         "category": "missions",
@@ -11857,6 +11899,13 @@
         "routeId": "TheGreenwayZariman",
         "id": "The Greenway, Zariman"
     },
+    "/prime/missions/TheCircuitDuviri": {
+        "title": "The Circuit, Duviri",
+        "category": "missions",
+        "route": "/prime/missions/TheCircuitDuviri",
+        "routeId": "TheCircuitDuviri",
+        "id": "The Circuit, Duviri"
+    },
     "/prime/missions/LegacyteHarvestHllvania": {
         "title": "Legacyte Harvest, Höllvania",
         "category": "missions",
@@ -12234,6 +12283,398 @@
         "route": "/prime/missions/NsuGridVeilProxima",
         "routeId": "NsuGridVeilProxima",
         "id": "Nsu Grid, Veil Proxima"
+    },
+    "/prime/missions/MPrimeMercury": {
+        "title": "M Prime, Mercury",
+        "category": "missions",
+        "route": "/prime/missions/MPrimeMercury",
+        "routeId": "MPrimeMercury",
+        "id": "M Prime, Mercury"
+    },
+    "/prime/missions/BoethiusMercury": {
+        "title": "Boethius, Mercury",
+        "category": "missions",
+        "route": "/prime/missions/BoethiusMercury",
+        "routeId": "BoethiusMercury",
+        "id": "Boethius, Mercury"
+    },
+    "/prime/missions/PantheonMercury": {
+        "title": "Pantheon, Mercury",
+        "category": "missions",
+        "route": "/prime/missions/PantheonMercury",
+        "routeId": "PantheonMercury",
+        "id": "Pantheon, Mercury"
+    },
+    "/prime/missions/OrbVallisVenus": {
+        "title": "Orb Vallis, Venus",
+        "category": "missions",
+        "route": "/prime/missions/OrbVallisVenus",
+        "routeId": "OrbVallisVenus",
+        "id": "Orb Vallis, Venus"
+    },
+    "/prime/missions/AphroditeVenus": {
+        "title": "Aphrodite, Venus",
+        "category": "missions",
+        "route": "/prime/missions/AphroditeVenus",
+        "routeId": "AphroditeVenus",
+        "id": "Aphrodite, Venus"
+    },
+    "/prime/missions/EGateVenus": {
+        "title": "E Gate, Venus",
+        "category": "missions",
+        "route": "/prime/missions/EGateVenus",
+        "routeId": "EGateVenus",
+        "id": "E Gate, Venus"
+    },
+    "/prime/missions/EPrimeEarth": {
+        "title": "E Prime, Earth",
+        "category": "missions",
+        "route": "/prime/missions/EPrimeEarth",
+        "routeId": "EPrimeEarth",
+        "id": "E Prime, Earth"
+    },
+    "/prime/missions/MarianaEarth": {
+        "title": "Mariana, Earth",
+        "category": "missions",
+        "route": "/prime/missions/MarianaEarth",
+        "routeId": "MarianaEarth",
+        "id": "Mariana, Earth"
+    },
+    "/prime/missions/EurasiaEarth": {
+        "title": "Eurasia, Earth",
+        "category": "missions",
+        "route": "/prime/missions/EurasiaEarth",
+        "routeId": "EurasiaEarth",
+        "id": "Eurasia, Earth"
+    },
+    "/prime/missions/PlainsofEidolonEarth": {
+        "title": "Plains of Eidolon, Earth",
+        "category": "missions",
+        "route": "/prime/missions/PlainsofEidolonEarth",
+        "routeId": "PlainsofEidolonEarth",
+        "id": "Plains of Eidolon, Earth"
+    },
+    "/prime/missions/AresMars": {
+        "title": "Ares, Mars",
+        "category": "missions",
+        "route": "/prime/missions/AresMars",
+        "routeId": "AresMars",
+        "id": "Ares, Mars"
+    },
+    "/prime/missions/VallisMars": {
+        "title": "Vallis, Mars",
+        "category": "missions",
+        "route": "/prime/missions/VallisMars",
+        "routeId": "VallisMars",
+        "id": "Vallis, Mars"
+    },
+    "/prime/missions/HellasMars": {
+        "title": "Hellas, Mars",
+        "category": "missions",
+        "route": "/prime/missions/HellasMars",
+        "routeId": "HellasMars",
+        "id": "Hellas, Mars"
+    },
+    "/prime/missions/UltorMars": {
+        "title": "Ultor, Mars",
+        "category": "missions",
+        "route": "/prime/missions/UltorMars",
+        "routeId": "UltorMars",
+        "id": "Ultor, Mars"
+    },
+    "/prime/missions/TharsisMars": {
+        "title": "Tharsis, Mars",
+        "category": "missions",
+        "route": "/prime/missions/TharsisMars",
+        "routeId": "TharsisMars",
+        "id": "Tharsis, Mars"
+    },
+    "/prime/missions/ThebeJupiter": {
+        "title": "Thebe, Jupiter",
+        "category": "missions",
+        "route": "/prime/missions/ThebeJupiter",
+        "routeId": "ThebeJupiter",
+        "id": "Thebe, Jupiter"
+    },
+    "/prime/missions/CarmeJupiter": {
+        "title": "Carme, Jupiter",
+        "category": "missions",
+        "route": "/prime/missions/CarmeJupiter",
+        "routeId": "CarmeJupiter",
+        "id": "Carme, Jupiter"
+    },
+    "/prime/missions/EnceladusSaturn": {
+        "title": "Enceladus, Saturn",
+        "category": "missions",
+        "route": "/prime/missions/EnceladusSaturn",
+        "routeId": "EnceladusSaturn",
+        "id": "Enceladus, Saturn"
+    },
+    "/prime/missions/KeelerSaturn": {
+        "title": "Keeler, Saturn",
+        "category": "missions",
+        "route": "/prime/missions/KeelerSaturn",
+        "routeId": "KeelerSaturn",
+        "id": "Keeler, Saturn"
+    },
+    "/prime/missions/TelestoSaturn": {
+        "title": "Telesto, Saturn",
+        "category": "missions",
+        "route": "/prime/missions/TelestoSaturn",
+        "routeId": "TelestoSaturn",
+        "id": "Telesto, Saturn"
+    },
+    "/prime/missions/CressidaUranus": {
+        "title": "Cressida, Uranus",
+        "category": "missions",
+        "route": "/prime/missions/CressidaUranus",
+        "routeId": "CressidaUranus",
+        "id": "Cressida, Uranus"
+    },
+    "/prime/missions/PuckUranus": {
+        "title": "Puck, Uranus",
+        "category": "missions",
+        "route": "/prime/missions/PuckUranus",
+        "routeId": "PuckUranus",
+        "id": "Puck, Uranus"
+    },
+    "/prime/missions/SycoraxUranus": {
+        "title": "Sycorax, Uranus",
+        "category": "missions",
+        "route": "/prime/missions/SycoraxUranus",
+        "routeId": "SycoraxUranus",
+        "id": "Sycorax, Uranus"
+    },
+    "/prime/missions/LarissaNeptune": {
+        "title": "Larissa, Neptune",
+        "category": "missions",
+        "route": "/prime/missions/LarissaNeptune",
+        "routeId": "LarissaNeptune",
+        "id": "Larissa, Neptune"
+    },
+    "/prime/missions/SaoNeptune": {
+        "title": "Sao, Neptune",
+        "category": "missions",
+        "route": "/prime/missions/SaoNeptune",
+        "routeId": "SaoNeptune",
+        "id": "Sao, Neptune"
+    },
+    "/prime/missions/NesoNeptune": {
+        "title": "Neso, Neptune",
+        "category": "missions",
+        "route": "/prime/missions/NesoNeptune",
+        "routeId": "NesoNeptune",
+        "id": "Neso, Neptune"
+    },
+    "/prime/missions/AcheronPluto": {
+        "title": "Acheron, Pluto",
+        "category": "missions",
+        "route": "/prime/missions/AcheronPluto",
+        "routeId": "AcheronPluto",
+        "id": "Acheron, Pluto"
+    },
+    "/prime/missions/NarcissusPluto": {
+        "title": "Narcissus, Pluto",
+        "category": "missions",
+        "route": "/prime/missions/NarcissusPluto",
+        "routeId": "NarcissusPluto",
+        "id": "Narcissus, Pluto"
+    },
+    "/prime/missions/MinthePluto": {
+        "title": "Minthe, Pluto",
+        "category": "missions",
+        "route": "/prime/missions/MinthePluto",
+        "routeId": "MinthePluto",
+        "id": "Minthe, Pluto"
+    },
+    "/prime/missions/PallasCeres": {
+        "title": "Pallas, Ceres",
+        "category": "missions",
+        "route": "/prime/missions/PallasCeres",
+        "routeId": "PallasCeres",
+        "id": "Pallas, Ceres"
+    },
+    "/prime/missions/KisteCeres": {
+        "title": "Kiste, Ceres",
+        "category": "missions",
+        "route": "/prime/missions/KisteCeres",
+        "routeId": "KisteCeres",
+        "id": "Kiste, Ceres"
+    },
+    "/prime/missions/LudiCeres": {
+        "title": "Ludi, Ceres",
+        "category": "missions",
+        "route": "/prime/missions/LudiCeres",
+        "routeId": "LudiCeres",
+        "id": "Ludi, Ceres"
+    },
+    "/prime/missions/KalaazarEris": {
+        "title": "Kala-azar, Eris",
+        "category": "missions",
+        "route": "/prime/missions/KalaazarEris",
+        "routeId": "KalaazarEris",
+        "id": "Kala-azar, Eris"
+    },
+    "/prime/missions/SaxisEris": {
+        "title": "Saxis, Eris",
+        "category": "missions",
+        "route": "/prime/missions/SaxisEris",
+        "routeId": "SaxisEris",
+        "id": "Saxis, Eris"
+    },
+    "/prime/missions/SoliumEris": {
+        "title": "Solium, Eris",
+        "category": "missions",
+        "route": "/prime/missions/SoliumEris",
+        "routeId": "SoliumEris",
+        "id": "Solium, Eris"
+    },
+    "/prime/missions/AdaroSedna": {
+        "title": "Adaro, Sedna",
+        "category": "missions",
+        "route": "/prime/missions/AdaroSedna",
+        "routeId": "AdaroSedna",
+        "id": "Adaro, Sedna"
+    },
+    "/prime/missions/MaridSedna": {
+        "title": "Marid, Sedna",
+        "category": "missions",
+        "route": "/prime/missions/MaridSedna",
+        "routeId": "MaridSedna",
+        "id": "Marid, Sedna"
+    },
+    "/prime/missions/CharybdisSedna": {
+        "title": "Charybdis, Sedna",
+        "category": "missions",
+        "route": "/prime/missions/CharybdisSedna",
+        "routeId": "CharybdisSedna",
+        "id": "Charybdis, Sedna"
+    },
+    "/prime/missions/ArmarosEuropa": {
+        "title": "Armaros, Europa",
+        "category": "missions",
+        "route": "/prime/missions/ArmarosEuropa",
+        "routeId": "ArmarosEuropa",
+        "id": "Armaros, Europa"
+    },
+    "/prime/missions/MoraxEuropa": {
+        "title": "Morax, Europa",
+        "category": "missions",
+        "route": "/prime/missions/MoraxEuropa",
+        "routeId": "MoraxEuropa",
+        "id": "Morax, Europa"
+    },
+    "/prime/missions/BaalEuropa": {
+        "title": "Baal, Europa",
+        "category": "missions",
+        "route": "/prime/missions/BaalEuropa",
+        "routeId": "BaalEuropa",
+        "id": "Baal, Europa"
+    },
+    "/prime/missions/SorathEuropa": {
+        "title": "Sorath, Europa",
+        "category": "missions",
+        "route": "/prime/missions/SorathEuropa",
+        "routeId": "SorathEuropa",
+        "id": "Sorath, Europa"
+    },
+    "/prime/missions/KokabielEuropa": {
+        "title": "Kokabiel, Europa",
+        "category": "missions",
+        "route": "/prime/missions/KokabielEuropa",
+        "routeId": "KokabielEuropa",
+        "id": "Kokabiel, Europa"
+    },
+    "/prime/missions/RochePhobos": {
+        "title": "Roche, Phobos",
+        "category": "missions",
+        "route": "/prime/missions/RochePhobos",
+        "routeId": "RochePhobos",
+        "id": "Roche, Phobos"
+    },
+    "/prime/missions/SharplessPhobos": {
+        "title": "Sharpless, Phobos",
+        "category": "missions",
+        "route": "/prime/missions/SharplessPhobos",
+        "routeId": "SharplessPhobos",
+        "id": "Sharpless, Phobos"
+    },
+    "/prime/missions/HorendDeimos": {
+        "title": "Horend, Deimos",
+        "category": "missions",
+        "route": "/prime/missions/HorendDeimos",
+        "routeId": "HorendDeimos",
+        "id": "Horend, Deimos"
+    },
+    "/prime/missions/PhlegyasDeimos": {
+        "title": "Phlegyas, Deimos",
+        "category": "missions",
+        "route": "/prime/missions/PhlegyasDeimos",
+        "routeId": "PhlegyasDeimos",
+        "id": "Phlegyas, Deimos"
+    },
+    "/prime/missions/DirusDeimos": {
+        "title": "Dirus, Deimos",
+        "category": "missions",
+        "route": "/prime/missions/DirusDeimos",
+        "routeId": "DirusDeimos",
+        "id": "Dirus, Deimos"
+    },
+    "/prime/missions/ExequiasDeimos": {
+        "title": "Exequias, Deimos",
+        "category": "missions",
+        "route": "/prime/missions/ExequiasDeimos",
+        "routeId": "ExequiasDeimos",
+        "id": "Exequias, Deimos"
+    },
+    "/prime/missions/CambionDriftDeimos": {
+        "title": "Cambion Drift, Deimos",
+        "category": "missions",
+        "route": "/prime/missions/CambionDriftDeimos",
+        "routeId": "CambionDriftDeimos",
+        "id": "Cambion Drift, Deimos"
+    },
+    "/prime/missions/StflerLua": {
+        "title": "Stöfler, Lua",
+        "category": "missions",
+        "route": "/prime/missions/StflerLua",
+        "routeId": "StflerLua",
+        "id": "Stöfler, Lua"
+    },
+    "/prime/missions/GrimaldiLua": {
+        "title": "Grimaldi, Lua",
+        "category": "missions",
+        "route": "/prime/missions/GrimaldiLua",
+        "routeId": "GrimaldiLua",
+        "id": "Grimaldi, Lua"
+    },
+    "/prime/missions/KoroKuvaFortress": {
+        "title": "Koro, Kuva Fortress",
+        "category": "missions",
+        "route": "/prime/missions/KoroKuvaFortress",
+        "routeId": "KoroKuvaFortress",
+        "id": "Koro, Kuva Fortress"
+    },
+    "/prime/missions/RotumaKuvaFortress": {
+        "title": "Rotuma, Kuva Fortress",
+        "category": "missions",
+        "route": "/prime/missions/RotumaKuvaFortress",
+        "routeId": "RotumaKuvaFortress",
+        "id": "Rotuma, Kuva Fortress"
+    },
+    "/prime/missions/TheDuviriExperienceDuviri": {
+        "title": "The Duviri Experience, Duviri",
+        "category": "missions",
+        "route": "/prime/missions/TheDuviriExperienceDuviri",
+        "routeId": "TheDuviriExperienceDuviri",
+        "id": "The Duviri Experience, Duviri"
+    },
+    "/prime/missions/TheLoneStoryDuviri": {
+        "title": "The Lone Story, Duviri",
+        "category": "missions",
+        "route": "/prime/missions/TheLoneStoryDuviri",
+        "routeId": "TheLoneStoryDuviri",
+        "id": "The Lone Story, Duviri"
     },
     "/prime/about": {
         "title": "About",
