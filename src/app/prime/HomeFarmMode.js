@@ -23,6 +23,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image'
 
+import * as glb from "../globals.js"
 import * as com from "../common.js"
 import LazyLoaded from '@/components/LazyLoaded.js';
 import ItemActionButton from '@/components/ItemActionButton.js';
@@ -267,7 +268,7 @@ function VoidFissuresComponent(){
     const fetchData = async(setTimer=true) => {
       try {
         // Fetch the JSON response from the URL
-        const response = await fetch('https://enkhayzomachines.net:8443/activemissions');
+        const response = await fetch(`${glb.warfarmAPIUrl}/activemissions`);
         
         // Parse the response as JSON
         const data = await response.json();
