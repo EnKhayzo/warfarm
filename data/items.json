@@ -481,7 +481,7 @@
         },
         "category": "items",
         "id": "Acceltra Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Primary Weapon"
     },
     "Hildryn Prime": {
@@ -514,8 +514,8 @@
         "name": "Xaku Prime",
         "components": {
             "Xaku Prime Systems Blueprint": true,
-            "Xaku Prime Chassis Blueprint": true,
             "Xaku Prime Neuroptics Blueprint": true,
+            "Xaku Prime Chassis Blueprint": true,
             "Xaku Prime Blueprint": true
         },
         "category": "items",
@@ -581,6 +581,83 @@
         },
         "category": "items",
         "id": "Lex Prime",
+        "vaulted": false,
+        "type": "Secondary Weapon"
+    },
+    "Alternox Prime": {
+        "name": "Alternox Prime",
+        "components": {
+            "Alternox Prime Blueprint": true,
+            "Alternox Prime Barrel": true,
+            "Alternox Prime Stock": true,
+            "Alternox Prime Receiver": true
+        },
+        "category": "items",
+        "id": "Alternox Prime",
+        "vaulted": false,
+        "type": "Primary Weapon"
+    },
+    "Kompressa Prime": {
+        "name": "Kompressa Prime",
+        "components": {
+            "Kompressa Prime Receiver": true,
+            "Kompressa Prime Blueprint": true,
+            "Kompressa Prime Barrel": true
+        },
+        "category": "items",
+        "id": "Kompressa Prime",
+        "vaulted": false,
+        "type": "Secondary Weapon"
+    },
+    "Lavos Prime": {
+        "name": "Lavos Prime",
+        "components": {
+            "Lavos Prime Neuroptics Blueprint": true,
+            "Lavos Prime Chassis Blueprint": true,
+            "Lavos Prime Blueprint": true,
+            "Lavos Prime Systems Blueprint": true
+        },
+        "category": "items",
+        "id": "Lavos Prime",
+        "vaulted": false,
+        "type": "Warframe"
+    },
+    "Cedo Prime": {
+        "name": "Cedo Prime",
+        "components": {
+            "Cedo Prime Stock": true,
+            "Cedo Prime Receiver": true,
+            "Cedo Prime Barrel": true,
+            "Cedo Prime Blueprint": true
+        },
+        "category": "items",
+        "id": "Cedo Prime",
+        "vaulted": false,
+        "type": "Primary Weapon"
+    },
+    "Daikyu Prime": {
+        "name": "Daikyu Prime",
+        "components": {
+            "Daikyu Prime String": true,
+            "Daikyu Prime Lower Limb": true,
+            "Daikyu Prime Grip": true,
+            "Daikyu Prime Blueprint": true,
+            "Daikyu Prime Upper Limb": true
+        },
+        "category": "items",
+        "id": "Daikyu Prime",
+        "vaulted": false,
+        "type": "Primary Weapon"
+    },
+    "Velox Prime": {
+        "name": "Velox Prime",
+        "components": {
+            "Velox Prime Receiver": true,
+            "Velox Prime Blueprint": true,
+            "Velox Prime Barrel": true
+        },
+        "category": "items",
+        "id": "Velox Prime",
         "vaulted": false,
         "type": "Secondary Weapon"
     },
@@ -860,7 +937,7 @@
         },
         "category": "items",
         "id": "Gauss Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Warframe"
     },
     "Hystrix Prime": {
@@ -910,33 +987,6 @@
         },
         "category": "items",
         "id": "Caliban Prime",
-        "vaulted": false,
-        "type": "Warframe"
-    },
-    "Daikyu Prime": {
-        "name": "Daikyu Prime",
-        "components": {
-            "Daikyu Prime Lower Limb": true,
-            "Daikyu Prime String": true,
-            "Daikyu Prime Blueprint": true,
-            "Daikyu Prime Upper Limb": true,
-            "Daikyu Prime Grip": true
-        },
-        "category": "items",
-        "id": "Daikyu Prime",
-        "vaulted": false,
-        "type": "Primary Weapon"
-    },
-    "Lavos Prime": {
-        "name": "Lavos Prime",
-        "components": {
-            "Lavos Prime Chassis Blueprint": true,
-            "Lavos Prime Blueprint": true,
-            "Lavos Prime Systems Blueprint": true,
-            "Lavos Prime Neuroptics Blueprint": true
-        },
-        "category": "items",
-        "id": "Lavos Prime",
         "vaulted": false,
         "type": "Warframe"
     },
@@ -1190,7 +1240,7 @@
         },
         "category": "items",
         "id": "Akarius Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Secondary Weapon"
     },
     "Ember Prime": {
@@ -1255,18 +1305,6 @@
         "id": "Fulmin Prime",
         "vaulted": true,
         "type": "Primary Weapon"
-    },
-    "Velox Prime": {
-        "name": "Velox Prime",
-        "components": {
-            "Velox Prime Blueprint": true,
-            "Velox Prime Receiver": true,
-            "Velox Prime Barrel": true
-        },
-        "category": "items",
-        "id": "Velox Prime",
-        "vaulted": false,
-        "type": "Secondary Weapon"
     },
     "Masseter Prime": {
         "name": "Masseter Prime",
@@ -1373,8 +1411,8 @@
         "name": "Quassus Prime",
         "components": {
             "Quassus Prime Handle": true,
-            "Quassus Prime Blade": true,
-            "Quassus Prime Blueprint": true
+            "Quassus Prime Blueprint": true,
+            "Quassus Prime Blade": true
         },
         "category": "items",
         "id": "Quassus Prime",
@@ -1632,19 +1670,6 @@
         "vaulted": true,
         "type": "Secondary Weapon"
     },
-    "Cedo Prime": {
-        "name": "Cedo Prime",
-        "components": {
-            "Cedo Prime Receiver": true,
-            "Cedo Prime Stock": true,
-            "Cedo Prime Blueprint": true,
-            "Cedo Prime Barrel": true
-        },
-        "category": "items",
-        "id": "Cedo Prime",
-        "vaulted": false,
-        "type": "Primary Weapon"
-    },
     "Nautilus Prime": {
         "name": "Nautilus Prime",
         "components": {
@@ -1657,18 +1682,6 @@
         "id": "Nautilus Prime",
         "vaulted": false,
         "type": "Companion"
-    },
-    "Kompressa Prime": {
-        "name": "Kompressa Prime",
-        "components": {
-            "Kompressa Prime Receiver": true,
-            "Kompressa Prime Blueprint": true,
-            "Kompressa Prime Barrel": true
-        },
-        "category": "items",
-        "id": "Kompressa Prime",
-        "vaulted": false,
-        "type": "Secondary Weapon"
     },
     "Protea Prime": {
         "name": "Protea Prime",
@@ -1724,8 +1737,8 @@
         "components": {
             "Trumna Prime Blueprint": true,
             "Trumna Prime Receiver": true,
-            "Trumna Prime Stock": true,
-            "Trumna Prime Barrel": true
+            "Trumna Prime Barrel": true,
+            "Trumna Prime Stock": true
         },
         "category": "items",
         "id": "Trumna Prime",
@@ -1798,9 +1811,9 @@
         "name": "Vadarya Prime",
         "components": {
             "Vadarya Prime Receiver": true,
+            "Vadarya Prime Barrel": true,
             "Vadarya Prime Stock": true,
-            "Vadarya Prime Blueprint": true,
-            "Vadarya Prime Barrel": true
+            "Vadarya Prime Blueprint": true
         },
         "category": "items",
         "id": "Vadarya Prime",
@@ -1871,6 +1884,19 @@
         "vaulted": true,
         "type": "Primary Weapon"
     },
+    "Gyre Prime": {
+        "name": "Gyre Prime",
+        "components": {
+            "Gyre Prime Chassis Blueprint": true,
+            "Gyre Prime Neuroptics Blueprint": true,
+            "Gyre Prime Systems Blueprint": true,
+            "Gyre Prime Blueprint": true
+        },
+        "category": "items",
+        "id": "Gyre Prime",
+        "vaulted": false,
+        "type": "Warframe"
+    },
     "Valkyr Prime": {
         "name": "Valkyr Prime",
         "components": {
@@ -1908,5 +1934,17 @@
         "id": "Yareli Prime",
         "vaulted": false,
         "type": "Warframe"
+    },
+    "Kestrel Prime": {
+        "name": "Kestrel Prime",
+        "components": {
+            "Kestrel Prime Blade": true,
+            "Kestrel Prime Blueprint": true,
+            "Kestrel Prime Grip": true
+        },
+        "category": "items",
+        "id": "Kestrel Prime",
+        "vaulted": false,
+        "type": "Melee Weapon"
     }
 }

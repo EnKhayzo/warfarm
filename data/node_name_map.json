@@ -1565,6 +1565,48 @@
         "name": "Solstice Square",
         "systemName": "Höllvania"
     },
+    "SolNode250": {
+        "id": "Recall: Hunhullus, Dark Refractory, Deimos",
+        "nodeId": "SolNode250",
+        "name": "Recall: Hunhullus",
+        "systemName": "Dark Refractory, Deimos"
+    },
+    "SolNode251": {
+        "id": "Recall: Dactolyst, Dark Refractory, Deimos",
+        "nodeId": "SolNode251",
+        "name": "Recall: Dactolyst",
+        "systemName": "Dark Refractory, Deimos"
+    },
+    "SolNode252": {
+        "id": "Recall: Vanguard, Dark Refractory, Deimos",
+        "nodeId": "SolNode252",
+        "name": "Recall: Vanguard",
+        "systemName": "Dark Refractory, Deimos"
+    },
+    "SolNode253": {
+        "id": "Descend, Dark Refractory, Deimos",
+        "nodeId": "SolNode253",
+        "name": "Descend",
+        "systemName": "Dark Refractory, Deimos"
+    },
+    "SolNode254": {
+        "id": "Descend from Marie's Sanctuary, Dark Refractory, Deimos",
+        "nodeId": "SolNode254",
+        "name": "Descend from Marie's Sanctuary",
+        "systemName": "Dark Refractory, Deimos"
+    },
+    "SolNode255": {
+        "id": "Descend from Lyon's Sanctuary, Dark Refractory, Deimos",
+        "nodeId": "SolNode255",
+        "name": "Descend from Lyon's Sanctuary",
+        "systemName": "Dark Refractory, Deimos"
+    },
+    "SolNode256": {
+        "id": "Roathe's Oblivion, Dark Refractory, Deimos",
+        "nodeId": "SolNode256",
+        "name": "Roathe's Oblivion",
+        "systemName": "Dark Refractory, Deimos"
+    },
     "MercuryHUB": {
         "id": "Larunda Relay, Mercury",
         "name": "Larunda Relay",
