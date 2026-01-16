@@ -8948,6 +8948,39 @@
         "id": "Lith L6",
         "tier": "Lith",
         "rewards": {
+            "Larkspur Prime Barrel": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Wisp Prime Neuroptics Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Shade Prime Systems": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Gunsen Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Burston Prime Receiver": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": true
+    },
+    "Lith L7": {
+        "name": "Lith L7",
+        "category": "relics",
+        "id": "Lith L7",
+        "tier": "Lith",
+        "rewards": {
             "Lavos Prime Systems Blueprint": {
                 "rarity": "rare",
                 "perc": "2.00%"
