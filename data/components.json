@@ -7444,5 +7444,53 @@
         "isAnomalousItemComponent": false,
         "type": "?",
         "vaulted": true
+    },
+    "Akbronco Prime Bronco Prime": {
+        "name": "Bronco Prime",
+        "fullName": "Akbronco Prime Bronco Prime",
+        "category": "components",
+        "type": "Secondary Weapon",
+        "required": 2,
+        "id": "Akbronco Prime Bronco Prime",
+        "vaulted": false,
+        "parentItem": "Akbronco Prime",
+        "anomalous": false,
+        "isAnomalousItemComponent": true
+    },
+    "Aklex Prime Lex Prime": {
+        "name": "Lex Prime",
+        "fullName": "Aklex Prime Lex Prime",
+        "category": "components",
+        "type": "Secondary Weapon",
+        "required": 2,
+        "id": "Aklex Prime Lex Prime",
+        "vaulted": true,
+        "parentItem": "Aklex Prime",
+        "anomalous": false,
+        "isAnomalousItemComponent": true
+    },
+    "Akmagnus Prime Magnus Prime": {
+        "name": "Magnus Prime",
+        "fullName": "Akmagnus Prime Magnus Prime",
+        "category": "components",
+        "type": "Secondary Weapon",
+        "required": 2,
+        "id": "Akmagnus Prime Magnus Prime",
+        "vaulted": true,
+        "parentItem": "Akmagnus Prime",
+        "anomalous": false,
+        "isAnomalousItemComponent": true
+    },
+    "Akvasto Prime Vasto Prime": {
+        "name": "Vasto Prime",
+        "fullName": "Akvasto Prime Vasto Prime",
+        "category": "components",
+        "type": "Secondary Weapon",
+        "required": 2,
+        "id": "Akvasto Prime Vasto Prime",
+        "vaulted": true,
+        "parentItem": "Akvasto Prime",
+        "anomalous": false,
+        "isAnomalousItemComponent": true
     }
 }
