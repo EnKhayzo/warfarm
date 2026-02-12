@@ -5095,34 +5095,6 @@ export const pathObjs = {
         "routeId": "Khra",
         "id": "Khra"
     },
-    "/prime/components/AkbroncoPrimeBroncoPrime": {
-        "title": "Akbronco Prime Bronco Prime",
-        "category": "components",
-        "route": "/prime/components/AkbroncoPrimeBroncoPrime",
-        "routeId": "AkbroncoPrimeBroncoPrime",
-        "id": "Akbronco Prime Bronco Prime"
-    },
-    "/prime/components/AklexPrimeLexPrime": {
-        "title": "Aklex Prime Lex Prime",
-        "category": "components",
-        "route": "/prime/components/AklexPrimeLexPrime",
-        "routeId": "AklexPrimeLexPrime",
-        "id": "Aklex Prime Lex Prime"
-    },
-    "/prime/components/AkmagnusPrimeMagnusPrime": {
-        "title": "Akmagnus Prime Magnus Prime",
-        "category": "components",
-        "route": "/prime/components/AkmagnusPrimeMagnusPrime",
-        "routeId": "AkmagnusPrimeMagnusPrime",
-        "id": "Akmagnus Prime Magnus Prime"
-    },
-    "/prime/components/AkvastoPrimeVastoPrime": {
-        "title": "Akvasto Prime Vasto Prime",
-        "category": "components",
-        "route": "/prime/components/AkvastoPrimeVastoPrime",
-        "routeId": "AkvastoPrimeVastoPrime",
-        "id": "Akvasto Prime Vasto Prime"
-    },
     "/prime/relics/AxiA1": {
         "title": "Axi A1",
         "category": "relics",
@@ -7026,6 +6998,13 @@ export const pathObjs = {
         "route": "/prime/relics/LithL6",
         "routeId": "LithL6",
         "id": "Lith L6"
+    },
+    "/prime/relics/LithL7": {
+        "title": "Lith L7",
+        "category": "relics",
+        "route": "/prime/relics/LithL7",
+        "routeId": "LithL7",
+        "id": "Lith L7"
     },
     "/prime/relics/LithM1": {
         "title": "Lith M1",
