@@ -7182,7 +7182,8 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Primary Weapon",
-        "vaulted": false
+        "vaulted": false,
+        "ducats": 100
     },
     "Gyre Prime Systems Blueprint": {
         "name": "Systems",
