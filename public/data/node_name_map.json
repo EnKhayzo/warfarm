@@ -149,6 +149,12 @@
         "name": "Romula",
         "systemName": "Venus"
     },
+    "SolNode239": {
+        "id": "Vesper Relay, Venus",
+        "nodeId": "SolNode239",
+        "name": "Vesper Relay",
+        "systemName": "Venus"
+    },
     "SolNode902": {
         "id": "Montes, Venus",
         "nodeId": "SolNode902",
@@ -1599,6 +1605,12 @@
         "id": "Roathe's Oblivion, Dark Refractory, Deimos",
         "nodeId": "SolNode256",
         "name": "Roathe's Oblivion",
+        "systemName": "Dark Refractory, Deimos"
+    },
+    "SolNode257": {
+        "id": "The Guilty, Dark Refractory, Deimos",
+        "nodeId": "SolNode257",
+        "name": "The Guilty",
         "systemName": "Dark Refractory, Deimos"
     },
     "MercuryHUB": {

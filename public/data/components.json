@@ -1334,7 +1334,7 @@
         "isAnomalousItemComponent": false,
         "type": "Warframe",
         "vaulted": true,
-        "ducats": 100
+        "ducats": 65
     },
     "Nagantaka Prime Receiver": {
         "name": "Receiver",
@@ -1841,7 +1841,7 @@
         "isAnomalousItemComponent": false,
         "type": "Primary Weapon",
         "vaulted": true,
-        "ducats": 100
+        "ducats": 65
     },
     "Revenant Prime Chassis Blueprint": {
         "name": "Chassis",
@@ -2309,7 +2309,7 @@
         "isAnomalousItemComponent": false,
         "type": "Warframe",
         "vaulted": true,
-        "ducats": 100
+        "ducats": 65
     },
     "Corvas Prime Receiver": {
         "name": "Receiver",
@@ -2452,6 +2452,32 @@
         "isAnomalousItemComponent": false,
         "type": "Warframe",
         "vaulted": false,
+        "ducats": 15
+    },
+    "Gauss Prime Systems Blueprint": {
+        "name": "Systems",
+        "fullName": "Gauss Prime Systems",
+        "parentItem": "Gauss Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Gauss Prime Systems Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": true,
+        "ducats": 100
+    },
+    "Grendel Prime Neuroptics Blueprint": {
+        "name": "Neuroptics",
+        "fullName": "Grendel Prime Neuroptics",
+        "parentItem": "Grendel Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Grendel Prime Neuroptics Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": true,
         "ducats": 15
     },
     "Gram Prime Handle": {
@@ -3556,19 +3582,6 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Primary Weapon",
-        "vaulted": true,
-        "ducats": 15
-    },
-    "Grendel Prime Neuroptics Blueprint": {
-        "name": "Neuroptics",
-        "fullName": "Grendel Prime Neuroptics",
-        "parentItem": "Grendel Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Grendel Prime Neuroptics Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Warframe",
         "vaulted": true,
         "ducats": 15
     },
@@ -5418,6 +5431,32 @@
         "vaulted": false,
         "ducats": 15
     },
+    "Acceltra Prime Barrel": {
+        "name": "Barrel",
+        "fullName": "Acceltra Prime Barrel",
+        "parentItem": "Acceltra Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Acceltra Prime Barrel",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
+        "vaulted": true,
+        "ducats": 100
+    },
+    "Grendel Prime Chassis Blueprint": {
+        "name": "Chassis",
+        "fullName": "Grendel Prime Chassis",
+        "parentItem": "Grendel Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Grendel Prime Chassis Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": true,
+        "ducats": 45
+    },
     "Akjagara Prime Barrel": {
         "name": "Barrel",
         "fullName": "Akjagara Prime Barrel",
@@ -5664,19 +5703,6 @@
         "type": "Warframe",
         "vaulted": true,
         "ducats": 15
-    },
-    "Grendel Prime Chassis Blueprint": {
-        "name": "Chassis",
-        "fullName": "Grendel Prime Chassis",
-        "parentItem": "Grendel Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Grendel Prime Chassis Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Warframe",
-        "vaulted": true,
-        "ducats": 45
     },
     "Caliban Prime Neuroptics Blueprint": {
         "name": "Neuroptics",
@@ -6051,19 +6077,6 @@
         "required": 2,
         "isAnomalousItemComponent": false,
         "type": "Melee Weapon",
-        "vaulted": true,
-        "ducats": 100
-    },
-    "Gauss Prime Systems Blueprint": {
-        "name": "Systems",
-        "fullName": "Gauss Prime Systems",
-        "parentItem": "Gauss Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Gauss Prime Systems Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Warframe",
         "vaulted": true,
         "ducats": 100
     },
@@ -6780,7 +6793,7 @@
         "isAnomalousItemComponent": false,
         "type": "Warframe",
         "vaulted": true,
-        "ducats": 100
+        "ducats": 65
     },
     "Xaku Prime Blueprint": {
         "name": "Blueprint",
@@ -6821,32 +6834,6 @@
         "vaulted": false,
         "ducats": 45
     },
-    "Nidus Prime Systems Blueprint": {
-        "name": "Systems",
-        "fullName": "Nidus Prime Systems",
-        "parentItem": "Nidus Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Nidus Prime Systems Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Warframe",
-        "vaulted": true,
-        "ducats": 15
-    },
-    "Acceltra Prime Barrel": {
-        "name": "Barrel",
-        "fullName": "Acceltra Prime Barrel",
-        "parentItem": "Acceltra Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Acceltra Prime Barrel",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Primary Weapon",
-        "vaulted": true,
-        "ducats": 100
-    },
     "Akarius Prime Blueprint": {
         "name": "Blueprint",
         "fullName": "Akarius Prime Blueprint",
@@ -6859,6 +6846,19 @@
         "type": "Secondary Weapon",
         "vaulted": true,
         "ducats": 100
+    },
+    "Nidus Prime Systems Blueprint": {
+        "name": "Systems",
+        "fullName": "Nidus Prime Systems",
+        "parentItem": "Nidus Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Nidus Prime Systems Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": true,
+        "ducats": 15
     },
     "Alternox Prime Stock": {
         "name": "Stock",
@@ -7302,18 +7302,6 @@
         "vaulted": true,
         "ducats": 100
     },
-    "Exilus Weapon Adapter Blueprint": {
-        "name": "Exilus Weapon Adapter Blueprint",
-        "fullName": "Exilus Weapon Adapter Blueprint",
-        "parentItem": null,
-        "anomalous": true,
-        "category": "components",
-        "id": "Exilus Weapon Adapter Blueprint",
-        "required": 0,
-        "isAnomalousItemComponent": false,
-        "type": "?",
-        "vaulted": true
-    },
     "Lohk": {
         "name": "Lohk",
         "fullName": "Lohk",
@@ -7333,42 +7321,6 @@
         "anomalous": true,
         "category": "components",
         "id": "Xata",
-        "required": 0,
-        "isAnomalousItemComponent": false,
-        "type": "?",
-        "vaulted": true
-    },
-    "1200X Kuva": {
-        "name": "1200X Kuva",
-        "fullName": "1200X Kuva",
-        "parentItem": null,
-        "anomalous": true,
-        "category": "components",
-        "id": "1200X Kuva",
-        "required": 0,
-        "isAnomalousItemComponent": false,
-        "type": "?",
-        "vaulted": true
-    },
-    "Ayatan Amber Star": {
-        "name": "Ayatan Amber Star",
-        "fullName": "Ayatan Amber Star",
-        "parentItem": null,
-        "anomalous": true,
-        "category": "components",
-        "id": "Ayatan Amber Star",
-        "required": 0,
-        "isAnomalousItemComponent": false,
-        "type": "?",
-        "vaulted": true
-    },
-    "Riven Sliver": {
-        "name": "Riven Sliver",
-        "fullName": "Riven Sliver",
-        "parentItem": null,
-        "anomalous": true,
-        "category": "components",
-        "id": "Riven Sliver",
         "required": 0,
         "isAnomalousItemComponent": false,
         "type": "?",
@@ -7441,6 +7393,54 @@
         "anomalous": true,
         "category": "components",
         "id": "Khra",
+        "required": 0,
+        "isAnomalousItemComponent": false,
+        "type": "?",
+        "vaulted": true
+    },
+    "Exilus Weapon Adapter Blueprint": {
+        "name": "Exilus Weapon Adapter Blueprint",
+        "fullName": "Exilus Weapon Adapter Blueprint",
+        "parentItem": null,
+        "anomalous": true,
+        "category": "components",
+        "id": "Exilus Weapon Adapter Blueprint",
+        "required": 0,
+        "isAnomalousItemComponent": false,
+        "type": "?",
+        "vaulted": true
+    },
+    "1200X Kuva": {
+        "name": "1200X Kuva",
+        "fullName": "1200X Kuva",
+        "parentItem": null,
+        "anomalous": true,
+        "category": "components",
+        "id": "1200X Kuva",
+        "required": 0,
+        "isAnomalousItemComponent": false,
+        "type": "?",
+        "vaulted": true
+    },
+    "Ayatan Amber Star": {
+        "name": "Ayatan Amber Star",
+        "fullName": "Ayatan Amber Star",
+        "parentItem": null,
+        "anomalous": true,
+        "category": "components",
+        "id": "Ayatan Amber Star",
+        "required": 0,
+        "isAnomalousItemComponent": false,
+        "type": "?",
+        "vaulted": true
+    },
+    "Riven Sliver": {
+        "name": "Riven Sliver",
+        "fullName": "Riven Sliver",
+        "parentItem": null,
+        "anomalous": true,
+        "category": "components",
+        "id": "Riven Sliver",
         "required": 0,
         "isAnomalousItemComponent": false,
         "type": "?",
