@@ -931,9 +931,9 @@
         "name": "Gauss Prime",
         "components": {
             "Gauss Prime Blueprint": true,
+            "Gauss Prime Systems Blueprint": true,
             "Gauss Prime Neuroptics Blueprint": true,
-            "Gauss Prime Chassis Blueprint": true,
-            "Gauss Prime Systems Blueprint": true
+            "Gauss Prime Chassis Blueprint": true
         },
         "category": "items",
         "id": "Gauss Prime",
