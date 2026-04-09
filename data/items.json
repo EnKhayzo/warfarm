@@ -588,9 +588,9 @@
         "name": "Alternox Prime",
         "components": {
             "Alternox Prime Blueprint": true,
+            "Alternox Prime Receiver": true,
             "Alternox Prime Barrel": true,
-            "Alternox Prime Stock": true,
-            "Alternox Prime Receiver": true
+            "Alternox Prime Stock": true
         },
         "category": "items",
         "id": "Alternox Prime",
@@ -626,8 +626,8 @@
         "name": "Cedo Prime",
         "components": {
             "Cedo Prime Stock": true,
-            "Cedo Prime Receiver": true,
             "Cedo Prime Barrel": true,
+            "Cedo Prime Receiver": true,
             "Cedo Prime Blueprint": true
         },
         "category": "items",
@@ -658,7 +658,7 @@
         },
         "category": "items",
         "id": "Velox Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Secondary Weapon"
     },
     "Hydroid Prime": {
@@ -961,7 +961,7 @@
         },
         "category": "items",
         "id": "Okina Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Melee Weapon"
     },
     "Vectis Prime": {
@@ -989,6 +989,19 @@
         "id": "Caliban Prime",
         "vaulted": false,
         "type": "Warframe"
+    },
+    "Perigale Prime": {
+        "name": "Perigale Prime",
+        "components": {
+            "Perigale Prime Stock": true,
+            "Perigale Prime Receiver": true,
+            "Perigale Prime Blueprint": true,
+            "Perigale Prime Barrel": true
+        },
+        "category": "items",
+        "id": "Perigale Prime",
+        "vaulted": false,
+        "type": "Primary Weapon"
     },
     "Silva & Aegis Prime": {
         "name": "Silva & Aegis Prime",
@@ -1242,6 +1255,18 @@
         "id": "Akarius Prime",
         "vaulted": true,
         "type": "Secondary Weapon"
+    },
+    "Dual Zoren Prime": {
+        "name": "Dual Zoren Prime",
+        "components": {
+            "Dual Zoren Prime Blade": true,
+            "Dual Zoren Prime Handle": true,
+            "Dual Zoren Prime Blueprint": true
+        },
+        "category": "items",
+        "id": "Dual Zoren Prime",
+        "vaulted": false,
+        "type": "Melee Weapon"
     },
     "Ember Prime": {
         "name": "Ember Prime",
@@ -1693,7 +1718,7 @@
         },
         "category": "items",
         "id": "Protea Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Warframe"
     },
     "Venka Prime": {
@@ -1705,18 +1730,6 @@
         },
         "category": "items",
         "id": "Venka Prime",
-        "vaulted": false,
-        "type": "Melee Weapon"
-    },
-    "Dual Zoren Prime": {
-        "name": "Dual Zoren Prime",
-        "components": {
-            "Dual Zoren Prime Handle": true,
-            "Dual Zoren Prime Blueprint": true,
-            "Dual Zoren Prime Blade": true
-        },
-        "category": "items",
-        "id": "Dual Zoren Prime",
         "vaulted": false,
         "type": "Melee Weapon"
     },
@@ -1820,6 +1833,18 @@
         "vaulted": false,
         "type": "Primary Weapon"
     },
+    "Sarofang Prime": {
+        "name": "Sarofang Prime",
+        "components": {
+            "Sarofang Prime Blade": true,
+            "Sarofang Prime Blueprint": true,
+            "Sarofang Prime Handle": true
+        },
+        "category": "items",
+        "id": "Sarofang Prime",
+        "vaulted": false,
+        "type": "Melee Weapon"
+    },
     "Nyx Prime": {
         "name": "Nyx Prime",
         "components": {
@@ -1921,6 +1946,19 @@
         "id": "Venato Prime",
         "vaulted": false,
         "type": "Melee Weapon"
+    },
+    "Voruna Prime": {
+        "name": "Voruna Prime",
+        "components": {
+            "Voruna Prime Blueprint": true,
+            "Voruna Prime Chassis Blueprint": true,
+            "Voruna Prime Neuroptics Blueprint": true,
+            "Voruna Prime Systems Blueprint": true
+        },
+        "category": "items",
+        "id": "Voruna Prime",
+        "vaulted": false,
+        "type": "Warframe"
     },
     "Yareli Prime": {
         "name": "Yareli Prime",
