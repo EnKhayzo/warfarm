@@ -531,11 +531,10 @@ export function MainLayoutComponent({children}){
   return (
     <>
       {
-        
-        <Script 
-          strategy="lazyOnload"
-          data-domain="enkhayzo.github.io" 
-          src="https://pl.enkhayzomachines.net/js/script.js"
+        <Script
+          src="https://rb.enkhayzomachines.net/api/script.js"
+          data-site-id="fbeade9390de"
+          strategy="afterInteractive"
         />
 
       }

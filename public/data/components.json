@@ -568,7 +568,7 @@
         "isAnomalousItemComponent": false,
         "type": "Primary Weapon",
         "vaulted": true,
-        "ducats": 100
+        "ducats": 65
     },
     "Akbronco Prime Link": {
         "name": "Link",
@@ -814,7 +814,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Secondary Weapon",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 15
     },
     "Hydroid Prime Neuroptics Blueprint": {
@@ -1463,7 +1463,7 @@
         "required": 2,
         "isAnomalousItemComponent": false,
         "type": "Melee Weapon",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 15
     },
     "Baruuk Prime Blueprint": {
@@ -1567,6 +1567,19 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
+        "vaulted": false,
+        "ducats": 15
+    },
+    "Perigale Prime Stock": {
+        "name": "Stock",
+        "fullName": "Perigale Prime Stock",
+        "parentItem": "Perigale Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Perigale Prime Stock",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
         "vaulted": false,
         "ducats": 15
     },
@@ -2090,6 +2103,45 @@
         "vaulted": false,
         "ducats": 25
     },
+    "Dual Zoren Prime Blade": {
+        "name": "Blade",
+        "fullName": "Dual Zoren Prime Blade",
+        "parentItem": "Dual Zoren Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Dual Zoren Prime Blade",
+        "required": 2,
+        "isAnomalousItemComponent": false,
+        "type": "Melee Weapon",
+        "vaulted": false,
+        "ducats": 100
+    },
+    "Orthos Prime Blade": {
+        "name": "Blade",
+        "fullName": "Orthos Prime Blade",
+        "parentItem": "Orthos Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Orthos Prime Blade",
+        "required": 2,
+        "isAnomalousItemComponent": false,
+        "type": "Melee Weapon",
+        "vaulted": false,
+        "ducats": 45
+    },
+    "Cedo Prime Barrel": {
+        "name": "Barrel",
+        "fullName": "Cedo Prime Barrel",
+        "parentItem": "Cedo Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Cedo Prime Barrel",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
+        "vaulted": false,
+        "ducats": 45
+    },
     "Ember Prime Blueprint": {
         "name": "Blueprint",
         "fullName": "Ember Prime Blueprint",
@@ -2204,7 +2256,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Secondary Weapon",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 45
     },
     "Wisp Prime Neuroptics Blueprint": {
@@ -2335,7 +2387,7 @@
         "isAnomalousItemComponent": false,
         "type": "Warframe",
         "vaulted": true,
-        "ducats": 100
+        "ducats": 65
     },
     "Afuris Prime Link": {
         "name": "Link",
@@ -3777,7 +3829,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 15
     },
     "Carrier Prime Carapace": {
@@ -4037,7 +4089,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Melee Weapon",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 100
     },
     "Acceltra Prime Receiver": {
@@ -4154,7 +4206,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 100
     },
     "Baruuk Prime Systems Blueprint": {
@@ -4206,7 +4258,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 100
     },
     "Gauss Prime Neuroptics Blueprint": {
@@ -4531,7 +4583,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Warframe",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 45
     },
     "Larkspur Prime Blueprint": {
@@ -4637,6 +4689,19 @@
         "type": "Primary Weapon",
         "vaulted": true,
         "ducats": 15
+    },
+    "Sarofang Prime Blade": {
+        "name": "Blade",
+        "fullName": "Sarofang Prime Blade",
+        "parentItem": "Sarofang Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Sarofang Prime Blade",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Melee Weapon",
+        "vaulted": false,
+        "ducats": 100
     },
     "Nyx Prime Systems Blueprint": {
         "name": "Systems",
@@ -4819,19 +4884,6 @@
         "type": "Melee Weapon",
         "vaulted": true,
         "ducats": 100
-    },
-    "Orthos Prime Blade": {
-        "name": "Blade",
-        "fullName": "Orthos Prime Blade",
-        "parentItem": "Orthos Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Orthos Prime Blade",
-        "required": 2,
-        "isAnomalousItemComponent": false,
-        "type": "Melee Weapon",
-        "vaulted": false,
-        "ducats": 45
     },
     "Trumna Prime Receiver": {
         "name": "Receiver",
@@ -5103,7 +5155,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Secondary Weapon",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 100
     },
     "Xaku Prime Chassis Blueprint": {
@@ -5142,6 +5194,32 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Companion",
+        "vaulted": false,
+        "ducats": 15
+    },
+    "Voruna Prime Blueprint": {
+        "name": "Blueprint",
+        "fullName": "Voruna Prime Blueprint",
+        "parentItem": "Voruna Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Voruna Prime Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": false,
+        "ducats": 100
+    },
+    "Alternox Prime Receiver": {
+        "name": "Receiver",
+        "fullName": "Alternox Prime Receiver",
+        "parentItem": "Alternox Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Alternox Prime Receiver",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
         "vaulted": false,
         "ducats": 15
     },
@@ -5340,6 +5418,32 @@
         "vaulted": false,
         "ducats": 15
     },
+    "Vadarya Prime Barrel": {
+        "name": "Barrel",
+        "fullName": "Vadarya Prime Barrel",
+        "parentItem": "Vadarya Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Vadarya Prime Barrel",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
+        "vaulted": false,
+        "ducats": 45
+    },
+    "Sevagoth Prime Blueprint": {
+        "name": "Blueprint",
+        "fullName": "Sevagoth Prime Blueprint",
+        "parentItem": "Sevagoth Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Sevagoth Prime Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": false,
+        "ducats": 45
+    },
     "Zakti Prime Blueprint": {
         "name": "Blueprint",
         "fullName": "Zakti Prime Blueprint",
@@ -5365,19 +5469,6 @@
         "type": "Secondary Weapon",
         "vaulted": true,
         "ducats": 100
-    },
-    "Sevagoth Prime Blueprint": {
-        "name": "Blueprint",
-        "fullName": "Sevagoth Prime Blueprint",
-        "parentItem": "Sevagoth Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Sevagoth Prime Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Warframe",
-        "vaulted": false,
-        "ducats": 45
     },
     "Vectis Prime Blueprint": {
         "name": "Blueprint",
@@ -5416,7 +5507,7 @@
         "isAnomalousItemComponent": false,
         "type": "Secondary Weapon",
         "vaulted": true,
-        "ducats": 100
+        "ducats": 65
     },
     "Yareli Prime Chassis Blueprint": {
         "name": "Chassis",
@@ -5743,6 +5834,45 @@
         "vaulted": true,
         "ducats": 15
     },
+    "Cedo Prime Blueprint": {
+        "name": "Blueprint",
+        "fullName": "Cedo Prime Blueprint",
+        "parentItem": "Cedo Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Cedo Prime Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
+        "vaulted": false,
+        "ducats": 100
+    },
+    "Perigale Prime Receiver": {
+        "name": "Receiver",
+        "fullName": "Perigale Prime Receiver",
+        "parentItem": "Perigale Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Perigale Prime Receiver",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
+        "vaulted": false,
+        "ducats": 45
+    },
+    "Kestrel Prime Blade": {
+        "name": "Blade",
+        "fullName": "Kestrel Prime Blade",
+        "parentItem": "Kestrel Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Kestrel Prime Blade",
+        "required": 2,
+        "isAnomalousItemComponent": false,
+        "type": "Melee Weapon",
+        "vaulted": false,
+        "ducats": 15
+    },
     "Nami Skyla Prime Handle": {
         "name": "Handle",
         "fullName": "Nami Skyla Prime Handle",
@@ -5950,19 +6080,6 @@
         "type": "Primary Weapon",
         "vaulted": false,
         "ducats": 100
-    },
-    "Kestrel Prime Blade": {
-        "name": "Blade",
-        "fullName": "Kestrel Prime Blade",
-        "parentItem": "Kestrel Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Kestrel Prime Blade",
-        "required": 2,
-        "isAnomalousItemComponent": false,
-        "type": "Melee Weapon",
-        "vaulted": false,
-        "ducats": 15
     },
     "Rhino Prime Chassis Blueprint": {
         "name": "Chassis",
@@ -6340,19 +6457,6 @@
         "vaulted": false,
         "ducats": 100
     },
-    "Vadarya Prime Barrel": {
-        "name": "Barrel",
-        "fullName": "Vadarya Prime Barrel",
-        "parentItem": "Vadarya Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Vadarya Prime Barrel",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Primary Weapon",
-        "vaulted": false,
-        "ducats": 45
-    },
     "Mag Prime Blueprint": {
         "name": "Blueprint",
         "fullName": "Mag Prime Blueprint",
@@ -6535,6 +6639,32 @@
         "vaulted": false,
         "ducats": 45
     },
+    "Voruna Prime Chassis Blueprint": {
+        "name": "Chassis",
+        "fullName": "Voruna Prime Chassis",
+        "parentItem": "Voruna Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Voruna Prime Chassis Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": false,
+        "ducats": 45
+    },
+    "Vadarya Prime Stock": {
+        "name": "Stock",
+        "fullName": "Vadarya Prime Stock",
+        "parentItem": "Vadarya Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Vadarya Prime Stock",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
+        "vaulted": false,
+        "ducats": 15
+    },
     "Nekros Prime Systems Blueprint": {
         "name": "Systems",
         "fullName": "Nekros Prime Systems",
@@ -6560,19 +6690,6 @@
         "type": "Warframe",
         "vaulted": true,
         "ducats": 100
-    },
-    "Vadarya Prime Stock": {
-        "name": "Stock",
-        "fullName": "Vadarya Prime Stock",
-        "parentItem": "Vadarya Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Vadarya Prime Stock",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Primary Weapon",
-        "vaulted": false,
-        "ducats": 15
     },
     "Ballistica Prime Receiver": {
         "name": "Receiver",
@@ -6831,7 +6948,7 @@
         "required": 2,
         "isAnomalousItemComponent": false,
         "type": "Melee Weapon",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 45
     },
     "Akarius Prime Blueprint": {
@@ -6938,6 +7055,32 @@
         "vaulted": true,
         "ducats": 100
     },
+    "Voruna Prime Neuroptics Blueprint": {
+        "name": "Neuroptics",
+        "fullName": "Voruna Prime Neuroptics",
+        "parentItem": "Voruna Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Voruna Prime Neuroptics Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": false,
+        "ducats": 45
+    },
+    "Yareli Prime Blueprint": {
+        "name": "Blueprint",
+        "fullName": "Yareli Prime Blueprint",
+        "parentItem": "Yareli Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Yareli Prime Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": false,
+        "ducats": 45
+    },
     "Wyrm Prime Systems": {
         "name": "Systems",
         "fullName": "Wyrm Prime Systems",
@@ -6963,6 +7106,45 @@
         "type": "Warframe",
         "vaulted": true,
         "ducats": 100
+    },
+    "Sarofang Prime Blueprint": {
+        "name": "Blueprint",
+        "fullName": "Sarofang Prime Blueprint",
+        "parentItem": "Sarofang Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Sarofang Prime Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Melee Weapon",
+        "vaulted": false,
+        "ducats": 45
+    },
+    "Daikyu Prime Upper Limb": {
+        "name": "Upper Limb",
+        "fullName": "Daikyu Prime Upper Limb",
+        "parentItem": "Daikyu Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Daikyu Prime Upper Limb",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
+        "vaulted": false,
+        "ducats": 45
+    },
+    "Gyre Prime Systems Blueprint": {
+        "name": "Systems",
+        "fullName": "Gyre Prime Systems",
+        "parentItem": "Gyre Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Gyre Prime Systems Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": false,
+        "ducats": 15
     },
     "Frost Prime Blueprint": {
         "name": "Blueprint",
@@ -7029,6 +7211,19 @@
         "vaulted": false,
         "ducats": 15
     },
+    "Perigale Prime Blueprint": {
+        "name": "Blueprint",
+        "fullName": "Perigale Prime Blueprint",
+        "parentItem": "Perigale Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Perigale Prime Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
+        "vaulted": false,
+        "ducats": 15
+    },
     "Ankyros Prime Gauntlet": {
         "name": "Gauntlet",
         "fullName": "Ankyros Prime Gauntlet",
@@ -7068,19 +7263,6 @@
         "vaulted": true,
         "ducats": 15
     },
-    "Daikyu Prime Upper Limb": {
-        "name": "Upper Limb",
-        "fullName": "Daikyu Prime Upper Limb",
-        "parentItem": "Daikyu Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Daikyu Prime Upper Limb",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Primary Weapon",
-        "vaulted": false,
-        "ducats": 45
-    },
     "Kestrel Prime Blueprint": {
         "name": "Blueprint",
         "fullName": "Kestrel Prime Blueprint",
@@ -7091,19 +7273,6 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Melee Weapon",
-        "vaulted": false,
-        "ducats": 45
-    },
-    "Yareli Prime Blueprint": {
-        "name": "Blueprint",
-        "fullName": "Yareli Prime Blueprint",
-        "parentItem": "Yareli Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Yareli Prime Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Warframe",
         "vaulted": false,
         "ducats": 45
     },
@@ -7185,58 +7354,6 @@
         "vaulted": false,
         "ducats": 100
     },
-    "Gyre Prime Systems Blueprint": {
-        "name": "Systems",
-        "fullName": "Gyre Prime Systems",
-        "parentItem": "Gyre Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Gyre Prime Systems Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Warframe",
-        "vaulted": false,
-        "ducats": 15
-    },
-    "Cedo Prime Barrel": {
-        "name": "Barrel",
-        "fullName": "Cedo Prime Barrel",
-        "parentItem": "Cedo Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Cedo Prime Barrel",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Primary Weapon",
-        "vaulted": false,
-        "ducats": 45
-    },
-    "Cedo Prime Blueprint": {
-        "name": "Blueprint",
-        "fullName": "Cedo Prime Blueprint",
-        "parentItem": "Cedo Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Cedo Prime Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Primary Weapon",
-        "vaulted": false,
-        "ducats": 100
-    },
-    "Dual Zoren Prime Blade": {
-        "name": "Blade",
-        "fullName": "Dual Zoren Prime Blade",
-        "parentItem": "Dual Zoren Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Dual Zoren Prime Blade",
-        "required": 2,
-        "isAnomalousItemComponent": false,
-        "type": "Melee Weapon",
-        "vaulted": false,
-        "ducats": 100
-    },
     "Bo Prime Handle": {
         "name": "Handle",
         "fullName": "Bo Prime Handle",
@@ -7263,16 +7380,29 @@
         "vaulted": false,
         "ducats": 100
     },
-    "Alternox Prime Receiver": {
-        "name": "Receiver",
-        "fullName": "Alternox Prime Receiver",
-        "parentItem": "Alternox Prime",
+    "Perigale Prime Barrel": {
+        "name": "Barrel",
+        "fullName": "Perigale Prime Barrel",
+        "parentItem": "Perigale Prime",
         "anomalous": false,
         "category": "components",
-        "id": "Alternox Prime Receiver",
+        "id": "Perigale Prime Barrel",
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Primary Weapon",
+        "vaulted": false,
+        "ducats": 100
+    },
+    "Sarofang Prime Handle": {
+        "name": "Handle",
+        "fullName": "Sarofang Prime Handle",
+        "parentItem": "Sarofang Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Sarofang Prime Handle",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Melee Weapon",
         "vaulted": false,
         "ducats": 15
     },
@@ -7288,6 +7418,19 @@
         "type": "Warframe",
         "vaulted": false,
         "ducats": 45
+    },
+    "Voruna Prime Systems Blueprint": {
+        "name": "Systems",
+        "fullName": "Voruna Prime Systems",
+        "parentItem": "Voruna Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Voruna Prime Systems Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": false,
+        "ducats": 100
     },
     "Zhuge Prime Barrel": {
         "name": "Barrel",
