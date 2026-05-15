@@ -7351,8 +7351,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Primary Weapon",
-        "vaulted": false,
-        "ducats": 100
+        "vaulted": false
     },
     "Bo Prime Handle": {
         "name": "Handle",
