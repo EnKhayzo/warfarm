@@ -588,9 +588,9 @@
         "name": "Alternox Prime",
         "components": {
             "Alternox Prime Blueprint": true,
+            "Alternox Prime Stock": true,
             "Alternox Prime Receiver": true,
-            "Alternox Prime Barrel": true,
-            "Alternox Prime Stock": true
+            "Alternox Prime Barrel": true
         },
         "category": "items",
         "id": "Alternox Prime",
@@ -660,6 +660,82 @@
         "id": "Velox Prime",
         "vaulted": true,
         "type": "Secondary Weapon"
+    },
+    "Voruna Prime": {
+        "name": "Voruna Prime",
+        "components": {
+            "Voruna Prime Chassis Blueprint": true,
+            "Voruna Prime Blueprint": true,
+            "Voruna Prime Systems Blueprint": true,
+            "Voruna Prime Neuroptics Blueprint": true
+        },
+        "category": "items",
+        "id": "Voruna Prime",
+        "vaulted": false,
+        "type": "Warframe"
+    },
+    "Styanax Prime": {
+        "name": "Styanax Prime",
+        "components": {
+            "Styanax Prime Blueprint": true,
+            "Styanax Prime Neuroptics Blueprint": true,
+            "Styanax Prime Chassis Blueprint": true,
+            "Styanax Prime Systems Blueprint": true
+        },
+        "category": "items",
+        "id": "Styanax Prime",
+        "vaulted": false,
+        "type": "Warframe"
+    },
+    "Vadarya Prime": {
+        "name": "Vadarya Prime",
+        "components": {
+            "Vadarya Prime Stock": true,
+            "Vadarya Prime Receiver": true,
+            "Vadarya Prime Barrel": true,
+            "Vadarya Prime Blueprint": true
+        },
+        "category": "items",
+        "id": "Vadarya Prime",
+        "vaulted": false,
+        "type": "Primary Weapon"
+    },
+    "Afentis Prime": {
+        "name": "Afentis Prime",
+        "components": {
+            "Afentis Prime Blueprint": true,
+            "Afentis Prime Handle": true,
+            "Afentis Prime Blade": true,
+            "Afentis Prime Barrel": true
+        },
+        "category": "items",
+        "id": "Afentis Prime",
+        "vaulted": false,
+        "type": "Melee Weapon"
+    },
+    "Dual Zoren Prime": {
+        "name": "Dual Zoren Prime",
+        "components": {
+            "Dual Zoren Prime Handle": true,
+            "Dual Zoren Prime Blade": true,
+            "Dual Zoren Prime Blueprint": true
+        },
+        "category": "items",
+        "id": "Dual Zoren Prime",
+        "vaulted": false,
+        "type": "Melee Weapon"
+    },
+    "Venato Prime": {
+        "name": "Venato Prime",
+        "components": {
+            "Venato Prime Handle": true,
+            "Venato Prime Blade": true,
+            "Venato Prime Blueprint": true
+        },
+        "category": "items",
+        "id": "Venato Prime",
+        "vaulted": false,
+        "type": "Melee Weapon"
     },
     "Hydroid Prime": {
         "name": "Hydroid Prime",
@@ -981,8 +1057,8 @@
         "name": "Caliban Prime",
         "components": {
             "Caliban Prime Systems Blueprint": true,
-            "Caliban Prime Neuroptics Blueprint": true,
             "Caliban Prime Chassis Blueprint": true,
+            "Caliban Prime Neuroptics Blueprint": true,
             "Caliban Prime Blueprint": true
         },
         "category": "items",
@@ -994,9 +1070,9 @@
         "name": "Perigale Prime",
         "components": {
             "Perigale Prime Stock": true,
+            "Perigale Prime Barrel": true,
             "Perigale Prime Receiver": true,
-            "Perigale Prime Blueprint": true,
-            "Perigale Prime Barrel": true
+            "Perigale Prime Blueprint": true
         },
         "category": "items",
         "id": "Perigale Prime",
@@ -1256,18 +1332,6 @@
         "vaulted": true,
         "type": "Secondary Weapon"
     },
-    "Dual Zoren Prime": {
-        "name": "Dual Zoren Prime",
-        "components": {
-            "Dual Zoren Prime Blade": true,
-            "Dual Zoren Prime Handle": true,
-            "Dual Zoren Prime Blueprint": true
-        },
-        "category": "items",
-        "id": "Dual Zoren Prime",
-        "vaulted": false,
-        "type": "Melee Weapon"
-    },
     "Ember Prime": {
         "name": "Ember Prime",
         "components": {
@@ -1454,7 +1518,7 @@
         },
         "category": "items",
         "id": "Sevagoth Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Warframe"
     },
     "Redeemer Prime": {
@@ -1705,7 +1769,7 @@
         },
         "category": "items",
         "id": "Nautilus Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Companion"
     },
     "Protea Prime": {
@@ -1732,6 +1796,18 @@
         "id": "Venka Prime",
         "vaulted": false,
         "type": "Melee Weapon"
+    },
+    "Athodai Prime": {
+        "name": "Athodai Prime",
+        "components": {
+            "Athodai Prime Receiver": true,
+            "Athodai Prime Blueprint": true,
+            "Athodai Prime Barrel": true
+        },
+        "category": "items",
+        "id": "Athodai Prime",
+        "vaulted": false,
+        "type": "Secondary Weapon"
     },
     "Gunsen Prime": {
         "name": "Gunsen Prime",
@@ -1820,25 +1896,12 @@
         "vaulted": true,
         "type": "Melee Weapon"
     },
-    "Vadarya Prime": {
-        "name": "Vadarya Prime",
-        "components": {
-            "Vadarya Prime Receiver": true,
-            "Vadarya Prime Barrel": true,
-            "Vadarya Prime Stock": true,
-            "Vadarya Prime Blueprint": true
-        },
-        "category": "items",
-        "id": "Vadarya Prime",
-        "vaulted": false,
-        "type": "Primary Weapon"
-    },
     "Sarofang Prime": {
         "name": "Sarofang Prime",
         "components": {
             "Sarofang Prime Blade": true,
-            "Sarofang Prime Blueprint": true,
-            "Sarofang Prime Handle": true
+            "Sarofang Prime Handle": true,
+            "Sarofang Prime Blueprint": true
         },
         "category": "items",
         "id": "Sarofang Prime",
@@ -1914,8 +1977,8 @@
         "components": {
             "Gyre Prime Chassis Blueprint": true,
             "Gyre Prime Neuroptics Blueprint": true,
-            "Gyre Prime Systems Blueprint": true,
-            "Gyre Prime Blueprint": true
+            "Gyre Prime Blueprint": true,
+            "Gyre Prime Systems Blueprint": true
         },
         "category": "items",
         "id": "Gyre Prime",
@@ -1932,31 +1995,6 @@
         },
         "category": "items",
         "id": "Valkyr Prime",
-        "vaulted": false,
-        "type": "Warframe"
-    },
-    "Venato Prime": {
-        "name": "Venato Prime",
-        "components": {
-            "Venato Prime Blade": true,
-            "Venato Prime Blueprint": true,
-            "Venato Prime Handle": true
-        },
-        "category": "items",
-        "id": "Venato Prime",
-        "vaulted": false,
-        "type": "Melee Weapon"
-    },
-    "Voruna Prime": {
-        "name": "Voruna Prime",
-        "components": {
-            "Voruna Prime Blueprint": true,
-            "Voruna Prime Chassis Blueprint": true,
-            "Voruna Prime Neuroptics Blueprint": true,
-            "Voruna Prime Systems Blueprint": true
-        },
-        "category": "items",
-        "id": "Voruna Prime",
         "vaulted": false,
         "type": "Warframe"
     },
@@ -1977,8 +2015,8 @@
         "name": "Kestrel Prime",
         "components": {
             "Kestrel Prime Blade": true,
-            "Kestrel Prime Blueprint": true,
-            "Kestrel Prime Grip": true
+            "Kestrel Prime Grip": true,
+            "Kestrel Prime Blueprint": true
         },
         "category": "items",
         "id": "Kestrel Prime",
