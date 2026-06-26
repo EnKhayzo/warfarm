@@ -891,7 +891,7 @@
         "id": "Afentis Prime Blueprint",
         "required": 1,
         "isAnomalousItemComponent": false,
-        "type": "Melee Weapon",
+        "type": "Primary Weapon",
         "vaulted": false,
         "ducats": 100
     },
@@ -4362,7 +4362,7 @@
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Secondary Weapon",
-        "vaulted": false,
+        "vaulted": true,
         "ducats": 45
     },
     "Protea Prime Systems Blueprint": {
@@ -6843,7 +6843,7 @@
         "id": "Afentis Prime Handle",
         "required": 1,
         "isAnomalousItemComponent": false,
-        "type": "Melee Weapon",
+        "type": "Primary Weapon",
         "vaulted": false,
         "ducats": 15
     },
@@ -7116,7 +7116,7 @@
         "id": "Afentis Prime Blade",
         "required": 1,
         "isAnomalousItemComponent": false,
-        "type": "Melee Weapon",
+        "type": "Primary Weapon",
         "vaulted": false,
         "ducats": 100
     },
@@ -7545,7 +7545,7 @@
         "id": "Afentis Prime Barrel",
         "required": 1,
         "isAnomalousItemComponent": false,
-        "type": "Melee Weapon",
+        "type": "Primary Weapon",
         "vaulted": false,
         "ducats": 45
     },

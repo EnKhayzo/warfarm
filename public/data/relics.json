@@ -24380,6 +24380,39 @@
                 "perc": "25.33%"
             }
         },
+        "vaulted": true
+    },
+    "Neo V12": {
+        "name": "Neo V12",
+        "category": "relics",
+        "id": "Neo V12",
+        "tier": "Neo",
+        "rewards": {
+            "Voruna Prime Systems Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Xaku Prime Chassis Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Quassus Prime Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Akbronco Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Paris Prime Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Yareli Prime Chassis Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
         "vaulted": false
     },
     "Neo V2": {
@@ -25445,39 +25478,5 @@
             }
         },
         "vaulted": true
-    },
-    
-    "Neo V12": {
-        "name": "Neo V12",
-        "category": "relics",
-        "id": "Neo V12",
-        "tier": "Neo",
-        "rewards": {
-            "Akbronco Prime Blueprint": {
-                "rarity": "common",
-                "perc": "25.33%"
-            },
-            "Paris Prime Blueprint": {
-                "rarity": "common",
-                "perc": "25.33%"
-            },
-            "Yareli Prime Chassis Blueprint": {
-                "rarity": "common",
-                "perc": "25.33%"
-            },
-            "Quassus Prime Blueprint": {
-                "rarity": "uncommon",
-                "perc": "11.00%"
-            },
-            "Xaku Prime Chassis Blueprint": {
-                "rarity": "uncommon",
-                "perc": "11.00%"
-            },
-            "Voruna Prime Systems Blueprint": {
-                "rarity": "rare",
-                "perc": "2.00%"
-            }
-        },
-        "vaulted": false
     }
 }

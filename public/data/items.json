@@ -557,7 +557,7 @@
         },
         "category": "items",
         "id": "Epitaph Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Secondary Weapon"
     },
     "Aklex Prime": {
@@ -711,7 +711,7 @@
         "category": "items",
         "id": "Afentis Prime",
         "vaulted": false,
-        "type": "Melee Weapon"
+        "type": "Primary Weapon"
     },
     "Dual Zoren Prime": {
         "name": "Dual Zoren Prime",
