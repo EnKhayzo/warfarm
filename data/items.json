@@ -520,7 +520,7 @@
         },
         "category": "items",
         "id": "Xaku Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Warframe"
     },
     "Larkspur Prime": {
@@ -640,8 +640,8 @@
         "components": {
             "Daikyu Prime String": true,
             "Daikyu Prime Lower Limb": true,
-            "Daikyu Prime Grip": true,
             "Daikyu Prime Blueprint": true,
+            "Daikyu Prime Grip": true,
             "Daikyu Prime Upper Limb": true
         },
         "category": "items",
@@ -737,6 +737,19 @@
         "vaulted": false,
         "type": "Melee Weapon"
     },
+    "Protea Prime": {
+        "name": "Protea Prime",
+        "components": {
+            "Protea Prime Neuroptics Blueprint": true,
+            "Protea Prime Blueprint": true,
+            "Protea Prime Chassis Blueprint": true,
+            "Protea Prime Systems Blueprint": true
+        },
+        "category": "items",
+        "id": "Protea Prime",
+        "vaulted": true,
+        "type": "Warframe"
+    },
     "Hydroid Prime": {
         "name": "Hydroid Prime",
         "components": {
@@ -768,9 +781,9 @@
         "name": "Ballistica Prime",
         "components": {
             "Ballistica Prime String": true,
+            "Ballistica Prime Blueprint": true,
             "Ballistica Prime Lower Limb": true,
             "Ballistica Prime Upper Limb": true,
-            "Ballistica Prime Blueprint": true,
             "Ballistica Prime Receiver": true
         },
         "category": "items",
@@ -939,6 +952,32 @@
         "vaulted": true,
         "type": "Secondary Weapon"
     },
+    "Sevagoth Prime": {
+        "name": "Sevagoth Prime",
+        "components": {
+            "Sevagoth Prime Systems Blueprint": true,
+            "Sevagoth Prime Neuroptics Blueprint": true,
+            "Sevagoth Prime Chassis Blueprint": true,
+            "Sevagoth Prime Blueprint": true
+        },
+        "category": "items",
+        "id": "Sevagoth Prime",
+        "vaulted": true,
+        "type": "Warframe"
+    },
+    "Nautilus Prime": {
+        "name": "Nautilus Prime",
+        "components": {
+            "Nautilus Prime Blueprint": true,
+            "Nautilus Prime Cerebrum": true,
+            "Nautilus Prime Carapace": true,
+            "Nautilus Prime Systems": true
+        },
+        "category": "items",
+        "id": "Nautilus Prime",
+        "vaulted": true,
+        "type": "Companion"
+    },
     "Akjagara Prime": {
         "name": "Akjagara Prime",
         "components": {
@@ -1078,6 +1117,44 @@
         "id": "Perigale Prime",
         "vaulted": false,
         "type": "Primary Weapon"
+    },
+    "Citrine Prime": {
+        "name": "Citrine Prime",
+        "components": {
+            "Citrine Prime Neuroptics Blueprint": true,
+            "Citrine Prime Systems Blueprint": true,
+            "Citrine Prime Blueprint": true,
+            "Citrine Prime Chassis Blueprint": true
+        },
+        "category": "items",
+        "id": "Citrine Prime",
+        "vaulted": false,
+        "type": "Warframe"
+    },
+    "Kestrel Prime": {
+        "name": "Kestrel Prime",
+        "components": {
+            "Kestrel Prime Blueprint": true,
+            "Kestrel Prime Blade": true,
+            "Kestrel Prime Grip": true
+        },
+        "category": "items",
+        "id": "Kestrel Prime",
+        "vaulted": false,
+        "type": "Melee Weapon"
+    },
+    "Corufell Prime": {
+        "name": "Corufell Prime",
+        "components": {
+            "Corufell Prime Handle": true,
+            "Corufell Prime Stock": true,
+            "Corufell Prime Blueprint": true,
+            "Corufell Prime Receiver": true
+        },
+        "category": "items",
+        "id": "Corufell Prime",
+        "vaulted": false,
+        "type": "Melee Weapon"
     },
     "Silva & Aegis Prime": {
         "name": "Silva & Aegis Prime",
@@ -1505,21 +1582,8 @@
         },
         "category": "items",
         "id": "Quassus Prime",
-        "vaulted": false,
-        "type": "Melee Weapon"
-    },
-    "Sevagoth Prime": {
-        "name": "Sevagoth Prime",
-        "components": {
-            "Sevagoth Prime Neuroptics Blueprint": true,
-            "Sevagoth Prime Chassis Blueprint": true,
-            "Sevagoth Prime Blueprint": true,
-            "Sevagoth Prime Systems Blueprint": true
-        },
-        "category": "items",
-        "id": "Sevagoth Prime",
         "vaulted": true,
-        "type": "Warframe"
+        "type": "Melee Weapon"
     },
     "Redeemer Prime": {
         "name": "Redeemer Prime",
@@ -1759,32 +1823,6 @@
         "vaulted": true,
         "type": "Secondary Weapon"
     },
-    "Nautilus Prime": {
-        "name": "Nautilus Prime",
-        "components": {
-            "Nautilus Prime Cerebrum": true,
-            "Nautilus Prime Systems": true,
-            "Nautilus Prime Carapace": true,
-            "Nautilus Prime Blueprint": true
-        },
-        "category": "items",
-        "id": "Nautilus Prime",
-        "vaulted": true,
-        "type": "Companion"
-    },
-    "Protea Prime": {
-        "name": "Protea Prime",
-        "components": {
-            "Protea Prime Blueprint": true,
-            "Protea Prime Chassis Blueprint": true,
-            "Protea Prime Systems Blueprint": true,
-            "Protea Prime Neuroptics Blueprint": true
-        },
-        "category": "items",
-        "id": "Protea Prime",
-        "vaulted": true,
-        "type": "Warframe"
-    },
     "Venka Prime": {
         "name": "Venka Prime",
         "components": {
@@ -1831,7 +1869,7 @@
         },
         "category": "items",
         "id": "Trumna Prime",
-        "vaulted": false,
+        "vaulted": true,
         "type": "Primary Weapon"
     },
     "Rhino Prime": {
@@ -1908,6 +1946,32 @@
         "vaulted": false,
         "type": "Melee Weapon"
     },
+    "Steflos Prime": {
+        "name": "Steflos Prime",
+        "components": {
+            "Steflos Prime Barrel": true,
+            "Steflos Prime Receiver": true,
+            "Steflos Prime Stock": true,
+            "Steflos Prime Blueprint": true
+        },
+        "category": "items",
+        "id": "Steflos Prime",
+        "vaulted": false,
+        "type": "Primary Weapon"
+    },
+    "Gyre Prime": {
+        "name": "Gyre Prime",
+        "components": {
+            "Gyre Prime Blueprint": true,
+            "Gyre Prime Chassis Blueprint": true,
+            "Gyre Prime Neuroptics Blueprint": true,
+            "Gyre Prime Systems Blueprint": true
+        },
+        "category": "items",
+        "id": "Gyre Prime",
+        "vaulted": false,
+        "type": "Warframe"
+    },
     "Nyx Prime": {
         "name": "Nyx Prime",
         "components": {
@@ -1972,19 +2036,6 @@
         "vaulted": true,
         "type": "Primary Weapon"
     },
-    "Gyre Prime": {
-        "name": "Gyre Prime",
-        "components": {
-            "Gyre Prime Chassis Blueprint": true,
-            "Gyre Prime Neuroptics Blueprint": true,
-            "Gyre Prime Blueprint": true,
-            "Gyre Prime Systems Blueprint": true
-        },
-        "category": "items",
-        "id": "Gyre Prime",
-        "vaulted": false,
-        "type": "Warframe"
-    },
     "Valkyr Prime": {
         "name": "Valkyr Prime",
         "components": {
@@ -2010,17 +2061,5 @@
         "id": "Yareli Prime",
         "vaulted": false,
         "type": "Warframe"
-    },
-    "Kestrel Prime": {
-        "name": "Kestrel Prime",
-        "components": {
-            "Kestrel Prime Blade": true,
-            "Kestrel Prime Grip": true,
-            "Kestrel Prime Blueprint": true
-        },
-        "category": "items",
-        "id": "Kestrel Prime",
-        "vaulted": false,
-        "type": "Melee Weapon"
     }
 }
