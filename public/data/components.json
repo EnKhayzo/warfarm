@@ -7718,18 +7718,6 @@
         "vaulted": true,
         "ducats": 45
     },
-    "Gyre Systems Blueprint": {
-        "name": "Gyre Systems Blueprint",
-        "fullName": "Gyre Systems Blueprint",
-        "parentItem": null,
-        "anomalous": true,
-        "category": "components",
-        "id": "Gyre Systems Blueprint",
-        "required": 0,
-        "isAnomalousItemComponent": false,
-        "type": "?",
-        "vaulted": false
-    },
     "Steflos Prime Blueprint": {
         "name": "Blueprint",
         "fullName": "Steflos Prime Blueprint",

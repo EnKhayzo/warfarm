@@ -5298,13 +5298,6 @@ export const pathObjs = {
         "routeId": "BoPrimeHandle",
         "id": "Bo Prime Handle"
     },
-    "/prime/components/GyreSystemsBlueprint": {
-        "title": "Gyre Systems Blueprint",
-        "category": "components",
-        "route": "/prime/components/GyreSystemsBlueprint",
-        "routeId": "GyreSystemsBlueprint",
-        "id": "Gyre Systems Blueprint"
-    },
     "/prime/components/SteflosPrimeBlueprint": {
         "title": "Steflos Prime Blueprint",
         "category": "components",
