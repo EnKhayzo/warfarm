@@ -801,19 +801,19 @@
                 "rarity": "rare",
                 "perc": "2.00%"
             },
-            "Epitaph Prime Barrel": {
+            "Nami Skyla Prime Handle": {
                 "rarity": "uncommon",
                 "perc": "11.00%"
             },
-            "Sevagoth Prime Systems Blueprint": {
+            "Burston Prime Barrel": {
                 "rarity": "uncommon",
                 "perc": "11.00%"
             },
-            "Nautilus Prime Blueprint": {
+            "Nautilus Prime Carapace": {
                 "rarity": "common",
                 "perc": "25.33%"
             },
-            "Burston Prime Blueprint": {
+            "Burston Prime Stock": {
                 "rarity": "common",
                 "perc": "25.33%"
             },
@@ -3668,15 +3668,15 @@
         "id": "Axi N14",
         "tier": "Axi",
         "rewards": {
-            "Nami Skyla Prime Blade": {
+            "Nautilus Prime Cerebrum": {
                 "rarity": "rare",
                 "perc": "2.00%"
             },
-            "Nautilus Prime Carapace": {
+            "Nami Skyla Prime Blade": {
                 "rarity": "uncommon",
                 "perc": "11.00%"
             },
-            "Ballistica Prime Upper Limb": {
+            "Bronco Prime Barrel": {
                 "rarity": "uncommon",
                 "perc": "11.00%"
             },
@@ -11753,23 +11753,23 @@
         "id": "Lith S20",
         "tier": "Lith",
         "rewards": {
-            "Sevagoth Prime Blueprint": {
+            "Sevagoth Prime Chassis Blueprint": {
                 "rarity": "rare",
                 "perc": "2.00%"
             },
-            "Hydroid Prime Blueprint": {
+            "Sevagoth Prime Blueprint": {
                 "rarity": "uncommon",
                 "perc": "11.00%"
             },
-            "Bronco Prime Barrel": {
+            "Epitaph Prime Barrel": {
                 "rarity": "uncommon",
                 "perc": "11.00%"
             },
-            "Ballistica Prime Receiver": {
+            "Ballistica Prime Lower Limb": {
                 "rarity": "common",
                 "perc": "25.33%"
             },
-            "Burston Prime Receiver": {
+            "Bronco Prime Receiver": {
                 "rarity": "common",
                 "perc": "25.33%"
             },
@@ -14789,11 +14789,11 @@
                 "rarity": "rare",
                 "perc": "2.00%"
             },
-            "Ballistica Prime Lower Limb": {
+            "Nautilus Prime Systems": {
                 "rarity": "uncommon",
                 "perc": "11.00%"
             },
-            "Hydroid Prime Neuroptics Blueprint": {
+            "Hydroid Prime Blueprint": {
                 "rarity": "uncommon",
                 "perc": "11.00%"
             },
@@ -14801,7 +14801,7 @@
                 "rarity": "common",
                 "perc": "25.33%"
             },
-            "Bronco Prime Receiver": {
+            "Nami Skyla Prime Blueprint": {
                 "rarity": "common",
                 "perc": "25.33%"
             },
@@ -21818,19 +21818,19 @@
                 "rarity": "rare",
                 "perc": "2.00%"
             },
-            "Sevagoth Prime Chassis Blueprint": {
+            "Ballistica Prime String": {
                 "rarity": "uncommon",
                 "perc": "11.00%"
             },
-            "Nautilus Prime Systems": {
+            "Ballistica Prime Upper Limb": {
                 "rarity": "uncommon",
                 "perc": "11.00%"
             },
-            "Burston Prime Stock": {
+            "Epitaph Prime Blueprint": {
                 "rarity": "common",
                 "perc": "25.33%"
             },
-            "Nami Skyla Prime Handle": {
+            "Burston Prime Receiver": {
                 "rarity": "common",
                 "perc": "25.33%"
             },
@@ -23167,23 +23167,23 @@
         "id": "Neo N25",
         "tier": "Neo",
         "rewards": {
-            "Nautilus Prime Cerebrum": {
+            "Nautilus Prime Blueprint": {
                 "rarity": "rare",
                 "perc": "2.00%"
             },
-            "Nami Skyla Prime Blueprint": {
+            "Hydroid Prime Neuroptics Blueprint": {
                 "rarity": "uncommon",
                 "perc": "11.00%"
             },
-            "Burston Prime Barrel": {
+            "Ballistica Prime Receiver": {
                 "rarity": "uncommon",
                 "perc": "11.00%"
             },
-            "Epitaph Prime Blueprint": {
+            "Sevagoth Prime Systems Blueprint": {
                 "rarity": "common",
                 "perc": "25.33%"
             },
-            "Ballistica Prime String": {
+            "Burston Prime Blueprint": {
                 "rarity": "common",
                 "perc": "25.33%"
             },
