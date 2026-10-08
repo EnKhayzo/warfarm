@@ -1375,44 +1375,31 @@
         "vaulted": true,
         "ducats": 100
     },
-    "Epitaph Prime Barrel": {
-        "name": "Barrel",
-        "fullName": "Epitaph Prime Barrel",
-        "parentItem": "Epitaph Prime",
+    "Nami Skyla Prime Handle": {
+        "name": "Handle",
+        "fullName": "Nami Skyla Prime Handle",
+        "parentItem": "Nami Skyla Prime",
         "anomalous": false,
         "category": "components",
-        "id": "Epitaph Prime Barrel",
-        "required": 1,
+        "id": "Nami Skyla Prime Handle",
+        "required": 2,
         "isAnomalousItemComponent": false,
-        "type": "Secondary Weapon",
+        "type": "Melee Weapon",
         "vaulted": true,
         "ducats": 45
     },
-    "Sevagoth Prime Systems Blueprint": {
-        "name": "Systems",
-        "fullName": "Sevagoth Prime Systems",
-        "parentItem": "Sevagoth Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Sevagoth Prime Systems Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Warframe",
-        "vaulted": true,
-        "ducats": 15
-    },
-    "Nautilus Prime Blueprint": {
-        "name": "Blueprint",
-        "fullName": "Nautilus Prime Blueprint",
+    "Nautilus Prime Carapace": {
+        "name": "Carapace",
+        "fullName": "Nautilus Prime Carapace",
         "parentItem": "Nautilus Prime",
         "anomalous": false,
         "category": "components",
-        "id": "Nautilus Prime Blueprint",
+        "id": "Nautilus Prime Carapace",
         "required": 1,
         "isAnomalousItemComponent": false,
         "type": "Companion",
         "vaulted": true,
-        "ducats": 100
+        "ducats": 15
     },
     "Sybaris Prime Blueprint": {
         "name": "Blueprint",
@@ -4066,19 +4053,6 @@
         "vaulted": true,
         "ducats": 100
     },
-    "Nautilus Prime Carapace": {
-        "name": "Carapace",
-        "fullName": "Nautilus Prime Carapace",
-        "parentItem": "Nautilus Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Nautilus Prime Carapace",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Companion",
-        "vaulted": true,
-        "ducats": 15
-    },
     "Carrier Prime Carapace": {
         "name": "Carapace",
         "fullName": "Carrier Prime Carapace",
@@ -4494,6 +4468,19 @@
         "type": "Warframe",
         "vaulted": true,
         "ducats": 15
+    },
+    "Epitaph Prime Barrel": {
+        "name": "Barrel",
+        "fullName": "Epitaph Prime Barrel",
+        "parentItem": "Epitaph Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Epitaph Prime Barrel",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Secondary Weapon",
+        "vaulted": true,
+        "ducats": 45
     },
     "Protea Prime Systems Blueprint": {
         "name": "Systems",
@@ -5847,6 +5834,19 @@
         "vaulted": true,
         "ducats": 100
     },
+    "Sevagoth Prime Systems Blueprint": {
+        "name": "Systems",
+        "fullName": "Sevagoth Prime Systems",
+        "parentItem": "Sevagoth Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Sevagoth Prime Systems Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": true,
+        "ducats": 15
+    },
     "Boar Prime Stock": {
         "name": "Stock",
         "fullName": "Boar Prime Stock",
@@ -6119,19 +6119,6 @@
         "type": "Melee Weapon",
         "vaulted": false,
         "ducats": 15
-    },
-    "Nami Skyla Prime Handle": {
-        "name": "Handle",
-        "fullName": "Nami Skyla Prime Handle",
-        "parentItem": "Nami Skyla Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Nami Skyla Prime Handle",
-        "required": 2,
-        "isAnomalousItemComponent": false,
-        "type": "Melee Weapon",
-        "vaulted": true,
-        "ducats": 45
     },
     "Chroma Prime Neuroptics Blueprint": {
         "name": "Neuroptics",
@@ -6846,6 +6833,19 @@
         "type": "Primary Weapon",
         "vaulted": true,
         "ducats": 45
+    },
+    "Nautilus Prime Blueprint": {
+        "name": "Blueprint",
+        "fullName": "Nautilus Prime Blueprint",
+        "parentItem": "Nautilus Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Nautilus Prime Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Companion",
+        "vaulted": true,
+        "ducats": 100
     },
     "Quassus Prime Blueprint": {
         "name": "Blueprint",

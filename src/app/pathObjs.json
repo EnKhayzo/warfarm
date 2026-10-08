@@ -524,12 +524,12 @@
         "routeId": "EuphonaPrime",
         "id": "Euphona Prime"
     },
-    "/prime/items/SevagothPrime": {
-        "title": "Sevagoth Prime",
+    "/prime/items/NamiSkylaPrime": {
+        "title": "Nami Skyla Prime",
         "category": "items",
-        "route": "/prime/items/SevagothPrime",
-        "routeId": "SevagothPrime",
-        "id": "Sevagoth Prime"
+        "route": "/prime/items/NamiSkylaPrime",
+        "routeId": "NamiSkylaPrime",
+        "id": "Nami Skyla Prime"
     },
     "/prime/items/NautilusPrime": {
         "title": "Nautilus Prime",
@@ -874,6 +874,13 @@
         "routeId": "QuassusPrime",
         "id": "Quassus Prime"
     },
+    "/prime/items/SevagothPrime": {
+        "title": "Sevagoth Prime",
+        "category": "items",
+        "route": "/prime/items/SevagothPrime",
+        "routeId": "SevagothPrime",
+        "id": "Sevagoth Prime"
+    },
     "/prime/items/RedeemerPrime": {
         "title": "Redeemer Prime",
         "category": "items",
@@ -971,13 +978,6 @@
         "route": "/prime/items/WyrmPrime",
         "routeId": "WyrmPrime",
         "id": "Wyrm Prime"
-    },
-    "/prime/items/NamiSkylaPrime": {
-        "title": "Nami Skyla Prime",
-        "category": "items",
-        "route": "/prime/items/NamiSkylaPrime",
-        "routeId": "NamiSkylaPrime",
-        "id": "Nami Skyla Prime"
     },
     "/prime/items/VoltPrime": {
         "title": "Volt Prime",
@@ -1882,26 +1882,19 @@
         "routeId": "BallisticaPrimeBlueprint",
         "id": "Ballistica Prime Blueprint"
     },
-    "/prime/components/EpitaphPrimeBarrel": {
-        "title": "Epitaph Prime Barrel",
+    "/prime/components/NamiSkylaPrimeHandle": {
+        "title": "Nami Skyla Prime Handle",
         "category": "components",
-        "route": "/prime/components/EpitaphPrimeBarrel",
-        "routeId": "EpitaphPrimeBarrel",
-        "id": "Epitaph Prime Barrel"
+        "route": "/prime/components/NamiSkylaPrimeHandle",
+        "routeId": "NamiSkylaPrimeHandle",
+        "id": "Nami Skyla Prime Handle"
     },
-    "/prime/components/SevagothPrimeSystemsBlueprint": {
-        "title": "Sevagoth Prime Systems",
+    "/prime/components/NautilusPrimeCarapace": {
+        "title": "Nautilus Prime Carapace",
         "category": "components",
-        "route": "/prime/components/SevagothPrimeSystemsBlueprint",
-        "routeId": "SevagothPrimeSystemsBlueprint",
-        "id": "Sevagoth Prime Systems Blueprint"
-    },
-    "/prime/components/NautilusPrimeBlueprint": {
-        "title": "Nautilus Prime Blueprint",
-        "category": "components",
-        "route": "/prime/components/NautilusPrimeBlueprint",
-        "routeId": "NautilusPrimeBlueprint",
-        "id": "Nautilus Prime Blueprint"
+        "route": "/prime/components/NautilusPrimeCarapace",
+        "routeId": "NautilusPrimeCarapace",
+        "id": "Nautilus Prime Carapace"
     },
     "/prime/components/SybarisPrimeBlueprint": {
         "title": "Sybaris Prime Blueprint",
@@ -3331,13 +3324,6 @@
         "routeId": "NamiSkylaPrimeBlade",
         "id": "Nami Skyla Prime Blade"
     },
-    "/prime/components/NautilusPrimeCarapace": {
-        "title": "Nautilus Prime Carapace",
-        "category": "components",
-        "route": "/prime/components/NautilusPrimeCarapace",
-        "routeId": "NautilusPrimeCarapace",
-        "id": "Nautilus Prime Carapace"
-    },
     "/prime/components/CarrierPrimeCarapace": {
         "title": "Carrier Prime Carapace",
         "category": "components",
@@ -3561,6 +3547,13 @@
         "route": "/prime/components/BaruukPrimeSystemsBlueprint",
         "routeId": "BaruukPrimeSystemsBlueprint",
         "id": "Baruuk Prime Systems Blueprint"
+    },
+    "/prime/components/EpitaphPrimeBarrel": {
+        "title": "Epitaph Prime Barrel",
+        "category": "components",
+        "route": "/prime/components/EpitaphPrimeBarrel",
+        "routeId": "EpitaphPrimeBarrel",
+        "id": "Epitaph Prime Barrel"
     },
     "/prime/components/ProteaPrimeSystemsBlueprint": {
         "title": "Protea Prime Systems",
@@ -4290,6 +4283,13 @@
         "routeId": "AstillaPrimeBarrel",
         "id": "Astilla Prime Barrel"
     },
+    "/prime/components/SevagothPrimeSystemsBlueprint": {
+        "title": "Sevagoth Prime Systems",
+        "category": "components",
+        "route": "/prime/components/SevagothPrimeSystemsBlueprint",
+        "routeId": "SevagothPrimeSystemsBlueprint",
+        "id": "Sevagoth Prime Systems Blueprint"
+    },
     "/prime/components/BoarPrimeStock": {
         "title": "Boar Prime Stock",
         "category": "components",
@@ -4436,13 +4436,6 @@
         "route": "/prime/components/CorufellPrimeStock",
         "routeId": "CorufellPrimeStock",
         "id": "Corufell Prime Stock"
-    },
-    "/prime/components/NamiSkylaPrimeHandle": {
-        "title": "Nami Skyla Prime Handle",
-        "category": "components",
-        "route": "/prime/components/NamiSkylaPrimeHandle",
-        "routeId": "NamiSkylaPrimeHandle",
-        "id": "Nami Skyla Prime Handle"
     },
     "/prime/components/ChromaPrimeNeuropticsBlueprint": {
         "title": "Chroma Prime Neuroptics",
@@ -4828,6 +4821,13 @@
         "route": "/prime/components/TrumnaPrimeStock",
         "routeId": "TrumnaPrimeStock",
         "id": "Trumna Prime Stock"
+    },
+    "/prime/components/NautilusPrimeBlueprint": {
+        "title": "Nautilus Prime Blueprint",
+        "category": "components",
+        "route": "/prime/components/NautilusPrimeBlueprint",
+        "routeId": "NautilusPrimeBlueprint",
+        "id": "Nautilus Prime Blueprint"
     },
     "/prime/components/QuassusPrimeBlueprint": {
         "title": "Quassus Prime Blueprint",

@@ -952,26 +952,25 @@
         "vaulted": true,
         "type": "Secondary Weapon"
     },
-    "Sevagoth Prime": {
-        "name": "Sevagoth Prime",
+    "Nami Skyla Prime": {
+        "name": "Nami Skyla Prime",
         "components": {
-            "Sevagoth Prime Systems Blueprint": true,
-            "Sevagoth Prime Neuroptics Blueprint": true,
-            "Sevagoth Prime Chassis Blueprint": true,
-            "Sevagoth Prime Blueprint": true
+            "Nami Skyla Prime Handle": true,
+            "Nami Skyla Prime Blueprint": true,
+            "Nami Skyla Prime Blade": true
         },
         "category": "items",
-        "id": "Sevagoth Prime",
+        "id": "Nami Skyla Prime",
         "vaulted": true,
-        "type": "Warframe"
+        "type": "Melee Weapon"
     },
     "Nautilus Prime": {
         "name": "Nautilus Prime",
         "components": {
-            "Nautilus Prime Blueprint": true,
-            "Nautilus Prime Cerebrum": true,
             "Nautilus Prime Carapace": true,
-            "Nautilus Prime Systems": true
+            "Nautilus Prime Cerebrum": true,
+            "Nautilus Prime Systems": true,
+            "Nautilus Prime Blueprint": true
         },
         "category": "items",
         "id": "Nautilus Prime",
@@ -1585,6 +1584,19 @@
         "vaulted": true,
         "type": "Melee Weapon"
     },
+    "Sevagoth Prime": {
+        "name": "Sevagoth Prime",
+        "components": {
+            "Sevagoth Prime Neuroptics Blueprint": true,
+            "Sevagoth Prime Chassis Blueprint": true,
+            "Sevagoth Prime Blueprint": true,
+            "Sevagoth Prime Systems Blueprint": true
+        },
+        "category": "items",
+        "id": "Sevagoth Prime",
+        "vaulted": true,
+        "type": "Warframe"
+    },
     "Redeemer Prime": {
         "name": "Redeemer Prime",
         "components": {
@@ -1760,18 +1772,6 @@
         "id": "Wyrm Prime",
         "vaulted": true,
         "type": "Companion"
-    },
-    "Nami Skyla Prime": {
-        "name": "Nami Skyla Prime",
-        "components": {
-            "Nami Skyla Prime Blueprint": true,
-            "Nami Skyla Prime Blade": true,
-            "Nami Skyla Prime Handle": true
-        },
-        "category": "items",
-        "id": "Nami Skyla Prime",
-        "vaulted": true,
-        "type": "Melee Weapon"
     },
     "Volt Prime": {
         "name": "Volt Prime",
