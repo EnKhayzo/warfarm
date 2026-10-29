@@ -636,6 +636,13 @@ export const pathObjs = {
         "routeId": "CorufellPrime",
         "id": "Corufell Prime"
     },
+    "/prime/items/SarofangPrime": {
+        "title": "Sarofang Prime",
+        "category": "items",
+        "route": "/prime/items/SarofangPrime",
+        "routeId": "SarofangPrime",
+        "id": "Sarofang Prime"
+    },
     "/prime/items/SilvaAegisPrime": {
         "title": "Silva & Aegis Prime",
         "category": "items",
@@ -1069,13 +1076,6 @@ export const pathObjs = {
         "route": "/prime/items/GuandaoPrime",
         "routeId": "GuandaoPrime",
         "id": "Guandao Prime"
-    },
-    "/prime/items/SarofangPrime": {
-        "title": "Sarofang Prime",
-        "category": "items",
-        "route": "/prime/items/SarofangPrime",
-        "routeId": "SarofangPrime",
-        "id": "Sarofang Prime"
     },
     "/prime/items/SteflosPrime": {
         "title": "Steflos Prime",
@@ -2127,6 +2127,34 @@ export const pathObjs = {
         "routeId": "AlternoxPrimeReceiver",
         "id": "Alternox Prime Receiver"
     },
+    "/prime/components/CalibanPrimeNeuropticsBlueprint": {
+        "title": "Caliban Prime Neuroptics",
+        "category": "components",
+        "route": "/prime/components/CalibanPrimeNeuropticsBlueprint",
+        "routeId": "CalibanPrimeNeuropticsBlueprint",
+        "id": "Caliban Prime Neuroptics Blueprint"
+    },
+    "/prime/components/BratonPrimeReceiver": {
+        "title": "Braton Prime Receiver",
+        "category": "components",
+        "route": "/prime/components/BratonPrimeReceiver",
+        "routeId": "BratonPrimeReceiver",
+        "id": "Braton Prime Receiver"
+    },
+    "/prime/components/SarofangPrimeHandle": {
+        "title": "Sarofang Prime Handle",
+        "category": "components",
+        "route": "/prime/components/SarofangPrimeHandle",
+        "routeId": "SarofangPrimeHandle",
+        "id": "Sarofang Prime Handle"
+    },
+    "/prime/components/BroncoPrimeBarrel": {
+        "title": "Bronco Prime Barrel",
+        "category": "components",
+        "route": "/prime/components/BroncoPrimeBarrel",
+        "routeId": "BroncoPrimeBarrel",
+        "id": "Bronco Prime Barrel"
+    },
     "/prime/components/SilvaAegisPrimeBlade": {
         "title": "Silva & Aegis Prime Blade",
         "category": "components",
@@ -2280,13 +2308,6 @@ export const pathObjs = {
         "route": "/prime/components/RevenantPrimeChassisBlueprint",
         "routeId": "RevenantPrimeChassisBlueprint",
         "id": "Revenant Prime Chassis Blueprint"
-    },
-    "/prime/components/BratonPrimeReceiver": {
-        "title": "Braton Prime Receiver",
-        "category": "components",
-        "route": "/prime/components/BratonPrimeReceiver",
-        "routeId": "BratonPrimeReceiver",
-        "id": "Braton Prime Receiver"
     },
     "/prime/components/DestrezaPrimeBlade": {
         "title": "Destreza Prime Blade",
@@ -2448,13 +2469,6 @@ export const pathObjs = {
         "route": "/prime/components/EuphonaPrimeReceiver",
         "routeId": "EuphonaPrimeReceiver",
         "id": "Euphona Prime Receiver"
-    },
-    "/prime/components/BroncoPrimeBarrel": {
-        "title": "Bronco Prime Barrel",
-        "category": "components",
-        "route": "/prime/components/BroncoPrimeBarrel",
-        "routeId": "BroncoPrimeBarrel",
-        "id": "Bronco Prime Barrel"
     },
     "/prime/components/AtlasPrimeSystemsBlueprint": {
         "title": "Atlas Prime Systems",
@@ -4388,13 +4402,6 @@ export const pathObjs = {
         "routeId": "NovaPrimeNeuropticsBlueprint",
         "id": "Nova Prime Neuroptics Blueprint"
     },
-    "/prime/components/CalibanPrimeNeuropticsBlueprint": {
-        "title": "Caliban Prime Neuroptics",
-        "category": "components",
-        "route": "/prime/components/CalibanPrimeNeuropticsBlueprint",
-        "routeId": "CalibanPrimeNeuropticsBlueprint",
-        "id": "Caliban Prime Neuroptics Blueprint"
-    },
     "/prime/components/GaussPrimeChassisBlueprint": {
         "title": "Gauss Prime Chassis",
         "category": "components",
@@ -5046,13 +5053,6 @@ export const pathObjs = {
         "routeId": "VorunaPrimeNeuropticsBlueprint",
         "id": "Voruna Prime Neuroptics Blueprint"
     },
-    "/prime/components/SarofangPrimeHandle": {
-        "title": "Sarofang Prime Handle",
-        "category": "components",
-        "route": "/prime/components/SarofangPrimeHandle",
-        "routeId": "SarofangPrimeHandle",
-        "id": "Sarofang Prime Handle"
-    },
     "/prime/components/NidusPrimeSystemsBlueprint": {
         "title": "Nidus Prime Systems",
         "category": "components",
@@ -5682,6 +5682,13 @@ export const pathObjs = {
         "route": "/prime/relics/AxiC12",
         "routeId": "AxiC12",
         "id": "Axi C12"
+    },
+    "/prime/relics/AxiC13": {
+        "title": "Axi C13",
+        "category": "relics",
+        "route": "/prime/relics/AxiC13",
+        "routeId": "AxiC13",
+        "id": "Axi C13"
     },
     "/prime/relics/AxiC2": {
         "title": "Axi C2",

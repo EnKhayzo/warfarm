@@ -1830,6 +1830,58 @@
         "vaulted": false,
         "ducats": 15
     },
+    "Caliban Prime Neuroptics Blueprint": {
+        "name": "Neuroptics",
+        "fullName": "Caliban Prime Neuroptics",
+        "parentItem": "Caliban Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Caliban Prime Neuroptics Blueprint",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Warframe",
+        "vaulted": false,
+        "ducats": 100
+    },
+    "Braton Prime Receiver": {
+        "name": "Receiver",
+        "fullName": "Braton Prime Receiver",
+        "parentItem": "Braton Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Braton Prime Receiver",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Primary Weapon",
+        "vaulted": false,
+        "ducats": 45
+    },
+    "Sarofang Prime Handle": {
+        "name": "Handle",
+        "fullName": "Sarofang Prime Handle",
+        "parentItem": "Sarofang Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Sarofang Prime Handle",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Melee Weapon",
+        "vaulted": false,
+        "ducats": 15
+    },
+    "Bronco Prime Barrel": {
+        "name": "Barrel",
+        "fullName": "Bronco Prime Barrel",
+        "parentItem": "Bronco Prime",
+        "anomalous": false,
+        "category": "components",
+        "id": "Bronco Prime Barrel",
+        "required": 1,
+        "isAnomalousItemComponent": false,
+        "type": "Secondary Weapon",
+        "vaulted": false,
+        "ducats": 25
+    },
     "Silva & Aegis Prime Blade": {
         "name": "Blade",
         "fullName": "Silva & Aegis Prime Blade",
@@ -2115,19 +2167,6 @@
         "type": "Warframe",
         "vaulted": true,
         "ducats": 15
-    },
-    "Braton Prime Receiver": {
-        "name": "Receiver",
-        "fullName": "Braton Prime Receiver",
-        "parentItem": "Braton Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Braton Prime Receiver",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Primary Weapon",
-        "vaulted": true,
-        "ducats": 45
     },
     "Destreza Prime Blade": {
         "name": "Blade",
@@ -2427,19 +2466,6 @@
         "type": "Secondary Weapon",
         "vaulted": true,
         "ducats": 100
-    },
-    "Bronco Prime Barrel": {
-        "name": "Barrel",
-        "fullName": "Bronco Prime Barrel",
-        "parentItem": "Bronco Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Bronco Prime Barrel",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Secondary Weapon",
-        "vaulted": false,
-        "ducats": 45
     },
     "Atlas Prime Systems Blueprint": {
         "name": "Systems",
@@ -4051,7 +4077,7 @@
         "isAnomalousItemComponent": false,
         "type": "Melee Weapon",
         "vaulted": true,
-        "ducats": 100
+        "ducats": 65
     },
     "Carrier Prime Carapace": {
         "name": "Carapace",
@@ -6029,19 +6055,6 @@
         "vaulted": true,
         "ducats": 15
     },
-    "Caliban Prime Neuroptics Blueprint": {
-        "name": "Neuroptics",
-        "fullName": "Caliban Prime Neuroptics",
-        "parentItem": "Caliban Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Caliban Prime Neuroptics Blueprint",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Warframe",
-        "vaulted": false,
-        "ducats": 100
-    },
     "Gauss Prime Chassis Blueprint": {
         "name": "Chassis",
         "fullName": "Gauss Prime Chassis",
@@ -7249,19 +7262,6 @@
         "type": "Warframe",
         "vaulted": false,
         "ducats": 45
-    },
-    "Sarofang Prime Handle": {
-        "name": "Handle",
-        "fullName": "Sarofang Prime Handle",
-        "parentItem": "Sarofang Prime",
-        "anomalous": false,
-        "category": "components",
-        "id": "Sarofang Prime Handle",
-        "required": 1,
-        "isAnomalousItemComponent": false,
-        "type": "Melee Weapon",
-        "vaulted": false,
-        "ducats": 15
     },
     "Nidus Prime Systems Blueprint": {
         "name": "Systems",

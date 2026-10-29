@@ -540,8 +540,8 @@
         "name": "Bronco Prime",
         "components": {
             "Bronco Prime Receiver": true,
-            "Bronco Prime Blueprint": true,
-            "Bronco Prime Barrel": true
+            "Bronco Prime Barrel": true,
+            "Bronco Prime Blueprint": true
         },
         "category": "items",
         "id": "Bronco Prime",
@@ -1095,8 +1095,8 @@
         "name": "Caliban Prime",
         "components": {
             "Caliban Prime Systems Blueprint": true,
-            "Caliban Prime Chassis Blueprint": true,
             "Caliban Prime Neuroptics Blueprint": true,
+            "Caliban Prime Chassis Blueprint": true,
             "Caliban Prime Blueprint": true
         },
         "category": "items",
@@ -1152,6 +1152,18 @@
         },
         "category": "items",
         "id": "Corufell Prime",
+        "vaulted": false,
+        "type": "Melee Weapon"
+    },
+    "Sarofang Prime": {
+        "name": "Sarofang Prime",
+        "components": {
+            "Sarofang Prime Handle": true,
+            "Sarofang Prime Blade": true,
+            "Sarofang Prime Blueprint": true
+        },
+        "category": "items",
+        "id": "Sarofang Prime",
         "vaulted": false,
         "type": "Melee Weapon"
     },
@@ -1932,18 +1944,6 @@
         "category": "items",
         "id": "Guandao Prime",
         "vaulted": true,
-        "type": "Melee Weapon"
-    },
-    "Sarofang Prime": {
-        "name": "Sarofang Prime",
-        "components": {
-            "Sarofang Prime Blade": true,
-            "Sarofang Prime Handle": true,
-            "Sarofang Prime Blueprint": true
-        },
-        "category": "items",
-        "id": "Sarofang Prime",
-        "vaulted": false,
         "type": "Melee Weapon"
     },
     "Steflos Prime": {
