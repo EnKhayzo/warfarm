@@ -3997,7 +3997,7 @@
                     "name": "Axi S21 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "7.90%"
+                    "perc": "7.32%"
                 }
             ],
             "Axi D6 Relic": [
@@ -4005,7 +4005,7 @@
                     "name": "Axi D6 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "7.90%"
+                    "perc": "7.32%"
                 }
             ],
             "Axi V14 Relic": [
@@ -4013,7 +4013,7 @@
                     "name": "Axi V14 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "7.90%"
+                    "perc": "7.32%"
                 }
             ],
             "Axi C12 Relic": [
@@ -4021,7 +4021,15 @@
                     "name": "Axi C12 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "7.90%"
+                    "perc": "7.32%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "7.32%"
                 }
             ],
             "Axi A21 Relic": [
@@ -4029,7 +4037,7 @@
                     "name": "Axi A21 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "7.90%"
+                    "perc": "7.32%"
                 }
             ],
             "Axi A22 Relic": [
@@ -4037,7 +4045,7 @@
                     "name": "Axi A22 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "7.90%"
+                    "perc": "7.32%"
                 }
             ],
             "Axi P10 Relic": [
@@ -4045,7 +4053,7 @@
                     "name": "Axi P10 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "7.90%"
+                    "perc": "7.32%"
                 }
             ]
         }
@@ -4175,7 +4183,7 @@
                     "name": "Axi S21 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "5.00%"
+                    "perc": "4.76%"
                 }
             ],
             "Axi D6 Relic": [
@@ -4183,7 +4191,7 @@
                     "name": "Axi D6 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "5.00%"
+                    "perc": "4.76%"
                 }
             ],
             "Axi V14 Relic": [
@@ -4191,7 +4199,7 @@
                     "name": "Axi V14 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "5.00%"
+                    "perc": "4.76%"
                 }
             ],
             "Axi C12 Relic": [
@@ -4199,7 +4207,15 @@
                     "name": "Axi C12 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "5.00%"
+                    "perc": "4.76%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "4.76%"
                 }
             ],
             "Axi A21 Relic": [
@@ -4207,7 +4223,7 @@
                     "name": "Axi A21 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "5.00%"
+                    "perc": "4.76%"
                 }
             ],
             "Axi A22 Relic": [
@@ -4215,7 +4231,7 @@
                     "name": "Axi A22 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "5.00%"
+                    "perc": "4.76%"
                 }
             ],
             "Axi P10 Relic": [
@@ -4223,7 +4239,7 @@
                     "name": "Axi P10 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "5.00%"
+                    "perc": "4.76%"
                 }
             ]
         }
@@ -6553,13 +6569,13 @@
                     "name": "Axi S21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
@@ -6567,13 +6583,13 @@
                     "name": "Axi D6 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
@@ -6581,13 +6597,13 @@
                     "name": "Axi V14 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
@@ -6595,13 +6611,27 @@
                     "name": "Axi C12 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "6.25%"
+                },
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
@@ -6609,13 +6639,13 @@
                     "name": "Axi A21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
@@ -6623,13 +6653,13 @@
                     "name": "Axi A22 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
@@ -6637,13 +6667,13 @@
                     "name": "Axi P10 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -6716,56 +6746,64 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -6856,56 +6894,64 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -7109,13 +7155,13 @@
                     "name": "Axi S21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
@@ -7123,13 +7169,13 @@
                     "name": "Axi D6 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
@@ -7137,13 +7183,13 @@
                     "name": "Axi V14 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
@@ -7151,13 +7197,27 @@
                     "name": "Axi C12 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "6.25%"
+                },
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
@@ -7165,13 +7225,13 @@
                     "name": "Axi A21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
@@ -7179,13 +7239,13 @@
                     "name": "Axi A22 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
@@ -7193,13 +7253,13 @@
                     "name": "Axi P10 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -7473,13 +7533,13 @@
                     "name": "Axi S21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
@@ -7487,13 +7547,13 @@
                     "name": "Axi D6 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
@@ -7501,13 +7561,13 @@
                     "name": "Axi V14 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
@@ -7515,13 +7575,27 @@
                     "name": "Axi C12 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "6.25%"
+                },
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
@@ -7529,13 +7603,13 @@
                     "name": "Axi A21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
@@ -7543,13 +7617,13 @@
                     "name": "Axi A22 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
@@ -7557,13 +7631,13 @@
                     "name": "Axi P10 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -7590,7 +7664,7 @@
                     "name": "Axi S21 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "9.68%"
+                    "perc": "8.60%"
                 }
             ],
             "Axi D6 Relic": [
@@ -7598,7 +7672,7 @@
                     "name": "Axi D6 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "9.68%"
+                    "perc": "8.60%"
                 }
             ],
             "Axi V14 Relic": [
@@ -7606,7 +7680,7 @@
                     "name": "Axi V14 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "9.68%"
+                    "perc": "8.60%"
                 }
             ],
             "Axi C12 Relic": [
@@ -7614,7 +7688,15 @@
                     "name": "Axi C12 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "9.68%"
+                    "perc": "8.60%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "8.60%"
                 }
             ],
             "Axi A21 Relic": [
@@ -7622,7 +7704,7 @@
                     "name": "Axi A21 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "9.68%"
+                    "perc": "8.60%"
                 }
             ],
             "Axi A22 Relic": [
@@ -7630,7 +7712,7 @@
                     "name": "Axi A22 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "9.68%"
+                    "perc": "8.60%"
                 }
             ],
             "Axi P10 Relic": [
@@ -7638,7 +7720,7 @@
                     "name": "Axi P10 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "9.68%"
+                    "perc": "8.60%"
                 }
             ]
         }
@@ -7711,56 +7793,64 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -7944,13 +8034,13 @@
                     "name": "Axi S21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
@@ -7958,13 +8048,13 @@
                     "name": "Axi D6 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
@@ -7972,13 +8062,13 @@
                     "name": "Axi V14 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
@@ -7986,13 +8076,27 @@
                     "name": "Axi C12 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "6.25%"
+                },
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
@@ -8000,13 +8104,13 @@
                     "name": "Axi A21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
@@ -8014,13 +8118,13 @@
                     "name": "Axi A22 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
@@ -8028,13 +8132,13 @@
                     "name": "Axi P10 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -8116,56 +8220,64 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -8494,56 +8606,64 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.00%"
+                    "rarity": "rare",
+                    "perc": "9.09%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.00%"
+                    "rarity": "rare",
+                    "perc": "9.09%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.00%"
+                    "rarity": "rare",
+                    "perc": "9.09%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.00%"
+                    "rarity": "rare",
+                    "perc": "9.09%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.09%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.00%"
+                    "rarity": "rare",
+                    "perc": "9.09%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.00%"
+                    "rarity": "rare",
+                    "perc": "9.09%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.00%"
+                    "rarity": "rare",
+                    "perc": "9.09%"
                 }
             ]
         }
@@ -8616,56 +8736,64 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -8784,13 +8912,13 @@
                     "name": "Axi S21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
@@ -8798,13 +8926,13 @@
                     "name": "Axi D6 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
@@ -8812,13 +8940,13 @@
                     "name": "Axi V14 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
@@ -8826,13 +8954,27 @@
                     "name": "Axi C12 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "6.25%"
+                },
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
@@ -8840,13 +8982,13 @@
                     "name": "Axi A21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
@@ -8854,13 +8996,13 @@
                     "name": "Axi A22 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
@@ -8868,13 +9010,13 @@
                     "name": "Axi P10 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -8993,13 +9135,13 @@
                     "name": "Axi S21 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi D6 Relic": [
@@ -9007,13 +9149,13 @@
                     "name": "Axi D6 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi V14 Relic": [
@@ -9021,13 +9163,13 @@
                     "name": "Axi V14 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi C12 Relic": [
@@ -9035,13 +9177,27 @@
                     "name": "Axi C12 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "B",
+                    "rarity": "uncommon",
+                    "perc": "12.50%"
+                },
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "uncommon",
+                    "perc": "12.50%"
                 }
             ],
             "Axi A21 Relic": [
@@ -9049,13 +9205,13 @@
                     "name": "Axi A21 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi A22 Relic": [
@@ -9063,13 +9219,13 @@
                     "name": "Axi A22 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi P10 Relic": [
@@ -9077,13 +9233,13 @@
                     "name": "Axi P10 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ]
         }
@@ -9156,56 +9312,64 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -9642,56 +9806,64 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -11318,13 +11490,13 @@
                     "name": "Axi S21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
@@ -11332,13 +11504,13 @@
                     "name": "Axi D6 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
@@ -11346,13 +11518,13 @@
                     "name": "Axi V14 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
@@ -11360,13 +11532,27 @@
                     "name": "Axi C12 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "6.25%"
+                },
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
@@ -11374,13 +11560,13 @@
                     "name": "Axi A21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
@@ -11388,13 +11574,13 @@
                     "name": "Axi A22 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
@@ -11402,13 +11588,13 @@
                     "name": "Axi P10 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -11481,56 +11667,64 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -11743,13 +11937,13 @@
                     "name": "Axi S21 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi D6 Relic": [
@@ -11757,13 +11951,13 @@
                     "name": "Axi D6 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi V14 Relic": [
@@ -11771,13 +11965,13 @@
                     "name": "Axi V14 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi C12 Relic": [
@@ -11785,13 +11979,27 @@
                     "name": "Axi C12 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "B",
+                    "rarity": "uncommon",
+                    "perc": "12.50%"
+                },
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "uncommon",
+                    "perc": "12.50%"
                 }
             ],
             "Axi A21 Relic": [
@@ -11799,13 +12007,13 @@
                     "name": "Axi A21 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi A22 Relic": [
@@ -11813,13 +12021,13 @@
                     "name": "Axi A22 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi P10 Relic": [
@@ -11827,13 +12035,13 @@
                     "name": "Axi P10 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ]
         }
@@ -11907,13 +12115,13 @@
                     "name": "Axi S21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
@@ -11921,13 +12129,13 @@
                     "name": "Axi D6 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
@@ -11935,13 +12143,13 @@
                     "name": "Axi V14 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
@@ -11949,13 +12157,27 @@
                     "name": "Axi C12 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "6.25%"
+                },
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
@@ -11963,13 +12185,13 @@
                     "name": "Axi A21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
@@ -11977,13 +12199,13 @@
                     "name": "Axi A22 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
@@ -11991,13 +12213,13 @@
                     "name": "Axi P10 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -12071,13 +12293,13 @@
                     "name": "Axi S21 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi D6 Relic": [
@@ -12085,13 +12307,13 @@
                     "name": "Axi D6 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi V14 Relic": [
@@ -12099,13 +12321,13 @@
                     "name": "Axi V14 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi C12 Relic": [
@@ -12113,13 +12335,27 @@
                     "name": "Axi C12 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "B",
+                    "rarity": "uncommon",
+                    "perc": "12.50%"
+                },
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "uncommon",
+                    "perc": "12.50%"
                 }
             ],
             "Axi A21 Relic": [
@@ -12127,13 +12363,13 @@
                     "name": "Axi A21 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi A22 Relic": [
@@ -12141,13 +12377,13 @@
                     "name": "Axi A22 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi P10 Relic": [
@@ -12155,13 +12391,13 @@
                     "name": "Axi P10 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ]
         }
@@ -12235,7 +12471,7 @@
                     "name": "Axi S21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "7.69%"
+                    "perc": "7.14%"
                 }
             ],
             "Axi D6 Relic": [
@@ -12243,7 +12479,7 @@
                     "name": "Axi D6 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "7.69%"
+                    "perc": "7.14%"
                 }
             ],
             "Axi V14 Relic": [
@@ -12251,7 +12487,7 @@
                     "name": "Axi V14 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "7.69%"
+                    "perc": "7.14%"
                 }
             ],
             "Axi C12 Relic": [
@@ -12259,7 +12495,15 @@
                     "name": "Axi C12 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "7.69%"
+                    "perc": "7.14%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "7.14%"
                 }
             ],
             "Axi A21 Relic": [
@@ -12267,7 +12511,7 @@
                     "name": "Axi A21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "7.69%"
+                    "perc": "7.14%"
                 }
             ],
             "Axi A22 Relic": [
@@ -12275,7 +12519,7 @@
                     "name": "Axi A22 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "7.69%"
+                    "perc": "7.14%"
                 }
             ],
             "Axi P10 Relic": [
@@ -12283,7 +12527,7 @@
                     "name": "Axi P10 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "7.69%"
+                    "perc": "7.14%"
                 }
             ]
         }
@@ -12374,56 +12618,64 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -12740,13 +12992,13 @@
                     "name": "Axi S21 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi D6 Relic": [
@@ -12754,13 +13006,13 @@
                     "name": "Axi D6 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi V14 Relic": [
@@ -12768,13 +13020,13 @@
                     "name": "Axi V14 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi C12 Relic": [
@@ -12782,13 +13034,27 @@
                     "name": "Axi C12 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "B",
+                    "rarity": "uncommon",
+                    "perc": "12.50%"
+                },
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "uncommon",
+                    "perc": "12.50%"
                 }
             ],
             "Axi A21 Relic": [
@@ -12796,13 +13062,13 @@
                     "name": "Axi A21 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi A22 Relic": [
@@ -12810,13 +13076,13 @@
                     "name": "Axi A22 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi P10 Relic": [
@@ -12824,13 +13090,13 @@
                     "name": "Axi P10 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ]
         }
@@ -12913,7 +13179,7 @@
                     "name": "Axi S21 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "12.50%"
+                    "perc": "11.11%"
                 }
             ],
             "Axi D6 Relic": [
@@ -12921,7 +13187,7 @@
                     "name": "Axi D6 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "12.50%"
+                    "perc": "11.11%"
                 }
             ],
             "Axi V14 Relic": [
@@ -12929,7 +13195,7 @@
                     "name": "Axi V14 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "12.50%"
+                    "perc": "11.11%"
                 }
             ],
             "Axi C12 Relic": [
@@ -12937,7 +13203,15 @@
                     "name": "Axi C12 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "12.50%"
+                    "perc": "11.11%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "uncommon",
+                    "perc": "11.11%"
                 }
             ],
             "Axi A21 Relic": [
@@ -12945,7 +13219,7 @@
                     "name": "Axi A21 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "12.50%"
+                    "perc": "11.11%"
                 }
             ],
             "Axi A22 Relic": [
@@ -12953,7 +13227,7 @@
                     "name": "Axi A22 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "12.50%"
+                    "perc": "11.11%"
                 }
             ],
             "Axi P10 Relic": [
@@ -12961,7 +13235,7 @@
                     "name": "Axi P10 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "12.50%"
+                    "perc": "11.11%"
                 }
             ]
         }
@@ -13099,56 +13373,64 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.20%"
+                    "rarity": "rare",
+                    "perc": "9.25%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.20%"
+                    "rarity": "rare",
+                    "perc": "9.25%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.20%"
+                    "rarity": "rare",
+                    "perc": "9.25%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.20%"
+                    "rarity": "rare",
+                    "perc": "9.25%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.25%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.20%"
+                    "rarity": "rare",
+                    "perc": "9.25%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.20%"
+                    "rarity": "rare",
+                    "perc": "9.25%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.20%"
+                    "rarity": "rare",
+                    "perc": "9.25%"
                 }
             ]
         }
@@ -13439,13 +13721,13 @@
                     "name": "Axi S21 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi D6 Relic": [
@@ -13453,13 +13735,13 @@
                     "name": "Axi D6 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi V14 Relic": [
@@ -13467,13 +13749,13 @@
                     "name": "Axi V14 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi C12 Relic": [
@@ -13481,13 +13763,27 @@
                     "name": "Axi C12 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "B",
+                    "rarity": "uncommon",
+                    "perc": "12.50%"
+                },
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "uncommon",
+                    "perc": "12.50%"
                 }
             ],
             "Axi A21 Relic": [
@@ -13495,13 +13791,13 @@
                     "name": "Axi A21 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi A22 Relic": [
@@ -13509,13 +13805,13 @@
                     "name": "Axi A22 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ],
             "Axi P10 Relic": [
@@ -13523,13 +13819,13 @@
                     "name": "Axi P10 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 }
             ]
         }
@@ -13732,56 +14028,64 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -14021,13 +14325,13 @@
                     "name": "Axi S21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
@@ -14035,13 +14339,13 @@
                     "name": "Axi D6 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
@@ -14049,13 +14353,13 @@
                     "name": "Axi V14 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
@@ -14063,13 +14367,27 @@
                     "name": "Axi C12 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "6.25%"
+                },
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
@@ -14077,13 +14395,13 @@
                     "name": "Axi A21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
@@ -14091,13 +14409,13 @@
                     "name": "Axi A22 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
@@ -14105,13 +14423,13 @@
                     "name": "Axi P10 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -14184,56 +14502,64 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -14306,56 +14632,64 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -14428,56 +14762,64 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -15907,56 +16249,64 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -17443,7 +17793,7 @@
                     "name": "Aya",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "2.82%"
+                    "perc": "2.51%"
                 }
             ],
             "Neo C7 Relic": [
@@ -17609,7 +17959,7 @@
                     "name": "Axi S21 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "2.82%"
+                    "perc": "2.51%"
                 }
             ],
             "Axi D6 Relic": [
@@ -17617,7 +17967,7 @@
                     "name": "Axi D6 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "2.82%"
+                    "perc": "2.51%"
                 }
             ],
             "Axi V14 Relic": [
@@ -17625,7 +17975,7 @@
                     "name": "Axi V14 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "2.82%"
+                    "perc": "2.51%"
                 }
             ],
             "Axi C12 Relic": [
@@ -17633,7 +17983,15 @@
                     "name": "Axi C12 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "2.82%"
+                    "perc": "2.51%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "2.51%"
                 }
             ],
             "Axi A21 Relic": [
@@ -17641,7 +17999,7 @@
                     "name": "Axi A21 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "2.82%"
+                    "perc": "2.51%"
                 }
             ],
             "Axi A22 Relic": [
@@ -17649,7 +18007,7 @@
                     "name": "Axi A22 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "2.82%"
+                    "perc": "2.51%"
                 }
             ],
             "Axi P10 Relic": [
@@ -17657,7 +18015,7 @@
                     "name": "Axi P10 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "2.82%"
+                    "perc": "2.51%"
                 }
             ]
         }
@@ -17810,98 +18168,112 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.84%"
+                    "rarity": "rare",
+                    "perc": "9.48%"
                 },
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
                     "rarity": "legendary",
-                    "perc": "0.29%"
+                    "perc": "0.25%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.84%"
+                    "rarity": "rare",
+                    "perc": "9.48%"
                 },
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
                     "rarity": "legendary",
-                    "perc": "0.29%"
+                    "perc": "0.25%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.84%"
+                    "rarity": "rare",
+                    "perc": "9.48%"
                 },
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
                     "rarity": "legendary",
-                    "perc": "0.29%"
+                    "perc": "0.25%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.84%"
+                    "rarity": "rare",
+                    "perc": "9.48%"
                 },
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
                     "rarity": "legendary",
-                    "perc": "0.29%"
+                    "perc": "0.25%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.48%"
+                },
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "legendary",
+                    "perc": "0.25%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.84%"
+                    "rarity": "rare",
+                    "perc": "9.48%"
                 },
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
                     "rarity": "legendary",
-                    "perc": "0.29%"
+                    "perc": "0.25%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.84%"
+                    "rarity": "rare",
+                    "perc": "9.48%"
                 },
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
                     "rarity": "legendary",
-                    "perc": "0.29%"
+                    "perc": "0.25%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.84%"
+                    "rarity": "rare",
+                    "perc": "9.48%"
                 },
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
                     "rarity": "legendary",
-                    "perc": "0.29%"
+                    "perc": "0.25%"
                 }
             ]
         }
@@ -17919,7 +18291,7 @@
                     "name": "Neo C7 Relic",
                     "rotation": null,
                     "rarity": "rare",
-                    "perc": "6.25%"
+                    "perc": "5.88%"
                 }
             ],
             "Neo A16 Relic": [
@@ -17927,7 +18299,7 @@
                     "name": "Neo A16 Relic",
                     "rotation": null,
                     "rarity": "rare",
-                    "perc": "6.25%"
+                    "perc": "5.88%"
                 }
             ],
             "Neo Y2 Relic": [
@@ -17935,7 +18307,7 @@
                     "name": "Neo Y2 Relic",
                     "rotation": null,
                     "rarity": "rare",
-                    "perc": "6.25%"
+                    "perc": "5.88%"
                 }
             ],
             "Neo C11 Relic": [
@@ -17943,7 +18315,7 @@
                     "name": "Neo C11 Relic",
                     "rotation": null,
                     "rarity": "rare",
-                    "perc": "6.25%"
+                    "perc": "5.88%"
                 }
             ],
             "Neo K10 Relic": [
@@ -17951,13 +18323,13 @@
                     "name": "Neo K10 Relic",
                     "rotation": null,
                     "rarity": "rare",
-                    "perc": "6.25%"
+                    "perc": "5.88%"
                 },
                 {
                     "name": "Neo K10 Relic",
                     "rotation": null,
                     "rarity": "rare",
-                    "perc": "6.25%"
+                    "perc": "5.88%"
                 }
             ],
             "Neo V13 Relic": [
@@ -17965,7 +18337,7 @@
                     "name": "Neo V13 Relic",
                     "rotation": null,
                     "rarity": "rare",
-                    "perc": "6.25%"
+                    "perc": "5.88%"
                 }
             ],
             "Axi S21 Relic": [
@@ -17973,7 +18345,7 @@
                     "name": "Axi S21 Relic",
                     "rotation": null,
                     "rarity": "rare",
-                    "perc": "6.25%"
+                    "perc": "5.88%"
                 }
             ],
             "Axi D6 Relic": [
@@ -17981,7 +18353,7 @@
                     "name": "Axi D6 Relic",
                     "rotation": null,
                     "rarity": "rare",
-                    "perc": "6.25%"
+                    "perc": "5.88%"
                 }
             ],
             "Axi V14 Relic": [
@@ -17989,7 +18361,7 @@
                     "name": "Axi V14 Relic",
                     "rotation": null,
                     "rarity": "rare",
-                    "perc": "6.25%"
+                    "perc": "5.88%"
                 }
             ],
             "Axi C12 Relic": [
@@ -17997,7 +18369,15 @@
                     "name": "Axi C12 Relic",
                     "rotation": null,
                     "rarity": "rare",
-                    "perc": "6.25%"
+                    "perc": "5.88%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": null,
+                    "rarity": "rare",
+                    "perc": "5.88%"
                 }
             ],
             "Axi A21 Relic": [
@@ -18005,7 +18385,7 @@
                     "name": "Axi A21 Relic",
                     "rotation": null,
                     "rarity": "rare",
-                    "perc": "6.25%"
+                    "perc": "5.88%"
                 }
             ],
             "Axi A22 Relic": [
@@ -18013,7 +18393,7 @@
                     "name": "Axi A22 Relic",
                     "rotation": null,
                     "rarity": "rare",
-                    "perc": "6.25%"
+                    "perc": "5.88%"
                 }
             ],
             "Axi P10 Relic": [
@@ -18021,7 +18401,7 @@
                     "name": "Axi P10 Relic",
                     "rotation": null,
                     "rarity": "rare",
-                    "perc": "6.25%"
+                    "perc": "5.88%"
                 }
             ],
             "Aya": [
@@ -18029,13 +18409,13 @@
                     "name": "Aya",
                     "rotation": null,
                     "rarity": "rare",
-                    "perc": "6.25%"
+                    "perc": "5.88%"
                 },
                 {
                     "name": "Aya",
                     "rotation": null,
                     "rarity": "rare",
-                    "perc": "6.25%"
+                    "perc": "5.88%"
                 }
             ]
         }
@@ -18197,98 +18577,112 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.84%"
+                    "rarity": "rare",
+                    "perc": "9.48%"
                 },
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
                     "rarity": "legendary",
-                    "perc": "0.29%"
+                    "perc": "0.25%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.84%"
+                    "rarity": "rare",
+                    "perc": "9.48%"
                 },
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
                     "rarity": "legendary",
-                    "perc": "0.29%"
+                    "perc": "0.25%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.84%"
+                    "rarity": "rare",
+                    "perc": "9.48%"
                 },
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
                     "rarity": "legendary",
-                    "perc": "0.29%"
+                    "perc": "0.25%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.84%"
+                    "rarity": "rare",
+                    "perc": "9.48%"
                 },
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
                     "rarity": "legendary",
-                    "perc": "0.29%"
+                    "perc": "0.25%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.48%"
+                },
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "legendary",
+                    "perc": "0.25%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.84%"
+                    "rarity": "rare",
+                    "perc": "9.48%"
                 },
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
                     "rarity": "legendary",
-                    "perc": "0.29%"
+                    "perc": "0.25%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.84%"
+                    "rarity": "rare",
+                    "perc": "9.48%"
                 },
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
                     "rarity": "legendary",
-                    "perc": "0.29%"
+                    "perc": "0.25%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.84%"
+                    "rarity": "rare",
+                    "perc": "9.48%"
                 },
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
                     "rarity": "legendary",
-                    "perc": "0.29%"
+                    "perc": "0.25%"
                 }
             ]
         }
@@ -19951,56 +20345,64 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -20684,48 +21086,56 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.00%"
+                    "rarity": "rare",
+                    "perc": "9.09%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.00%"
+                    "rarity": "rare",
+                    "perc": "9.09%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.00%"
+                    "rarity": "rare",
+                    "perc": "9.09%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.00%"
+                    "rarity": "rare",
+                    "perc": "9.09%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.09%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.00%"
+                    "rarity": "rare",
+                    "perc": "9.09%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "10.00%"
+                    "rarity": "rare",
+                    "perc": "9.09%"
                 }
             ]
         }
@@ -20816,56 +21226,64 @@
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -20939,13 +21357,13 @@
                     "name": "Axi S21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
@@ -20953,13 +21371,13 @@
                     "name": "Axi D6 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
@@ -20967,13 +21385,13 @@
                     "name": "Axi V14 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
@@ -20981,13 +21399,27 @@
                     "name": "Axi C12 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "6.25%"
+                },
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
@@ -20995,13 +21427,13 @@
                     "name": "Axi A21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
@@ -21009,13 +21441,13 @@
                     "name": "Axi A22 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
@@ -21023,13 +21455,13 @@
                     "name": "Axi P10 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -21121,13 +21553,13 @@
                     "name": "Axi S21 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "12.42%"
+                    "perc": "11.04%"
                 }
             ],
             "Axi D6 Relic": [
@@ -21135,13 +21567,13 @@
                     "name": "Axi D6 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "12.42%"
+                    "perc": "11.04%"
                 }
             ],
             "Axi V14 Relic": [
@@ -21149,13 +21581,13 @@
                     "name": "Axi V14 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "12.42%"
+                    "perc": "11.04%"
                 }
             ],
             "Axi C12 Relic": [
@@ -21163,13 +21595,27 @@
                     "name": "Axi C12 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "12.42%"
+                    "perc": "11.04%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "B",
+                    "rarity": "uncommon",
+                    "perc": "12.50%"
+                },
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "uncommon",
+                    "perc": "11.04%"
                 }
             ],
             "Axi A21 Relic": [
@@ -21177,13 +21623,13 @@
                     "name": "Axi A21 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "12.42%"
+                    "perc": "11.04%"
                 }
             ],
             "Axi A22 Relic": [
@@ -21191,13 +21637,13 @@
                     "name": "Axi A22 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "12.42%"
+                    "perc": "11.04%"
                 }
             ],
             "Axi P10 Relic": [
@@ -21205,13 +21651,13 @@
                     "name": "Axi P10 Relic",
                     "rotation": "B",
                     "rarity": "uncommon",
-                    "perc": "14.29%"
+                    "perc": "12.50%"
                 },
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
                     "rarity": "uncommon",
-                    "perc": "12.42%"
+                    "perc": "11.04%"
                 }
             ]
         }
@@ -21303,13 +21749,13 @@
                     "name": "Axi S21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi S21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi D6 Relic": [
@@ -21317,13 +21763,13 @@
                     "name": "Axi D6 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi D6 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi V14 Relic": [
@@ -21331,13 +21777,13 @@
                     "name": "Axi V14 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi V14 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi C12 Relic": [
@@ -21345,13 +21791,27 @@
                     "name": "Axi C12 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi C12 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "B",
+                    "rarity": "rare",
+                    "perc": "6.25%"
+                },
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A21 Relic": [
@@ -21359,13 +21819,13 @@
                     "name": "Axi A21 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A21 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi A22 Relic": [
@@ -21373,13 +21833,13 @@
                     "name": "Axi A22 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi A22 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ],
             "Axi P10 Relic": [
@@ -21387,13 +21847,13 @@
                     "name": "Axi P10 Relic",
                     "rotation": "B",
                     "rarity": "rare",
-                    "perc": "6.67%"
+                    "perc": "6.25%"
                 },
                 {
                     "name": "Axi P10 Relic",
                     "rotation": "C",
-                    "rarity": "uncommon",
-                    "perc": "11.06%"
+                    "rarity": "rare",
+                    "perc": "9.68%"
                 }
             ]
         }
@@ -21467,7 +21927,7 @@
                     "name": "Axi S21 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "8.00%"
+                    "perc": "7.41%"
                 }
             ],
             "Axi D6 Relic": [
@@ -21475,7 +21935,7 @@
                     "name": "Axi D6 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "8.00%"
+                    "perc": "7.41%"
                 }
             ],
             "Axi V14 Relic": [
@@ -21483,7 +21943,7 @@
                     "name": "Axi V14 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "8.00%"
+                    "perc": "7.41%"
                 }
             ],
             "Axi C12 Relic": [
@@ -21491,7 +21951,15 @@
                     "name": "Axi C12 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "8.00%"
+                    "perc": "7.41%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "7.41%"
                 }
             ],
             "Axi A21 Relic": [
@@ -21499,7 +21967,7 @@
                     "name": "Axi A21 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "8.00%"
+                    "perc": "7.41%"
                 }
             ],
             "Axi A22 Relic": [
@@ -21507,7 +21975,7 @@
                     "name": "Axi A22 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "8.00%"
+                    "perc": "7.41%"
                 }
             ],
             "Axi P10 Relic": [
@@ -21515,7 +21983,7 @@
                     "name": "Axi P10 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "8.00%"
+                    "perc": "7.41%"
                 }
             ]
         }
@@ -22012,7 +22480,7 @@
                     "name": "Neo K10 Relic (Radiant)",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "6.32%"
+                    "perc": "5.84%"
                 }
             ],
             "Neo C7 Relic (Radiant)": [
@@ -22020,7 +22488,7 @@
                     "name": "Neo C7 Relic (Radiant)",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "6.32%"
+                    "perc": "5.84%"
                 }
             ],
             "Neo V13 Relic (Radiant)": [
@@ -22028,7 +22496,7 @@
                     "name": "Neo V13 Relic (Radiant)",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "6.32%"
+                    "perc": "5.84%"
                 }
             ],
             "Neo C10 Relic (Radiant)": [
@@ -22036,7 +22504,7 @@
                     "name": "Neo C10 Relic (Radiant)",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "6.32%"
+                    "perc": "5.84%"
                 }
             ],
             "Axi S21 Relic (Radiant)": [
@@ -22044,7 +22512,7 @@
                     "name": "Axi S21 Relic (Radiant)",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "6.32%"
+                    "perc": "5.84%"
                 }
             ],
             "Axi D6 Relic (Radiant)": [
@@ -22052,7 +22520,7 @@
                     "name": "Axi D6 Relic (Radiant)",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "6.32%"
+                    "perc": "5.84%"
                 }
             ],
             "Axi V14 Relic (Radiant)": [
@@ -22060,7 +22528,7 @@
                     "name": "Axi V14 Relic (Radiant)",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "6.32%"
+                    "perc": "5.84%"
                 }
             ],
             "Axi C12 Relic (Radiant)": [
@@ -22068,7 +22536,15 @@
                     "name": "Axi C12 Relic (Radiant)",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "6.32%"
+                    "perc": "5.84%"
+                }
+            ],
+            "Axi C13 Relic (Radiant)": [
+                {
+                    "name": "Axi C13 Relic (Radiant)",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "5.84%"
                 }
             ],
             "Axi A21 Relic (Radiant)": [
@@ -22076,7 +22552,7 @@
                     "name": "Axi A21 Relic (Radiant)",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "6.32%"
+                    "perc": "5.84%"
                 }
             ],
             "Axi A22 Relic (Radiant)": [
@@ -22084,7 +22560,7 @@
                     "name": "Axi A22 Relic (Radiant)",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "6.32%"
+                    "perc": "5.84%"
                 }
             ],
             "Axi P10 Relic (Radiant)": [
@@ -22092,7 +22568,7 @@
                     "name": "Axi P10 Relic (Radiant)",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "6.32%"
+                    "perc": "5.84%"
                 }
             ]
         }
@@ -24336,7 +24812,7 @@
                     "name": "Axi S21 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "8.18%"
+                    "perc": "7.56%"
                 }
             ],
             "Axi D6 Relic": [
@@ -24344,7 +24820,7 @@
                     "name": "Axi D6 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "8.18%"
+                    "perc": "7.56%"
                 }
             ],
             "Axi V14 Relic": [
@@ -24352,7 +24828,7 @@
                     "name": "Axi V14 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "8.18%"
+                    "perc": "7.56%"
                 }
             ],
             "Axi C12 Relic": [
@@ -24360,7 +24836,15 @@
                     "name": "Axi C12 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "8.18%"
+                    "perc": "7.56%"
+                }
+            ],
+            "Axi C13 Relic": [
+                {
+                    "name": "Axi C13 Relic",
+                    "rotation": "C",
+                    "rarity": "rare",
+                    "perc": "7.56%"
                 }
             ],
             "Axi A21 Relic": [
@@ -24368,7 +24852,7 @@
                     "name": "Axi A21 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "8.18%"
+                    "perc": "7.56%"
                 }
             ],
             "Axi A22 Relic": [
@@ -24376,7 +24860,7 @@
                     "name": "Axi A22 Relic",
                     "rotation": "C",
                     "rarity": "rare",
-                    "perc": "8.18%"
+                    "perc": "7.56%"
                 }
             ]
         }

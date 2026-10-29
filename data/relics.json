@@ -1220,6 +1220,39 @@
         },
         "vaulted": false
     },
+    "Axi C13": {
+        "name": "Axi C13",
+        "category": "relics",
+        "id": "Axi C13",
+        "tier": "Axi",
+        "rewards": {
+            "Caliban Prime Neuroptics Blueprint": {
+                "rarity": "rare",
+                "perc": "2.00%"
+            },
+            "Voruna Prime Chassis Blueprint": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Braton Prime Receiver": {
+                "rarity": "uncommon",
+                "perc": "11.00%"
+            },
+            "Sarofang Prime Handle": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Forma Blueprint": {
+                "rarity": "common",
+                "perc": "25.33%"
+            },
+            "Bronco Prime Barrel": {
+                "rarity": "common",
+                "perc": "25.33%"
+            }
+        },
+        "vaulted": false
+    },
     "Axi C2": {
         "name": "Axi C2",
         "category": "relics",
